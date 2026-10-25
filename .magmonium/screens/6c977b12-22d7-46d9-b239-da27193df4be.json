@@ -10,7 +10,10 @@
         "childrens": [
           "c9e6d745-15fe-4975-8da2-7c1d8542f419"
         ],
-        "configs": {},
+        "configs": {
+          "align": "center",
+          "maxWidth": "800px"
+        },
         "id": "84d637db-c300-4d2a-a0e7-25c4685f943c",
         "type": "section"
       },
@@ -38,7 +41,8 @@
     "rootControlIds": [
       "84d637db-c300-4d2a-a0e7-25c4685f943c"
     ],
-    "selectedLayerId": 0
+    "selectedControl": "c9e6d745-15fe-4975-8da2-7c1d8542f419",
+    "selectedLayerId": 2
   },
   "v": 29
 }

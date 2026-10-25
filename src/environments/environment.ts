@@ -2,7 +2,7 @@
 // Preset: local.
 export const environment = {
   production: false,
-  authUrl: 'https://api-dev.magmonium.com',
+  authUrl: 'http://localhost:8000',
   url: 'http://localhost:8000',
   socketUrl: 'wss://pops-dev.magmonium.com',
 };

@@ -6,7 +6,7 @@
     "appPath": "apps/invest/mag_assets",
     "environment": {
       "hosts": {
-        "authUrl": "https://api-dev.magmonium.com",
+        "authUrl": "http://localhost:8000",
         "backendUrl": "http://localhost:8000",
         "socketUrl": "wss://pops-dev.magmonium.com"
       },
@@ -22,7 +22,7 @@
       "functions": {
         "94ec0572-4d3a-41b7-91c7-a313d4e13c8b": {
           "aiDrafted": true,
-          "body": "const entries = rankingMap[id];\n  if (entries === undefined) return undefined;\n  if (entries.length === 0) return [];\n\n  const numericKeys = Object.keys(entries[0]).filter((key) => key !== \"symbol\") as Array<keyof FinanceRankingUpdateResponse>;\n\n  const stats = numericKeys.reduce<Record<string, { min: number; max: number }>>((acc, key) => {\n    const values = entries.map((entry) => entry[key] as number);\n    acc[key as string] = {\n      min: Math.min(...values),\n      max: Math.max(...values),\n    };\n    return acc;\n  }, {});\n\n  return entries.map((entry) => {\n    const next = { ...entry };\n    for (const key of numericKeys) {\n      const { min, max } = stats[key as string];\n      const range = max - min;\n      (next as Record<string, number | string>)[key as string] =\n        range === 0 ? 0 : (((entry[key] as number) - min) / range) * 100;\n    }\n    return next;\n  });",
+          "body": "const COLUMNS = ['symbol', 'w', 'm', 'q', 'h', 'y', 'y2', 'score'] as const;\n  const NUMERIC = ['w', 'm', 'q', 'h', 'y', 'y2', 'score'] as const;\n\n  const raw = rankingMap[id] as unknown;\n  if (!Array.isArray(raw)) return undefined;\n  if (raw.length === 0) return [];\n\n  const entries = raw.map((row) =>\n    Array.isArray(row)\n      ? Object.fromEntries(COLUMNS.map((key, i) => [key, row[i]]))\n      : row\n  ) as Record<string, unknown>[];\n\n  const stats = Object.fromEntries(\n    NUMERIC.map((key) => {\n      const values = entries.map((e) => Number(e[key])).filter(Number.isFinite);\n      const min = values.length ? Math.min(...values) : 0;\n      const max = values.length ? Math.max(...values) : 0;\n      return [key, { min, max }];\n    })\n  ) as Record<string, { min: number; max: number }>;\n\n  return entries.map((entry) => {\n    const next = { ...entry } as Record<string, unknown>;\n    for (const key of NUMERIC) {\n      const { min, max } = stats[key];\n      const v = Number(entry[key]);\n      next[key] = !Number.isFinite(v) ? NaN : max === min ? 0 : ((v - min) / (max - min)) * 100;\n    }\n    return next as unknown as FinanceRankingUpdateResponse;\n  });",
           "cases": [
             {
               "args": [
@@ -55,6 +55,14 @@
               ],
               "expected": "[{ \"symbol\": \"X\", \"w\": 0, \"m\": 0, \"q\": 0, \"h\": 0, \"y\": 0, \"y2\": 0, \"score\": 0 }]",
               "name": "keeps symbol unchanged"
+            },
+            {
+              "args": [
+                "\"C\"",
+                "{ \"C\": [{ \"symbol\": \"A\", \"w\": 5, \"m\": 5, \"q\": 5, \"h\": 5, \"y\": 5, \"y2\": 5, \"score\": 5 }, { \"symbol\": \"B\", \"w\": 5, \"m\": 5, \"q\": 5, \"h\": 5, \"y\": 5, \"y2\": 5, \"score\": 5 }] }"
+              ],
+              "expected": "[{ \"symbol\": \"A\", \"w\": 0, \"m\": 0, \"q\": 0, \"h\": 0, \"y\": 0, \"y2\": 0, \"score\": 0 }, { \"symbol\": \"B\", \"w\": 0, \"m\": 0, \"q\": 0, \"h\": 0, \"y\": 0, \"y2\": 0, \"score\": 0 }]",
+              "name": "constant values normalize to zero"
             }
           ],
           "description": "Returns the ranking entries stored under the given id, with numeric fields (all except the symbol column) normalized to percentage values using column-wise min/max scaling.",

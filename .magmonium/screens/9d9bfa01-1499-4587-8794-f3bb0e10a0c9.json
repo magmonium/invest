@@ -180,8 +180,12 @@
             },
             {
               "label": "long-term"
+            },
+            {
+              "label": "overall"
             }
-          ]
+          ],
+          "variant": "zebra"
         },
         "id": "39761965-8223-4b48-8184-9843dd4c3ff9",
         "outputArgs": {
@@ -219,6 +223,39 @@
         },
         "parentId": "c16fe1a0-accc-43ae-9786-40fc745a669f",
         "type": "section_table"
+      },
+      "45e96aa8-fa82-4d49-82ad-8e51d1acada1": {
+        "childrens": [
+          "4c395d61-bbea-48a6-9585-0b3202c4e9c6"
+        ],
+        "configs": {},
+        "id": "45e96aa8-fa82-4d49-82ad-8e51d1acada1",
+        "parentId": "f40140a5-2592-41de-bce7-275adfc63d42",
+        "type": "section_table_cell"
+      },
+      "4c395d61-bbea-48a6-9585-0b3202c4e9c6": {
+        "bindings": {
+          "value": {
+            "path": [
+              "b3f6bdf2-68ac-4134-b52d-8e061514a57b"
+            ],
+            "root": {
+              "alias": "item",
+              "kind": "alias",
+              "repeatId": "10b3b9f2-7f10-40e4-8fa3-ceac629a9d69"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {
+          "fromColor": "error",
+          "radius": "sm",
+          "toColor": "success"
+        },
+        "id": "4c395d61-bbea-48a6-9585-0b3202c4e9c6",
+        "parentId": "45e96aa8-fa82-4d49-82ad-8e51d1acada1",
+        "source": "raw",
+        "type": "heat_swatch"
       },
       "50c85a0b-09e2-4d3f-8964-29180d947932": {
         "childrens": [
@@ -453,7 +490,8 @@
           "3566f04f-3953-4aea-956f-0e5f88ae7224",
           "1ecda88c-04ac-45b1-ab30-c22f69bb4bf5",
           "d430c53f-2797-4ddc-bf73-55e7db877ba6",
-          "50c85a0b-09e2-4d3f-8964-29180d947932"
+          "50c85a0b-09e2-4d3f-8964-29180d947932",
+          "45e96aa8-fa82-4d49-82ad-8e51d1acada1"
         ],
         "configs": {},
         "id": "f40140a5-2592-41de-bce7-275adfc63d42",
@@ -466,8 +504,8 @@
     "rootControlIds": [
       "7efa67a8-1cdf-4d0e-9120-f73cfe0c2736"
     ],
-    "selectedControl": "23ae8409-861a-4958-9c21-a014fbf5366f",
-    "selectedLayerId": 7
+    "selectedControl": "39761965-8223-4b48-8184-9843dd4c3ff9",
+    "selectedLayerId": 3
   },
   "v": 29
 }

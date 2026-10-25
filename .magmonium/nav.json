@@ -8,7 +8,6 @@
         "root_user",
         "root_settings"
       ],
-      "icon": "logo",
       "label": "magmonium",
       "linkKind": "url",
       "navId": "root",
