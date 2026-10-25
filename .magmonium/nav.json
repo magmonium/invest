@@ -8,6 +8,7 @@
         "root_user",
         "root_settings"
       ],
+      "icon": "logo",
       "label": "magmonium",
       "linkKind": "url",
       "navId": "root",
@@ -18,7 +19,6 @@
       "children": [
         "root_default_default"
       ],
-      "inheritsParams": false,
       "isDefault": true,
       "linkKind": "url",
       "navId": "root_default",
@@ -27,7 +27,6 @@
     },
     "root_default_default": {
       "children": [],
-      "inheritsParams": false,
       "isDefault": true,
       "linkKind": "url",
       "navId": "root_default_default",

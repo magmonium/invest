@@ -50,7 +50,7 @@
           "cardinality": "many",
           "code": "200",
           "dataType": {
-            "shapeId": "f57161c0-0c57-4bf5-89a3-6a0669050186",
+            "shapeId": "a1eb293e-6544-405b-82a7-7d12c7001035",
             "type": "shape"
           },
           "description": "Ranking chart (array of rows), or `null` when no match.",
@@ -111,14 +111,14 @@
           },
           "shapes": [
             {
-              "id": "f57161c0-0c57-4bf5-89a3-6a0669050186",
+              "id": "a1eb293e-6544-405b-82a7-7d12c7001035",
               "keys": [
                 {
                   "cardinality": "one",
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "ce21d689-f18c-48cf-bee4-2c5490e65bd2",
+                  "id": "eb8dea78-5616-4644-82d1-7b98844546da",
                   "name": "symbol"
                 },
                 {
@@ -126,7 +126,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "f33abba3-7f9c-4ee0-88aa-fd96319697cd",
+                  "id": "50d9c08b-2e52-46d3-8201-3825c675dfe2",
                   "name": "w"
                 },
                 {
@@ -134,7 +134,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "32d8634d-273d-4e78-87d6-6262f1b53afa",
+                  "id": "7693094c-0299-4658-9db9-22cc7760f3af",
                   "name": "m"
                 },
                 {
@@ -142,7 +142,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "8599b5f5-032e-4da2-8001-5f0e73463b1f",
+                  "id": "66e4e4c5-321e-4b44-8ea7-df89b192fc7f",
                   "name": "q"
                 },
                 {
@@ -150,7 +150,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "7e902cb0-e5a2-4599-b282-bb0513f20535",
+                  "id": "8dcd21b1-43c9-4004-8701-eaf8029e1b61",
                   "name": "h"
                 },
                 {
@@ -158,7 +158,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "c31ad5f2-1eb9-4d85-807c-70761aceaab9",
+                  "id": "a7dbbecb-84ee-4896-b533-bb5efe10b337",
                   "name": "y"
                 },
                 {
@@ -166,7 +166,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "e7fdbc44-73e8-4ae4-9bba-b188e44bc81a",
+                  "id": "735c440b-ad26-4f07-8075-23e8e6825891",
                   "name": "y2"
                 },
                 {
@@ -174,7 +174,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "dd87043d-cc85-4054-8322-6ffb523e60c0",
+                  "id": "fe179137-b79e-46d1-ba67-fb9b7a3fdf80",
                   "name": "score"
                 }
               ],
