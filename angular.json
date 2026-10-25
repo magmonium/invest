@@ -1,0 +1,140 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "invest": {
+      "projectType": "application",
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "invest",
+      "architect": {
+        "build": {
+          "builder": "@angular-builders/custom-webpack:browser",
+          "options": {
+            "customWebpackConfig": {
+              "path": "./webpack.config.ts"
+            },
+            "outputPath": "dist/invest",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "sass",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "public/assets",
+                "output": "assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/@magmonium/one/assets",
+                "output": "assets/one"
+              }
+            ],
+            "styles": [
+              "src/styles.sass"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "node_modules/@magmonium/one/sass",
+                "."
+              ]
+            },
+            "allowedCommonJsDependencies": [
+              "debug",
+              "socket.io-parser"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "1mb",
+                  "maximumError": "2mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "25kb",
+                  "maximumError": "40kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "build-test": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "src/main.ts",
+            "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "sass",
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "node_modules/@magmonium/one/sass",
+                "."
+              ]
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "buildTarget": "invest:build-test",
+            "tsConfig": "tsconfig.spec.json",
+            "providersFile": "src/test-providers.ts",
+            "setupFiles": [
+              "src/test-setup.ts"
+            ],
+            "coverageInclude": [
+              "src/app/features/**/*.ts",
+              "src/app/pages/**/*.ts",
+              "src/app/widgets/**/*.ts",
+              "src/app/shared/lib/**/*.ts",
+              "src/app/*.router.ts",
+              "src/app/*.provide.ts"
+            ],
+            "coverageExclude": [
+              "**/*.spec.ts",
+              "**/type/**",
+              "**/index.ts"
+            ],
+            "coverageReporters": [
+              "text-summary",
+              "json-summary"
+            ]
+          }
+        },
+        "serve": {
+          "builder": "@angular-builders/custom-webpack:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "invest:build:production"
+            },
+            "development": {
+              "buildTarget": "invest:build:development"
+            }
+          },
+          "defaultConfiguration": "development",
+          "options": {
+            "port": 4200,
+            "host": "0.0.0.0",
+            "disableHostCheck": true
+          }
+        }
+      }
+    }
+  }
+}

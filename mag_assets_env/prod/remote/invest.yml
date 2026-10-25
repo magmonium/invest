@@ -1,0 +1,6 @@
+app: invest
+componentPath: src/app
+componentName: wc
+className: InvestWebComponent
+appConfigPath: src/app/wc.config
+selector: invest-wc

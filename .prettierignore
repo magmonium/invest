@@ -1,0 +1,20 @@
+node_modules/
+dist/
+.angular/
+public/assets/
+.magmonium/
+
+# The GeneratedSet, rewritten by Sync and by `npm run gen:code` (ADR 0181).
+src/app/features/
+src/app/pages/
+src/app/widgets/
+src/app/shared/lib/
+src/app/shared/type/
+src/app/*.router.ts
+src/app/*.router.spec.ts
+src/app/*.provide.ts
+src/app/*.provide.spec.ts
+
+# The Angular CLI's own serializer shape.
+angular.json
+tsconfig.app.json
