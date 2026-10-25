@@ -1,0 +1,78 @@
+{
+  "appName": "invest",
+  "appTarget": {
+    "appId": "6addf46bb7cbbdc1345d78e9",
+    "appName": "invest",
+    "appPath": "",
+    "environment": {
+      "hosts": {
+        "authUrl": "https://api-dev.magmonium.com",
+        "backendUrl": "http://localhost:8000",
+        "socketUrl": "wss://pops-dev.magmonium.com"
+      },
+      "preset": "local"
+    },
+    "mode": "new"
+  },
+  "codegen": "0.8.18",
+  "distinct": [],
+  "features": {
+    "acef9153-606d-4de2-8699-7c87fa589384": {
+      "computeds": {},
+      "functions": {},
+      "id": "acef9153-606d-4de2-8699-7c87fa589384",
+      "methods": {
+        "06cc0f93-8b99-4a09-9ffb-d11be83ecbcd": {
+          "id": "06cc0f93-8b99-4a09-9ffb-d11be83ecbcd",
+          "inputs": [
+            {
+              "arg": "type",
+              "source": "args",
+              "target": [
+                "path",
+                "type"
+              ]
+            },
+            {
+              "arg": "id",
+              "source": "args",
+              "target": [
+                "path",
+                "id"
+              ]
+            }
+          ],
+          "name": "updateFinanceRankingTypeId",
+          "path": "/finance/v1/ranking/{type}/{id}",
+          "response": [],
+          "verb": "put"
+        }
+      },
+      "name": "analysis",
+      "properties": {},
+      "shapes": {},
+      "variants": {}
+    }
+  },
+  "functions": {},
+  "npmAllowlist": {},
+  "screens": [
+    {
+      "featureId": "acef9153-606d-4de2-8699-7c87fa589384",
+      "id": "9d9bfa01-1499-4587-8794-f3bb0e10a0c9",
+      "kind": "feature",
+      "name": "ranking"
+    }
+  ],
+  "sharedShapes": {},
+  "v": 29,
+  "wcConfig": {
+    "appColor": "#199e10",
+    "description": "Indian market and investment",
+    "logoGlyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 169.732 169.732\" fill=\"#fff\"><path d=\"M160.129,89.592c0,21.387-8.328,41.493-23.449,56.615c-15.122,15.122-35.227,23.45-56.612,23.45c-0.001,0-0.002,0-0.003,0  c-0.64,0-1.284-0.008-1.927-0.023c-20.55-0.483-39.946-8.829-54.616-23.498S0.507,112.071,0.023,91.521  c-0.512-21.765,7.572-42.316,22.762-57.868C37.98,18.096,58.323,9.529,80.065,9.529c2.762,0,5,2.239,5,5v64.758  c0,2.926,2.38,5.306,5.306,5.306h64.759C157.891,84.592,160.129,86.831,160.129,89.592z M169.732,70.805  c0-39.001-31.73-70.73-70.731-70.73c-2.762,0-5,2.239-5,5v65.73c0,2.761,2.238,5,5,5h65.731  C167.494,75.805,169.732,73.567,169.732,70.805z M104,10.279c29.507,2.417,53.11,26.021,55.527,55.526H104V10.279z\"/></svg>",
+    "name": "invest",
+    "open": false,
+    "theme": "",
+    "version": "0.0.2"
+  }
+}

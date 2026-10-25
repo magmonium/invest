@@ -1,0 +1,124 @@
+{
+  "operations": [
+    {
+      "domain": "finance",
+      "id": "put /finance/v1/ranking/{type}/{id}",
+      "operationId": "finance_v1_ranking_update",
+      "params": [
+        {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "description": "The category of ranking to retrieve.",
+          "doc": {
+            "description": "The category of ranking to retrieve.",
+            "enumValues": [
+              "portfolio",
+              "bi",
+              "index",
+              "sector",
+              "industry"
+            ],
+            "members": [],
+            "name": "type",
+            "required": true,
+            "type": "string"
+          },
+          "location": "path",
+          "name": "type",
+          "required": true,
+          "shapes": [],
+          "unmapped": []
+        },
+        {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "description": "The specific identifier for the chosen type (e.g., 'NIFTY 50' for 'index', or a portfolio key).",
+          "doc": {
+            "description": "The specific identifier for the chosen type (e.g., 'NIFTY 50' for 'index', or a portfolio key).",
+            "members": [],
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          "location": "path",
+          "name": "id",
+          "required": true,
+          "shapes": [],
+          "unmapped": []
+        }
+      ],
+      "path": "/finance/v1/ranking/{type}/{id}",
+      "responses": [
+        {
+          "cardinality": "one",
+          "code": "200",
+          "description": "Ranking data successfully retrieved.",
+          "doc": {
+            "members": [
+              {
+                "description": "List of ranked items with momentum scores and performance metrics.",
+                "members": [],
+                "name": "rankings",
+                "required": false,
+                "type": "object[]"
+              }
+            ],
+            "name": "",
+            "required": true,
+            "type": "object"
+          },
+          "shapes": [],
+          "tier": "anonymous",
+          "unmapped": [
+            "rankings (object with no properties)",
+            "(response) (no expressible keys)"
+          ]
+        },
+        {
+          "cardinality": "one",
+          "code": "401",
+          "description": "Unauthorized - Authentication required",
+          "shapes": [],
+          "tier": "undescribed",
+          "unmapped": []
+        },
+        {
+          "cardinality": "one",
+          "code": "403",
+          "description": "Forbidden - Insufficient permissions",
+          "shapes": [],
+          "tier": "undescribed",
+          "unmapped": []
+        },
+        {
+          "cardinality": "one",
+          "code": "404",
+          "description": "Not Found - The specified ranking could not be found",
+          "shapes": [],
+          "tier": "undescribed",
+          "unmapped": []
+        },
+        {
+          "cardinality": "one",
+          "code": "405",
+          "description": "Method Not Allowed",
+          "shapes": [],
+          "tier": "undescribed",
+          "unmapped": []
+        }
+      ],
+      "segments": [
+        "ranking",
+        "{type}",
+        "{id}"
+      ],
+      "summary": "Retrieve momentum and performance rankings for various financial entities.\n\nSupported Types:\n- `portfolio`: Get a system leaderboard chart (id = leaderboard key, e.g. 'MOMENTUM_RANK').\n- `bi`: Get Buy/Sell Indicator rankings (id = indicator type).\n- `index`: Get momentum rankings for a specific market index (id = index symbol, e.g., 'NIFTY 50').\n- `<category>`: Get rankings for a custom category like 'sector' or 'industry' (type = category name, id = category value).",
+      "verb": "put"
+    }
+  ],
+  "v": 29
+}

@@ -1,0 +1,30 @@
+node_modules/
+# CI installs from package.json alone and deletes any lock it finds; a
+# committed one would only mislead whoever reads it.
+package-lock.json
+dist/
+out-tsc/
+coverage/
+.angular/
+.nx/
+*.tsbuildinfo
+# Compiled from mag_assets by `npm run assets:compile` — never hand-edited,
+# and never committed.
+public/assets/
+
+# The GeneratedSet: regenerated from the design source by `npm run gen:code`
+# on every start, build and test, never committed (ADR 0181).
+/src/app/features/
+/src/app/pages/
+/src/app/widgets/
+/src/app/shared/lib/
+/src/app/shared/type/
+/src/app/*.router.ts
+/src/app/*.router.spec.ts
+/src/app/*.provide.ts
+/src/app/*.provide.spec.ts
+
+# Local only
+.env
+.env.*
+.DS_Store

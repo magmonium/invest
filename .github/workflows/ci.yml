@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  verify:
+    name: Verify
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: package.json
+      - name: Install dependencies
+        run: |
+          rm -f package-lock.json
+          npm install --no-package-lock
+      - name: Generate code and tests from .magmonium
+        run: npm run gen:test
+      - name: Lint
+        run: npm run lint
+      - name: Test
+        run: npm test --ignore-scripts -- --no-watch --coverage
+      - name: Build assets and web component
+        run: npm run build:wc --ignore-scripts
+        env:
+          BUILD_CONFIG: prod

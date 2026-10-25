@@ -1,0 +1,107 @@
+{
+  "navMap": {
+    "root": {
+      "children": [
+        "root_search",
+        "root_notification",
+        "root_user",
+        "root_settings"
+      ],
+      "icon": "logo",
+      "label": "magmonium",
+      "linkKind": "url",
+      "navId": "root",
+      "platform": true,
+      "presentation": "static"
+    },
+    "root_notification": {
+      "children": [],
+      "icon": "notification",
+      "label": "notification",
+      "linkKind": "murl",
+      "navId": "root_notification",
+      "platform": true,
+      "presentation": "component"
+    },
+    "root_search": {
+      "children": [],
+      "icon": "search",
+      "label": "search",
+      "linkKind": "murl",
+      "navId": "root_search",
+      "platform": true,
+      "presentation": "component"
+    },
+    "root_settings": {
+      "children": [
+        "root_settings_user",
+        "root_settings_app"
+      ],
+      "icon": "settings",
+      "label": "settings",
+      "linkKind": "murl",
+      "navId": "root_settings",
+      "platform": true,
+      "presentation": "static"
+    },
+    "root_settings_app": {
+      "children": [],
+      "icon": "settings",
+      "label": "app",
+      "linkKind": "murl",
+      "navId": "root_settings_app",
+      "platform": true,
+      "presentation": "static"
+    },
+    "root_settings_user": {
+      "children": [
+        "root_settings_user_profile",
+        "root_settings_user_theme",
+        "root_settings_user_language"
+      ],
+      "icon": "user",
+      "label": "user-settings",
+      "linkKind": "murl",
+      "navId": "root_settings_user",
+      "platform": true,
+      "presentation": "static"
+    },
+    "root_settings_user_language": {
+      "children": [],
+      "icon": "language",
+      "label": "language",
+      "linkKind": "murl",
+      "navId": "root_settings_user_language",
+      "platform": true,
+      "presentation": "component"
+    },
+    "root_settings_user_profile": {
+      "children": [],
+      "icon": "user",
+      "label": "profile",
+      "linkKind": "murl",
+      "navId": "root_settings_user_profile",
+      "platform": true,
+      "presentation": "component"
+    },
+    "root_settings_user_theme": {
+      "children": [],
+      "icon": "theme",
+      "label": "theme",
+      "linkKind": "murl",
+      "navId": "root_settings_user_theme",
+      "platform": true,
+      "presentation": "component"
+    },
+    "root_user": {
+      "children": [],
+      "icon": "user",
+      "label": "user",
+      "linkKind": "murl",
+      "navId": "root_user",
+      "platform": true,
+      "presentation": "component"
+    }
+  },
+  "v": 29
+}
