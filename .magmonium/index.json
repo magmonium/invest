@@ -22,7 +22,7 @@
       "functions": {
         "94ec0572-4d3a-41b7-91c7-a313d4e13c8b": {
           "aiDrafted": true,
-          "body": "const COLUMNS = ['symbol', 'w', 'm', 'q', 'h', 'y', 'y2', 'score'] as const;\n  const NUMERIC = ['w', 'm', 'q', 'h', 'y', 'y2', 'score'] as const;\n\n  const raw = rankingMap[id] as unknown;\n  if (!Array.isArray(raw)) return undefined;\n  if (raw.length === 0) return [];\n\n  const entries = raw.map((row) =>\n    Array.isArray(row)\n      ? Object.fromEntries(COLUMNS.map((key, i) => [key, row[i]]))\n      : row\n  ) as Record<string, unknown>[];\n\n  const stats = Object.fromEntries(\n    NUMERIC.map((key) => {\n      const values = entries.map((e) => Number(e[key])).filter(Number.isFinite);\n      const min = values.length ? Math.min(...values) : 0;\n      const max = values.length ? Math.max(...values) : 0;\n      return [key, { min, max }];\n    })\n  ) as Record<string, { min: number; max: number }>;\n\n  return entries.map((entry) => {\n    const next = { ...entry } as Record<string, unknown>;\n    for (const key of NUMERIC) {\n      const { min, max } = stats[key];\n      const v = Number(entry[key]);\n      next[key] = !Number.isFinite(v) ? NaN : max === min ? 0 : ((v - min) / (max - min)) * 100;\n    }\n    return next as unknown as FinanceRankingUpdateResponse;\n  });",
+          "body": "const COLUMNS = ['symbol', 'w', 'm', 'q', 'h', 'y', 'y2', 'score'] as const;\n  const NUMERIC = ['w', 'm', 'q', 'h', 'y', 'y2', 'score'] as const;\n\n  const raw = rankingMap[id] as unknown;\n  if (!Array.isArray(raw)) return undefined;\n  if (raw.length === 0) return [];\n\n  const entries = raw.map((row) =>\n    Array.isArray(row)\n      ? Object.fromEntries(COLUMNS.map((key, i) => [key, row[i]]))\n      : row\n  ) as Record<string, unknown>[];\n\n  const stats = Object.fromEntries(\n    NUMERIC.map((key) => {\n      const values = entries.map((e) => Number(e[key])).filter(Number.isFinite);\n      const min = values.length ? Math.min(...values) : 0;\n      const max = values.length ? Math.max(...values) : 0;\n      return [key, { min, max }];\n    })\n  ) as Record<string, { min: number; max: number }>;\n\n  const normalized = entries.map((entry) => {\n    const next = { ...entry } as Record<string, unknown>;\n    for (const key of NUMERIC) {\n      const { min, max } = stats[key];\n      const v = Number(entry[key]);\n      next[key] = !Number.isFinite(v) ? NaN : max === min ? 0 : ((v - min) / (max - min)) * 100;\n    }\n    return next as unknown as FinanceRankingUpdateResponse;\n  });\n\n  return normalized.sort((a, b) => {\n    const av = Number(a.score);\n    const bv = Number(b.score);\n    if (!Number.isFinite(av) && !Number.isFinite(bv)) return 0;\n    if (!Number.isFinite(av)) return 1;\n    if (!Number.isFinite(bv)) return -1;\n    return bv - av;\n  });",
           "cases": [
             {
               "args": [
@@ -45,8 +45,8 @@
                 "\"AAA\"",
                 "{ \"AAA\": [{ \"symbol\": \"A\", \"w\": 0, \"m\": 5, \"q\": 10, \"h\": 2, \"y\": 4, \"y2\": 8, \"score\": 1 }, { \"symbol\": \"B\", \"w\": 10, \"m\": 5, \"q\": 20, \"h\": 8, \"y\": 4, \"y2\": 8, \"score\": 3 }] }"
               ],
-              "expected": "[{ \"symbol\": \"A\", \"w\": 0, \"m\": 0, \"q\": 0, \"h\": 0, \"y\": 0, \"y2\": 0, \"score\": 0 }, { \"symbol\": \"B\", \"w\": 100, \"m\": 0, \"q\": 100, \"h\": 100, \"y\": 0, \"y2\": 0, \"score\": 100 }]",
-              "name": "normalizes numeric columns to percentages"
+              "expected": "[{ \"symbol\": \"B\", \"w\": 100, \"m\": 0, \"q\": 100, \"h\": 100, \"y\": 0, \"y2\": 0, \"score\": 100 }, { \"symbol\": \"A\", \"w\": 0, \"m\": 0, \"q\": 0, \"h\": 0, \"y\": 0, \"y2\": 0, \"score\": 0 }]",
+              "name": "normalizes and sorts by score descending"
             },
             {
               "args": [
@@ -65,7 +65,7 @@
               "name": "constant values normalize to zero"
             }
           ],
-          "description": "Returns the ranking entries stored under the given id, with numeric fields (all except the symbol column) normalized to percentage values using column-wise min/max scaling.",
+          "description": "Returns ranking entries for the given id with numeric fields normalized to percentages, sorted by score descending.",
           "id": "94ec0572-4d3a-41b7-91c7-a313d4e13c8b",
           "name": "ranking",
           "params": [

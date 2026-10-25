@@ -50,7 +50,7 @@
           "cardinality": "many",
           "code": "200",
           "dataType": {
-            "shapeId": "59634b22-45c4-48b9-b950-a33f1c4023ef",
+            "shapeId": "8e8fe43e-44ce-4a99-b924-61835e04bfa1",
             "type": "shape"
           },
           "description": "Ranking chart (array of rows), or `null` when no match.",
@@ -111,14 +111,14 @@
           },
           "shapes": [
             {
-              "id": "59634b22-45c4-48b9-b950-a33f1c4023ef",
+              "id": "8e8fe43e-44ce-4a99-b924-61835e04bfa1",
               "keys": [
                 {
                   "cardinality": "one",
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "bcc0d013-e737-4076-a781-32d45268b9f8",
+                  "id": "8c365268-815e-484f-a92c-25ebf7637071",
                   "name": "symbol"
                 },
                 {
@@ -126,7 +126,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "4a15dc40-62d0-4f2f-b86a-1f07d53a8f3e",
+                  "id": "a183dbe5-62b3-4fc0-aeac-96644d8ce3eb",
                   "name": "w"
                 },
                 {
@@ -134,7 +134,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "3996bd9c-d049-45d6-9172-76e706aeff9b",
+                  "id": "b69a919a-761f-41a9-8ec2-89047e94b177",
                   "name": "m"
                 },
                 {
@@ -142,7 +142,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "ce7f3c37-085d-4ba3-bd6e-e4002c74976a",
+                  "id": "c0b42387-4534-47a4-9f85-044147cedffe",
                   "name": "q"
                 },
                 {
@@ -150,7 +150,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "9032bdcf-3cfb-4661-b2a4-6a1eff57f3d6",
+                  "id": "07dd1ee0-c058-4804-9148-cdbaad5a019a",
                   "name": "h"
                 },
                 {
@@ -158,7 +158,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "a987d57b-d2bb-4488-8124-d4f995f84097",
+                  "id": "979617b1-9937-47d4-934c-3efb154cd283",
                   "name": "y"
                 },
                 {
@@ -166,7 +166,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "b221a8f8-9f23-4983-9cbf-c7514c22de5c",
+                  "id": "532a8cb9-eb1f-4cc8-855f-89a614994397",
                   "name": "y2"
                 },
                 {
@@ -174,7 +174,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "81e44619-1f3b-4956-851b-fbf33e300bb3",
+                  "id": "fb74184c-c151-41e3-831b-9667643ae8b6",
                   "name": "score"
                 }
               ],
