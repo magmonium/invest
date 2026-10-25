@@ -359,6 +359,16 @@
       },
       "kind": "feature",
       "name": "ranking"
+    },
+    {
+      "id": "0d8a70f6-6444-479b-baf4-f6a6cf126c4d",
+      "kind": "page",
+      "name": "home"
+    },
+    {
+      "id": "6c977b12-22d7-46d9-b239-da27193df4be",
+      "kind": "page",
+      "name": "dashboard"
     }
   ],
   "sharedShapes": {},

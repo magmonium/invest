@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "id": "6c977b12-22d7-46d9-b239-da27193df4be",
+    "kind": "page",
+    "name": "dashboard"
+  },
+  "state": {
+    "controlMap": {
+      "84d637db-c300-4d2a-a0e7-25c4685f943c": {
+        "childrens": [
+          "c9e6d745-15fe-4975-8da2-7c1d8542f419"
+        ],
+        "configs": {},
+        "id": "84d637db-c300-4d2a-a0e7-25c4685f943c",
+        "type": "section"
+      },
+      "c9e6d745-15fe-4975-8da2-7c1d8542f419": {
+        "childrens": [],
+        "configs": {},
+        "id": "c9e6d745-15fe-4975-8da2-7c1d8542f419",
+        "parentId": "84d637db-c300-4d2a-a0e7-25c4685f943c",
+        "screenId": "9d9bfa01-1499-4587-8794-f3bb0e10a0c9",
+        "screenInputs": {
+          "25eccd3a-679b-4a2b-8a27-d1e6def9a91f": {
+            "kind": "static",
+            "value": "INDEX_SECTORAL_RELATIVE"
+          },
+          "39757484-69ff-4f2d-9dd4-7e0b043a5cc2": {
+            "kind": "static",
+            "value": "portfolio"
+          }
+        },
+        "type": "screen"
+      }
+    },
+    "labelSamples": {},
+    "pathSamples": {},
+    "rootControlIds": [
+      "84d637db-c300-4d2a-a0e7-25c4685f943c"
+    ],
+    "selectedControl": "c9e6d745-15fe-4975-8da2-7c1d8542f419",
+    "selectedLayerId": 2
+  },
+  "v": 29
+}
