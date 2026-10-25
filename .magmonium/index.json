@@ -3,14 +3,14 @@
   "appTarget": {
     "appId": "6addf46bb7cbbdc1345d78e9",
     "appName": "invest",
-    "appPath": "",
+    "appPath": "apps/invest/mag_assets",
     "environment": {
       "hosts": {
-        "authUrl": "https://api-dev.magmonium.com",
-        "backendUrl": "http://localhost:8000",
-        "socketUrl": "wss://pops-dev.magmonium.com"
+        "authUrl": "https://api.magmonium.com",
+        "backendUrl": "https://api.magmonium.com",
+        "socketUrl": "wss://pops.magmonium.com"
       },
-      "preset": "local"
+      "preset": "prod"
     },
     "mode": "new"
   },
@@ -60,6 +60,26 @@
     {
       "featureId": "acef9153-606d-4de2-8699-7c87fa589384",
       "id": "9d9bfa01-1499-4587-8794-f3bb0e10a0c9",
+      "inputs": {
+        "25eccd3a-679b-4a2b-8a27-d1e6def9a91f": {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "id": "25eccd3a-679b-4a2b-8a27-d1e6def9a91f",
+          "name": "id",
+          "required": true
+        },
+        "39757484-69ff-4f2d-9dd4-7e0b043a5cc2": {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "id": "39757484-69ff-4f2d-9dd4-7e0b043a5cc2",
+          "name": "type",
+          "required": true
+        }
+      },
       "kind": "feature",
       "name": "ranking"
     }
@@ -73,6 +93,6 @@
     "name": "invest",
     "open": false,
     "theme": "",
-    "version": "0.0.2"
+    "version": "0.0.3"
   }
 }

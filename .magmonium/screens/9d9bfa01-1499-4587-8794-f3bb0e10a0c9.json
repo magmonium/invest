@@ -2,6 +2,26 @@
   "meta": {
     "featureId": "acef9153-606d-4de2-8699-7c87fa589384",
     "id": "9d9bfa01-1499-4587-8794-f3bb0e10a0c9",
+    "inputs": {
+      "25eccd3a-679b-4a2b-8a27-d1e6def9a91f": {
+        "cardinality": "one",
+        "dataType": {
+          "type": "string"
+        },
+        "id": "25eccd3a-679b-4a2b-8a27-d1e6def9a91f",
+        "name": "id",
+        "required": true
+      },
+      "39757484-69ff-4f2d-9dd4-7e0b043a5cc2": {
+        "cardinality": "one",
+        "dataType": {
+          "type": "string"
+        },
+        "id": "39757484-69ff-4f2d-9dd4-7e0b043a5cc2",
+        "name": "type",
+        "required": true
+      }
+    },
     "kind": "feature",
     "name": "ranking"
   },
@@ -84,6 +104,39 @@
           ]
         },
         "id": "39761965-8223-4b48-8184-9843dd4c3ff9",
+        "outputArgs": {
+          "tableInitialized": [
+            {
+              "binding": {
+                "path": [],
+                "root": {
+                  "id": "39757484-69ff-4f2d-9dd4-7e0b043a5cc2",
+                  "kind": "input"
+                }
+              },
+              "source": "binding",
+              "target": [
+                "type"
+              ]
+            },
+            {
+              "binding": {
+                "path": [],
+                "root": {
+                  "id": "25eccd3a-679b-4a2b-8a27-d1e6def9a91f",
+                  "kind": "input"
+                }
+              },
+              "source": "binding",
+              "target": [
+                "id"
+              ]
+            }
+          ]
+        },
+        "outputs": {
+          "tableInitialized": "06cc0f93-8b99-4a09-9ffb-d11be83ecbcd"
+        },
         "parentId": "c16fe1a0-accc-43ae-9786-40fc745a669f",
         "type": "section_table"
       },
@@ -170,8 +223,8 @@
     "rootControlIds": [
       "7efa67a8-1cdf-4d0e-9120-f73cfe0c2736"
     ],
-    "selectedControl": "10b3b9f2-7f10-40e4-8fa3-ceac629a9d69",
-    "selectedLayerId": 4
+    "selectedControl": "39761965-8223-4b48-8184-9843dd4c3ff9",
+    "selectedLayerId": 3
   },
   "v": 29
 }
