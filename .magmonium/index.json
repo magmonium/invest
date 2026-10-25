@@ -3,14 +3,14 @@
   "appTarget": {
     "appId": "6addf46bb7cbbdc1345d78e9",
     "appName": "invest",
-    "appPath": "",
+    "appPath": "apps/invest/mag_assets",
     "environment": {
       "hosts": {
-        "authUrl": "https://api-dev.magmonium.com",
-        "backendUrl": "http://localhost:8000",
-        "socketUrl": "wss://pops-dev.magmonium.com"
+        "authUrl": "https://api.magmonium.com",
+        "backendUrl": "https://api.magmonium.com",
+        "socketUrl": "wss://pops.magmonium.com"
       },
-      "preset": "local"
+      "preset": "prod"
     },
     "mode": "new"
   },
