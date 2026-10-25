@@ -10,16 +10,9 @@
           "dataType": {
             "type": "string"
           },
-          "description": "The category of ranking to retrieve.",
+          "description": "Lookup kind: `portfolio`, `bi` or `index`. Any other value (e.g. `sector`, `industry`) looks up an Index by ticker.",
           "doc": {
-            "description": "The category of ranking to retrieve.",
-            "enumValues": [
-              "portfolio",
-              "bi",
-              "index",
-              "sector",
-              "industry"
-            ],
+            "description": "Lookup kind: `portfolio`, `bi` or `index`. Any other value (e.g. `sector`, `industry`) looks up an Index by ticker.",
             "members": [],
             "name": "type",
             "required": true,
@@ -36,9 +29,9 @@
           "dataType": {
             "type": "string"
           },
-          "description": "The specific identifier for the chosen type (e.g., 'NIFTY 50' for 'index', or a portfolio key).",
+          "description": "Identifier for `type`: ranking key (`portfolio`), Bi type (`bi`), Index symbol (`index`), or Index ticker (other).",
           "doc": {
-            "description": "The specific identifier for the chosen type (e.g., 'NIFTY 50' for 'index', or a portfolio key).",
+            "description": "Identifier for `type`: ranking key (`portfolio`), Bi type (`bi`), Index symbol (`index`), or Index ticker (other).",
             "members": [],
             "name": "id",
             "required": true,
@@ -54,34 +47,154 @@
       "path": "/finance/v1/ranking/{type}/{id}",
       "responses": [
         {
-          "cardinality": "one",
+          "cardinality": "many",
           "code": "200",
-          "description": "Ranking data successfully retrieved.",
+          "dataType": {
+            "shapeId": "f70a5bea-f3ca-419f-994d-a3d44869a4b6",
+            "type": "shape"
+          },
+          "description": "Ranking chart (array of rows), or `null` when no match.",
           "doc": {
             "members": [
               {
-                "description": "List of ranked items with momentum scores and performance metrics.",
                 "members": [],
-                "name": "rankings",
-                "required": false,
-                "type": "object[]"
+                "name": "symbol",
+                "required": true,
+                "type": "string"
+              },
+              {
+                "members": [],
+                "name": "w",
+                "required": true,
+                "type": "number"
+              },
+              {
+                "members": [],
+                "name": "m",
+                "required": true,
+                "type": "number"
+              },
+              {
+                "members": [],
+                "name": "q",
+                "required": true,
+                "type": "number"
+              },
+              {
+                "members": [],
+                "name": "h",
+                "required": true,
+                "type": "number"
+              },
+              {
+                "members": [],
+                "name": "y",
+                "required": true,
+                "type": "number"
+              },
+              {
+                "members": [],
+                "name": "y2",
+                "required": true,
+                "type": "number"
+              },
+              {
+                "members": [],
+                "name": "score",
+                "required": true,
+                "type": "number"
               }
             ],
             "name": "",
             "required": true,
-            "type": "object"
+            "type": "[symbol: string, w: number, m: number, q: number, h: number, y: number, y2: number, score: number][]"
           },
-          "shapes": [],
+          "shapes": [
+            {
+              "id": "f70a5bea-f3ca-419f-994d-a3d44869a4b6",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "47718b5c-98f7-4216-b901-0a0bd328193e",
+                  "name": "symbol"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "4cc30f59-a385-4c89-af2e-f8d5346d7a24",
+                  "name": "w"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "30f50630-9472-4b96-9ece-48ebb125ab44",
+                  "name": "m"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "cb8865ba-98d6-4bf2-ad65-42c3babdfe7f",
+                  "name": "q"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "35849e8d-aa16-47dd-9043-757ce208e4d5",
+                  "name": "h"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "63a4c87e-8526-40b3-aa39-7ff411a05719",
+                  "name": "y"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "43bf2a8f-9349-441c-aafa-0ff0f692a300",
+                  "name": "y2"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "312f6034-8084-4240-9e72-f4487826e370",
+                  "name": "score"
+                }
+              ],
+              "name": "finance-ranking-update-response",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/ranking/{type}/{id}",
+                "pointer": [],
+                "verb": "put"
+              },
+              "positional": true
+            }
+          ],
           "tier": "anonymous",
-          "unmapped": [
-            "rankings (object with no properties)",
-            "(response) (no expressible keys)"
-          ]
+          "unmapped": []
         },
         {
           "cardinality": "one",
           "code": "401",
-          "description": "Unauthorized - Authentication required",
+          "description": "Unauthorized - authentication required",
           "shapes": [],
           "tier": "undescribed",
           "unmapped": []
@@ -89,23 +202,7 @@
         {
           "cardinality": "one",
           "code": "403",
-          "description": "Forbidden - Insufficient permissions",
-          "shapes": [],
-          "tier": "undescribed",
-          "unmapped": []
-        },
-        {
-          "cardinality": "one",
-          "code": "404",
-          "description": "Not Found - The specified ranking could not be found",
-          "shapes": [],
-          "tier": "undescribed",
-          "unmapped": []
-        },
-        {
-          "cardinality": "one",
-          "code": "405",
-          "description": "Method Not Allowed",
+          "description": "Forbidden - missing `finance` app access",
           "shapes": [],
           "tier": "undescribed",
           "unmapped": []
@@ -116,7 +213,7 @@
         "{type}",
         "{id}"
       ],
-      "summary": "Retrieve momentum and performance rankings for various financial entities.\n\nSupported Types:\n- `portfolio`: Get a system leaderboard chart (id = leaderboard key, e.g. 'MOMENTUM_RANK').\n- `bi`: Get Buy/Sell Indicator rankings (id = indicator type).\n- `index`: Get momentum rankings for a specific market index (id = index symbol, e.g., 'NIFTY 50').\n- `<category>`: Get rankings for a custom category like 'sector' or 'industry' (type = category name, id = category value).",
+      "summary": "Get a ranking chart",
       "verb": "put"
     }
   ],

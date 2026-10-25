@@ -1,16 +1,16 @@
 {
   "appName": "invest",
   "appTarget": {
-    "appId": "6addf46bb7cbbdc1345d78e9",
+    "appId": "6ade03c0d26c2cfa6c529b05",
     "appName": "invest",
     "appPath": "apps/invest/mag_assets",
     "environment": {
       "hosts": {
-        "authUrl": "https://api.magmonium.com",
-        "backendUrl": "https://api.magmonium.com",
-        "socketUrl": "wss://pops.magmonium.com"
+        "authUrl": "https://api-dev.magmonium.com",
+        "backendUrl": "http://localhost:8000",
+        "socketUrl": "wss://pops-dev.magmonium.com"
       },
-      "preset": "prod"
+      "preset": "local"
     },
     "mode": "new"
   },
@@ -19,7 +19,161 @@
   "features": {
     "acef9153-606d-4de2-8699-7c87fa589384": {
       "computeds": {},
-      "functions": {},
+      "functions": {
+        "94ec0572-4d3a-41b7-91c7-a313d4e13c8b": {
+          "aiDrafted": true,
+          "body": "return rankingMap[id];",
+          "cases": [
+            {
+              "args": [
+                "\"AAA\"",
+                "{ \"AAA\": [{ \"symbol\": \"AAA\", \"w\": 1, \"m\": 2, \"q\": 3, \"h\": 4, \"y\": 5, \"y2\": 6, \"score\": 10 }] }"
+              ],
+              "expected": "[{ \"symbol\": \"AAA\", \"w\": 1, \"m\": 2, \"q\": 3, \"h\": 4, \"y\": 5, \"y2\": 6, \"score\": 10 }]",
+              "name": "returns entries for existing id"
+            },
+            {
+              "args": [
+                "\"missing\"",
+                "{}"
+              ],
+              "expected": "undefined",
+              "name": "returns undefined for missing id"
+            },
+            {
+              "args": [
+                "\"empty\"",
+                "{ \"empty\": [] }"
+              ],
+              "expected": "[]",
+              "name": "returns empty array for empty entries"
+            },
+            {
+              "args": [
+                "\"AAA\"",
+                "{ \"other\": [{ \"symbol\": \"AAA\", \"w\": 1, \"m\": 2, \"q\": 3, \"h\": 4, \"y\": 5, \"y2\": 6, \"score\": 10 }] }"
+              ],
+              "expected": "undefined",
+              "name": "does not search other ranking ids"
+            },
+            {
+              "args": [
+                "\"DUP\"",
+                "{ \"DUP\": [{ \"symbol\": \"DUP\", \"w\": 1, \"m\": 2, \"q\": 3, \"h\": 4, \"y\": 5, \"y2\": 6, \"score\": 1 }, { \"symbol\": \"DUP\", \"w\": 1, \"m\": 2, \"q\": 3, \"h\": 4, \"y\": 5, \"y2\": 6, \"score\": 2 }] }"
+              ],
+              "expected": "[{ \"symbol\": \"DUP\", \"w\": 1, \"m\": 2, \"q\": 3, \"h\": 4, \"y\": 5, \"y2\": 6, \"score\": 1 }, { \"symbol\": \"DUP\", \"w\": 1, \"m\": 2, \"q\": 3, \"h\": 4, \"y\": 5, \"y2\": 6, \"score\": 2 }]",
+              "name": "returns all entries for duplicate symbols"
+            }
+          ],
+          "description": "Returns the ranking entries stored under the given id.",
+          "id": "94ec0572-4d3a-41b7-91c7-a313d4e13c8b",
+          "name": "ranking",
+          "params": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "585de28d-6f07-4e29-bf24-26c676240927",
+              "name": "id"
+            },
+            {
+              "cardinality": "map-many",
+              "dataType": {
+                "shapeId": "330461db-2357-4df0-b20c-e2e747780d05",
+                "type": "shape"
+              },
+              "id": "b42efb3e-7247-4ca0-bcc8-891ae48687dc",
+              "name": "rankingMap"
+            }
+          ],
+          "returnCardinality": "many",
+          "returnType": {
+            "shapeId": "330461db-2357-4df0-b20c-e2e747780d05",
+            "type": "shape"
+          },
+          "returnUndefined": true
+        },
+        "f7e0b9b5-584d-41e5-91b7-6a7b7ddc4217": {
+          "aiDrafted": true,
+          "body": "rankingMap[id] = response;\n  return rankingMap;",
+          "cases": [
+            {
+              "args": [
+                "[{ \"symbol\": \"AAPL\", \"w\": 1, \"m\": 2, \"q\": 3, \"h\": 4, \"y\": 5, \"y2\": 6, \"score\": 7 }]",
+                "{}",
+                "\"AAPL\""
+              ],
+              "expected": "{ \"AAPL\": [{ \"symbol\": \"AAPL\", \"w\": 1, \"m\": 2, \"q\": 3, \"h\": 4, \"y\": 5, \"y2\": 6, \"score\": 7 }] }",
+              "name": "assigns response to a new id"
+            },
+            {
+              "args": [
+                "[{ \"symbol\": \"AAPL\", \"w\": 1, \"m\": 2, \"q\": 3, \"h\": 4, \"y\": 5, \"y2\": 6, \"score\": 7 }]",
+                "{ \"MSFT\": [{ \"symbol\": \"MSFT\", \"w\": 8, \"m\": 9, \"q\": 10, \"h\": 11, \"y\": 12, \"y2\": 13, \"score\": 14 }] }",
+                "\"AAPL\""
+              ],
+              "expected": "{ \"MSFT\": [{ \"symbol\": \"MSFT\", \"w\": 8, \"m\": 9, \"q\": 10, \"h\": 11, \"y\": 12, \"y2\": 13, \"score\": 14 }], \"AAPL\": [{ \"symbol\": \"AAPL\", \"w\": 1, \"m\": 2, \"q\": 3, \"h\": 4, \"y\": 5, \"y2\": 6, \"score\": 7 }] }",
+              "name": "preserves existing entries"
+            },
+            {
+              "args": [
+                "[]",
+                "{ \"A\": [] }",
+                "\"B\""
+              ],
+              "expected": "{ \"A\": [], \"B\": [] }",
+              "name": "stores an empty response array"
+            },
+            {
+              "args": [
+                "[{ \"symbol\": \"NEW\", \"w\": 0, \"m\": 0, \"q\": 0, \"h\": 0, \"y\": 0, \"y2\": 0, \"score\": 0 }]",
+                "{ \"id\": [{ \"symbol\": \"OLD\", \"w\": 1, \"m\": 1, \"q\": 1, \"h\": 1, \"y\": 1, \"y2\": 1, \"score\": 1 }] }",
+                "\"id\""
+              ],
+              "expected": "{ \"id\": [{ \"symbol\": \"NEW\", \"w\": 0, \"m\": 0, \"q\": 0, \"h\": 0, \"y\": 0, \"y2\": 0, \"score\": 0 }] }",
+              "name": "overwrites an existing key"
+            }
+          ],
+          "description": "Updates the ranking map by assigning the provided response array to the given id key and returns the map.",
+          "id": "f7e0b9b5-584d-41e5-91b7-6a7b7ddc4217",
+          "name": "updateRankingMap",
+          "params": [
+            {
+              "cardinality": "many",
+              "dataType": {
+                "shapeId": "330461db-2357-4df0-b20c-e2e747780d05",
+                "type": "shape"
+              },
+              "id": "24546699-28ff-47c7-bfa7-94e3599797c3",
+              "name": "response"
+            },
+            {
+              "cardinality": "map-many",
+              "dataType": {
+                "shapeId": "330461db-2357-4df0-b20c-e2e747780d05",
+                "type": "shape"
+              },
+              "id": "7b478eb1-428a-4eeb-a3e8-fd9784f8145a",
+              "name": "rankingMap"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "66f7413e-fade-4c56-bbdf-51b11f8a7d04",
+              "name": "id"
+            }
+          ],
+          "returnCardinality": "map-many",
+          "returnType": {
+            "shapeId": "330461db-2357-4df0-b20c-e2e747780d05",
+            "type": "shape"
+          },
+          "tier": "feature"
+        }
+      },
       "id": "acef9153-606d-4de2-8699-7c87fa589384",
       "methods": {
         "06cc0f93-8b99-4a09-9ffb-d11be83ecbcd": {
@@ -44,13 +198,125 @@
           ],
           "name": "updateFinanceRankingTypeId",
           "path": "/finance/v1/ranking/{type}/{id}",
-          "response": [],
+          "response": [
+            {
+              "code": "200",
+              "propertyId": "36c5f927-734f-424d-acf0-6e316466034a",
+              "source": [],
+              "transform": {
+                "args": [
+                  {
+                    "path": [],
+                    "source": "response"
+                  },
+                  {
+                    "path": [
+                      "36c5f927-734f-424d-acf0-6e316466034a"
+                    ],
+                    "source": "state"
+                  },
+                  {
+                    "arg": "id",
+                    "source": "args"
+                  }
+                ],
+                "functionId": "f7e0b9b5-584d-41e5-91b7-6a7b7ddc4217"
+              }
+            }
+          ],
           "verb": "put"
         }
       },
       "name": "analysis",
-      "properties": {},
-      "shapes": {},
+      "properties": {
+        "36c5f927-734f-424d-acf0-6e316466034a": {
+          "cardinality": "map-many",
+          "dataType": {
+            "shapeId": "330461db-2357-4df0-b20c-e2e747780d05",
+            "type": "shape"
+          },
+          "id": "36c5f927-734f-424d-acf0-6e316466034a",
+          "name": "rankingMap"
+        }
+      },
+      "shapes": {
+        "330461db-2357-4df0-b20c-e2e747780d05": {
+          "id": "330461db-2357-4df0-b20c-e2e747780d05",
+          "keys": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "2c24bcb6-ad57-4656-bc44-8ce58e28af8e",
+              "name": "symbol"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "f57ebf84-d2c2-4e38-954e-2c5a5324c052",
+              "name": "w"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "0e3abd2d-36d8-45d2-a834-95cacdd5dc6b",
+              "name": "m"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "77758a70-3e03-464b-9c53-fe9fa71cde7c",
+              "name": "q"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "0f1efa25-4902-4fa9-991a-d530d1c3e183",
+              "name": "h"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "ddda4afa-d670-48b7-8a5d-c5fbd7abab35",
+              "name": "y"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "c1df8a62-5822-4dc7-910c-43a72eaf4a66",
+              "name": "y2"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "b3f6bdf2-68ac-4134-b52d-8e061514a57b",
+              "name": "score"
+            }
+          ],
+          "name": "finance-ranking-update-response",
+          "origin": {
+            "code": "200",
+            "path": "/finance/v1/ranking/{type}/{id}",
+            "pointer": [],
+            "verb": "put"
+          }
+        }
+      },
       "variants": {}
     }
   },
@@ -58,6 +324,25 @@
   "npmAllowlist": {},
   "screens": [
     {
+      "computeds": {
+        "6326cf58-8c2d-4002-8068-3ae1918fa69c": {
+          "args": {
+            "585de28d-6f07-4e29-bf24-26c676240927": {
+              "inputId": "25eccd3a-679b-4a2b-8a27-d1e6def9a91f",
+              "source": "input"
+            },
+            "b42efb3e-7247-4ca0-bcc8-891ae48687dc": {
+              "path": [
+                "36c5f927-734f-424d-acf0-6e316466034a"
+              ],
+              "source": "path"
+            }
+          },
+          "functionId": "94ec0572-4d3a-41b7-91c7-a313d4e13c8b",
+          "id": "6326cf58-8c2d-4002-8068-3ae1918fa69c",
+          "name": "ranking"
+        }
+      },
       "featureId": "acef9153-606d-4de2-8699-7c87fa589384",
       "id": "9d9bfa01-1499-4587-8794-f3bb0e10a0c9",
       "inputs": {
@@ -87,9 +372,9 @@
   "sharedShapes": {},
   "v": 29,
   "wcConfig": {
-    "appColor": "#199e10",
-    "description": "Indian market and investment",
-    "logoGlyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 169.732 169.732\" fill=\"#fff\"><path d=\"M160.129,89.592c0,21.387-8.328,41.493-23.449,56.615c-15.122,15.122-35.227,23.45-56.612,23.45c-0.001,0-0.002,0-0.003,0  c-0.64,0-1.284-0.008-1.927-0.023c-20.55-0.483-39.946-8.829-54.616-23.498S0.507,112.071,0.023,91.521  c-0.512-21.765,7.572-42.316,22.762-57.868C37.98,18.096,58.323,9.529,80.065,9.529c2.762,0,5,2.239,5,5v64.758  c0,2.926,2.38,5.306,5.306,5.306h64.759C157.891,84.592,160.129,86.831,160.129,89.592z M169.732,70.805  c0-39.001-31.73-70.73-70.731-70.73c-2.762,0-5,2.239-5,5v65.73c0,2.761,2.238,5,5,5h65.731  C167.494,75.805,169.732,73.567,169.732,70.805z M104,10.279c29.507,2.417,53.11,26.021,55.527,55.526H104V10.279z\"/></svg>",
+    "appColor": "#3949ab",
+    "description": "to invest",
+    "logoGlyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#fff\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 5H15M12 5V19M9 19H15\"/></svg>",
     "name": "invest",
     "open": false,
     "theme": "",

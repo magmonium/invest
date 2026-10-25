@@ -1,5 +1,24 @@
 {
   "meta": {
+    "computeds": {
+      "6326cf58-8c2d-4002-8068-3ae1918fa69c": {
+        "args": {
+          "585de28d-6f07-4e29-bf24-26c676240927": {
+            "inputId": "25eccd3a-679b-4a2b-8a27-d1e6def9a91f",
+            "source": "input"
+          },
+          "b42efb3e-7247-4ca0-bcc8-891ae48687dc": {
+            "path": [
+              "36c5f927-734f-424d-acf0-6e316466034a"
+            ],
+            "source": "path"
+          }
+        },
+        "functionId": "94ec0572-4d3a-41b7-91c7-a313d4e13c8b",
+        "id": "6326cf58-8c2d-4002-8068-3ae1918fa69c",
+        "name": "ranking"
+      }
+    },
     "featureId": "acef9153-606d-4de2-8699-7c87fa589384",
     "id": "9d9bfa01-1499-4587-8794-f3bb0e10a0c9",
     "inputs": {
@@ -27,7 +46,37 @@
   },
   "state": {
     "controlMap": {
+      "08f123e8-58ab-4ee1-8a01-6b39a1eec10b": {
+        "bindings": {
+          "label": {
+            "path": [
+              "2c24bcb6-ad57-4656-bc44-8ce58e28af8e"
+            ],
+            "root": {
+              "alias": "item",
+              "kind": "alias",
+              "repeatId": "10b3b9f2-7f10-40e4-8fa3-ceac629a9d69"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {},
+        "id": "08f123e8-58ab-4ee1-8a01-6b39a1eec10b",
+        "parentId": "7d7d0070-f28e-40be-a59f-aabcd877daa3",
+        "source": "raw",
+        "textSource": "dynamic",
+        "type": "text"
+      },
       "10b3b9f2-7f10-40e4-8fa3-ceac629a9d69": {
+        "bindings": {
+          "source": {
+            "path": [],
+            "root": {
+              "id": "6326cf58-8c2d-4002-8068-3ae1918fa69c",
+              "kind": "screen_computed"
+            }
+          }
+        },
         "childrens": [
           "f40140a5-2592-41de-bce7-275adfc63d42"
         ],
@@ -36,7 +85,11 @@
         "parentId": "39761965-8223-4b48-8184-9843dd4c3ff9",
         "repeat": {
           "indexAlias": "index",
-          "itemAlias": "item"
+          "itemAlias": "item",
+          "sampleRows": 3,
+          "track": {
+            "kind": "index"
+          }
         },
         "type": "repeat"
       },
@@ -50,7 +103,9 @@
       "23ae8409-861a-4958-9c21-a014fbf5366f": {
         "bindings": {
           "label": {
-            "path": [],
+            "path": [
+              "2c24bcb6-ad57-4656-bc44-8ce58e28af8e"
+            ],
             "root": {
               "alias": "item",
               "kind": "alias",
@@ -80,7 +135,7 @@
           "columns": [
             {
               "align": "center",
-              "label": "instrument"
+              "label": "ticker"
             },
             {
               "label": "weekly"
@@ -148,7 +203,9 @@
         "type": "section_table_cell"
       },
       "7d7d0070-f28e-40be-a59f-aabcd877daa3": {
-        "childrens": [],
+        "childrens": [
+          "08f123e8-58ab-4ee1-8a01-6b39a1eec10b"
+        ],
         "configs": {},
         "id": "7d7d0070-f28e-40be-a59f-aabcd877daa3",
         "parentId": "f40140a5-2592-41de-bce7-275adfc63d42",
@@ -173,7 +230,9 @@
         "type": "section_table_cell"
       },
       "b06ea51c-39fd-4e84-800c-25e82b03b509": {
-        "childrens": [],
+        "childrens": [
+          "e9d4e9f3-fc6d-4b73-9d12-699626854b8f"
+        ],
         "configs": {},
         "id": "b06ea51c-39fd-4e84-800c-25e82b03b509",
         "parentId": "f40140a5-2592-41de-bce7-275adfc63d42",
@@ -202,6 +261,27 @@
         "parentId": "f40140a5-2592-41de-bce7-275adfc63d42",
         "type": "section_table_cell"
       },
+      "e9d4e9f3-fc6d-4b73-9d12-699626854b8f": {
+        "bindings": {
+          "label": {
+            "path": [
+              "2c24bcb6-ad57-4656-bc44-8ce58e28af8e"
+            ],
+            "root": {
+              "alias": "item",
+              "kind": "alias",
+              "repeatId": "10b3b9f2-7f10-40e4-8fa3-ceac629a9d69"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {},
+        "id": "e9d4e9f3-fc6d-4b73-9d12-699626854b8f",
+        "parentId": "b06ea51c-39fd-4e84-800c-25e82b03b509",
+        "source": "raw",
+        "textSource": "dynamic",
+        "type": "text"
+      },
       "f40140a5-2592-41de-bce7-275adfc63d42": {
         "childrens": [
           "8eb53d07-25a6-4d30-a767-1a9f8b3c71b6",
@@ -223,8 +303,8 @@
     "rootControlIds": [
       "7efa67a8-1cdf-4d0e-9120-f73cfe0c2736"
     ],
-    "selectedControl": "39761965-8223-4b48-8184-9843dd4c3ff9",
-    "selectedLayerId": 3
+    "selectedControl": "3566f04f-3953-4aea-956f-0e5f88ae7224",
+    "selectedLayerId": 6
   },
   "v": 29
 }

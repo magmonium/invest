@@ -1,8 +1,8 @@
 // The Environment — what Run, `ng serve` and every build use (ADR 0194).
-// Preset: prod.
+// Preset: local.
 export const environment = {
-  production: true,
-  authUrl: 'https://api.magmonium.com',
-  url: 'https://api.magmonium.com',
-  socketUrl: 'wss://pops.magmonium.com',
+  production: false,
+  authUrl: 'https://api-dev.magmonium.com',
+  url: 'http://localhost:8000',
+  socketUrl: 'wss://pops-dev.magmonium.com',
 };
