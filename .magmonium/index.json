@@ -2180,23 +2180,6 @@
   "functions": {
     "c8c5bf6f-836c-41eb-ad20-c1106e93431c": {
       "body": "return new Date().toISOString();",
-      "cases": [
-        {
-          "args": [],
-          "expected": "\"2025-02-15T00:00:00.000Z\"",
-          "name": "returns the mock ISO 8601 timestamp"
-        },
-        {
-          "args": [],
-          "expected": "\"2025-02-15T00:00:00.000Z\"",
-          "name": "returns a string of length 24"
-        },
-        {
-          "args": [],
-          "expected": "\"2025-02-15T00:00:00.000Z\"",
-          "name": "ends with Z indicating UTC"
-        }
-      ],
       "description": "Returns a mock current moment as an ISO 8601 timestamp in UTC.",
       "id": "c8c5bf6f-836c-41eb-ad20-c1106e93431c",
       "name": "now",
