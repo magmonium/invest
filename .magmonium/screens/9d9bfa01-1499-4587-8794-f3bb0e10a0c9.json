@@ -1,5 +1,24 @@
 {
   "meta": {
+    "computeds": {
+      "6326cf58-8c2d-4002-8068-3ae1918fa69c": {
+        "args": {
+          "585de28d-6f07-4e29-bf24-26c676240927": {
+            "inputId": "25eccd3a-679b-4a2b-8a27-d1e6def9a91f",
+            "source": "input"
+          },
+          "b42efb3e-7247-4ca0-bcc8-891ae48687dc": {
+            "path": [
+              "36c5f927-734f-424d-acf0-6e316466034a"
+            ],
+            "source": "path"
+          }
+        },
+        "functionId": "94ec0572-4d3a-41b7-91c7-a313d4e13c8b",
+        "id": "6326cf58-8c2d-4002-8068-3ae1918fa69c",
+        "name": "ranking"
+      }
+    },
     "featureId": "acef9153-606d-4de2-8699-7c87fa589384",
     "id": "9d9bfa01-1499-4587-8794-f3bb0e10a0c9",
     "inputs": {
@@ -28,6 +47,15 @@
   "state": {
     "controlMap": {
       "10b3b9f2-7f10-40e4-8fa3-ceac629a9d69": {
+        "bindings": {
+          "source": {
+            "path": [],
+            "root": {
+              "id": "6326cf58-8c2d-4002-8068-3ae1918fa69c",
+              "kind": "screen_computed"
+            }
+          }
+        },
         "childrens": [
           "f40140a5-2592-41de-bce7-275adfc63d42"
         ],
@@ -36,12 +64,19 @@
         "parentId": "39761965-8223-4b48-8184-9843dd4c3ff9",
         "repeat": {
           "indexAlias": "index",
-          "itemAlias": "item"
+          "itemAlias": "item",
+          "keyAlias": "key",
+          "sampleRows": 3,
+          "track": {
+            "kind": "index"
+          }
         },
         "type": "repeat"
       },
       "1ecda88c-04ac-45b1-ab30-c22f69bb4bf5": {
-        "childrens": [],
+        "childrens": [
+          "e3c11665-96f9-48ab-8714-e65fa4c23596"
+        ],
         "configs": {},
         "id": "1ecda88c-04ac-45b1-ab30-c22f69bb4bf5",
         "parentId": "f40140a5-2592-41de-bce7-275adfc63d42",
@@ -50,7 +85,9 @@
       "23ae8409-861a-4958-9c21-a014fbf5366f": {
         "bindings": {
           "label": {
-            "path": [],
+            "path": [
+              "2c24bcb6-ad57-4656-bc44-8ce58e28af8e"
+            ],
             "root": {
               "alias": "item",
               "kind": "alias",
@@ -65,8 +102,33 @@
         "textSource": "dynamic",
         "type": "text"
       },
-      "3566f04f-3953-4aea-956f-0e5f88ae7224": {
+      "32dbe3b9-230f-4f8a-9a7a-9944f6e7f4b2": {
+        "bindings": {
+          "value": {
+            "path": [
+              "f57ebf84-d2c2-4e38-954e-2c5a5324c052"
+            ],
+            "root": {
+              "alias": "item",
+              "kind": "alias",
+              "repeatId": "10b3b9f2-7f10-40e4-8fa3-ceac629a9d69"
+            }
+          }
+        },
         "childrens": [],
+        "configs": {
+          "fromColor": "error",
+          "radius": "none",
+          "toColor": "success"
+        },
+        "id": "32dbe3b9-230f-4f8a-9a7a-9944f6e7f4b2",
+        "parentId": "7d7d0070-f28e-40be-a59f-aabcd877daa3",
+        "type": "heat_swatch"
+      },
+      "3566f04f-3953-4aea-956f-0e5f88ae7224": {
+        "childrens": [
+          "f2d89b76-4d36-438a-bfef-831e1414d657"
+        ],
         "configs": {},
         "id": "3566f04f-3953-4aea-956f-0e5f88ae7224",
         "parentId": "f40140a5-2592-41de-bce7-275adfc63d42",
@@ -80,7 +142,7 @@
           "columns": [
             {
               "align": "center",
-              "label": "instrument"
+              "label": "ticker"
             },
             {
               "label": "weekly"
@@ -100,8 +162,12 @@
             },
             {
               "label": "long-term"
+            },
+            {
+              "label": "overall"
             }
-          ]
+          ],
+          "variant": "compact"
         },
         "id": "39761965-8223-4b48-8184-9843dd4c3ff9",
         "outputArgs": {
@@ -140,15 +206,76 @@
         "parentId": "c16fe1a0-accc-43ae-9786-40fc745a669f",
         "type": "section_table"
       },
-      "50c85a0b-09e2-4d3f-8964-29180d947932": {
+      "45e96aa8-fa82-4d49-82ad-8e51d1acada1": {
+        "childrens": [
+          "4c395d61-bbea-48a6-9585-0b3202c4e9c6"
+        ],
+        "configs": {},
+        "id": "45e96aa8-fa82-4d49-82ad-8e51d1acada1",
+        "parentId": "f40140a5-2592-41de-bce7-275adfc63d42",
+        "type": "section_table_cell"
+      },
+      "4c395d61-bbea-48a6-9585-0b3202c4e9c6": {
+        "bindings": {
+          "value": {
+            "path": [
+              "b3f6bdf2-68ac-4134-b52d-8e061514a57b"
+            ],
+            "root": {
+              "alias": "item",
+              "kind": "alias",
+              "repeatId": "10b3b9f2-7f10-40e4-8fa3-ceac629a9d69"
+            }
+          }
+        },
         "childrens": [],
+        "configs": {
+          "fromColor": "error",
+          "radius": "none",
+          "toColor": "success"
+        },
+        "id": "4c395d61-bbea-48a6-9585-0b3202c4e9c6",
+        "parentId": "45e96aa8-fa82-4d49-82ad-8e51d1acada1",
+        "source": "raw",
+        "type": "heat_swatch"
+      },
+      "50c85a0b-09e2-4d3f-8964-29180d947932": {
+        "childrens": [
+          "630c75a3-e93c-48cc-b399-706780f8cff0"
+        ],
         "configs": {},
         "id": "50c85a0b-09e2-4d3f-8964-29180d947932",
         "parentId": "f40140a5-2592-41de-bce7-275adfc63d42",
         "type": "section_table_cell"
       },
-      "7d7d0070-f28e-40be-a59f-aabcd877daa3": {
+      "630c75a3-e93c-48cc-b399-706780f8cff0": {
+        "bindings": {
+          "value": {
+            "path": [
+              "c1df8a62-5822-4dc7-910c-43a72eaf4a66"
+            ],
+            "root": {
+              "alias": "item",
+              "kind": "alias",
+              "repeatId": "10b3b9f2-7f10-40e4-8fa3-ceac629a9d69"
+            }
+          }
+        },
         "childrens": [],
+        "configs": {
+          "fromColor": "error",
+          "radius": "none",
+          "toColor": "success"
+        },
+        "id": "630c75a3-e93c-48cc-b399-706780f8cff0",
+        "parentId": "50c85a0b-09e2-4d3f-8964-29180d947932",
+        "source": "raw",
+        "type": "heat_swatch"
+      },
+      "7d7d0070-f28e-40be-a59f-aabcd877daa3": {
+        "childrens": [
+          "32dbe3b9-230f-4f8a-9a7a-9944f6e7f4b2"
+        ],
         "configs": {},
         "id": "7d7d0070-f28e-40be-a59f-aabcd877daa3",
         "parentId": "f40140a5-2592-41de-bce7-275adfc63d42",
@@ -156,7 +283,6 @@
       },
       "7efa67a8-1cdf-4d0e-9120-f73cfe0c2736": {
         "childrens": [
-          "ba080fab-f90d-4261-84e0-a4131d2dc611",
           "c16fe1a0-accc-43ae-9786-40fc745a669f"
         ],
         "configs": {},
@@ -172,19 +298,62 @@
         "parentId": "f40140a5-2592-41de-bce7-275adfc63d42",
         "type": "section_table_cell"
       },
-      "b06ea51c-39fd-4e84-800c-25e82b03b509": {
+      "9030c10f-b97f-451e-a7ae-a4c6a2550266": {
+        "bindings": {
+          "value": {
+            "path": [
+              "ddda4afa-d670-48b7-8a5d-c5fbd7abab35"
+            ],
+            "root": {
+              "alias": "item",
+              "kind": "alias",
+              "repeatId": "10b3b9f2-7f10-40e4-8fa3-ceac629a9d69"
+            }
+          }
+        },
         "childrens": [],
+        "configs": {
+          "fromColor": "error",
+          "radius": "none",
+          "toColor": "success"
+        },
+        "id": "9030c10f-b97f-451e-a7ae-a4c6a2550266",
+        "parentId": "d430c53f-2797-4ddc-bf73-55e7db877ba6",
+        "source": "raw",
+        "type": "heat_swatch"
+      },
+      "b06ea51c-39fd-4e84-800c-25e82b03b509": {
+        "childrens": [
+          "b4061790-8614-40f0-ab6c-f9c47ef1a1f0"
+        ],
         "configs": {},
         "id": "b06ea51c-39fd-4e84-800c-25e82b03b509",
         "parentId": "f40140a5-2592-41de-bce7-275adfc63d42",
         "type": "section_table_cell"
       },
-      "ba080fab-f90d-4261-84e0-a4131d2dc611": {
+      "b4061790-8614-40f0-ab6c-f9c47ef1a1f0": {
+        "bindings": {
+          "value": {
+            "path": [
+              "0e3abd2d-36d8-45d2-a834-95cacdd5dc6b"
+            ],
+            "root": {
+              "alias": "item",
+              "kind": "alias",
+              "repeatId": "10b3b9f2-7f10-40e4-8fa3-ceac629a9d69"
+            }
+          }
+        },
         "childrens": [],
-        "configs": {},
-        "id": "ba080fab-f90d-4261-84e0-a4131d2dc611",
-        "parentId": "7efa67a8-1cdf-4d0e-9120-f73cfe0c2736",
-        "type": "section_header"
+        "configs": {
+          "fromColor": "error",
+          "radius": "none",
+          "toColor": "success"
+        },
+        "id": "b4061790-8614-40f0-ab6c-f9c47ef1a1f0",
+        "parentId": "b06ea51c-39fd-4e84-800c-25e82b03b509",
+        "source": "raw",
+        "type": "heat_swatch"
       },
       "c16fe1a0-accc-43ae-9786-40fc745a669f": {
         "childrens": [
@@ -196,11 +365,61 @@
         "type": "col"
       },
       "d430c53f-2797-4ddc-bf73-55e7db877ba6": {
-        "childrens": [],
+        "childrens": [
+          "9030c10f-b97f-451e-a7ae-a4c6a2550266"
+        ],
         "configs": {},
         "id": "d430c53f-2797-4ddc-bf73-55e7db877ba6",
         "parentId": "f40140a5-2592-41de-bce7-275adfc63d42",
         "type": "section_table_cell"
+      },
+      "e3c11665-96f9-48ab-8714-e65fa4c23596": {
+        "bindings": {
+          "value": {
+            "path": [
+              "0f1efa25-4902-4fa9-991a-d530d1c3e183"
+            ],
+            "root": {
+              "alias": "item",
+              "kind": "alias",
+              "repeatId": "10b3b9f2-7f10-40e4-8fa3-ceac629a9d69"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {
+          "fromColor": "error",
+          "radius": "none",
+          "toColor": "success"
+        },
+        "id": "e3c11665-96f9-48ab-8714-e65fa4c23596",
+        "parentId": "1ecda88c-04ac-45b1-ab30-c22f69bb4bf5",
+        "source": "raw",
+        "type": "heat_swatch"
+      },
+      "f2d89b76-4d36-438a-bfef-831e1414d657": {
+        "bindings": {
+          "value": {
+            "path": [
+              "77758a70-3e03-464b-9c53-fe9fa71cde7c"
+            ],
+            "root": {
+              "alias": "item",
+              "kind": "alias",
+              "repeatId": "10b3b9f2-7f10-40e4-8fa3-ceac629a9d69"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {
+          "fromColor": "error",
+          "radius": "none",
+          "toColor": "success"
+        },
+        "id": "f2d89b76-4d36-438a-bfef-831e1414d657",
+        "parentId": "3566f04f-3953-4aea-956f-0e5f88ae7224",
+        "source": "raw",
+        "type": "heat_swatch"
       },
       "f40140a5-2592-41de-bce7-275adfc63d42": {
         "childrens": [
@@ -210,7 +429,8 @@
           "3566f04f-3953-4aea-956f-0e5f88ae7224",
           "1ecda88c-04ac-45b1-ab30-c22f69bb4bf5",
           "d430c53f-2797-4ddc-bf73-55e7db877ba6",
-          "50c85a0b-09e2-4d3f-8964-29180d947932"
+          "50c85a0b-09e2-4d3f-8964-29180d947932",
+          "45e96aa8-fa82-4d49-82ad-8e51d1acada1"
         ],
         "configs": {},
         "id": "f40140a5-2592-41de-bce7-275adfc63d42",
@@ -223,8 +443,8 @@
     "rootControlIds": [
       "7efa67a8-1cdf-4d0e-9120-f73cfe0c2736"
     ],
-    "selectedControl": "39761965-8223-4b48-8184-9843dd4c3ff9",
-    "selectedLayerId": 3
+    "selectedControl": "c16fe1a0-accc-43ae-9786-40fc745a669f",
+    "selectedLayerId": 2
   },
   "v": 29
 }

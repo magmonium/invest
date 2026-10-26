@@ -2,6 +2,7 @@
   "navMap": {
     "root": {
       "children": [
+        "root_default",
         "root_search",
         "root_notification",
         "root_user",
@@ -12,6 +13,24 @@
       "linkKind": "url",
       "navId": "root",
       "platform": true,
+      "presentation": "static"
+    },
+    "root_default": {
+      "children": [
+        "root_default_default"
+      ],
+      "isDefault": true,
+      "linkKind": "url",
+      "navId": "root_default",
+      "pageId": "0d8a70f6-6444-479b-baf4-f6a6cf126c4d",
+      "presentation": "static"
+    },
+    "root_default_default": {
+      "children": [],
+      "isDefault": true,
+      "linkKind": "url",
+      "navId": "root_default_default",
+      "pageId": "6c977b12-22d7-46d9-b239-da27193df4be",
       "presentation": "static"
     },
     "root_notification": {
