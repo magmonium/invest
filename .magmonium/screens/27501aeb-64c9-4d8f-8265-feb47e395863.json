@@ -55,9 +55,7 @@
   "state": {
     "controlMap": {
       "0dcaf353-a197-4e32-9b02-89dbd6ff8bee": {
-        "childrens": [
-          "1035960c-5b33-4f9e-b065-2ab623672ef0"
-        ],
+        "childrens": [],
         "configs": {},
         "id": "0dcaf353-a197-4e32-9b02-89dbd6ff8bee",
         "outputArgs": {
@@ -173,50 +171,6 @@
         },
         "type": "section"
       },
-      "1035960c-5b33-4f9e-b065-2ab623672ef0": {
-        "childrens": [
-          "bafc2bb2-2e34-4a5b-b767-1c2b10e9ce98"
-        ],
-        "configs": {
-          "height": 480,
-          "measure": false,
-          "navigator": false,
-          "range": "1y",
-          "scale": "auto",
-          "variant": "minimal"
-        },
-        "id": "1035960c-5b33-4f9e-b065-2ab623672ef0",
-        "parentId": "0dcaf353-a197-4e32-9b02-89dbd6ff8bee",
-        "type": "section_chart"
-      },
-      "24fe77a6-862c-4345-86ea-50f29e87f898": {
-        "bindings": {
-          "data": {
-            "path": [],
-            "root": {
-              "alias": "item",
-              "kind": "alias",
-              "repeatId": "bafc2bb2-2e34-4a5b-b767-1c2b10e9ce98"
-            }
-          },
-          "label": {
-            "path": [],
-            "root": {
-              "alias": "key",
-              "kind": "alias",
-              "repeatId": "bafc2bb2-2e34-4a5b-b767-1c2b10e9ce98"
-            }
-          }
-        },
-        "childrens": [],
-        "configs": {
-          "x": "ts",
-          "y": "lp"
-        },
-        "id": "24fe77a6-862c-4345-86ea-50f29e87f898",
-        "parentId": "bafc2bb2-2e34-4a5b-b767-1c2b10e9ce98",
-        "type": "section_chart_series"
-      },
       "bafc2bb2-2e34-4a5b-b767-1c2b10e9ce98": {
         "bindings": {
           "source": {
@@ -227,9 +181,7 @@
             }
           }
         },
-        "childrens": [
-          "24fe77a6-862c-4345-86ea-50f29e87f898"
-        ],
+        "childrens": [],
         "configs": {},
         "id": "bafc2bb2-2e34-4a5b-b767-1c2b10e9ce98",
         "parentId": "1035960c-5b33-4f9e-b065-2ab623672ef0",
@@ -245,8 +197,7 @@
     "rootControlIds": [
       "0dcaf353-a197-4e32-9b02-89dbd6ff8bee"
     ],
-    "selectedControl": "1035960c-5b33-4f9e-b065-2ab623672ef0",
-    "selectedLayerId": 2
+    "selectedLayerId": 0
   },
   "v": 29
 }

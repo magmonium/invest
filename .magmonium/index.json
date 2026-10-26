@@ -1,16 +1,16 @@
 {
   "appName": "invest",
   "appTarget": {
-    "appId": "6ade03c0d26c2cfa6c529b05",
+    "appId": "6addf46bb7cbbdc1345d78e9",
     "appName": "invest",
     "appPath": "apps/invest/mag_assets",
     "environment": {
       "hosts": {
-        "authUrl": "http://localhost:8000",
-        "backendUrl": "http://localhost:8000",
-        "socketUrl": "wss://pops-dev.magmonium.com"
+        "authUrl": "https://api.magmonium.com",
+        "backendUrl": "https://api.magmonium.com",
+        "socketUrl": "wss://pops.magmonium.com"
       },
-      "preset": "local"
+      "preset": "prod"
     },
     "mode": "new"
   },
@@ -2177,19 +2177,7 @@
       "variants": {}
     }
   },
-  "functions": {
-    "c8c5bf6f-836c-41eb-ad20-c1106e93431c": {
-      "body": "return new Date().toISOString();",
-      "description": "Returns a mock current moment as an ISO 8601 timestamp in UTC.",
-      "id": "c8c5bf6f-836c-41eb-ad20-c1106e93431c",
-      "name": "now",
-      "params": [],
-      "returnCardinality": "one",
-      "returnType": {
-        "type": "string"
-      }
-    }
-  },
+  "functions": {},
   "npmAllowlist": {},
   "one": "0.4.61",
   "screens": [
@@ -2305,12 +2293,12 @@
   "sharedShapes": {},
   "v": 29,
   "wcConfig": {
-    "appColor": "#3949ab",
-    "description": "to invest",
-    "logoGlyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#fff\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 5H15M12 5V19M9 19H15\"/></svg>",
+    "appColor": "#199e10",
+    "description": "Indian market and investment",
+    "logoGlyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 169.732 169.732\" fill=\"#fff\"><path d=\"M160.129,89.592c0,21.387-8.328,41.493-23.449,56.615c-15.122,15.122-35.227,23.45-56.612,23.45c-0.001,0-0.002,0-0.003,0  c-0.64,0-1.284-0.008-1.927-0.023c-20.55-0.483-39.946-8.829-54.616-23.498S0.507,112.071,0.023,91.521  c-0.512-21.765,7.572-42.316,22.762-57.868C37.98,18.096,58.323,9.529,80.065,9.529c2.762,0,5,2.239,5,5v64.758  c0,2.926,2.38,5.306,5.306,5.306h64.759C157.891,84.592,160.129,86.831,160.129,89.592z M169.732,70.805  c0-39.001-31.73-70.73-70.731-70.73c-2.762,0-5,2.239-5,5v65.73c0,2.761,2.238,5,5,5h65.731  C167.494,75.805,169.732,73.567,169.732,70.805z M104,10.279c29.507,2.417,53.11,26.021,55.527,55.526H104V10.279z\"/></svg>",
     "name": "invest",
     "open": false,
     "theme": "",
-    "version": "0.1.1"
+    "version": "0.1.2"
   }
 }
