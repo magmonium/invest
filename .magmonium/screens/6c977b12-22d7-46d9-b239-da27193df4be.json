@@ -6,22 +6,259 @@
   },
   "state": {
     "controlMap": {
-      "84d637db-c300-4d2a-a0e7-25c4685f943c": {
+      "256d99d0-e5b7-41fc-856a-cf3ed76e15d8": {
+        "bindings": {
+          "var:user": {
+            "path": [],
+            "root": {
+              "kind": "auth",
+              "property": "userFirstName"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {
+          "color": "text",
+          "label": "hi-welcome-to-the-world-of-investing-in-indian-stocks-and-etfs-before-you-pick-something-please-take-a-look-below",
+          "variant": "big"
+        },
+        "id": "256d99d0-e5b7-41fc-856a-cf3ed76e15d8",
+        "parentId": "5aa383eb-c64c-4ba4-9570-c17a7c24c0b1",
+        "type": "text"
+      },
+      "452bccd2-73e9-42c8-bbf7-af75ce4d8c62": {
+        "childrens": [
+          "ac99ea0d-084d-4144-81de-5d0aa61a60c0"
+        ],
+        "configs": {},
+        "id": "452bccd2-73e9-42c8-bbf7-af75ce4d8c62",
+        "parentId": "84d637db-c300-4d2a-a0e7-25c4685f943c",
+        "type": "section_header"
+      },
+      "472e66b8-9147-4ef7-9eaf-1c7cd4cbfed7": {
         "childrens": [
           "c9e6d745-15fe-4975-8da2-7c1d8542f419"
         ],
+        "configs": {},
+        "id": "472e66b8-9147-4ef7-9eaf-1c7cd4cbfed7",
+        "parentId": "ab11f849-f63e-49e2-8576-44d98d5693f4",
+        "type": "flex"
+      },
+      "5aa383eb-c64c-4ba4-9570-c17a7c24c0b1": {
+        "childrens": [
+          "256d99d0-e5b7-41fc-856a-cf3ed76e15d8"
+        ],
+        "configs": {},
+        "id": "5aa383eb-c64c-4ba4-9570-c17a7c24c0b1",
+        "parentId": "bec3890a-798c-4302-a60a-2037bdc57153",
+        "type": "flex"
+      },
+      "61f0405f-764b-422a-82ec-8365040dd045": {
+        "childrens": [
+          "7a1a21aa-f468-47b0-abab-b67e78a616f4"
+        ],
+        "configs": {},
+        "id": "61f0405f-764b-422a-82ec-8365040dd045",
+        "parentId": "ac99ea0d-084d-4144-81de-5d0aa61a60c0",
+        "type": "flex"
+      },
+      "6d436273-9c2d-465e-b8a9-27144ebe052c": {
+        "childrens": [
+          "85fda1dc-1e76-49a3-accc-099808efaf99"
+        ],
+        "configs": {
+          "justify": "start"
+        },
+        "directives": {
+          "mPadding": {
+            "configs": {
+              "mPadding": "2",
+              "mPaddingX": "",
+              "mPaddingY": ""
+            }
+          }
+        },
+        "id": "6d436273-9c2d-465e-b8a9-27144ebe052c",
+        "parentId": "84d637db-c300-4d2a-a0e7-25c4685f943c",
+        "type": "flex"
+      },
+      "7051f2e7-e612-4d39-8879-c7967b338819": {
+        "childrens": [
+          "b5e185e2-a822-4650-a5ab-9fa1d9ba76d8"
+        ],
+        "configs": {},
+        "id": "7051f2e7-e612-4d39-8879-c7967b338819",
+        "parentId": "b9e82a2e-2582-449d-95f6-7a32f8ee9a10",
+        "type": "flex"
+      },
+      "7a1a21aa-f468-47b0-abab-b67e78a616f4": {
+        "bindings": {
+          "label": {
+            "path": [],
+            "root": {
+              "kind": "none"
+            },
+            "source": "function",
+            "transform": {
+              "args": [],
+              "kind": "call",
+              "pipeParam": -1,
+              "target": {
+                "functionId": "c8c5bf6f-836c-41eb-ad20-c1106e93431c",
+                "kind": "pure"
+              }
+            }
+          }
+        },
+        "childrens": [
+          "bec3890a-798c-4302-a60a-2037bdc57153"
+        ],
+        "configs": {},
+        "formatPipes": [
+          {
+            "args": {
+              "format": {
+                "kind": "literal",
+                "value": "fullDate"
+              }
+            },
+            "name": "date"
+          }
+        ],
+        "id": "7a1a21aa-f468-47b0-abab-b67e78a616f4",
+        "parentId": "61f0405f-764b-422a-82ec-8365040dd045",
+        "type": "stat"
+      },
+      "84d637db-c300-4d2a-a0e7-25c4685f943c": {
+        "childrens": [
+          "452bccd2-73e9-42c8-bbf7-af75ce4d8c62",
+          "6d436273-9c2d-465e-b8a9-27144ebe052c",
+          "b9e82a2e-2582-449d-95f6-7a32f8ee9a10",
+          "d8e9e618-c05e-4c15-9d1a-3ad9ab26bc1b",
+          "ab11f849-f63e-49e2-8576-44d98d5693f4"
+        ],
         "configs": {
           "align": "center",
-          "maxWidth": "900px"
+          "maxWidth": "1200px"
         },
         "id": "84d637db-c300-4d2a-a0e7-25c4685f943c",
         "type": "section"
+      },
+      "85fda1dc-1e76-49a3-accc-099808efaf99": {
+        "childrens": [],
+        "configs": {
+          "color": "text",
+          "label": "here-s-a-quick-look-at-what-happened-in-the-indian-stock-market-gold-and-silver-over-the-past-year",
+          "variant": "bold"
+        },
+        "id": "85fda1dc-1e76-49a3-accc-099808efaf99",
+        "parentId": "6d436273-9c2d-465e-b8a9-27144ebe052c",
+        "type": "text"
+      },
+      "a28af0fa-a135-46c8-ab8c-ea3918b24ec0": {
+        "childrens": [],
+        "configs": {
+          "color": "text",
+          "label": "check-out-the-sector-wise-market-performance-heatmap",
+          "variant": "bold"
+        },
+        "id": "a28af0fa-a135-46c8-ab8c-ea3918b24ec0",
+        "parentId": "d8e9e618-c05e-4c15-9d1a-3ad9ab26bc1b",
+        "source": "raw",
+        "type": "text"
+      },
+      "ab11f849-f63e-49e2-8576-44d98d5693f4": {
+        "childrens": [
+          "472e66b8-9147-4ef7-9eaf-1c7cd4cbfed7"
+        ],
+        "configs": {
+          "padding": "none",
+          "variant": "roundedBorder"
+        },
+        "directives": {
+          "mMargin": {
+            "configs": {
+              "mMargin": "",
+              "mMarginX": "2",
+              "mMarginY": ""
+            }
+          }
+        },
+        "id": "ab11f849-f63e-49e2-8576-44d98d5693f4",
+        "parentId": "84d637db-c300-4d2a-a0e7-25c4685f943c",
+        "type": "card"
+      },
+      "ac99ea0d-084d-4144-81de-5d0aa61a60c0": {
+        "childrens": [
+          "61f0405f-764b-422a-82ec-8365040dd045"
+        ],
+        "configs": {},
+        "id": "ac99ea0d-084d-4144-81de-5d0aa61a60c0",
+        "parentId": "452bccd2-73e9-42c8-bbf7-af75ce4d8c62",
+        "type": "section_header_label"
+      },
+      "b5e185e2-a822-4650-a5ab-9fa1d9ba76d8": {
+        "childrens": [],
+        "configs": {},
+        "directives": {
+          "mMargin": {
+            "configs": {
+              "mMargin": 1,
+              "mMarginX": "",
+              "mMarginY": ""
+            }
+          }
+        },
+        "id": "b5e185e2-a822-4650-a5ab-9fa1d9ba76d8",
+        "parentId": "7051f2e7-e612-4d39-8879-c7967b338819",
+        "screenId": "27501aeb-64c9-4d8f-8265-feb47e395863",
+        "screenInputs": {
+          "947f79a5-8f45-40ed-9452-1ec85b7a4d82": {
+            "kind": "static",
+            "value": "NIFTY 50, NIFTY 500, NIFTY SMLCAP 250, NIFTY NEXT 50, NIFTY MIDSML 400"
+          },
+          "cca55c1f-94df-4f2d-b2b5-d365af9a76ca": {
+            "kind": "static",
+            "value": "GOLDBEES,SILVERBEES"
+          }
+        },
+        "type": "screen"
+      },
+      "b9e82a2e-2582-449d-95f6-7a32f8ee9a10": {
+        "childrens": [
+          "7051f2e7-e612-4d39-8879-c7967b338819"
+        ],
+        "configs": {
+          "padding": "none",
+          "variant": "roundedBorder"
+        },
+        "directives": {
+          "mMargin": {
+            "configs": {
+              "mMargin": "",
+              "mMarginX": "2",
+              "mMarginY": ""
+            }
+          }
+        },
+        "id": "b9e82a2e-2582-449d-95f6-7a32f8ee9a10",
+        "parentId": "84d637db-c300-4d2a-a0e7-25c4685f943c",
+        "type": "card"
+      },
+      "bec3890a-798c-4302-a60a-2037bdc57153": {
+        "childrens": [
+          "5aa383eb-c64c-4ba4-9570-c17a7c24c0b1"
+        ],
+        "configs": {},
+        "id": "bec3890a-798c-4302-a60a-2037bdc57153",
+        "parentId": "7a1a21aa-f468-47b0-abab-b67e78a616f4",
+        "type": "stat_value"
       },
       "c9e6d745-15fe-4975-8da2-7c1d8542f419": {
         "childrens": [],
         "configs": {},
         "id": "c9e6d745-15fe-4975-8da2-7c1d8542f419",
-        "parentId": "84d637db-c300-4d2a-a0e7-25c4685f943c",
+        "parentId": "472e66b8-9147-4ef7-9eaf-1c7cd4cbfed7",
         "screenId": "9d9bfa01-1499-4587-8794-f3bb0e10a0c9",
         "screenInputs": {
           "25eccd3a-679b-4a2b-8a27-d1e6def9a91f": {
@@ -34,6 +271,27 @@
           }
         },
         "type": "screen"
+      },
+      "d8e9e618-c05e-4c15-9d1a-3ad9ab26bc1b": {
+        "childrens": [
+          "a28af0fa-a135-46c8-ab8c-ea3918b24ec0"
+        ],
+        "configs": {
+          "justify": "start"
+        },
+        "directives": {
+          "mPadding": {
+            "configs": {
+              "mPadding": "2",
+              "mPaddingX": "",
+              "mPaddingY": ""
+            }
+          }
+        },
+        "id": "d8e9e618-c05e-4c15-9d1a-3ad9ab26bc1b",
+        "parentId": "84d637db-c300-4d2a-a0e7-25c4685f943c",
+        "source": "raw",
+        "type": "flex"
       }
     },
     "labelSamples": {},
@@ -41,8 +299,8 @@
     "rootControlIds": [
       "84d637db-c300-4d2a-a0e7-25c4685f943c"
     ],
-    "selectedControl": "84d637db-c300-4d2a-a0e7-25c4685f943c",
-    "selectedLayerId": 1
+    "selectedControl": "b5e185e2-a822-4650-a5ab-9fa1d9ba76d8",
+    "selectedLayerId": 4
   },
   "v": 29
 }

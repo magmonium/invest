@@ -2,6 +2,2856 @@
   "operations": [
     {
       "domain": "finance",
+      "id": "put /finance/v1/companies",
+      "operationId": "finance_v1_companies_update",
+      "params": [
+        {
+          "cardinality": "one",
+          "dataType": {
+            "shapeId": "bce284b2-b411-4031-9e84-5666d3b4f0b0",
+            "type": "shape"
+          },
+          "doc": {
+            "members": [
+              {
+                "description": "Company symbols (e.g., RELIANCE) and/or Company ids, max 200",
+                "members": [],
+                "name": "ids",
+                "required": true,
+                "type": "string[]"
+              },
+              {
+                "description": "Fields to return; omit for all. `id` is always returned.",
+                "members": [],
+                "name": "fields",
+                "required": false,
+                "type": "string[]"
+              }
+            ],
+            "name": "data",
+            "required": true,
+            "type": "object"
+          },
+          "location": "body",
+          "name": "data",
+          "required": true,
+          "shapes": [
+            {
+              "id": "bce284b2-b411-4031-9e84-5666d3b4f0b0",
+              "keys": [
+                {
+                  "cardinality": "many",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "e918a261-c959-4a25-8b02-4662d2b1d234",
+                  "name": "ids"
+                },
+                {
+                  "cardinality": "many",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "d218d741-646e-4f33-900d-b5d27483cac3",
+                  "name": "fields"
+                }
+              ],
+              "name": "finance-companies-update-request"
+            }
+          ],
+          "unmapped": []
+        }
+      ],
+      "path": "/finance/v1/companies",
+      "responses": [
+        {
+          "cardinality": "one",
+          "code": "200",
+          "dataType": {
+            "shapeId": "854b181f-c03a-44fb-8464-d92efbed25d3",
+            "type": "shape"
+          },
+          "description": "Companies retrieved successfully",
+          "doc": {
+            "members": [
+              {
+                "description": "Matched companies, in request order",
+                "members": [
+                  {
+                    "description": "Symbol",
+                    "members": [],
+                    "name": "symbol",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Name",
+                    "members": [],
+                    "name": "name",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Ticker",
+                    "members": [],
+                    "name": "ticker",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "ISIN",
+                    "members": [],
+                    "name": "isin",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Sector",
+                    "members": [],
+                    "name": "sector",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Industry",
+                    "members": [],
+                    "name": "industry",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Subindustry",
+                    "members": [],
+                    "name": "subindustry",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Type",
+                    "members": [],
+                    "name": "type",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Exchange",
+                    "members": [],
+                    "name": "exchange",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Market Cap Label",
+                    "members": [],
+                    "name": "marketCapLabel",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "ETF Liquidity Label",
+                    "members": [],
+                    "name": "etfLiqLabel",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Price",
+                    "members": [],
+                    "name": "price",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Market Cap",
+                    "members": [],
+                    "name": "marketCap",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Market Cap Rank",
+                    "members": [],
+                    "name": "mrktCapRank",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Momentum Rank",
+                    "members": [],
+                    "name": "momRank",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Face Value",
+                    "members": [],
+                    "name": "faceValue",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Daily Change",
+                    "members": [],
+                    "name": "dailyChange",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Week Change",
+                    "members": [],
+                    "name": "weekChange",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Month Change",
+                    "members": [],
+                    "name": "monthChange",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Yearly Change",
+                    "members": [],
+                    "name": "yearlyChange",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Max Change",
+                    "members": [],
+                    "name": "maxChange",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Forecast",
+                    "members": [],
+                    "name": "forecast",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Forecast Profit %",
+                    "members": [],
+                    "name": "forecastProfit",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "SMA 10d",
+                    "members": [],
+                    "name": "sma10d",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "SMA 50d",
+                    "members": [],
+                    "name": "sma50d",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "SMA 100d",
+                    "members": [],
+                    "name": "sma100d",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "SMA 200d",
+                    "members": [],
+                    "name": "sma200d",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "SMA 10d % Change",
+                    "members": [],
+                    "name": "sma10dPct",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "SMA 50d % Change",
+                    "members": [],
+                    "name": "sma50dPct",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "SMA 100d % Change",
+                    "members": [],
+                    "name": "sma100dPct",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "SMA 200d % Change",
+                    "members": [],
+                    "name": "sma200dPct",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "EMA 10d",
+                    "members": [],
+                    "name": "ema10d",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "EMA 50d",
+                    "members": [],
+                    "name": "ema50d",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "EMA 100d",
+                    "members": [],
+                    "name": "ema100d",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "EMA 200d",
+                    "members": [],
+                    "name": "ema200d",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "EMA 10d % Change",
+                    "members": [],
+                    "name": "ema10dPct",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "EMA 50d % Change",
+                    "members": [],
+                    "name": "ema50dPct",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "EMA 100d % Change",
+                    "members": [],
+                    "name": "ema100dPct",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "EMA 200d % Change",
+                    "members": [],
+                    "name": "ema200dPct",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Average Score",
+                    "members": [],
+                    "name": "avgScore",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Momentum Score",
+                    "members": [],
+                    "name": "momScore",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Value Score",
+                    "members": [],
+                    "name": "valScore",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Volume Score",
+                    "members": [],
+                    "name": "volScore",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Duration Score",
+                    "members": [],
+                    "name": "durScore",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Drawdown Score",
+                    "members": [],
+                    "name": "drawScore",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "TTM PE",
+                    "members": [],
+                    "name": "ttmPe",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "PB",
+                    "members": [],
+                    "name": "pb",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Industry PE",
+                    "members": [],
+                    "name": "indpe",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Industry PB",
+                    "members": [],
+                    "name": "indpb",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Dividend Yield",
+                    "members": [],
+                    "name": "divYield",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "EPS",
+                    "members": [],
+                    "name": "eps",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "52w High",
+                    "members": [],
+                    "name": "52wHigh",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "52w Low",
+                    "members": [],
+                    "name": "52wLow",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Risk",
+                    "members": [],
+                    "name": "risk",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Max Drawdown",
+                    "members": [],
+                    "name": "maxDrawdown",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Current Drawdown %",
+                    "members": [],
+                    "name": "currentDrawdown",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Days Since Peak",
+                    "members": [],
+                    "name": "daysSincePeak",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Rise From Valley %",
+                    "members": [],
+                    "name": "riseFromValley",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Max",
+                    "members": [],
+                    "name": "max",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Min",
+                    "members": [],
+                    "name": "min",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Updated",
+                    "members": [],
+                    "name": "updated",
+                    "required": false,
+                    "type": "string($date-time)"
+                  },
+                  {
+                    "description": "Scored On",
+                    "members": [],
+                    "name": "scoredOn",
+                    "required": false,
+                    "type": "string($date-time)"
+                  },
+                  {
+                    "description": "Company id",
+                    "members": [],
+                    "name": "id",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Source slug",
+                    "members": [],
+                    "name": "link",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Business description",
+                    "members": [],
+                    "name": "description",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Weekly price points",
+                    "members": [
+                      {
+                        "description": "Week start",
+                        "members": [],
+                        "name": "ts",
+                        "required": false,
+                        "type": "string($date-time)"
+                      },
+                      {
+                        "description": "Last price",
+                        "members": [],
+                        "name": "lp",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "description": "Volume",
+                        "members": [],
+                        "name": "v",
+                        "required": false,
+                        "type": "number"
+                      }
+                    ],
+                    "name": "weekly",
+                    "required": false,
+                    "type": "object[]"
+                  },
+                  {
+                    "description": "Fiscal-year financial data",
+                    "members": [
+                      {
+                        "description": "Fiscal year",
+                        "members": [],
+                        "name": "year",
+                        "required": false,
+                        "type": "string"
+                      },
+                      {
+                        "members": [],
+                        "name": "revenue",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "profit",
+                        "required": false,
+                        "type": "number"
+                      }
+                    ],
+                    "name": "financialSummary",
+                    "required": false,
+                    "type": "object[]"
+                  }
+                ],
+                "name": "companies",
+                "required": false,
+                "type": "object[]"
+              }
+            ],
+            "name": "",
+            "required": true,
+            "type": "object"
+          },
+          "shapes": [
+            {
+              "id": "35b89fbe-069e-4346-a7b8-431b6c40ea6e",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "d6c8237a-8e64-4d5b-96ad-3628a5ab26a4",
+                  "name": "ts"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "afbf58cd-3b7b-4461-9404-81af19b94284",
+                  "name": "lp"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "fd592114-479c-4506-a3fb-76da9274cfe7",
+                  "name": "v"
+                }
+              ],
+              "name": "finance-companies-update-response-companies-weekly",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/companies",
+                "pointer": [
+                  "companies",
+                  "weekly"
+                ],
+                "verb": "put"
+              }
+            },
+            {
+              "id": "87637b5b-855e-4507-bab5-4584dd533fd9",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "92456175-10a2-4498-b1f4-d1380a1aee41",
+                  "name": "year"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "4e05ddfa-d0b7-4175-8889-b8cd4071c287",
+                  "name": "revenue"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "1a9a419c-274a-4b87-aa35-f0992e26ff2d",
+                  "name": "profit"
+                }
+              ],
+              "name": "finance-companies-update-response-companies-financialsummary",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/companies",
+                "pointer": [
+                  "companies",
+                  "financialSummary"
+                ],
+                "verb": "put"
+              }
+            },
+            {
+              "id": "2dc5611b-4669-4b55-8f9e-0e703cec2f33",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "02aa523c-3227-4cf8-9894-b0cace07f460",
+                  "name": "symbol"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "22ef6673-ee96-4bb7-b906-6e5258f96dfa",
+                  "name": "name"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "7a3122c2-2d2a-4810-8358-cc1e9605b30c",
+                  "name": "ticker"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "f9b78913-2941-4662-b226-411129df61be",
+                  "name": "isin"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "35d7b50f-0af5-4935-b771-47d03eb86c99",
+                  "name": "sector"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "fce516fb-f692-4394-ab46-052c7770d16a",
+                  "name": "industry"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "5a95170e-09a7-46d3-8a18-336a32fc6de3",
+                  "name": "subindustry"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "f69977c6-6e2d-4153-99db-9c533b20db04",
+                  "name": "type"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "27a02fbd-3af6-4f02-b3ff-ba70d5333169",
+                  "name": "exchange"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "6a62db60-bff3-4b39-998e-ce482c397c7b",
+                  "name": "marketCapLabel"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "ea091577-c2d8-4fc8-af37-9d48b4897344",
+                  "name": "etfLiqLabel"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "bf9bd8eb-acc9-423f-bce1-39c35d2a59bc",
+                  "name": "price"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "f4078338-8f9d-4b20-b688-c45e7a2c3678",
+                  "name": "marketCap"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "7cccc972-f95a-4033-87e8-80f8988fea75",
+                  "name": "mrktCapRank"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "ee427dc1-0cb1-40ed-835c-69e6fe2cb722",
+                  "name": "momRank"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "13360cac-ccd8-4493-b198-ef80134370f0",
+                  "name": "faceValue"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "4e48f13c-43ac-4f3e-b588-d7ef8091c81d",
+                  "name": "dailyChange"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "12c0b3af-5832-4abf-812b-8ae7166536fa",
+                  "name": "weekChange"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "a7b9197c-c75f-4aae-aa1c-68df18bb110e",
+                  "name": "monthChange"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "11b2a728-1f9c-4062-81e7-fa8e19f69f10",
+                  "name": "yearlyChange"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "655d9115-259d-4aa7-85ed-d6ef7e726ef9",
+                  "name": "maxChange"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "4ca1be31-6318-4381-89e7-110ce4f30550",
+                  "name": "forecast"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "4740594b-6975-4723-8622-32c885f43295",
+                  "name": "forecastProfit"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "3e6f1452-504b-49a2-8c7b-cc16dcac1864",
+                  "name": "sma10d"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "bc4b8663-6ce6-4174-8d14-b48105d708d9",
+                  "name": "sma50d"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "92feea56-9ed5-4b4b-a4b0-e9b4b597eca6",
+                  "name": "sma100d"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "036857d2-859b-4d38-bfba-21047147ab24",
+                  "name": "sma200d"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "68625294-28e6-43cd-86ef-1130a5a769cf",
+                  "name": "sma10dPct"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "61fc715b-7616-45b6-817e-a56a7167f793",
+                  "name": "sma50dPct"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "d4c26c42-56af-4731-ae3b-a4a79eb4d341",
+                  "name": "sma100dPct"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "e75602c5-f205-4642-844d-521d63e9338d",
+                  "name": "sma200dPct"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "b04bbd6e-f5e8-4736-9287-5a8dbb5d5240",
+                  "name": "ema10d"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "a1ca3f14-4dd5-44f9-b017-4a6565409711",
+                  "name": "ema50d"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "9612d3a8-59d4-44de-9371-b0e94a57416f",
+                  "name": "ema100d"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "26818d4e-fda1-40ec-890a-d2bf3274f41d",
+                  "name": "ema200d"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "f6055e5c-49c3-4c5b-a07e-79bb6bdb8484",
+                  "name": "ema10dPct"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "4345f97f-cb95-4c3a-9cdf-bb767e811e34",
+                  "name": "ema50dPct"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "288cfc59-2b1b-405b-9ce3-b3fd87896d4c",
+                  "name": "ema100dPct"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "ef4def43-ffe8-4760-a3ec-b5159d57778a",
+                  "name": "ema200dPct"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "b132956b-89ef-4e41-804e-f2ee5cd44ca6",
+                  "name": "avgScore"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "6c1675ff-4379-4445-bd3d-85b0c1817426",
+                  "name": "momScore"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "2d5826c7-2ec3-427b-a0a0-fff6a0b0782e",
+                  "name": "valScore"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "6d425afa-44b8-42d9-aa77-f50c6c8f115c",
+                  "name": "volScore"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "9db1469b-6fec-4087-adbd-72f0d6c1314e",
+                  "name": "durScore"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "eb53782d-e812-4c62-8dee-8a17419c802b",
+                  "name": "drawScore"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "9bd3f7a0-bd11-4315-85c1-dc4071bfeb2f",
+                  "name": "ttmPe"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "871410cc-d7b4-4642-9b3b-77bcd42b7890",
+                  "name": "pb"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "3f87a47e-e14e-4ac5-bef8-09cbb4ecf00c",
+                  "name": "indpe"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "407c58ca-a0c0-45c4-a7b7-f47cf3000f65",
+                  "name": "indpb"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "cca740dc-fa79-4ca6-a24c-67d56a69e894",
+                  "name": "divYield"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "75cd18b6-c35c-44c4-9a4f-a150fc60cc5b",
+                  "name": "eps"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "27c1c74c-1c31-42f5-ac83-a8cca3360600",
+                  "name": "52wHigh"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "41d45aed-85db-4e20-85ff-c708997d99a4",
+                  "name": "52wLow"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "893676fd-bbd0-4177-883b-81e999dbc51b",
+                  "name": "risk"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "aa7738d7-0ef9-451a-8525-241792339572",
+                  "name": "maxDrawdown"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "4c97ba25-c4ae-4525-8d79-d09be38a25c8",
+                  "name": "currentDrawdown"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "6cce6764-4350-4fbb-a9b1-efaa6607dbd0",
+                  "name": "daysSincePeak"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "3bf19df4-57e6-4d97-8879-09755428765f",
+                  "name": "riseFromValley"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "a3a12684-efd8-4b9b-92bd-d823bf0b95b1",
+                  "name": "max"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "ff053297-2d6d-432e-a977-ba0cc013e4a7",
+                  "name": "min"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "73992ddd-e55a-4ac3-9174-36d96472b294",
+                  "name": "updated"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "480de9fa-9071-4efa-8e66-a6eb0c81647a",
+                  "name": "scoredOn"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "680c6163-8472-4301-9327-e1e3d518db2c",
+                  "name": "id"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "5b10c6c5-30f6-4555-a996-4029844dc6c1",
+                  "name": "link"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "22464cd6-b555-4127-9ce0-4b7c3c02aac5",
+                  "name": "description"
+                },
+                {
+                  "cardinality": "many",
+                  "dataType": {
+                    "shapeId": "35b89fbe-069e-4346-a7b8-431b6c40ea6e",
+                    "type": "shape"
+                  },
+                  "id": "3bd2c3f4-e439-4459-821b-40250f64aaa4",
+                  "name": "weekly"
+                },
+                {
+                  "cardinality": "many",
+                  "dataType": {
+                    "shapeId": "87637b5b-855e-4507-bab5-4584dd533fd9",
+                    "type": "shape"
+                  },
+                  "id": "84623904-87ff-4168-ade1-904011261ca4",
+                  "name": "financialSummary"
+                }
+              ],
+              "name": "finance-companies-update-response-companies",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/companies",
+                "pointer": [
+                  "companies"
+                ],
+                "verb": "put"
+              }
+            },
+            {
+              "id": "854b181f-c03a-44fb-8464-d92efbed25d3",
+              "keys": [
+                {
+                  "cardinality": "many",
+                  "dataType": {
+                    "shapeId": "2dc5611b-4669-4b55-8f9e-0e703cec2f33",
+                    "type": "shape"
+                  },
+                  "id": "2f1b7b49-c129-4d10-84f4-1f87d18dba2c",
+                  "name": "companies"
+                }
+              ],
+              "name": "finance-companies-update-response",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/companies",
+                "pointer": [],
+                "verb": "put"
+              }
+            }
+          ],
+          "tier": "anonymous",
+          "unmapped": []
+        },
+        {
+          "cardinality": "one",
+          "code": "405",
+          "description": "Method not allowed",
+          "shapes": [],
+          "tier": "undescribed",
+          "unmapped": []
+        },
+        {
+          "cardinality": "one",
+          "code": "406",
+          "description": "ids required, more than 200 ids, or unknown field",
+          "shapes": [],
+          "tier": "undescribed",
+          "unmapped": []
+        }
+      ],
+      "segments": [
+        "companies"
+      ],
+      "summary": "Batch lookup of companies by symbol or Company id in one query. Read-only despite the PUT verb. Each entry follows the same rule as `company/{id}`: a 24-hex ObjectId matches `_id`, anything else matches `symbol` case-insensitively, excluding Low-liquidity ETFs. Results keep request order; duplicates collapse and unknown entries are dropped. Pass `fields` to project only those fields (e.g. skip `weekly`, `financialSummary`, `description`).",
+      "verb": "put"
+    },
+    {
+      "domain": "finance",
+      "id": "put /finance/v1/company/{id}",
+      "operationId": "finance_v1_company_update",
+      "params": [
+        {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "description": "Company symbol (e.g., RELIANCE) or Company id",
+          "doc": {
+            "description": "Company symbol (e.g., RELIANCE) or Company id",
+            "members": [],
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          "location": "path",
+          "name": "id",
+          "required": true,
+          "shapes": [],
+          "unmapped": []
+        }
+      ],
+      "path": "/finance/v1/company/{id}",
+      "responses": [
+        {
+          "cardinality": "one",
+          "code": "200",
+          "dataType": {
+            "shapeId": "c39f2e52-ce27-4127-9057-f8509cd4e5c4",
+            "type": "shape"
+          },
+          "description": "Company details retrieved successfully",
+          "doc": {
+            "members": [
+              {
+                "description": "Company data object; null when no company matches",
+                "members": [
+                  {
+                    "description": "Symbol",
+                    "members": [],
+                    "name": "symbol",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Name",
+                    "members": [],
+                    "name": "name",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Ticker",
+                    "members": [],
+                    "name": "ticker",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "ISIN",
+                    "members": [],
+                    "name": "isin",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Sector",
+                    "members": [],
+                    "name": "sector",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Industry",
+                    "members": [],
+                    "name": "industry",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Subindustry",
+                    "members": [],
+                    "name": "subindustry",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Type",
+                    "members": [],
+                    "name": "type",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Exchange",
+                    "members": [],
+                    "name": "exchange",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Market Cap Label",
+                    "members": [],
+                    "name": "marketCapLabel",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "ETF Liquidity Label",
+                    "members": [],
+                    "name": "etfLiqLabel",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Price",
+                    "members": [],
+                    "name": "price",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Market Cap",
+                    "members": [],
+                    "name": "marketCap",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Market Cap Rank",
+                    "members": [],
+                    "name": "mrktCapRank",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Momentum Rank",
+                    "members": [],
+                    "name": "momRank",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Face Value",
+                    "members": [],
+                    "name": "faceValue",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Daily Change",
+                    "members": [],
+                    "name": "dailyChange",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Week Change",
+                    "members": [],
+                    "name": "weekChange",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Month Change",
+                    "members": [],
+                    "name": "monthChange",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Yearly Change",
+                    "members": [],
+                    "name": "yearlyChange",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Max Change",
+                    "members": [],
+                    "name": "maxChange",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Forecast",
+                    "members": [],
+                    "name": "forecast",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Forecast Profit %",
+                    "members": [],
+                    "name": "forecastProfit",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "SMA 10d",
+                    "members": [],
+                    "name": "sma10d",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "SMA 50d",
+                    "members": [],
+                    "name": "sma50d",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "SMA 100d",
+                    "members": [],
+                    "name": "sma100d",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "SMA 200d",
+                    "members": [],
+                    "name": "sma200d",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "SMA 10d % Change",
+                    "members": [],
+                    "name": "sma10dPct",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "SMA 50d % Change",
+                    "members": [],
+                    "name": "sma50dPct",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "SMA 100d % Change",
+                    "members": [],
+                    "name": "sma100dPct",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "SMA 200d % Change",
+                    "members": [],
+                    "name": "sma200dPct",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "EMA 10d",
+                    "members": [],
+                    "name": "ema10d",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "EMA 50d",
+                    "members": [],
+                    "name": "ema50d",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "EMA 100d",
+                    "members": [],
+                    "name": "ema100d",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "EMA 200d",
+                    "members": [],
+                    "name": "ema200d",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "EMA 10d % Change",
+                    "members": [],
+                    "name": "ema10dPct",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "EMA 50d % Change",
+                    "members": [],
+                    "name": "ema50dPct",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "EMA 100d % Change",
+                    "members": [],
+                    "name": "ema100dPct",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "EMA 200d % Change",
+                    "members": [],
+                    "name": "ema200dPct",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Average Score",
+                    "members": [],
+                    "name": "avgScore",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Momentum Score",
+                    "members": [],
+                    "name": "momScore",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Value Score",
+                    "members": [],
+                    "name": "valScore",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Volume Score",
+                    "members": [],
+                    "name": "volScore",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Duration Score",
+                    "members": [],
+                    "name": "durScore",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Drawdown Score",
+                    "members": [],
+                    "name": "drawScore",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "TTM PE",
+                    "members": [],
+                    "name": "ttmPe",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "PB",
+                    "members": [],
+                    "name": "pb",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Industry PE",
+                    "members": [],
+                    "name": "indpe",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Industry PB",
+                    "members": [],
+                    "name": "indpb",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Dividend Yield",
+                    "members": [],
+                    "name": "divYield",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "EPS",
+                    "members": [],
+                    "name": "eps",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "52w High",
+                    "members": [],
+                    "name": "52wHigh",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "52w Low",
+                    "members": [],
+                    "name": "52wLow",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Risk",
+                    "members": [],
+                    "name": "risk",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Max Drawdown",
+                    "members": [],
+                    "name": "maxDrawdown",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Current Drawdown %",
+                    "members": [],
+                    "name": "currentDrawdown",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Days Since Peak",
+                    "members": [],
+                    "name": "daysSincePeak",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Rise From Valley %",
+                    "members": [],
+                    "name": "riseFromValley",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Max",
+                    "members": [],
+                    "name": "max",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Min",
+                    "members": [],
+                    "name": "min",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Updated",
+                    "members": [],
+                    "name": "updated",
+                    "required": false,
+                    "type": "string($date-time)"
+                  },
+                  {
+                    "description": "Scored On",
+                    "members": [],
+                    "name": "scoredOn",
+                    "required": false,
+                    "type": "string($date-time)"
+                  },
+                  {
+                    "description": "Company id",
+                    "members": [],
+                    "name": "id",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Source slug",
+                    "members": [],
+                    "name": "link",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Business description",
+                    "members": [],
+                    "name": "description",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Weekly price points",
+                    "members": [
+                      {
+                        "description": "Week start",
+                        "members": [],
+                        "name": "ts",
+                        "required": false,
+                        "type": "string($date-time)"
+                      },
+                      {
+                        "description": "Last price",
+                        "members": [],
+                        "name": "lp",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "description": "Volume",
+                        "members": [],
+                        "name": "v",
+                        "required": false,
+                        "type": "number"
+                      }
+                    ],
+                    "name": "weekly",
+                    "required": false,
+                    "type": "object[]"
+                  },
+                  {
+                    "description": "Fiscal-year financial data",
+                    "members": [
+                      {
+                        "description": "Fiscal year",
+                        "members": [],
+                        "name": "year",
+                        "required": false,
+                        "type": "string"
+                      },
+                      {
+                        "members": [],
+                        "name": "revenue",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "profit",
+                        "required": false,
+                        "type": "number"
+                      }
+                    ],
+                    "name": "financialSummary",
+                    "required": false,
+                    "type": "object[]"
+                  }
+                ],
+                "name": "company",
+                "required": false,
+                "type": "object"
+              }
+            ],
+            "name": "",
+            "required": true,
+            "type": "object"
+          },
+          "shapes": [
+            {
+              "id": "58b71a51-3177-46bd-b8f9-5152b77202d5",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "45239347-a9a1-43bb-b21c-de14b9efc4d7",
+                  "name": "ts"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "62305d5e-cb9e-4658-ba24-227439becb16",
+                  "name": "lp"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "0a0ae20a-a4fe-43a7-b7ea-7962e8d786fb",
+                  "name": "v"
+                }
+              ],
+              "name": "finance-company-update-response-company-weekly",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/company/{id}",
+                "pointer": [
+                  "company",
+                  "weekly"
+                ],
+                "verb": "put"
+              }
+            },
+            {
+              "id": "969d59ef-bfb7-4599-a0bf-19d6bf3189d3",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "d49c3c9c-9720-485a-b895-92935594716b",
+                  "name": "year"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "bacf51e3-0cf4-40bd-8b86-dcd771fcea49",
+                  "name": "revenue"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "61def9f2-5b6e-4b02-b1a8-f1545013df80",
+                  "name": "profit"
+                }
+              ],
+              "name": "finance-company-update-response-company-financialsummary",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/company/{id}",
+                "pointer": [
+                  "company",
+                  "financialSummary"
+                ],
+                "verb": "put"
+              }
+            },
+            {
+              "id": "ffafdb9d-f09e-4e9c-bf86-467d5a2e1e60",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "8284ef45-ad85-4b80-b39c-95711ee3cd10",
+                  "name": "symbol"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "b6155a13-c4f6-4e81-967f-0ce6e2e4ed86",
+                  "name": "name"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "843b4b68-16c4-4302-aab0-9fce6c829c9b",
+                  "name": "ticker"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "9b46327b-cb8f-42f8-9bcc-ac55d3230eaa",
+                  "name": "isin"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "9c2536b9-c2fe-4469-bbc4-ed0a8adc1442",
+                  "name": "sector"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "6e6fc7ea-45d8-45de-a382-78b1e97c495c",
+                  "name": "industry"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "fba0c9a8-a650-4438-bcd0-3eba554f1287",
+                  "name": "subindustry"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "421155ae-04f5-4776-9627-06c1a8f39b6f",
+                  "name": "type"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "7a359fda-340c-46b9-9466-ff95ead4b54c",
+                  "name": "exchange"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "af889854-885c-4f60-a974-2bcd4f1cac86",
+                  "name": "marketCapLabel"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "f01f2284-6d81-41c1-9c52-a269d6b52a9e",
+                  "name": "etfLiqLabel"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "e45de371-965d-460f-9bba-46eb27762ca7",
+                  "name": "price"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "8289ee18-90c1-4a72-ac12-160c06fae483",
+                  "name": "marketCap"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "52109f1b-ba0f-4334-ac0d-c5470a35b37c",
+                  "name": "mrktCapRank"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "140d1759-bc53-4821-a9c8-9e8ace30132b",
+                  "name": "momRank"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "a85cab8c-5e2f-42bf-9018-3b816f8f59cf",
+                  "name": "faceValue"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "b25d3414-f6db-4502-a17c-8a0dbe387a7d",
+                  "name": "dailyChange"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "15124643-64ff-4562-95af-adfc45b18cb4",
+                  "name": "weekChange"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "046701eb-24b5-45bd-810f-cd9d71f238a8",
+                  "name": "monthChange"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "9e361510-12bf-45e8-bda4-8c78a7651933",
+                  "name": "yearlyChange"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "27cbc3a9-aeea-4260-b3ba-6ce9d21198d9",
+                  "name": "maxChange"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "aee594f1-6c19-4214-aa03-36f2a459e2b5",
+                  "name": "forecast"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "2c1f6652-6887-4ff1-b359-f4b9d48aedec",
+                  "name": "forecastProfit"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "2e77fb7c-a3c8-4a12-ba30-3e6c58127b16",
+                  "name": "sma10d"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "f94549a0-1c9b-473b-baf1-dd1fd6717b9f",
+                  "name": "sma50d"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "7dd5805b-a181-4aab-a692-6512c10ff841",
+                  "name": "sma100d"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "2c2e350c-add2-46d7-8356-81af4de659b3",
+                  "name": "sma200d"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "945944c3-a4a0-487e-be30-44d9cf047e9e",
+                  "name": "sma10dPct"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "ac4b482a-912c-46dc-a322-c1f9fa926d20",
+                  "name": "sma50dPct"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "66d90b6f-a460-4b6d-b350-f2d78a974ca3",
+                  "name": "sma100dPct"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "39b9153d-1b3e-45bf-b630-c37b675baa41",
+                  "name": "sma200dPct"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "ee710d3b-efde-4eb8-a540-2eee3a13a13a",
+                  "name": "ema10d"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "f1b0080b-5bbe-4c1e-b2fe-8738e81c3439",
+                  "name": "ema50d"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "134974a1-8aa5-4a46-b372-aa21273e725a",
+                  "name": "ema100d"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "c14c8f67-e2e8-4377-bdaa-53408085935a",
+                  "name": "ema200d"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "a1c756c2-3dac-4e01-9ac6-054173049b19",
+                  "name": "ema10dPct"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "10b8733e-6e7b-4091-b4ff-280b9e11365a",
+                  "name": "ema50dPct"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "e9bbe87f-1c8c-40ee-9279-f2a06172a272",
+                  "name": "ema100dPct"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "b09d5a9c-988b-4e32-911b-9af9e8b15c85",
+                  "name": "ema200dPct"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "66f824b0-11df-45a0-949c-8b8d675fbec9",
+                  "name": "avgScore"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "cd9e6539-dd03-443d-9667-78c0b365932b",
+                  "name": "momScore"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "b192b304-358a-4643-b709-f277eae851f7",
+                  "name": "valScore"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "d04386e7-47d3-4354-9822-dffd291d1904",
+                  "name": "volScore"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "3486e98d-6984-4b8c-b481-888e13da1396",
+                  "name": "durScore"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "f08e9a38-7086-4669-b24b-3e043db26c59",
+                  "name": "drawScore"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "0385a1d9-fa87-4ff9-8230-1e37bc5b402d",
+                  "name": "ttmPe"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "b0f72a33-f68f-4297-94c0-fda280f143b2",
+                  "name": "pb"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "bdef560d-a9d7-4ff3-82ca-b3f8b24cdb6d",
+                  "name": "indpe"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "497a6be9-e401-46a5-a798-d6ae9eb33d31",
+                  "name": "indpb"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "a6ebeecf-0325-47af-b0f0-debd5ff8204d",
+                  "name": "divYield"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "0a260215-6aac-442b-9cbd-69a68a766cd8",
+                  "name": "eps"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "c9613f00-6440-4e9b-88ad-3a9b09fb7c06",
+                  "name": "52wHigh"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "e2dd47ef-d1c3-40f0-9856-46f95fe9ee3e",
+                  "name": "52wLow"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "2ce30164-7d32-4a5f-b233-6471b872c152",
+                  "name": "risk"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "8a67beae-5c9d-4e66-8dd0-906d0c5ead11",
+                  "name": "maxDrawdown"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "03d8c4eb-9180-4aae-aefc-bbbf02672125",
+                  "name": "currentDrawdown"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "4717692d-b45e-4666-8999-aa48a76e349d",
+                  "name": "daysSincePeak"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "3f2d71be-7904-409b-aca9-aa1a2b7b824f",
+                  "name": "riseFromValley"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "0f572af7-fd7d-4e26-985b-c174b181fba8",
+                  "name": "max"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "47bf8304-bfa6-455b-880f-1c0e5e66ddba",
+                  "name": "min"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "0282fada-68e2-4da7-b550-8bc038636b17",
+                  "name": "updated"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "bef8cafd-dab4-455c-b1ac-16dc909c0f5b",
+                  "name": "scoredOn"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "f26a8bac-2add-484c-bd06-93faa61ca4c9",
+                  "name": "id"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "46b60254-c1bb-44b2-ba2a-0a3aafb7036e",
+                  "name": "link"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "b620cb71-e802-4996-b2de-962d3070bc9a",
+                  "name": "description"
+                },
+                {
+                  "cardinality": "many",
+                  "dataType": {
+                    "shapeId": "58b71a51-3177-46bd-b8f9-5152b77202d5",
+                    "type": "shape"
+                  },
+                  "id": "4ce9b8b2-cc5d-49d4-9725-bafa15b64e29",
+                  "name": "weekly"
+                },
+                {
+                  "cardinality": "many",
+                  "dataType": {
+                    "shapeId": "969d59ef-bfb7-4599-a0bf-19d6bf3189d3",
+                    "type": "shape"
+                  },
+                  "id": "f7fe11d4-0302-49a8-9f10-a981304f28f3",
+                  "name": "financialSummary"
+                }
+              ],
+              "name": "finance-company-update-response-company",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/company/{id}",
+                "pointer": [
+                  "company"
+                ],
+                "verb": "put"
+              }
+            },
+            {
+              "id": "c39f2e52-ce27-4127-9057-f8509cd4e5c4",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "ffafdb9d-f09e-4e9c-bf86-467d5a2e1e60",
+                    "type": "shape"
+                  },
+                  "id": "5e0827b0-0bff-4f66-bd42-07b4e86bcd3c",
+                  "name": "company"
+                }
+              ],
+              "name": "finance-company-update-response",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/company/{id}",
+                "pointer": [],
+                "verb": "put"
+              }
+            }
+          ],
+          "tier": "anonymous",
+          "unmapped": []
+        },
+        {
+          "cardinality": "one",
+          "code": "405",
+          "description": "Method not allowed",
+          "shapes": [],
+          "tier": "undescribed",
+          "unmapped": []
+        },
+        {
+          "cardinality": "one",
+          "code": "406",
+          "description": "id path parameter required",
+          "shapes": [],
+          "tier": "undescribed",
+          "unmapped": []
+        }
+      ],
+      "segments": [
+        "company",
+        "{id}"
+      ],
+      "summary": "Look up a single company by symbol or Company id. Read-only despite the PUT verb — nothing is modified. A 24-hex ObjectId matches `_id`; anything else matches `symbol` case-insensitively, excluding Low-liquidity ETFs. Unknown id/symbol returns 200 with `company: null`.",
+      "verb": "put"
+    },
+    {
+      "domain": "finance",
+      "id": "put /finance/v1/indices",
+      "operationId": "finance_v1_indices_update",
+      "params": [
+        {
+          "cardinality": "one",
+          "dataType": {
+            "shapeId": "8cbfdd31-8328-48cd-b1e5-6279083cc795",
+            "type": "shape"
+          },
+          "doc": {
+            "members": [
+              {
+                "description": "Index symbols (e.g. NIFTY 50), max 200",
+                "members": [],
+                "name": "ids",
+                "required": true,
+                "type": "string[]"
+              },
+              {
+                "description": "Fields to return; omit for all. `id` is always returned.",
+                "members": [],
+                "name": "fields",
+                "required": false,
+                "type": "string[]"
+              }
+            ],
+            "name": "data",
+            "required": true,
+            "type": "object"
+          },
+          "location": "body",
+          "name": "data",
+          "required": true,
+          "shapes": [
+            {
+              "id": "8cbfdd31-8328-48cd-b1e5-6279083cc795",
+              "keys": [
+                {
+                  "cardinality": "many",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "7ebc3c22-9c43-4b18-adbc-5af1c3b2d3fc",
+                  "name": "ids"
+                },
+                {
+                  "cardinality": "many",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "9649b91f-fa77-468a-b23f-ea152fa81b2a",
+                  "name": "fields"
+                }
+              ],
+              "name": "finance-indices-update-request"
+            }
+          ],
+          "unmapped": []
+        }
+      ],
+      "path": "/finance/v1/indices",
+      "responses": [
+        {
+          "cardinality": "one",
+          "code": "200",
+          "dataType": {
+            "shapeId": "4e73cd9b-4864-40fb-b7cd-d5be81e98ece",
+            "type": "shape"
+          },
+          "description": "Indices retrieved successfully",
+          "doc": {
+            "members": [
+              {
+                "description": "Matched indices, in request order",
+                "members": [
+                  {
+                    "description": "Index id",
+                    "members": [],
+                    "name": "id",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Last crawl date",
+                    "members": [],
+                    "name": "updated",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Source security id",
+                    "members": [],
+                    "name": "ticker",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Source slug",
+                    "members": [],
+                    "name": "link",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Security type",
+                    "members": [],
+                    "name": "type",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Index name",
+                    "members": [],
+                    "name": "name",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Index symbol (e.g. NIFTY 50)",
+                    "members": [],
+                    "name": "symbol",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Exchange",
+                    "members": [],
+                    "name": "exchange",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Index description",
+                    "members": [],
+                    "name": "description",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Sector",
+                    "members": [],
+                    "name": "sector",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Returns per period, from daily prices",
+                    "members": [],
+                    "name": "profit",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Weekly price points",
+                    "members": [],
+                    "name": "weekly",
+                    "required": false,
+                    "type": "object[]"
+                  },
+                  {
+                    "description": "Momentum score from daily prices",
+                    "members": [],
+                    "name": "momentumScore",
+                    "required": false,
+                    "type": "number"
+                  }
+                ],
+                "name": "indices",
+                "required": false,
+                "type": "object[]"
+              }
+            ],
+            "name": "",
+            "required": true,
+            "type": "object"
+          },
+          "shapes": [
+            {
+              "id": "a097f429-4a0c-4c91-ae3e-ecec3289f299",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "b949f6de-0e79-409f-9afa-3836d947b816",
+                  "name": "id"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "6f993d71-bfed-48d8-8a21-2fa08a2987a8",
+                  "name": "updated"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "9abd19a4-82c5-41da-a48a-e401def93a58",
+                  "name": "ticker"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "280b23f2-3e3c-4703-8f69-d36a0e0a21af",
+                  "name": "link"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "fa112c7c-7f8c-47b4-86ad-5e13449a9cf0",
+                  "name": "type"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "7c15c2d9-8499-4dd4-837b-710999610802",
+                  "name": "name"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "6b484f65-191d-42ba-ac90-7d6103c1d173",
+                  "name": "symbol"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "f5f8a93d-ca07-4eed-b303-5d17185e9959",
+                  "name": "exchange"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "22dc6776-e8be-48bc-83c1-ce8ddb30bafd",
+                  "name": "description"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "acc8ced1-c706-4266-81b5-eb915a57d2e6",
+                  "name": "sector"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "49598fc6-f553-4bc8-aa0e-bf80e898cefc",
+                  "name": "momentumScore"
+                }
+              ],
+              "name": "finance-indices-update-response-indices",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/indices",
+                "pointer": [
+                  "indices"
+                ],
+                "verb": "put"
+              }
+            },
+            {
+              "id": "4e73cd9b-4864-40fb-b7cd-d5be81e98ece",
+              "keys": [
+                {
+                  "cardinality": "many",
+                  "dataType": {
+                    "shapeId": "a097f429-4a0c-4c91-ae3e-ecec3289f299",
+                    "type": "shape"
+                  },
+                  "id": "64d82086-38a0-43aa-aabf-53624334705d",
+                  "name": "indices"
+                }
+              ],
+              "name": "finance-indices-update-response",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/indices",
+                "pointer": [],
+                "verb": "put"
+              }
+            }
+          ],
+          "tier": "anonymous",
+          "unmapped": [
+            "indices.profit (object with no properties)",
+            "indices.weekly (object with no properties)"
+          ]
+        },
+        {
+          "cardinality": "one",
+          "code": "405",
+          "description": "Method not allowed",
+          "shapes": [],
+          "tier": "undescribed",
+          "unmapped": []
+        },
+        {
+          "cardinality": "one",
+          "code": "406",
+          "description": "ids required, more than 200 ids, or unknown field",
+          "shapes": [],
+          "tier": "undescribed",
+          "unmapped": []
+        }
+      ],
+      "segments": [
+        "indices"
+      ],
+      "summary": "Batch lookup of indices by symbol in one query. Read-only despite the PUT verb. Each entry matches `symbol` exactly, like `index/{id}`. Results keep request order; duplicates collapse and unknown symbols are dropped. Pass `fields` to project only those fields (e.g. skip `weekly`, `description`).",
+      "verb": "put"
+    },
+    {
+      "domain": "finance",
       "id": "put /finance/v1/ranking/{type}/{id}",
       "operationId": "finance_v1_ranking_update",
       "params": [
@@ -50,7 +2900,7 @@
           "cardinality": "many",
           "code": "200",
           "dataType": {
-            "shapeId": "8e8fe43e-44ce-4a99-b924-61835e04bfa1",
+            "shapeId": "a3fb1a6c-cc72-4c7e-b27d-8940d49f9fbd",
             "type": "shape"
           },
           "description": "Ranking chart (array of rows), or `null` when no match.",
@@ -111,14 +2961,14 @@
           },
           "shapes": [
             {
-              "id": "8e8fe43e-44ce-4a99-b924-61835e04bfa1",
+              "id": "a3fb1a6c-cc72-4c7e-b27d-8940d49f9fbd",
               "keys": [
                 {
                   "cardinality": "one",
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "8c365268-815e-484f-a92c-25ebf7637071",
+                  "id": "13f870b9-50cd-4f1f-9485-1d4f5ded3444",
                   "name": "symbol"
                 },
                 {
@@ -126,7 +2976,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "a183dbe5-62b3-4fc0-aeac-96644d8ce3eb",
+                  "id": "2174b788-30da-4356-8283-90a13fb2ee7e",
                   "name": "w"
                 },
                 {
@@ -134,7 +2984,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "b69a919a-761f-41a9-8ec2-89047e94b177",
+                  "id": "3c0b73a2-5cf0-495c-8cfa-354281f90c04",
                   "name": "m"
                 },
                 {
@@ -142,7 +2992,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "c0b42387-4534-47a4-9f85-044147cedffe",
+                  "id": "7f3788b9-9c79-4b28-92d9-217138721515",
                   "name": "q"
                 },
                 {
@@ -150,7 +3000,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "07dd1ee0-c058-4804-9148-cdbaad5a019a",
+                  "id": "98d80258-b472-4449-94d7-61a59615a913",
                   "name": "h"
                 },
                 {
@@ -158,7 +3008,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "979617b1-9937-47d4-934c-3efb154cd283",
+                  "id": "1946e721-94ea-4eed-a6fc-59497b4e2d0f",
                   "name": "y"
                 },
                 {
@@ -166,7 +3016,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "532a8cb9-eb1f-4cc8-855f-89a614994397",
+                  "id": "2357633e-fae2-41d8-8a75-17a75db15cad",
                   "name": "y2"
                 },
                 {
@@ -174,7 +3024,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "fb74184c-c151-41e3-831b-9667643ae8b6",
+                  "id": "f103a478-a158-404c-ac1b-d9a1aba96c74",
                   "name": "score"
                 }
               ],

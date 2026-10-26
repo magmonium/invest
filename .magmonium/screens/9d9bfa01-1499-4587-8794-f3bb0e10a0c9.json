@@ -65,21 +65,13 @@
         "repeat": {
           "indexAlias": "index",
           "itemAlias": "item",
+          "keyAlias": "key",
           "sampleRows": 3,
           "track": {
             "kind": "index"
           }
         },
         "type": "repeat"
-      },
-      "138c0a8f-7032-4520-95b2-e715acf9a00b": {
-        "childrens": [
-          "aef97bac-9147-47dc-a5d9-54c11f960a43"
-        ],
-        "configs": {},
-        "id": "138c0a8f-7032-4520-95b2-e715acf9a00b",
-        "parentId": "ba080fab-f90d-4261-84e0-a4131d2dc611",
-        "type": "section_header_label"
       },
       "1ecda88c-04ac-45b1-ab30-c22f69bb4bf5": {
         "childrens": [
@@ -126,7 +118,7 @@
         "childrens": [],
         "configs": {
           "fromColor": "error",
-          "radius": "sm",
+          "radius": "none",
           "toColor": "success"
         },
         "id": "32dbe3b9-230f-4f8a-9a7a-9944f6e7f4b2",
@@ -141,16 +133,6 @@
         "id": "3566f04f-3953-4aea-956f-0e5f88ae7224",
         "parentId": "f40140a5-2592-41de-bce7-275adfc63d42",
         "type": "section_table_cell"
-      },
-      "365b48f4-3e08-49ee-9841-39d2d574bdb3": {
-        "childrens": [],
-        "configs": {
-          "icon": "trending-up",
-          "size": 2
-        },
-        "id": "365b48f4-3e08-49ee-9841-39d2d574bdb3",
-        "parentId": "aef97bac-9147-47dc-a5d9-54c11f960a43",
-        "type": "icon"
       },
       "39761965-8223-4b48-8184-9843dd4c3ff9": {
         "childrens": [
@@ -185,7 +167,7 @@
               "label": "overall"
             }
           ],
-          "variant": "zebra"
+          "variant": "compact"
         },
         "id": "39761965-8223-4b48-8184-9843dd4c3ff9",
         "outputArgs": {
@@ -249,7 +231,7 @@
         "childrens": [],
         "configs": {
           "fromColor": "error",
-          "radius": "sm",
+          "radius": "none",
           "toColor": "success"
         },
         "id": "4c395d61-bbea-48a6-9585-0b3202c4e9c6",
@@ -282,7 +264,7 @@
         "childrens": [],
         "configs": {
           "fromColor": "error",
-          "radius": "sm",
+          "radius": "none",
           "toColor": "success"
         },
         "id": "630c75a3-e93c-48cc-b399-706780f8cff0",
@@ -301,7 +283,6 @@
       },
       "7efa67a8-1cdf-4d0e-9120-f73cfe0c2736": {
         "childrens": [
-          "ba080fab-f90d-4261-84e0-a4131d2dc611",
           "c16fe1a0-accc-43ae-9786-40fc745a669f"
         ],
         "configs": {},
@@ -333,46 +314,13 @@
         "childrens": [],
         "configs": {
           "fromColor": "error",
-          "radius": "sm",
+          "radius": "none",
           "toColor": "success"
         },
         "id": "9030c10f-b97f-451e-a7ae-a4c6a2550266",
         "parentId": "d430c53f-2797-4ddc-bf73-55e7db877ba6",
         "source": "raw",
         "type": "heat_swatch"
-      },
-      "95597066-90db-4f1d-95f2-d5749bc38deb": {
-        "bindings": {
-          "label": {
-            "path": [],
-            "root": {
-              "id": "25eccd3a-679b-4a2b-8a27-d1e6def9a91f",
-              "kind": "input"
-            }
-          }
-        },
-        "childrens": [],
-        "configs": {
-          "variant": "big"
-        },
-        "id": "95597066-90db-4f1d-95f2-d5749bc38deb",
-        "parentId": "aef97bac-9147-47dc-a5d9-54c11f960a43",
-        "textSource": "dynamic",
-        "type": "text"
-      },
-      "aef97bac-9147-47dc-a5d9-54c11f960a43": {
-        "childrens": [
-          "365b48f4-3e08-49ee-9841-39d2d574bdb3",
-          "95597066-90db-4f1d-95f2-d5749bc38deb"
-        ],
-        "configs": {
-          "alignItems": "center",
-          "gap": "1",
-          "justify": "start"
-        },
-        "id": "aef97bac-9147-47dc-a5d9-54c11f960a43",
-        "parentId": "138c0a8f-7032-4520-95b2-e715acf9a00b",
-        "type": "flex"
       },
       "b06ea51c-39fd-4e84-800c-25e82b03b509": {
         "childrens": [
@@ -399,22 +347,13 @@
         "childrens": [],
         "configs": {
           "fromColor": "error",
-          "radius": "sm",
+          "radius": "none",
           "toColor": "success"
         },
         "id": "b4061790-8614-40f0-ab6c-f9c47ef1a1f0",
         "parentId": "b06ea51c-39fd-4e84-800c-25e82b03b509",
         "source": "raw",
         "type": "heat_swatch"
-      },
-      "ba080fab-f90d-4261-84e0-a4131d2dc611": {
-        "childrens": [
-          "138c0a8f-7032-4520-95b2-e715acf9a00b"
-        ],
-        "configs": {},
-        "id": "ba080fab-f90d-4261-84e0-a4131d2dc611",
-        "parentId": "7efa67a8-1cdf-4d0e-9120-f73cfe0c2736",
-        "type": "section_header"
       },
       "c16fe1a0-accc-43ae-9786-40fc745a669f": {
         "childrens": [
@@ -450,7 +389,7 @@
         "childrens": [],
         "configs": {
           "fromColor": "error",
-          "radius": "sm",
+          "radius": "none",
           "toColor": "success"
         },
         "id": "e3c11665-96f9-48ab-8714-e65fa4c23596",
@@ -474,7 +413,7 @@
         "childrens": [],
         "configs": {
           "fromColor": "error",
-          "radius": "sm",
+          "radius": "none",
           "toColor": "success"
         },
         "id": "f2d89b76-4d36-438a-bfef-831e1414d657",
@@ -504,7 +443,7 @@
     "rootControlIds": [
       "7efa67a8-1cdf-4d0e-9120-f73cfe0c2736"
     ],
-    "selectedControl": "ba080fab-f90d-4261-84e0-a4131d2dc611",
+    "selectedControl": "c16fe1a0-accc-43ae-9786-40fc745a669f",
     "selectedLayerId": 2
   },
   "v": 29
