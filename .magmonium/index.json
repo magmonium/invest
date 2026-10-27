@@ -2177,7 +2177,19 @@
       "variants": {}
     }
   },
-  "functions": {},
+  "functions": {
+    "8c59a183-aac8-4829-afcd-9febf6142749": {
+      "body": "return new Date().toISOString();",
+      "description": "The current moment as an ISO 8601 timestamp, in UTC.",
+      "id": "8c59a183-aac8-4829-afcd-9febf6142749",
+      "name": "now",
+      "params": [],
+      "returnCardinality": "one",
+      "returnType": {
+        "type": "string"
+      }
+    }
+  },
   "npmAllowlist": {},
   "one": "0.4.61",
   "screens": [
@@ -2299,6 +2311,6 @@
     "name": "invest",
     "open": false,
     "theme": "",
-    "version": "0.1.2"
+    "version": "0.1.3"
   }
 }

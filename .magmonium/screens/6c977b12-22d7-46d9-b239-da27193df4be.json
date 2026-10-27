@@ -104,7 +104,7 @@
               "kind": "call",
               "pipeParam": -1,
               "target": {
-                "functionId": "c8c5bf6f-836c-41eb-ad20-c1106e93431c",
+                "functionId": "8c59a183-aac8-4829-afcd-9febf6142749",
                 "kind": "pure"
               }
             }
@@ -290,8 +290,8 @@
     "rootControlIds": [
       "84d637db-c300-4d2a-a0e7-25c4685f943c"
     ],
-    "selectedControl": "b5e185e2-a822-4650-a5ab-9fa1d9ba76d8",
-    "selectedLayerId": 4
+    "selectedControl": "7a1a21aa-f468-47b0-abab-b67e78a616f4",
+    "selectedLayerId": 5
   },
   "v": 29
 }
