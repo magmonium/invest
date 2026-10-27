@@ -55,7 +55,9 @@
   "state": {
     "controlMap": {
       "0dcaf353-a197-4e32-9b02-89dbd6ff8bee": {
-        "childrens": [],
+        "childrens": [
+          "b76fa234-9879-4bdd-bd0c-7274cec8b179"
+        ],
         "configs": {},
         "id": "0dcaf353-a197-4e32-9b02-89dbd6ff8bee",
         "outputArgs": {
@@ -171,6 +173,18 @@
         },
         "type": "section"
       },
+      "b76fa234-9879-4bdd-bd0c-7274cec8b179": {
+        "childrens": [
+          "f42faa59-3561-4a80-86ad-f1b3b5a5e4ac"
+        ],
+        "configs": {
+          "range": "1y",
+          "variant": "minimal"
+        },
+        "id": "b76fa234-9879-4bdd-bd0c-7274cec8b179",
+        "parentId": "0dcaf353-a197-4e32-9b02-89dbd6ff8bee",
+        "type": "section_chart"
+      },
       "bafc2bb2-2e34-4a5b-b767-1c2b10e9ce98": {
         "bindings": {
           "source": {
@@ -190,6 +204,58 @@
           "itemAlias": "item"
         },
         "type": "repeat"
+      },
+      "f42faa59-3561-4a80-86ad-f1b3b5a5e4ac": {
+        "bindings": {
+          "source": {
+            "path": [],
+            "root": {
+              "id": "1aeae2f3-0435-4b40-9c80-74d8ac86b012",
+              "kind": "screen_computed"
+            }
+          }
+        },
+        "childrens": [
+          "ff64c006-dc7c-4d39-a7c6-58a8b04fe616"
+        ],
+        "configs": {},
+        "id": "f42faa59-3561-4a80-86ad-f1b3b5a5e4ac",
+        "parentId": "b76fa234-9879-4bdd-bd0c-7274cec8b179",
+        "repeat": {
+          "indexAlias": "index",
+          "itemAlias": "item",
+          "keyAlias": "key",
+          "sampleRows": 3
+        },
+        "type": "repeat"
+      },
+      "ff64c006-dc7c-4d39-a7c6-58a8b04fe616": {
+        "bindings": {
+          "data": {
+            "path": [],
+            "root": {
+              "alias": "item",
+              "kind": "alias",
+              "repeatId": "f42faa59-3561-4a80-86ad-f1b3b5a5e4ac"
+            }
+          },
+          "label": {
+            "path": [],
+            "root": {
+              "alias": "key",
+              "kind": "alias",
+              "repeatId": "f42faa59-3561-4a80-86ad-f1b3b5a5e4ac"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {
+          "x": "ts",
+          "y": "lp"
+        },
+        "id": "ff64c006-dc7c-4d39-a7c6-58a8b04fe616",
+        "parentId": "f42faa59-3561-4a80-86ad-f1b3b5a5e4ac",
+        "type": "section_chart_series"
       }
     },
     "labelSamples": {},
@@ -197,7 +263,8 @@
     "rootControlIds": [
       "0dcaf353-a197-4e32-9b02-89dbd6ff8bee"
     ],
-    "selectedLayerId": 0
+    "selectedControl": "b76fa234-9879-4bdd-bd0c-7274cec8b179",
+    "selectedLayerId": 2
   },
   "v": 29
 }
