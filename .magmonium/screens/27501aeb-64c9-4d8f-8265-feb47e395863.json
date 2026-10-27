@@ -58,7 +58,9 @@
         "childrens": [
           "b76fa234-9879-4bdd-bd0c-7274cec8b179"
         ],
-        "configs": {},
+        "configs": {
+          "height": 600
+        },
         "id": "0dcaf353-a197-4e32-9b02-89dbd6ff8bee",
         "outputArgs": {
           "inView|arm:4ca63be2-cd9e-4731-82fa-01afee9a2b2a": [
@@ -178,7 +180,9 @@
           "f42faa59-3561-4a80-86ad-f1b3b5a5e4ac"
         ],
         "configs": {
+          "height": 600,
           "range": "1y",
+          "scale": "auto",
           "variant": "minimal"
         },
         "id": "b76fa234-9879-4bdd-bd0c-7274cec8b179",
