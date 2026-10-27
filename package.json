@@ -1,6 +1,6 @@
 {
   "name": "invest",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "private": true,
   "scripts": {
     "assets:one": "node scripts/copy-one-assets.cjs",
