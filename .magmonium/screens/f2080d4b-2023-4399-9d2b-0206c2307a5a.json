@@ -8,7 +8,8 @@
     "controlMap": {
       "24342e49-46e4-4de9-87af-e117519b1683": {
         "childrens": [
-          "c5113c00-1869-4d18-8df6-fbdc2d22e00f"
+          "c5113c00-1869-4d18-8df6-fbdc2d22e00f",
+          "978104f0-5920-4c92-b922-ac0a08907307"
         ],
         "configs": {},
         "id": "24342e49-46e4-4de9-87af-e117519b1683",
@@ -24,6 +25,15 @@
         "id": "867ee7d8-110d-4a7b-a3b7-9064e13fb969",
         "parentId": "c5113c00-1869-4d18-8df6-fbdc2d22e00f",
         "type": "col"
+      },
+      "978104f0-5920-4c92-b922-ac0a08907307": {
+        "childrens": [
+          "ff45ac32-5926-4d5a-9137-8cdcec7dc277"
+        ],
+        "configs": {},
+        "id": "978104f0-5920-4c92-b922-ac0a08907307",
+        "parentId": "24342e49-46e4-4de9-87af-e117519b1683",
+        "type": "row"
       },
       "c5113c00-1869-4d18-8df6-fbdc2d22e00f": {
         "childrens": [
@@ -52,6 +62,14 @@
         "parentId": "c5113c00-1869-4d18-8df6-fbdc2d22e00f",
         "source": "raw",
         "type": "col"
+      },
+      "ff45ac32-5926-4d5a-9137-8cdcec7dc277": {
+        "childrens": [],
+        "configs": {},
+        "id": "ff45ac32-5926-4d5a-9137-8cdcec7dc277",
+        "parentId": "978104f0-5920-4c92-b922-ac0a08907307",
+        "screenId": "a376688c-a9bc-4087-9dbd-201774c19563",
+        "type": "screen"
       }
     },
     "labelSamples": {},
@@ -59,7 +77,7 @@
     "rootControlIds": [
       "24342e49-46e4-4de9-87af-e117519b1683"
     ],
-    "selectedControl": "def8b529-64b2-47de-adbb-8b5f4075ab9f",
+    "selectedControl": "ff45ac32-5926-4d5a-9137-8cdcec7dc277",
     "selectedLayerId": 3
   },
   "v": 29

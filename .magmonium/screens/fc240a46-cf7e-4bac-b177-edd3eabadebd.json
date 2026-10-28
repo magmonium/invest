@@ -1,0 +1,259 @@
+{
+  "meta": {
+    "featureId": "bbad551b-72b3-4fde-86f9-afa810cbc40c",
+    "id": "fc240a46-cf7e-4bac-b177-edd3eabadebd",
+    "inputs": {
+      "d5586934-e7f3-40ca-90be-f056b78ab7c3": {
+        "cardinality": "one",
+        "dataType": {
+          "shapeId": "389c6b89-5cd9-466a-be24-432ca2b7fc9a",
+          "type": "shape"
+        },
+        "id": "d5586934-e7f3-40ca-90be-f056b78ab7c3",
+        "name": "holding"
+      }
+    },
+    "kind": "feature",
+    "name": "ticker",
+    "variants": {
+      "455acc77-7d4e-48e8-88a3-766b1c75689a": {
+        "id": "455acc77-7d4e-48e8-88a3-766b1c75689a",
+        "name": "buy",
+        "rule": {
+          "children": [
+            {
+              "id": "rn19",
+              "kind": "check",
+              "operand": {
+                "kind": "literal",
+                "value": "buy"
+              },
+              "operator": "==",
+              "path": [
+                "d5586934-e7f3-40ca-90be-f056b78ab7c3",
+                "56af9e52-bfda-4696-a7e7-df0bda9fb381"
+              ]
+            }
+          ],
+          "connective": "all",
+          "id": "rn20",
+          "kind": "group",
+          "negated": false
+        }
+      },
+      "4eab9386-df2c-478c-80e7-a108a90625bf": {
+        "id": "4eab9386-df2c-478c-80e7-a108a90625bf",
+        "name": "rebalance",
+        "rule": {
+          "children": [
+            {
+              "id": "rn31",
+              "kind": "check",
+              "operand": {
+                "kind": "literal",
+                "value": "rebalance"
+              },
+              "operator": "==",
+              "path": [
+                "d5586934-e7f3-40ca-90be-f056b78ab7c3",
+                "56af9e52-bfda-4696-a7e7-df0bda9fb381"
+              ]
+            }
+          ],
+          "connective": "all",
+          "id": "rn32",
+          "kind": "group",
+          "negated": false
+        }
+      },
+      "682c403c-7044-45ca-80f4-28f0c67e1700": {
+        "id": "682c403c-7044-45ca-80f4-28f0c67e1700",
+        "name": "sell",
+        "rule": {
+          "children": [
+            {
+              "id": "rn25",
+              "kind": "check",
+              "operand": {
+                "kind": "literal",
+                "value": "sell"
+              },
+              "operator": "==",
+              "path": [
+                "d5586934-e7f3-40ca-90be-f056b78ab7c3",
+                "56af9e52-bfda-4696-a7e7-df0bda9fb381"
+              ]
+            }
+          ],
+          "connective": "all",
+          "id": "rn26",
+          "kind": "group",
+          "negated": false
+        }
+      }
+    }
+  },
+  "state": {
+    "controlMap": {
+      "530ebd56-59c6-406a-b0f7-f4cf17a58acf": {
+        "bindings": {
+          "label": {
+            "path": [
+              "8fe10d23-75a7-4ad8-9f3d-35c175f95918"
+            ],
+            "root": {
+              "id": "d5586934-e7f3-40ca-90be-f056b78ab7c3",
+              "kind": "input"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {},
+        "id": "530ebd56-59c6-406a-b0f7-f4cf17a58acf",
+        "parentId": "a695dbb0-cb47-4cb7-9680-d80fb3550f9f",
+        "textSource": "dynamic",
+        "type": "text"
+      },
+      "5c1ebfd1-3daf-411b-9c06-91406ebe1583": {
+        "childrens": [
+          "5e9928ff-b0c0-4267-a40d-5bc41ef928a9",
+          "ad8d2a68-87c7-4f12-8465-ea2f84b9f0f5",
+          "a00dbdf3-decd-4026-895f-42b36af07cff",
+          "f681f2b3-0523-4acb-88aa-d2428b307163"
+        ],
+        "configs": {},
+        "id": "5c1ebfd1-3daf-411b-9c06-91406ebe1583",
+        "parentId": "a695dbb0-cb47-4cb7-9680-d80fb3550f9f",
+        "type": "variant_branch",
+        "variantKind": "screen"
+      },
+      "5e9928ff-b0c0-4267-a40d-5bc41ef928a9": {
+        "armKind": "default",
+        "childrens": [
+          "df54f4cd-a4e6-41f1-9631-f416b45f1820"
+        ],
+        "configs": {},
+        "id": "5e9928ff-b0c0-4267-a40d-5bc41ef928a9",
+        "parentId": "5c1ebfd1-3daf-411b-9c06-91406ebe1583",
+        "type": "branch_arm"
+      },
+      "9bb6eadb-d5a4-4ffa-bd3d-3068534cea79": {
+        "childrens": [],
+        "configs": {
+          "color": "mm",
+          "icon": "arrow-right"
+        },
+        "id": "9bb6eadb-d5a4-4ffa-bd3d-3068534cea79",
+        "parentId": "ad8d2a68-87c7-4f12-8465-ea2f84b9f0f5",
+        "source": "raw",
+        "type": "icon"
+      },
+      "a00dbdf3-decd-4026-895f-42b36af07cff": {
+        "childrens": [
+          "aca1fe58-4b30-4bb1-9ef8-24d98de67a0a"
+        ],
+        "configs": {
+          "name": "a00dbdf3-decd-4026-895f-42b36af07cff"
+        },
+        "id": "a00dbdf3-decd-4026-895f-42b36af07cff",
+        "parentId": "5c1ebfd1-3daf-411b-9c06-91406ebe1583",
+        "source": "raw",
+        "type": "branch_arm",
+        "variants": [
+          {
+            "id": "4eab9386-df2c-478c-80e7-a108a90625bf",
+            "join": "and"
+          }
+        ]
+      },
+      "a695dbb0-cb47-4cb7-9680-d80fb3550f9f": {
+        "childrens": [
+          "5c1ebfd1-3daf-411b-9c06-91406ebe1583",
+          "530ebd56-59c6-406a-b0f7-f4cf17a58acf"
+        ],
+        "configs": {
+          "alignItems": "center",
+          "gap": "0.5"
+        },
+        "id": "a695dbb0-cb47-4cb7-9680-d80fb3550f9f",
+        "type": "flex"
+      },
+      "aca1fe58-4b30-4bb1-9ef8-24d98de67a0a": {
+        "childrens": [],
+        "configs": {
+          "color": "success",
+          "icon": "arrow-left-right"
+        },
+        "id": "aca1fe58-4b30-4bb1-9ef8-24d98de67a0a",
+        "parentId": "a00dbdf3-decd-4026-895f-42b36af07cff",
+        "source": "raw",
+        "type": "icon"
+      },
+      "ad8d2a68-87c7-4f12-8465-ea2f84b9f0f5": {
+        "childrens": [
+          "9bb6eadb-d5a4-4ffa-bd3d-3068534cea79"
+        ],
+        "configs": {
+          "name": "ad8d2a68-87c7-4f12-8465-ea2f84b9f0f5"
+        },
+        "id": "ad8d2a68-87c7-4f12-8465-ea2f84b9f0f5",
+        "parentId": "5c1ebfd1-3daf-411b-9c06-91406ebe1583",
+        "source": "raw",
+        "type": "branch_arm",
+        "variants": [
+          {
+            "id": "455acc77-7d4e-48e8-88a3-766b1c75689a",
+            "join": "and"
+          }
+        ]
+      },
+      "b2567edb-adbf-43de-a7de-4b5d6a492d4c": {
+        "childrens": [],
+        "configs": {
+          "color": "error",
+          "icon": "arrow_back"
+        },
+        "id": "b2567edb-adbf-43de-a7de-4b5d6a492d4c",
+        "parentId": "f681f2b3-0523-4acb-88aa-d2428b307163",
+        "source": "raw",
+        "type": "icon"
+      },
+      "df54f4cd-a4e6-41f1-9631-f416b45f1820": {
+        "childrens": [],
+        "configs": {
+          "color": "success",
+          "icon": "check"
+        },
+        "id": "df54f4cd-a4e6-41f1-9631-f416b45f1820",
+        "parentId": "5e9928ff-b0c0-4267-a40d-5bc41ef928a9",
+        "type": "icon"
+      },
+      "f681f2b3-0523-4acb-88aa-d2428b307163": {
+        "childrens": [
+          "b2567edb-adbf-43de-a7de-4b5d6a492d4c"
+        ],
+        "configs": {
+          "name": "f681f2b3-0523-4acb-88aa-d2428b307163"
+        },
+        "id": "f681f2b3-0523-4acb-88aa-d2428b307163",
+        "parentId": "5c1ebfd1-3daf-411b-9c06-91406ebe1583",
+        "source": "raw",
+        "type": "branch_arm",
+        "variants": [
+          {
+            "id": "682c403c-7044-45ca-80f4-28f0c67e1700",
+            "join": "and"
+          }
+        ]
+      }
+    },
+    "labelSamples": {},
+    "pathSamples": {},
+    "rootControlIds": [
+      "a695dbb0-cb47-4cb7-9680-d80fb3550f9f"
+    ],
+    "selectedControl": "a695dbb0-cb47-4cb7-9680-d80fb3550f9f",
+    "selectedLayerId": 1
+  },
+  "v": 29
+}

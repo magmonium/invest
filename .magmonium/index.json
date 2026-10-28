@@ -167,6 +167,14 @@
             }
           ],
           "verb": "put"
+        },
+        "ade93043-51ff-4894-b9c3-921193ce5fe7": {
+          "id": "ade93043-51ff-4894-b9c3-921193ce5fe7",
+          "inputs": [],
+          "name": "getFinanceCompanyFields",
+          "path": "/finance/v1/company/fields",
+          "response": [],
+          "verb": "get"
         }
       },
       "name": "strategy",
@@ -3167,6 +3175,123 @@
       },
       "kind": "feature",
       "name": "my-strategy"
+    },
+    {
+      "featureId": "76e38aaa-d234-4aa1-b5fa-5b4595e714e2",
+      "id": "5c79009f-3ada-4480-aefb-c39767b16e45",
+      "inputs": {
+        "0625a637-e22a-4024-8d15-9edb427c54bf": {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "id": "0625a637-e22a-4024-8d15-9edb427c54bf",
+          "name": "id",
+          "required": true
+        }
+      },
+      "kind": "feature",
+      "name": "strategy-carve"
+    },
+    {
+      "featureId": "bbad551b-72b3-4fde-86f9-afa810cbc40c",
+      "id": "a376688c-a9bc-4087-9dbd-201774c19563",
+      "kind": "feature",
+      "name": "holdings"
+    },
+    {
+      "featureId": "bbad551b-72b3-4fde-86f9-afa810cbc40c",
+      "id": "fc240a46-cf7e-4bac-b177-edd3eabadebd",
+      "inputs": {
+        "d5586934-e7f3-40ca-90be-f056b78ab7c3": {
+          "cardinality": "one",
+          "dataType": {
+            "shapeId": "389c6b89-5cd9-466a-be24-432ca2b7fc9a",
+            "type": "shape"
+          },
+          "id": "d5586934-e7f3-40ca-90be-f056b78ab7c3",
+          "name": "holding"
+        }
+      },
+      "kind": "feature",
+      "name": "ticker",
+      "variants": {
+        "455acc77-7d4e-48e8-88a3-766b1c75689a": {
+          "id": "455acc77-7d4e-48e8-88a3-766b1c75689a",
+          "name": "buy",
+          "rule": {
+            "children": [
+              {
+                "id": "rn19",
+                "kind": "check",
+                "operand": {
+                  "kind": "literal",
+                  "value": "buy"
+                },
+                "operator": "==",
+                "path": [
+                  "d5586934-e7f3-40ca-90be-f056b78ab7c3",
+                  "56af9e52-bfda-4696-a7e7-df0bda9fb381"
+                ]
+              }
+            ],
+            "connective": "all",
+            "id": "rn20",
+            "kind": "group",
+            "negated": false
+          }
+        },
+        "4eab9386-df2c-478c-80e7-a108a90625bf": {
+          "id": "4eab9386-df2c-478c-80e7-a108a90625bf",
+          "name": "rebalance",
+          "rule": {
+            "children": [
+              {
+                "id": "rn31",
+                "kind": "check",
+                "operand": {
+                  "kind": "literal",
+                  "value": "rebalance"
+                },
+                "operator": "==",
+                "path": [
+                  "d5586934-e7f3-40ca-90be-f056b78ab7c3",
+                  "56af9e52-bfda-4696-a7e7-df0bda9fb381"
+                ]
+              }
+            ],
+            "connective": "all",
+            "id": "rn32",
+            "kind": "group",
+            "negated": false
+          }
+        },
+        "682c403c-7044-45ca-80f4-28f0c67e1700": {
+          "id": "682c403c-7044-45ca-80f4-28f0c67e1700",
+          "name": "sell",
+          "rule": {
+            "children": [
+              {
+                "id": "rn25",
+                "kind": "check",
+                "operand": {
+                  "kind": "literal",
+                  "value": "sell"
+                },
+                "operator": "==",
+                "path": [
+                  "d5586934-e7f3-40ca-90be-f056b78ab7c3",
+                  "56af9e52-bfda-4696-a7e7-df0bda9fb381"
+                ]
+              }
+            ],
+            "connective": "all",
+            "id": "rn26",
+            "kind": "group",
+            "negated": false
+          }
+        }
+      }
     }
   ],
   "sharedShapes": {},
