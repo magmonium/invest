@@ -1,0 +1,823 @@
+{
+  "meta": {
+    "featureId": "acef9153-606d-4de2-8699-7c87fa589384",
+    "id": "9cda9045-46d1-4bdb-9bcd-030f1d222865",
+    "kind": "feature",
+    "name": "dashboard"
+  },
+  "state": {
+    "controlMap": {
+      "0687884a-24fc-424c-8077-749159962118": {
+        "childrens": [
+          "48ff4b33-a483-4a10-a943-12bd59ed312a"
+        ],
+        "configs": {
+          "name": "0687884a-24fc-424c-8077-749159962118"
+        },
+        "id": "0687884a-24fc-424c-8077-749159962118",
+        "parentId": "30d1dc8d-02d9-428e-afbe-339e83f01128",
+        "source": "raw",
+        "type": "stat_corner"
+      },
+      "075336d0-ddb9-4c17-8e32-e658d6e0f7ba": {
+        "bindings": {
+          "label": {
+            "path": [
+              "4feeab16-b1e9-4470-9dcc-dfcd8c0deb14",
+              "64851b77-bc94-417e-8cea-7f564b7d6138"
+            ],
+            "root": {
+              "id": "f9417bc7-7332-4fc8-b609-05f40373d8b8",
+              "kind": "property"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {},
+        "formatPipes": [
+          {
+            "name": "signColor"
+          },
+          {
+            "name": "percentage"
+          }
+        ],
+        "id": "075336d0-ddb9-4c17-8e32-e658d6e0f7ba",
+        "parentId": "d86a1b9c-4749-4a66-8250-92ae5612b367",
+        "source": "raw",
+        "textSource": "dynamic",
+        "type": "text"
+      },
+      "0d8a6b93-acc7-4eab-94fc-f75cf7acbf12": {
+        "bindings": {
+          "label": {
+            "path": [
+              "4d8ab02f-cff6-4e18-8267-828e7b243674",
+              "64851b77-bc94-417e-8cea-7f564b7d6138"
+            ],
+            "root": {
+              "id": "f9417bc7-7332-4fc8-b609-05f40373d8b8",
+              "kind": "property"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {},
+        "formatPipes": [
+          {
+            "name": "signColor"
+          },
+          {
+            "name": "percentage"
+          }
+        ],
+        "id": "0d8a6b93-acc7-4eab-94fc-f75cf7acbf12",
+        "parentId": "48ff4b33-a483-4a10-a943-12bd59ed312a",
+        "source": "raw",
+        "textSource": "dynamic",
+        "type": "text"
+      },
+      "120ab4ca-8944-406c-b0ff-6857118b2982": {
+        "childrens": [
+          "fe19dbe2-2064-4573-943c-06d351d68430"
+        ],
+        "configs": {},
+        "id": "120ab4ca-8944-406c-b0ff-6857118b2982",
+        "parentId": "ab3e51da-10ec-40c6-8971-a17f0712d07b",
+        "source": "raw",
+        "type": "flex"
+      },
+      "13ad38eb-9fbf-455b-b894-7bb16dcdf7c2": {
+        "childrens": [
+          "4cc37ca5-2485-467b-b3a5-4a22f59cb6f4"
+        ],
+        "configs": {},
+        "id": "13ad38eb-9fbf-455b-b894-7bb16dcdf7c2",
+        "parentId": "a3cf8a3e-c896-4bf3-98f9-c6dd44b7b7cc",
+        "source": "raw",
+        "type": "flex"
+      },
+      "172e22b1-f1de-4919-b73c-8788fc3b634f": {
+        "childrens": [
+          "299c30bb-1bd2-44b1-813d-d206f8ff256c",
+          "9da451dc-9386-4dce-83a9-5a7c05bd55ba"
+        ],
+        "configs": {
+          "label": "largecap"
+        },
+        "id": "172e22b1-f1de-4919-b73c-8788fc3b634f",
+        "parentId": "3b4e4f0c-b7db-4dd9-986e-6cdac5318a73",
+        "type": "stat"
+      },
+      "1a164539-d914-441b-bf85-94387f258eb9": {
+        "childrens": [
+          "3b4e4f0c-b7db-4dd9-986e-6cdac5318a73",
+          "248ac942-8ec1-4c5f-8873-c01068668980"
+        ],
+        "configs": {
+          "fullHeight": false
+        },
+        "id": "1a164539-d914-441b-bf85-94387f258eb9",
+        "parentId": "3c0464af-b1c5-4825-9e79-9a39607888d4",
+        "type": "row"
+      },
+      "248ac942-8ec1-4c5f-8873-c01068668980": {
+        "childrens": [
+          "b51ca892-13ff-49d3-ad42-b0265730443e"
+        ],
+        "configs": {
+          "xs": "6"
+        },
+        "id": "248ac942-8ec1-4c5f-8873-c01068668980",
+        "parentId": "1a164539-d914-441b-bf85-94387f258eb9",
+        "source": "raw",
+        "type": "col"
+      },
+      "299c30bb-1bd2-44b1-813d-d206f8ff256c": {
+        "childrens": [
+          "ebb99311-89dd-4dc3-bf52-6e4f5eca31bd"
+        ],
+        "configs": {},
+        "id": "299c30bb-1bd2-44b1-813d-d206f8ff256c",
+        "parentId": "172e22b1-f1de-4919-b73c-8788fc3b634f",
+        "type": "stat_value"
+      },
+      "2a76302c-db18-4b9d-8df4-2e11a985f039": {
+        "childrens": [
+          "48ca2d66-6780-4823-a298-1d2e419e57ce",
+          "946a3f2d-a326-4184-ba5d-899d9e51acfa"
+        ],
+        "configs": {
+          "label": "gold"
+        },
+        "id": "2a76302c-db18-4b9d-8df4-2e11a985f039",
+        "parentId": "7287eaeb-1bd1-40b6-b119-d967f46d9b99",
+        "source": "raw",
+        "type": "stat"
+      },
+      "30d1dc8d-02d9-428e-afbe-339e83f01128": {
+        "childrens": [
+          "aa72f32e-ac0b-4b62-b909-720509200dd6",
+          "0687884a-24fc-424c-8077-749159962118"
+        ],
+        "configs": {
+          "label": "smallcap"
+        },
+        "id": "30d1dc8d-02d9-428e-afbe-339e83f01128",
+        "parentId": "c530cc0f-5eff-4212-a2a5-a2bb4d82f31a",
+        "source": "raw",
+        "type": "stat"
+      },
+      "3b4e4f0c-b7db-4dd9-986e-6cdac5318a73": {
+        "childrens": [
+          "172e22b1-f1de-4919-b73c-8788fc3b634f"
+        ],
+        "configs": {
+          "xs": "6"
+        },
+        "id": "3b4e4f0c-b7db-4dd9-986e-6cdac5318a73",
+        "parentId": "1a164539-d914-441b-bf85-94387f258eb9",
+        "type": "col"
+      },
+      "3c0464af-b1c5-4825-9e79-9a39607888d4": {
+        "childrens": [
+          "1a164539-d914-441b-bf85-94387f258eb9",
+          "6e3f6f77-3fb7-4031-97f5-0a530b67f82f",
+          "cfe999b5-827d-488f-a4df-57b426e6e8af"
+        ],
+        "configs": {},
+        "id": "3c0464af-b1c5-4825-9e79-9a39607888d4",
+        "outputs": {
+          "inView": "f4b24e25-b956-4270-9153-6baeeb28a029"
+        },
+        "type": "section"
+      },
+      "412b44f0-6abf-49d6-b163-a5b69e06bc83": {
+        "childrens": [
+          "c6e170e3-aaa8-4e50-a2c1-e8eb20d18106"
+        ],
+        "configs": {
+          "xs": "6"
+        },
+        "id": "412b44f0-6abf-49d6-b163-a5b69e06bc83",
+        "parentId": "cfe999b5-827d-488f-a4df-57b426e6e8af",
+        "source": "raw",
+        "type": "col"
+      },
+      "461fa8b6-f4d2-44b9-a218-c2ae441a5d9b": {
+        "bindings": {
+          "label": {
+            "path": [
+              "4feeab16-b1e9-4470-9dcc-dfcd8c0deb14",
+              "3f650ddc-3499-4be9-89d3-d54156098421"
+            ],
+            "root": {
+              "id": "f9417bc7-7332-4fc8-b609-05f40373d8b8",
+              "kind": "property"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {},
+        "formatPipes": [
+          {
+            "name": "signColor"
+          },
+          {
+            "name": "percentage"
+          }
+        ],
+        "id": "461fa8b6-f4d2-44b9-a218-c2ae441a5d9b",
+        "parentId": "6e11f1b7-d4ce-4d4e-b6ba-be785a4e32be",
+        "source": "raw",
+        "textSource": "dynamic",
+        "type": "text"
+      },
+      "4886b05a-35e9-4b29-88da-8c6ca97d7327": {
+        "bindings": {
+          "label": {
+            "path": [
+              "4d8ab02f-cff6-4e18-8267-828e7b243674",
+              "3f650ddc-3499-4be9-89d3-d54156098421"
+            ],
+            "root": {
+              "id": "f9417bc7-7332-4fc8-b609-05f40373d8b8",
+              "kind": "property"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {},
+        "formatPipes": [
+          {
+            "name": "percentage"
+          },
+          {
+            "name": "signColor"
+          }
+        ],
+        "id": "4886b05a-35e9-4b29-88da-8c6ca97d7327",
+        "parentId": "cbcadc65-ea54-44a7-8632-399bd62b5a9e",
+        "source": "raw",
+        "textSource": "dynamic",
+        "type": "text"
+      },
+      "48ca2d66-6780-4823-a298-1d2e419e57ce": {
+        "childrens": [
+          "7de99ac2-46e4-44af-b31f-0437f78009d5"
+        ],
+        "configs": {
+          "name": "48ca2d66-6780-4823-a298-1d2e419e57ce"
+        },
+        "id": "48ca2d66-6780-4823-a298-1d2e419e57ce",
+        "parentId": "2a76302c-db18-4b9d-8df4-2e11a985f039",
+        "source": "raw",
+        "type": "stat_value"
+      },
+      "48ff4b33-a483-4a10-a943-12bd59ed312a": {
+        "childrens": [
+          "0d8a6b93-acc7-4eab-94fc-f75cf7acbf12"
+        ],
+        "configs": {},
+        "id": "48ff4b33-a483-4a10-a943-12bd59ed312a",
+        "parentId": "0687884a-24fc-424c-8077-749159962118",
+        "source": "raw",
+        "type": "flex"
+      },
+      "4cc37ca5-2485-467b-b3a5-4a22f59cb6f4": {
+        "bindings": {
+          "label": {
+            "path": [
+              "4d8ab02f-cff6-4e18-8267-828e7b243674",
+              "64851b77-bc94-417e-8cea-7f564b7d6138"
+            ],
+            "root": {
+              "id": "f9417bc7-7332-4fc8-b609-05f40373d8b8",
+              "kind": "property"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {},
+        "formatPipes": [
+          {
+            "name": "signColor"
+          },
+          {
+            "name": "percentage"
+          }
+        ],
+        "id": "4cc37ca5-2485-467b-b3a5-4a22f59cb6f4",
+        "parentId": "13ad38eb-9fbf-455b-b894-7bb16dcdf7c2",
+        "source": "raw",
+        "textSource": "dynamic",
+        "type": "text"
+      },
+      "59e0810c-0d80-4707-9916-4b14caa9b77a": {
+        "childrens": [
+          "fc4f4982-0f79-47b4-ad6c-da59e5985f18"
+        ],
+        "configs": {},
+        "id": "59e0810c-0d80-4707-9916-4b14caa9b77a",
+        "parentId": "aa72f32e-ac0b-4b62-b909-720509200dd6",
+        "source": "raw",
+        "type": "flex"
+      },
+      "61eceb1b-0952-41e0-8545-1a7bf2a666c7": {
+        "bindings": {
+          "label": {
+            "path": [
+              "52100fca-db8f-48f2-936b-82bb3a50b727",
+              "64851b77-bc94-417e-8cea-7f564b7d6138"
+            ],
+            "root": {
+              "id": "f9417bc7-7332-4fc8-b609-05f40373d8b8",
+              "kind": "property"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {},
+        "formatPipes": [
+          {
+            "name": "signColor"
+          },
+          {
+            "name": "percentage"
+          }
+        ],
+        "id": "61eceb1b-0952-41e0-8545-1a7bf2a666c7",
+        "parentId": "d0ba2eab-13b5-468a-9617-4508cbd783ea",
+        "source": "raw",
+        "textSource": "dynamic",
+        "type": "text"
+      },
+      "6e11f1b7-d4ce-4d4e-b6ba-be785a4e32be": {
+        "childrens": [
+          "461fa8b6-f4d2-44b9-a218-c2ae441a5d9b"
+        ],
+        "configs": {},
+        "id": "6e11f1b7-d4ce-4d4e-b6ba-be785a4e32be",
+        "parentId": "d299578b-acac-48ee-92a6-f15a0dbf532c",
+        "source": "raw",
+        "type": "flex"
+      },
+      "6e3f6f77-3fb7-4031-97f5-0a530b67f82f": {
+        "childrens": [
+          "c530cc0f-5eff-4212-a2a5-a2bb4d82f31a",
+          "7209d10f-4ca2-4240-b46f-28ff0b767f3b"
+        ],
+        "configs": {
+          "fullHeight": false
+        },
+        "id": "6e3f6f77-3fb7-4031-97f5-0a530b67f82f",
+        "parentId": "3c0464af-b1c5-4825-9e79-9a39607888d4",
+        "source": "raw",
+        "type": "row"
+      },
+      "6efd1fd9-27d3-4b74-a0d0-6809e95d09bf": {
+        "bindings": {
+          "label": {
+            "path": [
+              "64b6ca20-7cf6-4c94-b474-2aa7a5dc0a15",
+              "3f650ddc-3499-4be9-89d3-d54156098421"
+            ],
+            "root": {
+              "id": "f9417bc7-7332-4fc8-b609-05f40373d8b8",
+              "kind": "property"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {},
+        "formatPipes": [
+          {
+            "name": "signColor"
+          },
+          {
+            "name": "percentage"
+          }
+        ],
+        "id": "6efd1fd9-27d3-4b74-a0d0-6809e95d09bf",
+        "parentId": "7de99ac2-46e4-44af-b31f-0437f78009d5",
+        "source": "raw",
+        "textSource": "dynamic",
+        "type": "text"
+      },
+      "7209d10f-4ca2-4240-b46f-28ff0b767f3b": {
+        "childrens": [
+          "7f948940-9dce-47af-a6e4-fa8e015d61fc"
+        ],
+        "configs": {
+          "md": "6",
+          "xs": "6"
+        },
+        "id": "7209d10f-4ca2-4240-b46f-28ff0b767f3b",
+        "parentId": "6e3f6f77-3fb7-4031-97f5-0a530b67f82f",
+        "source": "raw",
+        "type": "col"
+      },
+      "7287eaeb-1bd1-40b6-b119-d967f46d9b99": {
+        "childrens": [
+          "2a76302c-db18-4b9d-8df4-2e11a985f039"
+        ],
+        "configs": {
+          "xs": "6"
+        },
+        "id": "7287eaeb-1bd1-40b6-b119-d967f46d9b99",
+        "parentId": "cfe999b5-827d-488f-a4df-57b426e6e8af",
+        "source": "raw",
+        "type": "col"
+      },
+      "75f9560b-b0bd-4ed3-a583-bf213caab860": {
+        "bindings": {
+          "label": {
+            "path": [
+              "501edbe4-466f-4048-9914-0632323fb5b2",
+              "3f650ddc-3499-4be9-89d3-d54156098421"
+            ],
+            "root": {
+              "id": "f9417bc7-7332-4fc8-b609-05f40373d8b8",
+              "kind": "property"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {},
+        "formatPipes": [
+          {
+            "name": "percentage"
+          },
+          {
+            "name": "signColor"
+          }
+        ],
+        "id": "75f9560b-b0bd-4ed3-a583-bf213caab860",
+        "parentId": "ebb99311-89dd-4dc3-bf52-6e4f5eca31bd",
+        "source": "raw",
+        "textSource": "dynamic",
+        "type": "text"
+      },
+      "7de99ac2-46e4-44af-b31f-0437f78009d5": {
+        "childrens": [
+          "6efd1fd9-27d3-4b74-a0d0-6809e95d09bf"
+        ],
+        "configs": {},
+        "id": "7de99ac2-46e4-44af-b31f-0437f78009d5",
+        "parentId": "48ca2d66-6780-4823-a298-1d2e419e57ce",
+        "source": "raw",
+        "type": "flex"
+      },
+      "7eb039b2-2728-4913-846b-2a0d50bca78a": {
+        "bindings": {
+          "label": {
+            "path": [
+              "501edbe4-466f-4048-9914-0632323fb5b2",
+              "64851b77-bc94-417e-8cea-7f564b7d6138"
+            ],
+            "root": {
+              "id": "f9417bc7-7332-4fc8-b609-05f40373d8b8",
+              "kind": "property"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {},
+        "formatPipes": [
+          {
+            "name": "percentage"
+          },
+          {
+            "name": "signColor"
+          }
+        ],
+        "id": "7eb039b2-2728-4913-846b-2a0d50bca78a",
+        "parentId": "c5664c40-553e-4128-9188-ec589b3a97a2",
+        "source": "raw",
+        "textSource": "dynamic",
+        "type": "text"
+      },
+      "7f948940-9dce-47af-a6e4-fa8e015d61fc": {
+        "childrens": [
+          "d299578b-acac-48ee-92a6-f15a0dbf532c",
+          "b253c082-8138-48b8-96f2-2337053c5ae2"
+        ],
+        "configs": {
+          "label": "my-portfolio"
+        },
+        "id": "7f948940-9dce-47af-a6e4-fa8e015d61fc",
+        "parentId": "7209d10f-4ca2-4240-b46f-28ff0b767f3b",
+        "source": "raw",
+        "type": "stat"
+      },
+      "7fe1b4d3-7a5f-4bbc-9021-43a47ef23f1b": {
+        "childrens": [
+          "cbcadc65-ea54-44a7-8632-399bd62b5a9e"
+        ],
+        "configs": {
+          "name": "7fe1b4d3-7a5f-4bbc-9021-43a47ef23f1b"
+        },
+        "id": "7fe1b4d3-7a5f-4bbc-9021-43a47ef23f1b",
+        "parentId": "b51ca892-13ff-49d3-ad42-b0265730443e",
+        "source": "raw",
+        "type": "stat_value"
+      },
+      "886fbab7-82b7-4a72-a8e8-c5fd5693ff86": {
+        "bindings": {
+          "label": {
+            "path": [
+              "64b6ca20-7cf6-4c94-b474-2aa7a5dc0a15",
+              "3f650ddc-3499-4be9-89d3-d54156098421"
+            ],
+            "root": {
+              "id": "f9417bc7-7332-4fc8-b609-05f40373d8b8",
+              "kind": "property"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {},
+        "formatPipes": [
+          {
+            "name": "signColor"
+          },
+          {
+            "name": "percentage"
+          }
+        ],
+        "id": "886fbab7-82b7-4a72-a8e8-c5fd5693ff86",
+        "parentId": "fb116883-4c6d-4cb4-a537-3f28e3daf820",
+        "source": "raw",
+        "textSource": "dynamic",
+        "type": "text"
+      },
+      "946a3f2d-a326-4184-ba5d-899d9e51acfa": {
+        "childrens": [
+          "d0ba2eab-13b5-468a-9617-4508cbd783ea"
+        ],
+        "configs": {
+          "name": "946a3f2d-a326-4184-ba5d-899d9e51acfa"
+        },
+        "id": "946a3f2d-a326-4184-ba5d-899d9e51acfa",
+        "parentId": "2a76302c-db18-4b9d-8df4-2e11a985f039",
+        "source": "raw",
+        "type": "stat_corner"
+      },
+      "9a61438f-0ccc-46f6-a06e-0c46760af71f": {
+        "childrens": [
+          "fb116883-4c6d-4cb4-a537-3f28e3daf820"
+        ],
+        "configs": {
+          "name": "9a61438f-0ccc-46f6-a06e-0c46760af71f"
+        },
+        "id": "9a61438f-0ccc-46f6-a06e-0c46760af71f",
+        "parentId": "c6e170e3-aaa8-4e50-a2c1-e8eb20d18106",
+        "source": "raw",
+        "type": "stat_value"
+      },
+      "9da451dc-9386-4dce-83a9-5a7c05bd55ba": {
+        "childrens": [
+          "c5664c40-553e-4128-9188-ec589b3a97a2"
+        ],
+        "configs": {},
+        "id": "9da451dc-9386-4dce-83a9-5a7c05bd55ba",
+        "parentId": "172e22b1-f1de-4919-b73c-8788fc3b634f",
+        "type": "stat_corner"
+      },
+      "a3cf8a3e-c896-4bf3-98f9-c6dd44b7b7cc": {
+        "childrens": [
+          "13ad38eb-9fbf-455b-b894-7bb16dcdf7c2"
+        ],
+        "configs": {
+          "name": "a3cf8a3e-c896-4bf3-98f9-c6dd44b7b7cc"
+        },
+        "id": "a3cf8a3e-c896-4bf3-98f9-c6dd44b7b7cc",
+        "parentId": "b51ca892-13ff-49d3-ad42-b0265730443e",
+        "source": "raw",
+        "type": "stat_corner"
+      },
+      "aa72f32e-ac0b-4b62-b909-720509200dd6": {
+        "childrens": [
+          "59e0810c-0d80-4707-9916-4b14caa9b77a"
+        ],
+        "configs": {
+          "name": "aa72f32e-ac0b-4b62-b909-720509200dd6"
+        },
+        "id": "aa72f32e-ac0b-4b62-b909-720509200dd6",
+        "parentId": "30d1dc8d-02d9-428e-afbe-339e83f01128",
+        "source": "raw",
+        "type": "stat_value"
+      },
+      "ab3e51da-10ec-40c6-8971-a17f0712d07b": {
+        "childrens": [
+          "120ab4ca-8944-406c-b0ff-6857118b2982"
+        ],
+        "configs": {
+          "name": "ab3e51da-10ec-40c6-8971-a17f0712d07b"
+        },
+        "id": "ab3e51da-10ec-40c6-8971-a17f0712d07b",
+        "parentId": "c6e170e3-aaa8-4e50-a2c1-e8eb20d18106",
+        "source": "raw",
+        "type": "stat_corner"
+      },
+      "b253c082-8138-48b8-96f2-2337053c5ae2": {
+        "childrens": [
+          "d86a1b9c-4749-4a66-8250-92ae5612b367"
+        ],
+        "configs": {
+          "name": "b253c082-8138-48b8-96f2-2337053c5ae2"
+        },
+        "id": "b253c082-8138-48b8-96f2-2337053c5ae2",
+        "parentId": "7f948940-9dce-47af-a6e4-fa8e015d61fc",
+        "source": "raw",
+        "type": "stat_corner"
+      },
+      "b51ca892-13ff-49d3-ad42-b0265730443e": {
+        "childrens": [
+          "7fe1b4d3-7a5f-4bbc-9021-43a47ef23f1b",
+          "a3cf8a3e-c896-4bf3-98f9-c6dd44b7b7cc"
+        ],
+        "configs": {
+          "label": "midcap"
+        },
+        "id": "b51ca892-13ff-49d3-ad42-b0265730443e",
+        "parentId": "248ac942-8ec1-4c5f-8873-c01068668980",
+        "source": "raw",
+        "type": "stat"
+      },
+      "c530cc0f-5eff-4212-a2a5-a2bb4d82f31a": {
+        "childrens": [
+          "30d1dc8d-02d9-428e-afbe-339e83f01128"
+        ],
+        "configs": {
+          "xs": "6"
+        },
+        "id": "c530cc0f-5eff-4212-a2a5-a2bb4d82f31a",
+        "parentId": "6e3f6f77-3fb7-4031-97f5-0a530b67f82f",
+        "source": "raw",
+        "type": "col"
+      },
+      "c5664c40-553e-4128-9188-ec589b3a97a2": {
+        "childrens": [
+          "7eb039b2-2728-4913-846b-2a0d50bca78a"
+        ],
+        "configs": {},
+        "id": "c5664c40-553e-4128-9188-ec589b3a97a2",
+        "parentId": "9da451dc-9386-4dce-83a9-5a7c05bd55ba",
+        "source": "raw",
+        "type": "flex"
+      },
+      "c6e170e3-aaa8-4e50-a2c1-e8eb20d18106": {
+        "childrens": [
+          "9a61438f-0ccc-46f6-a06e-0c46760af71f",
+          "ab3e51da-10ec-40c6-8971-a17f0712d07b"
+        ],
+        "configs": {
+          "label": "silver"
+        },
+        "id": "c6e170e3-aaa8-4e50-a2c1-e8eb20d18106",
+        "parentId": "412b44f0-6abf-49d6-b163-a5b69e06bc83",
+        "source": "raw",
+        "type": "stat"
+      },
+      "cbcadc65-ea54-44a7-8632-399bd62b5a9e": {
+        "childrens": [
+          "4886b05a-35e9-4b29-88da-8c6ca97d7327"
+        ],
+        "configs": {},
+        "id": "cbcadc65-ea54-44a7-8632-399bd62b5a9e",
+        "parentId": "7fe1b4d3-7a5f-4bbc-9021-43a47ef23f1b",
+        "source": "raw",
+        "type": "flex"
+      },
+      "cfe999b5-827d-488f-a4df-57b426e6e8af": {
+        "childrens": [
+          "7287eaeb-1bd1-40b6-b119-d967f46d9b99",
+          "412b44f0-6abf-49d6-b163-a5b69e06bc83"
+        ],
+        "configs": {
+          "fullHeight": false
+        },
+        "id": "cfe999b5-827d-488f-a4df-57b426e6e8af",
+        "parentId": "3c0464af-b1c5-4825-9e79-9a39607888d4",
+        "source": "raw",
+        "type": "row"
+      },
+      "d0ba2eab-13b5-468a-9617-4508cbd783ea": {
+        "childrens": [
+          "61eceb1b-0952-41e0-8545-1a7bf2a666c7"
+        ],
+        "configs": {},
+        "id": "d0ba2eab-13b5-468a-9617-4508cbd783ea",
+        "parentId": "946a3f2d-a326-4184-ba5d-899d9e51acfa",
+        "type": "flex"
+      },
+      "d299578b-acac-48ee-92a6-f15a0dbf532c": {
+        "childrens": [
+          "6e11f1b7-d4ce-4d4e-b6ba-be785a4e32be"
+        ],
+        "configs": {
+          "name": "d299578b-acac-48ee-92a6-f15a0dbf532c"
+        },
+        "id": "d299578b-acac-48ee-92a6-f15a0dbf532c",
+        "parentId": "7f948940-9dce-47af-a6e4-fa8e015d61fc",
+        "source": "raw",
+        "type": "stat_value"
+      },
+      "d86a1b9c-4749-4a66-8250-92ae5612b367": {
+        "childrens": [
+          "075336d0-ddb9-4c17-8e32-e658d6e0f7ba"
+        ],
+        "configs": {},
+        "id": "d86a1b9c-4749-4a66-8250-92ae5612b367",
+        "parentId": "b253c082-8138-48b8-96f2-2337053c5ae2",
+        "source": "raw",
+        "type": "flex"
+      },
+      "ebb99311-89dd-4dc3-bf52-6e4f5eca31bd": {
+        "childrens": [
+          "75f9560b-b0bd-4ed3-a583-bf213caab860"
+        ],
+        "configs": {},
+        "id": "ebb99311-89dd-4dc3-bf52-6e4f5eca31bd",
+        "parentId": "299c30bb-1bd2-44b1-813d-d206f8ff256c",
+        "type": "flex"
+      },
+      "fb116883-4c6d-4cb4-a537-3f28e3daf820": {
+        "childrens": [
+          "886fbab7-82b7-4a72-a8e8-c5fd5693ff86"
+        ],
+        "configs": {},
+        "id": "fb116883-4c6d-4cb4-a537-3f28e3daf820",
+        "parentId": "9a61438f-0ccc-46f6-a06e-0c46760af71f",
+        "source": "raw",
+        "type": "flex"
+      },
+      "fc4f4982-0f79-47b4-ad6c-da59e5985f18": {
+        "bindings": {
+          "label": {
+            "path": [
+              "e6cab216-0c85-48fa-b027-58db822a7f40",
+              "3f650ddc-3499-4be9-89d3-d54156098421"
+            ],
+            "root": {
+              "id": "f9417bc7-7332-4fc8-b609-05f40373d8b8",
+              "kind": "property"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {},
+        "formatPipes": [
+          {
+            "name": "percentage"
+          },
+          {
+            "name": "signColor"
+          }
+        ],
+        "id": "fc4f4982-0f79-47b4-ad6c-da59e5985f18",
+        "parentId": "59e0810c-0d80-4707-9916-4b14caa9b77a",
+        "source": "raw",
+        "textSource": "dynamic",
+        "type": "text"
+      },
+      "fe19dbe2-2064-4573-943c-06d351d68430": {
+        "bindings": {
+          "label": {
+            "path": [
+              "64b6ca20-7cf6-4c94-b474-2aa7a5dc0a15",
+              "64851b77-bc94-417e-8cea-7f564b7d6138"
+            ],
+            "root": {
+              "id": "f9417bc7-7332-4fc8-b609-05f40373d8b8",
+              "kind": "property"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {},
+        "formatPipes": [
+          {
+            "name": "signColor"
+          },
+          {
+            "name": "percentage"
+          }
+        ],
+        "id": "fe19dbe2-2064-4573-943c-06d351d68430",
+        "parentId": "120ab4ca-8944-406c-b0ff-6857118b2982",
+        "textSource": "dynamic",
+        "type": "text"
+      }
+    },
+    "labelSamples": {},
+    "pathSamples": {},
+    "rootControlIds": [
+      "3c0464af-b1c5-4825-9e79-9a39607888d4"
+    ],
+    "selectedControl": "fe19dbe2-2064-4573-943c-06d351d68430",
+    "selectedLayerId": 7
+  },
+  "v": 29
+}

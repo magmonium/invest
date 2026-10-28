@@ -1,7 +1,7 @@
 {
   "appName": "invest",
   "appTarget": {
-    "appId": "6addf46bb7cbbdc1345d78e9",
+    "appId": "6ade03c0d26c2cfa6c529b05",
     "appName": "invest",
     "appPath": "apps/invest/mag_assets",
     "environment": {
@@ -734,6 +734,36 @@
             }
           ],
           "verb": "put"
+        },
+        "f4b24e25-b956-4270-9153-6baeeb28a029": {
+          "conditions": [
+            {
+              "args": {},
+              "check": {
+                "operator": "not_exists",
+                "path": [
+                  "f9417bc7-7332-4fc8-b609-05f40373d8b8",
+                  "501edbe4-466f-4048-9914-0632323fb5b2"
+                ],
+                "source": "store"
+              },
+              "functionId": "",
+              "id": "cc1",
+              "kind": "check"
+            }
+          ],
+          "id": "f4b24e25-b956-4270-9153-6baeeb28a029",
+          "inputs": [],
+          "name": "getFinanceDashboard",
+          "path": "/finance/v1/dashboard",
+          "response": [
+            {
+              "code": "200",
+              "propertyId": "f9417bc7-7332-4fc8-b609-05f40373d8b8",
+              "source": []
+            }
+          ],
+          "verb": "get"
         }
       },
       "name": "analysis",
@@ -764,9 +794,48 @@
           },
           "id": "e5e30d28-369a-42fb-abe6-516e96fd51ba",
           "name": "indexMap"
+        },
+        "f9417bc7-7332-4fc8-b609-05f40373d8b8": {
+          "cardinality": "one",
+          "dataType": {
+            "shapeId": "d915fca1-7809-4470-8692-899dcaec5c57",
+            "type": "shape"
+          },
+          "id": "f9417bc7-7332-4fc8-b609-05f40373d8b8",
+          "name": "dashboard"
         }
       },
       "shapes": {
+        "029acde2-2ef3-41c9-acd9-76f93137a5a8": {
+          "id": "029acde2-2ef3-41c9-acd9-76f93137a5a8",
+          "keys": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "3f650ddc-3499-4be9-89d3-d54156098421",
+              "name": "day"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "64851b77-bc94-417e-8cea-7f564b7d6138",
+              "name": "week"
+            }
+          ],
+          "name": "finance-dashboard-list-response-nifty",
+          "origin": {
+            "code": "200",
+            "path": "/finance/v1/dashboard",
+            "pointer": [
+              "nifty"
+            ],
+            "verb": "get"
+          }
+        },
         "1413d88a-833d-457c-a2be-556739f6cdc4": {
           "id": "1413d88a-833d-457c-a2be-556739f6cdc4",
           "keys": [
@@ -2071,6 +2140,72 @@
             "verb": "put"
           }
         },
+        "d915fca1-7809-4470-8692-899dcaec5c57": {
+          "id": "d915fca1-7809-4470-8692-899dcaec5c57",
+          "keys": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "shapeId": "029acde2-2ef3-41c9-acd9-76f93137a5a8",
+                "type": "shape"
+              },
+              "id": "501edbe4-466f-4048-9914-0632323fb5b2",
+              "name": "nifty"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "shapeId": "029acde2-2ef3-41c9-acd9-76f93137a5a8",
+                "type": "shape"
+              },
+              "id": "4d8ab02f-cff6-4e18-8267-828e7b243674",
+              "name": "midcap"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "shapeId": "029acde2-2ef3-41c9-acd9-76f93137a5a8",
+                "type": "shape"
+              },
+              "id": "e6cab216-0c85-48fa-b027-58db822a7f40",
+              "name": "smallcap"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "shapeId": "029acde2-2ef3-41c9-acd9-76f93137a5a8",
+                "type": "shape"
+              },
+              "id": "52100fca-db8f-48f2-936b-82bb3a50b727",
+              "name": "gold"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "shapeId": "029acde2-2ef3-41c9-acd9-76f93137a5a8",
+                "type": "shape"
+              },
+              "id": "64b6ca20-7cf6-4c94-b474-2aa7a5dc0a15",
+              "name": "silver"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "shapeId": "029acde2-2ef3-41c9-acd9-76f93137a5a8",
+                "type": "shape"
+              },
+              "id": "4feeab16-b1e9-4470-9dcc-dfcd8c0deb14",
+              "name": "portfolio"
+            }
+          ],
+          "name": "finance-dashboard-list-response",
+          "origin": {
+            "code": "200",
+            "path": "/finance/v1/dashboard",
+            "pointer": [],
+            "verb": "get"
+          }
+        },
         "eb34fbff-711a-4f7a-b67d-26dca35a7412": {
           "id": "eb34fbff-711a-4f7a-b67d-26dca35a7412",
           "keys": [
@@ -2191,7 +2326,7 @@
     }
   },
   "npmAllowlist": {},
-  "one": "0.4.61",
+  "one": "0.4.68",
   "screens": [
     {
       "computeds": {
@@ -2300,17 +2435,23 @@
       },
       "kind": "feature",
       "name": "chart"
+    },
+    {
+      "featureId": "acef9153-606d-4de2-8699-7c87fa589384",
+      "id": "9cda9045-46d1-4bdb-9bcd-030f1d222865",
+      "kind": "feature",
+      "name": "dashboard"
     }
   ],
   "sharedShapes": {},
   "v": 29,
   "wcConfig": {
-    "appColor": "#199e10",
-    "description": "Indian market and investment",
-    "logoGlyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 169.732 169.732\" fill=\"#fff\"><path d=\"M160.129,89.592c0,21.387-8.328,41.493-23.449,56.615c-15.122,15.122-35.227,23.45-56.612,23.45c-0.001,0-0.002,0-0.003,0  c-0.64,0-1.284-0.008-1.927-0.023c-20.55-0.483-39.946-8.829-54.616-23.498S0.507,112.071,0.023,91.521  c-0.512-21.765,7.572-42.316,22.762-57.868C37.98,18.096,58.323,9.529,80.065,9.529c2.762,0,5,2.239,5,5v64.758  c0,2.926,2.38,5.306,5.306,5.306h64.759C157.891,84.592,160.129,86.831,160.129,89.592z M169.732,70.805  c0-39.001-31.73-70.73-70.731-70.73c-2.762,0-5,2.239-5,5v65.73c0,2.761,2.238,5,5,5h65.731  C167.494,75.805,169.732,73.567,169.732,70.805z M104,10.279c29.507,2.417,53.11,26.021,55.527,55.526H104V10.279z\"/></svg>",
+    "appColor": "#3949ab",
+    "description": "to invest",
+    "logoGlyph": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#fff\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M9 5H15M12 5V19M9 19H15\"/></svg>",
     "name": "invest",
     "open": false,
     "theme": "",
-    "version": "0.1.5"
+    "version": "0.1.6"
   }
 }

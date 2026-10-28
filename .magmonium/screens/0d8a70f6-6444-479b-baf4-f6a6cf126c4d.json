@@ -6,6 +6,135 @@
   },
   "state": {
     "controlMap": {
+      "1144946d-ab4e-4dac-b5c6-c3fcd39bf74e": {
+        "childrens": [
+          "9e271bcc-1a5e-47e7-bd36-b9e17d73f319"
+        ],
+        "configs": {},
+        "id": "1144946d-ab4e-4dac-b5c6-c3fcd39bf74e",
+        "parentId": "91a79cfd-dfad-4940-94c1-4d831466e4a0",
+        "type": "section_header_label"
+      },
+      "2b5f4b8c-f921-43c2-92c1-c15a2180667b": {
+        "childrens": [
+          "35f9e544-6ab7-4cae-9016-93100c4a2be1",
+          "4094172d-e3d0-4342-b60b-92dd0d624edb"
+        ],
+        "configs": {
+          "alignItems": "center",
+          "direction": "row",
+          "gap": "1",
+          "justify": "start",
+          "maxWidth": "600px"
+        },
+        "id": "2b5f4b8c-f921-43c2-92c1-c15a2180667b",
+        "parentId": "ba58ec30-a650-4308-aba5-f6749552f0f1",
+        "type": "flex"
+      },
+      "35f9e544-6ab7-4cae-9016-93100c4a2be1": {
+        "childrens": [],
+        "configs": {
+          "color": "textSecondary",
+          "width": "32"
+        },
+        "directives": {
+          "mPadding": {
+            "configs": {
+              "mPadding": "",
+              "mPaddingX": "0.5",
+              "mPaddingY": "0.6"
+            }
+          }
+        },
+        "id": "35f9e544-6ab7-4cae-9016-93100c4a2be1",
+        "parentId": "2b5f4b8c-f921-43c2-92c1-c15a2180667b",
+        "type": "logo"
+      },
+      "4094172d-e3d0-4342-b60b-92dd0d624edb": {
+        "childrens": [],
+        "configs": {
+          "align": "left",
+          "color": "textSecondary",
+          "label": "crafted-with-love-by-team-magmonium-for-your-indian-stock-and-etf-adventures-remember-markets-can-be-risky-so-treat-this",
+          "variant": "footnote"
+        },
+        "id": "4094172d-e3d0-4342-b60b-92dd0d624edb",
+        "parentId": "2b5f4b8c-f921-43c2-92c1-c15a2180667b",
+        "type": "text"
+      },
+      "42131a8c-39d6-4598-819d-46115eef7268": {
+        "childrens": [],
+        "configs": {
+          "icon": "app_logo",
+          "size": 3
+        },
+        "id": "42131a8c-39d6-4598-819d-46115eef7268",
+        "parentId": "9e271bcc-1a5e-47e7-bd36-b9e17d73f319",
+        "type": "icon"
+      },
+      "6776891c-4380-472f-9b87-2601e71b530d": {
+        "childrens": [
+          "ba58ec30-a650-4308-aba5-f6749552f0f1"
+        ],
+        "configs": {
+          "align": "center"
+        },
+        "id": "6776891c-4380-472f-9b87-2601e71b530d",
+        "parentId": "f7a58913-2999-404a-89ef-643f20fae691",
+        "type": "section_footer"
+      },
+      "826b9f6f-4742-4409-8411-6630b474fdc3": {
+        "childrens": [],
+        "configs": {
+          "label": "invest",
+          "variant": "big"
+        },
+        "id": "826b9f6f-4742-4409-8411-6630b474fdc3",
+        "parentId": "b26afd05-611f-4b1b-a1a2-5c6eb1d3eedf",
+        "type": "text"
+      },
+      "91a79cfd-dfad-4940-94c1-4d831466e4a0": {
+        "childrens": [
+          "1144946d-ab4e-4dac-b5c6-c3fcd39bf74e"
+        ],
+        "configs": {},
+        "id": "91a79cfd-dfad-4940-94c1-4d831466e4a0",
+        "parentId": "f7a58913-2999-404a-89ef-643f20fae691",
+        "type": "section_header"
+      },
+      "9e271bcc-1a5e-47e7-bd36-b9e17d73f319": {
+        "childrens": [
+          "42131a8c-39d6-4598-819d-46115eef7268",
+          "b26afd05-611f-4b1b-a1a2-5c6eb1d3eedf"
+        ],
+        "configs": {
+          "alignItems": "center",
+          "gap": "1",
+          "justify": "start"
+        },
+        "id": "9e271bcc-1a5e-47e7-bd36-b9e17d73f319",
+        "parentId": "1144946d-ab4e-4dac-b5c6-c3fcd39bf74e",
+        "type": "flex"
+      },
+      "b26afd05-611f-4b1b-a1a2-5c6eb1d3eedf": {
+        "childrens": [
+          "826b9f6f-4742-4409-8411-6630b474fdc3",
+          "c6644fdc-305a-4969-9c93-2b4630697f15"
+        ],
+        "configs": {},
+        "id": "b26afd05-611f-4b1b-a1a2-5c6eb1d3eedf",
+        "parentId": "9e271bcc-1a5e-47e7-bd36-b9e17d73f319",
+        "type": "flex_item"
+      },
+      "ba58ec30-a650-4308-aba5-f6749552f0f1": {
+        "childrens": [
+          "2b5f4b8c-f921-43c2-92c1-c15a2180667b"
+        ],
+        "configs": {},
+        "id": "ba58ec30-a650-4308-aba5-f6749552f0f1",
+        "parentId": "6776891c-4380-472f-9b87-2601e71b530d",
+        "type": "section_header_label"
+      },
       "c0ba8c80-d298-472e-a012-c4cfce6abb6e": {
         "childrens": [],
         "configs": {},
@@ -13,11 +142,56 @@
         "parentId": "f7a58913-2999-404a-89ef-643f20fae691",
         "type": "router_outlet"
       },
+      "c6644fdc-305a-4969-9c93-2b4630697f15": {
+        "bindings": {
+          "label": {
+            "path": [],
+            "root": {
+              "kind": "none"
+            },
+            "source": "function",
+            "transform": {
+              "args": [],
+              "kind": "call",
+              "pipeParam": -1,
+              "target": {
+                "functionId": "8c59a183-aac8-4829-afcd-9febf6142749",
+                "kind": "pure"
+              }
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {
+          "color": "text",
+          "variant": "footer"
+        },
+        "formatPipes": [
+          {
+            "args": {
+              "format": {
+                "kind": "literal",
+                "value": "fullDate"
+              }
+            },
+            "name": "date"
+          }
+        ],
+        "id": "c6644fdc-305a-4969-9c93-2b4630697f15",
+        "parentId": "b26afd05-611f-4b1b-a1a2-5c6eb1d3eedf",
+        "textSource": "function",
+        "type": "text"
+      },
       "f7a58913-2999-404a-89ef-643f20fae691": {
         "childrens": [
-          "c0ba8c80-d298-472e-a012-c4cfce6abb6e"
+          "91a79cfd-dfad-4940-94c1-4d831466e4a0",
+          "c0ba8c80-d298-472e-a012-c4cfce6abb6e",
+          "6776891c-4380-472f-9b87-2601e71b530d"
         ],
-        "configs": {},
+        "configs": {
+          "align": "center",
+          "maxWidth": "1080px"
+        },
         "id": "f7a58913-2999-404a-89ef-643f20fae691",
         "type": "section"
       }
@@ -27,7 +201,7 @@
     "rootControlIds": [
       "f7a58913-2999-404a-89ef-643f20fae691"
     ],
-    "selectedControl": "c0ba8c80-d298-472e-a012-c4cfce6abb6e",
+    "selectedControl": "6776891c-4380-472f-9b87-2601e71b530d",
     "selectedLayerId": 2
   },
   "v": 29
