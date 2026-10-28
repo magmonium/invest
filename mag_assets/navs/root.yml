@@ -2,3 +2,5 @@ navId: root
 title: invest
 kind: url
 presentation: static
+children:
+  - root_default_portfolio

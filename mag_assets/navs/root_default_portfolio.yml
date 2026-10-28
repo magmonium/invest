@@ -1,0 +1,5 @@
+navId: root_default_portfolio
+title: my-portfolio
+icon: portfolio
+kind: url
+presentation: static

@@ -14,9 +14,308 @@
     },
     "mode": "new"
   },
-  "codegen": "0.8.19",
+  "codegen": "0.8.20",
   "distinct": [],
   "features": {
+    "76e38aaa-d234-4aa1-b5fa-5b4595e714e2": {
+      "computeds": {},
+      "functions": {
+        "2834dfc0-4952-4ccf-86b2-747903893eb0": {
+          "aiDrafted": true,
+          "body": "for (const key in response.strategy) {\n    strategyMap[key] = response.strategy[key];\n  }\n  return strategyMap;",
+          "id": "2834dfc0-4952-4ccf-86b2-747903893eb0",
+          "name": "updateStrategyMap",
+          "params": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "shapeId": "40ee1966-c4ee-4ab9-8dfc-31dab8d63f9b",
+                "type": "shape"
+              },
+              "id": "a04cc338-fb42-493a-839d-e6f5972722f0",
+              "name": "response"
+            },
+            {
+              "cardinality": "map",
+              "dataType": {
+                "shapeId": "39cb9ee5-d683-4a6c-8519-949824e4ef35",
+                "type": "shape"
+              },
+              "id": "6615efc8-b40c-4471-a1dd-5be51c503cc5",
+              "name": "strategyMap"
+            }
+          ],
+          "returnCardinality": "map",
+          "returnType": {
+            "shapeId": "39cb9ee5-d683-4a6c-8519-949824e4ef35",
+            "type": "shape"
+          },
+          "tier": "feature"
+        },
+        "2ec9cc7e-aebc-4c77-8d3b-4b892c285ceb": {
+          "aiDrafted": true,
+          "body": "return !strategyMap || !(id in strategyMap);",
+          "cases": [
+            {
+              "args": [
+                "\"strat2\"",
+                "{ \"strat1\": { \"name\": \"Growth\", \"description\": \"High growth strategy\", \"key\": \"strat1\", \"cagr\": 0.15, \"profit\": 1500, \"index\": \"SP500\", \"rebalance\": \"monthly\", \"date\": \"2023-01-01\", \"analysis\": { \"investedPercent\": 95 } } }"
+              ],
+              "expected": "true",
+              "name": "returns true when id is not present"
+            },
+            {
+              "args": [
+                "\"strat1\"",
+                "{ \"strat1\": { \"name\": \"Growth\", \"description\": \"High growth strategy\", \"key\": \"strat1\", \"cagr\": 0.15, \"profit\": 1500, \"index\": \"SP500\", \"rebalance\": \"monthly\", \"date\": \"2023-01-01\", \"analysis\": { \"investedPercent\": 95 } } }"
+              ],
+              "expected": "false",
+              "name": "returns false when id is present"
+            },
+            {
+              "args": [
+                "\"strat1\"",
+                "{}"
+              ],
+              "expected": "true",
+              "name": "returns true when strategy map is empty"
+            }
+          ],
+          "description": "Checks if a strategy ID is not present in the strategy map.",
+          "id": "2ec9cc7e-aebc-4c77-8d3b-4b892c285ceb",
+          "name": "hasStrategy",
+          "params": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "335f1060-84ab-41d5-a72e-d53f83ddd088",
+              "name": "id"
+            },
+            {
+              "cardinality": "map",
+              "dataType": {
+                "shapeId": "39cb9ee5-d683-4a6c-8519-949824e4ef35",
+                "type": "shape"
+              },
+              "id": "66103c5e-7740-4093-9d38-6887bff46695",
+              "name": "strategyMap"
+            }
+          ],
+          "returnCardinality": "one",
+          "returnType": {
+            "type": "boolean"
+          }
+        }
+      },
+      "id": "76e38aaa-d234-4aa1-b5fa-5b4595e714e2",
+      "methods": {
+        "382c18d0-ba58-4d69-b12e-0e693aed1bfa": {
+          "conditions": [
+            {
+              "args": {
+                "id": {
+                  "arg": "id",
+                  "source": "args"
+                },
+                "map": {
+                  "path": [
+                    "ff1de145-1162-42e4-b8c7-bec696b90d2a"
+                  ],
+                  "source": "store"
+                }
+              },
+              "functionId": "",
+              "id": "cc1",
+              "oneFunction": "notExistsInMap"
+            }
+          ],
+          "id": "382c18d0-ba58-4d69-b12e-0e693aed1bfa",
+          "inputs": [
+            {
+              "arg": "id",
+              "source": "args",
+              "target": [
+                "path",
+                "id"
+              ]
+            }
+          ],
+          "name": "updateFinanceStrategyId",
+          "path": "/finance/v1/strategy/{id}",
+          "response": [
+            {
+              "code": "200",
+              "propertyId": "ff1de145-1162-42e4-b8c7-bec696b90d2a",
+              "source": [],
+              "transform": {
+                "args": [
+                  {
+                    "path": [],
+                    "source": "response"
+                  },
+                  {
+                    "path": [
+                      "ff1de145-1162-42e4-b8c7-bec696b90d2a"
+                    ],
+                    "source": "state"
+                  }
+                ],
+                "functionId": "2834dfc0-4952-4ccf-86b2-747903893eb0"
+              }
+            }
+          ],
+          "verb": "put"
+        }
+      },
+      "name": "strategy",
+      "properties": {
+        "ff1de145-1162-42e4-b8c7-bec696b90d2a": {
+          "cardinality": "map",
+          "dataType": {
+            "shapeId": "39cb9ee5-d683-4a6c-8519-949824e4ef35",
+            "type": "shape"
+          },
+          "id": "ff1de145-1162-42e4-b8c7-bec696b90d2a",
+          "name": "strategyMap"
+        }
+      },
+      "shapes": {
+        "34601d25-357c-46e2-9234-f00fe8dd57bc": {
+          "id": "34601d25-357c-46e2-9234-f00fe8dd57bc",
+          "keys": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "627027fe-4054-4470-aac7-4c949d803114",
+              "name": "investedPercent"
+            }
+          ],
+          "name": "finance-strategy-update-response-strategy-analysis",
+          "origin": {
+            "code": "200",
+            "path": "/finance/v1/strategy/{id}",
+            "pointer": [
+              "strategy",
+              "analysis"
+            ],
+            "verb": "put"
+          }
+        },
+        "39cb9ee5-d683-4a6c-8519-949824e4ef35": {
+          "id": "39cb9ee5-d683-4a6c-8519-949824e4ef35",
+          "keys": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "d97069e5-c88c-498a-a22b-3b6bd958237e",
+              "name": "name"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "e6be565f-e2f6-4a3c-9b25-9eb106fbeb6d",
+              "name": "description"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "c85aa89c-a887-4ab6-b5e5-707b44f3a3d8",
+              "name": "key"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "de414555-f5df-4fda-a6e6-72cb9b8b3a0e",
+              "name": "cagr"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "9955e677-15ef-4ee8-b984-7a884c03cf1c",
+              "name": "profit"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "e72ed954-d1b0-4ddf-bf74-2cd68a8e51b7",
+              "name": "index"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "c6e1d489-4f76-4fa8-af98-fb2fb24c97b4",
+              "name": "rebalance"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "673974c0-c8a1-443b-ad6e-1312c845e80d",
+              "name": "date"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "shapeId": "34601d25-357c-46e2-9234-f00fe8dd57bc",
+                "type": "shape"
+              },
+              "id": "53bc2de4-2094-446b-8237-0539894f831f",
+              "name": "analysis"
+            }
+          ],
+          "name": "finance-strategy-update-response-strategy",
+          "origin": {
+            "code": "200",
+            "path": "/finance/v1/strategy/{id}",
+            "pointer": [
+              "strategy"
+            ],
+            "verb": "put"
+          }
+        },
+        "40ee1966-c4ee-4ab9-8dfc-31dab8d63f9b": {
+          "id": "40ee1966-c4ee-4ab9-8dfc-31dab8d63f9b",
+          "keys": [
+            {
+              "cardinality": "map",
+              "dataType": {
+                "shapeId": "39cb9ee5-d683-4a6c-8519-949824e4ef35",
+                "type": "shape"
+              },
+              "id": "8bdf88c9-3893-4294-9a62-6810927c0cb0",
+              "name": "strategy"
+            }
+          ],
+          "name": "finance-strategy-update-response",
+          "origin": {
+            "code": "200",
+            "path": "/finance/v1/strategy/{id}",
+            "pointer": [],
+            "verb": "put"
+          }
+        }
+      },
+      "variants": {}
+    },
     "acef9153-606d-4de2-8699-7c87fa589384": {
       "computeds": {},
       "functions": {
@@ -132,34 +431,18 @@
             {
               "args": [
                 "[]",
-                "{ \"a\": { \"symbol\": \"\", \"name\": \"\", \"ticker\": \"\", \"isin\": \"\", \"sector\": \"\", \"industry\": \"\", \"subindustry\": \"\", \"type\": \"\", \"exchange\": \"\", \"marketCapLabel\": \"\", \"etfLiqLabel\": \"\", \"price\": 0, \"marketCap\": 0, \"mrktCapRank\": 0, \"momRank\": 0, \"faceValue\": 0, \"dailyChange\": 0, \"weekChange\": 0, \"monthChange\": 0, \"yearlyChange\": 0, \"maxChange\": 0, \"forecast\": 0, \"forecastProfit\": 0, \"sma10d\": 0, \"sma50d\": 0, \"sma100d\": 0, \"sma200d\": 0, \"sma10dPct\": 0, \"sma50dPct\": 0, \"sma100dPct\": 0, \"sma200dPct\": 0, \"ema10d\": 0, \"ema50d\": 0, \"ema100d\": 0, \"ema200d\": 0, \"ema10dPct\": 0, \"ema50dPct\": 0, \"ema100dPct\": 0, \"ema200dPct\": 0, \"avgScore\": 0, \"momScore\": 0, \"valScore\": 0, \"volScore\": 0, \"durScore\": 0, \"drawScore\": 0, \"ttmPe\": 0, \"pb\": 0, \"indpe\": 0, \"indpb\": 0, \"divYield\": 0, \"eps\": 0, \"risk\": 0, \"maxDrawdown\": 0, \"currentDrawdown\": 0, \"daysSincePeak\": 0, \"riseFromValley\": 0, \"max\": 0, \"min\": 0, \"updated\": \"\", \"scoredOn\": \"\", \"id\": \"\", \"link\": \"\", \"description\": \"\", \"weekly\": [], \"financialSummary\": [] } }"
+                "{}"
               ],
               "expected": "false",
-              "name": "empty ids list"
+              "name": "empty ids"
             },
             {
               "args": [
-                "[\"a\"]",
-                "{ \"a\": { \"symbol\": \"\", \"name\": \"\", \"ticker\": \"\", \"isin\": \"\", \"sector\": \"\", \"industry\": \"\", \"subindustry\": \"\", \"type\": \"\", \"exchange\": \"\", \"marketCapLabel\": \"\", \"etfLiqLabel\": \"\", \"price\": 0, \"marketCap\": 0, \"mrktCapRank\": 0, \"momRank\": 0, \"faceValue\": 0, \"dailyChange\": 0, \"weekChange\": 0, \"monthChange\": 0, \"yearlyChange\": 0, \"maxChange\": 0, \"forecast\": 0, \"forecastProfit\": 0, \"sma10d\": 0, \"sma50d\": 0, \"sma100d\": 0, \"sma200d\": 0, \"sma10dPct\": 0, \"sma50dPct\": 0, \"sma100dPct\": 0, \"sma200dPct\": 0, \"ema10d\": 0, \"ema50d\": 0, \"ema100d\": 0, \"ema200d\": 0, \"ema10dPct\": 0, \"ema50dPct\": 0, \"ema100dPct\": 0, \"ema200dPct\": 0, \"avgScore\": 0, \"momScore\": 0, \"valScore\": 0, \"volScore\": 0, \"durScore\": 0, \"drawScore\": 0, \"ttmPe\": 0, \"pb\": 0, \"indpe\": 0, \"indpb\": 0, \"divYield\": 0, \"eps\": 0, \"risk\": 0, \"maxDrawdown\": 0, \"currentDrawdown\": 0, \"daysSincePeak\": 0, \"riseFromValley\": 0, \"max\": 0, \"min\": 0, \"updated\": \"\", \"scoredOn\": \"\", \"id\": \"\", \"link\": \"\", \"description\": \"\", \"weekly\": [], \"financialSummary\": [] } }"
-              ],
-              "expected": "false",
-              "name": "all ids present"
-            },
-            {
-              "args": [
-                "[\"a\", \"b\"]",
-                "{ \"a\": { \"symbol\": \"\", \"name\": \"\", \"ticker\": \"\", \"isin\": \"\", \"sector\": \"\", \"industry\": \"\", \"subindustry\": \"\", \"type\": \"\", \"exchange\": \"\", \"marketCapLabel\": \"\", \"etfLiqLabel\": \"\", \"price\": 0, \"marketCap\": 0, \"mrktCapRank\": 0, \"momRank\": 0, \"faceValue\": 0, \"dailyChange\": 0, \"weekChange\": 0, \"monthChange\": 0, \"yearlyChange\": 0, \"maxChange\": 0, \"forecast\": 0, \"forecastProfit\": 0, \"sma10d\": 0, \"sma50d\": 0, \"sma100d\": 0, \"sma200d\": 0, \"sma10dPct\": 0, \"sma50dPct\": 0, \"sma100dPct\": 0, \"sma200dPct\": 0, \"ema10d\": 0, \"ema50d\": 0, \"ema100d\": 0, \"ema200d\": 0, \"ema10dPct\": 0, \"ema50dPct\": 0, \"ema100dPct\": 0, \"ema200dPct\": 0, \"avgScore\": 0, \"momScore\": 0, \"valScore\": 0, \"volScore\": 0, \"durScore\": 0, \"drawScore\": 0, \"ttmPe\": 0, \"pb\": 0, \"indpe\": 0, \"indpb\": 0, \"divYield\": 0, \"eps\": 0, \"risk\": 0, \"maxDrawdown\": 0, \"currentDrawdown\": 0, \"daysSincePeak\": 0, \"riseFromValley\": 0, \"max\": 0, \"min\": 0, \"updated\": \"\", \"scoredOn\": \"\", \"id\": \"\", \"link\": \"\", \"description\": \"\", \"weekly\": [], \"financialSummary\": [] } }"
+                "[\"id1\"]",
+                "{}"
               ],
               "expected": "true",
-              "name": "at least one id missing"
-            },
-            {
-              "args": [
-                "[\"x\", \"y\"]",
-                "{ \"a\": { \"symbol\": \"\", \"name\": \"\", \"ticker\": \"\", \"isin\": \"\", \"sector\": \"\", \"industry\": \"\", \"subindustry\": \"\", \"type\": \"\", \"exchange\": \"\", \"marketCapLabel\": \"\", \"etfLiqLabel\": \"\", \"price\": 0, \"marketCap\": 0, \"mrktCapRank\": 0, \"momRank\": 0, \"faceValue\": 0, \"dailyChange\": 0, \"weekChange\": 0, \"monthChange\": 0, \"yearlyChange\": 0, \"maxChange\": 0, \"forecast\": 0, \"forecastProfit\": 0, \"sma10d\": 0, \"sma50d\": 0, \"sma100d\": 0, \"sma200d\": 0, \"sma10dPct\": 0, \"sma50dPct\": 0, \"sma100dPct\": 0, \"sma200dPct\": 0, \"ema10d\": 0, \"ema50d\": 0, \"ema100d\": 0, \"ema200d\": 0, \"ema10dPct\": 0, \"ema50dPct\": 0, \"ema100dPct\": 0, \"ema200dPct\": 0, \"avgScore\": 0, \"momScore\": 0, \"valScore\": 0, \"volScore\": 0, \"durScore\": 0, \"drawScore\": 0, \"ttmPe\": 0, \"pb\": 0, \"indpe\": 0, \"indpb\": 0, \"divYield\": 0, \"eps\": 0, \"risk\": 0, \"maxDrawdown\": 0, \"currentDrawdown\": 0, \"daysSincePeak\": 0, \"riseFromValley\": 0, \"max\": 0, \"min\": 0, \"updated\": \"\", \"scoredOn\": \"\", \"id\": \"\", \"link\": \"\", \"description\": \"\", \"weekly\": [], \"financialSummary\": [] } }"
-              ],
-              "expected": "true",
-              "name": "all ids missing"
+              "name": "empty map with ids"
             }
           ],
           "description": "Returns true when at least one id is missing from the company map.",
@@ -336,33 +619,13 @@
           "cases": [
             {
               "args": [
-                "[\"a\"]",
-                "{ \"a\": { \"symbol\": \"A\", \"name\": \"Company A\", \"ticker\": \"A\", \"isin\": \"ISA\", \"sector\": \"Tech\", \"industry\": \"Software\", \"subindustry\": \"Apps\", \"type\": \"stock\", \"exchange\": \"X\", \"marketCapLabel\": \"1B\", \"etfLiqLabel\": \"high\", \"price\": 10, \"marketCap\": 1000, \"mrktCapRank\": 1, \"momRank\": 1, \"faceValue\": 1, \"dailyChange\": 0.1, \"weekChange\": 0.2, \"monthChange\": 0.3, \"yearlyChange\": 0.4, \"maxChange\": 0.5, \"forecast\": 11, \"forecastProfit\": 1, \"sma10d\": 9, \"sma50d\": 8, \"sma100d\": 7, \"sma200d\": 6, \"sma10dPct\": 0.1, \"sma50dPct\": 0.2, \"sma100dPct\": 0.3, \"sma200dPct\": 0.4, \"ema10d\": 9, \"ema50d\": 8, \"ema100d\": 7, \"ema200d\": 6, \"ema10dPct\": 0.1, \"ema50dPct\": 0.2, \"ema100dPct\": 0.3, \"ema200dPct\": 0.4, \"avgScore\": 1, \"momScore\": 1, \"valScore\": 1, \"volScore\": 1, \"durScore\": 1, \"drawScore\": 1, \"ttmPe\": 1, \"pb\": 1, \"indpe\": 1, \"indpb\": 1, \"divYield\": 0.1, \"eps\": 1, \"risk\": 1, \"maxDrawdown\": 0.1, \"currentDrawdown\": 0.1, \"daysSincePeak\": 1, \"riseFromValley\": 0.1, \"max\": 12, \"min\": 8, \"updated\": \"2024-01-01\", \"scoredOn\": \"2024-01-01\", \"id\": \"a\", \"link\": \"https://example.com/a\", \"description\": \"A\", \"weekly\": [{ \"ts\": \"2024-01-01\", \"lp\": 10, \"v\": 100 }], \"financialSummary\": [] } }",
-                "{ \"idx1\": { \"id\": \"idx1\", \"updated\": \"2024-01-01\", \"ticker\": \"IDX\", \"link\": \"https://example.com/idx\", \"type\": \"index\", \"name\": \"Index 1\", \"symbol\": \"IDX\", \"exchange\": \"X\", \"description\": \"Index\", \"sector\": \"Tech\", \"momentumScore\": 80 } }",
-                "[\"idx1\"]"
-              ],
-              "expected": "{ \"a\": [{ \"ts\": \"2024-01-01\", \"lp\": 10, \"v\": 100 }], \"idx1\": [] }",
-              "name": "returns weekly arrays for found company ids and empty arrays for found index ids"
-            },
-            {
-              "args": [
                 "[]",
                 "{}",
                 "{}",
                 "[]"
               ],
               "expected": "{}",
-              "name": "returns empty object for empty inputs"
-            },
-            {
-              "args": [
-                "[\"missing_company\"]",
-                "{}",
-                "{}",
-                "[\"missing_index\"]"
-              ],
-              "expected": "{}",
-              "name": "omits missing ids"
+              "name": "returns empty object when given empty arrays"
             }
           ],
           "description": "Builds a map of weekly data arrays for the requested company ids and index ids.",
@@ -412,7 +675,7 @@
         },
         "f42d5c5b-af2f-4f07-be31-449e76dbc5e4": {
           "aiDrafted": true,
-          "body": "const result: Record<string, FinanceCompanyUpdateResponseCompany> = companyMap ? { ...companyMap } : {};\n\n  if (!Array.isArray(companies)) {\n    return result;\n  }\n\n  for (const company of companies) {\n    if (!company || typeof company.symbol !== 'string') {\n      continue;\n    }\n\n    const { '52wHigh': _52wHigh, '52wLow': _52wLow, ...updatedCompany } = company as FinanceCompaniesUpdateResponseCompanies & Record<string, unknown>;\n    result[company.symbol] = updatedCompany as FinanceCompanyUpdateResponseCompany;\n  }\n\n  return result;",
+          "body": "const result: Record<string, FinanceCompanyUpdateResponseCompany> = companyMap ? { ...companyMap } : {};\n\n  if (!Array.isArray(companies)) {\n    return result;\n  }\n\n  for (const company of companies) {\n    if (!company || typeof company.symbol !== 'string') {\n      continue;\n    }\n\n    result[company.symbol] = company as unknown as FinanceCompanyUpdateResponseCompany;\n  }\n\n  return result;",
           "description": "Updates an existing company map with the provided companies, adding new symbols and replacing existing ones.",
           "id": "f42d5c5b-af2f-4f07-be31-449e76dbc5e4",
           "name": "updateCompaniesMap",
@@ -2310,6 +2573,414 @@
         }
       },
       "variants": {}
+    },
+    "bbad551b-72b3-4fde-86f9-afa810cbc40c": {
+      "computeds": {},
+      "functions": {},
+      "hook": {
+        "calls": [
+          {
+            "args": [],
+            "id": "b291dcac-d51e-4ed5-8d44-1950c01ca3de",
+            "methodId": "f59073f0-4cb9-4838-9ccd-a23468d9fdfe"
+          }
+        ],
+        "reads": [],
+        "writes": []
+      },
+      "id": "bbad551b-72b3-4fde-86f9-afa810cbc40c",
+      "methods": {
+        "f59073f0-4cb9-4838-9ccd-a23468d9fdfe": {
+          "id": "f59073f0-4cb9-4838-9ccd-a23468d9fdfe",
+          "inputs": [],
+          "name": "patchFinanceConfig",
+          "path": "/finance/v1/config",
+          "response": [
+            {
+              "code": "200",
+              "propertyId": "443aba23-a361-4aa3-868a-479123e6cf06",
+              "source": []
+            }
+          ],
+          "verb": "patch"
+        }
+      },
+      "name": "portfolio",
+      "properties": {
+        "443aba23-a361-4aa3-868a-479123e6cf06": {
+          "cardinality": "one",
+          "dataType": {
+            "shapeId": "7ef27fb9-e148-471a-b5aa-b418a0f0254f",
+            "type": "shape"
+          },
+          "id": "443aba23-a361-4aa3-868a-479123e6cf06",
+          "name": "portfolio"
+        }
+      },
+      "shapes": {
+        "24203135-3fed-4704-bbf5-36bc7e413a1e": {
+          "id": "24203135-3fed-4704-bbf5-36bc7e413a1e",
+          "keys": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "8ecc232d-a4f8-4ad7-acc1-f1e9f2da06c8",
+              "name": "symbol"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "b50f8a4f-a1ef-4d78-9542-0d8cea5aeb8b",
+              "name": "id"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "236c4216-d2c0-4f9b-b696-57b37510e6a1",
+              "name": "quantity"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "4eac8686-f2b7-4a1c-aaff-386c89fad759",
+              "name": "price"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "a668f6b9-44a8-44e1-84a4-534c94226814",
+              "name": "heldAt"
+            }
+          ],
+          "name": "finance-config-bootstrap-patch-response-portfolio",
+          "origin": {
+            "code": "200",
+            "path": "/finance/v1/config",
+            "pointer": [
+              "portfolio"
+            ],
+            "verb": "patch"
+          }
+        },
+        "389c6b89-5cd9-466a-be24-432ca2b7fc9a": {
+          "id": "389c6b89-5cd9-466a-be24-432ca2b7fc9a",
+          "keys": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "8fe10d23-75a7-4ad8-9f3d-35c175f95918",
+              "name": "symbol"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "56af9e52-bfda-4696-a7e7-df0bda9fb381",
+              "name": "action"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "6957b028-ea71-43fe-8df6-cb6ca4fc0e1d",
+              "name": "quantity"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "c853f90e-06d9-484f-8413-b58046d9c987",
+              "name": "idealQuantity"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "5ea7bb8c-43ea-440b-b4a3-dc87cbf4934d",
+              "name": "deltaQuantity"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "7788f99a-a0f1-4d92-941c-07e2d39d7f86",
+              "name": "minQuantity"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "0c3a1ae1-7e42-4b43-96ec-bcf762ac9ba5",
+              "name": "maxQuantity"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "6e8daa60-b99e-4634-8405-be37dd9c0953",
+              "name": "currentPrice"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "028373b9-f08c-4cb6-8eeb-27fa8dde934b",
+              "name": "currentValue"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "fa5be3b0-7756-454d-ac41-7335a4651cfd",
+              "name": "investedValue"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "d803f0da-a76b-4374-aa1b-9f7d98402d09",
+              "name": "allocationPct"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "27a0da84-9e01-42b5-a2f8-ffb1cbfc3ecb",
+              "name": "pnl"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "a4ff96dc-d344-4c3a-9715-bb8cc28c8218",
+              "name": "pnlPct"
+            }
+          ],
+          "name": "finance-config-bootstrap-patch-response-rebalance",
+          "origin": {
+            "code": "200",
+            "path": "/finance/v1/config",
+            "pointer": [
+              "rebalance"
+            ],
+            "verb": "patch"
+          }
+        },
+        "4f9e9dcf-5c82-4f8a-9d52-8a788716a029": {
+          "id": "4f9e9dcf-5c82-4f8a-9d52-8a788716a029",
+          "keys": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "d847a542-b01c-4b31-941b-f608e4a5c69e",
+              "name": "strategy"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "254d2779-3ed7-45fd-8312-f0cfe4b4223e",
+              "name": "minimumHold"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "f5306f96-84fd-45c0-a3dd-91354bfe2846",
+              "name": "investedValue"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "f079f780-4f38-4813-b7a3-4430720b8d6a",
+              "name": "currentValue"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "8481ece1-6953-4303-80f5-d70c79444e37",
+              "name": "pnl"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "d58e2f61-8e5f-4d05-9fc6-356dd34702f9",
+              "name": "pnlPct"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "3145ec08-3792-40e5-a422-d14ea84fc5b5",
+              "name": "cashAvailable"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "e177ba9e-379b-4d66-9218-feaa95c008af",
+              "name": "count"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "0851a192-e63a-411a-9c2d-c9e1eb4422f1",
+              "name": "buy"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "841a066b-4ee6-4d7b-8973-4ce4b01c64fa",
+              "name": "sell"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "6d69d21e-35fc-42c5-ad71-f9cb1404287f",
+              "name": "rebalance"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "60ee087c-33d6-4799-b418-a83b5146d93c",
+              "name": "owned"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "b3d62bef-dcd0-4369-8a6b-f4af0e84def9",
+              "name": "deferred"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "7122396c-9bd6-4bd3-af05-1c7d28419190",
+              "name": "fallback"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "cd23a251-fde1-4774-b845-b455262b710c",
+              "name": "unclaimedCash"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "9376a0b2-afcf-4567-85b5-2f1b9a3ce846",
+              "name": "cashAfterPlan"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "40e9ab07-4c68-435f-ac39-9005df9d4316",
+              "name": "rebalanceZone"
+            }
+          ],
+          "name": "finance-config-bootstrap-patch-response-summary",
+          "origin": {
+            "code": "200",
+            "path": "/finance/v1/config",
+            "pointer": [
+              "summary"
+            ],
+            "verb": "patch"
+          }
+        },
+        "7ef27fb9-e148-471a-b5aa-b418a0f0254f": {
+          "id": "7ef27fb9-e148-471a-b5aa-b418a0f0254f",
+          "keys": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "shapeId": "4f9e9dcf-5c82-4f8a-9d52-8a788716a029",
+                "type": "shape"
+              },
+              "id": "83713384-cfe1-4ec1-9c15-674463268c7a",
+              "name": "summary"
+            },
+            {
+              "cardinality": "many",
+              "dataType": {
+                "shapeId": "24203135-3fed-4704-bbf5-36bc7e413a1e",
+                "type": "shape"
+              },
+              "id": "10f6e221-4bd0-4e3a-89f4-41dcecf35967",
+              "name": "portfolio"
+            },
+            {
+              "cardinality": "many",
+              "dataType": {
+                "shapeId": "389c6b89-5cd9-466a-be24-432ca2b7fc9a",
+                "type": "shape"
+              },
+              "id": "f1bfc882-f9f2-475f-b0fe-4fecc94f0fee",
+              "name": "rebalance"
+            }
+          ],
+          "name": "finance-config-bootstrap-patch-response",
+          "origin": {
+            "code": "200",
+            "path": "/finance/v1/config",
+            "pointer": [],
+            "verb": "patch"
+          }
+        }
+      },
+      "variants": {}
     }
   },
   "functions": {
@@ -2326,7 +2997,7 @@
     }
   },
   "npmAllowlist": {},
-  "one": "0.4.68",
+  "one": "0.4.70",
   "screens": [
     {
       "computeds": {
@@ -2441,6 +3112,61 @@
       "id": "9cda9045-46d1-4bdb-9bcd-030f1d222865",
       "kind": "feature",
       "name": "dashboard"
+    },
+    {
+      "id": "f2080d4b-2023-4399-9d2b-0206c2307a5a",
+      "kind": "page",
+      "name": "portfolio"
+    },
+    {
+      "featureId": "bbad551b-72b3-4fde-86f9-afa810cbc40c",
+      "id": "717eaf79-7fef-4a8e-aa2f-e44c35adad5f",
+      "kind": "feature",
+      "name": "summary"
+    },
+    {
+      "computeds": {
+        "b55c5e51-3474-49a7-be50-bd1b0882f478": {
+          "args": {
+            "id": {
+              "inputId": "65907d22-c62f-49c1-9108-510fe7a4d913",
+              "source": "input"
+            },
+            "map": {
+              "path": [
+                "ff1de145-1162-42e4-b8c7-bec696b90d2a"
+              ],
+              "source": "path"
+            }
+          },
+          "id": "b55c5e51-3474-49a7-be50-bd1b0882f478",
+          "name": "stratrgy",
+          "oneFunction": "getFromMap",
+          "returns": {
+            "cardinality": "one",
+            "dataType": {
+              "shapeId": "39cb9ee5-d683-4a6c-8519-949824e4ef35",
+              "type": "shape"
+            },
+            "optional": true
+          }
+        }
+      },
+      "featureId": "76e38aaa-d234-4aa1-b5fa-5b4595e714e2",
+      "id": "e5ae9e25-bcb9-4bdb-b330-4f8ff7577d07",
+      "inputs": {
+        "65907d22-c62f-49c1-9108-510fe7a4d913": {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "id": "65907d22-c62f-49c1-9108-510fe7a4d913",
+          "name": "id",
+          "required": true
+        }
+      },
+      "kind": "feature",
+      "name": "my-strategy"
     }
   ],
   "sharedShapes": {},

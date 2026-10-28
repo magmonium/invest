@@ -1,0 +1,145 @@
+{
+  "meta": {
+    "computeds": {
+      "b55c5e51-3474-49a7-be50-bd1b0882f478": {
+        "args": {
+          "id": {
+            "inputId": "65907d22-c62f-49c1-9108-510fe7a4d913",
+            "source": "input"
+          },
+          "map": {
+            "path": [
+              "ff1de145-1162-42e4-b8c7-bec696b90d2a"
+            ],
+            "source": "path"
+          }
+        },
+        "id": "b55c5e51-3474-49a7-be50-bd1b0882f478",
+        "name": "stratrgy",
+        "oneFunction": "getFromMap",
+        "returns": {
+          "cardinality": "one",
+          "dataType": {
+            "shapeId": "39cb9ee5-d683-4a6c-8519-949824e4ef35",
+            "type": "shape"
+          },
+          "optional": true
+        }
+      }
+    },
+    "featureId": "76e38aaa-d234-4aa1-b5fa-5b4595e714e2",
+    "id": "e5ae9e25-bcb9-4bdb-b330-4f8ff7577d07",
+    "inputs": {
+      "65907d22-c62f-49c1-9108-510fe7a4d913": {
+        "cardinality": "one",
+        "dataType": {
+          "type": "string"
+        },
+        "id": "65907d22-c62f-49c1-9108-510fe7a4d913",
+        "name": "id",
+        "required": true
+      }
+    },
+    "kind": "feature",
+    "name": "my-strategy"
+  },
+  "state": {
+    "controlMap": {
+      "3dd61c2d-9ccb-43cb-9846-592a50037695": {
+        "childrens": [
+          "60da4f85-bbe5-43d9-a8f6-a58c7e436a2e"
+        ],
+        "configs": {},
+        "id": "3dd61c2d-9ccb-43cb-9846-592a50037695",
+        "outputArgs": {
+          "inView": [
+            {
+              "binding": {
+                "path": [],
+                "root": {
+                  "id": "65907d22-c62f-49c1-9108-510fe7a4d913",
+                  "kind": "input"
+                }
+              },
+              "source": "binding",
+              "target": [
+                "id"
+              ]
+            }
+          ]
+        },
+        "outputs": {
+          "inView": "382c18d0-ba58-4d69-b12e-0e693aed1bfa"
+        },
+        "type": "section"
+      },
+      "438d8b7e-0589-494e-aa65-6df2bd0f4b56": {
+        "childrens": [
+          "c27a043f-2d28-4764-b339-111eb1280cfe"
+        ],
+        "configs": {
+          "label": "my-stretegy"
+        },
+        "id": "438d8b7e-0589-494e-aa65-6df2bd0f4b56",
+        "parentId": "60da4f85-bbe5-43d9-a8f6-a58c7e436a2e",
+        "type": "stat"
+      },
+      "538b1086-ff6d-4aa2-999a-72c00a2094bf": {
+        "childrens": [
+          "acacdd7c-63bf-4dca-b403-b47a5cac68b3"
+        ],
+        "configs": {},
+        "id": "538b1086-ff6d-4aa2-999a-72c00a2094bf",
+        "parentId": "c27a043f-2d28-4764-b339-111eb1280cfe",
+        "type": "flex"
+      },
+      "60da4f85-bbe5-43d9-a8f6-a58c7e436a2e": {
+        "childrens": [
+          "438d8b7e-0589-494e-aa65-6df2bd0f4b56"
+        ],
+        "configs": {},
+        "id": "60da4f85-bbe5-43d9-a8f6-a58c7e436a2e",
+        "parentId": "3dd61c2d-9ccb-43cb-9846-592a50037695",
+        "type": "row"
+      },
+      "acacdd7c-63bf-4dca-b403-b47a5cac68b3": {
+        "bindings": {
+          "label": {
+            "path": [
+              "d97069e5-c88c-498a-a22b-3b6bd958237e"
+            ],
+            "root": {
+              "id": "b55c5e51-3474-49a7-be50-bd1b0882f478",
+              "kind": "screen_computed"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {
+          "variant": "lead"
+        },
+        "id": "acacdd7c-63bf-4dca-b403-b47a5cac68b3",
+        "parentId": "538b1086-ff6d-4aa2-999a-72c00a2094bf",
+        "textSource": "dynamic",
+        "type": "text"
+      },
+      "c27a043f-2d28-4764-b339-111eb1280cfe": {
+        "childrens": [
+          "538b1086-ff6d-4aa2-999a-72c00a2094bf"
+        ],
+        "configs": {},
+        "id": "c27a043f-2d28-4764-b339-111eb1280cfe",
+        "parentId": "438d8b7e-0589-494e-aa65-6df2bd0f4b56",
+        "type": "stat_value"
+      }
+    },
+    "labelSamples": {},
+    "pathSamples": {},
+    "rootControlIds": [
+      "3dd61c2d-9ccb-43cb-9846-592a50037695"
+    ],
+    "selectedControl": "3dd61c2d-9ccb-43cb-9846-592a50037695",
+    "selectedLayerId": 1
+  },
+  "v": 29
+}
