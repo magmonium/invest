@@ -4,3 +4,6 @@ kind: url
 presentation: static
 children:
   - root_default_portfolio
+  - root_default_instrument
+  - root_default_instrument-copy
+  - root_default_instrument-copy-copy

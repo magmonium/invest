@@ -1,0 +1,33 @@
+{
+  "meta": {
+    "id": "113ab67d-7504-459c-861a-2e683fc83891",
+    "kind": "page",
+    "name": "index"
+  },
+  "state": {
+    "controlMap": {
+      "a6b09a1a-ec8e-4a34-a912-0560114682c2": {
+        "childrens": [],
+        "configs": {},
+        "id": "a6b09a1a-ec8e-4a34-a912-0560114682c2",
+        "parentId": "e44ab941-f305-4108-b51d-74a63466a856",
+        "type": "router_outlet"
+      },
+      "e44ab941-f305-4108-b51d-74a63466a856": {
+        "childrens": [
+          "a6b09a1a-ec8e-4a34-a912-0560114682c2"
+        ],
+        "configs": {},
+        "id": "e44ab941-f305-4108-b51d-74a63466a856",
+        "type": "section"
+      }
+    },
+    "labelSamples": {},
+    "pathSamples": {},
+    "rootControlIds": [
+      "e44ab941-f305-4108-b51d-74a63466a856"
+    ],
+    "selectedLayerId": 0
+  },
+  "v": 29
+}

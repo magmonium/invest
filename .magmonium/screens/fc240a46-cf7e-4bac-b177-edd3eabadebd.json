@@ -22,7 +22,7 @@
         "rule": {
           "children": [
             {
-              "id": "rn19",
+              "id": "rn2",
               "kind": "check",
               "operand": {
                 "kind": "literal",
@@ -36,7 +36,7 @@
             }
           ],
           "connective": "all",
-          "id": "rn20",
+          "id": "rn1",
           "kind": "group",
           "negated": false
         }
@@ -47,7 +47,7 @@
         "rule": {
           "children": [
             {
-              "id": "rn31",
+              "id": "rn6",
               "kind": "check",
               "operand": {
                 "kind": "literal",
@@ -61,7 +61,7 @@
             }
           ],
           "connective": "all",
-          "id": "rn32",
+          "id": "rn5",
           "kind": "group",
           "negated": false
         }
@@ -72,7 +72,7 @@
         "rule": {
           "children": [
             {
-              "id": "rn25",
+              "id": "rn4",
               "kind": "check",
               "operand": {
                 "kind": "literal",
@@ -86,7 +86,7 @@
             }
           ],
           "connective": "all",
-          "id": "rn26",
+          "id": "rn3",
           "kind": "group",
           "negated": false
         }
@@ -181,7 +181,7 @@
       "aca1fe58-4b30-4bb1-9ef8-24d98de67a0a": {
         "childrens": [],
         "configs": {
-          "color": "success",
+          "color": "mm",
           "icon": "arrow-left-right"
         },
         "id": "aca1fe58-4b30-4bb1-9ef8-24d98de67a0a",
@@ -252,8 +252,8 @@
     "rootControlIds": [
       "a695dbb0-cb47-4cb7-9680-d80fb3550f9f"
     ],
-    "selectedControl": "a695dbb0-cb47-4cb7-9680-d80fb3550f9f",
-    "selectedLayerId": 1
+    "selectedControl": "df54f4cd-a4e6-41f1-9631-f416b45f1820",
+    "selectedLayerId": 4
   },
   "v": 29
 }

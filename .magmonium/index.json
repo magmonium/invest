@@ -2584,7 +2584,166 @@
     },
     "bbad551b-72b3-4fde-86f9-afa810cbc40c": {
       "computeds": {},
-      "functions": {},
+      "functions": {
+        "9c29b472-8a71-4473-9203-8fae4fb181ca": {
+          "aiDrafted": true,
+          "body": "if (!portfolio || !Array.isArray(portfolio.rebalance)) {\n    return [];\n  }\n\n  const items = [...portfolio.rebalance];\n  if (!sort) {\n    return items;\n  }\n\n  const isDesc = direction.toLowerCase() === 'desc';\n\n  return items.sort((a, b) => {\n    const valA = (a as unknown as Record<string, unknown>)[sort];\n    const valB = (b as unknown as Record<string, unknown>)[sort];\n\n    if (valA === valB) return 0;\n    if (valA === undefined || valA === null) return 1;\n    if (valB === undefined || valB === null) return -1;\n\n    let comparison = 0;\n    if (typeof valA === 'string' && typeof valB === 'string') {\n      comparison = valA.localeCompare(valB);\n    } else if (typeof valA === 'number' && typeof valB === 'number') {\n      comparison = valA - valB;\n    } else {\n      comparison = String(valA).localeCompare(String(valB));\n    }\n\n    return isDesc ? -comparison : comparison;\n  });",
+          "cases": [
+            {
+              "args": [
+                "\"asc\"",
+                "\"symbol\"",
+                "{ \"summary\": { \"strategy\": \"balanced\", \"minimumHold\": 1, \"investedValue\": 6400, \"currentValue\": 7500, \"pnl\": 1100, \"pnlPct\": 0.1718, \"cashAvailable\": 500, \"count\": 2, \"buy\": 1, \"sell\": 1, \"rebalance\": 2, \"owned\": 2, \"deferred\": 0, \"fallback\": \"none\", \"unclaimedCash\": 0, \"cashAfterPlan\": 500, \"rebalanceZone\": 0.05 }, \"portfolio\": [], \"rebalance\": [{ \"symbol\": \"MSFT\", \"action\": \"SELL\", \"quantity\": 20, \"idealQuantity\": 10, \"deltaQuantity\": -10, \"minQuantity\": 0, \"maxQuantity\": 50, \"currentPrice\": 300, \"currentValue\": 6000, \"investedValue\": 5000, \"allocationPct\": 0.8, \"pnl\": 1000, \"pnlPct\": 0.2 }, { \"symbol\": \"AAPL\", \"action\": \"BUY\", \"quantity\": 10, \"idealQuantity\": 15, \"deltaQuantity\": 5, \"minQuantity\": 0, \"maxQuantity\": 100, \"currentPrice\": 150, \"currentValue\": 1500, \"investedValue\": 1400, \"allocationPct\": 0.2, \"pnl\": 100, \"pnlPct\": 0.0714 }] }"
+              ],
+              "expected": "[{ \"symbol\": \"AAPL\", \"action\": \"BUY\", \"quantity\": 10, \"idealQuantity\": 15, \"deltaQuantity\": 5, \"minQuantity\": 0, \"maxQuantity\": 100, \"currentPrice\": 150, \"currentValue\": 1500, \"investedValue\": 1400, \"allocationPct\": 0.2, \"pnl\": 100, \"pnlPct\": 0.0714 }, { \"symbol\": \"MSFT\", \"action\": \"SELL\", \"quantity\": 20, \"idealQuantity\": 10, \"deltaQuantity\": -10, \"minQuantity\": 0, \"maxQuantity\": 50, \"currentPrice\": 300, \"currentValue\": 6000, \"investedValue\": 5000, \"allocationPct\": 0.8, \"pnl\": 1000, \"pnlPct\": 0.2 }]",
+              "name": "sorts rebalance rows ascending by symbol"
+            },
+            {
+              "args": [
+                "\"desc\"",
+                "\"currentValue\"",
+                "{ \"summary\": { \"strategy\": \"balanced\", \"minimumHold\": 1, \"investedValue\": 6400, \"currentValue\": 7500, \"pnl\": 1100, \"pnlPct\": 0.1718, \"cashAvailable\": 500, \"count\": 2, \"buy\": 1, \"sell\": 1, \"rebalance\": 2, \"owned\": 2, \"deferred\": 0, \"fallback\": \"none\", \"unclaimedCash\": 0, \"cashAfterPlan\": 500, \"rebalanceZone\": 0.05 }, \"portfolio\": [], \"rebalance\": [{ \"symbol\": \"AAPL\", \"action\": \"BUY\", \"quantity\": 10, \"idealQuantity\": 15, \"deltaQuantity\": 5, \"minQuantity\": 0, \"maxQuantity\": 100, \"currentPrice\": 150, \"currentValue\": 1500, \"investedValue\": 1400, \"allocationPct\": 0.2, \"pnl\": 100, \"pnlPct\": 0.0714 }, { \"symbol\": \"MSFT\", \"action\": \"SELL\", \"quantity\": 20, \"idealQuantity\": 10, \"deltaQuantity\": -10, \"minQuantity\": 0, \"maxQuantity\": 50, \"currentPrice\": 300, \"currentValue\": 6000, \"investedValue\": 5000, \"allocationPct\": 0.8, \"pnl\": 1000, \"pnlPct\": 0.2 }] }"
+              ],
+              "expected": "[{ \"symbol\": \"MSFT\", \"action\": \"SELL\", \"quantity\": 20, \"idealQuantity\": 10, \"deltaQuantity\": -10, \"minQuantity\": 0, \"maxQuantity\": 50, \"currentPrice\": 300, \"currentValue\": 6000, \"investedValue\": 5000, \"allocationPct\": 0.8, \"pnl\": 1000, \"pnlPct\": 0.2 }, { \"symbol\": \"AAPL\", \"action\": \"BUY\", \"quantity\": 10, \"idealQuantity\": 15, \"deltaQuantity\": 5, \"minQuantity\": 0, \"maxQuantity\": 100, \"currentPrice\": 150, \"currentValue\": 1500, \"investedValue\": 1400, \"allocationPct\": 0.2, \"pnl\": 100, \"pnlPct\": 0.0714 }]",
+              "name": "sorts rebalance rows descending by current value"
+            },
+            {
+              "args": [
+                "\"asc\"",
+                "\"\"",
+                "{ \"summary\": { \"strategy\": \"balanced\", \"minimumHold\": 1, \"investedValue\": 6400, \"currentValue\": 7500, \"pnl\": 1100, \"pnlPct\": 0.1718, \"cashAvailable\": 500, \"count\": 2, \"buy\": 1, \"sell\": 1, \"rebalance\": 2, \"owned\": 2, \"deferred\": 0, \"fallback\": \"none\", \"unclaimedCash\": 0, \"cashAfterPlan\": 500, \"rebalanceZone\": 0.05 }, \"portfolio\": [], \"rebalance\": [{ \"symbol\": \"MSFT\", \"action\": \"SELL\", \"quantity\": 20, \"idealQuantity\": 10, \"deltaQuantity\": -10, \"minQuantity\": 0, \"maxQuantity\": 50, \"currentPrice\": 300, \"currentValue\": 6000, \"investedValue\": 5000, \"allocationPct\": 0.8, \"pnl\": 1000, \"pnlPct\": 0.2 }, { \"symbol\": \"AAPL\", \"action\": \"BUY\", \"quantity\": 10, \"idealQuantity\": 15, \"deltaQuantity\": 5, \"minQuantity\": 0, \"maxQuantity\": 100, \"currentPrice\": 150, \"currentValue\": 1500, \"investedValue\": 1400, \"allocationPct\": 0.2, \"pnl\": 100, \"pnlPct\": 0.0714 }] }"
+              ],
+              "expected": "[{ \"symbol\": \"MSFT\", \"action\": \"SELL\", \"quantity\": 20, \"idealQuantity\": 10, \"deltaQuantity\": -10, \"minQuantity\": 0, \"maxQuantity\": 50, \"currentPrice\": 300, \"currentValue\": 6000, \"investedValue\": 5000, \"allocationPct\": 0.8, \"pnl\": 1000, \"pnlPct\": 0.2 }, { \"symbol\": \"AAPL\", \"action\": \"BUY\", \"quantity\": 10, \"idealQuantity\": 15, \"deltaQuantity\": 5, \"minQuantity\": 0, \"maxQuantity\": 100, \"currentPrice\": 150, \"currentValue\": 1500, \"investedValue\": 1400, \"allocationPct\": 0.2, \"pnl\": 100, \"pnlPct\": 0.0714 }]",
+              "name": "keeps original order when sort field is empty string"
+            },
+            {
+              "args": [
+                "\"asc\"",
+                "\"symbol\"",
+                "{ \"summary\": { \"strategy\": \"balanced\", \"minimumHold\": 1, \"investedValue\": 0, \"currentValue\": 0, \"pnl\": 0, \"pnlPct\": 0, \"cashAvailable\": 0, \"count\": 0, \"buy\": 0, \"sell\": 0, \"rebalance\": 0, \"owned\": 0, \"deferred\": 0, \"fallback\": \"none\", \"unclaimedCash\": 0, \"cashAfterPlan\": 0, \"rebalanceZone\": 0 }, \"portfolio\": [], \"rebalance\": [] }"
+              ],
+              "expected": "[]",
+              "name": "returns empty array when rebalance list is empty"
+            }
+          ],
+          "description": "Sorts rebalance records in portfolio data by field and direction.",
+          "id": "9c29b472-8a71-4473-9203-8fae4fb181ca",
+          "name": "tableData",
+          "params": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "b30ff8bb-9790-458e-ad4b-c9da0696f59f",
+              "name": "direction"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "e2f32aad-502b-4155-a3c1-a5b1ec17e162",
+              "name": "sort"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "shapeId": "7ef27fb9-e148-471a-b5aa-b418a0f0254f",
+                "type": "shape"
+              },
+              "id": "736b792c-d543-407a-b704-d553af99517a",
+              "name": "portfolio"
+            }
+          ],
+          "returnCardinality": "many",
+          "returnType": {
+            "shapeId": "389c6b89-5cd9-466a-be24-432ca2b7fc9a",
+            "type": "shape"
+          }
+        },
+        "aac3e567-a1bc-4fea-9536-0a6104fb178a": {
+          "aiDrafted": true,
+          "body": "// Get all rebalance entries from the portfolio response\n  const items: FinanceConfigBootstrapPatchResponseRebalance[] =\n    portfolio?.rebalance ?? [];\n\n  const columnKeyMap: Record<SectionTableSortColumn, keyof FinanceConfigBootstrapPatchResponseRebalance> = {\n    [SectionTableSortColumn.Current]: 'currentValue',\n    [SectionTableSortColumn.Quantity]: 'quantity',\n    [SectionTableSortColumn.Totsl]: 'investedValue',\n    [SectionTableSortColumn.Profit]: 'pnl',\n    [SectionTableSortColumn.Allocation]: 'allocationPct',\n  };\n\n  const key: keyof FinanceConfigBootstrapPatchResponseRebalance =\n    sort !== undefined ? columnKeyMap[sort] : 'currentValue';\n  const isAsc = direction === SectionTableSortDirection.Asc;\n\n  return items.sort((a, b) => {\n    const valA = (a[key] as number) ?? 0;\n    const valB = (b[key] as number) ?? 0;\n    return isAsc ? valA - valB : valB - valA;\n  });",
+          "cases": [
+            {
+              "args": [
+                "\"asc\"",
+                "\"quantity\"",
+                "[{ \"symbol\": \"AAPL\", \"action\": \"hold\", \"quantity\": 10, \"idealQuantity\": 10, \"deltaQuantity\": 0, \"minQuantity\": 5, \"maxQuantity\": 20, \"currentPrice\": 150, \"currentValue\": 1500, \"investedValue\": 1200, \"allocationPct\": 50, \"pnl\": 300, \"pnlPct\": 25 }, { \"symbol\": \"GOOGL\", \"action\": \"buy\", \"quantity\": 5, \"idealQuantity\": 8, \"deltaQuantity\": 3, \"minQuantity\": 1, \"maxQuantity\": 10, \"currentPrice\": 100, \"currentValue\": 500, \"investedValue\": 600, \"allocationPct\": 25, \"pnl\": -100, \"pnlPct\": -16.67 }]"
+              ],
+              "expected": "[{ \"symbol\": \"GOOGL\", \"action\": \"buy\", \"quantity\": 5, \"idealQuantity\": 8, \"deltaQuantity\": 3, \"minQuantity\": 1, \"maxQuantity\": 10, \"currentPrice\": 100, \"currentValue\": 500, \"investedValue\": 600, \"allocationPct\": 25, \"pnl\": -100, \"pnlPct\": -16.67 }, { \"symbol\": \"AAPL\", \"action\": \"hold\", \"quantity\": 10, \"idealQuantity\": 10, \"deltaQuantity\": 0, \"minQuantity\": 5, \"maxQuantity\": 20, \"currentPrice\": 150, \"currentValue\": 1500, \"investedValue\": 1200, \"allocationPct\": 50, \"pnl\": 300, \"pnlPct\": 25 }]",
+              "name": "sorts by quantity ascending"
+            },
+            {
+              "args": [
+                "\"desc\"",
+                "\"profit\"",
+                "[{ \"symbol\": \"GOOGL\", \"action\": \"buy\", \"quantity\": 5, \"idealQuantity\": 8, \"deltaQuantity\": 3, \"minQuantity\": 1, \"maxQuantity\": 10, \"currentPrice\": 100, \"currentValue\": 500, \"investedValue\": 600, \"allocationPct\": 25, \"pnl\": -100, \"pnlPct\": -16.67 }, { \"symbol\": \"AAPL\", \"action\": \"hold\", \"quantity\": 10, \"idealQuantity\": 10, \"deltaQuantity\": 0, \"minQuantity\": 5, \"maxQuantity\": 20, \"currentPrice\": 150, \"currentValue\": 1500, \"investedValue\": 1200, \"allocationPct\": 50, \"pnl\": 300, \"pnlPct\": 25 }]"
+              ],
+              "expected": "[{ \"symbol\": \"AAPL\", \"action\": \"hold\", \"quantity\": 10, \"idealQuantity\": 10, \"deltaQuantity\": 0, \"minQuantity\": 5, \"maxQuantity\": 20, \"currentPrice\": 150, \"currentValue\": 1500, \"investedValue\": 1200, \"allocationPct\": 50, \"pnl\": 300, \"pnlPct\": 25 }, { \"symbol\": \"GOOGL\", \"action\": \"buy\", \"quantity\": 5, \"idealQuantity\": 8, \"deltaQuantity\": 3, \"minQuantity\": 1, \"maxQuantity\": 10, \"currentPrice\": 100, \"currentValue\": 500, \"investedValue\": 600, \"allocationPct\": 25, \"pnl\": -100, \"pnlPct\": -16.67 }]",
+              "name": "sorts by profit descending"
+            },
+            {
+              "args": [
+                "\"asc\"",
+                "\"totsl\"",
+                "[{ \"symbol\": \"AAPL\", \"action\": \"hold\", \"quantity\": 10, \"idealQuantity\": 10, \"deltaQuantity\": 0, \"minQuantity\": 5, \"maxQuantity\": 20, \"currentPrice\": 150, \"currentValue\": 1500, \"investedValue\": 1200, \"allocationPct\": 50, \"pnl\": 300, \"pnlPct\": 25 }, { \"symbol\": \"GOOGL\", \"action\": \"buy\", \"quantity\": 5, \"idealQuantity\": 8, \"deltaQuantity\": 3, \"minQuantity\": 1, \"maxQuantity\": 10, \"currentPrice\": 100, \"currentValue\": 500, \"investedValue\": 600, \"allocationPct\": 25, \"pnl\": -100, \"pnlPct\": -16.67 }]"
+              ],
+              "expected": "[{ \"symbol\": \"GOOGL\", \"action\": \"buy\", \"quantity\": 5, \"idealQuantity\": 8, \"deltaQuantity\": 3, \"minQuantity\": 1, \"maxQuantity\": 10, \"currentPrice\": 100, \"currentValue\": 500, \"investedValue\": 600, \"allocationPct\": 25, \"pnl\": -100, \"pnlPct\": -16.67 }, { \"symbol\": \"AAPL\", \"action\": \"hold\", \"quantity\": 10, \"idealQuantity\": 10, \"deltaQuantity\": 0, \"minQuantity\": 5, \"maxQuantity\": 20, \"currentPrice\": 150, \"currentValue\": 1500, \"investedValue\": 1200, \"allocationPct\": 50, \"pnl\": 300, \"pnlPct\": 25 }]",
+              "name": "sorts by total invested value ascending"
+            },
+            {
+              "args": [
+                "\"asc\"",
+                "\"current\"",
+                "[]"
+              ],
+              "expected": "[]",
+              "name": "handles empty rebalance array"
+            }
+          ],
+          "description": "Sorts and returns all rebalance entries from a finance response according to the specified column and direction.",
+          "id": "aac3e567-a1bc-4fea-9536-0a6104fb178a",
+          "name": "portfolioData",
+          "params": [
+            {
+              "acceptsUndefined": true,
+              "cardinality": "one",
+              "dataType": {
+                "sortEnumId": "section-table-sort-direction",
+                "type": "string"
+              },
+              "id": "62891aeb-f65e-4f8e-9169-956153ad10df",
+              "name": "direction"
+            },
+            {
+              "acceptsUndefined": true,
+              "cardinality": "one",
+              "dataType": {
+                "sortEnumId": "854c80f8-f703-4fbd-abf3-5fa0b20f0e85",
+                "type": "string"
+              },
+              "id": "68b503b9-2e0f-4de4-8ced-51639bec6902",
+              "name": "sort"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "shapeId": "7ef27fb9-e148-471a-b5aa-b418a0f0254f",
+                "type": "shape"
+              },
+              "id": "c81e9646-5495-4b1d-bc5b-454495d63bdf",
+              "name": "portfolio"
+            }
+          ],
+          "returnCardinality": "many",
+          "returnType": {
+            "shapeId": "389c6b89-5cd9-466a-be24-432ca2b7fc9a",
+            "type": "shape"
+          }
+        }
+      },
       "hook": {
         "calls": [
           {
@@ -2623,6 +2782,14 @@
           },
           "id": "443aba23-a361-4aa3-868a-479123e6cf06",
           "name": "portfolio"
+        },
+        "58ecf14d-2c1f-4d48-a6fb-d4baa07b348c": {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "id": "58ecf14d-2c1f-4d48-a6fb-d4baa07b348c",
+          "name": "direction"
         }
       },
       "shapes": {
@@ -3005,7 +3172,7 @@
     }
   },
   "npmAllowlist": {},
-  "one": "0.4.70",
+  "one": "0.4.73",
   "screens": [
     {
       "computeds": {
@@ -3194,10 +3361,49 @@
       "name": "strategy-carve"
     },
     {
+      "computeds": {
+        "cf83ea48-4e7e-4d7a-8b6c-84e56ebb1d12": {
+          "args": {
+            "62891aeb-f65e-4f8e-9169-956153ad10df": {
+              "source": "variable",
+              "variableId": "6c591b33-f4a0-40c1-83a0-dea14f67717b"
+            },
+            "68b503b9-2e0f-4de4-8ced-51639bec6902": {
+              "source": "variable",
+              "variableId": "5cfc01a7-e75d-4973-b661-1e119999c716"
+            },
+            "c81e9646-5495-4b1d-bc5b-454495d63bdf": {
+              "path": [
+                "443aba23-a361-4aa3-868a-479123e6cf06"
+              ],
+              "source": "path"
+            }
+          },
+          "functionId": "aac3e567-a1bc-4fea-9536-0a6104fb178a",
+          "id": "cf83ea48-4e7e-4d7a-8b6c-84e56ebb1d12",
+          "name": "portfolioData"
+        }
+      },
       "featureId": "bbad551b-72b3-4fde-86f9-afa810cbc40c",
       "id": "a376688c-a9bc-4087-9dbd-201774c19563",
       "kind": "feature",
-      "name": "holdings"
+      "name": "holdings",
+      "variables": {
+        "5cfc01a7-e75d-4973-b661-1e119999c716": {
+          "cardinality": "one",
+          "dataType": "string",
+          "id": "5cfc01a7-e75d-4973-b661-1e119999c716",
+          "kind": "plain",
+          "name": "sort"
+        },
+        "6c591b33-f4a0-40c1-83a0-dea14f67717b": {
+          "cardinality": "one",
+          "dataType": "string",
+          "id": "6c591b33-f4a0-40c1-83a0-dea14f67717b",
+          "kind": "plain",
+          "name": "direction"
+        }
+      }
     },
     {
       "featureId": "bbad551b-72b3-4fde-86f9-afa810cbc40c",
@@ -3222,7 +3428,7 @@
           "rule": {
             "children": [
               {
-                "id": "rn19",
+                "id": "rn2",
                 "kind": "check",
                 "operand": {
                   "kind": "literal",
@@ -3236,7 +3442,7 @@
               }
             ],
             "connective": "all",
-            "id": "rn20",
+            "id": "rn1",
             "kind": "group",
             "negated": false
           }
@@ -3247,7 +3453,7 @@
           "rule": {
             "children": [
               {
-                "id": "rn31",
+                "id": "rn6",
                 "kind": "check",
                 "operand": {
                   "kind": "literal",
@@ -3261,7 +3467,7 @@
               }
             ],
             "connective": "all",
-            "id": "rn32",
+            "id": "rn5",
             "kind": "group",
             "negated": false
           }
@@ -3272,7 +3478,7 @@
           "rule": {
             "children": [
               {
-                "id": "rn25",
+                "id": "rn4",
                 "kind": "check",
                 "operand": {
                   "kind": "literal",
@@ -3286,12 +3492,27 @@
               }
             ],
             "connective": "all",
-            "id": "rn26",
+            "id": "rn3",
             "kind": "group",
             "negated": false
           }
         }
       }
+    },
+    {
+      "id": "1b9fbe2d-3242-4f27-9229-e78ac2e60242",
+      "kind": "page",
+      "name": "instruments"
+    },
+    {
+      "id": "113ab67d-7504-459c-861a-2e683fc83891",
+      "kind": "page",
+      "name": "index"
+    },
+    {
+      "id": "1d8a5675-597f-42e4-962a-71b05c02a54f",
+      "kind": "page",
+      "name": "strategy"
     }
   ],
   "sharedShapes": {},

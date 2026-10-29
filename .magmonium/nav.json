@@ -18,7 +18,10 @@
     "root_default": {
       "children": [
         "root_default_default",
-        "root_default_portfolio"
+        "root_default_portfolio",
+        "root_default_instrument",
+        "root_default_instrument-copy",
+        "root_default_instrument-copy-copy"
       ],
       "isDefault": true,
       "linkKind": "url",
@@ -32,6 +35,33 @@
       "linkKind": "url",
       "navId": "root_default_default",
       "pageId": "6c977b12-22d7-46d9-b239-da27193df4be",
+      "presentation": "static"
+    },
+    "root_default_instrument": {
+      "children": [],
+      "icon": "company",
+      "label": "instrument",
+      "linkKind": "url",
+      "navId": "root_default_instrument",
+      "pageId": "1b9fbe2d-3242-4f27-9229-e78ac2e60242",
+      "presentation": "static"
+    },
+    "root_default_instrument-copy": {
+      "children": [],
+      "icon": "trending-up",
+      "label": "index",
+      "linkKind": "url",
+      "navId": "root_default_instrument-copy",
+      "pageId": "113ab67d-7504-459c-861a-2e683fc83891",
+      "presentation": "static"
+    },
+    "root_default_instrument-copy-copy": {
+      "children": [],
+      "icon": "strategy",
+      "label": "strategy",
+      "linkKind": "url",
+      "navId": "root_default_instrument-copy-copy",
+      "pageId": "1d8a5675-597f-42e4-962a-71b05c02a54f",
       "presentation": "static"
     },
     "root_default_portfolio": {

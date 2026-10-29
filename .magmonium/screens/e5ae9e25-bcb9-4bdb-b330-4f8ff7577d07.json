@@ -74,11 +74,20 @@
         "type": "section"
       },
       "438d8b7e-0589-494e-aa65-6df2bd0f4b56": {
+        "bindings": {
+          "var:user": {
+            "path": [],
+            "root": {
+              "kind": "auth",
+              "property": "userFirstName"
+            }
+          }
+        },
         "childrens": [
           "c27a043f-2d28-4764-b339-111eb1280cfe"
         ],
         "configs": {
-          "label": "my-stretegy"
+          "label": "s-strategy"
         },
         "id": "438d8b7e-0589-494e-aa65-6df2bd0f4b56",
         "parentId": "60da4f85-bbe5-43d9-a8f6-a58c7e436a2e",
@@ -138,8 +147,8 @@
     "rootControlIds": [
       "3dd61c2d-9ccb-43cb-9846-592a50037695"
     ],
-    "selectedControl": "3dd61c2d-9ccb-43cb-9846-592a50037695",
-    "selectedLayerId": 1
+    "selectedControl": "438d8b7e-0589-494e-aa65-6df2bd0f4b56",
+    "selectedLayerId": 3
   },
   "v": 29
 }

@@ -1,9 +1,48 @@
 {
   "meta": {
+    "computeds": {
+      "cf83ea48-4e7e-4d7a-8b6c-84e56ebb1d12": {
+        "args": {
+          "62891aeb-f65e-4f8e-9169-956153ad10df": {
+            "source": "variable",
+            "variableId": "6c591b33-f4a0-40c1-83a0-dea14f67717b"
+          },
+          "68b503b9-2e0f-4de4-8ced-51639bec6902": {
+            "source": "variable",
+            "variableId": "5cfc01a7-e75d-4973-b661-1e119999c716"
+          },
+          "c81e9646-5495-4b1d-bc5b-454495d63bdf": {
+            "path": [
+              "443aba23-a361-4aa3-868a-479123e6cf06"
+            ],
+            "source": "path"
+          }
+        },
+        "functionId": "aac3e567-a1bc-4fea-9536-0a6104fb178a",
+        "id": "cf83ea48-4e7e-4d7a-8b6c-84e56ebb1d12",
+        "name": "portfolioData"
+      }
+    },
     "featureId": "bbad551b-72b3-4fde-86f9-afa810cbc40c",
     "id": "a376688c-a9bc-4087-9dbd-201774c19563",
     "kind": "feature",
-    "name": "holdings"
+    "name": "holdings",
+    "variables": {
+      "5cfc01a7-e75d-4973-b661-1e119999c716": {
+        "cardinality": "one",
+        "dataType": "string",
+        "id": "5cfc01a7-e75d-4973-b661-1e119999c716",
+        "kind": "plain",
+        "name": "sort"
+      },
+      "6c591b33-f4a0-40c1-83a0-dea14f67717b": {
+        "cardinality": "one",
+        "dataType": "string",
+        "id": "6c591b33-f4a0-40c1-83a0-dea14f67717b",
+        "kind": "plain",
+        "name": "direction"
+      }
+    }
   },
   "state": {
     "controlMap": {
@@ -21,7 +60,9 @@
           }
         },
         "childrens": [],
-        "configs": {},
+        "configs": {
+          "color": "text"
+        },
         "formatPipes": [
           {
             "name": "money"
@@ -55,7 +96,9 @@
           }
         },
         "childrens": [],
-        "configs": {},
+        "configs": {
+          "color": "text"
+        },
         "id": "2d0b8ed6-49b6-4ff8-9e6d-7d939918d9f2",
         "parentId": "37777314-6a46-4996-a80d-a54eb13bff97",
         "textSource": "dynamic",
@@ -93,7 +136,9 @@
           }
         },
         "childrens": [],
-        "configs": {},
+        "configs": {
+          "color": "text"
+        },
         "formatPipes": [
           {
             "name": "money"
@@ -101,6 +146,34 @@
         ],
         "id": "7e877e59-9fa1-4525-8372-d62cdc741f33",
         "parentId": "9f49f740-599f-490a-812f-d89c6190e5f2",
+        "textSource": "dynamic",
+        "type": "text"
+      },
+      "805dbbd8-663b-4382-9ca4-bffa6bcbde82": {
+        "bindings": {
+          "label": {
+            "path": [
+              "d803f0da-a76b-4374-aa1b-9f7d98402d09"
+            ],
+            "root": {
+              "alias": "item",
+              "kind": "alias",
+              "repeatId": "cbcce7f2-3740-4f95-ab39-53ba6406e559"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {
+          "color": "text"
+        },
+        "formatPipes": [
+          {
+            "name": "percentage"
+          }
+        ],
+        "id": "805dbbd8-663b-4382-9ca4-bffa6bcbde82",
+        "parentId": "d773e122-1095-443d-956e-75de205d7408",
+        "source": "raw",
         "textSource": "dynamic",
         "type": "text"
       },
@@ -116,21 +189,62 @@
               "label": "ticker"
             },
             {
-              "label": "current-value"
+              "align": "center",
+              "id": "current",
+              "label": "current-value",
+              "sortable": true
             },
             {
+              "align": "center",
               "dataType": "number",
-              "label": "quantity"
+              "id": "quantity",
+              "label": "quantity",
+              "sortable": true
             },
             {
-              "label": "total-invested"
+              "align": "center",
+              "id": "totsl",
+              "label": "total-invested",
+              "sortable": true
             },
             {
-              "label": "profit-loss"
+              "align": "center",
+              "id": "profit",
+              "label": "profit-loss",
+              "sortable": true
+            },
+            {
+              "align": "center",
+              "defaultSort": true,
+              "id": "allocation",
+              "label": "allocation",
+              "sortable": true
             }
           ]
         },
         "id": "854c80f8-f703-4fbd-abf3-5fa0b20f0e85",
+        "outputScreenWrites": {
+          "sortChange": [
+            {
+              "value": {
+                "kind": "event",
+                "path": [
+                  "id"
+                ]
+              },
+              "variableId": "5cfc01a7-e75d-4973-b661-1e119999c716"
+            },
+            {
+              "value": {
+                "kind": "event",
+                "path": [
+                  "direction"
+                ]
+              },
+              "variableId": "6c591b33-f4a0-40c1-83a0-dea14f67717b"
+            }
+          ]
+        },
         "parentId": "eafcde42-5536-4504-b61c-3259a150d9b1",
         "type": "section_table"
       },
@@ -140,10 +254,16 @@
           "9f49f740-599f-490a-812f-d89c6190e5f2",
           "37777314-6a46-4996-a80d-a54eb13bff97",
           "e58f056f-58c9-4eb8-a4f0-1786da5dabb7",
-          "182d36f0-2ef9-4113-bd78-cebc9c82aa2a"
+          "182d36f0-2ef9-4113-bd78-cebc9c82aa2a",
+          "d773e122-1095-443d-956e-75de205d7408"
         ],
         "configs": {},
         "id": "8db814eb-c0f9-48c2-8401-6d8d767b58c9",
+        "outputNavs": {
+          "rowClick": {
+            "kind": "parent"
+          }
+        },
         "parentId": "cbcce7f2-3740-4f95-ab39-53ba6406e559",
         "type": "section_table_row"
       },
@@ -180,12 +300,10 @@
       "cbcce7f2-3740-4f95-ab39-53ba6406e559": {
         "bindings": {
           "source": {
-            "path": [
-              "f1bfc882-f9f2-475f-b0fe-4fecc94f0fee"
-            ],
+            "path": [],
             "root": {
-              "id": "443aba23-a361-4aa3-868a-479123e6cf06",
-              "kind": "property"
+              "id": "cf83ea48-4e7e-4d7a-8b6c-84e56ebb1d12",
+              "kind": "screen_computed"
             }
           }
         },
@@ -210,7 +328,7 @@
         "bindings": {
           "label": {
             "path": [
-              "d803f0da-a76b-4374-aa1b-9f7d98402d09"
+              "a4ff96dc-d344-4c3a-9715-bb8cc28c8218"
             ],
             "root": {
               "alias": "item",
@@ -220,7 +338,9 @@
           }
         },
         "childrens": [],
-        "configs": {},
+        "configs": {
+          "color": "text"
+        },
         "formatPipes": [
           {
             "name": "percentage"
@@ -233,6 +353,15 @@
         "parentId": "182d36f0-2ef9-4113-bd78-cebc9c82aa2a",
         "textSource": "dynamic",
         "type": "text"
+      },
+      "d773e122-1095-443d-956e-75de205d7408": {
+        "childrens": [
+          "805dbbd8-663b-4382-9ca4-bffa6bcbde82"
+        ],
+        "configs": {},
+        "id": "d773e122-1095-443d-956e-75de205d7408",
+        "parentId": "8db814eb-c0f9-48c2-8401-6d8d767b58c9",
+        "type": "section_table_cell"
       },
       "e58f056f-58c9-4eb8-a4f0-1786da5dabb7": {
         "childrens": [
@@ -266,8 +395,7 @@
     "rootControlIds": [
       "eafcde42-5536-4504-b61c-3259a150d9b1"
     ],
-    "selectedControl": "854c80f8-f703-4fbd-abf3-5fa0b20f0e85",
-    "selectedLayerId": 2
+    "selectedLayerId": 0
   },
   "v": 29
 }
