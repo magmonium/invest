@@ -50,7 +50,7 @@
         "bindings": {
           "label": {
             "path": [
-              "028373b9-f08c-4cb6-8eeb-27fa8dde934b"
+              "b9b95b3e-9f1a-4c79-a411-c66f685a7882"
             ],
             "root": {
               "alias": "item",
@@ -86,7 +86,7 @@
         "bindings": {
           "label": {
             "path": [
-              "6957b028-ea71-43fe-8df6-cb6ca4fc0e1d"
+              "c924d251-9589-4d13-ba28-d7beaa1d2750"
             ],
             "root": {
               "alias": "item",
@@ -126,7 +126,7 @@
         "bindings": {
           "label": {
             "path": [
-              "6e8daa60-b99e-4634-8405-be37dd9c0953"
+              "6df47e99-8656-4673-840a-ddedc07ceb0c"
             ],
             "root": {
               "alias": "item",
@@ -153,7 +153,7 @@
         "bindings": {
           "label": {
             "path": [
-              "d803f0da-a76b-4374-aa1b-9f7d98402d09"
+              "246ddaf8-6bad-451f-b8bc-683000b97085"
             ],
             "root": {
               "alias": "item",
@@ -328,7 +328,7 @@
         "bindings": {
           "label": {
             "path": [
-              "a4ff96dc-d344-4c3a-9715-bb8cc28c8218"
+              "ee63c898-ca2f-420b-82ab-4811a6d93ffa"
             ],
             "root": {
               "alias": "item",
@@ -395,7 +395,8 @@
     "rootControlIds": [
       "eafcde42-5536-4504-b61c-3259a150d9b1"
     ],
-    "selectedLayerId": 0
+    "selectedControl": "805dbbd8-663b-4382-9ca4-bffa6bcbde82",
+    "selectedLayerId": 6
   },
   "v": 29
 }
