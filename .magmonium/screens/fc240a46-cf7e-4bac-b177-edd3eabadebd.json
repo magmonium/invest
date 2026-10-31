@@ -108,9 +108,11 @@
           }
         },
         "childrens": [],
-        "configs": {},
+        "configs": {
+          "color": "error"
+        },
         "id": "530ebd56-59c6-406a-b0f7-f4cf17a58acf",
-        "parentId": "a695dbb0-cb47-4cb7-9680-d80fb3550f9f",
+        "parentId": "f681f2b3-0523-4acb-88aa-d2428b307163",
         "textSource": "dynamic",
         "type": "text"
       },
@@ -130,12 +132,33 @@
       "5e9928ff-b0c0-4267-a40d-5bc41ef928a9": {
         "armKind": "default",
         "childrens": [
-          "df54f4cd-a4e6-41f1-9631-f416b45f1820"
+          "df54f4cd-a4e6-41f1-9631-f416b45f1820",
+          "fdcb34fb-c641-45fc-90f1-0816dc2c9ba5"
         ],
         "configs": {},
         "id": "5e9928ff-b0c0-4267-a40d-5bc41ef928a9",
         "parentId": "5c1ebfd1-3daf-411b-9c06-91406ebe1583",
         "type": "branch_arm"
+      },
+      "8aa69fba-29e7-45c8-a330-1945cc4c5dca": {
+        "bindings": {
+          "label": {
+            "path": [
+              "8fe10d23-75a7-4ad8-9f3d-35c175f95918"
+            ],
+            "root": {
+              "id": "d5586934-e7f3-40ca-90be-f056b78ab7c3",
+              "kind": "input"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {},
+        "id": "8aa69fba-29e7-45c8-a330-1945cc4c5dca",
+        "parentId": "ad8d2a68-87c7-4f12-8465-ea2f84b9f0f5",
+        "source": "raw",
+        "textSource": "dynamic",
+        "type": "text"
       },
       "9bb6eadb-d5a4-4ffa-bd3d-3068534cea79": {
         "childrens": [],
@@ -150,7 +173,8 @@
       },
       "a00dbdf3-decd-4026-895f-42b36af07cff": {
         "childrens": [
-          "aca1fe58-4b30-4bb1-9ef8-24d98de67a0a"
+          "aca1fe58-4b30-4bb1-9ef8-24d98de67a0a",
+          "b1d4fca5-0960-48aa-9cd8-a58961d38a43"
         ],
         "configs": {
           "name": "a00dbdf3-decd-4026-895f-42b36af07cff"
@@ -168,8 +192,7 @@
       },
       "a695dbb0-cb47-4cb7-9680-d80fb3550f9f": {
         "childrens": [
-          "5c1ebfd1-3daf-411b-9c06-91406ebe1583",
-          "530ebd56-59c6-406a-b0f7-f4cf17a58acf"
+          "5c1ebfd1-3daf-411b-9c06-91406ebe1583"
         ],
         "configs": {
           "alignItems": "center",
@@ -191,7 +214,8 @@
       },
       "ad8d2a68-87c7-4f12-8465-ea2f84b9f0f5": {
         "childrens": [
-          "9bb6eadb-d5a4-4ffa-bd3d-3068534cea79"
+          "9bb6eadb-d5a4-4ffa-bd3d-3068534cea79",
+          "8aa69fba-29e7-45c8-a330-1945cc4c5dca"
         ],
         "configs": {
           "name": "ad8d2a68-87c7-4f12-8465-ea2f84b9f0f5"
@@ -206,6 +230,26 @@
             "join": "and"
           }
         ]
+      },
+      "b1d4fca5-0960-48aa-9cd8-a58961d38a43": {
+        "bindings": {
+          "label": {
+            "path": [
+              "8fe10d23-75a7-4ad8-9f3d-35c175f95918"
+            ],
+            "root": {
+              "id": "d5586934-e7f3-40ca-90be-f056b78ab7c3",
+              "kind": "input"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {},
+        "id": "b1d4fca5-0960-48aa-9cd8-a58961d38a43",
+        "parentId": "a00dbdf3-decd-4026-895f-42b36af07cff",
+        "source": "raw",
+        "textSource": "dynamic",
+        "type": "text"
       },
       "b2567edb-adbf-43de-a7de-4b5d6a492d4c": {
         "childrens": [],
@@ -230,7 +274,8 @@
       },
       "f681f2b3-0523-4acb-88aa-d2428b307163": {
         "childrens": [
-          "b2567edb-adbf-43de-a7de-4b5d6a492d4c"
+          "b2567edb-adbf-43de-a7de-4b5d6a492d4c",
+          "530ebd56-59c6-406a-b0f7-f4cf17a58acf"
         ],
         "configs": {
           "name": "f681f2b3-0523-4acb-88aa-d2428b307163"
@@ -245,6 +290,28 @@
             "join": "and"
           }
         ]
+      },
+      "fdcb34fb-c641-45fc-90f1-0816dc2c9ba5": {
+        "bindings": {
+          "label": {
+            "path": [
+              "8fe10d23-75a7-4ad8-9f3d-35c175f95918"
+            ],
+            "root": {
+              "id": "d5586934-e7f3-40ca-90be-f056b78ab7c3",
+              "kind": "input"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {
+          "color": "success"
+        },
+        "id": "fdcb34fb-c641-45fc-90f1-0816dc2c9ba5",
+        "parentId": "5e9928ff-b0c0-4267-a40d-5bc41ef928a9",
+        "source": "raw",
+        "textSource": "dynamic",
+        "type": "text"
       }
     },
     "labelSamples": {},
@@ -252,8 +319,7 @@
     "rootControlIds": [
       "a695dbb0-cb47-4cb7-9680-d80fb3550f9f"
     ],
-    "selectedControl": "df54f4cd-a4e6-41f1-9631-f416b45f1820",
-    "selectedLayerId": 4
+    "selectedLayerId": 0
   },
   "v": 29
 }

@@ -1,0 +1,26 @@
+{
+  "meta": {
+    "id": "5b7d2634-d741-46f1-8989-c576cf3c87d9",
+    "inputs": {
+      "9810373c-a815-4a47-a8eb-bf00e3a407eb": {
+        "cardinality": "one",
+        "dataType": {
+          "type": "string"
+        },
+        "id": "9810373c-a815-4a47-a8eb-bf00e3a407eb",
+        "name": "id",
+        "required": true
+      }
+    },
+    "kind": "page",
+    "name": "cmpany"
+  },
+  "state": {
+    "controlMap": {},
+    "labelSamples": {},
+    "pathSamples": {},
+    "rootControlIds": [],
+    "selectedLayerId": 0
+  },
+  "v": 29
+}

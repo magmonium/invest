@@ -38,7 +38,10 @@
       "presentation": "static"
     },
     "root_default_instrument": {
-      "children": [],
+      "children": [
+        "root_default_instrument_default",
+        "root_default_instrument_with-ticker"
+      ],
       "icon": "company",
       "label": "instrument",
       "linkKind": "url",
@@ -63,6 +66,25 @@
       "navId": "root_default_instrument-copy-copy",
       "pageId": "1d8a5675-597f-42e4-962a-71b05c02a54f",
       "presentation": "static"
+    },
+    "root_default_instrument_default": {
+      "children": [],
+      "icon": "nifty",
+      "isDefault": true,
+      "linkKind": "url",
+      "navId": "root_default_instrument_default",
+      "pageId": "356c1d4a-13fb-4728-8f4e-788f1c4a16a6",
+      "presentation": "static"
+    },
+    "root_default_instrument_with-ticker": {
+      "children": [],
+      "icon": "target",
+      "label": "company",
+      "linkKind": "url",
+      "navId": "root_default_instrument_with-ticker",
+      "pageId": "5b7d2634-d741-46f1-8989-c576cf3c87d9",
+      "param": "id",
+      "presentation": "dynamic"
     },
     "root_default_portfolio": {
       "children": [],

@@ -1,6 +1,7 @@
 {
   "icons": {
     "company": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#color\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"4\" y=\"8\" width=\"10\" height=\"13\" rx=\"1\"/><path d=\"M9 8V3\"/><path d=\"M9 3h5l-1.5 2L14 7H9\"/><rect x=\"14\" y=\"12\" width=\"6\" height=\"9\" rx=\"0.5\"/><path d=\"M7 11h1M11 11h1M7 14h1M11 14h1M7 17h1M11 17h1\"/></svg>",
+    "nifty": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#color\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M6 3h12l4 6-10 12L2 9z\"/><path d=\"M11 3L8 9l4 12 4-12-3-6M2 9h20\"/></svg>",
     "portfolio": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#color\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"3\" y=\"7\" width=\"18\" height=\"13\" rx=\"2\"/><path d=\"M9 7V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3\"/><path d=\"M12 12v3\"/><path d=\"M3 11h18\"/></svg>",
     "strategy": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#color\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"9\" y=\"3\" width=\"6\" height=\"4\" rx=\"1\"/><rect x=\"3\" y=\"14\" width=\"6\" height=\"4\" rx=\"1\"/><rect x=\"15\" y=\"14\" width=\"6\" height=\"4\" rx=\"1\"/><path d=\"M12 7V10C12 11 6 11 6 12V14\"/><path d=\"M12 10C12 11 18 11 18 12V14\"/></svg>"
   },

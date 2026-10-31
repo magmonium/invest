@@ -115,7 +115,7 @@
         "bindings": {
           "label": {
             "path": [
-              "d97069e5-c88c-498a-a22b-3b6bd958237e"
+              "06a3b837-55a3-4a5f-85eb-9d50665c5bf7"
             ],
             "root": {
               "id": "b55c5e51-3474-49a7-be50-bd1b0882f478",
@@ -147,8 +147,8 @@
     "rootControlIds": [
       "3dd61c2d-9ccb-43cb-9846-592a50037695"
     ],
-    "selectedControl": "438d8b7e-0589-494e-aa65-6df2bd0f4b56",
-    "selectedLayerId": 3
+    "selectedControl": "acacdd7c-63bf-4dca-b403-b47a5cac68b3",
+    "selectedLayerId": 6
   },
   "v": 29
 }
