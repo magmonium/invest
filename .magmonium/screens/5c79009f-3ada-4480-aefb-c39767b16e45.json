@@ -38,6 +38,7 @@
           "90f58351-240c-4d32-9823-4ab341b8a32f"
         ],
         "configs": {
+          "height": 480,
           "navigator": false,
           "variant": "minimal"
         },

@@ -358,7 +358,21 @@
       "variants": {}
     },
     "acef9153-606d-4de2-8699-7c87fa589384": {
-      "computeds": {},
+      "computeds": {
+        "3494be03-6780-4361-b3a0-7bb9162748d9": {
+          "args": {
+            "4251205a-3aef-47f5-baef-c073ad9274f1": {
+              "path": [
+                "c02ba90d-e41b-4175-8986-1dba3f3af5e4"
+              ],
+              "source": "path"
+            }
+          },
+          "functionId": "37ba9643-8249-44bf-8d9f-42d041cbeb6a",
+          "id": "3494be03-6780-4361-b3a0-7bb9162748d9",
+          "name": "companiesNav"
+        }
+      },
       "functions": {
         "1e1fd4f3-1058-4c37-9ca7-0ae2a27f436a": {
           "aiDrafted": true,
@@ -422,6 +436,52 @@
           "returnCardinality": "one",
           "returnType": {
             "type": "boolean"
+          }
+        },
+        "37ba9643-8249-44bf-8d9f-42d041cbeb6a": {
+          "aiDrafted": true,
+          "body": "return Object.values(companyMap)\n    .map(company => ({\n      value: company.id,\n      label: company.name\n    }))\n    .sort((a, b) => a.label.localeCompare(b.label));",
+          "cases": [
+            {
+              "args": [
+                "{}"
+              ],
+              "expected": "[]",
+              "name": "empty company map"
+            },
+            {
+              "args": [
+                "{ \"AAPL\": { \"symbol\": \"AAPL\", \"name\": \"Apple Inc.\", \"ticker\": \"AAPL\", \"isin\": \"US0378331005\", \"sector\": \"Technology\", \"industry\": \"Consumer Electronics\", \"subindustry\": \"Hardware\", \"type\": \"Stock\", \"exchange\": \"NASDAQ\", \"marketCapLabel\": \"Mega\", \"etfLiqLabel\": \"High\", \"price\": 175, \"marketCap\": 2700000000000, \"mrktCapRank\": 1, \"momRank\": 2, \"faceValue\": 0.0001, \"dailyChange\": 1.2, \"weekChange\": -0.5, \"monthChange\": 3.4, \"yearlyChange\": 15.6, \"maxChange\": 800, \"forecast\": 190, \"forecastProfit\": 12, \"sma10d\": 173, \"sma50d\": 170, \"sma100d\": 168, \"sma200d\": 160, \"sma10dPct\": 1.15, \"sma50dPct\": 2.94, \"sma100dPct\": 4.16, \"sma200dPct\": 9.37, \"ema10d\": 174, \"ema50d\": 171, \"ema100d\": 167, \"ema200d\": 161, \"ema10dPct\": 0.57, \"ema50dPct\": 2.33, \"ema100dPct\": 4.79, \"ema200dPct\": 8.69, \"avgScore\": 8.5, \"momScore\": 7, \"valScore\": 5, \"volScore\": 9, \"durScore\": 9, \"drawScore\": 8, \"ttmPe\": 29.1, \"pb\": 46.3, \"indpe\": 26.5, \"indpb\": 32.1, \"divYield\": 0.55, \"eps\": 6.15, \"risk\": 1, \"maxDrawdown\": -12.4, \"currentDrawdown\": -3.1, \"daysSincePeak\": 15, \"riseFromValley\": 4.2, \"max\": 198.2, \"min\": 124.1, \"updated\": \"2023-10-15T00:00:00Z\", \"scoredOn\": \"2023-10-15T00:00:00Z\", \"id\": \"apple-123\", \"link\": \"https://apple.com\", \"description\": \"Technology company\", \"weekly\": [], \"financialSummary\": [] } }"
+              ],
+              "expected": "[{ \"value\": \"apple-123\", \"label\": \"Apple Inc.\" }]",
+              "name": "one company"
+            },
+            {
+              "args": [
+                "{ \"MSFT\": { \"symbol\": \"MSFT\", \"name\": \"Microsoft Corp.\", \"ticker\": \"MSFT\", \"isin\": \"US5949181045\", \"sector\": \"Technology\", \"industry\": \"Software\", \"subindustry\": \"Cloud\", \"type\": \"Stock\", \"exchange\": \"NASDAQ\", \"marketCapLabel\": \"Mega\", \"etfLiqLabel\": \"High\", \"price\": 330, \"marketCap\": 2400000000000, \"mrktCapRank\": 2, \"momRank\": 3, \"faceValue\": 0.0000625, \"dailyChange\": -0.4, \"weekChange\": 2.1, \"monthChange\": 5.1, \"yearlyChange\": 28.3, \"maxChange\": 1200, \"forecast\": 360, \"forecastProfit\": 15, \"sma10d\": 328, \"sma50d\": 320, \"sma100d\": 310, \"sma200d\": 290, \"sma10dPct\": 0.6, \"sma50dPct\": 3.1, \"sma100dPct\": 6.4, \"sma200dPct\": 13.8, \"ema10d\": 329, \"ema50d\": 318, \"ema100d\": 308, \"ema200d\": 292, \"ema10dPct\": 0.3, \"ema50dPct\": 3.7, \"ema100dPct\": 7.1, \"ema200dPct\": 13, \"avgScore\": 9, \"momScore\": 8, \"valScore\": 4, \"volScore\": 9, \"durScore\": 9, \"drawScore\": 9, \"ttmPe\": 33.4, \"pb\": 12.5, \"indpe\": 28.2, \"indpb\": 10.1, \"divYield\": 0.82, \"eps\": 9.88, \"risk\": 1, \"maxDrawdown\": -10.5, \"currentDrawdown\": -1.5, \"daysSincePeak\": 5, \"riseFromValley\": 8.4, \"max\": 366.7, \"min\": 213.4, \"updated\": \"2023-10-15T00:00:00Z\", \"scoredOn\": \"2023-10-15T00:00:00Z\", \"id\": \"msft-456\", \"link\": \"https://microsoft.com\", \"description\": \"Software company\", \"weekly\": [], \"financialSummary\": [] }, \"AMZN\": { \"symbol\": \"AMZN\", \"name\": \"Amazon.com Inc.\", \"ticker\": \"AMZN\", \"isin\": \"US0231351067\", \"sector\": \"Consumer Discretionary\", \"industry\": \"Retail\", \"subindustry\": \"E-Commerce\", \"type\": \"Stock\", \"exchange\": \"NASDAQ\", \"marketCapLabel\": \"Large\", \"etfLiqLabel\": \"High\", \"price\": 130, \"marketCap\": 1300000000000, \"mrktCapRank\": 5, \"momRank\": 8, \"faceValue\": 0.01, \"dailyChange\": 1.5, \"weekChange\": 3.2, \"monthChange\": -1.2, \"yearlyChange\": 12, \"maxChange\": 1500, \"forecast\": 150, \"forecastProfit\": 8, \"sma10d\": 128, \"sma50d\": 129, \"sma100d\": 125, \"sma200d\": 115, \"sma10dPct\": 1.56, \"sma50dPct\": 0.77, \"sma100dPct\": 4, \"sma200dPct\": 13.04, \"ema10d\": 129, \"ema50d\": 128, \"ema100d\": 124, \"ema200d\": 118, \"ema10dPct\": 0.77, \"ema50dPct\": 1.56, \"ema100dPct\": 4.83, \"ema200dPct\": 10.17, \"avgScore\": 7.5, \"momScore\": 6, \"valScore\": 4, \"volScore\": 8, \"durScore\": 8, \"drawScore\": 7, \"ttmPe\": 60.2, \"pb\": 8.4, \"indpe\": 40, \"indpb\": 6.5, \"divYield\": 0, \"eps\": 2.16, \"risk\": 3, \"maxDrawdown\": -25.6, \"currentDrawdown\": -8.4, \"daysSincePeak\": 28, \"riseFromValley\": 14.5, \"max\": 145.8, \"min\": 81.4, \"updated\": \"2023-10-15T00:00:00Z\", \"scoredOn\": \"2023-10-15T00:00:00Z\", \"id\": \"amzn-789\", \"link\": \"https://amazon.com\", \"description\": \"E-Commerce\", \"weekly\": [], \"financialSummary\": [] } }"
+              ],
+              "expected": "[{ \"value\": \"amzn-789\", \"label\": \"Amazon.com Inc.\" }, { \"value\": \"msft-456\", \"label\": \"Microsoft Corp.\" }]",
+              "name": "multiple companies sorted alphabetically by name"
+            }
+          ],
+          "description": "Maps a dictionary of companies to navigation options, sorted alphabetically by company name.",
+          "id": "37ba9643-8249-44bf-8d9f-42d041cbeb6a",
+          "name": "companiesNav",
+          "params": [
+            {
+              "cardinality": "map",
+              "dataType": {
+                "shapeId": "1413d88a-833d-457c-a2be-556739f6cdc4",
+                "type": "shape"
+              },
+              "id": "4251205a-3aef-47f5-baef-c073ad9274f1",
+              "name": "companyMap"
+            }
+          ],
+          "returnCardinality": "many",
+          "returnType": {
+            "shapeId": "f97ce0a2-7c55-4e30-8a85-2d908317fb7c",
+            "type": "shape"
           }
         },
         "3fa3e556-bc63-4cd2-98ec-9dd70c0098b1": {
@@ -2665,6 +2725,28 @@
             ],
             "verb": "put"
           }
+        },
+        "f97ce0a2-7c55-4e30-8a85-2d908317fb7c": {
+          "id": "f97ce0a2-7c55-4e30-8a85-2d908317fb7c",
+          "keys": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "c6c9daf8-99d4-45e4-9fd8-3ce85e8efaed",
+              "name": "value"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "64235bb4-2c22-4dc4-bee3-4873b739558e",
+              "name": "label"
+            }
+          ],
+          "name": "option-row"
         }
       },
       "variants": {}
@@ -3603,6 +3685,17 @@
     },
     {
       "id": "356c1d4a-13fb-4728-8f4e-788f1c4a16a6",
+      "inputs": {
+        "3a0ac79d-6cff-45b9-9c39-91a28974b122": {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "id": "3a0ac79d-6cff-45b9-9c39-91a28974b122",
+          "name": "id",
+          "required": true
+        }
+      },
       "kind": "page",
       "name": "nifty-100"
     },
@@ -3667,6 +3760,50 @@
       },
       "kind": "feature",
       "name": "ranking-company"
+    },
+    {
+      "computeds": {
+        "ec004f90-b04d-43c8-a653-4ad0c63a4ebc": {
+          "args": {
+            "id": {
+              "inputId": "0da63bfc-7ba1-47b9-a93a-f163bf154d97",
+              "source": "input"
+            },
+            "map": {
+              "path": [
+                "c02ba90d-e41b-4175-8986-1dba3f3af5e4"
+              ],
+              "source": "path"
+            }
+          },
+          "id": "ec004f90-b04d-43c8-a653-4ad0c63a4ebc",
+          "name": "company",
+          "oneFunction": "getFromMap",
+          "returns": {
+            "cardinality": "one",
+            "dataType": {
+              "shapeId": "1413d88a-833d-457c-a2be-556739f6cdc4",
+              "type": "shape"
+            },
+            "optional": true
+          }
+        }
+      },
+      "featureId": "acef9153-606d-4de2-8699-7c87fa589384",
+      "id": "f1c29c41-4e9a-4982-b9c6-5968d7b89197",
+      "inputs": {
+        "0da63bfc-7ba1-47b9-a93a-f163bf154d97": {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "id": "0da63bfc-7ba1-47b9-a93a-f163bf154d97",
+          "name": "id",
+          "required": true
+        }
+      },
+      "kind": "feature",
+      "name": "company-summary"
     }
   ],
   "sharedShapes": {},

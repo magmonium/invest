@@ -254,7 +254,35 @@
           }
         },
         "childrens": [],
-        "configs": {},
+        "configs": {
+          "variant": "link"
+        },
+        "directives": {
+          "routerLink": {
+            "configs": {
+              "mode": "absolute",
+              "parts": [
+                {
+                  "kind": "static",
+                  "value": "instrument"
+                },
+                {
+                  "binding": {
+                    "path": [
+                      "f1470697-5869-4e01-9269-934b124c203b"
+                    ],
+                    "root": {
+                      "alias": "item",
+                      "kind": "alias",
+                      "repeatId": "3d952e35-369f-416b-8375-b7e675b518bb"
+                    }
+                  },
+                  "kind": "dynamic"
+                }
+              ]
+            }
+          }
+        },
         "id": "71b26329-5e9c-4546-864a-83ee7114713e",
         "parentId": "e6192c61-224c-4c60-b85d-92259042b69d",
         "source": "raw",
@@ -505,7 +533,7 @@
     "rootControlIds": [
       "8cf56239-9d20-4334-9868-b9e883a1a9ff"
     ],
-    "selectedControl": "d7426bd4-d35d-48a9-b18e-c0f62e13c952",
+    "selectedControl": "71b26329-5e9c-4546-864a-83ee7114713e",
     "selectedLayerId": 7
   },
   "v": 29

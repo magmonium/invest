@@ -1,6 +1,17 @@
 {
   "meta": {
     "id": "356c1d4a-13fb-4728-8f4e-788f1c4a16a6",
+    "inputs": {
+      "3a0ac79d-6cff-45b9-9c39-91a28974b122": {
+        "cardinality": "one",
+        "dataType": {
+          "type": "string"
+        },
+        "id": "3a0ac79d-6cff-45b9-9c39-91a28974b122",
+        "name": "id",
+        "required": true
+      }
+    },
     "kind": "page",
     "name": "nifty-100"
   },
@@ -107,8 +118,8 @@
     "rootControlIds": [
       "d541a1f1-d9a3-4ab9-8741-43d89b482022"
     ],
-    "selectedControl": "956c4925-41ab-444a-b9d1-9400dc1b3d43",
-    "selectedLayerId": 4
+    "selectedControl": "144ddda3-51d1-4706-a88a-25242a0be0f7",
+    "selectedLayerId": 3
   },
   "v": 29
 }
