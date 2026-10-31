@@ -51,7 +51,7 @@
         "bindings": {
           "value": {
             "path": [
-              "f9916010-0c83-454d-944c-fc560444d261"
+              "c50a2bc4-6e16-4b6d-957d-327d4ea2504e"
             ],
             "root": {
               "alias": "item",
@@ -86,7 +86,7 @@
         "bindings": {
           "value": {
             "path": [
-              "bcccdfc1-89c6-4aea-a5b9-f283e24321a5"
+              "91222333-7a2f-422c-b692-279e08d5395f"
             ],
             "root": {
               "alias": "item",
@@ -109,7 +109,7 @@
         "bindings": {
           "value": {
             "path": [
-              "a9fc3af5-5355-42a7-a260-0928a0752f36"
+              "8af2034e-3c8d-47e0-939b-e2d266a1007c"
             ],
             "root": {
               "alias": "item",
@@ -132,7 +132,7 @@
         "bindings": {
           "value": {
             "path": [
-              "8ec9a347-1dad-41ec-bd42-df27d15382e6"
+              "69fb9d1c-b0a6-449d-a479-05b382e78a18"
             ],
             "root": {
               "alias": "item",
@@ -197,7 +197,7 @@
         "bindings": {
           "value": {
             "path": [
-              "eaaccf23-a215-4c4d-9d5c-67fc0943fe27"
+              "a86ab33e-5076-4855-8355-00939ee42bfe"
             ],
             "root": {
               "alias": "item",
@@ -244,7 +244,7 @@
         "bindings": {
           "label": {
             "path": [
-              "17cd39b7-4e4a-48f6-8b21-8ad277e3ff0a"
+              "f1470697-5869-4e01-9269-934b124c203b"
             ],
             "root": {
               "alias": "item",
@@ -265,7 +265,7 @@
         "bindings": {
           "value": {
             "path": [
-              "391c3a21-693d-4441-bcfa-94cbadb51a17"
+              "dd8982ef-80be-44eb-8f8d-931ea73efac9"
             ],
             "root": {
               "alias": "item",
@@ -385,7 +385,7 @@
         "bindings": {
           "value": {
             "path": [
-              "f66febb3-8567-4ac2-9543-80cf5e388958"
+              "5ef8f8f8-74e8-4ca2-9aac-b888071bffe0"
             ],
             "root": {
               "alias": "item",
@@ -505,7 +505,8 @@
     "rootControlIds": [
       "8cf56239-9d20-4334-9868-b9e883a1a9ff"
     ],
-    "selectedLayerId": 0
+    "selectedControl": "d7426bd4-d35d-48a9-b18e-c0f62e13c952",
+    "selectedLayerId": 7
   },
   "v": 29
 }
