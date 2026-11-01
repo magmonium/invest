@@ -883,7 +883,8 @@
     "rootControlIds": [
       "27383adf-e188-414f-ba5e-ab326ebfdb56"
     ],
-    "selectedLayerId": 0
+    "selectedControl": "70522452-0d0f-4cd1-b364-7fa5b946a2fc",
+    "selectedLayerId": 7
   },
   "v": 29
 }

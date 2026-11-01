@@ -8,6 +8,7 @@
         "root_user",
         "root_settings"
       ],
+      "icon": "logo",
       "label": "magmonium",
       "linkKind": "url",
       "navId": "root",
@@ -69,7 +70,6 @@
     "root_default_instrument_default": {
       "children": [],
       "icon": "nifty",
-      "inheritsParams": false,
       "isDefault": true,
       "linkKind": "url",
       "navId": "root_default_instrument_default",
@@ -79,7 +79,6 @@
     "root_default_instrument_with-ticker": {
       "children": [],
       "icon": "target",
-      "inheritsParams": false,
       "label": "company",
       "linkKind": "url",
       "navId": "root_default_instrument_with-ticker",
@@ -90,7 +89,6 @@
     "root_default_portfolio": {
       "children": [],
       "icon": "portfolio",
-      "inheritsParams": false,
       "label": "my-portfolio",
       "linkKind": "url",
       "navId": "root_default_portfolio",

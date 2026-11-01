@@ -2915,7 +2915,7 @@
         },
         "bbaa57ca-d626-4db2-b9ba-1f6cd5b26935": {
           "aiDrafted": true,
-          "body": "return portfolio.portfolio?.find((item) => item.id === id);",
+          "body": "return portfolio?.portfolio?.find((item) => item.symbol === id);",
           "cases": [
             {
               "args": [
@@ -2931,7 +2931,7 @@
                 "{ \"summary\": { \"strategy\": \"growth\", \"minimumHold\": 10, \"investedValue\": 1000, \"currentValue\": 1200, \"pnl\": 200, \"pnlPct\": 20, \"cashAvailable\": 500, \"count\": 1, \"buy\": 1, \"sell\": 0, \"rebalance\": 0, \"owned\": 1, \"deferred\": 0, \"fallback\": \"none\", \"unclaimedCash\": 0, \"cashAfterPlan\": 500, \"rebalanceZone\": 5 }, \"portfolio\": [{ \"symbol\": \"AAPL\", \"id\": \"h1\", \"quantity\": 10, \"price\": 120, \"heldAt\": \"2023-01-01\" }], \"rebalance\": [] }"
               ],
               "expected": "undefined",
-              "name": "returns undefined when id is not found"
+              "name": "returns null when id not found"
             },
             {
               "args": [
@@ -2939,10 +2939,10 @@
                 "{ \"summary\": { \"strategy\": \"growth\", \"minimumHold\": 10, \"investedValue\": 0, \"currentValue\": 0, \"pnl\": 0, \"pnlPct\": 0, \"cashAvailable\": 0, \"count\": 0, \"buy\": 0, \"sell\": 0, \"rebalance\": 0, \"owned\": 0, \"deferred\": 0, \"fallback\": \"none\", \"unclaimedCash\": 0, \"cashAfterPlan\": 0, \"rebalanceZone\": 0 }, \"portfolio\": [], \"rebalance\": [] }"
               ],
               "expected": "undefined",
-              "name": "returns undefined for empty portfolio"
+              "name": "returns null for empty portfolio"
             }
           ],
-          "description": "Retrieves a specific portfolio holding by its unique identifier from the bootstrap response.",
+          "description": "Retrieves a specific portfolio holding by its symbol from the bootstrap response.",
           "id": "bbaa57ca-d626-4db2-b9ba-1f6cd5b26935",
           "name": "getHolding",
           "params": [
@@ -2955,6 +2955,7 @@
               "name": "id"
             },
             {
+              "acceptsUndefined": true,
               "cardinality": "one",
               "dataType": {
                 "shapeId": "7ef27fb9-e148-471a-b5aa-b418a0f0254f",
@@ -3951,7 +3952,7 @@
           "rule": {
             "children": [
               {
-                "id": "rn179",
+                "id": "rn8",
                 "kind": "check",
                 "operand": {
                   "kind": "literal",
@@ -3965,7 +3966,7 @@
               }
             ],
             "connective": "all",
-            "id": "rn180",
+            "id": "rn7",
             "kind": "group",
             "negated": false
           }
@@ -4014,7 +4015,7 @@
           "rule": {
             "children": [
               {
-                "id": "rn207",
+                "id": "rn10",
                 "kind": "check",
                 "operand": {
                   "kind": "literal",
@@ -4028,7 +4029,7 @@
               }
             ],
             "connective": "all",
-            "id": "rn208",
+            "id": "rn9",
             "kind": "group",
             "negated": false
           }

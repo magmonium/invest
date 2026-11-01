@@ -41,7 +41,7 @@
         "rule": {
           "children": [
             {
-              "id": "rn207",
+              "id": "rn10",
               "kind": "check",
               "operand": {
                 "kind": "literal",
@@ -55,7 +55,7 @@
             }
           ],
           "connective": "all",
-          "id": "rn208",
+          "id": "rn9",
           "kind": "group",
           "negated": false
         }
@@ -85,22 +85,16 @@
         "type": "stat"
       },
       "55fcee03-cb2f-4ebd-91c8-a54f51cfb47b": {
+        "armKind": "default",
         "childrens": [
           "75ec12e9-d205-4259-801f-81a70c2cc3a7"
         ],
         "configs": {},
         "id": "55fcee03-cb2f-4ebd-91c8-a54f51cfb47b",
         "parentId": "6ed28a43-5f80-4d39-af6e-1fe07ce1b467",
-        "type": "branch_arm",
-        "variants": [
-          {
-            "id": "c26a1112-6cbd-4f1e-ab1b-4c1f567cdbdc",
-            "join": "and"
-          }
-        ]
+        "type": "branch_arm"
       },
       "5893933e-0a64-4437-81ea-aa131408f0db": {
-        "armKind": "default",
         "childrens": [
           "e8e97953-084f-4dc0-a8d6-c180303c7ec5"
         ],
@@ -110,7 +104,13 @@
         "id": "5893933e-0a64-4437-81ea-aa131408f0db",
         "parentId": "6ed28a43-5f80-4d39-af6e-1fe07ce1b467",
         "source": "raw",
-        "type": "branch_arm"
+        "type": "branch_arm",
+        "variants": [
+          {
+            "id": "c26a1112-6cbd-4f1e-ab1b-4c1f567cdbdc",
+            "join": "and"
+          }
+        ]
       },
       "6ed28a43-5f80-4d39-af6e-1fe07ce1b467": {
         "childrens": [
@@ -140,7 +140,8 @@
         "id": "75ec12e9-d205-4259-801f-81a70c2cc3a7",
         "parentId": "55fcee03-cb2f-4ebd-91c8-a54f51cfb47b",
         "textSource": "dynamic",
-        "type": "text"
+        "type": "text",
+        "variantKind": "screen"
       },
       "7b7ee1de-2829-42d2-b858-ee4fb1a2751c": {
         "childrens": [
@@ -196,8 +197,8 @@
     "rootControlIds": [
       "da4787ad-938f-4210-9046-ee781584ac4a"
     ],
-    "selectedControl": "da4787ad-938f-4210-9046-ee781584ac4a",
-    "selectedLayerId": 1
+    "selectedControl": "55fcee03-cb2f-4ebd-91c8-a54f51cfb47b",
+    "selectedLayerId": 7
   },
   "v": 29
 }

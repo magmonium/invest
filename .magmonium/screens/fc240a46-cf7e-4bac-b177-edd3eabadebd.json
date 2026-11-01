@@ -95,7 +95,7 @@
   },
   "state": {
     "controlMap": {
-      "530ebd56-59c6-406a-b0f7-f4cf17a58acf": {
+      "4f811225-4b57-4302-820e-cc1d3dd07b1d": {
         "bindings": {
           "label": {
             "path": [
@@ -109,10 +109,36 @@
         },
         "childrens": [],
         "configs": {
-          "color": "error"
+          "variant": "link"
         },
-        "id": "530ebd56-59c6-406a-b0f7-f4cf17a58acf",
-        "parentId": "f681f2b3-0523-4acb-88aa-d2428b307163",
+        "directives": {
+          "routerLink": {
+            "configs": {
+              "mode": "absolute",
+              "parts": [
+                {
+                  "kind": "static",
+                  "value": "instrument"
+                },
+                {
+                  "binding": {
+                    "path": [
+                      "24c88c3c-ef37-42d4-b0c2-27f2b8a93dd2"
+                    ],
+                    "root": {
+                      "id": "d5586934-e7f3-40ca-90be-f056b78ab7c3",
+                      "kind": "input"
+                    }
+                  },
+                  "kind": "dynamic"
+                }
+              ]
+            }
+          }
+        },
+        "id": "4f811225-4b57-4302-820e-cc1d3dd07b1d",
+        "parentId": "a00dbdf3-decd-4026-895f-42b36af07cff",
+        "source": "raw",
         "textSource": "dynamic",
         "type": "text"
       },
@@ -140,7 +166,7 @@
         "parentId": "5c1ebfd1-3daf-411b-9c06-91406ebe1583",
         "type": "branch_arm"
       },
-      "8aa69fba-29e7-45c8-a330-1945cc4c5dca": {
+      "63297b6b-6c38-4cf1-abfc-21ca66690148": {
         "bindings": {
           "label": {
             "path": [
@@ -153,8 +179,35 @@
           }
         },
         "childrens": [],
-        "configs": {},
-        "id": "8aa69fba-29e7-45c8-a330-1945cc4c5dca",
+        "configs": {
+          "variant": "link"
+        },
+        "directives": {
+          "routerLink": {
+            "configs": {
+              "mode": "absolute",
+              "parts": [
+                {
+                  "kind": "static",
+                  "value": "instrument"
+                },
+                {
+                  "binding": {
+                    "path": [
+                      "24c88c3c-ef37-42d4-b0c2-27f2b8a93dd2"
+                    ],
+                    "root": {
+                      "id": "d5586934-e7f3-40ca-90be-f056b78ab7c3",
+                      "kind": "input"
+                    }
+                  },
+                  "kind": "dynamic"
+                }
+              ]
+            }
+          }
+        },
+        "id": "63297b6b-6c38-4cf1-abfc-21ca66690148",
         "parentId": "ad8d2a68-87c7-4f12-8465-ea2f84b9f0f5",
         "source": "raw",
         "textSource": "dynamic",
@@ -174,7 +227,7 @@
       "a00dbdf3-decd-4026-895f-42b36af07cff": {
         "childrens": [
           "aca1fe58-4b30-4bb1-9ef8-24d98de67a0a",
-          "b1d4fca5-0960-48aa-9cd8-a58961d38a43"
+          "4f811225-4b57-4302-820e-cc1d3dd07b1d"
         ],
         "configs": {
           "name": "a00dbdf3-decd-4026-895f-42b36af07cff"
@@ -215,7 +268,7 @@
       "ad8d2a68-87c7-4f12-8465-ea2f84b9f0f5": {
         "childrens": [
           "9bb6eadb-d5a4-4ffa-bd3d-3068534cea79",
-          "8aa69fba-29e7-45c8-a330-1945cc4c5dca"
+          "63297b6b-6c38-4cf1-abfc-21ca66690148"
         ],
         "configs": {
           "name": "ad8d2a68-87c7-4f12-8465-ea2f84b9f0f5"
@@ -230,26 +283,6 @@
             "join": "and"
           }
         ]
-      },
-      "b1d4fca5-0960-48aa-9cd8-a58961d38a43": {
-        "bindings": {
-          "label": {
-            "path": [
-              "24c88c3c-ef37-42d4-b0c2-27f2b8a93dd2"
-            ],
-            "root": {
-              "id": "d5586934-e7f3-40ca-90be-f056b78ab7c3",
-              "kind": "input"
-            }
-          }
-        },
-        "childrens": [],
-        "configs": {},
-        "id": "b1d4fca5-0960-48aa-9cd8-a58961d38a43",
-        "parentId": "a00dbdf3-decd-4026-895f-42b36af07cff",
-        "source": "raw",
-        "textSource": "dynamic",
-        "type": "text"
       },
       "b2567edb-adbf-43de-a7de-4b5d6a492d4c": {
         "childrens": [],
@@ -275,7 +308,7 @@
       "f681f2b3-0523-4acb-88aa-d2428b307163": {
         "childrens": [
           "b2567edb-adbf-43de-a7de-4b5d6a492d4c",
-          "530ebd56-59c6-406a-b0f7-f4cf17a58acf"
+          "f9c8e7e5-c478-4b62-bb97-e88e72ec0f43"
         ],
         "configs": {
           "name": "f681f2b3-0523-4acb-88aa-d2428b307163"
@@ -291,6 +324,54 @@
           }
         ]
       },
+      "f9c8e7e5-c478-4b62-bb97-e88e72ec0f43": {
+        "bindings": {
+          "label": {
+            "path": [
+              "24c88c3c-ef37-42d4-b0c2-27f2b8a93dd2"
+            ],
+            "root": {
+              "id": "d5586934-e7f3-40ca-90be-f056b78ab7c3",
+              "kind": "input"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {
+          "color": "error",
+          "variant": "link"
+        },
+        "directives": {
+          "routerLink": {
+            "configs": {
+              "mode": "absolute",
+              "parts": [
+                {
+                  "kind": "static",
+                  "value": "instrument"
+                },
+                {
+                  "binding": {
+                    "path": [
+                      "24c88c3c-ef37-42d4-b0c2-27f2b8a93dd2"
+                    ],
+                    "root": {
+                      "id": "d5586934-e7f3-40ca-90be-f056b78ab7c3",
+                      "kind": "input"
+                    }
+                  },
+                  "kind": "dynamic"
+                }
+              ]
+            }
+          }
+        },
+        "id": "f9c8e7e5-c478-4b62-bb97-e88e72ec0f43",
+        "parentId": "f681f2b3-0523-4acb-88aa-d2428b307163",
+        "source": "raw",
+        "textSource": "dynamic",
+        "type": "text"
+      },
       "fdcb34fb-c641-45fc-90f1-0816dc2c9ba5": {
         "bindings": {
           "label": {
@@ -305,7 +386,33 @@
         },
         "childrens": [],
         "configs": {
-          "color": "success"
+          "color": "success",
+          "variant": "link"
+        },
+        "directives": {
+          "routerLink": {
+            "configs": {
+              "mode": "absolute",
+              "parts": [
+                {
+                  "kind": "static",
+                  "value": "instrument"
+                },
+                {
+                  "binding": {
+                    "path": [
+                      "24c88c3c-ef37-42d4-b0c2-27f2b8a93dd2"
+                    ],
+                    "root": {
+                      "id": "d5586934-e7f3-40ca-90be-f056b78ab7c3",
+                      "kind": "input"
+                    }
+                  },
+                  "kind": "dynamic"
+                }
+              ]
+            }
+          }
         },
         "id": "fdcb34fb-c641-45fc-90f1-0816dc2c9ba5",
         "parentId": "5e9928ff-b0c0-4267-a40d-5bc41ef928a9",

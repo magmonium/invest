@@ -41,7 +41,7 @@
         "rule": {
           "children": [
             {
-              "id": "rn179",
+              "id": "rn8",
               "kind": "check",
               "operand": {
                 "kind": "literal",
@@ -55,7 +55,7 @@
             }
           ],
           "connective": "all",
-          "id": "rn180",
+          "id": "rn7",
           "kind": "group",
           "negated": false
         }
@@ -182,8 +182,7 @@
     "rootControlIds": [
       "56336002-8e82-4fba-92f6-e55f8f56d176"
     ],
-    "selectedControl": "0ad449dd-2ab8-4f6e-a1d8-eb0363780ff7",
-    "selectedLayerId": 4
+    "selectedLayerId": 0
   },
   "v": 29
 }
