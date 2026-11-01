@@ -2912,6 +2912,64 @@
             "shapeId": "389c6b89-5cd9-466a-be24-432ca2b7fc9a",
             "type": "shape"
           }
+        },
+        "bbaa57ca-d626-4db2-b9ba-1f6cd5b26935": {
+          "aiDrafted": true,
+          "body": "return portfolio.portfolio?.find((item) => item.id === id);",
+          "cases": [
+            {
+              "args": [
+                "\"h1\"",
+                "{ \"summary\": { \"strategy\": \"growth\", \"minimumHold\": 10, \"investedValue\": 1000, \"currentValue\": 1200, \"pnl\": 200, \"pnlPct\": 20, \"cashAvailable\": 500, \"count\": 1, \"buy\": 1, \"sell\": 0, \"rebalance\": 0, \"owned\": 1, \"deferred\": 0, \"fallback\": \"none\", \"unclaimedCash\": 0, \"cashAfterPlan\": 500, \"rebalanceZone\": 5 }, \"portfolio\": [{ \"symbol\": \"AAPL\", \"id\": \"h1\", \"quantity\": 10, \"price\": 120, \"heldAt\": \"2023-01-01\" }], \"rebalance\": [] }"
+              ],
+              "expected": "{ \"symbol\": \"AAPL\", \"id\": \"h1\", \"quantity\": 10, \"price\": 120, \"heldAt\": \"2023-01-01\" }",
+              "name": "returns holding when id matches"
+            },
+            {
+              "args": [
+                "\"nonexistent\"",
+                "{ \"summary\": { \"strategy\": \"growth\", \"minimumHold\": 10, \"investedValue\": 1000, \"currentValue\": 1200, \"pnl\": 200, \"pnlPct\": 20, \"cashAvailable\": 500, \"count\": 1, \"buy\": 1, \"sell\": 0, \"rebalance\": 0, \"owned\": 1, \"deferred\": 0, \"fallback\": \"none\", \"unclaimedCash\": 0, \"cashAfterPlan\": 500, \"rebalanceZone\": 5 }, \"portfolio\": [{ \"symbol\": \"AAPL\", \"id\": \"h1\", \"quantity\": 10, \"price\": 120, \"heldAt\": \"2023-01-01\" }], \"rebalance\": [] }"
+              ],
+              "expected": "undefined",
+              "name": "returns undefined when id is not found"
+            },
+            {
+              "args": [
+                "\"h1\"",
+                "{ \"summary\": { \"strategy\": \"growth\", \"minimumHold\": 10, \"investedValue\": 0, \"currentValue\": 0, \"pnl\": 0, \"pnlPct\": 0, \"cashAvailable\": 0, \"count\": 0, \"buy\": 0, \"sell\": 0, \"rebalance\": 0, \"owned\": 0, \"deferred\": 0, \"fallback\": \"none\", \"unclaimedCash\": 0, \"cashAfterPlan\": 0, \"rebalanceZone\": 0 }, \"portfolio\": [], \"rebalance\": [] }"
+              ],
+              "expected": "undefined",
+              "name": "returns undefined for empty portfolio"
+            }
+          ],
+          "description": "Retrieves a specific portfolio holding by its unique identifier from the bootstrap response.",
+          "id": "bbaa57ca-d626-4db2-b9ba-1f6cd5b26935",
+          "name": "getHolding",
+          "params": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "31c62c03-4aad-4e99-9133-c74ded0a0f48",
+              "name": "id"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "shapeId": "7ef27fb9-e148-471a-b5aa-b418a0f0254f",
+                "type": "shape"
+              },
+              "id": "61585f7f-f999-4c84-ba9e-185d0d0913d5",
+              "name": "portfolio"
+            }
+          ],
+          "returnCardinality": "one",
+          "returnType": {
+            "shapeId": "24203135-3fed-4704-bbf5-36bc7e413a1e",
+            "type": "shape"
+          },
+          "returnUndefined": true
         }
       },
       "hook": {
@@ -2971,7 +3029,7 @@
               "dataType": {
                 "type": "string"
               },
-              "id": "7a8ce066-3319-4b39-bd1a-cc562e489991",
+              "id": "1787b8d4-5673-4915-84d4-61f0a95a436b",
               "name": "symbol"
             },
             {
@@ -2979,7 +3037,7 @@
               "dataType": {
                 "type": "string"
               },
-              "id": "2948d04e-2ff9-4bae-836a-d6a7ebda38b1",
+              "id": "1d6f39b2-9cc8-4110-9eef-75b3f0f4bd5c",
               "name": "id"
             },
             {
@@ -2987,7 +3045,7 @@
               "dataType": {
                 "type": "number"
               },
-              "id": "5d8f0e2e-ce03-4e0e-af51-88b57f95e9e8",
+              "id": "742aec8b-e4aa-40a9-a2cb-2239378203de",
               "name": "quantity"
             },
             {
@@ -2995,7 +3053,7 @@
               "dataType": {
                 "type": "number"
               },
-              "id": "3c8f1ad7-9313-4836-bab3-d55b5ce50937",
+              "id": "0ce7088d-62bb-439c-ab44-1fdf8d8008b1",
               "name": "price"
             },
             {
@@ -3003,7 +3061,7 @@
               "dataType": {
                 "type": "string"
               },
-              "id": "da619113-2244-4d24-86a7-4a6ae3dd4ccb",
+              "id": "cdeb9614-145f-482f-8734-84a83fa443da",
               "name": "heldAt"
             }
           ],
@@ -3294,7 +3352,7 @@
                 "shapeId": "4f9e9dcf-5c82-4f8a-9d52-8a788716a029",
                 "type": "shape"
               },
-              "id": "2fe81bb2-2bf4-4277-9f19-bf7d21406f33",
+              "id": "8188dcd2-8a7f-4691-8306-7b7eb1ee1380",
               "name": "summary"
             },
             {
@@ -3303,7 +3361,7 @@
                 "shapeId": "24203135-3fed-4704-bbf5-36bc7e413a1e",
                 "type": "shape"
               },
-              "id": "c8e6ed4a-9c3f-4f2c-b743-3487c4ff12d2",
+              "id": "29645c7a-063a-430e-9322-6155adaf2897",
               "name": "portfolio"
             },
             {
@@ -3312,7 +3370,7 @@
                 "shapeId": "389c6b89-5cd9-466a-be24-432ca2b7fc9a",
                 "type": "shape"
               },
-              "id": "af2202d0-8268-452f-a6e5-15b71de84c34",
+              "id": "2b04081e-0628-4fdd-8f13-d950887f5f5f",
               "name": "rebalance"
             }
           ],
@@ -3850,6 +3908,132 @@
       },
       "kind": "feature",
       "name": "company-score"
+    },
+    {
+      "computeds": {
+        "d3c456e8-7b74-40f3-a5ab-a87f987c170b": {
+          "args": {
+            "31c62c03-4aad-4e99-9133-c74ded0a0f48": {
+              "inputId": "bbac6874-ccc0-486f-af58-d40f99604c4f",
+              "source": "input"
+            },
+            "61585f7f-f999-4c84-ba9e-185d0d0913d5": {
+              "path": [
+                "443aba23-a361-4aa3-868a-479123e6cf06"
+              ],
+              "source": "path"
+            }
+          },
+          "functionId": "bbaa57ca-d626-4db2-b9ba-1f6cd5b26935",
+          "id": "d3c456e8-7b74-40f3-a5ab-a87f987c170b",
+          "name": "holding"
+        }
+      },
+      "featureId": "bbad551b-72b3-4fde-86f9-afa810cbc40c",
+      "id": "7c6142a9-5da7-44ec-bd77-0ac138318b6c",
+      "inputs": {
+        "bbac6874-ccc0-486f-af58-d40f99604c4f": {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "id": "bbac6874-ccc0-486f-af58-d40f99604c4f",
+          "name": "id",
+          "required": true
+        }
+      },
+      "kind": "feature",
+      "name": "action",
+      "variants": {
+        "a92a9f21-bd36-446b-9bbf-103106405d25": {
+          "id": "a92a9f21-bd36-446b-9bbf-103106405d25",
+          "name": "no_holdings",
+          "rule": {
+            "children": [
+              {
+                "id": "rn179",
+                "kind": "check",
+                "operand": {
+                  "kind": "literal",
+                  "value": 0
+                },
+                "operator": "not_exists",
+                "path": [
+                  "d3c456e8-7b74-40f3-a5ab-a87f987c170b",
+                  "742aec8b-e4aa-40a9-a2cb-2239378203de"
+                ]
+              }
+            ],
+            "connective": "all",
+            "id": "rn180",
+            "kind": "group",
+            "negated": false
+          }
+        }
+      }
+    },
+    {
+      "computeds": {
+        "f3b14891-aded-431e-9b9f-d919d052b4f9": {
+          "args": {
+            "31c62c03-4aad-4e99-9133-c74ded0a0f48": {
+              "inputId": "fc820bb3-64b3-4bc6-bebd-e7e731548835",
+              "source": "input"
+            },
+            "61585f7f-f999-4c84-ba9e-185d0d0913d5": {
+              "path": [
+                "443aba23-a361-4aa3-868a-479123e6cf06"
+              ],
+              "source": "path"
+            }
+          },
+          "functionId": "bbaa57ca-d626-4db2-b9ba-1f6cd5b26935",
+          "id": "f3b14891-aded-431e-9b9f-d919d052b4f9",
+          "name": "holding"
+        }
+      },
+      "featureId": "bbad551b-72b3-4fde-86f9-afa810cbc40c",
+      "id": "c2ee9120-72f3-4b63-9f2f-e3127c1518c7",
+      "inputs": {
+        "fc820bb3-64b3-4bc6-bebd-e7e731548835": {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "id": "fc820bb3-64b3-4bc6-bebd-e7e731548835",
+          "name": "id",
+          "required": true
+        }
+      },
+      "kind": "feature",
+      "name": "my-holding",
+      "variants": {
+        "c26a1112-6cbd-4f1e-ab1b-4c1f567cdbdc": {
+          "id": "c26a1112-6cbd-4f1e-ab1b-4c1f567cdbdc",
+          "name": "no_holdings",
+          "rule": {
+            "children": [
+              {
+                "id": "rn207",
+                "kind": "check",
+                "operand": {
+                  "kind": "literal",
+                  "value": ""
+                },
+                "operator": "not_exists",
+                "path": [
+                  "f3b14891-aded-431e-9b9f-d919d052b4f9",
+                  "1d6f39b2-9cc8-4110-9eef-75b3f0f4bd5c"
+                ]
+              }
+            ],
+            "connective": "all",
+            "id": "rn208",
+            "kind": "group",
+            "negated": false
+          }
+        }
+      }
     }
   ],
   "sharedShapes": {},
