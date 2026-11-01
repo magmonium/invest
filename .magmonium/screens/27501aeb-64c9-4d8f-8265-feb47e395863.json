@@ -46,7 +46,8 @@
           "type": "string"
         },
         "id": "cca55c1f-94df-4f2d-b2b5-d365af9a76ca",
-        "name": "ids"
+        "name": "ids",
+        "required": true
       }
     },
     "kind": "feature",
@@ -265,8 +266,7 @@
     "rootControlIds": [
       "0dcaf353-a197-4e32-9b02-89dbd6ff8bee"
     ],
-    "selectedControl": "b76fa234-9879-4bdd-bd0c-7274cec8b179",
-    "selectedLayerId": 2
+    "selectedLayerId": 0
   },
   "v": 29
 }

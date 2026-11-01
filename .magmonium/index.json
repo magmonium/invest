@@ -14,7 +14,7 @@
     },
     "mode": "new"
   },
-  "codegen": "0.8.20",
+  "codegen": "0.8.21",
   "distinct": [],
   "enums": {
     "5d2de8fa-c7f6-4867-b1fe-6674543764e4": {
@@ -809,6 +809,7 @@
               "name": "indexMap"
             },
             {
+              "acceptsUndefined": true,
               "cardinality": "many",
               "dataType": {
                 "type": "string"
@@ -3341,7 +3342,7 @@
     }
   },
   "npmAllowlist": {},
-  "one": "0.4.75",
+  "one": "0.4.79",
   "screens": [
     {
       "computeds": {
@@ -3445,7 +3446,8 @@
             "type": "string"
           },
           "id": "cca55c1f-94df-4f2d-b2b5-d365af9a76ca",
-          "name": "ids"
+          "name": "ids",
+          "required": true
         }
       },
       "kind": "feature",
@@ -3804,6 +3806,50 @@
       },
       "kind": "feature",
       "name": "company-summary"
+    },
+    {
+      "computeds": {
+        "42cdc759-8ca9-44c5-82ba-129a826a6205": {
+          "args": {
+            "id": {
+              "inputId": "90764858-98ca-42a1-86ec-cc97621762fe",
+              "source": "input"
+            },
+            "map": {
+              "path": [
+                "c02ba90d-e41b-4175-8986-1dba3f3af5e4"
+              ],
+              "source": "path"
+            }
+          },
+          "id": "42cdc759-8ca9-44c5-82ba-129a826a6205",
+          "name": "company",
+          "oneFunction": "getFromMap",
+          "returns": {
+            "cardinality": "one",
+            "dataType": {
+              "shapeId": "1413d88a-833d-457c-a2be-556739f6cdc4",
+              "type": "shape"
+            },
+            "optional": true
+          }
+        }
+      },
+      "featureId": "acef9153-606d-4de2-8699-7c87fa589384",
+      "id": "138f1f5e-3b1a-4e6f-a335-f67528794ff9",
+      "inputs": {
+        "90764858-98ca-42a1-86ec-cc97621762fe": {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "id": "90764858-98ca-42a1-86ec-cc97621762fe",
+          "name": "id",
+          "required": true
+        }
+      },
+      "kind": "feature",
+      "name": "company-score"
     }
   ],
   "sharedShapes": {},
