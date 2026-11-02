@@ -1,0 +1,33 @@
+{
+  "meta": {
+    "id": "1b9fbe2d-3242-4f27-9229-e78ac2e60242",
+    "kind": "page",
+    "name": "instruments"
+  },
+  "state": {
+    "controlMap": {
+      "07dde58c-61a1-4e41-985e-e7bec8fc0eea": {
+        "childrens": [],
+        "configs": {},
+        "id": "07dde58c-61a1-4e41-985e-e7bec8fc0eea",
+        "parentId": "a92f054e-2899-486c-b748-4bcb9c1a3beb",
+        "type": "router_outlet"
+      },
+      "a92f054e-2899-486c-b748-4bcb9c1a3beb": {
+        "childrens": [
+          "07dde58c-61a1-4e41-985e-e7bec8fc0eea"
+        ],
+        "configs": {},
+        "id": "a92f054e-2899-486c-b748-4bcb9c1a3beb",
+        "type": "section"
+      }
+    },
+    "labelSamples": {},
+    "pathSamples": {},
+    "rootControlIds": [
+      "a92f054e-2899-486c-b748-4bcb9c1a3beb"
+    ],
+    "selectedLayerId": 0
+  },
+  "v": 29
+}

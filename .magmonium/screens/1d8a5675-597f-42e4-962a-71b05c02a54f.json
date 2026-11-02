@@ -1,0 +1,34 @@
+{
+  "meta": {
+    "id": "1d8a5675-597f-42e4-962a-71b05c02a54f",
+    "kind": "page",
+    "name": "strategy"
+  },
+  "state": {
+    "controlMap": {
+      "3eed4538-3d8d-40c2-8a29-483e84ad9dc7": {
+        "childrens": [],
+        "configs": {},
+        "id": "3eed4538-3d8d-40c2-8a29-483e84ad9dc7",
+        "parentId": "b7e01731-5852-4e13-a12f-0d4de649f2d6",
+        "type": "router_outlet"
+      },
+      "b7e01731-5852-4e13-a12f-0d4de649f2d6": {
+        "childrens": [
+          "3eed4538-3d8d-40c2-8a29-483e84ad9dc7"
+        ],
+        "configs": {},
+        "id": "b7e01731-5852-4e13-a12f-0d4de649f2d6",
+        "type": "section"
+      }
+    },
+    "labelSamples": {},
+    "pathSamples": {},
+    "rootControlIds": [
+      "b7e01731-5852-4e13-a12f-0d4de649f2d6"
+    ],
+    "selectedControl": "3eed4538-3d8d-40c2-8a29-483e84ad9dc7",
+    "selectedLayerId": 2
+  },
+  "v": 29
+}

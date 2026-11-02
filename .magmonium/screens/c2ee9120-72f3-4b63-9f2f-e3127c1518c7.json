@@ -1,0 +1,204 @@
+{
+  "meta": {
+    "computeds": {
+      "f3b14891-aded-431e-9b9f-d919d052b4f9": {
+        "args": {
+          "31c62c03-4aad-4e99-9133-c74ded0a0f48": {
+            "inputId": "fc820bb3-64b3-4bc6-bebd-e7e731548835",
+            "source": "input"
+          },
+          "61585f7f-f999-4c84-ba9e-185d0d0913d5": {
+            "path": [
+              "443aba23-a361-4aa3-868a-479123e6cf06"
+            ],
+            "source": "path"
+          }
+        },
+        "functionId": "bbaa57ca-d626-4db2-b9ba-1f6cd5b26935",
+        "id": "f3b14891-aded-431e-9b9f-d919d052b4f9",
+        "name": "holding"
+      }
+    },
+    "featureId": "bbad551b-72b3-4fde-86f9-afa810cbc40c",
+    "id": "c2ee9120-72f3-4b63-9f2f-e3127c1518c7",
+    "inputs": {
+      "fc820bb3-64b3-4bc6-bebd-e7e731548835": {
+        "cardinality": "one",
+        "dataType": {
+          "type": "string"
+        },
+        "id": "fc820bb3-64b3-4bc6-bebd-e7e731548835",
+        "name": "id",
+        "required": true
+      }
+    },
+    "kind": "feature",
+    "name": "my-holding",
+    "variants": {
+      "c26a1112-6cbd-4f1e-ab1b-4c1f567cdbdc": {
+        "id": "c26a1112-6cbd-4f1e-ab1b-4c1f567cdbdc",
+        "name": "no_holdings",
+        "rule": {
+          "children": [
+            {
+              "id": "rn10",
+              "kind": "check",
+              "operand": {
+                "kind": "literal",
+                "value": ""
+              },
+              "operator": "not_exists",
+              "path": [
+                "f3b14891-aded-431e-9b9f-d919d052b4f9",
+                "1d6f39b2-9cc8-4110-9eef-75b3f0f4bd5c"
+              ]
+            }
+          ],
+          "connective": "all",
+          "id": "rn9",
+          "kind": "group",
+          "negated": false
+        }
+      }
+    }
+  },
+  "state": {
+    "controlMap": {
+      "26172131-caa7-40dd-98b2-ea0b8098e524": {
+        "bindings": {
+          "var:user": {
+            "path": [],
+            "root": {
+              "kind": "auth",
+              "property": "userFirstName"
+            }
+          }
+        },
+        "childrens": [
+          "f1f777f1-bbcc-4bac-94fd-ef675b01211f"
+        ],
+        "configs": {
+          "label": "s-holdings"
+        },
+        "id": "26172131-caa7-40dd-98b2-ea0b8098e524",
+        "parentId": "7b7ee1de-2829-42d2-b858-ee4fb1a2751c",
+        "type": "stat"
+      },
+      "55fcee03-cb2f-4ebd-91c8-a54f51cfb47b": {
+        "armKind": "default",
+        "childrens": [
+          "75ec12e9-d205-4259-801f-81a70c2cc3a7"
+        ],
+        "configs": {},
+        "id": "55fcee03-cb2f-4ebd-91c8-a54f51cfb47b",
+        "parentId": "6ed28a43-5f80-4d39-af6e-1fe07ce1b467",
+        "type": "branch_arm"
+      },
+      "5893933e-0a64-4437-81ea-aa131408f0db": {
+        "childrens": [
+          "e8e97953-084f-4dc0-a8d6-c180303c7ec5"
+        ],
+        "configs": {
+          "name": "5893933e-0a64-4437-81ea-aa131408f0db"
+        },
+        "id": "5893933e-0a64-4437-81ea-aa131408f0db",
+        "parentId": "6ed28a43-5f80-4d39-af6e-1fe07ce1b467",
+        "source": "raw",
+        "type": "branch_arm",
+        "variants": [
+          {
+            "id": "c26a1112-6cbd-4f1e-ab1b-4c1f567cdbdc",
+            "join": "and"
+          }
+        ]
+      },
+      "6ed28a43-5f80-4d39-af6e-1fe07ce1b467": {
+        "childrens": [
+          "55fcee03-cb2f-4ebd-91c8-a54f51cfb47b",
+          "5893933e-0a64-4437-81ea-aa131408f0db"
+        ],
+        "configs": {},
+        "id": "6ed28a43-5f80-4d39-af6e-1fe07ce1b467",
+        "parentId": "af39d172-ae00-40ea-987a-cb7e7c2079d6",
+        "type": "variant_branch",
+        "variantKind": "screen"
+      },
+      "75ec12e9-d205-4259-801f-81a70c2cc3a7": {
+        "bindings": {
+          "label": {
+            "path": [
+              "742aec8b-e4aa-40a9-a2cb-2239378203de"
+            ],
+            "root": {
+              "id": "f3b14891-aded-431e-9b9f-d919d052b4f9",
+              "kind": "screen_computed"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {},
+        "id": "75ec12e9-d205-4259-801f-81a70c2cc3a7",
+        "parentId": "55fcee03-cb2f-4ebd-91c8-a54f51cfb47b",
+        "textSource": "dynamic",
+        "type": "text",
+        "variantKind": "screen"
+      },
+      "7b7ee1de-2829-42d2-b858-ee4fb1a2751c": {
+        "childrens": [
+          "26172131-caa7-40dd-98b2-ea0b8098e524"
+        ],
+        "configs": {},
+        "id": "7b7ee1de-2829-42d2-b858-ee4fb1a2751c",
+        "parentId": "da4787ad-938f-4210-9046-ee781584ac4a",
+        "type": "col"
+      },
+      "af39d172-ae00-40ea-987a-cb7e7c2079d6": {
+        "childrens": [
+          "6ed28a43-5f80-4d39-af6e-1fe07ce1b467"
+        ],
+        "configs": {},
+        "id": "af39d172-ae00-40ea-987a-cb7e7c2079d6",
+        "parentId": "f1f777f1-bbcc-4bac-94fd-ef675b01211f",
+        "type": "flex"
+      },
+      "da4787ad-938f-4210-9046-ee781584ac4a": {
+        "childrens": [
+          "7b7ee1de-2829-42d2-b858-ee4fb1a2751c"
+        ],
+        "configs": {
+          "variant": "noBorder"
+        },
+        "id": "da4787ad-938f-4210-9046-ee781584ac4a",
+        "type": "section"
+      },
+      "e8e97953-084f-4dc0-a8d6-c180303c7ec5": {
+        "childrens": [],
+        "configs": {
+          "label": "0",
+          "noTranslate": true
+        },
+        "id": "e8e97953-084f-4dc0-a8d6-c180303c7ec5",
+        "parentId": "5893933e-0a64-4437-81ea-aa131408f0db",
+        "textSource": "static",
+        "type": "text"
+      },
+      "f1f777f1-bbcc-4bac-94fd-ef675b01211f": {
+        "childrens": [
+          "af39d172-ae00-40ea-987a-cb7e7c2079d6"
+        ],
+        "configs": {},
+        "id": "f1f777f1-bbcc-4bac-94fd-ef675b01211f",
+        "parentId": "26172131-caa7-40dd-98b2-ea0b8098e524",
+        "type": "stat_value"
+      }
+    },
+    "labelSamples": {},
+    "pathSamples": {},
+    "rootControlIds": [
+      "da4787ad-938f-4210-9046-ee781584ac4a"
+    ],
+    "selectedControl": "55fcee03-cb2f-4ebd-91c8-a54f51cfb47b",
+    "selectedLayerId": 7
+  },
+  "v": 29
+}

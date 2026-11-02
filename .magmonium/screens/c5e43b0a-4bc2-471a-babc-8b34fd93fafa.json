@@ -1,0 +1,150 @@
+{
+  "meta": {
+    "computeds": {
+      "a0776135-df80-4e23-b8ab-f7c96bc1da4b": {
+        "args": {
+          "id": {
+            "inputId": "f71efad1-180a-41b1-a073-91a2c69ef27d",
+            "source": "input"
+          },
+          "map": {
+            "path": [
+              "c02ba90d-e41b-4175-8986-1dba3f3af5e4"
+            ],
+            "source": "path"
+          }
+        },
+        "id": "a0776135-df80-4e23-b8ab-f7c96bc1da4b",
+        "name": "company",
+        "oneFunction": "getFromMap",
+        "returns": {
+          "cardinality": "one",
+          "dataType": {
+            "shapeId": "1413d88a-833d-457c-a2be-556739f6cdc4",
+            "type": "shape"
+          },
+          "optional": true
+        }
+      }
+    },
+    "featureId": "acef9153-606d-4de2-8699-7c87fa589384",
+    "id": "c5e43b0a-4bc2-471a-babc-8b34fd93fafa",
+    "inputs": {
+      "f71efad1-180a-41b1-a073-91a2c69ef27d": {
+        "cardinality": "one",
+        "dataType": {
+          "type": "string"
+        },
+        "id": "f71efad1-180a-41b1-a073-91a2c69ef27d",
+        "name": "id",
+        "required": true
+      }
+    },
+    "kind": "feature",
+    "name": "profit-revenue"
+  },
+  "state": {
+    "controlMap": {
+      "796cf3f9-0e66-45b8-a1b0-d9f67be915a5": {
+        "bindings": {
+          "data": {
+            "path": [
+              "eb59cfd9-971f-40aa-981c-b1298669cf16"
+            ],
+            "root": {
+              "id": "a0776135-df80-4e23-b8ab-f7c96bc1da4b",
+              "kind": "screen_computed"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {
+          "label": "revenue",
+          "mark": "column",
+          "panel": "main",
+          "x": "year",
+          "y": "revenue"
+        },
+        "id": "796cf3f9-0e66-45b8-a1b0-d9f67be915a5",
+        "parentId": "e368610f-f77b-4914-ad7c-a18f6bf17063",
+        "type": "section_chart_series"
+      },
+      "8d2b889a-72bd-4c90-a117-40058e2f62ac": {
+        "childrens": [
+          "e368610f-f77b-4914-ad7c-a18f6bf17063"
+        ],
+        "configs": {},
+        "id": "8d2b889a-72bd-4c90-a117-40058e2f62ac",
+        "type": "section"
+      },
+      "9f4f1afb-97c3-4de3-858d-ec2920aeb251": {
+        "bindings": {
+          "data": {
+            "path": [
+              "eb59cfd9-971f-40aa-981c-b1298669cf16"
+            ],
+            "root": {
+              "id": "a0776135-df80-4e23-b8ab-f7c96bc1da4b",
+              "kind": "screen_computed"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {
+          "label": "profit-revenue",
+          "mark": "column",
+          "panel": "strip",
+          "per": "revenue",
+          "x": "year",
+          "y": "profit"
+        },
+        "id": "9f4f1afb-97c3-4de3-858d-ec2920aeb251",
+        "parentId": "e368610f-f77b-4914-ad7c-a18f6bf17063",
+        "source": "raw",
+        "type": "section_chart_series"
+      },
+      "d81dc0c5-d54b-4a0c-abc1-87e448fe7cf6": {
+        "bindings": {
+          "data": {
+            "path": [
+              "eb59cfd9-971f-40aa-981c-b1298669cf16"
+            ],
+            "root": {
+              "id": "a0776135-df80-4e23-b8ab-f7c96bc1da4b",
+              "kind": "screen_computed"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {
+          "label": "profit",
+          "mark": "column",
+          "x": "year",
+          "y": "profit"
+        },
+        "id": "d81dc0c5-d54b-4a0c-abc1-87e448fe7cf6",
+        "parentId": "e368610f-f77b-4914-ad7c-a18f6bf17063",
+        "source": "raw",
+        "type": "section_chart_series"
+      },
+      "e368610f-f77b-4914-ad7c-a18f6bf17063": {
+        "childrens": [
+          "796cf3f9-0e66-45b8-a1b0-d9f67be915a5",
+          "d81dc0c5-d54b-4a0c-abc1-87e448fe7cf6",
+          "9f4f1afb-97c3-4de3-858d-ec2920aeb251"
+        ],
+        "configs": {},
+        "id": "e368610f-f77b-4914-ad7c-a18f6bf17063",
+        "parentId": "8d2b889a-72bd-4c90-a117-40058e2f62ac",
+        "type": "section_chart"
+      }
+    },
+    "labelSamples": {},
+    "pathSamples": {},
+    "rootControlIds": [
+      "8d2b889a-72bd-4c90-a117-40058e2f62ac"
+    ],
+    "selectedLayerId": 0
+  },
+  "v": 29
+}

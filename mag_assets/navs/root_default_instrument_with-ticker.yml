@@ -1,0 +1,6 @@
+navId: root_default_instrument_with-ticker
+title: company
+icon: target
+kind: url
+presentation: dynamic
+param: id

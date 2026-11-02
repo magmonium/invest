@@ -46,7 +46,8 @@
           "type": "string"
         },
         "id": "cca55c1f-94df-4f2d-b2b5-d365af9a76ca",
-        "name": "ids"
+        "name": "ids",
+        "required": true
       }
     },
     "kind": "feature",
