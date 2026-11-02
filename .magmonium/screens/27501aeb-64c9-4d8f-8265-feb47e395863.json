@@ -266,7 +266,8 @@
     "rootControlIds": [
       "0dcaf353-a197-4e32-9b02-89dbd6ff8bee"
     ],
-    "selectedLayerId": 0
+    "selectedControl": "ff64c006-dc7c-4d39-a7c6-58a8b04fe616",
+    "selectedLayerId": 4
   },
   "v": 29
 }

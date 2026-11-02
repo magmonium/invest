@@ -1,0 +1,284 @@
+{
+  "meta": {
+    "computeds": {
+      "275a6865-2b50-498e-8252-7195da9f04a9": {
+        "args": {
+          "id": {
+            "inputId": "d0e1d131-86b3-4f35-b1ae-bc495605c68e",
+            "source": "input"
+          },
+          "map": {
+            "path": [
+              "c02ba90d-e41b-4175-8986-1dba3f3af5e4"
+            ],
+            "source": "path"
+          }
+        },
+        "id": "275a6865-2b50-498e-8252-7195da9f04a9",
+        "name": "company",
+        "oneFunction": "getFromMap",
+        "returns": {
+          "cardinality": "one",
+          "dataType": {
+            "shapeId": "1413d88a-833d-457c-a2be-556739f6cdc4",
+            "type": "shape"
+          },
+          "optional": true
+        }
+      }
+    },
+    "featureId": "acef9153-606d-4de2-8699-7c87fa589384",
+    "id": "82f430ee-3b73-4f49-aee5-5813125c11c4",
+    "inputs": {
+      "d0e1d131-86b3-4f35-b1ae-bc495605c68e": {
+        "cardinality": "one",
+        "dataType": {
+          "type": "string"
+        },
+        "id": "d0e1d131-86b3-4f35-b1ae-bc495605c68e",
+        "name": "id",
+        "required": true
+      }
+    },
+    "kind": "feature",
+    "name": "price-comparison"
+  },
+  "state": {
+    "controlMap": {
+      "057b163a-e95b-4f30-a0ec-b02f7cd297e0": {
+        "bindings": {
+          "value": {
+            "path": [
+              "8c24d801-4414-4bb6-b949-ab78957a1920"
+            ],
+            "root": {
+              "id": "275a6865-2b50-498e-8252-7195da9f04a9",
+              "kind": "screen_computed"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {
+          "key": "high52w",
+          "kind": "bound",
+          "label": "52w-high"
+        },
+        "id": "057b163a-e95b-4f30-a0ec-b02f7cd297e0",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "price_ladder_mark",
+        "valueSource": "dynamic"
+      },
+      "084f6c3f-2a52-4279-8c18-c892cef930ac": {
+        "bindings": {
+          "value": {
+            "path": [
+              "930a4677-6878-4094-9123-52c96b1083e7"
+            ],
+            "root": {
+              "id": "275a6865-2b50-498e-8252-7195da9f04a9",
+              "kind": "screen_computed"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {
+          "key": "sma100",
+          "label": "sma-100",
+          "rank": 3
+        },
+        "id": "084f6c3f-2a52-4279-8c18-c892cef930ac",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "price_ladder_mark",
+        "valueSource": "dynamic"
+      },
+      "47a051f7-b8a4-426b-a7b3-9811d8f6db57": {
+        "childrens": [
+          "f4bfe4fb-7e00-4450-bd64-526733c9e78d"
+        ],
+        "configs": {},
+        "id": "47a051f7-b8a4-426b-a7b3-9811d8f6db57",
+        "type": "section"
+      },
+      "4aa947f0-3a8e-46d2-ba1c-f3106a9dab92": {
+        "bindings": {
+          "value": {
+            "path": [
+              "c182702e-ea86-4a66-b868-dbd5ab5391ab"
+            ],
+            "root": {
+              "id": "275a6865-2b50-498e-8252-7195da9f04a9",
+              "kind": "screen_computed"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {
+          "key": "sma10",
+          "kind": "bound",
+          "label": "sma-10",
+          "rank": 1
+        },
+        "id": "4aa947f0-3a8e-46d2-ba1c-f3106a9dab92",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "price_ladder_mark",
+        "valueSource": "dynamic"
+      },
+      "4b455ffa-aa6b-4bdd-8917-c5ed379a7ff0": {
+        "bindings": {
+          "value": {
+            "path": [
+              "4ff053d3-80df-4ee0-ad65-69e3068cac42"
+            ],
+            "root": {
+              "id": "275a6865-2b50-498e-8252-7195da9f04a9",
+              "kind": "screen_computed"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {
+          "key": "low52w",
+          "kind": "bound",
+          "label": "52w-low"
+        },
+        "id": "4b455ffa-aa6b-4bdd-8917-c5ed379a7ff0",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "price_ladder_mark",
+        "valueSource": "dynamic"
+      },
+      "9b7e2df3-44c3-4b8a-acc7-40b561994fac": {
+        "bindings": {
+          "value": {
+            "path": [
+              "5b2447c6-1953-4ff3-becc-334223832ef8"
+            ],
+            "root": {
+              "id": "275a6865-2b50-498e-8252-7195da9f04a9",
+              "kind": "screen_computed"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {
+          "key": "sma200",
+          "label": "sma-200",
+          "rank": 4
+        },
+        "id": "9b7e2df3-44c3-4b8a-acc7-40b561994fac",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "price_ladder_mark",
+        "valueSource": "dynamic"
+      },
+      "abe42803-a1c1-4b44-9443-4b08c7846bf6": {
+        "bindings": {
+          "value": {
+            "path": [
+              "ef994135-b73c-473e-89e4-bd3afcd42e65"
+            ],
+            "root": {
+              "id": "275a6865-2b50-498e-8252-7195da9f04a9",
+              "kind": "screen_computed"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {
+          "key": "forecast",
+          "label": "future-price"
+        },
+        "id": "abe42803-a1c1-4b44-9443-4b08c7846bf6",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "price_ladder_mark",
+        "valueSource": "dynamic"
+      },
+      "e24b78f8-419e-40db-8cb1-fc9ccdeb3958": {
+        "bindings": {
+          "value": {
+            "path": [
+              "f20ac826-4e66-4480-b695-b37381f33c71"
+            ],
+            "root": {
+              "id": "275a6865-2b50-498e-8252-7195da9f04a9",
+              "kind": "screen_computed"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {
+          "key": "current",
+          "label": "current"
+        },
+        "id": "e24b78f8-419e-40db-8cb1-fc9ccdeb3958",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "price_ladder_mark",
+        "valueSource": "dynamic"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03": {
+        "childrens": [
+          "4aa947f0-3a8e-46d2-ba1c-f3106a9dab92",
+          "fe32ea25-22be-4e97-ab30-be2f4b8427e8",
+          "084f6c3f-2a52-4279-8c18-c892cef930ac",
+          "9b7e2df3-44c3-4b8a-acc7-40b561994fac",
+          "4b455ffa-aa6b-4bdd-8917-c5ed379a7ff0",
+          "057b163a-e95b-4f30-a0ec-b02f7cd297e0",
+          "e24b78f8-419e-40db-8cb1-fc9ccdeb3958",
+          "abe42803-a1c1-4b44-9443-4b08c7846bf6"
+        ],
+        "configs": {
+          "crossFrom": "sma50",
+          "crossTo": "sma200",
+          "crossTone": "gold",
+          "signals": [
+            "all"
+          ],
+          "target": 2760,
+          "targetNote": "1Y",
+          "value": 2450
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "parentId": "f4bfe4fb-7e00-4450-bd64-526733c9e78d",
+        "type": "price_ladder"
+      },
+      "f4bfe4fb-7e00-4450-bd64-526733c9e78d": {
+        "childrens": [
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03"
+        ],
+        "configs": {},
+        "id": "f4bfe4fb-7e00-4450-bd64-526733c9e78d",
+        "parentId": "47a051f7-b8a4-426b-a7b3-9811d8f6db57",
+        "type": "col"
+      },
+      "fe32ea25-22be-4e97-ab30-be2f4b8427e8": {
+        "bindings": {
+          "value": {
+            "path": [
+              "ce50d70b-80c6-4b37-bbe9-f9d787733a00"
+            ],
+            "root": {
+              "id": "275a6865-2b50-498e-8252-7195da9f04a9",
+              "kind": "screen_computed"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {
+          "key": "sma50",
+          "label": "sma-50",
+          "rank": 2
+        },
+        "id": "fe32ea25-22be-4e97-ab30-be2f4b8427e8",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "price_ladder_mark",
+        "valueSource": "dynamic"
+      }
+    },
+    "labelSamples": {},
+    "pathSamples": {},
+    "rootControlIds": [
+      "47a051f7-b8a4-426b-a7b3-9811d8f6db57"
+    ],
+    "selectedControl": "abe42803-a1c1-4b44-9443-4b08c7846bf6",
+    "selectedLayerId": 4
+  },
+  "v": 29
+}
