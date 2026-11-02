@@ -57,8 +57,7 @@
       },
       "2de73f7c-ff95-4971-a199-49a71f024ed4": {
         "childrens": [
-          "16b3a5fb-c4b5-4b10-baf3-5a80c294d37c",
-          "673c8d98-b0e6-41ac-ba9e-83ddf9d357e0"
+          "16b3a5fb-c4b5-4b10-baf3-5a80c294d37c"
         ],
         "configs": {},
         "id": "2de73f7c-ff95-4971-a199-49a71f024ed4",
@@ -125,30 +124,6 @@
         "parentId": "8f36ddc6-1fec-4722-94ba-cb650f16fafc",
         "type": "row"
       },
-      "673c8d98-b0e6-41ac-ba9e-83ddf9d357e0": {
-        "childrens": [],
-        "configs": {},
-        "directives": {
-          "mPadding": {
-            "configs": {
-              "mPadding": "2",
-              "mPaddingX": "",
-              "mPaddingY": ""
-            }
-          }
-        },
-        "id": "673c8d98-b0e6-41ac-ba9e-83ddf9d357e0",
-        "parentId": "2de73f7c-ff95-4971-a199-49a71f024ed4",
-        "screenId": "c5e43b0a-4bc2-471a-babc-8b34fd93fafa",
-        "screenInputs": {
-          "f71efad1-180a-41b1-a073-91a2c69ef27d": {
-            "inputId": "9810373c-a815-4a47-a8eb-bf00e3a407eb",
-            "kind": "input"
-          }
-        },
-        "source": "raw",
-        "type": "screen"
-      },
       "686fc8ae-121f-4426-84bd-e5cdcbd83c4a": {
         "childrens": [
           "e9b6d170-cd10-40fa-a347-8559e08d0186",
@@ -172,7 +147,8 @@
         "childrens": [
           "53e7c3a3-b813-4cae-8679-493b2963e388",
           "709bc6ca-65ad-46ae-8485-e65d4e8090ae",
-          "2de73f7c-ff95-4971-a199-49a71f024ed4"
+          "2de73f7c-ff95-4971-a199-49a71f024ed4",
+          "f40f2ced-70b9-4a0b-a3d9-89344436cb18"
         ],
         "configs": {},
         "id": "8f36ddc6-1fec-4722-94ba-cb650f16fafc",
@@ -189,6 +165,30 @@
         "parentId": "686fc8ae-121f-4426-84bd-e5cdcbd83c4a",
         "source": "raw",
         "type": "col"
+      },
+      "bae119cc-94e7-4a47-8a51-3e25bd223127": {
+        "childrens": [],
+        "configs": {},
+        "directives": {
+          "mPadding": {
+            "configs": {
+              "mPadding": "2",
+              "mPaddingX": "",
+              "mPaddingY": ""
+            }
+          }
+        },
+        "id": "bae119cc-94e7-4a47-8a51-3e25bd223127",
+        "parentId": "f40f2ced-70b9-4a0b-a3d9-89344436cb18",
+        "screenId": "c5e43b0a-4bc2-471a-babc-8b34fd93fafa",
+        "screenInputs": {
+          "f71efad1-180a-41b1-a073-91a2c69ef27d": {
+            "inputId": "9810373c-a815-4a47-a8eb-bf00e3a407eb",
+            "kind": "input"
+          }
+        },
+        "source": "raw",
+        "type": "screen"
       },
       "c8e2fca3-e9af-4256-9878-b4417fd7ddbe": {
         "childrens": [],
@@ -227,6 +227,16 @@
         "parentId": "686fc8ae-121f-4426-84bd-e5cdcbd83c4a",
         "type": "col"
       },
+      "f40f2ced-70b9-4a0b-a3d9-89344436cb18": {
+        "childrens": [
+          "bae119cc-94e7-4a47-8a51-3e25bd223127"
+        ],
+        "configs": {},
+        "id": "f40f2ced-70b9-4a0b-a3d9-89344436cb18",
+        "parentId": "8f36ddc6-1fec-4722-94ba-cb650f16fafc",
+        "source": "raw",
+        "type": "row"
+      },
       "fa4d5964-4ac0-41e9-9c8d-44f0a3235f0c": {
         "childrens": [],
         "configs": {},
@@ -256,8 +266,8 @@
     "rootControlIds": [
       "8f36ddc6-1fec-4722-94ba-cb650f16fafc"
     ],
-    "selectedControl": "fa4d5964-4ac0-41e9-9c8d-44f0a3235f0c",
-    "selectedLayerId": 4
+    "selectedControl": "bae119cc-94e7-4a47-8a51-3e25bd223127",
+    "selectedLayerId": 3
   },
   "v": 29
 }

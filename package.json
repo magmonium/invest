@@ -38,7 +38,7 @@
     "@angular/cli": "22.2.1",
     "@angular/compiler-cli": "22.2.1",
     "@angular-builders/custom-webpack": "^22.0.0",
-    "@magmonium/cli": "0.8.21",
+    "@magmonium/cli": "0.8.22",
     "eslint": "^9.39.0",
     "@eslint/js": "^9.39.0",
     "angular-eslint": "^22.0.0",
