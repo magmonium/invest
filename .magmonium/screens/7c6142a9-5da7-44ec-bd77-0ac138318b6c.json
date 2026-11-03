@@ -41,7 +41,7 @@
         "rule": {
           "children": [
             {
-              "id": "rn8",
+              "id": "rn20",
               "kind": "check",
               "operand": {
                 "kind": "literal",
@@ -55,7 +55,7 @@
             }
           ],
           "connective": "all",
-          "id": "rn7",
+          "id": "rn19",
           "kind": "group",
           "negated": false
         }

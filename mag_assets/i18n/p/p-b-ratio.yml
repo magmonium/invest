@@ -1,5 +1,21 @@
+af: P/B-verhouding
+am: P/B Ratio
+ar: نسبة P/B
+as: P/B Ratio
+az: P/B Ratio
+be: P/B Ratio
+bg: P/B Ratio
+bn: P/B Ratio
+bs: P/B Ratio
+ca: Ratió P/B
+ceb: P/B Ratio
+co: P/B Ratio
+cs: P/B Ratio
+cy: Cymhareb P/B
+da: P/B Ratio
 de: KGV
 el: Σχέση Μ/Κ
+en: P/B Ratio
 eo: P/B-proporcio
 es: Ratio P/B
 et: P/B suhe
@@ -28,21 +44,6 @@ ja: P/B比率
 jw: Rasio P/B
 ka: P/B კოეფიციენტი
 kk: P/B коэффициенті
-mn: P/B харьцаа
-mr: P/B गुणोत्तर
-ms: Nisbah P/B
-mt: Rapport P/B
-my: P/B အချိုး
-ne: P/B अनुपात
-nl: P/B-ratio
-no: P/B-ratio
-ny: P/B Ratio
-or: P/B ଅନୁପାତ
-pa: P/B ਅਨੁਪਾਤ
-pl: Wskaźnik C/WK
-ps: د P/B نسبت
-pt: Rácio P/B
-ro: Raport P/B
 km: សមាមាត្រ P/B
 kn: P/B ಅನುಪಾತ
 ko: P/B 비율
@@ -58,6 +59,21 @@ mg: Tahan'ny P/B
 mi: P/B ōwe
 mk: P/B сооднос
 ml: P/B അനുപാതം
+mn: P/B харьцаа
+mr: P/B गुणोत्तर
+ms: Nisbah P/B
+mt: Rapport P/B
+my: P/B အချိုး
+ne: P/B अनुपात
+nl: P/B-ratio
+no: P/B-ratio
+ny: P/B Ratio
+or: P/B ଅନୁପାତ
+pa: P/B ਅਨੁਪਾਤ
+pl: Wskaźnik C/WK
+ps: د P/B نسبت
+pt: Rácio P/B
+ro: Raport P/B
 ru: Коэффициент P/B
 sd: P/B تناسب
 si: P/B අනුපාතය
@@ -87,19 +103,3 @@ yi: P/B Ratio
 yo: P/B Ratio
 zh: P/B Ratio
 zu: P/B Ratio
-af: P/B-verhouding
-am: P/B Ratio
-ar: نسبة P/B
-as: P/B Ratio
-az: P/B Ratio
-be: P/B Ratio
-bg: P/B Ratio
-bn: P/B Ratio
-bs: P/B Ratio
-ca: Ratió P/B
-ceb: P/B Ratio
-co: P/B Ratio
-cs: P/B Ratio
-cy: Cymhareb P/B
-da: P/B Ratio
-en: P/B Ratio

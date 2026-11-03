@@ -1,23 +1,4 @@
-st: Midcap
-su: Midcap
-sv: Midcap
-tl: Midcap
-yo: Midcap
 af: Midcap
-bs: Midcap
-ceb: Midcap
-co: Midcap
-cy: Midcap
-da: Midcap
-de: Midcap
-et: Midcap
-fy: Midcap
-ga: Midcap
-gd: Midcap
-haw: Midcap
-hmn: Midcap
-hr: Midcap
-ig: Midcap
 am: መካከለኛ ካፕ
 ar: غطاء متوسط
 as: মিডকেপ
@@ -25,22 +6,37 @@ az: Orta qapaq
 be: Сярэдняя капялюш
 bg: Средна капачка
 bn: মিডক্যাপ
+bs: Midcap
 ca: Capa mitjana
+ceb: Midcap
+co: Midcap
 cs: Střední čepice
+cy: Midcap
+da: Midcap
+de: Midcap
 el: Μεσαία κεφαλή
+en: Midcap
 eo: Mezĉapo
 es: Media capitalización
+et: Midcap
 eu: Erdi mailako kapitalizazioa
 fa: میدکپ
 fi: Keskikokoinen
 fr: Midcaps
+fy: Midcap
+ga: Midcap
+gd: Midcap
 gl: Capacidade media
 gu: મિડકેપ
 ha: Ввввввввввввввввввввввввввввввввв
+haw: Midcap
 hi: मिडकैप
+hmn: Midcap
+hr: Midcap
 hu: Középső
 hy: Միդքափ
 id: Batas tengah
+ig: Midcap
 it: Cap media
 ja: ミッドキャップ
 ka: შუა ქუდი
@@ -73,11 +69,15 @@ si: City in Newfoundland Canada
 sl: Srednji pokrovček
 sq: Kapelë e mesme
 sr: Мидцап
+st: Midcap
+su: Midcap
+sv: Midcap
 sw: Kifuniko cha kati
 ta: மிட்கேப்
 te: మిడ్ ‌ క్యాప్
 tg: Сарпӯши миёна
 th: มิดแคป
+tl: Midcap
 tr: Hicap
 uk: Середня кришка
 ur: مڈ کیپ
@@ -85,6 +85,6 @@ uz: O&#39;rta qopqoq
 vi: Vốn hóa trung bình
 xh: I-Midcap
 yi: מיטלקאַפּ
+yo: Midcap
 zh: 中型股
 zu: I-Midcap
-en: Midcap

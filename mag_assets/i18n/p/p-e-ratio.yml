@@ -1,33 +1,3 @@
-haw: P/E Ratio
-hi: पी/ई अनुपात
-hmn: P/E Ratio
-hr: P/E omjer
-hu: P/E arány
-hy: P/E հարաբերակցություն
-id: P/E Rasio
-ig: P/E Ratio
-is: P/E hlutfall
-it: Rapporto P/E
-iw: יחס P/E
-ja: P/E比率
-jw: P/E Rasio
-ka: P/E მაჩვენებელი
-kk: P/E коэффициенті
-de: Kurs-Gewinn-Verhältnis
-el: Δείκτης P/E
-eo: P/E Proporcio
-es: Relación P/E
-et: P/E Suhe
-eu: P/E erlazioa
-fa: نسبه P/E
-fi: P/E-suhde
-fr: Ratio P/E
-fy: P/E Ratio
-ga: Ráta P/E
-gd: Ràtha P/E
-gl: Relação P/E
-gu: P/E રેશિયો
-ha: P/E Ratio
 af: P/E verhouding
 am: P/E አተር
 ar: نسبة السعر إلى الأرباح
@@ -43,21 +13,37 @@ co: Rapporto P/E
 cs: P/E poměr
 cy: Cyfradd P/E
 da: P/E-forhold
-mn: PE харьцаа
-mr: PE गुणोत्तर
-ms: Nisbah PE
-mt: Proporzjon PE
-my: PE အချိုး
-ne: PE अनुपात
-nl: Koers-winstverhouding
-no: PE-forhold
-ny: Chiwerengero cha PE
-or: PE ଅନୁପାତ
-pa: PE ਅਨੁਪਾਤ
-pl: Wskaźnik C/Z
-ps: د PE نسبت
-pt: Rácio P/L
-ro: Raport P/E
+de: Kurs-Gewinn-Verhältnis
+el: Δείκτης P/E
+en: P/E Ratio
+eo: P/E Proporcio
+es: Relación P/E
+et: P/E Suhe
+eu: P/E erlazioa
+fa: نسبه P/E
+fi: P/E-suhde
+fr: Ratio P/E
+fy: P/E Ratio
+ga: Ráta P/E
+gd: Ràtha P/E
+gl: Relação P/E
+gu: P/E રેશિયો
+ha: P/E Ratio
+haw: P/E Ratio
+hi: पी/ई अनुपात
+hmn: P/E Ratio
+hr: P/E omjer
+hu: P/E arány
+hy: P/E հարաբերակցություն
+id: P/E Rasio
+ig: P/E Ratio
+is: P/E hlutfall
+it: Rapporto P/E
+iw: יחס P/E
+ja: P/E比率
+jw: P/E Rasio
+ka: P/E მაჩვენებელი
+kk: P/E коэффициенті
 km: ផលធៀប P/E
 kn: P/E ಅನುಪಾತ
 ko: P/E 비율
@@ -73,6 +59,21 @@ mg: Ratiora P/E
 mi: Tauine P/E
 mk: P/E однос
 ml: P/E അനുപാതം
+mn: PE харьцаа
+mr: PE गुणोत्तर
+ms: Nisbah PE
+mt: Proporzjon PE
+my: PE အချိုး
+ne: PE अनुपात
+nl: Koers-winstverhouding
+no: PE-forhold
+ny: Chiwerengero cha PE
+or: PE ଅନୁପାତ
+pa: PE ਅਨੁਪਾਤ
+pl: Wskaźnik C/Z
+ps: د PE نسبت
+pt: Rácio P/L
+ro: Raport P/E
 ru: Коэффициент P/E
 sd: पी/ई अनुपात
 si: P/E අනුපාතය
@@ -102,4 +103,3 @@ yi: P/E ראַציאָ
 yo: Ìpín P/E
 zh: 市盈率
 zu: Isilinganiso se-P/E
-en: P/E Ratio

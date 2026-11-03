@@ -13,6 +13,21 @@ co: Portefogliu di <$user>
 cs: Portfolium uživatele <$user>
 cy: Portffolio <$user>
 da: <$user>'s portefølje
+de: <$user>s Portfolio
+el: Το χαρτοφυλάκιο του <$user>
+en: <$user>'s portfolio
+eo: la biletujo de <$user>
+es: Cartera de <$user>
+et: <$user>'i portfell
+eu: <$user>-ren zorroa
+fa: نمونه کارهای <$user>
+fi: <$user>n portfolio
+fr: Portefeuille de <$user>
+ga: punann <$user>
+gd: pasgan <$user>
+gl: <$user>'s portfolio
+gu: <$user>નું પોર્ટફોલિયો
+ha: <$user>ta fayil
 haw: Poka o <$user>
 hi: <$user> का पोर्टफोलियो
 hmn: Portfolio ntawm <$user>
@@ -87,18 +102,3 @@ yi: <$user>'ס פּאָרטפאָליו
 yo: <$user> portfolio
 zh: <$user> 的投资组合
 zu: <$user> iphethini
-de: <$user>s Portfolio
-el: Το χαρτοφυλάκιο του <$user>
-eo: la biletujo de <$user>
-es: Cartera de <$user>
-et: <$user>'i portfell
-eu: <$user>-ren zorroa
-fa: نمونه کارهای <$user>
-fi: <$user>n portfolio
-fr: Portefeuille de <$user>
-ga: punann <$user>
-gd: pasgan <$user>
-gl: <$user>'s portfolio
-gu: <$user>નું પોર્ટફોલિયો
-ha: <$user>ta fayil
-en: <$user>'s portfolio
