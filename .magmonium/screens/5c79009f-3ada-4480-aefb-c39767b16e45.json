@@ -1,5 +1,32 @@
 {
   "meta": {
+    "computeds": {
+      "e6cfce8a-7d55-49ac-a7bd-51168cc68fde": {
+        "args": {
+          "id": {
+            "inputId": "0625a637-e22a-4024-8d15-9edb427c54bf",
+            "source": "input"
+          },
+          "map": {
+            "path": [
+              "1d4357aa-c32b-4a7f-9f0f-8373209367c0"
+            ],
+            "source": "path"
+          }
+        },
+        "id": "e6cfce8a-7d55-49ac-a7bd-51168cc68fde",
+        "name": "carve",
+        "oneFunction": "getFromMap",
+        "returns": {
+          "cardinality": "many",
+          "dataType": {
+            "shapeId": "4ee3de29-d47d-4b8d-8adb-1b6d4f53c57e",
+            "type": "shape"
+          },
+          "optional": true
+        }
+      }
+    },
     "featureId": "76e38aaa-d234-4aa1-b5fa-5b4595e714e2",
     "id": "5c79009f-3ada-4480-aefb-c39767b16e45",
     "inputs": {
@@ -19,8 +46,20 @@
   "state": {
     "controlMap": {
       "90f58351-240c-4d32-9823-4ab341b8a32f": {
+        "bindings": {
+          "data": {
+            "path": [],
+            "root": {
+              "id": "e6cfce8a-7d55-49ac-a7bd-51168cc68fde",
+              "kind": "screen_computed"
+            }
+          }
+        },
         "childrens": [],
-        "configs": {},
+        "configs": {
+          "x": "date",
+          "y": "value"
+        },
         "id": "90f58351-240c-4d32-9823-4ab341b8a32f",
         "parentId": "fb56d7f3-9722-46af-82b4-93546c67d15e",
         "type": "section_chart_series"
@@ -31,6 +70,26 @@
         ],
         "configs": {},
         "id": "b1a03cba-61a4-464e-a8ef-612390b14258",
+        "outputArgs": {
+          "inView": [
+            {
+              "binding": {
+                "path": [],
+                "root": {
+                  "id": "0625a637-e22a-4024-8d15-9edb427c54bf",
+                  "kind": "input"
+                }
+              },
+              "source": "binding",
+              "target": [
+                "id"
+              ]
+            }
+          ]
+        },
+        "outputs": {
+          "inView": "e2e9b8a5-35a2-4ce7-b1a5-9daf7ce5a98a"
+        },
         "type": "section"
       },
       "fb56d7f3-9722-46af-82b4-93546c67d15e": {
@@ -53,8 +112,8 @@
     "rootControlIds": [
       "b1a03cba-61a4-464e-a8ef-612390b14258"
     ],
-    "selectedControl": "90f58351-240c-4d32-9823-4ab341b8a32f",
-    "selectedLayerId": 3
+    "selectedControl": "fb56d7f3-9722-46af-82b4-93546c67d15e",
+    "selectedLayerId": 2
   },
-  "v": 29
+  "v": 30
 }
