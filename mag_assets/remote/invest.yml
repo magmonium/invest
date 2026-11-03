@@ -1,5 +1,5 @@
 app: invest
-version: 0.1.7
+version: 0.1.8
 componentPath: src/app
 componentName: wc
 className: InvestWebComponent

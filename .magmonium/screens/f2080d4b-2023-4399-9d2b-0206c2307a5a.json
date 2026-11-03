@@ -2,7 +2,16 @@
   "meta": {
     "id": "f2080d4b-2023-4399-9d2b-0206c2307a5a",
     "kind": "page",
-    "name": "portfolio"
+    "name": "portfolio",
+    "variables": {
+      "b56b11bd-9385-4382-b191-ceaf94a437e8": {
+        "cardinality": "one",
+        "dataType": "string",
+        "id": "b56b11bd-9385-4382-b191-ceaf94a437e8",
+        "kind": "plain",
+        "name": "strategy"
+      }
+    }
   },
   "state": {
     "controlMap": {
@@ -45,16 +54,52 @@
         "parentId": "24342e49-46e4-4de9-87af-e117519b1683",
         "type": "row"
       },
+      "cf4e3e55-68e4-4244-a303-b1b24326b8ca": {
+        "childrens": [],
+        "configs": {},
+        "directives": {
+          "mPadding": {
+            "configs": {
+              "mPadding": 1,
+              "mPaddingX": "",
+              "mPaddingY": ""
+            }
+          }
+        },
+        "id": "cf4e3e55-68e4-4244-a303-b1b24326b8ca",
+        "parentId": "def8b529-64b2-47de-adbb-8b5f4075ab9f",
+        "screenId": "5c79009f-3ada-4480-aefb-c39767b16e45",
+        "screenInputs": {
+          "0625a637-e22a-4024-8d15-9edb427c54bf": {
+            "kind": "variable",
+            "variableId": "b56b11bd-9385-4382-b191-ceaf94a437e8"
+          }
+        },
+        "type": "screen"
+      },
       "dd3501a4-f8fc-4ba0-a415-a19e648a80c6": {
         "childrens": [],
         "configs": {},
         "id": "dd3501a4-f8fc-4ba0-a415-a19e648a80c6",
+        "outputScreenWrites": {
+          "d5dd3e02-9f5e-4409-af30-73bc3e24da05": [
+            {
+              "value": {
+                "kind": "event"
+              },
+              "variableId": "b56b11bd-9385-4382-b191-ceaf94a437e8"
+            }
+          ]
+        },
         "parentId": "867ee7d8-110d-4a7b-a3b7-9064e13fb969",
         "screenId": "717eaf79-7fef-4a8e-aa2f-e44c35adad5f",
+        "screenOutputs": {},
         "type": "screen"
       },
       "def8b529-64b2-47de-adbb-8b5f4075ab9f": {
-        "childrens": [],
+        "childrens": [
+          "cf4e3e55-68e4-4244-a303-b1b24326b8ca"
+        ],
         "configs": {
           "md": "6"
         },
@@ -77,8 +122,8 @@
     "rootControlIds": [
       "24342e49-46e4-4de9-87af-e117519b1683"
     ],
-    "selectedControl": "ff45ac32-5926-4d5a-9137-8cdcec7dc277",
-    "selectedLayerId": 3
+    "selectedControl": "cf4e3e55-68e4-4244-a303-b1b24326b8ca",
+    "selectedLayerId": 4
   },
-  "v": 29
+  "v": 30
 }

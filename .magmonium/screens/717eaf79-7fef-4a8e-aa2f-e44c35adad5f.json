@@ -1,9 +1,45 @@
 {
   "meta": {
+    "autoCalls": [
+      {
+        "args": [],
+        "emits": [
+          {
+            "id": "4fdc1685-367e-4916-93e3-04a578d1bab2",
+            "outputId": "d5dd3e02-9f5e-4409-af30-73bc3e24da05",
+            "value": {
+              "binding": {
+                "path": [
+                  "8188dcd2-8a7f-4691-8306-7b7eb1ee1380",
+                  "daa6b732-a331-40a3-94ff-7c27f0497b01"
+                ],
+                "root": {
+                  "id": "443aba23-a361-4aa3-868a-479123e6cf06",
+                  "kind": "property"
+                }
+              },
+              "kind": "binding"
+            }
+          }
+        ],
+        "id": "1f3fa0a7-7e1a-418b-bddf-1590bcf43cb4",
+        "when": "on-change"
+      }
+    ],
     "featureId": "bbad551b-72b3-4fde-86f9-afa810cbc40c",
     "id": "717eaf79-7fef-4a8e-aa2f-e44c35adad5f",
     "kind": "feature",
-    "name": "summary"
+    "name": "summary",
+    "outputs": {
+      "d5dd3e02-9f5e-4409-af30-73bc3e24da05": {
+        "id": "d5dd3e02-9f5e-4409-af30-73bc3e24da05",
+        "name": "strategy",
+        "payload": {
+          "cardinality": "one",
+          "dataType": "string"
+        }
+      }
+    }
   },
   "state": {
     "controlMap": {
@@ -808,5 +844,5 @@
     "selectedControl": "682f89fd-7de8-4aeb-8b35-fbfaa3165e79",
     "selectedLayerId": 7
   },
-  "v": 29
+  "v": 30
 }
