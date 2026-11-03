@@ -3062,27 +3062,43 @@
           "cases": [
             {
               "args": [
-                "\"h1\"",
-                "{ \"summary\": { \"strategy\": \"growth\", \"minimumHold\": 10, \"investedValue\": 1000, \"currentValue\": 1200, \"pnl\": 200, \"pnlPct\": 20, \"cashAvailable\": 500, \"count\": 1, \"buy\": 1, \"sell\": 0, \"rebalance\": 0, \"owned\": 1, \"deferred\": 0, \"fallback\": \"none\", \"unclaimedCash\": 0, \"cashAfterPlan\": 500, \"rebalanceZone\": 5 }, \"portfolio\": [{ \"symbol\": \"AAPL\", \"id\": \"h1\", \"quantity\": 10, \"price\": 120, \"heldAt\": \"2023-01-01\" }], \"rebalance\": [] }"
+                "\"AAPL\"",
+                "{ \"summary\": { \"strategy\": \"dca\", \"minimumHold\": 0, \"investedValue\": 0, \"currentValue\": 0, \"pnl\": 0, \"pnlPct\": 0, \"cashAvailable\": 0, \"count\": 0, \"buy\": 0, \"sell\": 0, \"rebalance\": 0, \"owned\": 0, \"deferred\": 0, \"fallback\": \"\", \"unclaimedCash\": 0, \"cashAfterPlan\": 0, \"rebalanceZone\": 0 }, \"portfolio\": [{ \"symbol\": \"AAPL\", \"id\": \"1\", \"quantity\": 10, \"price\": 150, \"heldAt\": \"2023-01-01\" }], \"rebalance\": [] }"
               ],
-              "expected": "{ \"symbol\": \"AAPL\", \"id\": \"h1\", \"quantity\": 10, \"price\": 120, \"heldAt\": \"2023-01-01\" }",
-              "name": "returns holding when id matches"
+              "expected": "{ \"symbol\": \"AAPL\", \"id\": \"1\", \"quantity\": 10, \"price\": 150, \"heldAt\": \"2023-01-01\" }",
+              "name": "finds item by symbol"
             },
             {
               "args": [
-                "\"nonexistent\"",
-                "{ \"summary\": { \"strategy\": \"growth\", \"minimumHold\": 10, \"investedValue\": 1000, \"currentValue\": 1200, \"pnl\": 200, \"pnlPct\": 20, \"cashAvailable\": 500, \"count\": 1, \"buy\": 1, \"sell\": 0, \"rebalance\": 0, \"owned\": 1, \"deferred\": 0, \"fallback\": \"none\", \"unclaimedCash\": 0, \"cashAfterPlan\": 500, \"rebalanceZone\": 5 }, \"portfolio\": [{ \"symbol\": \"AAPL\", \"id\": \"h1\", \"quantity\": 10, \"price\": 120, \"heldAt\": \"2023-01-01\" }], \"rebalance\": [] }"
+                "\"GOOG\"",
+                "{ \"summary\": { \"strategy\": \"dca\", \"minimumHold\": 0, \"investedValue\": 0, \"currentValue\": 0, \"pnl\": 0, \"pnlPct\": 0, \"cashAvailable\": 0, \"count\": 0, \"buy\": 0, \"sell\": 0, \"rebalance\": 0, \"owned\": 0, \"deferred\": 0, \"fallback\": \"\", \"unclaimedCash\": 0, \"cashAfterPlan\": 0, \"rebalanceZone\": 0 }, \"portfolio\": [{ \"symbol\": \"AAPL\", \"id\": \"1\", \"quantity\": 10, \"price\": 150, \"heldAt\": \"2023-01-01\" }], \"rebalance\": [] }"
               ],
               "expected": "undefined",
-              "name": "returns null when id not found"
+              "name": "returns null when symbol not found"
             },
             {
               "args": [
-                "\"h1\"",
-                "{ \"summary\": { \"strategy\": \"growth\", \"minimumHold\": 10, \"investedValue\": 0, \"currentValue\": 0, \"pnl\": 0, \"pnlPct\": 0, \"cashAvailable\": 0, \"count\": 0, \"buy\": 0, \"sell\": 0, \"rebalance\": 0, \"owned\": 0, \"deferred\": 0, \"fallback\": \"none\", \"unclaimedCash\": 0, \"cashAfterPlan\": 0, \"rebalanceZone\": 0 }, \"portfolio\": [], \"rebalance\": [] }"
+                "\"AAPL\"",
+                "undefined"
               ],
               "expected": "undefined",
-              "name": "returns null for empty portfolio"
+              "name": "returns null when bootstrap response is undefined"
+            },
+            {
+              "args": [
+                "\"AAPL\"",
+                "{ \"summary\": { \"strategy\": \"dca\", \"minimumHold\": 0, \"investedValue\": 0, \"currentValue\": 0, \"pnl\": 0, \"pnlPct\": 0, \"cashAvailable\": 0, \"count\": 0, \"buy\": 0, \"sell\": 0, \"rebalance\": 0, \"owned\": 0, \"deferred\": 0, \"fallback\": \"\", \"unclaimedCash\": 0, \"cashAfterPlan\": 0, \"rebalanceZone\": 0 }, \"portfolio\": [], \"rebalance\": [] }"
+              ],
+              "expected": "undefined",
+              "name": "returns null when portfolio array is empty"
+            },
+            {
+              "args": [
+                "\"AAPL\"",
+                "{ \"summary\": { \"strategy\": \"dca\", \"minimumHold\": 0, \"investedValue\": 0, \"currentValue\": 0, \"pnl\": 0, \"pnlPct\": 0, \"cashAvailable\": 0, \"count\": 0, \"buy\": 0, \"sell\": 0, \"rebalance\": 0, \"owned\": 0, \"deferred\": 0, \"fallback\": \"\", \"unclaimedCash\": 0, \"cashAfterPlan\": 0, \"rebalanceZone\": 0 }, \"portfolio\": [{ \"symbol\": \"AAPL\", \"id\": \"1\", \"quantity\": 10, \"price\": 150, \"heldAt\": \"2023-01-01\" }, { \"symbol\": \"AAPL\", \"id\": \"2\", \"quantity\": 5, \"price\": 150, \"heldAt\": \"2023-01-02\" }], \"rebalance\": [] }"
+              ],
+              "expected": "{ \"symbol\": \"AAPL\", \"id\": \"1\", \"quantity\": 10, \"price\": 150, \"heldAt\": \"2023-01-01\" }",
+              "name": "returns first matching item when duplicates exist"
             }
           ],
           "description": "Retrieves a specific portfolio holding by its symbol from the bootstrap response.",
@@ -4357,6 +4373,6 @@
     "name": "invest",
     "open": false,
     "theme": "",
-    "version": "0.1.9"
+    "version": "0.1.10"
   }
 }
