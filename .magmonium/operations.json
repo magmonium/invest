@@ -11,7 +11,7 @@
           "cardinality": "one",
           "code": "200",
           "dataType": {
-            "shapeId": "75a59381-463f-494c-a945-e128afa5aa1f",
+            "shapeId": "93cbd75f-9f03-4cf8-bd1a-82ae7ac2e057",
             "type": "shape"
           },
           "description": "Filterable field catalog",
@@ -55,14 +55,14 @@
           },
           "shapes": [
             {
-              "id": "8c28058c-0ad9-4ed9-99fa-8db30e7e6e9e",
+              "id": "ee5258ce-e48d-4ebc-a02f-c423a7abac86",
               "keys": [
                 {
                   "cardinality": "one",
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "6a0ece49-536d-4403-8a27-53e1215f9c73",
+                  "id": "f06c119a-deff-434a-84f4-310f9b20bdcc",
                   "name": "key"
                 },
                 {
@@ -70,7 +70,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "67ff1132-8efa-4277-9605-3aba81f7ff81",
+                  "id": "9b213ca0-6ace-4b7c-b374-1a4aecd8de9d",
                   "name": "label"
                 },
                 {
@@ -78,7 +78,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "d7d071eb-00c4-43fa-9fc3-209ec1768b16",
+                  "id": "0de588a5-4a2d-4444-b671-06acf8a02a61",
                   "name": "type"
                 }
               ],
@@ -93,15 +93,15 @@
               }
             },
             {
-              "id": "75a59381-463f-494c-a945-e128afa5aa1f",
+              "id": "93cbd75f-9f03-4cf8-bd1a-82ae7ac2e057",
               "keys": [
                 {
                   "cardinality": "many",
                   "dataType": {
-                    "shapeId": "8c28058c-0ad9-4ed9-99fa-8db30e7e6e9e",
+                    "shapeId": "ee5258ce-e48d-4ebc-a02f-c423a7abac86",
                     "type": "shape"
                   },
-                  "id": "732f81ae-5da9-4ec4-9f47-b348322bd024",
+                  "id": "857bcee3-296b-409c-95ef-b123eafaaf55",
                   "name": "fields"
                 }
               ],
@@ -136,7 +136,7 @@
           "cardinality": "one",
           "code": "200",
           "dataType": {
-            "shapeId": "953e551f-2d13-4bb6-84b1-a36af75750fc",
+            "shapeId": "ff7c3927-8028-463e-b525-0b171cdc001d",
             "type": "shape"
           },
           "description": "Dashboard changes",
@@ -281,14 +281,14 @@
           },
           "shapes": [
             {
-              "id": "fae98647-cd4a-4668-8f1b-9eb8097ce9ea",
+              "id": "aa92e72a-7b63-41a3-b688-f51b307f9690",
               "keys": [
                 {
                   "cardinality": "one",
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "571b7e33-42f1-469d-92ea-123a8b74abfd",
+                  "id": "59dd64fa-2737-4dbb-b1fe-e987913e4b0f",
                   "name": "day"
                 },
                 {
@@ -296,7 +296,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "c6deb4a8-5b64-465e-880b-dbd07b43f252",
+                  "id": "ffcf9d3f-657a-4c05-8c67-3da04c2c0589",
                   "name": "week"
                 }
               ],
@@ -311,60 +311,60 @@
               }
             },
             {
-              "id": "953e551f-2d13-4bb6-84b1-a36af75750fc",
+              "id": "ff7c3927-8028-463e-b525-0b171cdc001d",
               "keys": [
                 {
                   "cardinality": "one",
                   "dataType": {
-                    "shapeId": "fae98647-cd4a-4668-8f1b-9eb8097ce9ea",
+                    "shapeId": "aa92e72a-7b63-41a3-b688-f51b307f9690",
                     "type": "shape"
                   },
-                  "id": "621d9572-56a5-4afb-824d-63aa66a117d3",
+                  "id": "6a48ba26-4686-4d65-b0e2-5e5f5fda56d5",
                   "name": "nifty"
                 },
                 {
                   "cardinality": "one",
                   "dataType": {
-                    "shapeId": "fae98647-cd4a-4668-8f1b-9eb8097ce9ea",
+                    "shapeId": "aa92e72a-7b63-41a3-b688-f51b307f9690",
                     "type": "shape"
                   },
-                  "id": "9f6a9d3b-a509-4dc9-9502-a8bd41fedc62",
+                  "id": "fb4c2600-2b4e-44aa-8a53-2123fb5131da",
                   "name": "midcap"
                 },
                 {
                   "cardinality": "one",
                   "dataType": {
-                    "shapeId": "fae98647-cd4a-4668-8f1b-9eb8097ce9ea",
+                    "shapeId": "aa92e72a-7b63-41a3-b688-f51b307f9690",
                     "type": "shape"
                   },
-                  "id": "8927d141-f197-4190-8187-6a52afdde781",
+                  "id": "6f4a5c2e-0fba-40c5-8263-41f34568735d",
                   "name": "smallcap"
                 },
                 {
                   "cardinality": "one",
                   "dataType": {
-                    "shapeId": "fae98647-cd4a-4668-8f1b-9eb8097ce9ea",
+                    "shapeId": "aa92e72a-7b63-41a3-b688-f51b307f9690",
                     "type": "shape"
                   },
-                  "id": "1fece385-584f-47d7-b2e7-13c403d18720",
+                  "id": "8cd314d1-bf36-4575-9a6a-cf6a1f4ec5b9",
                   "name": "gold"
                 },
                 {
                   "cardinality": "one",
                   "dataType": {
-                    "shapeId": "fae98647-cd4a-4668-8f1b-9eb8097ce9ea",
+                    "shapeId": "aa92e72a-7b63-41a3-b688-f51b307f9690",
                     "type": "shape"
                   },
-                  "id": "68b05165-03f6-44f1-8a4c-ee7aba30aee7",
+                  "id": "735cd63b-9043-4b84-a43c-e059227dd0c7",
                   "name": "silver"
                 },
                 {
                   "cardinality": "one",
                   "dataType": {
-                    "shapeId": "fae98647-cd4a-4668-8f1b-9eb8097ce9ea",
+                    "shapeId": "aa92e72a-7b63-41a3-b688-f51b307f9690",
                     "type": "shape"
                   },
-                  "id": "a7eb9c04-8b8f-402f-81bb-f30e093c0926",
+                  "id": "ec9694de-b4a6-43d4-92c7-f58627c1cd5d",
                   "name": "portfolio"
                 }
               ],
@@ -398,7 +398,7 @@
           "cardinality": "one",
           "code": "200",
           "dataType": {
-            "shapeId": "038976bb-8ae1-4a00-9177-9fb71853999c",
+            "shapeId": "a814f0e3-8cf1-412f-804d-0fef43774131",
             "type": "shape"
           },
           "description": "Bootstrap payload",
@@ -676,14 +676,14 @@
           },
           "shapes": [
             {
-              "id": "1909c38d-4b26-4ace-bff1-45904652c6d7",
+              "id": "60bfe076-448d-4e91-b0c5-5a2c67389000",
               "keys": [
                 {
                   "cardinality": "one",
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "ee283b4e-5a4a-41a7-ace6-b2fae0b012a5",
+                  "id": "c2eaa630-5c55-4cd6-b74f-bd11bad5d3d3",
                   "name": "strategy"
                 },
                 {
@@ -691,7 +691,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "0160a160-bb8d-4996-b9a0-55a71736deb6",
+                  "id": "3af2dc21-2cda-43de-b706-a4b6048dd33b",
                   "name": "minimumHold"
                 },
                 {
@@ -699,7 +699,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "b4ee1abe-fc00-40e5-a52e-b048d915e765",
+                  "id": "32845b70-2db4-490e-9aed-0e99654aeed4",
                   "name": "investedValue"
                 },
                 {
@@ -707,7 +707,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "0ef6e460-c443-48f6-a54e-243c4fb27bc8",
+                  "id": "0db2dfa4-2776-470c-9794-58b2654ec0be",
                   "name": "currentValue"
                 },
                 {
@@ -715,7 +715,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "6de45fe1-1d4b-49d2-abb5-ed5a18314f21",
+                  "id": "22c5d491-c558-4196-8021-c7529f0a2b59",
                   "name": "pnl"
                 },
                 {
@@ -723,7 +723,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "e4f6a45a-b6e8-4cc9-b026-9a8acb62f719",
+                  "id": "7945358e-4a75-4ca7-bd5b-79214fe86bf3",
                   "name": "pnlPct"
                 },
                 {
@@ -731,7 +731,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "6f8ae802-895a-4cc0-922d-74aaff6d62c8",
+                  "id": "c174f8ca-19c5-4e56-8e23-44c05960085b",
                   "name": "cashAvailable"
                 },
                 {
@@ -739,7 +739,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "94c86aae-6015-4ad8-9a47-4c6cd19b15f8",
+                  "id": "5f025f2b-06bb-42ab-a2da-a74326280df8",
                   "name": "count"
                 },
                 {
@@ -747,7 +747,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "f02d0e8f-0925-4e2d-b1b2-8375e9f1b2d2",
+                  "id": "1d23fe3a-b35b-4773-ad07-d2f1e3af7ac8",
                   "name": "buy"
                 },
                 {
@@ -755,7 +755,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "ff9cd379-7356-484b-a309-e851dc779d2e",
+                  "id": "deb6280b-cf58-450e-828c-0bb1b13757e4",
                   "name": "sell"
                 },
                 {
@@ -763,7 +763,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "34cf487a-177e-479f-8447-fba5d1f70bd9",
+                  "id": "ce035728-0499-4c1d-a422-8912952c3e0c",
                   "name": "rebalance"
                 },
                 {
@@ -771,7 +771,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "cf8e1afe-56e1-4018-80c6-b848514d60db",
+                  "id": "9d0082f5-6fdd-412e-b792-7452660c7470",
                   "name": "owned"
                 },
                 {
@@ -779,7 +779,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "7448a593-1280-459a-a858-daad9f7ad938",
+                  "id": "e2565d43-de15-4428-9485-639031d27f11",
                   "name": "deferred"
                 },
                 {
@@ -787,7 +787,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "64db38d5-d119-48a0-83a6-5eb1a5081e3a",
+                  "id": "340c1ed9-93cd-424f-abb3-75f57d2be645",
                   "name": "fallback"
                 },
                 {
@@ -795,7 +795,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "b6f82504-de80-4d50-a8c8-8c02f8be20f1",
+                  "id": "8b55fd5c-b3ed-4688-94ed-c1ff15a5f281",
                   "name": "unclaimedCash"
                 },
                 {
@@ -803,7 +803,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "102269ab-42d2-4ec2-bdd3-36b78b664997",
+                  "id": "0051baba-99a1-44b7-9e51-ebcfe1fcac76",
                   "name": "cashAfterPlan"
                 },
                 {
@@ -811,7 +811,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "bdc32324-9f44-4691-b9da-9d2a5638e722",
+                  "id": "820d2474-ec71-4ea8-8b6a-16c0a72b7499",
                   "name": "rebalanceZone"
                 }
               ],
@@ -826,14 +826,14 @@
               }
             },
             {
-              "id": "5e3ce6fb-7de1-4ebd-af1e-eb4a8b3cb0e2",
+              "id": "b646255a-6d28-489f-8262-283bac00968e",
               "keys": [
                 {
                   "cardinality": "one",
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "9439bcab-c891-4ebf-bb64-27473e79384b",
+                  "id": "1f74f346-1542-4376-ad36-0b97a727d1b0",
                   "name": "symbol"
                 },
                 {
@@ -841,7 +841,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "a3a66d10-b17f-4539-918d-176b06baad3c",
+                  "id": "56cf055e-3945-4dc3-993b-d79ecaacf35b",
                   "name": "id"
                 },
                 {
@@ -849,7 +849,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "d649d664-66e5-4dda-aa79-6b4772014aa0",
+                  "id": "e7162a67-4428-495b-a11b-1027798c373e",
                   "name": "quantity"
                 },
                 {
@@ -857,7 +857,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "548253b2-1003-421a-a3c7-1b0506daf506",
+                  "id": "a5ffa546-7dbd-4bee-881d-c5fd32f6941c",
                   "name": "price"
                 },
                 {
@@ -865,7 +865,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "8e601311-f235-44df-b43b-7666d0b25921",
+                  "id": "d37a7d74-44c2-45bf-a62d-9fea6b36bf14",
                   "name": "heldAt"
                 }
               ],
@@ -880,14 +880,14 @@
               }
             },
             {
-              "id": "f8cc19a6-4049-4417-b524-cd90253e11a1",
+              "id": "3d4bedd2-5bdc-4a1f-abb8-4e56c8efeb2c",
               "keys": [
                 {
                   "cardinality": "one",
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "a946bc14-6b43-4e60-bf26-59db84ffc744",
+                  "id": "6a7dc61c-7221-4211-ae9c-f8aa0f9dab3d",
                   "name": "symbol"
                 },
                 {
@@ -895,7 +895,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "90e63eac-f311-4e73-9bd6-bd0a5ed032df",
+                  "id": "e3849af6-21d6-43fd-bb6e-d83a16100c51",
                   "name": "action"
                 },
                 {
@@ -903,7 +903,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "b99d7d1f-0625-40c3-9e41-e5d75690998c",
+                  "id": "3b484c86-4513-4250-b322-2ef9554401b9",
                   "name": "quantity"
                 },
                 {
@@ -911,7 +911,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "eb241404-28b8-40b9-a5bf-8b1411d726bc",
+                  "id": "6f491048-e2fe-4fe8-adbd-f305ea1fc60d",
                   "name": "idealQuantity"
                 },
                 {
@@ -919,7 +919,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "a98d3368-7ed6-4949-9f1c-bcbbdb465459",
+                  "id": "2bb2391b-a1b2-4a31-a543-3a0d8bbe377d",
                   "name": "deltaQuantity"
                 },
                 {
@@ -927,7 +927,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "759336fc-a0ef-456d-9443-d2d1dbb63508",
+                  "id": "22c937b2-c3a6-40a5-bf51-ef36f8c13259",
                   "name": "minQuantity"
                 },
                 {
@@ -935,7 +935,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "d85ad5dc-61ff-496f-8d0f-28282dffa578",
+                  "id": "2b592f87-3377-4191-aec1-65b274ff0711",
                   "name": "maxQuantity"
                 },
                 {
@@ -943,7 +943,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "a981703f-fac8-42c1-adc0-e6abb6adfd3e",
+                  "id": "d8d328f3-86c3-4e0b-8567-78f0e2b28a30",
                   "name": "currentPrice"
                 },
                 {
@@ -951,7 +951,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "5322ff5a-4a98-4481-b70d-48e596ea8025",
+                  "id": "d1a73ae6-4b18-4292-bff6-286ba33417dd",
                   "name": "currentValue"
                 },
                 {
@@ -959,7 +959,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "527fcd94-09a7-48ec-b475-44568f585918",
+                  "id": "25e0770e-1d94-4dd1-a33b-15b63df91e5e",
                   "name": "investedValue"
                 },
                 {
@@ -967,7 +967,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "576c3130-aa31-4df9-a07e-0718f34d32a8",
+                  "id": "c59d0447-ddec-4cf8-a7b6-f9a633f9af7e",
                   "name": "allocationPct"
                 },
                 {
@@ -975,7 +975,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "7869fdd3-a530-4925-bb6b-ac781223b06a",
+                  "id": "c022848a-f0cf-4fbf-b5c3-a16a3bc6517e",
                   "name": "pnl"
                 },
                 {
@@ -983,7 +983,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "2d99b8e7-8236-4ef3-bd6f-c2e578423d64",
+                  "id": "81b24319-3203-41f9-9627-edfd76a741a2",
                   "name": "pnlPct"
                 }
               ],
@@ -998,33 +998,33 @@
               }
             },
             {
-              "id": "038976bb-8ae1-4a00-9177-9fb71853999c",
+              "id": "a814f0e3-8cf1-412f-804d-0fef43774131",
               "keys": [
                 {
                   "cardinality": "one",
                   "dataType": {
-                    "shapeId": "1909c38d-4b26-4ace-bff1-45904652c6d7",
+                    "shapeId": "60bfe076-448d-4e91-b0c5-5a2c67389000",
                     "type": "shape"
                   },
-                  "id": "8ed57ed2-22f8-407f-b96d-4abf445336f6",
+                  "id": "46b1803b-3eff-42c9-b7b7-bff1961973ef",
                   "name": "summary"
                 },
                 {
                   "cardinality": "many",
                   "dataType": {
-                    "shapeId": "5e3ce6fb-7de1-4ebd-af1e-eb4a8b3cb0e2",
+                    "shapeId": "b646255a-6d28-489f-8262-283bac00968e",
                     "type": "shape"
                   },
-                  "id": "d155216f-c161-4090-bfd5-c86c65e5f25c",
+                  "id": "f0da57b1-e885-407f-913f-9702bec96b47",
                   "name": "portfolio"
                 },
                 {
                   "cardinality": "many",
                   "dataType": {
-                    "shapeId": "f8cc19a6-4049-4417-b524-cd90253e11a1",
+                    "shapeId": "3d4bedd2-5bdc-4a1f-abb8-4e56c8efeb2c",
                     "type": "shape"
                   },
-                  "id": "7564f547-9935-4d58-b901-2cb5399b1fd6",
+                  "id": "4feb71ab-782d-4f93-893e-ebb5283121f0",
                   "name": "rebalance"
                 }
               ],
@@ -1095,7 +1095,7 @@
         {
           "cardinality": "one",
           "dataType": {
-            "shapeId": "474f1170-941b-4fa7-98e7-f323d04b2221",
+            "shapeId": "7e80cc0d-0df8-439a-88af-028b0e3cb327",
             "type": "shape"
           },
           "doc": {
@@ -1124,14 +1124,14 @@
           "required": true,
           "shapes": [
             {
-              "id": "474f1170-941b-4fa7-98e7-f323d04b2221",
+              "id": "7e80cc0d-0df8-439a-88af-028b0e3cb327",
               "keys": [
                 {
                   "cardinality": "many",
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "bb57d9f3-58ce-4a0e-bdaa-aa034ddef4d5",
+                  "id": "403c491b-f191-4594-919f-4eff1b543829",
                   "name": "ids"
                 },
                 {
@@ -1139,7 +1139,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "c104d86f-dc3d-403e-a289-48309721d179",
+                  "id": "ee8ffc20-88f5-4730-91d0-bcc291f5dbe0",
                   "name": "fields"
                 }
               ],
@@ -1155,7 +1155,7 @@
           "cardinality": "one",
           "code": "200",
           "dataType": {
-            "shapeId": "7d998146-4359-4654-a3c7-3db9c60d684d",
+            "shapeId": "a0c7d019-07e1-4750-89d5-a970d07a9628",
             "type": "shape"
           },
           "description": "Companies retrieved successfully",
@@ -1694,14 +1694,14 @@
           },
           "shapes": [
             {
-              "id": "3bc03ff8-6e22-4a20-b274-2a05bcaf2c0c",
+              "id": "0f338a3b-8163-4ced-afb0-98f7e4451daf",
               "keys": [
                 {
                   "cardinality": "one",
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "7761ca2e-4021-4b4f-b48e-290519b82f01",
+                  "id": "3b28964d-359d-441a-8a2b-b7ce283426b9",
                   "name": "ts"
                 },
                 {
@@ -1709,7 +1709,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "fea06feb-15b4-420b-9cc2-d4ebbbaccd35",
+                  "id": "bdba0f55-388b-45c7-80c6-73384aef3a24",
                   "name": "lp"
                 },
                 {
@@ -1717,7 +1717,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "4b7b2f5e-ce55-4be0-8c64-69452f6b4bce",
+                  "id": "fb11569f-4b1b-407c-bb10-cd758e8b5b6c",
                   "name": "v"
                 }
               ],
@@ -1733,14 +1733,14 @@
               }
             },
             {
-              "id": "fdb826a3-7fd3-431f-8b68-cdcff60d40c2",
+              "id": "2c766741-e83a-48dc-ada9-224792611e38",
               "keys": [
                 {
                   "cardinality": "one",
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "50073c4c-a5ff-40cc-9f87-9b90afb8a322",
+                  "id": "42784116-1c09-48b0-af38-8251df2e4058",
                   "name": "year"
                 },
                 {
@@ -1748,7 +1748,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "e420ba86-47e0-41ba-9d5b-152d06568e5b",
+                  "id": "9237f168-75a3-4ba3-bd78-085b6db477d2",
                   "name": "revenue"
                 },
                 {
@@ -1756,7 +1756,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "43786f79-4ab3-441e-bf16-f75b2c6a37cb",
+                  "id": "436de19a-7424-4761-9f1b-fff8939e5d93",
                   "name": "profit"
                 }
               ],
@@ -1772,14 +1772,14 @@
               }
             },
             {
-              "id": "1ca49736-e8c5-4515-848a-214bbd8c5868",
+              "id": "82bfda57-9241-4436-918e-3261634b33a0",
               "keys": [
                 {
                   "cardinality": "one",
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "2540c6ea-89ac-4c3d-a441-cc8817633ffa",
+                  "id": "cce6a9e9-0b7a-4dcf-9981-33cc8b500b32",
                   "name": "symbol"
                 },
                 {
@@ -1787,7 +1787,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "52c181f8-85ed-43da-87cc-63f6d3dde817",
+                  "id": "c30afae9-a35b-43ea-abf3-9e3352ba8909",
                   "name": "name"
                 },
                 {
@@ -1795,7 +1795,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "b65b4649-77e6-4cd7-9447-cf928e3d894f",
+                  "id": "37136ced-c966-4556-bfaa-ffa3b98393b7",
                   "name": "ticker"
                 },
                 {
@@ -1803,7 +1803,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "dc906d2d-dee8-47a0-9e26-4d3e7d347b53",
+                  "id": "0bfabcbf-d316-47b8-ac49-87fb3878a267",
                   "name": "isin"
                 },
                 {
@@ -1811,7 +1811,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "12ce48e1-7d2d-4f03-9104-209a4547efa7",
+                  "id": "944fd72a-02e5-4cef-95d5-1c4430443f7d",
                   "name": "sector"
                 },
                 {
@@ -1819,7 +1819,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "0844fc9a-5157-4bb8-8dd1-c0cf5a7c6aa8",
+                  "id": "d5bc19db-efb3-4d3d-ad52-e0ff252138f2",
                   "name": "industry"
                 },
                 {
@@ -1827,7 +1827,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "57bea926-6ab6-40fa-9a0c-f095c43dd393",
+                  "id": "d9118017-7251-4af0-96f4-995322fed255",
                   "name": "subindustry"
                 },
                 {
@@ -1835,7 +1835,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "e9676a0c-aa3f-4ccf-9cc1-bd5a6c2408e4",
+                  "id": "17827c16-e496-4b1b-b8ab-9673a9067d69",
                   "name": "type"
                 },
                 {
@@ -1843,7 +1843,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "bee15a43-1c0a-4be6-a9a8-e4403217019e",
+                  "id": "c767ea5e-dcba-40cc-b71d-9757cad46899",
                   "name": "exchange"
                 },
                 {
@@ -1851,7 +1851,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "6d5579f2-2f05-4843-b43a-cd2070410c17",
+                  "id": "43fd5c7d-45a7-4a6d-9d70-c3148ce37a77",
                   "name": "marketCapLabel"
                 },
                 {
@@ -1859,7 +1859,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "ae9d241d-0e99-44fb-8d25-6839fe14124e",
+                  "id": "cf3d1bdd-9b39-4b87-b578-e25a764db967",
                   "name": "etfLiqLabel"
                 },
                 {
@@ -1867,7 +1867,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "a30fe1e9-4518-4cad-a254-5d179f7f00d7",
+                  "id": "b5d7f21c-153f-4886-8806-72ddc9fd5d71",
                   "name": "price"
                 },
                 {
@@ -1875,7 +1875,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "dd4fa581-5966-4f2a-9216-0cf6e6aaf763",
+                  "id": "8069d65d-1b77-49ae-b00f-c7b80e40f919",
                   "name": "marketCap"
                 },
                 {
@@ -1883,7 +1883,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "ddad4e73-9e62-494e-a785-02e7017013f1",
+                  "id": "e0975517-aa8d-4aca-9a02-8a491f22207d",
                   "name": "mrktCapRank"
                 },
                 {
@@ -1891,7 +1891,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "b45c82e3-3bec-4794-8431-ec29f31c23ae",
+                  "id": "93a7ee73-6084-4528-96ea-4f52b7492320",
                   "name": "momRank"
                 },
                 {
@@ -1899,7 +1899,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "5f966976-b15d-453a-85b4-f85f7e5027d7",
+                  "id": "f7dfe246-eb17-4edb-9121-7b6803570cff",
                   "name": "faceValue"
                 },
                 {
@@ -1907,7 +1907,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "ea89372b-3488-4e37-a10d-228bef65d8e6",
+                  "id": "4170d08e-6627-455c-bd56-cb7173407868",
                   "name": "dailyChange"
                 },
                 {
@@ -1915,7 +1915,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "d88b49fb-b580-4afd-aa00-571a1457290d",
+                  "id": "5b4a4fef-b738-42bb-ba30-64d6c6c88211",
                   "name": "weekChange"
                 },
                 {
@@ -1923,7 +1923,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "36aa7dd7-eaf7-4953-98d4-bcbf922354c7",
+                  "id": "71e5dbb3-f096-4b6e-8c18-6657b00ab655",
                   "name": "monthChange"
                 },
                 {
@@ -1931,7 +1931,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "4ce0dbbc-dc37-4f2f-a1d4-4c577c8d6160",
+                  "id": "bda22c85-8ed1-4802-90f9-3657baac7c61",
                   "name": "yearlyChange"
                 },
                 {
@@ -1939,7 +1939,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "22c1e42c-a9b9-45cb-99ab-9917d2c5ffc7",
+                  "id": "3c3575c2-d67d-40cf-a5fb-1b79f335f49a",
                   "name": "maxChange"
                 },
                 {
@@ -1947,7 +1947,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "2a632b51-f746-43cb-8530-d772d170c1af",
+                  "id": "da6d20c1-e243-412f-bd6a-bd2f6e0b0510",
                   "name": "forecast"
                 },
                 {
@@ -1955,7 +1955,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "4d589058-b2d3-4ff8-9444-b2a512d9be73",
+                  "id": "74ac6b47-3901-4043-9e9a-63dfc4371e7a",
                   "name": "forecastProfit"
                 },
                 {
@@ -1963,7 +1963,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "736f754e-5c62-419b-955d-015d2567aed0",
+                  "id": "07a157b7-d308-4aa8-a58b-692c7c8c1204",
                   "name": "sma10d"
                 },
                 {
@@ -1971,7 +1971,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "8e570e29-0159-489e-8cbc-ed4086b2e875",
+                  "id": "64d7f840-6720-4d4c-b636-42779e5409f7",
                   "name": "sma50d"
                 },
                 {
@@ -1979,7 +1979,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "c8d7eaf8-9e71-4701-9e52-054c246f6b9b",
+                  "id": "6d4fcabc-db09-4fab-a963-4f1f7a120a95",
                   "name": "sma100d"
                 },
                 {
@@ -1987,7 +1987,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "84507738-0440-4a76-be0c-d3293172d759",
+                  "id": "890f310f-305f-40a5-8e9a-5460e8735a06",
                   "name": "sma200d"
                 },
                 {
@@ -1995,7 +1995,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "56a40d10-d8d7-4f2e-bd03-e600a4c6a08c",
+                  "id": "428ebb34-6556-417f-b354-b61c2d3a2e46",
                   "name": "sma10dPct"
                 },
                 {
@@ -2003,7 +2003,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "98af4004-eea0-4329-9262-3f5a04d73733",
+                  "id": "72985835-fdd3-435e-8c1b-8bde1fa918c3",
                   "name": "sma50dPct"
                 },
                 {
@@ -2011,7 +2011,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "87c0c37c-4ef1-49cb-a971-f491b9708030",
+                  "id": "02c2f61e-2e1b-46b6-ac02-56ec5c23c131",
                   "name": "sma100dPct"
                 },
                 {
@@ -2019,7 +2019,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "de37285f-caa5-4bc7-b485-f989f6eed3f4",
+                  "id": "aa3ea300-9d66-4952-bd02-b103c3fe0987",
                   "name": "sma200dPct"
                 },
                 {
@@ -2027,7 +2027,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "69dd3f70-1575-44e3-b53a-7b6a460f5c46",
+                  "id": "bd5c7728-0346-4c74-859f-a5630e8e7145",
                   "name": "ema10d"
                 },
                 {
@@ -2035,7 +2035,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "1e6cc458-75a2-4ef6-942c-2e116d05a39d",
+                  "id": "a05b2c12-0bf0-4ffe-88b8-a3c698b4b314",
                   "name": "ema50d"
                 },
                 {
@@ -2043,7 +2043,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "4016687d-683f-4abb-84ba-9b9e7b02eb13",
+                  "id": "29ef7398-1adc-43c6-85f9-21ba29231469",
                   "name": "ema100d"
                 },
                 {
@@ -2051,7 +2051,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "a2182183-8750-4694-b863-4b2f3a74a259",
+                  "id": "2aeeb7aa-6a42-4f20-b769-87cb05522996",
                   "name": "ema200d"
                 },
                 {
@@ -2059,7 +2059,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "ef7fcb35-ab22-4cb2-b805-e794b8c93a26",
+                  "id": "b0900b2f-55c0-43c5-ac69-3239f9b99d05",
                   "name": "ema10dPct"
                 },
                 {
@@ -2067,7 +2067,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "7f22203c-ce51-4946-9d11-a85e6979cf05",
+                  "id": "02132c12-4059-4c74-ab65-82273feed3be",
                   "name": "ema50dPct"
                 },
                 {
@@ -2075,7 +2075,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "506cc2f2-3c96-4880-9d83-5ec385a6e873",
+                  "id": "2fed1162-a780-46b6-b6ae-f432e8a8d0ac",
                   "name": "ema100dPct"
                 },
                 {
@@ -2083,7 +2083,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "93bcf9af-e79a-427a-ba11-22956670ea9e",
+                  "id": "09fb5558-dc4a-4a36-9e4e-645e68c48713",
                   "name": "ema200dPct"
                 },
                 {
@@ -2091,7 +2091,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "e77dd14c-7a32-45e2-87a4-fa68940f9203",
+                  "id": "9d0798c7-a7d3-4620-b510-2327265414b0",
                   "name": "avgScore"
                 },
                 {
@@ -2099,7 +2099,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "ebfe612e-8486-48ee-b7dc-c0ea385d3aa5",
+                  "id": "cc824da4-5201-426e-9be5-8144b65c3602",
                   "name": "momScore"
                 },
                 {
@@ -2107,7 +2107,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "72415b1b-0aa2-4e25-865a-2dbbf8b55264",
+                  "id": "180d5f43-ce63-489a-be5a-fbd438e058c5",
                   "name": "valScore"
                 },
                 {
@@ -2115,7 +2115,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "8a6caf79-22c3-4377-8a28-38619b1ef349",
+                  "id": "f3339512-d8bd-4991-85c9-0ddbf638226e",
                   "name": "qualScore"
                 },
                 {
@@ -2123,7 +2123,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "e3790e67-3e97-45f5-a58b-23030d55f74d",
+                  "id": "e6a9f795-9f1d-424b-a806-5188916f771f",
                   "name": "volScore"
                 },
                 {
@@ -2131,7 +2131,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "8e3de0d5-9b87-4dd1-b78c-c5897815f65e",
+                  "id": "7c29e27d-4b72-48b4-a0c2-6be4b9721a28",
                   "name": "durScore"
                 },
                 {
@@ -2139,7 +2139,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "ddc8f552-5795-421d-abe8-35fe3eb70c2c",
+                  "id": "649502cd-983e-4d79-abbf-8c5ac8f2838a",
                   "name": "drawScore"
                 },
                 {
@@ -2147,7 +2147,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "721170bf-50a3-41bd-ab74-7554ac32c18f",
+                  "id": "eb9ed240-ecdb-4ad0-818b-2365c61ec0ab",
                   "name": "ttmPe"
                 },
                 {
@@ -2155,7 +2155,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "2dd24f24-9757-46a3-97e8-e45d0712f6e4",
+                  "id": "dda25b87-b9b6-420a-ac08-697baa844498",
                   "name": "pb"
                 },
                 {
@@ -2163,7 +2163,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "a04e214c-d547-446c-9eb7-52cbe052433f",
+                  "id": "836bb405-0f40-4c19-9e2e-d79d581b6537",
                   "name": "indpe"
                 },
                 {
@@ -2171,7 +2171,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "87342dda-1b60-4df7-9d84-e225d0c3bfee",
+                  "id": "268ee48c-cb15-404f-8bb6-08c9d5b8a687",
                   "name": "indpb"
                 },
                 {
@@ -2179,7 +2179,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "b6238079-269c-4be0-88ce-6f86255cd6b3",
+                  "id": "6a10d7c6-b15b-47f6-ab4c-f9c4d12ad164",
                   "name": "divYield"
                 },
                 {
@@ -2187,7 +2187,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "cf6df3b4-54e0-4bde-b721-54070bb615ac",
+                  "id": "90bf028a-7a04-4e76-a2ac-16dd03c08cc9",
                   "name": "eps"
                 },
                 {
@@ -2195,7 +2195,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "4acc4d5b-c388-4b79-8e17-615078c3121c",
+                  "id": "e9807dd2-2dae-4d03-bdd2-9caed3de0252",
                   "name": "52wHigh"
                 },
                 {
@@ -2203,7 +2203,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "d6ef6678-be17-43a3-8eff-cbfb67ffbc8c",
+                  "id": "ce57da4c-c57d-4b52-a4c9-9a61aea1eefd",
                   "name": "52wLow"
                 },
                 {
@@ -2211,7 +2211,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "84efee4b-0a1a-4c5e-bd75-e05f20045c14",
+                  "id": "4930ab8f-1abf-44c8-8008-8a3412c4b807",
                   "name": "risk"
                 },
                 {
@@ -2219,7 +2219,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "5ceebeb9-d64b-4c39-9940-6fbc3ca05295",
+                  "id": "a0efabcf-bbed-4c4b-a2c2-af7221694f16",
                   "name": "maxDrawdown"
                 },
                 {
@@ -2227,7 +2227,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "4fc19c49-1fc0-417d-b21f-3c48d60df2a0",
+                  "id": "d900328c-0152-4053-a7f0-3ecd28852f0b",
                   "name": "currentDrawdown"
                 },
                 {
@@ -2235,7 +2235,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "5a0ecaf8-9245-4152-a434-e5dc98b4c0f4",
+                  "id": "767a79e7-76fb-4415-8d2c-be98c6478a7a",
                   "name": "daysSincePeak"
                 },
                 {
@@ -2243,7 +2243,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "efc81229-e027-414f-8afe-7fa1c2e22235",
+                  "id": "204ee94d-e9b6-498f-a949-65e0e9e852b7",
                   "name": "riseFromValley"
                 },
                 {
@@ -2251,7 +2251,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "e69b8c8d-1500-4660-b80e-9e00e00cb7cb",
+                  "id": "39bcfdeb-c694-4260-9047-076296631c5c",
                   "name": "max"
                 },
                 {
@@ -2259,7 +2259,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "35602927-dfb8-4d21-b689-da75f3ab3f58",
+                  "id": "45d90487-22d7-4e63-9a91-fea2775538e9",
                   "name": "min"
                 },
                 {
@@ -2267,7 +2267,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "20094a12-ec0f-4d30-bd84-5df80846d4aa",
+                  "id": "3f0307bf-b358-4b43-aefb-8fe1a7e43353",
                   "name": "updated"
                 },
                 {
@@ -2275,7 +2275,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "7704dc98-e6cb-4f8a-b624-34e37258f8a8",
+                  "id": "158e079b-7046-41be-b812-afe5df94fd63",
                   "name": "scoredOn"
                 },
                 {
@@ -2283,7 +2283,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "a9c8261d-ec82-4a99-bafe-4e8bcdaf9331",
+                  "id": "aa7e7ef4-4b9c-411e-9df9-f4ab6808ffce",
                   "name": "id"
                 },
                 {
@@ -2291,7 +2291,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "f0e48328-9d01-4fad-9c70-4e6e57fdbbac",
+                  "id": "80340378-4d94-4149-941d-9bfef6fa9fc2",
                   "name": "link"
                 },
                 {
@@ -2299,25 +2299,25 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "898763f0-5f16-42fd-8c86-8d52855eae09",
+                  "id": "943a638a-f51a-4112-b511-e7b2c89b0e42",
                   "name": "description"
                 },
                 {
                   "cardinality": "many",
                   "dataType": {
-                    "shapeId": "3bc03ff8-6e22-4a20-b274-2a05bcaf2c0c",
+                    "shapeId": "0f338a3b-8163-4ced-afb0-98f7e4451daf",
                     "type": "shape"
                   },
-                  "id": "8501e5b9-5250-4242-a96f-b489154a4232",
+                  "id": "a7597e08-74d0-40f9-872d-5593b515f7ed",
                   "name": "weekly"
                 },
                 {
                   "cardinality": "many",
                   "dataType": {
-                    "shapeId": "fdb826a3-7fd3-431f-8b68-cdcff60d40c2",
+                    "shapeId": "2c766741-e83a-48dc-ada9-224792611e38",
                     "type": "shape"
                   },
-                  "id": "b3e4c9e3-c168-440f-afd1-e6ea28119e00",
+                  "id": "ff7b0a5b-470f-4b05-8f1b-ddff5de09dad",
                   "name": "financialSummary"
                 }
               ],
@@ -2332,15 +2332,15 @@
               }
             },
             {
-              "id": "7d998146-4359-4654-a3c7-3db9c60d684d",
+              "id": "a0c7d019-07e1-4750-89d5-a970d07a9628",
               "keys": [
                 {
                   "cardinality": "many",
                   "dataType": {
-                    "shapeId": "1ca49736-e8c5-4515-848a-214bbd8c5868",
+                    "shapeId": "82bfda57-9241-4436-918e-3261634b33a0",
                     "type": "shape"
                   },
-                  "id": "7f4893c6-ce31-4e6d-98c6-3b118c10a873",
+                  "id": "407f6fca-6f15-4b86-a703-b0808ccf1ddc",
                   "name": "companies"
                 }
               ],
@@ -2410,7 +2410,7 @@
           "cardinality": "one",
           "code": "200",
           "dataType": {
-            "shapeId": "0ed2baba-31c9-4679-9d1f-42ded5977623",
+            "shapeId": "c890f793-5c47-40cd-883c-a8c284649b13",
             "type": "shape"
           },
           "description": "Company details retrieved successfully",
@@ -2949,14 +2949,14 @@
           },
           "shapes": [
             {
-              "id": "7188c2e4-b6a1-4978-ada0-ce3062b5b6cc",
+              "id": "f97b4f2d-96e6-42f3-a9ca-959606fa21c6",
               "keys": [
                 {
                   "cardinality": "one",
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "61a0c190-8a7d-45a7-8f52-86793fedb206",
+                  "id": "3e20b8cf-5654-4252-97aa-bef91b3323a8",
                   "name": "ts"
                 },
                 {
@@ -2964,7 +2964,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "0896f6f0-0de2-4426-aa41-8777f851b486",
+                  "id": "f9ee5d79-f30e-4d60-bea0-f8088aded8f2",
                   "name": "lp"
                 },
                 {
@@ -2972,7 +2972,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "2f145eb6-1eea-4f6b-b82b-19bbe389a4f4",
+                  "id": "72d7a6db-111f-4c02-8598-17b22027a028",
                   "name": "v"
                 }
               ],
@@ -2988,14 +2988,14 @@
               }
             },
             {
-              "id": "8c7beb76-db2d-4745-9013-a1a284d35b82",
+              "id": "a115e5c5-ff02-4df9-9f90-d8060405f81e",
               "keys": [
                 {
                   "cardinality": "one",
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "6170ddf6-2e90-4b4d-949f-11c2598f227a",
+                  "id": "c7c040ca-c592-47aa-9ae3-bfaf5419076d",
                   "name": "year"
                 },
                 {
@@ -3003,7 +3003,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "bf44b59f-2e52-42ec-a81c-d8aadf68b796",
+                  "id": "f7f2078e-c6a2-4c72-91db-9d58274b46a9",
                   "name": "revenue"
                 },
                 {
@@ -3011,7 +3011,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "bcb1e6a2-5888-4824-8afa-5becffcc75ae",
+                  "id": "9fa4c16f-cac0-446e-b9cc-9208643380f3",
                   "name": "profit"
                 }
               ],
@@ -3027,14 +3027,14 @@
               }
             },
             {
-              "id": "7883ec46-27d5-4ea4-9f4a-77dcbc415f98",
+              "id": "cf543bc4-b151-4f0e-9249-b245ccaef57c",
               "keys": [
                 {
                   "cardinality": "one",
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "c6648055-b652-4858-85e0-08ae12b2f3a1",
+                  "id": "57fc2cde-514a-4423-8147-cb5fffd5edf0",
                   "name": "symbol"
                 },
                 {
@@ -3042,7 +3042,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "da387dbd-08ab-4ca5-af33-6e7fd4ece2e3",
+                  "id": "7ab9aa4a-f2e5-403e-9871-4cb0aa52859b",
                   "name": "name"
                 },
                 {
@@ -3050,7 +3050,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "4c50c716-bd74-433e-9546-3d374d3b6aec",
+                  "id": "83dd8f9e-4ac9-4789-889f-09e6451cede1",
                   "name": "ticker"
                 },
                 {
@@ -3058,7 +3058,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "0565c38d-8030-48c1-b8e0-eecdb1292bf8",
+                  "id": "4a8f9e65-1f8b-4db4-8629-4c8e91707198",
                   "name": "isin"
                 },
                 {
@@ -3066,7 +3066,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "6b0b1713-b5b6-4dc2-b88c-d4c8c234b54c",
+                  "id": "aa739829-5377-43ae-b480-203fd1dff04b",
                   "name": "sector"
                 },
                 {
@@ -3074,7 +3074,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "12bd1249-9da1-42b2-82bc-f4b77ee9d39a",
+                  "id": "27709ab5-4177-4ad2-8c4c-269b2bc27e04",
                   "name": "industry"
                 },
                 {
@@ -3082,7 +3082,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "cf126935-dcdf-4b4b-8dac-f91413aa1dc4",
+                  "id": "deb22fbf-b9e8-498e-b65b-fd77ae088af1",
                   "name": "subindustry"
                 },
                 {
@@ -3090,7 +3090,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "37def1d8-bae4-4d8e-8b1b-33d579e27417",
+                  "id": "6bc398c5-93b6-4fb7-b03c-6820f9611a91",
                   "name": "type"
                 },
                 {
@@ -3098,7 +3098,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "eecd2e0d-b2ee-445a-9b80-92a3b2171b1a",
+                  "id": "527facd4-9687-4b3a-8b2b-3390ead3ac85",
                   "name": "exchange"
                 },
                 {
@@ -3106,7 +3106,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "e390e709-2e6e-4df2-93a4-ee79741a0bef",
+                  "id": "c4a0789c-a282-4070-9b33-566dfe87dcf3",
                   "name": "marketCapLabel"
                 },
                 {
@@ -3114,7 +3114,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "954d5848-0e04-4701-ac34-935ffde2ec27",
+                  "id": "6a2237fa-1f98-4e28-94c9-1cf55b5f1c16",
                   "name": "etfLiqLabel"
                 },
                 {
@@ -3122,7 +3122,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "01eb8ca9-6045-474e-b81c-02943de03afb",
+                  "id": "a20238c2-86dd-454b-918e-491d413957c6",
                   "name": "price"
                 },
                 {
@@ -3130,7 +3130,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "07512b37-6ade-4ac1-aba7-97ea1d8aaaac",
+                  "id": "ba1343a1-65af-42d5-a895-bd3e36c333af",
                   "name": "marketCap"
                 },
                 {
@@ -3138,7 +3138,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "59245bf0-358b-4542-af49-8255d7f19033",
+                  "id": "47f89621-b3b2-4f0c-ba93-bd48f65d33af",
                   "name": "mrktCapRank"
                 },
                 {
@@ -3146,7 +3146,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "c1f946d7-d383-4bbe-a254-73b8b7e805fe",
+                  "id": "503af9b8-2e74-49b6-ae7b-9959184f5592",
                   "name": "momRank"
                 },
                 {
@@ -3154,7 +3154,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "9c2d90d6-918b-497c-b6ac-67c4f199f5ab",
+                  "id": "1c5b781e-68e3-4cdc-947e-0a5f39644566",
                   "name": "faceValue"
                 },
                 {
@@ -3162,7 +3162,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "8f4db341-f6f0-467a-92c9-653a3da0f43e",
+                  "id": "df8f961d-9e12-404f-98e1-d1fc86180a4f",
                   "name": "dailyChange"
                 },
                 {
@@ -3170,7 +3170,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "b880e6a2-a9ab-4167-b3c5-8b261ad8ea21",
+                  "id": "b4c86c35-0580-41bb-95ed-4e43506de400",
                   "name": "weekChange"
                 },
                 {
@@ -3178,7 +3178,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "f9b33979-959b-4ce6-a643-7224592f8133",
+                  "id": "32bc52aa-690c-4a8c-a073-a3b8c91ea554",
                   "name": "monthChange"
                 },
                 {
@@ -3186,7 +3186,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "e1b715c5-2c04-4e7c-a277-62b798d29c6c",
+                  "id": "cc93e334-734e-4cd5-b7d8-1d9e81c59f27",
                   "name": "yearlyChange"
                 },
                 {
@@ -3194,7 +3194,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "a61b8659-7098-4108-9674-1bc301093c3f",
+                  "id": "04276479-a7fa-4f5c-96ae-c104d9dba551",
                   "name": "maxChange"
                 },
                 {
@@ -3202,7 +3202,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "9dda93bb-8404-48da-80cb-7f6d71f7018e",
+                  "id": "9a195845-7f96-4599-90c6-2c91a3c107a5",
                   "name": "forecast"
                 },
                 {
@@ -3210,7 +3210,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "80ad6f15-7933-4a0d-86c3-b4e8cbd472c8",
+                  "id": "654c3b78-44f7-4632-8c1c-c125a4ff0c40",
                   "name": "forecastProfit"
                 },
                 {
@@ -3218,7 +3218,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "2bcd92bd-89a7-4d27-91c6-3afe26082835",
+                  "id": "0d69fa56-5e3d-4c2a-a95e-9b837e0c164a",
                   "name": "sma10d"
                 },
                 {
@@ -3226,7 +3226,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "17632a59-0768-4247-8012-d551d8c278b1",
+                  "id": "b8e2ad7d-7c97-43d3-ac3c-7f5602c143df",
                   "name": "sma50d"
                 },
                 {
@@ -3234,7 +3234,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "34947ea4-9e1b-4722-bbd6-23fdf5e72d7f",
+                  "id": "a1c4936e-8dca-4bf7-b376-9d1e72671b47",
                   "name": "sma100d"
                 },
                 {
@@ -3242,7 +3242,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "3ccd8dc0-a980-4a4c-9761-e3ae702322cd",
+                  "id": "42698071-6571-4afb-a649-9a76f97fc561",
                   "name": "sma200d"
                 },
                 {
@@ -3250,7 +3250,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "dd8443c8-00f3-4e0f-86cf-073c802ae27d",
+                  "id": "feefe193-8687-4afc-986a-34d3efd3b13c",
                   "name": "sma10dPct"
                 },
                 {
@@ -3258,7 +3258,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "876537df-fe89-42de-9872-d577a7814034",
+                  "id": "f9f033c2-8658-4768-8a9f-d33063b29d7f",
                   "name": "sma50dPct"
                 },
                 {
@@ -3266,7 +3266,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "357a49e8-e531-4bd7-9a78-54ed24373cd4",
+                  "id": "65e0cce3-4931-43c9-891b-147be71af43f",
                   "name": "sma100dPct"
                 },
                 {
@@ -3274,7 +3274,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "3c3bb9aa-eb4f-4e9e-93d0-8fd4241faca2",
+                  "id": "ec46e2fd-908d-4630-9622-8a0f4981533a",
                   "name": "sma200dPct"
                 },
                 {
@@ -3282,7 +3282,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "63f02677-10c7-4489-9ca2-73c54d3158c6",
+                  "id": "1638069e-a027-47ea-aaaa-f04dac23fa46",
                   "name": "ema10d"
                 },
                 {
@@ -3290,7 +3290,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "d755499c-2d91-44a8-ad96-1c1c011eeffd",
+                  "id": "5c54fe28-fd6e-46c1-a0f5-195621b8d866",
                   "name": "ema50d"
                 },
                 {
@@ -3298,7 +3298,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "7a145f84-34f8-4437-8dfb-c60267729a1a",
+                  "id": "f4a0eb8d-5043-40fe-a804-ac1e26c05287",
                   "name": "ema100d"
                 },
                 {
@@ -3306,7 +3306,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "68b8ffac-0ef4-4076-8c50-87c4dce05d82",
+                  "id": "96ffbf08-f858-494f-be3d-13a0b6d79477",
                   "name": "ema200d"
                 },
                 {
@@ -3314,7 +3314,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "d84842bd-0fff-4c3c-ba4d-661fcba526c1",
+                  "id": "0c282f67-9536-4166-b072-513cdb48bf2e",
                   "name": "ema10dPct"
                 },
                 {
@@ -3322,7 +3322,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "88516a70-084c-4d77-86c6-b26e9ba9c0f5",
+                  "id": "5e6c63d4-878a-4131-a16d-f3c4f364660d",
                   "name": "ema50dPct"
                 },
                 {
@@ -3330,7 +3330,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "ec430716-615c-45da-9ee1-d19595f89b05",
+                  "id": "fce10542-1e2f-4fe7-aa2d-6a68f105cdd5",
                   "name": "ema100dPct"
                 },
                 {
@@ -3338,7 +3338,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "0f72c543-5024-4f2a-8b63-beb439e9e454",
+                  "id": "efe2e52b-de18-4ba1-9df1-63375cbe642c",
                   "name": "ema200dPct"
                 },
                 {
@@ -3346,7 +3346,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "158c9fe6-8891-4b14-8b46-3ea946bc4984",
+                  "id": "d33b3e54-d177-49e6-8ccc-49c2204ce085",
                   "name": "avgScore"
                 },
                 {
@@ -3354,7 +3354,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "ba753e40-b16b-4e39-ae53-07baf1ae8541",
+                  "id": "d427372f-524c-4502-afd3-ac868006a703",
                   "name": "momScore"
                 },
                 {
@@ -3362,7 +3362,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "cabcb1f5-06ba-4436-adb2-8b1cec91692a",
+                  "id": "292d238b-0fab-4a86-a819-e281ae01dfa6",
                   "name": "valScore"
                 },
                 {
@@ -3370,7 +3370,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "3e413067-9e54-4bf5-be98-73e8e924760d",
+                  "id": "a7e8920d-5547-4709-b4f6-e4c10d931187",
                   "name": "qualScore"
                 },
                 {
@@ -3378,7 +3378,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "c4757c10-868f-44a7-9fe6-0da9f8090336",
+                  "id": "c0ca585d-71db-493d-840d-7c5652c9021d",
                   "name": "volScore"
                 },
                 {
@@ -3386,7 +3386,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "9082c973-d17f-407c-97e2-700d662f7099",
+                  "id": "5c388207-aeee-4e15-b13a-6663088a77ba",
                   "name": "durScore"
                 },
                 {
@@ -3394,7 +3394,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "944e04b7-ccf6-4eca-bca8-6f2625d5e2a6",
+                  "id": "439dd180-122a-4a46-923f-1114b22fbff7",
                   "name": "drawScore"
                 },
                 {
@@ -3402,7 +3402,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "4296ea2f-90f7-423b-9a0d-3fa2d4d86394",
+                  "id": "95f8aa2b-a52f-4abd-95c7-ba6af107cde0",
                   "name": "ttmPe"
                 },
                 {
@@ -3410,7 +3410,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "f2b0f156-7f8f-4126-a8ec-b58a31d3f225",
+                  "id": "941bddaf-93c6-4d84-ae8f-e9c2068c3b5d",
                   "name": "pb"
                 },
                 {
@@ -3418,7 +3418,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "1802f996-165f-4366-8c82-ec4d146918cd",
+                  "id": "b9d0d116-600f-48ad-9528-93962dd4d4b9",
                   "name": "indpe"
                 },
                 {
@@ -3426,7 +3426,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "33c6957f-1bc4-4414-ad5e-5e6913a865b9",
+                  "id": "e48e59e6-aed1-4567-b178-d1482a0456d3",
                   "name": "indpb"
                 },
                 {
@@ -3434,7 +3434,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "819fcc8a-c6d1-4827-989a-a8b917553747",
+                  "id": "4deb7260-f0ee-414a-9d64-4df168839e9b",
                   "name": "divYield"
                 },
                 {
@@ -3442,7 +3442,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "d060a54a-0032-4516-be62-47f24e082dd6",
+                  "id": "72142530-67e0-4deb-b8e9-c2faa6074210",
                   "name": "eps"
                 },
                 {
@@ -3450,7 +3450,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "4845c250-b1bc-45c7-884e-a887137d1cc2",
+                  "id": "c27cb4c0-9598-4f41-839c-69d580d0dc14",
                   "name": "52wHigh"
                 },
                 {
@@ -3458,7 +3458,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "8f6a1a96-c280-4993-bfc8-4419359d3b8f",
+                  "id": "795eb9a1-d3e1-4a11-a219-d0da65356a81",
                   "name": "52wLow"
                 },
                 {
@@ -3466,7 +3466,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "8606efff-95a2-4ba4-a6ad-7a9c8b6593e5",
+                  "id": "2a16372a-6ac6-4323-bc6e-a67eaadc1462",
                   "name": "risk"
                 },
                 {
@@ -3474,7 +3474,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "d2fde505-237c-492d-b91d-a44309a577c7",
+                  "id": "1415f3e8-013b-44a5-983f-a25f1786c96e",
                   "name": "maxDrawdown"
                 },
                 {
@@ -3482,7 +3482,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "c9a0cb1a-854d-403f-aae2-415e0d062012",
+                  "id": "6d40ec33-655d-4e63-bbea-3a1ec233c4f8",
                   "name": "currentDrawdown"
                 },
                 {
@@ -3490,7 +3490,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "343e14c8-8e89-444c-9d7d-5c5a00a27c32",
+                  "id": "4e7c8418-8dd3-404e-86df-75951e7ce0c7",
                   "name": "daysSincePeak"
                 },
                 {
@@ -3498,7 +3498,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "fc6f6832-55cb-4bd6-992d-083b58e44d83",
+                  "id": "efc4c1f1-ba1d-431d-a27e-297538fa7fb0",
                   "name": "riseFromValley"
                 },
                 {
@@ -3506,7 +3506,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "c449ffbd-b83b-4d97-bca6-8c45cf32d4f3",
+                  "id": "39417499-d006-4899-82f5-12c1659170c3",
                   "name": "max"
                 },
                 {
@@ -3514,7 +3514,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "f74e1bb2-c3ef-42b8-a416-7d9e7d3f9849",
+                  "id": "b581bdfd-a6a1-4e96-b7ea-cf069bbdb247",
                   "name": "min"
                 },
                 {
@@ -3522,7 +3522,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "2f3fc22c-3a72-4489-a7c0-3989faa691ca",
+                  "id": "c9fafb7f-fbbc-439d-92d3-cbcfee5f0ac2",
                   "name": "updated"
                 },
                 {
@@ -3530,7 +3530,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "5b1b4af8-6842-4aaf-bc02-06c35528d655",
+                  "id": "1e156671-0662-4a4b-9dbe-b3c054dec8c3",
                   "name": "scoredOn"
                 },
                 {
@@ -3538,7 +3538,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "f5682e67-93c3-4575-893c-5718c6f904fb",
+                  "id": "2b2fe32e-f7d6-4e3c-8df1-aed2dada7c62",
                   "name": "id"
                 },
                 {
@@ -3546,7 +3546,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "d923cc3b-3335-43ef-9b92-959b3aa7c4ac",
+                  "id": "6b93f4c2-3e01-47d7-b873-aa2f01f58181",
                   "name": "link"
                 },
                 {
@@ -3554,25 +3554,25 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "82b140c6-c61c-4d7d-9b2d-f833ae595f1c",
+                  "id": "dfda3c0d-fd62-4d5c-ac7f-6cd17b5676bf",
                   "name": "description"
                 },
                 {
                   "cardinality": "many",
                   "dataType": {
-                    "shapeId": "7188c2e4-b6a1-4978-ada0-ce3062b5b6cc",
+                    "shapeId": "f97b4f2d-96e6-42f3-a9ca-959606fa21c6",
                     "type": "shape"
                   },
-                  "id": "b5e25c4a-802f-4e97-8144-8fc3e31b0be1",
+                  "id": "450674f2-5d65-4d8f-8c8a-9e0265f7fe69",
                   "name": "weekly"
                 },
                 {
                   "cardinality": "many",
                   "dataType": {
-                    "shapeId": "8c7beb76-db2d-4745-9013-a1a284d35b82",
+                    "shapeId": "a115e5c5-ff02-4df9-9f90-d8060405f81e",
                     "type": "shape"
                   },
-                  "id": "e82fc011-3589-4d77-b384-401abbb2d489",
+                  "id": "69f40b9b-ed38-40c1-9360-d848943f9cc8",
                   "name": "financialSummary"
                 }
               ],
@@ -3587,15 +3587,15 @@
               }
             },
             {
-              "id": "0ed2baba-31c9-4679-9d1f-42ded5977623",
+              "id": "c890f793-5c47-40cd-883c-a8c284649b13",
               "keys": [
                 {
                   "cardinality": "one",
                   "dataType": {
-                    "shapeId": "7883ec46-27d5-4ea4-9f4a-77dcbc415f98",
+                    "shapeId": "cf543bc4-b151-4f0e-9249-b245ccaef57c",
                     "type": "shape"
                   },
-                  "id": "cbddfa4e-4ec8-443a-b4d9-21b78062ea85",
+                  "id": "36be98ec-d1bd-4137-b3e9-5781873670b8",
                   "name": "company"
                 }
               ],
@@ -3643,7 +3643,7 @@
         {
           "cardinality": "one",
           "dataType": {
-            "shapeId": "4ec6e885-9fc4-47ba-8309-2162a50a28a4",
+            "shapeId": "f6647426-85dd-40da-988a-a2b94f7d5ead",
             "type": "shape"
           },
           "doc": {
@@ -3672,14 +3672,14 @@
           "required": true,
           "shapes": [
             {
-              "id": "4ec6e885-9fc4-47ba-8309-2162a50a28a4",
+              "id": "f6647426-85dd-40da-988a-a2b94f7d5ead",
               "keys": [
                 {
                   "cardinality": "many",
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "09f869c8-3d40-480e-bba7-8dbb3269468d",
+                  "id": "5bf20823-77cb-4666-8fd6-d1c38aa739aa",
                   "name": "ids"
                 },
                 {
@@ -3687,7 +3687,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "6ea7e130-13c3-434f-a837-73357a1ce02c",
+                  "id": "cb0eb9c3-3454-42cb-ab40-ce1de51b8064",
                   "name": "fields"
                 }
               ],
@@ -3703,7 +3703,7 @@
           "cardinality": "one",
           "code": "200",
           "dataType": {
-            "shapeId": "6c20dff6-11e1-400d-8922-f52630d15fca",
+            "shapeId": "90b5220f-e5a0-465b-9c22-bb78edcc68a6",
             "type": "shape"
           },
           "description": "Indices retrieved successfully",
@@ -3815,14 +3815,14 @@
           },
           "shapes": [
             {
-              "id": "fa76ed31-86ec-4ced-aef9-74e80b403516",
+              "id": "d7467b4b-610f-468a-9629-6dde69aa29fb",
               "keys": [
                 {
                   "cardinality": "one",
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "08340298-b59e-4b52-840e-167fcc8757b6",
+                  "id": "d69bc26a-7319-49fb-b056-f268c933d0dc",
                   "name": "id"
                 },
                 {
@@ -3830,7 +3830,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "6ad18198-ae18-4366-ab72-990cb67305bb",
+                  "id": "1e350257-20d2-4e5d-b72c-655e569de517",
                   "name": "updated"
                 },
                 {
@@ -3838,7 +3838,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "edf9b6f5-8875-4011-9302-8b5cf30f7631",
+                  "id": "df98d93f-3cab-4f7e-a880-e4079115a273",
                   "name": "ticker"
                 },
                 {
@@ -3846,7 +3846,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "2ff9e394-2192-40bb-bcdf-106de4ae1cbb",
+                  "id": "1ccf393c-02f6-4c9d-961a-0c6cb412b0b7",
                   "name": "link"
                 },
                 {
@@ -3854,7 +3854,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "f7ad3c81-1c9f-4b67-b1f6-e524bd3ccae2",
+                  "id": "881dcfd4-fc19-446b-8add-1839ce336ff5",
                   "name": "type"
                 },
                 {
@@ -3862,7 +3862,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "e8e8d148-009c-469f-8924-dbddaf242f4b",
+                  "id": "94054c4f-b81b-4c84-bca6-d748f799c86c",
                   "name": "name"
                 },
                 {
@@ -3870,7 +3870,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "2c2a1710-6812-4148-802b-eea686471bbc",
+                  "id": "4f23344a-7cdc-4ae8-9537-8f19e27a37ef",
                   "name": "symbol"
                 },
                 {
@@ -3878,7 +3878,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "e2c47c18-35fb-4df2-b155-c345a1dd62dd",
+                  "id": "27bd6e06-d96f-4b20-99e7-496feb6f3ef6",
                   "name": "exchange"
                 },
                 {
@@ -3886,7 +3886,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "491709a8-eb72-4e30-8004-3e9423f063c3",
+                  "id": "1f542890-ff78-4d2a-a11e-35ab01a54d8e",
                   "name": "description"
                 },
                 {
@@ -3894,7 +3894,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "25a0ad15-ded3-4977-8b6c-cc337f5b597a",
+                  "id": "fa98202c-7c76-4606-8275-92b4932b175a",
                   "name": "sector"
                 },
                 {
@@ -3902,7 +3902,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "42adff3c-5968-4243-8f26-a4fd7a9479c0",
+                  "id": "9403c321-8a1b-4783-aefc-1d484a13954a",
                   "name": "momentumScore"
                 }
               ],
@@ -3917,15 +3917,15 @@
               }
             },
             {
-              "id": "6c20dff6-11e1-400d-8922-f52630d15fca",
+              "id": "90b5220f-e5a0-465b-9c22-bb78edcc68a6",
               "keys": [
                 {
                   "cardinality": "many",
                   "dataType": {
-                    "shapeId": "fa76ed31-86ec-4ced-aef9-74e80b403516",
+                    "shapeId": "d7467b4b-610f-468a-9629-6dde69aa29fb",
                     "type": "shape"
                   },
-                  "id": "842f20c4-7139-48cd-ab15-cee28271f022",
+                  "id": "e51c4d8f-6510-44ea-a38c-9ca58babb8dd",
                   "name": "indices"
                 }
               ],
@@ -4017,7 +4017,7 @@
           "cardinality": "many",
           "code": "200",
           "dataType": {
-            "shapeId": "467c33d3-df02-49ba-9780-172a741e06e4",
+            "shapeId": "96bc30b3-3f0b-4940-85cb-4917dc32ffdf",
             "type": "shape"
           },
           "description": "Ranking chart (array of rows), or `null` when no match.",
@@ -4078,14 +4078,14 @@
           },
           "shapes": [
             {
-              "id": "467c33d3-df02-49ba-9780-172a741e06e4",
+              "id": "96bc30b3-3f0b-4940-85cb-4917dc32ffdf",
               "keys": [
                 {
                   "cardinality": "one",
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "dbbe70d0-c66b-4c06-afb7-37b1d187e7b1",
+                  "id": "cae2f31f-fa0c-47b0-8ff2-74ef5a4d31d3",
                   "name": "symbol"
                 },
                 {
@@ -4093,7 +4093,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "301ad0c4-4b66-485c-9710-55579b8e5c26",
+                  "id": "07157026-d792-4e3d-bb13-d37a1c78fe08",
                   "name": "w"
                 },
                 {
@@ -4101,7 +4101,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "7841df16-5ed9-48b7-8109-2484f731b0d3",
+                  "id": "528dacc6-ae91-41af-a193-f784441bec31",
                   "name": "m"
                 },
                 {
@@ -4109,7 +4109,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "03a0487f-5a94-4657-8db6-bb4189a2f270",
+                  "id": "5306d61c-0ce4-4ff7-8bed-a376f65afdab",
                   "name": "q"
                 },
                 {
@@ -4117,7 +4117,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "3aaab30d-72c6-4f58-ac13-83308e3f6847",
+                  "id": "40bf6984-573c-4091-be6d-e94b7d72166f",
                   "name": "h"
                 },
                 {
@@ -4125,7 +4125,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "2beec91e-68f9-4112-9e4a-37c4b56cd996",
+                  "id": "a726e947-4f57-4b82-9185-c3e68d5b2155",
                   "name": "y"
                 },
                 {
@@ -4133,7 +4133,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "b5347ae7-c68a-44d8-b9ec-92870059a568",
+                  "id": "8a4bcffb-1b09-4547-b581-6c3a38a95019",
                   "name": "y2"
                 },
                 {
@@ -4141,7 +4141,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "86a6eac5-b6f5-47cb-a450-9e784b7d235c",
+                  "id": "25d1a084-7589-4469-9ea3-e3ec550cdabc",
                   "name": "score"
                 }
               ],
@@ -4214,7 +4214,7 @@
           "cardinality": "one",
           "code": "200",
           "dataType": {
-            "shapeId": "2446a529-d671-4ffb-847d-8407e341c790",
+            "shapeId": "4fcef318-e3cf-4df0-8913-f5a045dd40f7",
             "type": "shape"
           },
           "description": "Strategy details",
@@ -4334,14 +4334,14 @@
           },
           "shapes": [
             {
-              "id": "db4390b4-abb1-4c42-bcfa-6adffb4a44ca",
+              "id": "d20bb246-6214-4c6b-991a-4a849f6a952e",
               "keys": [
                 {
                   "cardinality": "one",
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "d646188f-a576-43e6-a41a-90dd4f6e2f21",
+                  "id": "94d52231-6626-4487-b7fb-7c3640128848",
                   "name": "investedPercent"
                 }
               ],
@@ -4357,14 +4357,14 @@
               }
             },
             {
-              "id": "48a260f8-01a7-47fd-894a-792aab729b23",
+              "id": "7a6ec21e-b7c6-4eca-a016-a02f988718ea",
               "keys": [
                 {
                   "cardinality": "one",
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "49398943-d740-48c9-ac2e-20d260c426e9",
+                  "id": "98977a4b-4c67-466f-ba5f-8b9aa0d8de54",
                   "name": "name"
                 },
                 {
@@ -4372,7 +4372,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "ab2f4476-ca21-4882-ac2b-56d700a4551b",
+                  "id": "dbe3a1e5-2a0e-4319-a0c6-3abdbc53c695",
                   "name": "description"
                 },
                 {
@@ -4380,7 +4380,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "28cd0fa6-7aef-4495-92d5-e958571301ad",
+                  "id": "99092c31-cff4-418a-a362-965b6aa1df23",
                   "name": "key"
                 },
                 {
@@ -4388,7 +4388,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "f8f11875-d65e-4838-a573-8c7909a3af17",
+                  "id": "968004b9-5e52-40c1-b30d-1337961fb624",
                   "name": "cagr"
                 },
                 {
@@ -4396,7 +4396,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "e0f42262-f9a5-4d4c-baed-76340c00d288",
+                  "id": "b6ad5d06-ba5a-420e-9e06-777a5ba6c1ad",
                   "name": "profit"
                 },
                 {
@@ -4404,7 +4404,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "fe446328-f9a7-476a-81f3-1e64c9f2db0b",
+                  "id": "d4011c97-1d2d-41a8-b9c6-eb74a27c7474",
                   "name": "index"
                 },
                 {
@@ -4412,7 +4412,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "677e3abe-b648-4701-9085-71d1bd152ad7",
+                  "id": "4bf0a5fc-8fe8-410a-85d9-ea5d61724bf8",
                   "name": "rebalance"
                 },
                 {
@@ -4420,16 +4420,16 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "812de545-bb91-4fdb-901c-592cab73365f",
+                  "id": "bd02044d-2991-445e-a58a-3d4166147469",
                   "name": "date"
                 },
                 {
                   "cardinality": "one",
                   "dataType": {
-                    "shapeId": "db4390b4-abb1-4c42-bcfa-6adffb4a44ca",
+                    "shapeId": "d20bb246-6214-4c6b-991a-4a849f6a952e",
                     "type": "shape"
                   },
-                  "id": "3d318779-ae41-4960-8501-c7d14a4806c3",
+                  "id": "45280682-de8f-41d4-8a0b-a586631bbf75",
                   "name": "analysis"
                 }
               ],
@@ -4444,15 +4444,15 @@
               }
             },
             {
-              "id": "2446a529-d671-4ffb-847d-8407e341c790",
+              "id": "4fcef318-e3cf-4df0-8913-f5a045dd40f7",
               "keys": [
                 {
                   "cardinality": "map",
                   "dataType": {
-                    "shapeId": "48a260f8-01a7-47fd-894a-792aab729b23",
+                    "shapeId": "7a6ec21e-b7c6-4eca-a016-a02f988718ea",
                     "type": "shape"
                   },
-                  "id": "113098fd-8692-4e04-adef-ae0981cf0616",
+                  "id": "85c5f14a-d969-49e5-b76e-43b79132ff67",
                   "name": "strategy"
                 }
               ],
@@ -4535,7 +4535,7 @@
           "cardinality": "one",
           "code": "200",
           "dataType": {
-            "shapeId": "e9a71941-d785-4f05-9071-c85e7dac364f",
+            "shapeId": "942f85e5-89c3-4df8-8ec6-a851cfeb01ca",
             "type": "shape"
           },
           "description": "Chronologically ordered combined curve. An empty `curve` means there is no usable overlapping component history.",
@@ -4570,14 +4570,14 @@
           },
           "shapes": [
             {
-              "id": "233afe4d-a196-4324-938d-edea929faba5",
+              "id": "1c256f2e-0356-451a-954c-8f01993bae7c",
               "keys": [
                 {
                   "cardinality": "one",
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "58ee8d6a-18d1-46f2-a43c-afd0f352bcdb",
+                  "id": "7fdf3e39-db7d-44cf-b1b4-cff6e8785275",
                   "name": "date"
                 },
                 {
@@ -4585,7 +4585,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "b9fad9e1-6de3-4cca-aa94-7ded207a6d78",
+                  "id": "77e7e60f-9c7e-4893-b484-bb999dfc3fca",
                   "name": "value"
                 }
               ],
@@ -4600,15 +4600,15 @@
               }
             },
             {
-              "id": "e9a71941-d785-4f05-9071-c85e7dac364f",
+              "id": "942f85e5-89c3-4df8-8ec6-a851cfeb01ca",
               "keys": [
                 {
                   "cardinality": "many",
                   "dataType": {
-                    "shapeId": "233afe4d-a196-4324-938d-edea929faba5",
+                    "shapeId": "1c256f2e-0356-451a-954c-8f01993bae7c",
                     "type": "shape"
                   },
-                  "id": "553ceeff-f8e7-4f50-ba2f-724b9591e531",
+                  "id": "d99811f5-36de-4e36-b710-95e24ec04951",
                   "name": "curve"
                 }
               ],
