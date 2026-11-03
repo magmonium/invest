@@ -34,7 +34,7 @@
       "39757484-69ff-4f2d-9dd4-7e0b043a5cc2": {
         "cardinality": "one",
         "dataType": {
-          "enumId": "9e29cc3e-cb52-46c0-ae38-4f2943c0261c",
+          "enumId": "4bc51fb3-db70-4ead-ac0d-c48ae741522d",
           "type": "enum"
         },
         "id": "39757484-69ff-4f2d-9dd4-7e0b043a5cc2",
@@ -533,7 +533,8 @@
     "rootControlIds": [
       "8cf56239-9d20-4334-9868-b9e883a1a9ff"
     ],
-    "selectedLayerId": 0
+    "selectedControl": "71b26329-5e9c-4546-864a-83ee7114713e",
+    "selectedLayerId": 7
   },
   "v": 30
 }

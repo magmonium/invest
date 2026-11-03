@@ -17,30 +17,18 @@
   "codegen": "0.8.24",
   "distinct": [],
   "enums": {
-    "5d2de8fa-c7f6-4867-b1fe-6674543764e4": {
-      "fileName": "type2",
-      "hasValue": false,
-      "id": "5d2de8fa-c7f6-4867-b1fe-6674543764e4",
-      "members": [
-        {
-          "id": "e49c3621-4067-4115-aee4-5a72143e5304",
-          "key": "DEFAULT"
-        }
-      ],
-      "name": "Type2"
-    },
-    "9e29cc3e-cb52-46c0-ae38-4f2943c0261c": {
+    "4bc51fb3-db70-4ead-ac0d-c48ae741522d": {
       "fileName": "type",
       "hasValue": true,
-      "id": "9e29cc3e-cb52-46c0-ae38-4f2943c0261c",
+      "id": "4bc51fb3-db70-4ead-ac0d-c48ae741522d",
       "members": [
         {
-          "id": "0c6878f0-0857-4dcb-ab0d-a0de3f9e9ccf",
+          "id": "f15c37e5-a3a7-47e0-8566-e89cb4be974e",
           "key": "INDEX",
           "value": "index"
         },
         {
-          "id": "8ce3c9c0-b4fa-4ace-bfb1-13cd00b95040",
+          "id": "95fc135c-ddba-4e18-9b6f-279bbd164fda",
           "key": "PORTFOLIO",
           "value": "portfolio"
         }
@@ -3897,7 +3885,7 @@
           "rule": {
             "children": [
               {
-                "id": "rn2",
+                "id": "rn14",
                 "kind": "check",
                 "operand": {
                   "kind": "literal",
@@ -3911,7 +3899,7 @@
               }
             ],
             "connective": "all",
-            "id": "rn1",
+            "id": "rn13",
             "kind": "group",
             "negated": false
           }
@@ -3922,7 +3910,7 @@
           "rule": {
             "children": [
               {
-                "id": "rn6",
+                "id": "rn16",
                 "kind": "check",
                 "operand": {
                   "kind": "literal",
@@ -3936,7 +3924,7 @@
               }
             ],
             "connective": "all",
-            "id": "rn5",
+            "id": "rn15",
             "kind": "group",
             "negated": false
           }
@@ -3947,7 +3935,7 @@
           "rule": {
             "children": [
               {
-                "id": "rn4",
+                "id": "rn18",
                 "kind": "check",
                 "operand": {
                   "kind": "literal",
@@ -3961,7 +3949,7 @@
               }
             ],
             "connective": "all",
-            "id": "rn3",
+            "id": "rn17",
             "kind": "group",
             "negated": false
           }
@@ -4050,7 +4038,7 @@
         "39757484-69ff-4f2d-9dd4-7e0b043a5cc2": {
           "cardinality": "one",
           "dataType": {
-            "enumId": "9e29cc3e-cb52-46c0-ae38-4f2943c0261c",
+            "enumId": "4bc51fb3-db70-4ead-ac0d-c48ae741522d",
             "type": "enum"
           },
           "id": "39757484-69ff-4f2d-9dd4-7e0b043a5cc2",
@@ -4191,7 +4179,7 @@
           "rule": {
             "children": [
               {
-                "id": "rn8",
+                "id": "rn20",
                 "kind": "check",
                 "operand": {
                   "kind": "literal",
@@ -4205,7 +4193,7 @@
               }
             ],
             "connective": "all",
-            "id": "rn7",
+            "id": "rn19",
             "kind": "group",
             "negated": false
           }
@@ -4254,7 +4242,7 @@
           "rule": {
             "children": [
               {
-                "id": "rn10",
+                "id": "rn22",
                 "kind": "check",
                 "operand": {
                   "kind": "literal",
@@ -4268,7 +4256,7 @@
               }
             ],
             "connective": "all",
-            "id": "rn9",
+            "id": "rn21",
             "kind": "group",
             "negated": false
           }
@@ -4373,6 +4361,6 @@
     "name": "invest",
     "open": false,
     "theme": "",
-    "version": "0.1.10"
+    "version": "0.1.11"
   }
 }

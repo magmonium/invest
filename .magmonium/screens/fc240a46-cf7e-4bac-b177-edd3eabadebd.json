@@ -22,7 +22,7 @@
         "rule": {
           "children": [
             {
-              "id": "rn2",
+              "id": "rn14",
               "kind": "check",
               "operand": {
                 "kind": "literal",
@@ -36,7 +36,7 @@
             }
           ],
           "connective": "all",
-          "id": "rn1",
+          "id": "rn13",
           "kind": "group",
           "negated": false
         }
@@ -47,7 +47,7 @@
         "rule": {
           "children": [
             {
-              "id": "rn6",
+              "id": "rn16",
               "kind": "check",
               "operand": {
                 "kind": "literal",
@@ -61,7 +61,7 @@
             }
           ],
           "connective": "all",
-          "id": "rn5",
+          "id": "rn15",
           "kind": "group",
           "negated": false
         }
@@ -72,7 +72,7 @@
         "rule": {
           "children": [
             {
-              "id": "rn4",
+              "id": "rn18",
               "kind": "check",
               "operand": {
                 "kind": "literal",
@@ -86,7 +86,7 @@
             }
           ],
           "connective": "all",
-          "id": "rn3",
+          "id": "rn17",
           "kind": "group",
           "negated": false
         }

@@ -1,18 +1,3 @@
-de: Kapitälchen
-el: Μικρά κεφαλαία
-eo: Malgrandaj majuskloj
-es: Versalitas
-et: Väikesed suurtähed
-eu: Letra larri txikiak
-fa: حروف بزرگ کوچک
-fi: Pienet versaalit
-fr: Petites capitales
-fy: Lytse haadletters
-ga: Cás beag
-gd: Litrichean mòra beaga
-gl: Versaletas
-gu: નાના કેપિટલ
-ha: Ƙananan manyan haruffa
 af: Kleinkapitale
 am: ትንሽ ካፒታል
 ar: أحرف كبيرة صغيرة
@@ -28,6 +13,22 @@ co: Piccule maiuscule
 cs: Kapitálky
 cy: Priflythrennau bach
 da: Små versaler
+de: Kapitälchen
+el: Μικρά κεφαλαία
+en: Smallcap
+eo: Malgrandaj majuskloj
+es: Versalitas
+et: Väikesed suurtähed
+eu: Letra larri txikiak
+fa: حروف بزرگ کوچک
+fi: Pienet versaalit
+fr: Petites capitales
+fy: Lytse haadletters
+ga: Cás beag
+gd: Litrichean mòra beaga
+gl: Versaletas
+gu: નાના કેપિટલ
+ha: Ƙananan manyan haruffa
 haw: Nā hua nui liʻi
 hi: छोटे बड़े अक्षर
 hmn: Ntawv loj me
@@ -43,30 +44,21 @@ ja: スモールキャップ
 jw: Aksara gedhe cilik
 ka: პატარა მთავრული
 kk: Кіші бас әріптер
-te: స్మాల్‌క్యాప్
-tg: Капс мала
-th: ตัวพิมพ์เล็กตัวใหญ่
-tl: Smallcap
-tr: Küçük harf
-uk: Маленькі літери
-ur: چھوٹے حروف
-uz: Kichik harf
-vi: Chữ thường
-ru: Малые прописные
-sd: लघु महाक्षराणि
-si: කුඩා මහාක්ෂර
-sk: Malé kapitálky
-sl: Male kapitalke
-sm: Mata'itusi laiti
-sn: Madiki makuru
-so: Xarfaha yaryar ee waaweyn
-sq: Kapitale të vogla
-sr: Мала велика слова
-st: Mantswe a manyenyane a maholo
-su: Aksara leutik ageung
-sv: Små versaler
-sw: Herufi ndogo kubwa
-ta: சிறிய பெரிய எழுத்துக்கள்
+km: មួកតូច
+kn: ಸ್ಮಾಲ್‌ಕ್ಯಾಪ್
+ko: 스몰캡
+ku: Biçûk
+ky: Кечкене баскыч
+la: Maiuscula parva
+lb: Kleng Kapitäl
+lo: ໝວກນ້ອຍ
+lt: Mažas dangtelis
+lv: Maza kapitalizācija
+ma: लघु कॅप्स
+mg: Litera kely
+mi: Potae iti
+mk: Капа со ситно капаче
+ml: സ്മോൾ ക്യാപ്
 mn: Жижиг томорсон үсэг
 mr: स्मॉल कॅप
 ms: Huruf Besar Kecil
@@ -82,24 +74,32 @@ pl: Kapitaliki
 ps: واړه غټ توري
 pt: Versalete
 ro: Majuscule mici
+ru: Малые прописные
+sd: लघु महाक्षराणि
+si: කුඩා මහාක්ෂර
+sk: Malé kapitálky
+sl: Male kapitalke
+sm: Mata'itusi laiti
+sn: Madiki makuru
+so: Xarfaha yaryar ee waaweyn
+sq: Kapitale të vogla
+sr: Мала велика слова
+st: Mantswe a manyenyane a maholo
+su: Aksara leutik ageung
+sv: Små versaler
+sw: Herufi ndogo kubwa
+ta: சிறிய பெரிய எழுத்துக்கள்
+te: స్మాల్‌క్యాప్
+tg: Капс мала
+th: ตัวพิมพ์เล็กตัวใหญ่
+tl: Smallcap
+tr: Küçük harf
+uk: Маленькі літери
+ur: چھوٹے حروف
+uz: Kichik harf
+vi: Chữ thường
 xh: amakhapa amancinci
 yi: קליינע קאַפּס
 yo: kékèké akọ́kọ́
 zh: 小型大写
 zu: amakhapa amancinci
-ky: Кечкене баскыч
-la: Maiuscula parva
-lb: Kleng Kapitäl
-ma: लघु कॅप्स
-mg: Litera kely
-km: មួកតូច
-kn: ಸ್ಮಾಲ್‌ಕ್ಯಾಪ್
-ko: 스몰캡
-ku: Biçûk
-lo: ໝວກນ້ອຍ
-lt: Mažas dangtelis
-lv: Maza kapitalizācija
-mi: Potae iti
-mk: Капа со ситно капаче
-ml: സ്മോൾ ക്യാപ്
-en: Smallcap

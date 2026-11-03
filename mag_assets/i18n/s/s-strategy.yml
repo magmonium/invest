@@ -1,18 +1,3 @@
-de: <$user>'s Strategie
-el: <$user>'s στρατηγική
-eo: <$user>'s strategio
-es: <$user>'s estrategia
-et: <$user>'s strateegia
-eu: <$user>'s estrategia
-fa: <$user>'s استراتژی
-fi: <$user>'s strategia
-fr: <$user>'s stratégie
-fy: <$user>'s strategie
-ga: <$user>'s straitéis
-gd: <$user>'s earrann
-gl: <$user>'s estratexia
-gu: <$user>'s રણનીતિ
-ha: <$user>'s dabaru
 af: <$user>'s strategie
 am: <$user>'s ዘውትር
 ar: <$user>'s استراتيجية
@@ -28,6 +13,22 @@ co: <$user>'s strategia
 cs: <$user>'s strategie
 cy: <$user>'s stratega
 da: <$user>'s strategi
+de: <$user>'s Strategie
+el: <$user>'s στρατηγική
+en: <$user>'s strategy
+eo: <$user>'s strategio
+es: <$user>'s estrategia
+et: <$user>'s strateegia
+eu: <$user>'s estrategia
+fa: <$user>'s استراتژی
+fi: <$user>'s strategia
+fr: <$user>'s stratégie
+fy: <$user>'s strategie
+ga: <$user>'s straitéis
+gd: <$user>'s earrann
+gl: <$user>'s estratexia
+gu: <$user>'s રણનીતિ
+ha: <$user>'s dabaru
 haw: ʻO <$user> ke aʻo
 hi: <$user> की रणनीति
 hmn: <$user> txoj kev txiav txim siab
@@ -67,6 +68,12 @@ ne: <$user> रणनीति
 nl: <$user> strategie
 no: <$user> strategi
 ny: <$user> zokambirana
+or: <$user>ର ରଣନୀତି
+pa: <$user>ਦੀ ਰਣਨੀਤੀ
+pl: Strategia <$user>
+ps: د <$user> ستراتیژي
+pt: Estratégia de <$user>
+ro: Strategia <$user>
 ru: Стратегия <$user>
 sd: <$user> इत्यस्य रणनीतिः
 si: <$user>ගේ උපාය
@@ -96,10 +103,3 @@ yi: <$user>’ס סטראַטעגיע
 yo: ìlànà <$user>
 zh: <$user>的策略
 zu: isu lika<$user>
-or: <$user>ର ରଣନୀତି
-pa: <$user>ਦੀ ਰਣਨੀਤੀ
-pl: Strategia <$user>
-ps: د <$user> ستراتیژي
-pt: Estratégia de <$user>
-ro: Strategia <$user>
-en: <$user>'s strategy

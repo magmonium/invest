@@ -1,3 +1,34 @@
+af: Herbalanseer
+am: እንደገና ሚዛን አድርግ
+ar: إعادة التوازن
+as: পুনৰ ভাৰসাম্য
+az: Yenidən balanslaşdır
+be: Перабалансаваць
+bg: Ребалансирай
+bn: পুনরায় ভারসাম্য
+bs: Rebalansiraj
+ca: Reequilibrar
+ceb: Ibalik ang balanse
+co: Riequilibra
+cs: Rebalancovat
+cy: Ailgydbwyso
+da: Rebalancér
+de: Rebalancieren
+el: Επαναστάθμιση
+en: Rebalance
+eo: Rebalanci
+es: Reequilibrar
+et: Tasakaalusta uuesti
+eu: Berrorekatu
+fa: متعادل‌سازی مجدد
+fi: Tasapainota uudelleen
+fr: Rééquilibrer
+fy: Opnij balansearje
+ga: Athchothromaigh
+gd: Ath-chothromaich
+gl: Reequilibrar
+gu: પુનઃસંતુલિત કરો
+ha: Sake daidaitawa
 haw: Hoʻopili
 hi: पुनर्संतुलन
 hmn: Txiv txiv
@@ -43,35 +74,6 @@ pl: Przebalansuj
 ps: د توازن بیا تنظیمول
 pt: Rebalancear
 ro: Reechilibrați
-de: Rebalancieren
-el: Επαναστάθμιση
-eo: Rebalanci
-es: Reequilibrar
-et: Tasakaalusta uuesti
-eu: Berrorekatu
-fa: متعادل‌سازی مجدد
-fi: Tasapainota uudelleen
-fr: Rééquilibrer
-fy: Opnij balansearje
-ga: Athchothromaigh
-gd: Ath-chothromaich
-gl: Reequilibrar
-gu: પુનઃસંતુલિત કરો
-ha: Sake daidaitawa
-te: సమతుల్యీకరించు
-tg: Барқарорсозӣ
-th: ปรับสมดุล
-tl: Ibalanse muli
-tr: Yeniden Dengele
-uk: Перебалансувати
-ur: توازن بحال کریں
-uz: Balansni qayta o'rnatish
-vi: Cân bằng lại
-xh: Phinda uhlukanise
-yi: רעבאַלאַנסירן
-yo: Tunṣe àtúnṣe
-zh: 重新平衡
-zu: Bhalansiya kabusha
 ru: Ребалансировать
 sd: पुनःसंतुलनम्
 si: නැවත තුලනය කරන්න
@@ -87,19 +89,17 @@ su: Saimbangkeun deui
 sv: Ombalansera
 sw: Sawazisha tena
 ta: மீண்டும் சமநிலைப்படுத்து
-af: Herbalanseer
-am: እንደገና ሚዛን አድርግ
-ar: إعادة التوازن
-as: পুনৰ ভাৰসাম্য
-az: Yenidən balanslaşdır
-be: Перабалансаваць
-bg: Ребалансирай
-bn: পুনরায় ভারসাম্য
-bs: Rebalansiraj
-ca: Reequilibrar
-ceb: Ibalik ang balanse
-co: Riequilibra
-cs: Rebalancovat
-cy: Ailgydbwyso
-da: Rebalancér
-en: Rebalance
+te: సమతుల్యీకరించు
+tg: Барқарорсозӣ
+th: ปรับสมดุล
+tl: Ibalanse muli
+tr: Yeniden Dengele
+uk: Перебалансувати
+ur: توازن بحال کریں
+uz: Balansni qayta o'rnatish
+vi: Cân bằng lại
+xh: Phinda uhlukanise
+yi: רעבאַלאַנסירן
+yo: Tunṣe àtúnṣe
+zh: 重新平衡
+zu: Bhalansiya kabusha

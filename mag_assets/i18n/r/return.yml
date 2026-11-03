@@ -13,6 +13,37 @@ co: <$dur> Torna
 cs: <$dur> Zpět
 cy: <$dur> Yn ôl
 da: <$dur> Tilbage
+de: <$dur> Rückgabe
+el: <$dur> Επιστροφή
+en: <$dur> Return
+eo: <$dur> Reveno
+es: <$dur> Devolución
+et: <$dur> Tagastus
+eu: <$dur> Itzulpena
+fa: <$dur> بازگشت
+fi: <$dur> Palautus
+fr: <$dur> Retour
+fy: <$dur> Weromkomme
+ga: <$dur> Fill
+gd: <$dur> Till
+gl: <$dur> Devolución
+gu: <$dur> પરત
+ha: <$dur> Komowa
+haw: <$dur> Hoʻi
+hi: <$dur> वापसी
+hmn: <$dur> Rov qab
+hr: <$dur> Povratak
+hu: <$dur> Vissza
+hy: <$dur> Վերադարձ
+id: <$dur> Kembali
+ig: <$dur> laghachi
+is: <$dur> Til baka
+it: <$dur> Reso
+iw: <$dur> חזרה
+ja: <$dur> 戻る
+jw: <$dur> Bali
+ka: <$dur> დაბრუნება
+kk: <$dur> Қайту
 km: ត្រឡប់ <$dur>
 kn: ಹಿಂದಕ್ಕೆ <$dur>
 ko: <$dur> 되돌리기
@@ -43,21 +74,6 @@ pl: Wróć <$dur>
 ps: <$dur> بېرته
 pt: Voltar <$dur>
 ro: Înapoi <$dur>
-de: <$dur> Rückgabe
-el: <$dur> Επιστροφή
-eo: <$dur> Reveno
-es: <$dur> Devolución
-et: <$dur> Tagastus
-eu: <$dur> Itzulpena
-fa: <$dur> بازگشت
-fi: <$dur> Palautus
-fr: <$dur> Retour
-fy: <$dur> Weromkomme
-ga: <$dur> Fill
-gd: <$dur> Till
-gl: <$dur> Devolución
-gu: <$dur> પરત
-ha: <$dur> Komowa
 ru: Вернуться через <$dur>
 sd: पुनः प्रवेश <$dur>
 si: <$dur> නැවත
@@ -87,19 +103,3 @@ yi: <$dur> אָפּקערן
 yo: <$dur> Pada
 zh: <$dur> 返回
 zu: <$dur> Buya
-haw: <$dur> Hoʻi
-hi: <$dur> वापसी
-hmn: <$dur> Rov qab
-hr: <$dur> Povratak
-hu: <$dur> Vissza
-hy: <$dur> Վերադարձ
-id: <$dur> Kembali
-ig: <$dur> laghachi
-is: <$dur> Til baka
-it: <$dur> Reso
-iw: <$dur> חזרה
-ja: <$dur> 戻る
-jw: <$dur> Bali
-ka: <$dur> დაბრუნება
-kk: <$dur> Қайту
-en: <$dur> Return
