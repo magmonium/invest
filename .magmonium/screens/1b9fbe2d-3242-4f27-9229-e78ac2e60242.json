@@ -1,6 +1,17 @@
 {
   "meta": {
     "id": "1b9fbe2d-3242-4f27-9229-e78ac2e60242",
+    "inputs": {
+      "e7ab473d-016c-4e44-86ef-b115d9c57947": {
+        "cardinality": "one",
+        "dataType": {
+          "type": "string"
+        },
+        "id": "e7ab473d-016c-4e44-86ef-b115d9c57947",
+        "name": "id",
+        "required": true
+      }
+    },
     "kind": "page",
     "name": "instruments"
   },
