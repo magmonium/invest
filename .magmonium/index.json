@@ -4385,6 +4385,66 @@
       "id": "b29b5847-0c82-447b-bbe4-c0aac7a71a28",
       "kind": "page",
       "name": "index-state"
+    },
+    {
+      "id": "e24f9bb0-91ec-4874-8313-1c0d631fa204",
+      "inputs": {
+        "cb83dcee-5af9-4c28-a7a3-cc72ff0def6f": {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "id": "cb83dcee-5af9-4c28-a7a3-cc72ff0def6f",
+          "name": "id",
+          "required": true
+        }
+      },
+      "kind": "page",
+      "name": "index-details"
+    },
+    {
+      "computeds": {
+        "707b9461-61cc-4626-b909-e9afb1511722": {
+          "args": {
+            "id": {
+              "inputId": "7bd98597-3e11-4c14-8234-dd517940dc88",
+              "source": "input"
+            },
+            "map": {
+              "path": [
+                "e5e30d28-369a-42fb-abe6-516e96fd51ba"
+              ],
+              "source": "path"
+            }
+          },
+          "id": "707b9461-61cc-4626-b909-e9afb1511722",
+          "name": "index",
+          "oneFunction": "getFromMap",
+          "returns": {
+            "cardinality": "one",
+            "dataType": {
+              "shapeId": "eb34fbff-711a-4f7a-b67d-26dca35a7412",
+              "type": "shape"
+            },
+            "optional": true
+          }
+        }
+      },
+      "featureId": "acef9153-606d-4de2-8699-7c87fa589384",
+      "id": "38f5b18f-bfa4-4c13-89c1-e9853d8fe359",
+      "inputs": {
+        "7bd98597-3e11-4c14-8234-dd517940dc88": {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "id": "7bd98597-3e11-4c14-8234-dd517940dc88",
+          "name": "id",
+          "required": true
+        }
+      },
+      "kind": "feature",
+      "name": "index-dashboard"
     }
   ],
   "sharedShapes": {},

@@ -3,3 +3,5 @@ title: index
 icon: trending-up
 kind: url
 presentation: static
+children:
+  - root_default_index_details

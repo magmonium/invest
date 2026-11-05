@@ -1,0 +1,166 @@
+{
+  "meta": {
+    "computeds": {
+      "707b9461-61cc-4626-b909-e9afb1511722": {
+        "args": {
+          "id": {
+            "inputId": "7bd98597-3e11-4c14-8234-dd517940dc88",
+            "source": "input"
+          },
+          "map": {
+            "path": [
+              "e5e30d28-369a-42fb-abe6-516e96fd51ba"
+            ],
+            "source": "path"
+          }
+        },
+        "id": "707b9461-61cc-4626-b909-e9afb1511722",
+        "name": "index",
+        "oneFunction": "getFromMap",
+        "returns": {
+          "cardinality": "one",
+          "dataType": {
+            "shapeId": "eb34fbff-711a-4f7a-b67d-26dca35a7412",
+            "type": "shape"
+          },
+          "optional": true
+        }
+      }
+    },
+    "featureId": "acef9153-606d-4de2-8699-7c87fa589384",
+    "id": "38f5b18f-bfa4-4c13-89c1-e9853d8fe359",
+    "inputs": {
+      "7bd98597-3e11-4c14-8234-dd517940dc88": {
+        "cardinality": "one",
+        "dataType": {
+          "type": "string"
+        },
+        "id": "7bd98597-3e11-4c14-8234-dd517940dc88",
+        "name": "id",
+        "required": true
+      }
+    },
+    "kind": "feature",
+    "name": "index-dashboard"
+  },
+  "state": {
+    "controlMap": {
+      "180252fc-c7df-456d-bd22-1c7ab144c18e": {
+        "childrens": [
+          "eabcb91f-4a9c-4db9-807e-6d43253a6026"
+        ],
+        "configs": {},
+        "id": "180252fc-c7df-456d-bd22-1c7ab144c18e",
+        "parentId": "94783a7d-b6a1-40b2-a250-311bce7686a5",
+        "type": "stat_value"
+      },
+      "29b49168-14a5-4554-98fc-0e20cb7c5941": {
+        "bindings": {
+          "label": {
+            "path": [
+              "844aefec-76fe-4500-ac73-fc8c7d2920f2"
+            ],
+            "root": {
+              "id": "707b9461-61cc-4626-b909-e9afb1511722",
+              "kind": "screen_computed"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {
+          "variant": "footer"
+        },
+        "id": "29b49168-14a5-4554-98fc-0e20cb7c5941",
+        "parentId": "eabcb91f-4a9c-4db9-807e-6d43253a6026",
+        "source": "raw",
+        "textSource": "dynamic",
+        "type": "text"
+      },
+      "3d0e7bec-9f04-43a9-b21f-9241b77d6e35": {
+        "bindings": {
+          "label": {
+            "path": [
+              "e2131ca5-7205-4bb4-8dba-89f4d2b1df42"
+            ],
+            "root": {
+              "id": "707b9461-61cc-4626-b909-e9afb1511722",
+              "kind": "screen_computed"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {
+          "variant": "big"
+        },
+        "id": "3d0e7bec-9f04-43a9-b21f-9241b77d6e35",
+        "parentId": "eabcb91f-4a9c-4db9-807e-6d43253a6026",
+        "textSource": "dynamic",
+        "type": "text"
+      },
+      "6b282a01-e445-4832-9137-51ef1752edf0": {
+        "childrens": [
+          "78e4b567-79c8-46f9-bd73-bf112be4e10a"
+        ],
+        "configs": {
+          "align": "left",
+          "heightMode": "fixed",
+          "variant": "noBorder"
+        },
+        "id": "6b282a01-e445-4832-9137-51ef1752edf0",
+        "type": "section"
+      },
+      "78e4b567-79c8-46f9-bd73-bf112be4e10a": {
+        "childrens": [
+          "94783a7d-b6a1-40b2-a250-311bce7686a5"
+        ],
+        "configs": {
+          "center": true,
+          "fullHeight": true
+        },
+        "id": "78e4b567-79c8-46f9-bd73-bf112be4e10a",
+        "parentId": "6b282a01-e445-4832-9137-51ef1752edf0",
+        "type": "row"
+      },
+      "94783a7d-b6a1-40b2-a250-311bce7686a5": {
+        "bindings": {
+          "label": {
+            "path": [
+              "7afdac34-3f14-4d76-b561-7664b8f1fb4b"
+            ],
+            "root": {
+              "id": "707b9461-61cc-4626-b909-e9afb1511722",
+              "kind": "screen_computed"
+            }
+          }
+        },
+        "childrens": [
+          "180252fc-c7df-456d-bd22-1c7ab144c18e"
+        ],
+        "configs": {},
+        "id": "94783a7d-b6a1-40b2-a250-311bce7686a5",
+        "parentId": "78e4b567-79c8-46f9-bd73-bf112be4e10a",
+        "type": "stat"
+      },
+      "eabcb91f-4a9c-4db9-807e-6d43253a6026": {
+        "childrens": [
+          "3d0e7bec-9f04-43a9-b21f-9241b77d6e35",
+          "29b49168-14a5-4554-98fc-0e20cb7c5941"
+        ],
+        "configs": {
+          "direction": "column",
+          "gap": "0.5"
+        },
+        "id": "eabcb91f-4a9c-4db9-807e-6d43253a6026",
+        "parentId": "180252fc-c7df-456d-bd22-1c7ab144c18e",
+        "type": "flex"
+      }
+    },
+    "labelSamples": {},
+    "pathSamples": {},
+    "rootControlIds": [
+      "6b282a01-e445-4832-9137-51ef1752edf0"
+    ],
+    "selectedLayerId": 0
+  },
+  "v": 30
+}

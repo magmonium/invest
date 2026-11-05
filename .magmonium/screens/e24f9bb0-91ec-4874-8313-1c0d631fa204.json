@@ -1,0 +1,141 @@
+{
+  "meta": {
+    "id": "e24f9bb0-91ec-4874-8313-1c0d631fa204",
+    "inputs": {
+      "cb83dcee-5af9-4c28-a7a3-cc72ff0def6f": {
+        "cardinality": "one",
+        "dataType": {
+          "type": "string"
+        },
+        "id": "cb83dcee-5af9-4c28-a7a3-cc72ff0def6f",
+        "name": "id",
+        "required": true
+      }
+    },
+    "kind": "page",
+    "name": "index-details"
+  },
+  "state": {
+    "controlMap": {
+      "30b3c511-3fc3-49f3-a04e-96f19ab0e921": {
+        "childrens": [],
+        "configs": {},
+        "id": "30b3c511-3fc3-49f3-a04e-96f19ab0e921",
+        "parentId": "970ca5fd-599b-4440-92e4-cf1589b85abd",
+        "screenId": "d10a19c9-8f19-4215-ac7d-473fba34e7c2",
+        "screenInputs": {
+          "25eccd3a-679b-4a2b-8a27-d1e6def9a91f": {
+            "inputId": "cb83dcee-5af9-4c28-a7a3-cc72ff0def6f",
+            "kind": "input"
+          },
+          "39757484-69ff-4f2d-9dd4-7e0b043a5cc2": {
+            "enumId": "4bc51fb3-db70-4ead-ac0d-c48ae741522d",
+            "kind": "enum-member",
+            "memberId": "f15c37e5-a3a7-47e0-8566-e89cb4be974e"
+          }
+        },
+        "type": "screen"
+      },
+      "61fce7d8-8fca-4088-b33e-37bb3e303dd8": {
+        "childrens": [
+          "b16f114c-a996-4274-b1cc-63f826ae3192"
+        ],
+        "configs": {
+          "md": "6"
+        },
+        "id": "61fce7d8-8fca-4088-b33e-37bb3e303dd8",
+        "parentId": "d6a0e8bd-07e8-46a1-b070-fad670f388ca",
+        "type": "col"
+      },
+      "89852949-7fd4-440c-9a9e-3e949702c9d6": {
+        "childrens": [],
+        "configs": {},
+        "directives": {
+          "mPadding": {
+            "configs": {
+              "mPadding": 1,
+              "mPaddingX": "",
+              "mPaddingY": ""
+            }
+          }
+        },
+        "id": "89852949-7fd4-440c-9a9e-3e949702c9d6",
+        "parentId": "f7c258b3-072c-440d-b0ec-513346c650c2",
+        "screenId": "27501aeb-64c9-4d8f-8265-feb47e395863",
+        "screenInputs": {
+          "947f79a5-8f45-40ed-9452-1ec85b7a4d82": {
+            "inputId": "cb83dcee-5af9-4c28-a7a3-cc72ff0def6f",
+            "kind": "input"
+          },
+          "cca55c1f-94df-4f2d-b2b5-d365af9a76ca": {
+            "kind": "static",
+            "value": ""
+          }
+        },
+        "type": "screen"
+      },
+      "970ca5fd-599b-4440-92e4-cf1589b85abd": {
+        "childrens": [
+          "30b3c511-3fc3-49f3-a04e-96f19ab0e921"
+        ],
+        "configs": {},
+        "id": "970ca5fd-599b-4440-92e4-cf1589b85abd",
+        "parentId": "f20058b3-3d62-409d-a1e6-c8e2198e4c27",
+        "source": "raw",
+        "type": "row"
+      },
+      "b16f114c-a996-4274-b1cc-63f826ae3192": {
+        "childrens": [],
+        "configs": {},
+        "id": "b16f114c-a996-4274-b1cc-63f826ae3192",
+        "parentId": "61fce7d8-8fca-4088-b33e-37bb3e303dd8",
+        "screenId": "38f5b18f-bfa4-4c13-89c1-e9853d8fe359",
+        "screenInputs": {
+          "7bd98597-3e11-4c14-8234-dd517940dc88": {
+            "inputId": "cb83dcee-5af9-4c28-a7a3-cc72ff0def6f",
+            "kind": "input"
+          }
+        },
+        "type": "screen"
+      },
+      "d6a0e8bd-07e8-46a1-b070-fad670f388ca": {
+        "childrens": [
+          "61fce7d8-8fca-4088-b33e-37bb3e303dd8",
+          "f7c258b3-072c-440d-b0ec-513346c650c2"
+        ],
+        "configs": {},
+        "id": "d6a0e8bd-07e8-46a1-b070-fad670f388ca",
+        "parentId": "f20058b3-3d62-409d-a1e6-c8e2198e4c27",
+        "type": "row"
+      },
+      "f20058b3-3d62-409d-a1e6-c8e2198e4c27": {
+        "childrens": [
+          "d6a0e8bd-07e8-46a1-b070-fad670f388ca",
+          "970ca5fd-599b-4440-92e4-cf1589b85abd"
+        ],
+        "configs": {},
+        "id": "f20058b3-3d62-409d-a1e6-c8e2198e4c27",
+        "type": "section"
+      },
+      "f7c258b3-072c-440d-b0ec-513346c650c2": {
+        "childrens": [
+          "89852949-7fd4-440c-9a9e-3e949702c9d6"
+        ],
+        "configs": {
+          "md": "6"
+        },
+        "id": "f7c258b3-072c-440d-b0ec-513346c650c2",
+        "parentId": "d6a0e8bd-07e8-46a1-b070-fad670f388ca",
+        "source": "raw",
+        "type": "col"
+      }
+    },
+    "labelSamples": {},
+    "pathSamples": {},
+    "rootControlIds": [
+      "f20058b3-3d62-409d-a1e6-c8e2198e4c27"
+    ],
+    "selectedLayerId": 0
+  },
+  "v": 30
+}

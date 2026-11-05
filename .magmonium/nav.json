@@ -31,6 +31,7 @@
     },
     "root_default_default": {
       "children": [],
+      "inheritsParams": false,
       "isDefault": true,
       "linkKind": "url",
       "navId": "root_default_default",
@@ -39,7 +40,8 @@
     },
     "root_default_index": {
       "children": [
-        "root_default_index_default"
+        "root_default_index_default",
+        "root_default_index_details"
       ],
       "icon": "trending-up",
       "label": "index",
@@ -50,11 +52,23 @@
     },
     "root_default_index_default": {
       "children": [],
+      "inheritsParams": false,
       "isDefault": true,
       "linkKind": "url",
       "navId": "root_default_index_default",
       "pageId": "b29b5847-0c82-447b-bbe4-c0aac7a71a28",
       "presentation": "static"
+    },
+    "root_default_index_details": {
+      "children": [],
+      "icon": "trending-up",
+      "inheritsParams": false,
+      "label": "details",
+      "linkKind": "url",
+      "navId": "root_default_index_details",
+      "pageId": "e24f9bb0-91ec-4874-8313-1c0d631fa204",
+      "param": "id",
+      "presentation": "dynamic"
     },
     "root_default_instrument": {
       "children": [
@@ -89,6 +103,7 @@
     "root_default_instrument_with-ticker": {
       "children": [],
       "icon": "target",
+      "inheritsParams": false,
       "label": "company",
       "linkKind": "url",
       "navId": "root_default_instrument_with-ticker",
