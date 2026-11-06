@@ -4445,6 +4445,23 @@
       },
       "kind": "feature",
       "name": "index-dashboard"
+    },
+    {
+      "featureId": "bbad551b-72b3-4fde-86f9-afa810cbc40c",
+      "id": "bb75c0ed-20d1-445e-a81a-df1cde919f03",
+      "inputs": {
+        "db0904bd-93a1-4ddf-b070-7dc7f058f6a3": {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "id": "db0904bd-93a1-4ddf-b070-7dc7f058f6a3",
+          "name": "id",
+          "required": true
+        }
+      },
+      "kind": "feature",
+      "name": "rebalance"
     }
   ],
   "sharedShapes": {},

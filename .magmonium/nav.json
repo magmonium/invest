@@ -31,7 +31,6 @@
     },
     "root_default_default": {
       "children": [],
-      "inheritsParams": false,
       "isDefault": true,
       "linkKind": "url",
       "navId": "root_default_default",
@@ -52,7 +51,6 @@
     },
     "root_default_index_default": {
       "children": [],
-      "inheritsParams": false,
       "isDefault": true,
       "linkKind": "url",
       "navId": "root_default_index_default",
@@ -62,7 +60,6 @@
     "root_default_index_details": {
       "children": [],
       "icon": "trending-up",
-      "inheritsParams": false,
       "label": "details",
       "linkKind": "url",
       "navId": "root_default_index_details",
@@ -103,7 +100,6 @@
     "root_default_instrument_with-ticker": {
       "children": [],
       "icon": "target",
-      "inheritsParams": false,
       "label": "company",
       "linkKind": "url",
       "navId": "root_default_instrument_with-ticker",
