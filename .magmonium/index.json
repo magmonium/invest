@@ -2879,6 +2879,36 @@
     "bbad551b-72b3-4fde-86f9-afa810cbc40c": {
       "computeds": {},
       "functions": {
+        "83018475-a2cb-464d-8bd6-9cb056fbe7c8": {
+          "aiDrafted": true,
+          "body": "// Guard against null/undefined action or missing/invalid currentPrice\n  if (!action || typeof action.currentPrice !== 'number' || isNaN(action.currentPrice)) {\n    return 0;\n  }\n\n  // Ensure quantity is a number; treat non-numeric values as 0\n  const qty = typeof quanitity === 'number' ? quanitity : 0;\n\n  return qty * action.currentPrice;",
+          "description": "Calculates the total price required for a given quantity based on the current price in the action.",
+          "id": "83018475-a2cb-464d-8bd6-9cb056fbe7c8",
+          "name": "priceRequired",
+          "params": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "ddad3fd6-7c80-4071-a61c-12ea69feaf60",
+              "name": "quanitity"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "shapeId": "4a6e2f89-b8ea-49b0-b494-47320a112c9f",
+                "type": "shape"
+              },
+              "id": "428cbe18-03aa-490e-a26c-ce47862cf2f1",
+              "name": "action"
+            }
+          ],
+          "returnCardinality": "one",
+          "returnType": {
+            "type": "number"
+          }
+        },
         "9c29b472-8a71-4473-9203-8fae4fb181ca": {
           "aiDrafted": true,
           "body": "if (!portfolio || !Array.isArray(portfolio.rebalance)) {\n    return [];\n  }\n\n  const items = [...portfolio.rebalance];\n  if (!sort) {\n    return items;\n  }\n\n  const isDesc = direction.toLowerCase() === 'desc';\n\n  return items.sort((a, b) => {\n    const valA = (a as unknown as Record<string, unknown>)[sort];\n    const valB = (b as unknown as Record<string, unknown>)[sort];\n\n    if (valA === valB) return 0;\n    if (valA === undefined || valA === null) return 1;\n    if (valB === undefined || valB === null) return -1;\n\n    let comparison = 0;\n    if (typeof valA === 'string' && typeof valB === 'string') {\n      comparison = valA.localeCompare(valB);\n    } else if (typeof valA === 'number' && typeof valB === 'number') {\n      comparison = valA - valB;\n    } else {\n      comparison = String(valA).localeCompare(String(valB));\n    }\n\n    return isDesc ? -comparison : comparison;\n  });",
@@ -3126,6 +3156,40 @@
       },
       "id": "bbad551b-72b3-4fde-86f9-afa810cbc40c",
       "methods": {
+        "aa042e8c-ac59-445d-b2e8-5420da09091c": {
+          "id": "aa042e8c-ac59-445d-b2e8-5420da09091c",
+          "inputs": [
+            {
+              "arg": "symbol",
+              "source": "args",
+              "target": [
+                "path",
+                "symbol"
+              ]
+            }
+          ],
+          "name": "getFinancePlan",
+          "path": "/finance/v1/plan/{symbol}",
+          "persists": [
+            {
+              "id": "70881faf-873c-43a8-993f-91b692864e61",
+              "key": "",
+              "propertyId": "d40ab2bc-c8c8-450a-bbbc-bf82eae46b7d",
+              "shelf": "store",
+              "source": [],
+              "sourceKind": "clear",
+              "timing": "before"
+            }
+          ],
+          "response": [
+            {
+              "code": "200",
+              "propertyId": "d40ab2bc-c8c8-450a-bbbc-bf82eae46b7d",
+              "source": []
+            }
+          ],
+          "verb": "get"
+        },
         "d11a433a-2c3e-47e2-bf79-5ae3f0b79390": {
           "id": "d11a433a-2c3e-47e2-bf79-5ae3f0b79390",
           "inputs": [],
@@ -3167,6 +3231,15 @@
           },
           "id": "58ecf14d-2c1f-4d48-a6fb-d4baa07b348c",
           "name": "direction"
+        },
+        "d40ab2bc-c8c8-450a-bbbc-bf82eae46b7d": {
+          "cardinality": "one",
+          "dataType": {
+            "shapeId": "4a6e2f89-b8ea-49b0-b494-47320a112c9f",
+            "type": "shape"
+          },
+          "id": "d40ab2bc-c8c8-450a-bbbc-bf82eae46b7d",
+          "name": "action"
         }
       },
       "shapes": {
@@ -3340,6 +3413,186 @@
               "rebalance"
             ],
             "verb": "patch"
+          }
+        },
+        "4a6e2f89-b8ea-49b0-b494-47320a112c9f": {
+          "id": "4a6e2f89-b8ea-49b0-b494-47320a112c9f",
+          "keys": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "6d55b018-245b-48df-8c31-aa80f4064595",
+              "name": "symbol"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "a45fab3b-cffd-4e0f-812a-ab70aeb0ad22",
+              "name": "action"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "4435a383-8bc9-4b80-b4c1-7e72d0b9ccc3",
+              "name": "quantity"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "512e17b4-0518-4f05-8ac9-f9b30ee2bdb2",
+              "name": "idealQuantity"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "f02584b7-5398-4d60-8b1b-493a59b86296",
+              "name": "deltaQuantity"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "eab3c2d0-50b0-4c0d-b6cc-d69e87ab4bb9",
+              "name": "minQuantity"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "a354287f-7c84-4ee0-9179-6f6cb2f68bb3",
+              "name": "maxQuantity"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "6c2cf1d6-0de8-4904-8158-156a6e092a30",
+              "name": "currentPrice"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "515b8346-13e8-4273-861a-abf35669acbf",
+              "name": "priceAsOf"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "722d6eec-6795-461b-8402-89c8048c44f3",
+              "name": "currentValue"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "79d32158-9347-43b3-a127-24c17a763192",
+              "name": "investedValue"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "97688fe0-f4db-4ff8-95ec-fe9b90708d34",
+              "name": "allocationPct"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "f09e2f38-2bed-47c0-9928-7d1f2b233d92",
+              "name": "pnl"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "dd529d0f-c768-4dad-9e5a-515b3bdb0c20",
+              "name": "pnlPct"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "1f0be127-e3b8-45da-97a8-31548c7de1c2",
+              "name": "cashAvailable"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "86742072-1e23-4816-b7b3-1b70fdff78e7",
+              "name": "affordableQuantity"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "boolean"
+              },
+              "id": "427c334b-bb74-4b20-94b9-817c6315a709",
+              "name": "canBuy"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "boolean"
+              },
+              "id": "74800ca2-32cb-4c51-8068-a8b5f9517e7f",
+              "name": "canSell"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "boolean"
+              },
+              "id": "08448bc3-a021-4541-b493-764c1a00859d",
+              "name": "canRebalance"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "boolean"
+              },
+              "id": "1f8b8f34-eacc-445c-b1ae-0408dfe77b09",
+              "name": "isFallback"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "e0630fa9-0b9e-4f50-99cb-af8c7ecf5c78",
+              "name": "holdLockedUntil"
+            }
+          ],
+          "name": "finance-plan-row-response",
+          "origin": {
+            "code": "200",
+            "path": "/finance/v1/plan/{symbol}",
+            "pointer": [],
+            "verb": "get"
           }
         },
         "4f9e9dcf-5c82-4f8a-9d52-8a788716a029": {
@@ -3532,7 +3785,107 @@
           }
         }
       },
-      "variants": {}
+      "variants": {
+        "5ed0b2ab-486f-4285-a3ae-61c86b942f6a": {
+          "id": "5ed0b2ab-486f-4285-a3ae-61c86b942f6a",
+          "name": "can_rebalance",
+          "rule": {
+            "children": [
+              {
+                "id": "rn139",
+                "kind": "check",
+                "operand": {
+                  "kind": "literal",
+                  "value": true
+                },
+                "operator": "==",
+                "path": [
+                  "d40ab2bc-c8c8-450a-bbbc-bf82eae46b7d",
+                  "08448bc3-a021-4541-b493-764c1a00859d"
+                ]
+              }
+            ],
+            "connective": "all",
+            "id": "rn140",
+            "kind": "group",
+            "negated": false
+          }
+        },
+        "6b784f73-97c5-40fc-9eff-e710a084b5dc": {
+          "id": "6b784f73-97c5-40fc-9eff-e710a084b5dc",
+          "name": "can_buy",
+          "rule": {
+            "children": [
+              {
+                "id": "rn81",
+                "kind": "check",
+                "operand": {
+                  "kind": "literal",
+                  "value": true
+                },
+                "operator": "==",
+                "path": [
+                  "d40ab2bc-c8c8-450a-bbbc-bf82eae46b7d",
+                  "427c334b-bb74-4b20-94b9-817c6315a709"
+                ]
+              }
+            ],
+            "connective": "all",
+            "id": "rn82",
+            "kind": "group",
+            "negated": false
+          }
+        },
+        "a023cd56-177f-432e-ba35-3c9b68f8776b": {
+          "id": "a023cd56-177f-432e-ba35-3c9b68f8776b",
+          "name": "can_cell",
+          "rule": {
+            "children": [
+              {
+                "id": "rn105",
+                "kind": "check",
+                "operand": {
+                  "kind": "literal",
+                  "value": true
+                },
+                "operator": "==",
+                "path": [
+                  "d40ab2bc-c8c8-450a-bbbc-bf82eae46b7d",
+                  "74800ca2-32cb-4c51-8068-a8b5f9517e7f"
+                ]
+              }
+            ],
+            "connective": "all",
+            "id": "rn106",
+            "kind": "group",
+            "negated": false
+          }
+        },
+        "e36a71c1-aead-4007-9a52-ff67a3d301e5": {
+          "id": "e36a71c1-aead-4007-9a52-ff67a3d301e5",
+          "name": "has_action",
+          "rule": {
+            "children": [
+              {
+                "id": "rn67",
+                "kind": "check",
+                "operand": {
+                  "kind": "literal",
+                  "value": ""
+                },
+                "operator": "exists",
+                "path": [
+                  "d40ab2bc-c8c8-450a-bbbc-bf82eae46b7d"
+                ]
+              }
+            ],
+            "connective": "all",
+            "id": "rn68",
+            "kind": "group",
+            "negated": false
+          }
+        }
+      }
     }
   },
   "functions": {
@@ -3549,7 +3902,7 @@
     }
   },
   "npmAllowlist": {},
-  "one": "0.4.83",
+  "one": "0.4.86",
   "screens": [
     {
       "computeds": {
@@ -4447,6 +4800,25 @@
       "name": "index-dashboard"
     },
     {
+      "computeds": {
+        "1a3ae7ae-c00c-4c73-be34-e4a8e4e25d1c": {
+          "args": {
+            "428cbe18-03aa-490e-a26c-ce47862cf2f1": {
+              "path": [
+                "d40ab2bc-c8c8-450a-bbbc-bf82eae46b7d"
+              ],
+              "source": "path"
+            },
+            "ddad3fd6-7c80-4071-a61c-12ea69feaf60": {
+              "source": "variable",
+              "variableId": "4eed7eb6-3b81-46b9-b05b-7805062c1b80"
+            }
+          },
+          "functionId": "83018475-a2cb-464d-8bd6-9cb056fbe7c8",
+          "id": "1a3ae7ae-c00c-4c73-be34-e4a8e4e25d1c",
+          "name": "priceRequired"
+        }
+      },
       "featureId": "bbad551b-72b3-4fde-86f9-afa810cbc40c",
       "id": "bb75c0ed-20d1-445e-a81a-df1cde919f03",
       "inputs": {
@@ -4461,7 +4833,17 @@
         }
       },
       "kind": "feature",
-      "name": "rebalance"
+      "name": "rebalance",
+      "variables": {
+        "4eed7eb6-3b81-46b9-b05b-7805062c1b80": {
+          "cardinality": "one",
+          "dataType": "number",
+          "id": "4eed7eb6-3b81-46b9-b05b-7805062c1b80",
+          "initial": "0",
+          "kind": "plain",
+          "name": "quanitity"
+        }
+      }
     }
   ],
   "sharedShapes": {},
@@ -4473,6 +4855,6 @@
     "name": "invest",
     "open": false,
     "theme": "",
-    "version": "0.1.11"
+    "version": "0.1.12"
   }
 }
