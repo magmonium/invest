@@ -14,7 +14,7 @@
     },
     "mode": "new"
   },
-  "codegen": "0.8.24",
+  "codegen": "0.8.25",
   "distinct": [],
   "enums": {
     "4bc51fb3-db70-4ead-ac0d-c48ae741522d": {
@@ -552,28 +552,21 @@
         },
         "37ba9643-8249-44bf-8d9f-42d041cbeb6a": {
           "aiDrafted": true,
-          "body": "return Object.values(companyMap)\n    .map(company => ({\n      value: company.id,\n      label: company.name\n    }))\n    .sort((a, b) => a.label.localeCompare(b.label));",
+          "body": "return Object.values(companyMap)\n    .map(company => ({\n      value: company.symbol,\n      label: company.name\n    }))\n    .sort((a, b) => a.label.localeCompare(b.label));",
           "cases": [
+            {
+              "args": [
+                "{ \"AAPL\": { \"symbol\": \"AAPL\", \"name\": \"Apple Inc.\", \"ticker\": \"\", \"isin\": \"\", \"sector\": \"\", \"industry\": \"\", \"subindustry\": \"\", \"type\": \"\", \"exchange\": \"\", \"marketCapLabel\": \"\", \"etfLiqLabel\": \"\", \"price\": 0, \"marketCap\": 0, \"mrktCapRank\": 0, \"momRank\": 0, \"faceValue\": 0, \"dailyChange\": 0, \"weekChange\": 0, \"monthChange\": 0, \"yearlyChange\": 0, \"maxChange\": 0, \"forecast\": 0, \"forecastProfit\": 0, \"sma10d\": 0, \"sma50d\": 0, \"sma100d\": 0, \"sma200d\": 0, \"sma10dPct\": 0, \"sma50dPct\": 0, \"sma100dPct\": 0, \"sma200dPct\": 0, \"ema10d\": 0, \"ema50d\": 0, \"ema100d\": 0, \"ema200d\": 0, \"ema10dPct\": 0, \"ema50dPct\": 0, \"ema100dPct\": 0, \"ema200dPct\": 0, \"avgScore\": 0, \"momScore\": 0, \"valScore\": 0, \"volScore\": 0, \"durScore\": 0, \"drawScore\": 0, \"ttmPe\": 0, \"pb\": 0, \"indpe\": 0, \"indpb\": 0, \"divYield\": 0, \"eps\": 0, \"risk\": 0, \"maxDrawdown\": 0, \"currentDrawdown\": 0, \"daysSincePeak\": 0, \"riseFromValley\": 0, \"max\": 0, \"min\": 0, \"updated\": \"\", \"scoredOn\": \"\", \"id\": \"\", \"link\": \"\", \"description\": \"\", \"weekly\": [], \"financialSummary\": [] }, \"MSFT\": { \"symbol\": \"MSFT\", \"name\": \"Microsoft Corp.\", \"ticker\": \"\", \"isin\": \"\", \"sector\": \"\", \"industry\": \"\", \"subindustry\": \"\", \"type\": \"\", \"exchange\": \"\", \"marketCapLabel\": \"\", \"etfLiqLabel\": \"\", \"price\": 0, \"marketCap\": 0, \"mrktCapRank\": 0, \"momRank\": 0, \"faceValue\": 0, \"dailyChange\": 0, \"weekChange\": 0, \"monthChange\": 0, \"yearlyChange\": 0, \"maxChange\": 0, \"forecast\": 0, \"forecastProfit\": 0, \"sma10d\": 0, \"sma50d\": 0, \"sma100d\": 0, \"sma200d\": 0, \"sma10dPct\": 0, \"sma50dPct\": 0, \"sma100dPct\": 0, \"sma200dPct\": 0, \"ema10d\": 0, \"ema50d\": 0, \"ema100d\": 0, \"ema200d\": 0, \"ema10dPct\": 0, \"ema50dPct\": 0, \"ema100dPct\": 0, \"ema200dPct\": 0, \"avgScore\": 0, \"momScore\": 0, \"valScore\": 0, \"volScore\": 0, \"durScore\": 0, \"drawScore\": 0, \"ttmPe\": 0, \"pb\": 0, \"indpe\": 0, \"indpb\": 0, \"divYield\": 0, \"eps\": 0, \"risk\": 0, \"maxDrawdown\": 0, \"currentDrawdown\": 0, \"daysSincePeak\": 0, \"riseFromValley\": 0, \"max\": 0, \"min\": 0, \"updated\": \"\", \"scoredOn\": \"\", \"id\": \"\", \"link\": \"\", \"description\": \"\", \"weekly\": [], \"financialSummary\": [] } }"
+              ],
+              "expected": "[{ \"value\": \"AAPL\", \"label\": \"Apple Inc.\" }, { \"value\": \"MSFT\", \"label\": \"Microsoft Corp.\" }]",
+              "name": "maps and sorts multiple companies alphabetically by name"
+            },
             {
               "args": [
                 "{}"
               ],
               "expected": "[]",
-              "name": "empty company map"
-            },
-            {
-              "args": [
-                "{ \"AAPL\": { \"symbol\": \"AAPL\", \"name\": \"Apple Inc.\", \"ticker\": \"AAPL\", \"isin\": \"US0378331005\", \"sector\": \"Technology\", \"industry\": \"Consumer Electronics\", \"subindustry\": \"Hardware\", \"type\": \"Stock\", \"exchange\": \"NASDAQ\", \"marketCapLabel\": \"Mega\", \"etfLiqLabel\": \"High\", \"price\": 175, \"marketCap\": 2700000000000, \"mrktCapRank\": 1, \"momRank\": 2, \"faceValue\": 0.0001, \"dailyChange\": 1.2, \"weekChange\": -0.5, \"monthChange\": 3.4, \"yearlyChange\": 15.6, \"maxChange\": 800, \"forecast\": 190, \"forecastProfit\": 12, \"sma10d\": 173, \"sma50d\": 170, \"sma100d\": 168, \"sma200d\": 160, \"sma10dPct\": 1.15, \"sma50dPct\": 2.94, \"sma100dPct\": 4.16, \"sma200dPct\": 9.37, \"ema10d\": 174, \"ema50d\": 171, \"ema100d\": 167, \"ema200d\": 161, \"ema10dPct\": 0.57, \"ema50dPct\": 2.33, \"ema100dPct\": 4.79, \"ema200dPct\": 8.69, \"avgScore\": 8.5, \"momScore\": 7, \"valScore\": 5, \"volScore\": 9, \"durScore\": 9, \"drawScore\": 8, \"ttmPe\": 29.1, \"pb\": 46.3, \"indpe\": 26.5, \"indpb\": 32.1, \"divYield\": 0.55, \"eps\": 6.15, \"risk\": 1, \"maxDrawdown\": -12.4, \"currentDrawdown\": -3.1, \"daysSincePeak\": 15, \"riseFromValley\": 4.2, \"max\": 198.2, \"min\": 124.1, \"updated\": \"2023-10-15T00:00:00Z\", \"scoredOn\": \"2023-10-15T00:00:00Z\", \"id\": \"apple-123\", \"link\": \"https://apple.com\", \"description\": \"Technology company\", \"weekly\": [], \"financialSummary\": [] } }"
-              ],
-              "expected": "[{ \"value\": \"apple-123\", \"label\": \"Apple Inc.\" }]",
-              "name": "one company"
-            },
-            {
-              "args": [
-                "{ \"MSFT\": { \"symbol\": \"MSFT\", \"name\": \"Microsoft Corp.\", \"ticker\": \"MSFT\", \"isin\": \"US5949181045\", \"sector\": \"Technology\", \"industry\": \"Software\", \"subindustry\": \"Cloud\", \"type\": \"Stock\", \"exchange\": \"NASDAQ\", \"marketCapLabel\": \"Mega\", \"etfLiqLabel\": \"High\", \"price\": 330, \"marketCap\": 2400000000000, \"mrktCapRank\": 2, \"momRank\": 3, \"faceValue\": 0.0000625, \"dailyChange\": -0.4, \"weekChange\": 2.1, \"monthChange\": 5.1, \"yearlyChange\": 28.3, \"maxChange\": 1200, \"forecast\": 360, \"forecastProfit\": 15, \"sma10d\": 328, \"sma50d\": 320, \"sma100d\": 310, \"sma200d\": 290, \"sma10dPct\": 0.6, \"sma50dPct\": 3.1, \"sma100dPct\": 6.4, \"sma200dPct\": 13.8, \"ema10d\": 329, \"ema50d\": 318, \"ema100d\": 308, \"ema200d\": 292, \"ema10dPct\": 0.3, \"ema50dPct\": 3.7, \"ema100dPct\": 7.1, \"ema200dPct\": 13, \"avgScore\": 9, \"momScore\": 8, \"valScore\": 4, \"volScore\": 9, \"durScore\": 9, \"drawScore\": 9, \"ttmPe\": 33.4, \"pb\": 12.5, \"indpe\": 28.2, \"indpb\": 10.1, \"divYield\": 0.82, \"eps\": 9.88, \"risk\": 1, \"maxDrawdown\": -10.5, \"currentDrawdown\": -1.5, \"daysSincePeak\": 5, \"riseFromValley\": 8.4, \"max\": 366.7, \"min\": 213.4, \"updated\": \"2023-10-15T00:00:00Z\", \"scoredOn\": \"2023-10-15T00:00:00Z\", \"id\": \"msft-456\", \"link\": \"https://microsoft.com\", \"description\": \"Software company\", \"weekly\": [], \"financialSummary\": [] }, \"AMZN\": { \"symbol\": \"AMZN\", \"name\": \"Amazon.com Inc.\", \"ticker\": \"AMZN\", \"isin\": \"US0231351067\", \"sector\": \"Consumer Discretionary\", \"industry\": \"Retail\", \"subindustry\": \"E-Commerce\", \"type\": \"Stock\", \"exchange\": \"NASDAQ\", \"marketCapLabel\": \"Large\", \"etfLiqLabel\": \"High\", \"price\": 130, \"marketCap\": 1300000000000, \"mrktCapRank\": 5, \"momRank\": 8, \"faceValue\": 0.01, \"dailyChange\": 1.5, \"weekChange\": 3.2, \"monthChange\": -1.2, \"yearlyChange\": 12, \"maxChange\": 1500, \"forecast\": 150, \"forecastProfit\": 8, \"sma10d\": 128, \"sma50d\": 129, \"sma100d\": 125, \"sma200d\": 115, \"sma10dPct\": 1.56, \"sma50dPct\": 0.77, \"sma100dPct\": 4, \"sma200dPct\": 13.04, \"ema10d\": 129, \"ema50d\": 128, \"ema100d\": 124, \"ema200d\": 118, \"ema10dPct\": 0.77, \"ema50dPct\": 1.56, \"ema100dPct\": 4.83, \"ema200dPct\": 10.17, \"avgScore\": 7.5, \"momScore\": 6, \"valScore\": 4, \"volScore\": 8, \"durScore\": 8, \"drawScore\": 7, \"ttmPe\": 60.2, \"pb\": 8.4, \"indpe\": 40, \"indpb\": 6.5, \"divYield\": 0, \"eps\": 2.16, \"risk\": 3, \"maxDrawdown\": -25.6, \"currentDrawdown\": -8.4, \"daysSincePeak\": 28, \"riseFromValley\": 14.5, \"max\": 145.8, \"min\": 81.4, \"updated\": \"2023-10-15T00:00:00Z\", \"scoredOn\": \"2023-10-15T00:00:00Z\", \"id\": \"amzn-789\", \"link\": \"https://amazon.com\", \"description\": \"E-Commerce\", \"weekly\": [], \"financialSummary\": [] } }"
-              ],
-              "expected": "[{ \"value\": \"amzn-789\", \"label\": \"Amazon.com Inc.\" }, { \"value\": \"msft-456\", \"label\": \"Microsoft Corp.\" }]",
-              "name": "multiple companies sorted alphabetically by name"
+              "name": "handles empty company map"
             }
           ],
           "description": "Maps a dictionary of companies to navigation options, sorted alphabetically by company name.",
@@ -2886,6 +2879,36 @@
     "bbad551b-72b3-4fde-86f9-afa810cbc40c": {
       "computeds": {},
       "functions": {
+        "83018475-a2cb-464d-8bd6-9cb056fbe7c8": {
+          "aiDrafted": true,
+          "body": "// Guard against null/undefined action or missing/invalid currentPrice\n  if (!action || typeof action.currentPrice !== 'number' || isNaN(action.currentPrice)) {\n    return 0;\n  }\n\n  // Ensure quantity is a number; treat non-numeric values as 0\n  const qty = typeof quanitity === 'number' ? quanitity : 0;\n\n  return qty * action.currentPrice;",
+          "description": "Calculates the total price required for a given quantity based on the current price in the action.",
+          "id": "83018475-a2cb-464d-8bd6-9cb056fbe7c8",
+          "name": "priceRequired",
+          "params": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "ddad3fd6-7c80-4071-a61c-12ea69feaf60",
+              "name": "quanitity"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "shapeId": "4a6e2f89-b8ea-49b0-b494-47320a112c9f",
+                "type": "shape"
+              },
+              "id": "428cbe18-03aa-490e-a26c-ce47862cf2f1",
+              "name": "action"
+            }
+          ],
+          "returnCardinality": "one",
+          "returnType": {
+            "type": "number"
+          }
+        },
         "9c29b472-8a71-4473-9203-8fae4fb181ca": {
           "aiDrafted": true,
           "body": "if (!portfolio || !Array.isArray(portfolio.rebalance)) {\n    return [];\n  }\n\n  const items = [...portfolio.rebalance];\n  if (!sort) {\n    return items;\n  }\n\n  const isDesc = direction.toLowerCase() === 'desc';\n\n  return items.sort((a, b) => {\n    const valA = (a as unknown as Record<string, unknown>)[sort];\n    const valB = (b as unknown as Record<string, unknown>)[sort];\n\n    if (valA === valB) return 0;\n    if (valA === undefined || valA === null) return 1;\n    if (valB === undefined || valB === null) return -1;\n\n    let comparison = 0;\n    if (typeof valA === 'string' && typeof valB === 'string') {\n      comparison = valA.localeCompare(valB);\n    } else if (typeof valA === 'number' && typeof valB === 'number') {\n      comparison = valA - valB;\n    } else {\n      comparison = String(valA).localeCompare(String(valB));\n    }\n\n    return isDesc ? -comparison : comparison;\n  });",
@@ -3133,6 +3156,40 @@
       },
       "id": "bbad551b-72b3-4fde-86f9-afa810cbc40c",
       "methods": {
+        "aa042e8c-ac59-445d-b2e8-5420da09091c": {
+          "id": "aa042e8c-ac59-445d-b2e8-5420da09091c",
+          "inputs": [
+            {
+              "arg": "symbol",
+              "source": "args",
+              "target": [
+                "path",
+                "symbol"
+              ]
+            }
+          ],
+          "name": "getFinancePlan",
+          "path": "/finance/v1/plan/{symbol}",
+          "persists": [
+            {
+              "id": "70881faf-873c-43a8-993f-91b692864e61",
+              "key": "",
+              "propertyId": "d40ab2bc-c8c8-450a-bbbc-bf82eae46b7d",
+              "shelf": "store",
+              "source": [],
+              "sourceKind": "clear",
+              "timing": "before"
+            }
+          ],
+          "response": [
+            {
+              "code": "200",
+              "propertyId": "d40ab2bc-c8c8-450a-bbbc-bf82eae46b7d",
+              "source": []
+            }
+          ],
+          "verb": "get"
+        },
         "d11a433a-2c3e-47e2-bf79-5ae3f0b79390": {
           "id": "d11a433a-2c3e-47e2-bf79-5ae3f0b79390",
           "inputs": [],
@@ -3174,6 +3231,15 @@
           },
           "id": "58ecf14d-2c1f-4d48-a6fb-d4baa07b348c",
           "name": "direction"
+        },
+        "d40ab2bc-c8c8-450a-bbbc-bf82eae46b7d": {
+          "cardinality": "one",
+          "dataType": {
+            "shapeId": "4a6e2f89-b8ea-49b0-b494-47320a112c9f",
+            "type": "shape"
+          },
+          "id": "d40ab2bc-c8c8-450a-bbbc-bf82eae46b7d",
+          "name": "action"
         }
       },
       "shapes": {
@@ -3301,6 +3367,14 @@
             {
               "cardinality": "one",
               "dataType": {
+                "type": "string"
+              },
+              "id": "38c8fb26-f1cc-4d05-a08d-d5ce624049a4",
+              "name": "priceAsOf"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
                 "type": "number"
               },
               "id": "fdfc72be-238b-4c3c-b48b-dc137ab53765",
@@ -3347,6 +3421,186 @@
               "rebalance"
             ],
             "verb": "patch"
+          }
+        },
+        "4a6e2f89-b8ea-49b0-b494-47320a112c9f": {
+          "id": "4a6e2f89-b8ea-49b0-b494-47320a112c9f",
+          "keys": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "6d55b018-245b-48df-8c31-aa80f4064595",
+              "name": "symbol"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "a45fab3b-cffd-4e0f-812a-ab70aeb0ad22",
+              "name": "action"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "4435a383-8bc9-4b80-b4c1-7e72d0b9ccc3",
+              "name": "quantity"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "512e17b4-0518-4f05-8ac9-f9b30ee2bdb2",
+              "name": "idealQuantity"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "f02584b7-5398-4d60-8b1b-493a59b86296",
+              "name": "deltaQuantity"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "eab3c2d0-50b0-4c0d-b6cc-d69e87ab4bb9",
+              "name": "minQuantity"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "a354287f-7c84-4ee0-9179-6f6cb2f68bb3",
+              "name": "maxQuantity"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "6c2cf1d6-0de8-4904-8158-156a6e092a30",
+              "name": "currentPrice"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "515b8346-13e8-4273-861a-abf35669acbf",
+              "name": "priceAsOf"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "722d6eec-6795-461b-8402-89c8048c44f3",
+              "name": "currentValue"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "79d32158-9347-43b3-a127-24c17a763192",
+              "name": "investedValue"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "97688fe0-f4db-4ff8-95ec-fe9b90708d34",
+              "name": "allocationPct"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "f09e2f38-2bed-47c0-9928-7d1f2b233d92",
+              "name": "pnl"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "dd529d0f-c768-4dad-9e5a-515b3bdb0c20",
+              "name": "pnlPct"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "1f0be127-e3b8-45da-97a8-31548c7de1c2",
+              "name": "cashAvailable"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "86742072-1e23-4816-b7b3-1b70fdff78e7",
+              "name": "affordableQuantity"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "boolean"
+              },
+              "id": "427c334b-bb74-4b20-94b9-817c6315a709",
+              "name": "canBuy"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "boolean"
+              },
+              "id": "74800ca2-32cb-4c51-8068-a8b5f9517e7f",
+              "name": "canSell"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "boolean"
+              },
+              "id": "08448bc3-a021-4541-b493-764c1a00859d",
+              "name": "canRebalance"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "boolean"
+              },
+              "id": "1f8b8f34-eacc-445c-b1ae-0408dfe77b09",
+              "name": "isFallback"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "e0630fa9-0b9e-4f50-99cb-af8c7ecf5c78",
+              "name": "holdLockedUntil"
+            }
+          ],
+          "name": "finance-plan-row-response",
+          "origin": {
+            "code": "200",
+            "path": "/finance/v1/plan/{symbol}",
+            "pointer": [],
+            "verb": "get"
           }
         },
         "4f9e9dcf-5c82-4f8a-9d52-8a788716a029": {
@@ -3539,7 +3793,107 @@
           }
         }
       },
-      "variants": {}
+      "variants": {
+        "5ed0b2ab-486f-4285-a3ae-61c86b942f6a": {
+          "id": "5ed0b2ab-486f-4285-a3ae-61c86b942f6a",
+          "name": "can_rebalance",
+          "rule": {
+            "children": [
+              {
+                "id": "rn139",
+                "kind": "check",
+                "operand": {
+                  "kind": "literal",
+                  "value": true
+                },
+                "operator": "==",
+                "path": [
+                  "d40ab2bc-c8c8-450a-bbbc-bf82eae46b7d",
+                  "08448bc3-a021-4541-b493-764c1a00859d"
+                ]
+              }
+            ],
+            "connective": "all",
+            "id": "rn140",
+            "kind": "group",
+            "negated": false
+          }
+        },
+        "6b784f73-97c5-40fc-9eff-e710a084b5dc": {
+          "id": "6b784f73-97c5-40fc-9eff-e710a084b5dc",
+          "name": "can_buy",
+          "rule": {
+            "children": [
+              {
+                "id": "rn81",
+                "kind": "check",
+                "operand": {
+                  "kind": "literal",
+                  "value": true
+                },
+                "operator": "==",
+                "path": [
+                  "d40ab2bc-c8c8-450a-bbbc-bf82eae46b7d",
+                  "427c334b-bb74-4b20-94b9-817c6315a709"
+                ]
+              }
+            ],
+            "connective": "all",
+            "id": "rn82",
+            "kind": "group",
+            "negated": false
+          }
+        },
+        "a023cd56-177f-432e-ba35-3c9b68f8776b": {
+          "id": "a023cd56-177f-432e-ba35-3c9b68f8776b",
+          "name": "can_cell",
+          "rule": {
+            "children": [
+              {
+                "id": "rn105",
+                "kind": "check",
+                "operand": {
+                  "kind": "literal",
+                  "value": true
+                },
+                "operator": "==",
+                "path": [
+                  "d40ab2bc-c8c8-450a-bbbc-bf82eae46b7d",
+                  "74800ca2-32cb-4c51-8068-a8b5f9517e7f"
+                ]
+              }
+            ],
+            "connective": "all",
+            "id": "rn106",
+            "kind": "group",
+            "negated": false
+          }
+        },
+        "e36a71c1-aead-4007-9a52-ff67a3d301e5": {
+          "id": "e36a71c1-aead-4007-9a52-ff67a3d301e5",
+          "name": "has_action",
+          "rule": {
+            "children": [
+              {
+                "id": "rn67",
+                "kind": "check",
+                "operand": {
+                  "kind": "literal",
+                  "value": ""
+                },
+                "operator": "exists",
+                "path": [
+                  "d40ab2bc-c8c8-450a-bbbc-bf82eae46b7d"
+                ]
+              }
+            ],
+            "connective": "all",
+            "id": "rn68",
+            "kind": "group",
+            "negated": false
+          }
+        }
+      }
     }
   },
   "functions": {
@@ -3556,7 +3910,7 @@
     }
   },
   "npmAllowlist": {},
-  "one": "0.4.82",
+  "one": "0.4.88",
   "screens": [
     {
       "computeds": {
@@ -3958,6 +4312,17 @@
     },
     {
       "id": "1b9fbe2d-3242-4f27-9229-e78ac2e60242",
+      "inputs": {
+        "e7ab473d-016c-4e44-86ef-b115d9c57947": {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "id": "e7ab473d-016c-4e44-86ef-b115d9c57947",
+          "name": "id",
+          "required": true
+        }
+      },
       "kind": "page",
       "name": "instruments"
     },
@@ -4047,7 +4412,33 @@
         }
       },
       "kind": "feature",
-      "name": "ranking-company"
+      "name": "ranking-company",
+      "variants": {
+        "6c0623ae-f010-4cd4-8b77-5926b70b7d12": {
+          "id": "6c0623ae-f010-4cd4-8b77-5926b70b7d12",
+          "name": "is_portfolio",
+          "rule": {
+            "children": [
+              {
+                "id": "rn25",
+                "kind": "check",
+                "operand": {
+                  "kind": "literal",
+                  "value": "PORTFOLIO"
+                },
+                "operator": "==",
+                "path": [
+                  "39757484-69ff-4f2d-9dd4-7e0b043a5cc2"
+                ]
+              }
+            ],
+            "connective": "all",
+            "id": "rn26",
+            "kind": "group",
+            "negated": false
+          }
+        }
+      }
     },
     {
       "computeds": {
@@ -4350,10 +4741,137 @@
       },
       "kind": "feature",
       "name": "profit-revenue"
+    },
+    {
+      "id": "b29b5847-0c82-447b-bbe4-c0aac7a71a28",
+      "kind": "page",
+      "name": "index-state"
+    },
+    {
+      "id": "e24f9bb0-91ec-4874-8313-1c0d631fa204",
+      "inputs": {
+        "cb83dcee-5af9-4c28-a7a3-cc72ff0def6f": {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "id": "cb83dcee-5af9-4c28-a7a3-cc72ff0def6f",
+          "name": "id",
+          "required": true
+        }
+      },
+      "kind": "page",
+      "name": "index-details"
+    },
+    {
+      "computeds": {
+        "707b9461-61cc-4626-b909-e9afb1511722": {
+          "args": {
+            "id": {
+              "inputId": "7bd98597-3e11-4c14-8234-dd517940dc88",
+              "source": "input"
+            },
+            "map": {
+              "path": [
+                "e5e30d28-369a-42fb-abe6-516e96fd51ba"
+              ],
+              "source": "path"
+            }
+          },
+          "id": "707b9461-61cc-4626-b909-e9afb1511722",
+          "name": "index",
+          "oneFunction": "getFromMap",
+          "returns": {
+            "cardinality": "one",
+            "dataType": {
+              "shapeId": "eb34fbff-711a-4f7a-b67d-26dca35a7412",
+              "type": "shape"
+            },
+            "optional": true
+          }
+        }
+      },
+      "featureId": "acef9153-606d-4de2-8699-7c87fa589384",
+      "id": "38f5b18f-bfa4-4c13-89c1-e9853d8fe359",
+      "inputs": {
+        "7bd98597-3e11-4c14-8234-dd517940dc88": {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "id": "7bd98597-3e11-4c14-8234-dd517940dc88",
+          "name": "id",
+          "required": true
+        }
+      },
+      "kind": "feature",
+      "name": "index-dashboard"
+    },
+    {
+      "computeds": {
+        "1a3ae7ae-c00c-4c73-be34-e4a8e4e25d1c": {
+          "args": {
+            "428cbe18-03aa-490e-a26c-ce47862cf2f1": {
+              "path": [
+                "d40ab2bc-c8c8-450a-bbbc-bf82eae46b7d"
+              ],
+              "source": "path"
+            },
+            "ddad3fd6-7c80-4071-a61c-12ea69feaf60": {
+              "source": "variable",
+              "variableId": "4eed7eb6-3b81-46b9-b05b-7805062c1b80"
+            }
+          },
+          "functionId": "83018475-a2cb-464d-8bd6-9cb056fbe7c8",
+          "id": "1a3ae7ae-c00c-4c73-be34-e4a8e4e25d1c",
+          "name": "priceRequired"
+        }
+      },
+      "featureId": "bbad551b-72b3-4fde-86f9-afa810cbc40c",
+      "formModels": {
+        "e9bb7613-87e1-45f5-a79e-b5cde1efa663": {
+          "formId": "fb63f3d9-fcfa-4087-bc62-7fb37a973517",
+          "id": "e9bb7613-87e1-45f5-a79e-b5cde1efa663",
+          "keys": {
+            "de8a21b0-095a-4e57-88f7-9cd6b45165de": {
+              "path": [
+                "d40ab2bc-c8c8-450a-bbbc-bf82eae46b7d",
+                "f02584b7-5398-4d60-8b1b-493a59b86296"
+              ],
+              "source": "path"
+            }
+          },
+          "name": "formFb63f3d9Model"
+        }
+      },
+      "id": "bb75c0ed-20d1-445e-a81a-df1cde919f03",
+      "inputs": {
+        "db0904bd-93a1-4ddf-b070-7dc7f058f6a3": {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "id": "db0904bd-93a1-4ddf-b070-7dc7f058f6a3",
+          "name": "id",
+          "required": true
+        }
+      },
+      "kind": "feature",
+      "name": "rebalance",
+      "variables": {
+        "4eed7eb6-3b81-46b9-b05b-7805062c1b80": {
+          "cardinality": "one",
+          "dataType": "number",
+          "id": "4eed7eb6-3b81-46b9-b05b-7805062c1b80",
+          "initial": "0",
+          "kind": "plain",
+          "name": "quanitity"
+        }
+      }
     }
   ],
   "sharedShapes": {},
-  "v": 30,
+  "v": 31,
   "wcConfig": {
     "appColor": "#3949ab",
     "description": "to invest",
@@ -4361,6 +4879,6 @@
     "name": "invest",
     "open": false,
     "theme": "",
-    "version": "0.1.11"
+    "version": "0.1.13"
   }
 }
