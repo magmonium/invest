@@ -65,7 +65,7 @@
         },
         "id": "057b163a-e95b-4f30-a0ec-b02f7cd297e0",
         "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
-        "type": "price_ladder_mark",
+        "type": "scale_mark",
         "valueSource": "dynamic"
       },
       "084f6c3f-2a52-4279-8c18-c892cef930ac": {
@@ -83,12 +83,11 @@
         "childrens": [],
         "configs": {
           "key": "sma100",
-          "label": "sma-100",
-          "rank": 3
+          "label": "sma-100"
         },
         "id": "084f6c3f-2a52-4279-8c18-c892cef930ac",
         "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
-        "type": "price_ladder_mark",
+        "type": "scale_mark",
         "valueSource": "dynamic"
       },
       "47a051f7-b8a4-426b-a7b3-9811d8f6db57": {
@@ -115,12 +114,11 @@
         "configs": {
           "key": "sma10",
           "kind": "bound",
-          "label": "sma-10",
-          "rank": 1
+          "label": "sma-10"
         },
         "id": "4aa947f0-3a8e-46d2-ba1c-f3106a9dab92",
         "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
-        "type": "price_ladder_mark",
+        "type": "scale_mark",
         "valueSource": "dynamic"
       },
       "4b455ffa-aa6b-4bdd-8917-c5ed379a7ff0": {
@@ -143,7 +141,7 @@
         },
         "id": "4b455ffa-aa6b-4bdd-8917-c5ed379a7ff0",
         "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
-        "type": "price_ladder_mark",
+        "type": "scale_mark",
         "valueSource": "dynamic"
       },
       "9b7e2df3-44c3-4b8a-acc7-40b561994fac": {
@@ -161,12 +159,11 @@
         "childrens": [],
         "configs": {
           "key": "sma200",
-          "label": "sma-200",
-          "rank": 4
+          "label": "sma-200"
         },
         "id": "9b7e2df3-44c3-4b8a-acc7-40b561994fac",
         "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
-        "type": "price_ladder_mark",
+        "type": "scale_mark",
         "valueSource": "dynamic"
       },
       "abe42803-a1c1-4b44-9443-4b08c7846bf6": {
@@ -184,11 +181,12 @@
         "childrens": [],
         "configs": {
           "key": "forecast",
+          "kind": "target",
           "label": "future-price"
         },
         "id": "abe42803-a1c1-4b44-9443-4b08c7846bf6",
         "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
-        "type": "price_ladder_mark",
+        "type": "scale_mark",
         "valueSource": "dynamic"
       },
       "e24b78f8-419e-40db-8cb1-fc9ccdeb3958": {
@@ -206,11 +204,12 @@
         "childrens": [],
         "configs": {
           "key": "current",
-          "label": "current"
+          "label": "current",
+          "primary": true
         },
         "id": "e24b78f8-419e-40db-8cb1-fc9ccdeb3958",
         "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
-        "type": "price_ladder_mark",
+        "type": "scale_mark",
         "valueSource": "dynamic"
       },
       "e327c298-ee94-432e-a6e7-3bfdf9bbcb03": {
@@ -222,22 +221,1018 @@
           "4b455ffa-aa6b-4bdd-8917-c5ed379a7ff0",
           "057b163a-e95b-4f30-a0ec-b02f7cd297e0",
           "e24b78f8-419e-40db-8cb1-fc9ccdeb3958",
-          "abe42803-a1c1-4b44-9443-4b08c7846bf6"
+          "abe42803-a1c1-4b44-9443-4b08c7846bf6",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_golden_cross",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_death_cross",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_death_cross_near",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_golden_cross_near",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_bullish_alignment",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_bearish_alignment",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_strongly_bullish",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_bullish_support",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_recovering",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_bearish_pressure",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_stretched",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_far_below_sma_200",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_averages_converging",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_52w_breakout",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_near_52w_high",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_new_52w_low",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_near_52w_low",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_forecast_against_trend",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_forecast_above_52w_high",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_cross_near",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_above_sma10",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma10_above_sma50",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma50_above_sma100",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma100_above_sma200",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_below_sma10",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma10_below_sma50",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma50_below_sma100",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma100_below_sma200",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_above_sma50",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_above_sma200",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_not_above_sma50",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_not_above_sma200",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma10_under_103_of_sma50",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma10_under_103_of_sma100",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma10_under_103_of_sma200",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma50_under_103_of_sma10",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma50_under_103_of_sma100",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma50_under_103_of_sma200",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma100_under_103_of_sma10",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma100_under_103_of_sma50",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma100_under_103_of_sma200",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma200_under_103_of_sma10",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma200_under_103_of_sma50",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma200_under_103_of_sma100",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_below_52w_high",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_within_3_of_52w_high",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_above_52w_low",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_within_3_of_52w_low",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_against_up",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_forecast_up",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_bear_trend",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_against_down",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_forecast_down",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_bull_trend",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_cross_pair_above",
+          "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_cross_pair_below"
         ],
         "configs": {
-          "crossFrom": "sma50",
-          "crossTo": "sma200",
-          "crossTone": "gold",
-          "signals": [
-            "all"
-          ],
-          "target": 2760,
-          "targetNote": "1Y",
-          "value": 2450
+          "format": "currency",
+          "maxSpanPct": 60
         },
         "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
         "parentId": "f4bfe4fb-7e00-4450-bd64-526733c9e78d",
-        "type": "price_ladder"
+        "type": "scale"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_52w_breakout": {
+        "childrens": [],
+        "configs": {
+          "key": "52w-breakout",
+          "label": "52w-breakout",
+          "left": "current",
+          "op": "gte",
+          "right": "high52w",
+          "rightKind": "mark",
+          "tone": "up",
+          "type": "compare"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_52w_breakout",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_above_52w_low": {
+        "childrens": [],
+        "configs": {
+          "hidden": true,
+          "key": "above-52w-low",
+          "left": "current",
+          "op": "gt",
+          "right": "low52w",
+          "rightKind": "mark",
+          "tone": "neutral",
+          "type": "compare"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_above_52w_low",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_above_sma10": {
+        "childrens": [],
+        "configs": {
+          "hidden": true,
+          "key": "above-sma10",
+          "left": "current",
+          "op": "gt",
+          "right": "sma10",
+          "rightKind": "mark",
+          "tone": "neutral",
+          "type": "compare"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_above_sma10",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_above_sma200": {
+        "childrens": [],
+        "configs": {
+          "hidden": true,
+          "key": "above-sma200",
+          "left": "current",
+          "op": "gt",
+          "right": "sma200",
+          "rightKind": "mark",
+          "tone": "neutral",
+          "type": "compare"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_above_sma200",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_above_sma50": {
+        "childrens": [],
+        "configs": {
+          "hidden": true,
+          "key": "above-sma50",
+          "left": "current",
+          "op": "gt",
+          "right": "sma50",
+          "rightKind": "mark",
+          "tone": "neutral",
+          "type": "compare"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_above_sma50",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_against_down": {
+        "childrens": [],
+        "configs": {
+          "hidden": true,
+          "key": "against-down",
+          "mode": "all",
+          "of": [
+            "forecast-down",
+            "bull-trend"
+          ],
+          "tone": "neutral",
+          "type": "combine"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_against_down",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_against_up": {
+        "childrens": [],
+        "configs": {
+          "hidden": true,
+          "key": "against-up",
+          "mode": "all",
+          "of": [
+            "forecast-up",
+            "bear-trend"
+          ],
+          "tone": "neutral",
+          "type": "combine"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_against_up",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_averages_converging": {
+        "childrens": [],
+        "configs": {
+          "key": "averages-converging",
+          "label": "averages-converging",
+          "mode": "all",
+          "of": [
+            "sma10-under-103-of-sma50",
+            "sma10-under-103-of-sma100",
+            "sma10-under-103-of-sma200",
+            "sma50-under-103-of-sma10",
+            "sma50-under-103-of-sma100",
+            "sma50-under-103-of-sma200",
+            "sma100-under-103-of-sma10",
+            "sma100-under-103-of-sma50",
+            "sma100-under-103-of-sma200",
+            "sma200-under-103-of-sma10",
+            "sma200-under-103-of-sma50",
+            "sma200-under-103-of-sma100"
+          ],
+          "tone": "warn",
+          "type": "combine"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_averages_converging",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_bear_trend": {
+        "childrens": [],
+        "configs": {
+          "hidden": true,
+          "key": "bear-trend",
+          "mode": "any",
+          "of": [
+            "death-cross",
+            "bearish-alignment"
+          ],
+          "tone": "neutral",
+          "type": "combine"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_bear_trend",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_bearish_alignment": {
+        "childrens": [],
+        "configs": {
+          "key": "bearish-alignment",
+          "label": "bearish-alignment",
+          "mode": "all",
+          "of": [
+            "below-sma10",
+            "sma10-below-sma50",
+            "sma50-below-sma100",
+            "sma100-below-sma200"
+          ],
+          "tone": "down",
+          "type": "combine"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_bearish_alignment",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_bearish_pressure": {
+        "childrens": [],
+        "configs": {
+          "key": "bearish-pressure",
+          "label": "bearish-pressure",
+          "mode": "all",
+          "of": [
+            "not-above-sma50",
+            "not-above-sma200"
+          ],
+          "tone": "down",
+          "type": "combine"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_bearish_pressure",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_below_52w_high": {
+        "childrens": [],
+        "configs": {
+          "hidden": true,
+          "key": "below-52w-high",
+          "left": "current",
+          "op": "lt",
+          "right": "high52w",
+          "rightKind": "mark",
+          "tone": "neutral",
+          "type": "compare"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_below_52w_high",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_below_sma10": {
+        "childrens": [],
+        "configs": {
+          "hidden": true,
+          "key": "below-sma10",
+          "left": "current",
+          "op": "lt",
+          "right": "sma10",
+          "rightKind": "mark",
+          "tone": "neutral",
+          "type": "compare"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_below_sma10",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_bull_trend": {
+        "childrens": [],
+        "configs": {
+          "hidden": true,
+          "key": "bull-trend",
+          "mode": "any",
+          "of": [
+            "golden-cross",
+            "bullish-alignment"
+          ],
+          "tone": "neutral",
+          "type": "combine"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_bull_trend",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_bullish_alignment": {
+        "childrens": [],
+        "configs": {
+          "key": "bullish-alignment",
+          "label": "bullish-alignment",
+          "mode": "all",
+          "of": [
+            "above-sma10",
+            "sma10-above-sma50",
+            "sma50-above-sma100",
+            "sma100-above-sma200"
+          ],
+          "tone": "up",
+          "type": "combine"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_bullish_alignment",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_bullish_support": {
+        "childrens": [],
+        "configs": {
+          "key": "bullish-support",
+          "label": "bullish-support",
+          "mode": "all",
+          "of": [
+            "not-above-sma50",
+            "above-sma200"
+          ],
+          "tone": "up",
+          "type": "combine"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_bullish_support",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_cross_near": {
+        "childrens": [],
+        "configs": {
+          "hidden": true,
+          "key": "cross-near",
+          "left": "sma50",
+          "n": 1,
+          "op": "within",
+          "right": "sma200",
+          "rightKind": "mark",
+          "tone": "neutral",
+          "type": "compare"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_cross_near",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_cross_pair_above": {
+        "childrens": [],
+        "configs": {
+          "bracket": true,
+          "hidden": true,
+          "key": "cross-pair-above",
+          "left": "sma50",
+          "op": "gte",
+          "right": "sma200",
+          "rightKind": "mark",
+          "tone": "gold",
+          "type": "compare"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_cross_pair_above",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_cross_pair_below": {
+        "childrens": [],
+        "configs": {
+          "bracket": true,
+          "hidden": true,
+          "key": "cross-pair-below",
+          "left": "sma50",
+          "op": "lt",
+          "right": "sma200",
+          "rightKind": "mark",
+          "tone": "gold",
+          "type": "compare"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_cross_pair_below",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_death_cross": {
+        "childrens": [],
+        "configs": {
+          "bracket": true,
+          "key": "death-cross",
+          "label": "death-cross",
+          "left": "sma50",
+          "op": "lt",
+          "right": "sma200",
+          "rightKind": "mark",
+          "tone": "down",
+          "type": "compare"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_death_cross",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_death_cross_near": {
+        "childrens": [],
+        "configs": {
+          "key": "death-cross-near",
+          "label": "death-cross-near",
+          "mode": "all",
+          "of": [
+            "golden-cross",
+            "cross-near"
+          ],
+          "tone": "down",
+          "type": "combine"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_death_cross_near",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_far_below_sma_200": {
+        "childrens": [],
+        "configs": {
+          "key": "far-below-sma-200",
+          "label": "far-below-sma-200",
+          "left": "current",
+          "op": "lt",
+          "right": "sma200",
+          "rightKind": "pct",
+          "rightValue": 80,
+          "tone": "down",
+          "type": "compare"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_far_below_sma_200",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_forecast_above_52w_high": {
+        "childrens": [],
+        "configs": {
+          "key": "forecast-above-52w-high",
+          "label": "forecast-above-52w-high",
+          "left": "forecast",
+          "op": "gt",
+          "right": "high52w",
+          "rightKind": "mark",
+          "tone": "neutral",
+          "type": "compare"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_forecast_above_52w_high",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_forecast_against_trend": {
+        "childrens": [],
+        "configs": {
+          "key": "forecast-against-trend",
+          "label": "forecast-against-trend",
+          "mode": "any",
+          "of": [
+            "against-up",
+            "against-down"
+          ],
+          "tone": "warn",
+          "type": "combine"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_forecast_against_trend",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_forecast_down": {
+        "childrens": [],
+        "configs": {
+          "hidden": true,
+          "key": "forecast-down",
+          "left": "forecast",
+          "op": "lt",
+          "right": "current",
+          "rightKind": "mark",
+          "tone": "neutral",
+          "type": "compare"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_forecast_down",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_forecast_up": {
+        "childrens": [],
+        "configs": {
+          "hidden": true,
+          "key": "forecast-up",
+          "left": "forecast",
+          "op": "gt",
+          "right": "current",
+          "rightKind": "mark",
+          "tone": "neutral",
+          "type": "compare"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_forecast_up",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_golden_cross": {
+        "childrens": [],
+        "configs": {
+          "bracket": true,
+          "key": "golden-cross",
+          "label": "golden-cross",
+          "left": "sma50",
+          "op": "gte",
+          "right": "sma200",
+          "rightKind": "mark",
+          "tone": "gold",
+          "type": "compare"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_golden_cross",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_golden_cross_near": {
+        "childrens": [],
+        "configs": {
+          "key": "golden-cross-near",
+          "label": "golden-cross-near",
+          "mode": "all",
+          "of": [
+            "death-cross",
+            "cross-near"
+          ],
+          "tone": "gold",
+          "type": "combine"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_golden_cross_near",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_near_52w_high": {
+        "childrens": [],
+        "configs": {
+          "key": "near-52w-high",
+          "label": "near-52w-high",
+          "mode": "all",
+          "of": [
+            "below-52w-high",
+            "within-3-of-52w-high"
+          ],
+          "tone": "up",
+          "type": "combine"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_near_52w_high",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_near_52w_low": {
+        "childrens": [],
+        "configs": {
+          "key": "near-52w-low",
+          "label": "near-52w-low",
+          "mode": "all",
+          "of": [
+            "above-52w-low",
+            "within-3-of-52w-low"
+          ],
+          "tone": "down",
+          "type": "combine"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_near_52w_low",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_new_52w_low": {
+        "childrens": [],
+        "configs": {
+          "key": "new-52w-low",
+          "label": "new-52w-low",
+          "left": "current",
+          "op": "lte",
+          "right": "low52w",
+          "rightKind": "mark",
+          "tone": "down",
+          "type": "compare"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_new_52w_low",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_not_above_sma200": {
+        "childrens": [],
+        "configs": {
+          "hidden": true,
+          "key": "not-above-sma200",
+          "left": "current",
+          "op": "lte",
+          "right": "sma200",
+          "rightKind": "mark",
+          "tone": "neutral",
+          "type": "compare"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_not_above_sma200",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_not_above_sma50": {
+        "childrens": [],
+        "configs": {
+          "hidden": true,
+          "key": "not-above-sma50",
+          "left": "current",
+          "op": "lte",
+          "right": "sma50",
+          "rightKind": "mark",
+          "tone": "neutral",
+          "type": "compare"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_not_above_sma50",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_recovering": {
+        "childrens": [],
+        "configs": {
+          "key": "recovering",
+          "label": "recovering",
+          "mode": "all",
+          "of": [
+            "above-sma50",
+            "not-above-sma200"
+          ],
+          "tone": "neutral",
+          "type": "combine"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_recovering",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma100_above_sma200": {
+        "childrens": [],
+        "configs": {
+          "hidden": true,
+          "key": "sma100-above-sma200",
+          "left": "sma100",
+          "op": "gt",
+          "right": "sma200",
+          "rightKind": "mark",
+          "tone": "neutral",
+          "type": "compare"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma100_above_sma200",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma100_below_sma200": {
+        "childrens": [],
+        "configs": {
+          "hidden": true,
+          "key": "sma100-below-sma200",
+          "left": "sma100",
+          "op": "lt",
+          "right": "sma200",
+          "rightKind": "mark",
+          "tone": "neutral",
+          "type": "compare"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma100_below_sma200",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma100_under_103_of_sma10": {
+        "childrens": [],
+        "configs": {
+          "hidden": true,
+          "key": "sma100-under-103-of-sma10",
+          "left": "sma100",
+          "op": "lt",
+          "right": "sma10",
+          "rightKind": "pct",
+          "rightValue": 103,
+          "tone": "neutral",
+          "type": "compare"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma100_under_103_of_sma10",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma100_under_103_of_sma200": {
+        "childrens": [],
+        "configs": {
+          "hidden": true,
+          "key": "sma100-under-103-of-sma200",
+          "left": "sma100",
+          "op": "lt",
+          "right": "sma200",
+          "rightKind": "pct",
+          "rightValue": 103,
+          "tone": "neutral",
+          "type": "compare"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma100_under_103_of_sma200",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma100_under_103_of_sma50": {
+        "childrens": [],
+        "configs": {
+          "hidden": true,
+          "key": "sma100-under-103-of-sma50",
+          "left": "sma100",
+          "op": "lt",
+          "right": "sma50",
+          "rightKind": "pct",
+          "rightValue": 103,
+          "tone": "neutral",
+          "type": "compare"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma100_under_103_of_sma50",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma10_above_sma50": {
+        "childrens": [],
+        "configs": {
+          "hidden": true,
+          "key": "sma10-above-sma50",
+          "left": "sma10",
+          "op": "gt",
+          "right": "sma50",
+          "rightKind": "mark",
+          "tone": "neutral",
+          "type": "compare"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma10_above_sma50",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma10_below_sma50": {
+        "childrens": [],
+        "configs": {
+          "hidden": true,
+          "key": "sma10-below-sma50",
+          "left": "sma10",
+          "op": "lt",
+          "right": "sma50",
+          "rightKind": "mark",
+          "tone": "neutral",
+          "type": "compare"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma10_below_sma50",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma10_under_103_of_sma100": {
+        "childrens": [],
+        "configs": {
+          "hidden": true,
+          "key": "sma10-under-103-of-sma100",
+          "left": "sma10",
+          "op": "lt",
+          "right": "sma100",
+          "rightKind": "pct",
+          "rightValue": 103,
+          "tone": "neutral",
+          "type": "compare"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma10_under_103_of_sma100",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma10_under_103_of_sma200": {
+        "childrens": [],
+        "configs": {
+          "hidden": true,
+          "key": "sma10-under-103-of-sma200",
+          "left": "sma10",
+          "op": "lt",
+          "right": "sma200",
+          "rightKind": "pct",
+          "rightValue": 103,
+          "tone": "neutral",
+          "type": "compare"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma10_under_103_of_sma200",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma10_under_103_of_sma50": {
+        "childrens": [],
+        "configs": {
+          "hidden": true,
+          "key": "sma10-under-103-of-sma50",
+          "left": "sma10",
+          "op": "lt",
+          "right": "sma50",
+          "rightKind": "pct",
+          "rightValue": 103,
+          "tone": "neutral",
+          "type": "compare"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma10_under_103_of_sma50",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma200_under_103_of_sma10": {
+        "childrens": [],
+        "configs": {
+          "hidden": true,
+          "key": "sma200-under-103-of-sma10",
+          "left": "sma200",
+          "op": "lt",
+          "right": "sma10",
+          "rightKind": "pct",
+          "rightValue": 103,
+          "tone": "neutral",
+          "type": "compare"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma200_under_103_of_sma10",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma200_under_103_of_sma100": {
+        "childrens": [],
+        "configs": {
+          "hidden": true,
+          "key": "sma200-under-103-of-sma100",
+          "left": "sma200",
+          "op": "lt",
+          "right": "sma100",
+          "rightKind": "pct",
+          "rightValue": 103,
+          "tone": "neutral",
+          "type": "compare"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma200_under_103_of_sma100",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma200_under_103_of_sma50": {
+        "childrens": [],
+        "configs": {
+          "hidden": true,
+          "key": "sma200-under-103-of-sma50",
+          "left": "sma200",
+          "op": "lt",
+          "right": "sma50",
+          "rightKind": "pct",
+          "rightValue": 103,
+          "tone": "neutral",
+          "type": "compare"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma200_under_103_of_sma50",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma50_above_sma100": {
+        "childrens": [],
+        "configs": {
+          "hidden": true,
+          "key": "sma50-above-sma100",
+          "left": "sma50",
+          "op": "gt",
+          "right": "sma100",
+          "rightKind": "mark",
+          "tone": "neutral",
+          "type": "compare"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma50_above_sma100",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma50_below_sma100": {
+        "childrens": [],
+        "configs": {
+          "hidden": true,
+          "key": "sma50-below-sma100",
+          "left": "sma50",
+          "op": "lt",
+          "right": "sma100",
+          "rightKind": "mark",
+          "tone": "neutral",
+          "type": "compare"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma50_below_sma100",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma50_under_103_of_sma10": {
+        "childrens": [],
+        "configs": {
+          "hidden": true,
+          "key": "sma50-under-103-of-sma10",
+          "left": "sma50",
+          "op": "lt",
+          "right": "sma10",
+          "rightKind": "pct",
+          "rightValue": 103,
+          "tone": "neutral",
+          "type": "compare"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma50_under_103_of_sma10",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma50_under_103_of_sma100": {
+        "childrens": [],
+        "configs": {
+          "hidden": true,
+          "key": "sma50-under-103-of-sma100",
+          "left": "sma50",
+          "op": "lt",
+          "right": "sma100",
+          "rightKind": "pct",
+          "rightValue": 103,
+          "tone": "neutral",
+          "type": "compare"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma50_under_103_of_sma100",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma50_under_103_of_sma200": {
+        "childrens": [],
+        "configs": {
+          "hidden": true,
+          "key": "sma50-under-103-of-sma200",
+          "left": "sma50",
+          "op": "lt",
+          "right": "sma200",
+          "rightKind": "pct",
+          "rightValue": 103,
+          "tone": "neutral",
+          "type": "compare"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_sma50_under_103_of_sma200",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_stretched": {
+        "childrens": [],
+        "configs": {
+          "key": "stretched",
+          "label": "stretched",
+          "left": "current",
+          "op": "gt",
+          "right": "sma200",
+          "rightKind": "pct",
+          "rightValue": 120,
+          "tone": "warn",
+          "type": "compare"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_stretched",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_strongly_bullish": {
+        "childrens": [],
+        "configs": {
+          "key": "strongly-bullish",
+          "label": "strongly-bullish",
+          "mode": "all",
+          "of": [
+            "above-sma50",
+            "above-sma200"
+          ],
+          "tone": "up",
+          "type": "combine"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_strongly_bullish",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_within_3_of_52w_high": {
+        "childrens": [],
+        "configs": {
+          "hidden": true,
+          "key": "within-3-of-52w-high",
+          "left": "current",
+          "op": "gt",
+          "right": "high52w",
+          "rightKind": "pct",
+          "rightValue": 97.08737864077669,
+          "tone": "neutral",
+          "type": "compare"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_within_3_of_52w_high",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
+      },
+      "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_within_3_of_52w_low": {
+        "childrens": [],
+        "configs": {
+          "hidden": true,
+          "key": "within-3-of-52w-low",
+          "left": "current",
+          "op": "lt",
+          "right": "low52w",
+          "rightKind": "pct",
+          "rightValue": 103,
+          "tone": "neutral",
+          "type": "compare"
+        },
+        "id": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03_within_3_of_52w_low",
+        "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
+        "type": "scale_relation"
       },
       "f4bfe4fb-7e00-4450-bd64-526733c9e78d": {
         "childrens": [
@@ -263,12 +1258,11 @@
         "childrens": [],
         "configs": {
           "key": "sma50",
-          "label": "sma-50",
-          "rank": 2
+          "label": "sma-50"
         },
         "id": "fe32ea25-22be-4e97-ab30-be2f4b8427e8",
         "parentId": "e327c298-ee94-432e-a6e7-3bfdf9bbcb03",
-        "type": "price_ladder_mark",
+        "type": "scale_mark",
         "valueSource": "dynamic"
       }
     },
@@ -279,5 +1273,5 @@
     ],
     "selectedLayerId": 0
   },
-  "v": 30
+  "v": 31
 }

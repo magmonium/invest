@@ -322,6 +322,9 @@
         ],
         "configs": {},
         "id": "676b1290-46ff-431b-9531-b353fe6db1b5",
+        "outputs": {
+          "inView": "f59073f0-4cb9-4838-9ccd-a23468d9fdfe"
+        },
         "type": "section"
       },
       "682f89fd-7de8-4aeb-8b35-fbfaa3165e79": {
@@ -843,5 +846,5 @@
     ],
     "selectedLayerId": 0
   },
-  "v": 30
+  "v": 31
 }
