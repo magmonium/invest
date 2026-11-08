@@ -418,12 +418,12 @@
           "cardinality": "one",
           "code": "200",
           "dataType": {
-            "shapeId": "b5b46830-667a-5982-ae07-4226726a2510",
+            "shapeId": "2057a5e6-399d-5db8-b962-9814c58aeac6",
             "type": "shape"
           },
           "description": "Plan Row",
           "doc": {
-            "description": "The symbol's Rebalance Plan Row (same fields as the bootstrap Row) plus what the caller may do with it.",
+            "description": "The symbol's Rebalance Plan Row (same fields as the bootstrap Row) plus cash, affordable quantity and Hold Lock end.",
             "members": [
               {
                 "members": [],
@@ -460,11 +460,11 @@
                 "type": "number"
               },
               {
-                "description": "idealQuantity - quantity. Negative = sell down.",
+                "description": "Shares to trade, never negative: |idealQuantity - quantity|. 0 = hold. Side is isSell. Null outside the Plan.",
                 "members": [],
                 "name": "deltaQuantity",
                 "required": false,
-                "type": "number"
+                "type": "integer"
               },
               {
                 "description": "Band floor; a buy is never part-filled below it.",
@@ -526,6 +526,13 @@
                 "type": "number"
               },
               {
+                "description": "True when the Plan sells deltaQuantity shares; false = buy (or hold when deltaQuantity is 0).",
+                "members": [],
+                "name": "isSell",
+                "required": false,
+                "type": "boolean"
+              },
+              {
                 "description": "Trading cash the Plan may spend (`adjustAmount`).",
                 "members": [],
                 "name": "cashAvailable",
@@ -538,27 +545,6 @@
                 "name": "affordableQuantity",
                 "required": false,
                 "type": "integer"
-              },
-              {
-                "description": "Not held, targeted, no live exit Streak, and the cash covers its Minimum Quantity (at least one share).",
-                "members": [],
-                "name": "canBuy",
-                "required": false,
-                "type": "boolean"
-              },
-              {
-                "description": "Held, not Hold Locked, no live exit Streak.",
-                "members": [],
-                "name": "canSell",
-                "required": false,
-                "type": "boolean"
-              },
-              {
-                "description": "Held and targeted, no live exit Streak. A Hold Lock still blocks the sell side (see canSell).",
-                "members": [],
-                "name": "canRebalance",
-                "required": false,
-                "type": "boolean"
               },
               {
                 "description": "The symbol is the Strategy's Fallback (ADR 0021).",
@@ -581,14 +567,14 @@
           },
           "shapes": [
             {
-              "id": "b5b46830-667a-5982-ae07-4226726a2510",
+              "id": "2057a5e6-399d-5db8-b962-9814c58aeac6",
               "keys": [
                 {
                   "cardinality": "one",
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "c16c9c60-308c-522a-8996-9666a7e00fc0",
+                  "id": "3af6ea26-120c-58e8-a646-470c595eb586",
                   "name": "symbol"
                 },
                 {
@@ -596,7 +582,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "28a85c26-4e27-57d8-afc2-cc246559a386",
+                  "id": "7cea3de4-e195-575e-a202-3aa2f40a4644",
                   "name": "action"
                 },
                 {
@@ -604,7 +590,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "f7b32459-e8ab-5253-ae2e-d6f76966a2b9",
+                  "id": "bf5f34b7-6385-5191-a81e-0ffd43c1f517",
                   "name": "quantity"
                 },
                 {
@@ -612,7 +598,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "c6579fbc-3feb-560a-a09b-c82e8654405c",
+                  "id": "0cacd6ee-c2fe-5b44-a04f-b3905c88438e",
                   "name": "idealQuantity"
                 },
                 {
@@ -620,7 +606,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "c783b53b-5e26-5b31-9279-ef2dfbf98b5b",
+                  "id": "1ea750ed-77db-5653-91b9-98a72dfa040d",
                   "name": "deltaQuantity"
                 },
                 {
@@ -628,7 +614,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "01189abd-0eb8-53d7-a4eb-1dd323d4285d",
+                  "id": "a8a92c93-d8d3-59f5-b8a9-0d69feef7bb3",
                   "name": "minQuantity"
                 },
                 {
@@ -636,7 +622,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "be8533fb-be56-5ad1-9096-b865f660561b",
+                  "id": "35082e25-55ac-52a3-a546-0a2f9dde8cc5",
                   "name": "maxQuantity"
                 },
                 {
@@ -644,7 +630,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "bb58b4c6-cdac-54c4-8c16-c1e01d396c66",
+                  "id": "c715a1a0-177e-518e-9207-80e2ff742e40",
                   "name": "currentPrice"
                 },
                 {
@@ -652,7 +638,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "98c63d8c-ee3c-561a-b892-051e3c893c6c",
+                  "id": "02fd37de-73b2-5a64-98cf-36c0f21c27be",
                   "name": "priceAsOf"
                 },
                 {
@@ -660,7 +646,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "5483fa2e-b597-59d8-bf17-149cb664b1ce",
+                  "id": "20c7ac5c-3ab2-54b6-9233-a6029eb1fefc",
                   "name": "currentValue"
                 },
                 {
@@ -668,7 +654,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "dbf2a119-c7d5-5b1b-989a-64a760dfe2b9",
+                  "id": "69b31467-0aca-5ea1-af8a-7bf5056c3387",
                   "name": "investedValue"
                 },
                 {
@@ -676,7 +662,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "f8bba591-9e4e-5467-83c6-9d2b19fa5bb1",
+                  "id": "c5f795eb-9a83-5fc9-8f68-07d51fe2ef8b",
                   "name": "allocationPct"
                 },
                 {
@@ -684,7 +670,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "972e618e-d368-53f4-998b-bc30d4950f6e",
+                  "id": "96336bf0-480b-51e6-9305-53aa8869b4d0",
                   "name": "pnl"
                 },
                 {
@@ -692,15 +678,23 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "d7883efd-a5b3-578b-b53d-6277e5f2941d",
+                  "id": "ac2b0f37-351e-5ec5-b1cf-4cd9922272d7",
                   "name": "pnlPct"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "boolean"
+                  },
+                  "id": "0e093cc2-9855-5cc8-968d-e70c9ba165e2",
+                  "name": "isSell"
                 },
                 {
                   "cardinality": "one",
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "b5ca370e-a890-5590-b722-327c66a9b52e",
+                  "id": "04d9093c-c847-5d46-88b3-582a43f2d65c",
                   "name": "cashAvailable"
                 },
                 {
@@ -708,7 +702,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "ef2614cb-8d59-5a79-9032-9aed8ece856b",
+                  "id": "44b088ad-e3c8-58a3-bbed-eeefe81b374d",
                   "name": "affordableQuantity"
                 },
                 {
@@ -716,31 +710,7 @@
                   "dataType": {
                     "type": "boolean"
                   },
-                  "id": "148d5fc6-854c-5270-935b-7f94c0160266",
-                  "name": "canBuy"
-                },
-                {
-                  "cardinality": "one",
-                  "dataType": {
-                    "type": "boolean"
-                  },
-                  "id": "656dee8e-9b0c-5d1c-8f3e-a648b438d6ae",
-                  "name": "canSell"
-                },
-                {
-                  "cardinality": "one",
-                  "dataType": {
-                    "type": "boolean"
-                  },
-                  "id": "2121e329-513b-52af-b5a3-87cbef1836c9",
-                  "name": "canRebalance"
-                },
-                {
-                  "cardinality": "one",
-                  "dataType": {
-                    "type": "boolean"
-                  },
-                  "id": "15f9c41a-d6c9-5f94-9578-54404d2fcc3a",
+                  "id": "7f93b100-3b4d-5a62-b4ad-5bb6b87a1d20",
                   "name": "isFallback"
                 },
                 {
@@ -748,7 +718,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "baa62f21-5cdf-5807-a2fb-c76b96230b81",
+                  "id": "d413352b-c678-54a9-97a5-1a754f93b50b",
                   "name": "holdLockedUntil"
                 }
               ],
@@ -5090,5 +5060,5 @@
       "verb": "put"
     }
   ],
-  "v": 31
+  "v": 32
 }

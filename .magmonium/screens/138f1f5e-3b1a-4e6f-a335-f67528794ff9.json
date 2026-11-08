@@ -190,11 +190,27 @@
         "bindings": {
           "scoreDate": {
             "path": [
-              "e8d6a3ea-df61-4d7a-a3c4-e99d42d33bcc"
+              "96537e28-b844-4d4d-a331-b12e711d4d13"
             ],
             "root": {
               "id": "42cdc759-8ca9-44c5-82ba-129a826a6205",
               "kind": "screen_computed"
+            },
+            "transform": {
+              "args": [
+                {
+                  "kind": "pipe"
+                }
+              ],
+              "kind": "call",
+              "pipeParam": 0,
+              "target": {
+                "kind": "native",
+                "ref": {
+                  "group": "string",
+                  "name": "toString"
+                }
+              }
             }
           }
         },
@@ -222,5 +238,5 @@
     ],
     "selectedLayerId": 0
   },
-  "v": 31
+  "v": 32
 }
