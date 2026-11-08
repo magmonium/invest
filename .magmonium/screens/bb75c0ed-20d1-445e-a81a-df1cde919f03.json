@@ -1358,6 +1358,77 @@
           }
         },
         "id": "fb63f3d9-fcfa-4087-bc62-7fb37a973517",
+        "outputArgs": {
+          "submitted": [
+            {
+              "event": [
+                "quantity"
+              ],
+              "source": "event",
+              "target": [
+                "quantity"
+              ],
+              "transform": {
+                "args": [
+                  {
+                    "kind": "pipe"
+                  }
+                ],
+                "kind": "call",
+                "pipeParam": 0,
+                "target": {
+                  "kind": "native",
+                  "ref": {
+                    "group": "number",
+                    "name": "Number"
+                  }
+                }
+              }
+            },
+            {
+              "binding": {
+                "path": [],
+                "root": {
+                  "id": "325b2950-c927-4518-bbad-2fa7af1d4002",
+                  "kind": "screen_variable"
+                }
+              },
+              "source": "binding",
+              "target": [
+                "isSell"
+              ],
+              "transform": {
+                "args": [
+                  {
+                    "kind": "pipe"
+                  }
+                ],
+                "kind": "call",
+                "pipeParam": 0,
+                "target": {
+                  "functionId": "46b83486-be8f-4cb3-8578-5ded0fc85602",
+                  "kind": "pure"
+                }
+              }
+            },
+            {
+              "binding": {
+                "path": [],
+                "root": {
+                  "id": "db0904bd-93a1-4ddf-b070-7dc7f058f6a3",
+                  "kind": "input"
+                }
+              },
+              "source": "binding",
+              "target": [
+                "symbol"
+              ]
+            }
+          ]
+        },
+        "outputs": {
+          "submitted": "89530411-82a4-4cbc-91e9-b7b503e56896"
+        },
         "parentId": "9826cd66-5420-438a-b2f0-f150c0b497d8",
         "type": "form"
       },

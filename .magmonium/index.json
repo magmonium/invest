@@ -2430,6 +2430,51 @@
           },
           "returnUndefined": true
         },
+        "46b83486-be8f-4cb3-8578-5ded0fc85602": {
+          "aiDrafted": true,
+          "body": "return value === Action.Sell;",
+          "cases": [
+            {
+              "args": [
+                "\"sell\""
+              ],
+              "expected": "true",
+              "name": "returns true for sell action"
+            },
+            {
+              "args": [
+                "\"buy\""
+              ],
+              "expected": "false",
+              "name": "returns false for buy action"
+            },
+            {
+              "args": [
+                "\"sell\""
+              ],
+              "expected": "true",
+              "name": "returns true for sell action repeated check"
+            }
+          ],
+          "description": "Determines whether the supplied action is a Sell action.",
+          "id": "46b83486-be8f-4cb3-8578-5ded0fc85602",
+          "name": "isSell",
+          "params": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "actionEnumId": "32a47ac4-3710-42c9-ab12-de1b11db406f",
+                "type": "string"
+              },
+              "id": "c12898f5-f916-44f2-ba37-abffeb45a76c",
+              "name": "value"
+            }
+          ],
+          "returnCardinality": "one",
+          "returnType": {
+            "type": "boolean"
+          }
+        },
         "5fec8021-ae32-460b-b380-dd1c9663edc5": {
           "aiDrafted": true,
           "body": "if (action === Action.Sell) {\n    return action2.quantity;\n  }\n\n  if (action === Action.Buy) {\n    return Math.floor(action2.affordableQuantity);\n  }\n\n  return 0;",
@@ -2677,7 +2722,8 @@
           }
         },
         "b42000bc-f34e-4b5c-9ba9-3c5b2e3c12fa": {
-          "body": "if (!action2) return 0;\n  const current = action2.quantity ?? 0;\n  const qty = quanitity ?? 0;\n  let newQty = current;\n  if (action === Action.Buy) {\n    newQty = current + qty;\n  } else if (action === Action.Sell) {\n    newQty = current - qty;\n  }\n \n  return newQty;",
+          "aiDrafted": true,
+          "body": "const current = Number(action2.quantity) || 0;\n  const qty = Number(quanitity) || 0;\n\n  if (action === Action.Buy) {\n    return current + qty;\n  } else if (action === Action.Sell) {\n    return current - qty;\n  }\n\n  return current;",
           "cases": [
             {
               "args": [
@@ -2696,8 +2742,27 @@
               ],
               "expected": "7",
               "name": "normal sell subtracts quantity"
+            },
+            {
+              "args": [
+                "undefined",
+                "10",
+                "{ \"symbol\": \"AAPL\", \"action\": \"buy\", \"quantity\": 5, \"idealQuantity\": 0, \"deltaQuantity\": 0, \"minQuantity\": 0, \"maxQuantity\": 0, \"currentPrice\": 0, \"priceAsOf\": \"\", \"currentValue\": 0, \"investedValue\": 0, \"allocationPct\": 0, \"pnl\": 0, \"pnlPct\": 0, \"isSell\": false, \"cashAvailable\": 0, \"affordableQuantity\": 0, \"isFallback\": false, \"holdLockedUntil\": \"\" }"
+              ],
+              "expected": "5",
+              "name": "returns current quantity when action is undefined"
+            },
+            {
+              "args": [
+                "\"buy\"",
+                "0",
+                "{ \"symbol\": \"AAPL\", \"action\": \"buy\", \"quantity\": 5, \"idealQuantity\": 0, \"deltaQuantity\": 0, \"minQuantity\": 0, \"maxQuantity\": 0, \"currentPrice\": 0, \"priceAsOf\": \"\", \"currentValue\": 0, \"investedValue\": 0, \"allocationPct\": 0, \"pnl\": 0, \"pnlPct\": 0, \"isSell\": false, \"cashAvailable\": 0, \"affordableQuantity\": 0, \"isFallback\": false, \"holdLockedUntil\": \"\" }"
+              ],
+              "expected": "5",
+              "name": "handles zero quantity adjustment"
             }
           ],
+          "description": "Calculates the projected quantity of a holding based on a proposed action.",
           "id": "b42000bc-f34e-4b5c-9ba9-3c5b2e3c12fa",
           "name": "futureHolding",
           "params": [
@@ -3007,6 +3072,54 @@
       },
       "id": "bbad551b-72b3-4fde-86f9-afa810cbc40c",
       "methods": {
+        "89530411-82a4-4cbc-91e9-b7b503e56896": {
+          "id": "89530411-82a4-4cbc-91e9-b7b503e56896",
+          "inputs": [
+            {
+              "arg": "quantity",
+              "source": "args",
+              "target": [
+                "payload",
+                "quantity"
+              ]
+            },
+            {
+              "arg": "isSell",
+              "source": "args",
+              "target": [
+                "payload",
+                "isSell"
+              ]
+            },
+            {
+              "arg": "symbol",
+              "source": "args",
+              "target": [
+                "path",
+                "symbol"
+              ]
+            }
+          ],
+          "name": "updateFinanceTradeSymbol",
+          "path": "/finance/v1/trade/{symbol}",
+          "response": [
+            {
+              "code": "200",
+              "propertyId": "d40ab2bc-c8c8-450a-bbbc-bf82eae46b7d",
+              "source": [
+                "plan"
+              ]
+            },
+            {
+              "code": "200",
+              "propertyId": "443aba23-a361-4aa3-868a-479123e6cf06",
+              "source": [
+                "config"
+              ]
+            }
+          ],
+          "verb": "put"
+        },
         "aa042e8c-ac59-445d-b2e8-5420da09091c": {
           "id": "aa042e8c-ac59-445d-b2e8-5420da09091c",
           "inputs": [
@@ -3695,7 +3808,7 @@
     }
   },
   "npmAllowlist": {},
-  "one": "0.4.105",
+  "one": "0.4.106",
   "screens": [
     {
       "computeds": {

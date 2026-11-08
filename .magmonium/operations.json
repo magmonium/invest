@@ -5058,6 +5058,1149 @@
       ],
       "summary": "Get Strategy performance curve",
       "verb": "put"
+    },
+    {
+      "domain": "finance",
+      "id": "put /finance/v1/trade/{symbol}",
+      "operationId": "finance_trade",
+      "params": [
+        {
+          "cardinality": "one",
+          "dataType": {
+            "shapeId": "6e998efb-c247-5d8d-aa0f-920159af0fdb",
+            "type": "shape"
+          },
+          "doc": {
+            "members": [
+              {
+                "description": "Whole shares to trade, at least 1.",
+                "members": [],
+                "name": "quantity",
+                "required": true,
+                "type": "integer"
+              },
+              {
+                "description": "True sells, false buys.",
+                "members": [],
+                "name": "isSell",
+                "required": true,
+                "type": "boolean"
+              }
+            ],
+            "name": "data",
+            "required": true,
+            "type": "object"
+          },
+          "location": "body",
+          "name": "data",
+          "required": true,
+          "shapes": [
+            {
+              "id": "6e998efb-c247-5d8d-aa0f-920159af0fdb",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "35ad2398-6952-5462-953b-73363ecaf8f8",
+                  "name": "quantity"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "boolean"
+                  },
+                  "id": "3d06d9d5-d8be-5d8b-b47e-cc6719bb28f5",
+                  "name": "isSell"
+                }
+              ],
+              "name": "finance-trade-request"
+            }
+          ],
+          "unmapped": []
+        },
+        {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "description": "Company symbol (e.g. RELIANCE), any case",
+          "doc": {
+            "description": "Company symbol (e.g. RELIANCE), any case",
+            "members": [],
+            "name": "symbol",
+            "required": true,
+            "type": "string"
+          },
+          "location": "path",
+          "name": "symbol",
+          "required": true,
+          "shapes": [],
+          "unmapped": []
+        }
+      ],
+      "path": "/finance/v1/trade/{symbol}",
+      "responses": [
+        {
+          "cardinality": "one",
+          "code": "200",
+          "dataType": {
+            "shapeId": "84570857-db9b-5cbd-8af8-1331abde82f7",
+            "type": "shape"
+          },
+          "description": "Trade done",
+          "doc": {
+            "members": [
+              {
+                "description": "The symbol's Rebalance Plan Row (same fields as the bootstrap Row) plus cash, affordable quantity and Hold Lock end.",
+                "members": [
+                  {
+                    "members": [],
+                    "name": "symbol",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "buy — new position; sell — Untracked Holding (no longer targeted nor the Fallback), sold in full with no Hold Lock (ADR 0026); rebalance — outside the Rebalance Zone, back to Ideal Quantity in one trade; owned — held as is (inside the Rebalance Zone, live exit Streak, no price, or over the zone but Hold Locked); deferred — not held and not bought (live exit Streak, or cash could not fund the Minimum Quantity without a part-fill). Null for a non-held, untargeted symbol.",
+                    "enumValues": [
+                      "buy",
+                      "sell",
+                      "rebalance",
+                      "owned",
+                      "deferred"
+                    ],
+                    "members": [],
+                    "name": "action",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Quantity held today.",
+                    "members": [],
+                    "name": "quantity",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Quantity the plan targets after the fill passes.",
+                    "members": [],
+                    "name": "idealQuantity",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Shares to trade, never negative: |idealQuantity - quantity|. 0 = hold. Side is isSell. Null outside the Plan.",
+                    "members": [],
+                    "name": "deltaQuantity",
+                    "required": false,
+                    "type": "integer"
+                  },
+                  {
+                    "description": "Band floor; a buy is never part-filled below it.",
+                    "members": [],
+                    "name": "minQuantity",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Band ceiling; idealQuantity never exceeds it.",
+                    "members": [],
+                    "name": "maxQuantity",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "members": [],
+                    "name": "currentPrice",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "When currentPrice was taken (UTC): intraday refresh every 30 min in market hours, else the last close. Null when never stamped.",
+                    "members": [],
+                    "name": "priceAsOf",
+                    "required": false,
+                    "type": "string($date-time)"
+                  },
+                  {
+                    "members": [],
+                    "name": "currentValue",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Average buy price x quantity; null when not held.",
+                    "members": [],
+                    "name": "investedValue",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Share of the whole portfolio pot (holdings + trading cash).",
+                    "members": [],
+                    "name": "allocationPct",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "members": [],
+                    "name": "pnl",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "members": [],
+                    "name": "pnlPct",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "True when the Plan sells deltaQuantity shares; false = buy (or hold when deltaQuantity is 0).",
+                    "members": [],
+                    "name": "isSell",
+                    "required": false,
+                    "type": "boolean"
+                  },
+                  {
+                    "description": "Trading cash the Plan may spend (`adjustAmount`).",
+                    "members": [],
+                    "name": "cashAvailable",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Whole shares cashAvailable buys at currentPrice.",
+                    "members": [],
+                    "name": "affordableQuantity",
+                    "required": false,
+                    "type": "integer"
+                  },
+                  {
+                    "description": "The symbol is the Strategy's Fallback (ADR 0021).",
+                    "members": [],
+                    "name": "isFallback",
+                    "required": false,
+                    "type": "boolean"
+                  },
+                  {
+                    "description": "When a Hold Locked position may next be sold; null when not locked.",
+                    "members": [],
+                    "name": "holdLockedUntil",
+                    "required": false,
+                    "type": "string($date-time)"
+                  }
+                ],
+                "name": "plan",
+                "required": false,
+                "type": "object"
+              },
+              {
+                "description": "Bootstrap payload — same shape for GET, POST, PUT and PATCH.",
+                "members": [
+                  {
+                    "description": "Portfolio-wide totals plus the Rebalance Plan action counts.",
+                    "members": [
+                      {
+                        "description": "Subscribed Strategy id, or null when unsubscribed.",
+                        "members": [],
+                        "name": "strategy",
+                        "required": false,
+                        "type": "string"
+                      },
+                      {
+                        "description": "Minimum hold period in days before a holding may be sold (default 15).",
+                        "members": [],
+                        "name": "minimumHold",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "description": "Sum of average buy price x quantity over all holdings.",
+                        "members": [],
+                        "name": "investedValue",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "description": "Sum of live price x quantity over all held rows.",
+                        "members": [],
+                        "name": "currentValue",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "description": "currentValue - investedValue.",
+                        "members": [],
+                        "name": "pnl",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "description": "pnl as a percentage of investedValue (0 when nothing is invested).",
+                        "members": [],
+                        "name": "pnlPct",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "description": "Trading cash the plan may spend (`adjustAmount`).",
+                        "members": [],
+                        "name": "cashAvailable",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "description": "Number of distinct held symbols.",
+                        "members": [],
+                        "name": "count",
+                        "required": false,
+                        "type": "integer"
+                      },
+                      {
+                        "members": [],
+                        "name": "buy",
+                        "required": false,
+                        "type": "integer"
+                      },
+                      {
+                        "members": [],
+                        "name": "sell",
+                        "required": false,
+                        "type": "integer"
+                      },
+                      {
+                        "members": [],
+                        "name": "rebalance",
+                        "required": false,
+                        "type": "integer"
+                      },
+                      {
+                        "members": [],
+                        "name": "owned",
+                        "required": false,
+                        "type": "integer"
+                      },
+                      {
+                        "members": [],
+                        "name": "deferred",
+                        "required": false,
+                        "type": "integer"
+                      },
+                      {
+                        "description": "Symbol of the Strategy's Fallback, which receives the cash left after the buy passes (ADR 0021). Null when the Strategy names none.",
+                        "members": [],
+                        "name": "fallback",
+                        "required": false,
+                        "type": "string"
+                      },
+                      {
+                        "description": "Cash the Plan leaves parked — poured into the Fallback, or idle when there is no Fallback (ADR 0021, 0022).",
+                        "members": [],
+                        "name": "unclaimedCash",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "description": "Trading cash left once every Row executes (cashAvailable - net spend, floored at 0). With a priced Fallback only the dust below one Fallback unit.",
+                        "members": [],
+                        "name": "cashAfterPlan",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "description": "Rebalance Zone width in percent applied to this Plan (default 60; ADR 0022, 0028).",
+                        "members": [],
+                        "name": "rebalanceZone",
+                        "required": false,
+                        "type": "number"
+                      }
+                    ],
+                    "name": "summary",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Every Instrument currently held.",
+                    "members": [
+                      {
+                        "members": [],
+                        "name": "symbol",
+                        "required": false,
+                        "type": "string"
+                      },
+                      {
+                        "description": "Instrument id.",
+                        "members": [],
+                        "name": "id",
+                        "required": false,
+                        "type": "string"
+                      },
+                      {
+                        "members": [],
+                        "name": "quantity",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "description": "Average buy price.",
+                        "members": [],
+                        "name": "price",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "description": "When the position was opened; drives the minimumHold sell lock.",
+                        "members": [],
+                        "name": "heldAt",
+                        "required": false,
+                        "type": "string($date-time)"
+                      }
+                    ],
+                    "name": "portfolio",
+                    "required": false,
+                    "type": "object[]"
+                  },
+                  {
+                    "description": "One Row per symbol in (held union targeted union Fallback), sorted by symbol.",
+                    "members": [
+                      {
+                        "members": [],
+                        "name": "symbol",
+                        "required": false,
+                        "type": "string"
+                      },
+                      {
+                        "description": "buy — new position; sell — Untracked Holding (no longer targeted nor the Fallback), sold in full with no Hold Lock (ADR 0026); rebalance — outside the Rebalance Zone, back to Ideal Quantity in one trade; owned — held as is (inside the Rebalance Zone, live exit Streak, no price, or over the zone but Hold Locked); deferred — not held and not bought (live exit Streak, or cash could not fund the Minimum Quantity without a part-fill). Null for a non-held, untargeted symbol.",
+                        "enumValues": [
+                          "buy",
+                          "sell",
+                          "rebalance",
+                          "owned",
+                          "deferred"
+                        ],
+                        "members": [],
+                        "name": "action",
+                        "required": false,
+                        "type": "string"
+                      },
+                      {
+                        "description": "Quantity held today.",
+                        "members": [],
+                        "name": "quantity",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "description": "Quantity the plan targets after the fill passes.",
+                        "members": [],
+                        "name": "idealQuantity",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "description": "idealQuantity - quantity. Negative = sell down.",
+                        "members": [],
+                        "name": "deltaQuantity",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "description": "Band floor; a buy is never part-filled below it.",
+                        "members": [],
+                        "name": "minQuantity",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "description": "Band ceiling; idealQuantity never exceeds it.",
+                        "members": [],
+                        "name": "maxQuantity",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "currentPrice",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "description": "When currentPrice was taken (UTC): intraday refresh every 30 min in market hours, else the last close. Null when never stamped.",
+                        "members": [],
+                        "name": "priceAsOf",
+                        "required": false,
+                        "type": "string($date-time)"
+                      },
+                      {
+                        "members": [],
+                        "name": "currentValue",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "description": "Average buy price x quantity; null when not held.",
+                        "members": [],
+                        "name": "investedValue",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "description": "Share of the whole portfolio pot (holdings + trading cash).",
+                        "members": [],
+                        "name": "allocationPct",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "pnl",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "pnlPct",
+                        "required": false,
+                        "type": "number"
+                      }
+                    ],
+                    "name": "rebalance",
+                    "required": false,
+                    "type": "object[]"
+                  }
+                ],
+                "name": "config",
+                "required": false,
+                "type": "object"
+              }
+            ],
+            "name": "",
+            "required": true,
+            "type": "object"
+          },
+          "shapes": [
+            {
+              "id": "8d543164-02ce-5166-bfb9-8c3ad74a0ac4",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "b4293b9c-86a3-50a6-a906-c96299350d7c",
+                  "name": "symbol"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "b73ecd12-c896-5464-b6d1-a600f502dbf2",
+                  "name": "action"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "864ebded-e694-5f37-a1b2-a19b78fe38cd",
+                  "name": "quantity"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "d4bdf4e0-91db-566e-abd9-17822c6d9380",
+                  "name": "idealQuantity"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "0a823ad7-a3d5-506d-8ca5-ad393c862277",
+                  "name": "deltaQuantity"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "4223aff9-6f64-5013-a0a1-a45f51113a99",
+                  "name": "minQuantity"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "55374fdf-fbc3-51a5-b753-f6290ec9727f",
+                  "name": "maxQuantity"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "317a55b2-20aa-5420-b219-383c423d5452",
+                  "name": "currentPrice"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "a22fd210-3c5f-5f5e-aea0-30e2610944f0",
+                  "name": "priceAsOf"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "b3ff1112-7a5c-5edc-b777-e2b0c4c20fb2",
+                  "name": "currentValue"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "c3ec8d45-eee1-53e7-a277-d8737e067b65",
+                  "name": "investedValue"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "fed694a5-4b25-556b-9952-b34f2e0486c5",
+                  "name": "allocationPct"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "bcab937a-8a58-5f70-b662-5d9c085938da",
+                  "name": "pnl"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "a8d1c8c9-f7d7-55b7-8205-bba352f45ce9",
+                  "name": "pnlPct"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "boolean"
+                  },
+                  "id": "9e26b2dc-59b5-5342-bc9a-9efe6d6d277c",
+                  "name": "isSell"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "64776c5a-8a07-58bc-aecb-79f80e09357a",
+                  "name": "cashAvailable"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "45c5fa7f-828b-572d-ac23-c90133c0851f",
+                  "name": "affordableQuantity"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "boolean"
+                  },
+                  "id": "c0607266-5531-5f80-9117-392c47994606",
+                  "name": "isFallback"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "31a79de5-d5a7-50ab-abef-b65f751a2d45",
+                  "name": "holdLockedUntil"
+                }
+              ],
+              "name": "finance-trade-response-plan",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/trade/{symbol}",
+                "pointer": [
+                  "plan"
+                ],
+                "verb": "put"
+              }
+            },
+            {
+              "id": "59510777-32f2-551d-b8af-e1c9ee1c63d7",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "c16a2b70-cb48-52d6-afa0-9b92a7355d50",
+                  "name": "strategy"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "17541522-f41d-5a28-a6f0-12dc7bbab842",
+                  "name": "minimumHold"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "49a70fea-0b3a-5ab0-82de-d8f4d7fb530a",
+                  "name": "investedValue"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "f8e7982f-72ef-51f5-91ab-5cf1712d174f",
+                  "name": "currentValue"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "18eaa811-6ab8-5b9b-9ed5-fc2f6c030071",
+                  "name": "pnl"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "6a7485ec-d98a-50a6-9d6d-0fda3aa8e58c",
+                  "name": "pnlPct"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "cc579545-4eab-5e73-a1cf-66c76b4c83e5",
+                  "name": "cashAvailable"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "4d1a9f68-9117-51b2-a286-fb56c6debfc8",
+                  "name": "count"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "d0d75077-5066-5f61-ace3-4d0d23efa8d7",
+                  "name": "buy"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "792f17b9-d905-571f-a74c-296301cf5099",
+                  "name": "sell"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "80cc2c48-0f5a-5e66-a055-470a8beb25a8",
+                  "name": "rebalance"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "619af8fa-8573-501c-bea5-78f8af219b5a",
+                  "name": "owned"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "df7533b6-2b76-596c-9dd7-dd282dc9d796",
+                  "name": "deferred"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "51c96bdf-1797-5fe9-b094-8a2dc84fefbf",
+                  "name": "fallback"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "f9dcf860-c73b-5986-b2b0-630aa0212d00",
+                  "name": "unclaimedCash"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "35ba84f7-c6d6-5779-822d-9915e58191d7",
+                  "name": "cashAfterPlan"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "969d401e-f2a8-5488-a390-38346b5e263e",
+                  "name": "rebalanceZone"
+                }
+              ],
+              "name": "finance-trade-response-config-summary",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/trade/{symbol}",
+                "pointer": [
+                  "config",
+                  "summary"
+                ],
+                "verb": "put"
+              }
+            },
+            {
+              "id": "cb6a5b98-6fa0-5322-be22-5566f04e1df8",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "d2314b48-5b88-5f4a-8d42-fca6e5e12828",
+                  "name": "symbol"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "4e41dee1-2b5c-5577-87ed-6d33d3bd77c1",
+                  "name": "id"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "e4f513f1-e40e-5d73-a663-cb3742912ad1",
+                  "name": "quantity"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "55a6d8b9-6d0a-589b-956a-453fdd5ab819",
+                  "name": "price"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "27b75b86-c171-581c-8933-3c900fc5f826",
+                  "name": "heldAt"
+                }
+              ],
+              "name": "finance-trade-response-config-portfolio",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/trade/{symbol}",
+                "pointer": [
+                  "config",
+                  "portfolio"
+                ],
+                "verb": "put"
+              }
+            },
+            {
+              "id": "65a0ab98-9b93-5fda-b4f6-f56695f1b978",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "1a31bb48-5abb-5c82-993b-dca6baac9ea8",
+                  "name": "symbol"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "13ba4cbe-14c7-5d20-9b2f-3064cd81e51e",
+                  "name": "action"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "828303f1-4325-58bb-aa37-ab376d7dc551",
+                  "name": "quantity"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "fd0f63e4-6961-5162-85ec-9a6e21c1d304",
+                  "name": "idealQuantity"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "ea707073-2a25-5c19-97e7-146d94a7c013",
+                  "name": "deltaQuantity"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "5f227995-dcd5-533f-87ef-64139462c4b5",
+                  "name": "minQuantity"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "8c4d0ac3-684c-5909-944e-65a55cfb8d63",
+                  "name": "maxQuantity"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "8036bb2e-afaf-599c-829f-00200577274e",
+                  "name": "currentPrice"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "f5e4f544-744f-5282-b5bf-c35e1a5caf24",
+                  "name": "priceAsOf"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "bcb7e356-614d-5510-9c51-0adc44744b76",
+                  "name": "currentValue"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "b992df41-b257-5153-a2f2-d7e7387a4a61",
+                  "name": "investedValue"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "87229ae9-b67f-58af-bf37-596be05cf589",
+                  "name": "allocationPct"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "e60dc8c6-e715-5e3c-9358-3370c6fa5da6",
+                  "name": "pnl"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "025b3365-d373-5983-8a70-01b707be1785",
+                  "name": "pnlPct"
+                }
+              ],
+              "name": "finance-trade-response-config-rebalance",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/trade/{symbol}",
+                "pointer": [
+                  "config",
+                  "rebalance"
+                ],
+                "verb": "put"
+              }
+            },
+            {
+              "id": "af5a26f3-a326-5ae5-85f2-c65951d73453",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "59510777-32f2-551d-b8af-e1c9ee1c63d7",
+                    "type": "shape"
+                  },
+                  "id": "f513cd6b-0e60-59d5-9af6-c939f63ef4cb",
+                  "name": "summary"
+                },
+                {
+                  "cardinality": "many",
+                  "dataType": {
+                    "shapeId": "cb6a5b98-6fa0-5322-be22-5566f04e1df8",
+                    "type": "shape"
+                  },
+                  "id": "cd72387b-38d1-5211-8133-4dbdf00553db",
+                  "name": "portfolio"
+                },
+                {
+                  "cardinality": "many",
+                  "dataType": {
+                    "shapeId": "65a0ab98-9b93-5fda-b4f6-f56695f1b978",
+                    "type": "shape"
+                  },
+                  "id": "1a1339fc-582c-52be-a520-f95a726eb65c",
+                  "name": "rebalance"
+                }
+              ],
+              "name": "finance-trade-response-config",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/trade/{symbol}",
+                "pointer": [
+                  "config"
+                ],
+                "verb": "put"
+              }
+            },
+            {
+              "id": "84570857-db9b-5cbd-8af8-1331abde82f7",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "8d543164-02ce-5166-bfb9-8c3ad74a0ac4",
+                    "type": "shape"
+                  },
+                  "id": "e0a7237e-50c2-50ac-9bff-88101f0e649e",
+                  "name": "plan"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "af5a26f3-a326-5ae5-85f2-c65951d73453",
+                    "type": "shape"
+                  },
+                  "id": "c46609b3-a5c6-54d1-bfe3-28953fa911d3",
+                  "name": "config"
+                }
+              ],
+              "name": "finance-trade-response",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/trade/{symbol}",
+                "pointer": [],
+                "verb": "put"
+              }
+            }
+          ],
+          "tier": "anonymous",
+          "unmapped": []
+        },
+        {
+          "cardinality": "one",
+          "code": "401",
+          "description": "Unauthorized — missing or invalid credentials.",
+          "shapes": [],
+          "tier": "undescribed",
+          "unmapped": []
+        },
+        {
+          "cardinality": "one",
+          "code": "403",
+          "description": "Forbidden — no `finance` app access.",
+          "shapes": [],
+          "tier": "undescribed",
+          "unmapped": []
+        },
+        {
+          "cardinality": "one",
+          "code": "404",
+          "description": "No Company has this symbol.",
+          "shapes": [],
+          "tier": "undescribed",
+          "unmapped": []
+        },
+        {
+          "cardinality": "one",
+          "code": "406",
+          "description": "`quantity` not a whole number ≥ 1, or `isSell` not a boolean.",
+          "shapes": [],
+          "tier": "undescribed",
+          "unmapped": []
+        },
+        {
+          "cardinality": "one",
+          "code": "409",
+          "description": "finance.symbolAmbiguous, finance.portfolioNotExiest, finance.unpriced, finance.insufficientFund, finance.instrumentNotExiest, finance.oversell or finance.holdLocked.",
+          "shapes": [],
+          "tier": "undescribed",
+          "unmapped": []
+        }
+      ],
+      "segments": [
+        "trade",
+        "{symbol}"
+      ],
+      "summary": "Buy or sell whole shares of one symbol",
+      "verb": "put"
     }
   ],
   "v": 32
