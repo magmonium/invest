@@ -323,7 +323,7 @@
           "528c8d5e-2b6f-45de-b8b2-5c7bc46f89a5"
         ],
         "configs": {
-          "squeezeAt": "md",
+          "squeezeAt": "xs",
           "squeezeMode": "icon",
           "variant": "toggle"
         },

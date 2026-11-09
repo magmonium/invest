@@ -13,7 +13,42 @@
       }
     },
     "kind": "page",
-    "name": "cmpany"
+    "name": "cmpany",
+    "variables": {
+      "7b2bfde0-9361-44bd-8f51-6c63af562d7b": {
+        "cardinality": "one",
+        "dataType": "string",
+        "id": "7b2bfde0-9361-44bd-8f51-6c63af562d7b",
+        "kind": "plain",
+        "name": "industry"
+      }
+    },
+    "variants": {
+      "a4d5b9a9-a339-48d4-b157-5102ff1d1c14": {
+        "id": "a4d5b9a9-a339-48d4-b157-5102ff1d1c14",
+        "name": "industry_is_not_etf",
+        "rule": {
+          "children": [
+            {
+              "id": "rn1969",
+              "kind": "check",
+              "operand": {
+                "kind": "literal",
+                "value": "ETF"
+              },
+              "operator": "!=",
+              "path": [
+                "7b2bfde0-9361-44bd-8f51-6c63af562d7b"
+              ]
+            }
+          ],
+          "connective": "all",
+          "id": "rn1970",
+          "kind": "group",
+          "negated": false
+        }
+      }
+    }
   },
   "state": {
     "controlMap": {
@@ -90,6 +125,16 @@
         "childrens": [],
         "configs": {},
         "id": "526f8295-f3f6-486e-8972-b239170934cd",
+        "outputScreenWrites": {
+          "572034e4-9bde-4717-9d53-525aa16e60bd": [
+            {
+              "value": {
+                "kind": "event"
+              },
+              "variableId": "7b2bfde0-9361-44bd-8f51-6c63af562d7b"
+            }
+          ]
+        },
         "parentId": "4a7f41fc-48eb-4272-b172-388f8a705caf",
         "screenId": "f1c29c41-4e9a-4982-b9c6-5968d7b89197",
         "screenInputs": {
@@ -128,7 +173,14 @@
         "configs": {},
         "id": "709bc6ca-65ad-46ae-8485-e65d4e8090ae",
         "parentId": "8f36ddc6-1fec-4722-94ba-cb650f16fafc",
-        "type": "row"
+        "type": "row",
+        "variantKind": "screen",
+        "variants": [
+          {
+            "id": "a4d5b9a9-a339-48d4-b157-5102ff1d1c14",
+            "join": "and"
+          }
+        ]
       },
       "82784def-43f1-4b9b-b8c4-3f1bbc11dfce": {
         "childrens": [],
@@ -296,7 +348,14 @@
         "id": "f40f2ced-70b9-4a0b-a3d9-89344436cb18",
         "parentId": "8f36ddc6-1fec-4722-94ba-cb650f16fafc",
         "source": "raw",
-        "type": "row"
+        "type": "row",
+        "variantKind": "screen",
+        "variants": [
+          {
+            "id": "a4d5b9a9-a339-48d4-b157-5102ff1d1c14",
+            "join": "and"
+          }
+        ]
       },
       "fa4d5964-4ac0-41e9-9c8d-44f0a3235f0c": {
         "childrens": [],

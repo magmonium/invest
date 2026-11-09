@@ -184,7 +184,8 @@
         ],
         "configs": {},
         "id": "da05144b-878e-461e-85c8-7778fcfc4e52",
-        "type": "section"
+        "type": "section",
+        "variantKind": "screen"
       },
       "f3c0a55c-fc09-4b45-82b1-58b288e05a3d": {
         "bindings": {

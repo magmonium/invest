@@ -4283,7 +4283,42 @@
         }
       },
       "kind": "page",
-      "name": "cmpany"
+      "name": "cmpany",
+      "variables": {
+        "7b2bfde0-9361-44bd-8f51-6c63af562d7b": {
+          "cardinality": "one",
+          "dataType": "string",
+          "id": "7b2bfde0-9361-44bd-8f51-6c63af562d7b",
+          "kind": "plain",
+          "name": "industry"
+        }
+      },
+      "variants": {
+        "a4d5b9a9-a339-48d4-b157-5102ff1d1c14": {
+          "id": "a4d5b9a9-a339-48d4-b157-5102ff1d1c14",
+          "name": "industry_is_not_etf",
+          "rule": {
+            "children": [
+              {
+                "id": "rn1969",
+                "kind": "check",
+                "operand": {
+                  "kind": "literal",
+                  "value": "ETF"
+                },
+                "operator": "!=",
+                "path": [
+                  "7b2bfde0-9361-44bd-8f51-6c63af562d7b"
+                ]
+              }
+            ],
+            "connective": "all",
+            "id": "rn1970",
+            "kind": "group",
+            "negated": false
+          }
+        }
+      }
     },
     {
       "computeds": {
@@ -4358,6 +4393,35 @@
       }
     },
     {
+      "autoCalls": [
+        {
+          "args": [],
+          "id": "70cb0e34-13f8-4c75-9468-4ae14e75ed5d",
+          "methodId": "f4b24e25-b956-4270-9153-6baeeb28a029"
+        },
+        {
+          "args": [],
+          "emits": [
+            {
+              "id": "f14b7b00-efb7-4588-b792-f67ee247f2fb",
+              "outputId": "572034e4-9bde-4717-9d53-525aa16e60bd",
+              "value": {
+                "binding": {
+                  "path": [
+                    "3cc120af-135d-4d87-8784-3be4932bef56"
+                  ],
+                  "root": {
+                    "id": "ec004f90-b04d-43c8-a653-4ad0c63a4ebc",
+                    "kind": "screen_computed"
+                  }
+                },
+                "kind": "binding"
+              }
+            }
+          ],
+          "id": "70cb0e34-13f8-4c75-9468-4ae14e75ed5d-f14b7b00-efb7-4588-b792-f67ee247f2fb"
+        }
+      ],
       "computeds": {
         "ec004f90-b04d-43c8-a653-4ad0c63a4ebc": {
           "args": {
@@ -4399,7 +4463,17 @@
         }
       },
       "kind": "feature",
-      "name": "company-summary"
+      "name": "company-summary",
+      "outputs": {
+        "572034e4-9bde-4717-9d53-525aa16e60bd": {
+          "id": "572034e4-9bde-4717-9d53-525aa16e60bd",
+          "name": "industry",
+          "payload": {
+            "cardinality": "one",
+            "dataType": "string"
+          }
+        }
+      }
     },
     {
       "computeds": {
