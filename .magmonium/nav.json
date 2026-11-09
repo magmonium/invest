@@ -8,6 +8,7 @@
         "root_user",
         "root_settings"
       ],
+      "icon": "logo",
       "label": "magmonium",
       "linkKind": "url",
       "navId": "root",
@@ -19,7 +20,7 @@
         "root_default_default",
         "root_default_portfolio",
         "root_default_instrument",
-        "root_default_instrument-copy",
+        "root_default_index",
         "root_default_instrument-copy-copy"
       ],
       "isDefault": true,
@@ -36,6 +37,36 @@
       "pageId": "6c977b12-22d7-46d9-b239-da27193df4be",
       "presentation": "static"
     },
+    "root_default_index": {
+      "children": [
+        "root_default_index_default",
+        "root_default_index_details"
+      ],
+      "icon": "trending-up",
+      "label": "index",
+      "linkKind": "url",
+      "navId": "root_default_index",
+      "pageId": "113ab67d-7504-459c-861a-2e683fc83891",
+      "presentation": "static"
+    },
+    "root_default_index_default": {
+      "children": [],
+      "isDefault": true,
+      "linkKind": "url",
+      "navId": "root_default_index_default",
+      "pageId": "b29b5847-0c82-447b-bbe4-c0aac7a71a28",
+      "presentation": "static"
+    },
+    "root_default_index_details": {
+      "children": [],
+      "icon": "trending-up",
+      "label": "details",
+      "linkKind": "url",
+      "navId": "root_default_index_details",
+      "pageId": "e24f9bb0-91ec-4874-8313-1c0d631fa204",
+      "param": "id",
+      "presentation": "dynamic"
+    },
     "root_default_instrument": {
       "children": [
         "root_default_instrument_default",
@@ -46,15 +77,6 @@
       "linkKind": "url",
       "navId": "root_default_instrument",
       "pageId": "1b9fbe2d-3242-4f27-9229-e78ac2e60242",
-      "presentation": "static"
-    },
-    "root_default_instrument-copy": {
-      "children": [],
-      "icon": "trending-up",
-      "label": "index",
-      "linkKind": "url",
-      "navId": "root_default_instrument-copy",
-      "pageId": "113ab67d-7504-459c-861a-2e683fc83891",
       "presentation": "static"
     },
     "root_default_instrument-copy-copy": {
@@ -78,13 +100,17 @@
     "root_default_instrument_with-ticker": {
       "children": [],
       "icon": "target",
-      "inheritsParams": false,
       "label": "company",
       "linkKind": "url",
       "navId": "root_default_instrument_with-ticker",
       "pageId": "5b7d2634-d741-46f1-8989-c576cf3c87d9",
       "param": "id",
-      "presentation": "dynamic"
+      "presentation": "dynamic",
+      "rowSource": {
+        "computedId": "3494be03-6780-4361-b3a0-7bb9162748d9",
+        "featureId": "acef9153-606d-4de2-8699-7c87fa589384",
+        "kind": "computed"
+      }
     },
     "root_default_portfolio": {
       "children": [],
@@ -184,5 +210,5 @@
       "presentation": "component"
     }
   },
-  "v": 30
+  "v": 32
 }

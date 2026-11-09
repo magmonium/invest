@@ -184,17 +184,34 @@
         ],
         "configs": {},
         "id": "da05144b-878e-461e-85c8-7778fcfc4e52",
-        "type": "section"
+        "type": "section",
+        "variantKind": "screen"
       },
       "f3c0a55c-fc09-4b45-82b1-58b288e05a3d": {
         "bindings": {
           "scoreDate": {
             "path": [
-              "e8d6a3ea-df61-4d7a-a3c4-e99d42d33bcc"
+              "96537e28-b844-4d4d-a331-b12e711d4d13"
             ],
             "root": {
               "id": "42cdc759-8ca9-44c5-82ba-129a826a6205",
               "kind": "screen_computed"
+            },
+            "transform": {
+              "args": [
+                {
+                  "kind": "pipe"
+                }
+              ],
+              "kind": "call",
+              "pipeParam": 0,
+              "target": {
+                "kind": "native",
+                "ref": {
+                  "group": "string",
+                  "name": "toString"
+                }
+              }
             }
           }
         },
@@ -220,8 +237,7 @@
     "rootControlIds": [
       "da05144b-878e-461e-85c8-7778fcfc4e52"
     ],
-    "selectedControl": "11c5e519-b077-49c8-a554-beb65ac1e805",
-    "selectedLayerId": 4
+    "selectedLayerId": 0
   },
-  "v": 30
+  "v": 32
 }

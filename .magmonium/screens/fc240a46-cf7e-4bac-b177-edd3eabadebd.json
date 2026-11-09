@@ -1,16 +1,35 @@
 {
   "meta": {
+    "computeds": {
+      "3fb4e445-50b9-4145-982a-af51cafd5a5d": {
+        "args": {
+          "40b50e86-5d0b-420f-9fe4-26c9caa3e002": {
+            "path": [
+              "443aba23-a361-4aa3-868a-479123e6cf06"
+            ],
+            "source": "path"
+          },
+          "52268a23-0c9b-4482-974e-e27783f98604": {
+            "inputId": "f106dc0c-a0bb-4b43-8889-4b7798cade44",
+            "source": "input"
+          }
+        },
+        "functionId": "26816946-9e08-413a-9b5a-26f72a2b473f",
+        "id": "3fb4e445-50b9-4145-982a-af51cafd5a5d",
+        "name": "rebalance"
+      }
+    },
     "featureId": "bbad551b-72b3-4fde-86f9-afa810cbc40c",
     "id": "fc240a46-cf7e-4bac-b177-edd3eabadebd",
     "inputs": {
-      "d5586934-e7f3-40ca-90be-f056b78ab7c3": {
+      "f106dc0c-a0bb-4b43-8889-4b7798cade44": {
         "cardinality": "one",
         "dataType": {
-          "shapeId": "389c6b89-5cd9-466a-be24-432ca2b7fc9a",
-          "type": "shape"
+          "type": "string"
         },
-        "id": "d5586934-e7f3-40ca-90be-f056b78ab7c3",
-        "name": "holding"
+        "id": "f106dc0c-a0bb-4b43-8889-4b7798cade44",
+        "name": "id",
+        "required": true
       }
     },
     "kind": "feature",
@@ -30,8 +49,8 @@
               },
               "operator": "==",
               "path": [
-                "d5586934-e7f3-40ca-90be-f056b78ab7c3",
-                "56af9e52-bfda-4696-a7e7-df0bda9fb381"
+                "3fb4e445-50b9-4145-982a-af51cafd5a5d",
+                "dae9d53e-c7b3-4917-8b38-0e443e272161"
               ]
             }
           ],
@@ -55,8 +74,8 @@
               },
               "operator": "==",
               "path": [
-                "d5586934-e7f3-40ca-90be-f056b78ab7c3",
-                "56af9e52-bfda-4696-a7e7-df0bda9fb381"
+                "3fb4e445-50b9-4145-982a-af51cafd5a5d",
+                "dae9d53e-c7b3-4917-8b38-0e443e272161"
               ]
             }
           ],
@@ -80,8 +99,8 @@
               },
               "operator": "==",
               "path": [
-                "d5586934-e7f3-40ca-90be-f056b78ab7c3",
-                "56af9e52-bfda-4696-a7e7-df0bda9fb381"
+                "3fb4e445-50b9-4145-982a-af51cafd5a5d",
+                "dae9d53e-c7b3-4917-8b38-0e443e272161"
               ]
             }
           ],
@@ -95,53 +114,6 @@
   },
   "state": {
     "controlMap": {
-      "4f811225-4b57-4302-820e-cc1d3dd07b1d": {
-        "bindings": {
-          "label": {
-            "path": [
-              "24c88c3c-ef37-42d4-b0c2-27f2b8a93dd2"
-            ],
-            "root": {
-              "id": "d5586934-e7f3-40ca-90be-f056b78ab7c3",
-              "kind": "input"
-            }
-          }
-        },
-        "childrens": [],
-        "configs": {
-          "variant": "link"
-        },
-        "directives": {
-          "routerLink": {
-            "configs": {
-              "mode": "absolute",
-              "parts": [
-                {
-                  "kind": "static",
-                  "value": "instrument"
-                },
-                {
-                  "binding": {
-                    "path": [
-                      "24c88c3c-ef37-42d4-b0c2-27f2b8a93dd2"
-                    ],
-                    "root": {
-                      "id": "d5586934-e7f3-40ca-90be-f056b78ab7c3",
-                      "kind": "input"
-                    }
-                  },
-                  "kind": "dynamic"
-                }
-              ]
-            }
-          }
-        },
-        "id": "4f811225-4b57-4302-820e-cc1d3dd07b1d",
-        "parentId": "a00dbdf3-decd-4026-895f-42b36af07cff",
-        "source": "raw",
-        "textSource": "dynamic",
-        "type": "text"
-      },
       "5c1ebfd1-3daf-411b-9c06-91406ebe1583": {
         "childrens": [
           "5e9928ff-b0c0-4267-a40d-5bc41ef928a9",
@@ -158,60 +130,12 @@
       "5e9928ff-b0c0-4267-a40d-5bc41ef928a9": {
         "armKind": "default",
         "childrens": [
-          "df54f4cd-a4e6-41f1-9631-f416b45f1820",
-          "fdcb34fb-c641-45fc-90f1-0816dc2c9ba5"
+          "df54f4cd-a4e6-41f1-9631-f416b45f1820"
         ],
         "configs": {},
         "id": "5e9928ff-b0c0-4267-a40d-5bc41ef928a9",
         "parentId": "5c1ebfd1-3daf-411b-9c06-91406ebe1583",
         "type": "branch_arm"
-      },
-      "63297b6b-6c38-4cf1-abfc-21ca66690148": {
-        "bindings": {
-          "label": {
-            "path": [
-              "24c88c3c-ef37-42d4-b0c2-27f2b8a93dd2"
-            ],
-            "root": {
-              "id": "d5586934-e7f3-40ca-90be-f056b78ab7c3",
-              "kind": "input"
-            }
-          }
-        },
-        "childrens": [],
-        "configs": {
-          "variant": "link"
-        },
-        "directives": {
-          "routerLink": {
-            "configs": {
-              "mode": "absolute",
-              "parts": [
-                {
-                  "kind": "static",
-                  "value": "instrument"
-                },
-                {
-                  "binding": {
-                    "path": [
-                      "24c88c3c-ef37-42d4-b0c2-27f2b8a93dd2"
-                    ],
-                    "root": {
-                      "id": "d5586934-e7f3-40ca-90be-f056b78ab7c3",
-                      "kind": "input"
-                    }
-                  },
-                  "kind": "dynamic"
-                }
-              ]
-            }
-          }
-        },
-        "id": "63297b6b-6c38-4cf1-abfc-21ca66690148",
-        "parentId": "ad8d2a68-87c7-4f12-8465-ea2f84b9f0f5",
-        "source": "raw",
-        "textSource": "dynamic",
-        "type": "text"
       },
       "9bb6eadb-d5a4-4ffa-bd3d-3068534cea79": {
         "childrens": [],
@@ -226,8 +150,7 @@
       },
       "a00dbdf3-decd-4026-895f-42b36af07cff": {
         "childrens": [
-          "aca1fe58-4b30-4bb1-9ef8-24d98de67a0a",
-          "4f811225-4b57-4302-820e-cc1d3dd07b1d"
+          "aca1fe58-4b30-4bb1-9ef8-24d98de67a0a"
         ],
         "configs": {
           "name": "a00dbdf3-decd-4026-895f-42b36af07cff"
@@ -267,8 +190,7 @@
       },
       "ad8d2a68-87c7-4f12-8465-ea2f84b9f0f5": {
         "childrens": [
-          "9bb6eadb-d5a4-4ffa-bd3d-3068534cea79",
-          "63297b6b-6c38-4cf1-abfc-21ca66690148"
+          "9bb6eadb-d5a4-4ffa-bd3d-3068534cea79"
         ],
         "configs": {
           "name": "ad8d2a68-87c7-4f12-8465-ea2f84b9f0f5"
@@ -307,8 +229,7 @@
       },
       "f681f2b3-0523-4acb-88aa-d2428b307163": {
         "childrens": [
-          "b2567edb-adbf-43de-a7de-4b5d6a492d4c",
-          "f9c8e7e5-c478-4b62-bb97-e88e72ec0f43"
+          "b2567edb-adbf-43de-a7de-4b5d6a492d4c"
         ],
         "configs": {
           "name": "f681f2b3-0523-4acb-88aa-d2428b307163"
@@ -323,102 +244,6 @@
             "join": "and"
           }
         ]
-      },
-      "f9c8e7e5-c478-4b62-bb97-e88e72ec0f43": {
-        "bindings": {
-          "label": {
-            "path": [
-              "24c88c3c-ef37-42d4-b0c2-27f2b8a93dd2"
-            ],
-            "root": {
-              "id": "d5586934-e7f3-40ca-90be-f056b78ab7c3",
-              "kind": "input"
-            }
-          }
-        },
-        "childrens": [],
-        "configs": {
-          "color": "error",
-          "variant": "link"
-        },
-        "directives": {
-          "routerLink": {
-            "configs": {
-              "mode": "absolute",
-              "parts": [
-                {
-                  "kind": "static",
-                  "value": "instrument"
-                },
-                {
-                  "binding": {
-                    "path": [
-                      "24c88c3c-ef37-42d4-b0c2-27f2b8a93dd2"
-                    ],
-                    "root": {
-                      "id": "d5586934-e7f3-40ca-90be-f056b78ab7c3",
-                      "kind": "input"
-                    }
-                  },
-                  "kind": "dynamic"
-                }
-              ]
-            }
-          }
-        },
-        "id": "f9c8e7e5-c478-4b62-bb97-e88e72ec0f43",
-        "parentId": "f681f2b3-0523-4acb-88aa-d2428b307163",
-        "source": "raw",
-        "textSource": "dynamic",
-        "type": "text"
-      },
-      "fdcb34fb-c641-45fc-90f1-0816dc2c9ba5": {
-        "bindings": {
-          "label": {
-            "path": [
-              "24c88c3c-ef37-42d4-b0c2-27f2b8a93dd2"
-            ],
-            "root": {
-              "id": "d5586934-e7f3-40ca-90be-f056b78ab7c3",
-              "kind": "input"
-            }
-          }
-        },
-        "childrens": [],
-        "configs": {
-          "color": "success",
-          "variant": "link"
-        },
-        "directives": {
-          "routerLink": {
-            "configs": {
-              "mode": "absolute",
-              "parts": [
-                {
-                  "kind": "static",
-                  "value": "instrument"
-                },
-                {
-                  "binding": {
-                    "path": [
-                      "24c88c3c-ef37-42d4-b0c2-27f2b8a93dd2"
-                    ],
-                    "root": {
-                      "id": "d5586934-e7f3-40ca-90be-f056b78ab7c3",
-                      "kind": "input"
-                    }
-                  },
-                  "kind": "dynamic"
-                }
-              ]
-            }
-          }
-        },
-        "id": "fdcb34fb-c641-45fc-90f1-0816dc2c9ba5",
-        "parentId": "5e9928ff-b0c0-4267-a40d-5bc41ef928a9",
-        "source": "raw",
-        "textSource": "dynamic",
-        "type": "text"
       }
     },
     "labelSamples": {},
@@ -426,8 +251,7 @@
     "rootControlIds": [
       "a695dbb0-cb47-4cb7-9680-d80fb3550f9f"
     ],
-    "selectedControl": "fdcb34fb-c641-45fc-90f1-0816dc2c9ba5",
-    "selectedLayerId": 4
+    "selectedLayerId": 0
   },
-  "v": 30
+  "v": 32
 }

@@ -96,7 +96,35 @@
           }
         },
         "childrens": [],
-        "configs": {},
+        "configs": {
+          "variant": "link"
+        },
+        "directives": {
+          "routerLink": {
+            "configs": {
+              "mode": "absolute",
+              "parts": [
+                {
+                  "kind": "static",
+                  "value": "index"
+                },
+                {
+                  "binding": {
+                    "path": [
+                      "f1470697-5869-4e01-9269-934b124c203b"
+                    ],
+                    "root": {
+                      "alias": "item",
+                      "kind": "alias",
+                      "repeatId": "10b3b9f2-7f10-40e4-8fa3-ceac629a9d69"
+                    }
+                  },
+                  "kind": "dynamic"
+                }
+              ]
+            }
+          }
+        },
         "id": "23ae8409-861a-4958-9c21-a014fbf5366f",
         "parentId": "8eb53d07-25a6-4d30-a767-1a9f8b3c71b6",
         "textSource": "dynamic",
@@ -438,5 +466,5 @@
     ],
     "selectedLayerId": 0
   },
-  "v": 30
+  "v": 32
 }

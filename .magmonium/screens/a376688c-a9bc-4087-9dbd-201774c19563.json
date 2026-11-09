@@ -115,9 +115,15 @@
       },
       "5c7ad843-3a4d-4272-9c37-bcbaabecab1b": {
         "childrens": [
-          "921784e1-7f01-4cfe-b6c3-56b1601a5f2d"
+          "921784e1-7f01-4cfe-b6c3-56b1601a5f2d",
+          "eec1dad9-1676-4eea-88c6-36b4f2d17505",
+          "be71f189-762f-46b1-a5d1-9e755de92186"
         ],
-        "configs": {},
+        "configs": {
+          "alignItems": "center",
+          "direction": "row",
+          "gap": "0.25"
+        },
         "id": "5c7ad843-3a4d-4272-9c37-bcbaabecab1b",
         "parentId": "f42e6e2d-2142-451c-bbcc-5ab7159f3e71",
         "type": "flex"
@@ -274,9 +280,11 @@
         "parentId": "5c7ad843-3a4d-4272-9c37-bcbaabecab1b",
         "screenId": "fc240a46-cf7e-4bac-b177-edd3eabadebd",
         "screenInputs": {
-          "d5586934-e7f3-40ca-90be-f056b78ab7c3": {
+          "f106dc0c-a0bb-4b43-8889-4b7798cade44": {
             "binding": {
-              "path": [],
+              "path": [
+                "24c88c3c-ef37-42d4-b0c2-27f2b8a93dd2"
+              ],
               "root": {
                 "alias": "item",
                 "kind": "alias",
@@ -296,6 +304,46 @@
         "id": "9f49f740-599f-490a-812f-d89c6190e5f2",
         "parentId": "8db814eb-c0f9-48c2-8401-6d8d767b58c9",
         "type": "section_table_cell"
+      },
+      "be71f189-762f-46b1-a5d1-9e755de92186": {
+        "childrens": [],
+        "configs": {
+          "icon": "chevron-right",
+          "iconOnly": true,
+          "size": "sm",
+          "variant": "ghost"
+        },
+        "id": "be71f189-762f-46b1-a5d1-9e755de92186",
+        "outputOpens": {
+          "clicked": {
+            "as": "side_panel",
+            "inputs": [
+              {
+                "inputId": "db0904bd-93a1-4ddf-b070-7dc7f058f6a3",
+                "value": {
+                  "binding": {
+                    "binding": {
+                      "path": [
+                        "24c88c3c-ef37-42d4-b0c2-27f2b8a93dd2"
+                      ],
+                      "root": {
+                        "alias": "item",
+                        "kind": "alias",
+                        "repeatId": "cbcce7f2-3740-4f95-ab39-53ba6406e559"
+                      }
+                    },
+                    "kind": "data"
+                  },
+                  "kind": "screen"
+                }
+              }
+            ],
+            "screenId": "bb75c0ed-20d1-445e-a81a-df1cde919f03",
+            "side": "right"
+          }
+        },
+        "parentId": "5c7ad843-3a4d-4272-9c37-bcbaabecab1b",
+        "type": "button"
       },
       "cbcce7f2-3740-4f95-ab39-53ba6406e559": {
         "bindings": {
@@ -380,6 +428,54 @@
         "id": "eafcde42-5536-4504-b61c-3259a150d9b1",
         "type": "section"
       },
+      "eec1dad9-1676-4eea-88c6-36b4f2d17505": {
+        "bindings": {
+          "label": {
+            "path": [
+              "24c88c3c-ef37-42d4-b0c2-27f2b8a93dd2"
+            ],
+            "root": {
+              "alias": "item",
+              "kind": "alias",
+              "repeatId": "cbcce7f2-3740-4f95-ab39-53ba6406e559"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {
+          "variant": "link"
+        },
+        "directives": {
+          "routerLink": {
+            "configs": {
+              "mode": "absolute",
+              "parts": [
+                {
+                  "kind": "static",
+                  "value": "instrument"
+                },
+                {
+                  "binding": {
+                    "path": [
+                      "24c88c3c-ef37-42d4-b0c2-27f2b8a93dd2"
+                    ],
+                    "root": {
+                      "alias": "item",
+                      "kind": "alias",
+                      "repeatId": "cbcce7f2-3740-4f95-ab39-53ba6406e559"
+                    }
+                  },
+                  "kind": "dynamic"
+                }
+              ]
+            }
+          }
+        },
+        "id": "eec1dad9-1676-4eea-88c6-36b4f2d17505",
+        "parentId": "5c7ad843-3a4d-4272-9c37-bcbaabecab1b",
+        "textSource": "dynamic",
+        "type": "text"
+      },
       "f42e6e2d-2142-451c-bbcc-5ab7159f3e71": {
         "childrens": [
           "5c7ad843-3a4d-4272-9c37-bcbaabecab1b"
@@ -395,8 +491,7 @@
     "rootControlIds": [
       "eafcde42-5536-4504-b61c-3259a150d9b1"
     ],
-    "selectedControl": "921784e1-7f01-4cfe-b6c3-56b1601a5f2d",
-    "selectedLayerId": 7
+    "selectedLayerId": 0
   },
-  "v": 30
+  "v": 32
 }

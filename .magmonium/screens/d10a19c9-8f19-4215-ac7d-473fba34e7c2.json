@@ -43,7 +43,33 @@
       }
     },
     "kind": "feature",
-    "name": "ranking-company"
+    "name": "ranking-company",
+    "variants": {
+      "6c0623ae-f010-4cd4-8b77-5926b70b7d12": {
+        "id": "6c0623ae-f010-4cd4-8b77-5926b70b7d12",
+        "name": "is_portfolio",
+        "rule": {
+          "children": [
+            {
+              "id": "rn25",
+              "kind": "check",
+              "operand": {
+                "kind": "literal",
+                "value": "PORTFOLIO"
+              },
+              "operator": "==",
+              "path": [
+                "39757484-69ff-4f2d-9dd4-7e0b043a5cc2"
+              ]
+            }
+          ],
+          "connective": "all",
+          "id": "rn26",
+          "kind": "group",
+          "negated": false
+        }
+      }
+    }
   },
   "state": {
     "controlMap": {
@@ -228,6 +254,69 @@
         "source": "raw",
         "type": "section_table_cell"
       },
+      "4bc55838-c96d-476d-8af3-5cad34514849": {
+        "childrens": [
+          "51dcc832-a2e8-4082-900f-7ee575b92b1d"
+        ],
+        "configs": {},
+        "id": "4bc55838-c96d-476d-8af3-5cad34514849",
+        "parentId": "db9e0f13-f570-477c-853f-a784f0a962b2",
+        "type": "branch_arm",
+        "variants": [
+          {
+            "id": "6c0623ae-f010-4cd4-8b77-5926b70b7d12",
+            "join": "and"
+          }
+        ]
+      },
+      "51dcc832-a2e8-4082-900f-7ee575b92b1d": {
+        "bindings": {
+          "label": {
+            "path": [
+              "f1470697-5869-4e01-9269-934b124c203b"
+            ],
+            "root": {
+              "alias": "item",
+              "kind": "alias",
+              "repeatId": "3d952e35-369f-416b-8375-b7e675b518bb"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {
+          "variant": "link"
+        },
+        "directives": {
+          "routerLink": {
+            "configs": {
+              "mode": "absolute",
+              "parts": [
+                {
+                  "kind": "static",
+                  "value": "index"
+                },
+                {
+                  "binding": {
+                    "path": [
+                      "f1470697-5869-4e01-9269-934b124c203b"
+                    ],
+                    "root": {
+                      "alias": "item",
+                      "kind": "alias",
+                      "repeatId": "3d952e35-369f-416b-8375-b7e675b518bb"
+                    }
+                  },
+                  "kind": "dynamic"
+                }
+              ]
+            }
+          }
+        },
+        "id": "51dcc832-a2e8-4082-900f-7ee575b92b1d",
+        "parentId": "4bc55838-c96d-476d-8af3-5cad34514849",
+        "textSource": "dynamic",
+        "type": "text"
+      },
       "63b66a2c-6e69-4aff-a82c-56f964b58598": {
         "childrens": [
           "0d627068-aefd-4704-a441-a6d07cfdcc84"
@@ -284,7 +373,7 @@
           }
         },
         "id": "71b26329-5e9c-4546-864a-83ee7114713e",
-        "parentId": "e6192c61-224c-4c60-b85d-92259042b69d",
+        "parentId": "8dd35d25-ed49-43c1-8b3d-4a84646c364c",
         "source": "raw",
         "textSource": "dynamic",
         "type": "text"
@@ -353,6 +442,19 @@
         },
         "source": "raw",
         "type": "section"
+      },
+      "8dd35d25-ed49-43c1-8b3d-4a84646c364c": {
+        "armKind": "default",
+        "childrens": [
+          "71b26329-5e9c-4546-864a-83ee7114713e"
+        ],
+        "configs": {
+          "name": "8dd35d25-ed49-43c1-8b3d-4a84646c364c"
+        },
+        "id": "8dd35d25-ed49-43c1-8b3d-4a84646c364c",
+        "parentId": "db9e0f13-f570-477c-853f-a784f0a962b2",
+        "source": "raw",
+        "type": "branch_arm"
       },
       "8dfa6413-f49e-41de-a8d8-4c2cdefc0c6a": {
         "childrens": [
@@ -505,9 +607,20 @@
         "source": "raw",
         "type": "section_table"
       },
+      "db9e0f13-f570-477c-853f-a784f0a962b2": {
+        "childrens": [
+          "4bc55838-c96d-476d-8af3-5cad34514849",
+          "8dd35d25-ed49-43c1-8b3d-4a84646c364c"
+        ],
+        "configs": {},
+        "id": "db9e0f13-f570-477c-853f-a784f0a962b2",
+        "parentId": "e6192c61-224c-4c60-b85d-92259042b69d",
+        "type": "variant_branch",
+        "variantKind": "screen"
+      },
       "e6192c61-224c-4c60-b85d-92259042b69d": {
         "childrens": [
-          "71b26329-5e9c-4546-864a-83ee7114713e"
+          "db9e0f13-f570-477c-853f-a784f0a962b2"
         ],
         "configs": {
           "name": "e6192c61-224c-4c60-b85d-92259042b69d"
@@ -533,8 +646,7 @@
     "rootControlIds": [
       "8cf56239-9d20-4334-9868-b9e883a1a9ff"
     ],
-    "selectedControl": "71b26329-5e9c-4546-864a-83ee7114713e",
-    "selectedLayerId": 7
+    "selectedLayerId": 0
   },
-  "v": 30
+  "v": 32
 }

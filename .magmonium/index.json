@@ -14,7 +14,7 @@
     },
     "mode": "new"
   },
-  "codegen": "0.8.24",
+  "codegen": "0.8.27",
   "distinct": [],
   "enums": {
     "4bc51fb3-db70-4ead-ac0d-c48ae741522d": {
@@ -552,28 +552,21 @@
         },
         "37ba9643-8249-44bf-8d9f-42d041cbeb6a": {
           "aiDrafted": true,
-          "body": "return Object.values(companyMap)\n    .map(company => ({\n      value: company.id,\n      label: company.name\n    }))\n    .sort((a, b) => a.label.localeCompare(b.label));",
+          "body": "return Object.values(companyMap)\n    .map(company => ({\n      value: company.symbol,\n      label: company.name\n    }))\n    .sort((a, b) => a.label.localeCompare(b.label));",
           "cases": [
+            {
+              "args": [
+                "{ \"AAPL\": { \"symbol\": \"AAPL\", \"name\": \"Apple Inc.\", \"ticker\": \"\", \"isin\": \"\", \"sector\": \"\", \"industry\": \"\", \"subindustry\": \"\", \"type\": \"\", \"exchange\": \"\", \"marketCapLabel\": \"\", \"etfLiqLabel\": \"\", \"price\": 0, \"marketCap\": 0, \"mrktCapRank\": 0, \"momRank\": 0, \"faceValue\": 0, \"dailyChange\": 0, \"weekChange\": 0, \"monthChange\": 0, \"yearlyChange\": 0, \"maxChange\": 0, \"forecast\": 0, \"forecastProfit\": 0, \"sma10d\": 0, \"sma50d\": 0, \"sma100d\": 0, \"sma200d\": 0, \"sma10dPct\": 0, \"sma50dPct\": 0, \"sma100dPct\": 0, \"sma200dPct\": 0, \"ema10d\": 0, \"ema50d\": 0, \"ema100d\": 0, \"ema200d\": 0, \"ema10dPct\": 0, \"ema50dPct\": 0, \"ema100dPct\": 0, \"ema200dPct\": 0, \"avgScore\": 0, \"momScore\": 0, \"valScore\": 0, \"volScore\": 0, \"durScore\": 0, \"drawScore\": 0, \"ttmPe\": 0, \"pb\": 0, \"indpe\": 0, \"indpb\": 0, \"divYield\": 0, \"eps\": 0, \"risk\": 0, \"maxDrawdown\": 0, \"currentDrawdown\": 0, \"daysSincePeak\": 0, \"riseFromValley\": 0, \"max\": 0, \"min\": 0, \"updated\": \"\", \"scoredOn\": \"\", \"id\": \"\", \"link\": \"\", \"description\": \"\", \"weekly\": [], \"financialSummary\": [] }, \"MSFT\": { \"symbol\": \"MSFT\", \"name\": \"Microsoft Corp.\", \"ticker\": \"\", \"isin\": \"\", \"sector\": \"\", \"industry\": \"\", \"subindustry\": \"\", \"type\": \"\", \"exchange\": \"\", \"marketCapLabel\": \"\", \"etfLiqLabel\": \"\", \"price\": 0, \"marketCap\": 0, \"mrktCapRank\": 0, \"momRank\": 0, \"faceValue\": 0, \"dailyChange\": 0, \"weekChange\": 0, \"monthChange\": 0, \"yearlyChange\": 0, \"maxChange\": 0, \"forecast\": 0, \"forecastProfit\": 0, \"sma10d\": 0, \"sma50d\": 0, \"sma100d\": 0, \"sma200d\": 0, \"sma10dPct\": 0, \"sma50dPct\": 0, \"sma100dPct\": 0, \"sma200dPct\": 0, \"ema10d\": 0, \"ema50d\": 0, \"ema100d\": 0, \"ema200d\": 0, \"ema10dPct\": 0, \"ema50dPct\": 0, \"ema100dPct\": 0, \"ema200dPct\": 0, \"avgScore\": 0, \"momScore\": 0, \"valScore\": 0, \"volScore\": 0, \"durScore\": 0, \"drawScore\": 0, \"ttmPe\": 0, \"pb\": 0, \"indpe\": 0, \"indpb\": 0, \"divYield\": 0, \"eps\": 0, \"risk\": 0, \"maxDrawdown\": 0, \"currentDrawdown\": 0, \"daysSincePeak\": 0, \"riseFromValley\": 0, \"max\": 0, \"min\": 0, \"updated\": \"\", \"scoredOn\": \"\", \"id\": \"\", \"link\": \"\", \"description\": \"\", \"weekly\": [], \"financialSummary\": [] } }"
+              ],
+              "expected": "[{ \"value\": \"AAPL\", \"label\": \"Apple Inc.\" }, { \"value\": \"MSFT\", \"label\": \"Microsoft Corp.\" }]",
+              "name": "maps and sorts multiple companies alphabetically by name"
+            },
             {
               "args": [
                 "{}"
               ],
               "expected": "[]",
-              "name": "empty company map"
-            },
-            {
-              "args": [
-                "{ \"AAPL\": { \"symbol\": \"AAPL\", \"name\": \"Apple Inc.\", \"ticker\": \"AAPL\", \"isin\": \"US0378331005\", \"sector\": \"Technology\", \"industry\": \"Consumer Electronics\", \"subindustry\": \"Hardware\", \"type\": \"Stock\", \"exchange\": \"NASDAQ\", \"marketCapLabel\": \"Mega\", \"etfLiqLabel\": \"High\", \"price\": 175, \"marketCap\": 2700000000000, \"mrktCapRank\": 1, \"momRank\": 2, \"faceValue\": 0.0001, \"dailyChange\": 1.2, \"weekChange\": -0.5, \"monthChange\": 3.4, \"yearlyChange\": 15.6, \"maxChange\": 800, \"forecast\": 190, \"forecastProfit\": 12, \"sma10d\": 173, \"sma50d\": 170, \"sma100d\": 168, \"sma200d\": 160, \"sma10dPct\": 1.15, \"sma50dPct\": 2.94, \"sma100dPct\": 4.16, \"sma200dPct\": 9.37, \"ema10d\": 174, \"ema50d\": 171, \"ema100d\": 167, \"ema200d\": 161, \"ema10dPct\": 0.57, \"ema50dPct\": 2.33, \"ema100dPct\": 4.79, \"ema200dPct\": 8.69, \"avgScore\": 8.5, \"momScore\": 7, \"valScore\": 5, \"volScore\": 9, \"durScore\": 9, \"drawScore\": 8, \"ttmPe\": 29.1, \"pb\": 46.3, \"indpe\": 26.5, \"indpb\": 32.1, \"divYield\": 0.55, \"eps\": 6.15, \"risk\": 1, \"maxDrawdown\": -12.4, \"currentDrawdown\": -3.1, \"daysSincePeak\": 15, \"riseFromValley\": 4.2, \"max\": 198.2, \"min\": 124.1, \"updated\": \"2023-10-15T00:00:00Z\", \"scoredOn\": \"2023-10-15T00:00:00Z\", \"id\": \"apple-123\", \"link\": \"https://apple.com\", \"description\": \"Technology company\", \"weekly\": [], \"financialSummary\": [] } }"
-              ],
-              "expected": "[{ \"value\": \"apple-123\", \"label\": \"Apple Inc.\" }]",
-              "name": "one company"
-            },
-            {
-              "args": [
-                "{ \"MSFT\": { \"symbol\": \"MSFT\", \"name\": \"Microsoft Corp.\", \"ticker\": \"MSFT\", \"isin\": \"US5949181045\", \"sector\": \"Technology\", \"industry\": \"Software\", \"subindustry\": \"Cloud\", \"type\": \"Stock\", \"exchange\": \"NASDAQ\", \"marketCapLabel\": \"Mega\", \"etfLiqLabel\": \"High\", \"price\": 330, \"marketCap\": 2400000000000, \"mrktCapRank\": 2, \"momRank\": 3, \"faceValue\": 0.0000625, \"dailyChange\": -0.4, \"weekChange\": 2.1, \"monthChange\": 5.1, \"yearlyChange\": 28.3, \"maxChange\": 1200, \"forecast\": 360, \"forecastProfit\": 15, \"sma10d\": 328, \"sma50d\": 320, \"sma100d\": 310, \"sma200d\": 290, \"sma10dPct\": 0.6, \"sma50dPct\": 3.1, \"sma100dPct\": 6.4, \"sma200dPct\": 13.8, \"ema10d\": 329, \"ema50d\": 318, \"ema100d\": 308, \"ema200d\": 292, \"ema10dPct\": 0.3, \"ema50dPct\": 3.7, \"ema100dPct\": 7.1, \"ema200dPct\": 13, \"avgScore\": 9, \"momScore\": 8, \"valScore\": 4, \"volScore\": 9, \"durScore\": 9, \"drawScore\": 9, \"ttmPe\": 33.4, \"pb\": 12.5, \"indpe\": 28.2, \"indpb\": 10.1, \"divYield\": 0.82, \"eps\": 9.88, \"risk\": 1, \"maxDrawdown\": -10.5, \"currentDrawdown\": -1.5, \"daysSincePeak\": 5, \"riseFromValley\": 8.4, \"max\": 366.7, \"min\": 213.4, \"updated\": \"2023-10-15T00:00:00Z\", \"scoredOn\": \"2023-10-15T00:00:00Z\", \"id\": \"msft-456\", \"link\": \"https://microsoft.com\", \"description\": \"Software company\", \"weekly\": [], \"financialSummary\": [] }, \"AMZN\": { \"symbol\": \"AMZN\", \"name\": \"Amazon.com Inc.\", \"ticker\": \"AMZN\", \"isin\": \"US0231351067\", \"sector\": \"Consumer Discretionary\", \"industry\": \"Retail\", \"subindustry\": \"E-Commerce\", \"type\": \"Stock\", \"exchange\": \"NASDAQ\", \"marketCapLabel\": \"Large\", \"etfLiqLabel\": \"High\", \"price\": 130, \"marketCap\": 1300000000000, \"mrktCapRank\": 5, \"momRank\": 8, \"faceValue\": 0.01, \"dailyChange\": 1.5, \"weekChange\": 3.2, \"monthChange\": -1.2, \"yearlyChange\": 12, \"maxChange\": 1500, \"forecast\": 150, \"forecastProfit\": 8, \"sma10d\": 128, \"sma50d\": 129, \"sma100d\": 125, \"sma200d\": 115, \"sma10dPct\": 1.56, \"sma50dPct\": 0.77, \"sma100dPct\": 4, \"sma200dPct\": 13.04, \"ema10d\": 129, \"ema50d\": 128, \"ema100d\": 124, \"ema200d\": 118, \"ema10dPct\": 0.77, \"ema50dPct\": 1.56, \"ema100dPct\": 4.83, \"ema200dPct\": 10.17, \"avgScore\": 7.5, \"momScore\": 6, \"valScore\": 4, \"volScore\": 8, \"durScore\": 8, \"drawScore\": 7, \"ttmPe\": 60.2, \"pb\": 8.4, \"indpe\": 40, \"indpb\": 6.5, \"divYield\": 0, \"eps\": 2.16, \"risk\": 3, \"maxDrawdown\": -25.6, \"currentDrawdown\": -8.4, \"daysSincePeak\": 28, \"riseFromValley\": 14.5, \"max\": 145.8, \"min\": 81.4, \"updated\": \"2023-10-15T00:00:00Z\", \"scoredOn\": \"2023-10-15T00:00:00Z\", \"id\": \"amzn-789\", \"link\": \"https://amazon.com\", \"description\": \"E-Commerce\", \"weekly\": [], \"financialSummary\": [] } }"
-              ],
-              "expected": "[{ \"value\": \"amzn-789\", \"label\": \"Amazon.com Inc.\" }, { \"value\": \"msft-456\", \"label\": \"Microsoft Corp.\" }]",
-              "name": "multiple companies sorted alphabetically by name"
+              "name": "handles empty company map"
             }
           ],
           "description": "Maps a dictionary of companies to navigation options, sorted alphabetically by company name.",
@@ -932,13 +925,13 @@
           ],
           "returnCardinality": "map-many",
           "returnType": {
-            "shapeId": "5f919533-ccdf-447e-8655-ec2d6ba2c7ed",
+            "shapeId": "28923b52-e29b-4bce-be6a-72f5205537a6",
             "type": "shape"
           }
         },
         "f42d5c5b-af2f-4f07-be31-449e76dbc5e4": {
           "aiDrafted": true,
-          "body": "const result: Record<string, FinanceCompanyUpdateResponseCompany> = companyMap ? { ...companyMap } : {};\n\n  if (!Array.isArray(companies)) {\n    return result;\n  }\n\n  for (const company of companies) {\n    if (!company || typeof company.symbol !== 'string') {\n      continue;\n    }\n\n    result[company.symbol] = company as unknown as FinanceCompanyUpdateResponseCompany;\n  }\n\n  return result;",
+          "body": "const result: Record<string, FinanceCompaniesUpdateResponseCompanies> = companyMap ? { ...companyMap } : {};\n\n  if (!Array.isArray(companies)) {\n    return result;\n  }\n\n  for (const company of companies) {\n    if (!company || typeof company.symbol !== 'string') {\n      continue;\n    }\n\n    result[company.symbol] = company;\n  }\n\n  return result;",
           "description": "Updates an existing company map with the provided companies, adding new symbols and replacing existing ones.",
           "id": "f42d5c5b-af2f-4f07-be31-449e76dbc5e4",
           "name": "updateCompaniesMap",
@@ -946,7 +939,7 @@
             {
               "cardinality": "many",
               "dataType": {
-                "shapeId": "822556ca-83be-44a9-a920-cc493ac02bbc",
+                "shapeId": "1413d88a-833d-457c-a2be-556739f6cdc4",
                 "type": "shape"
               },
               "id": "de29392e-145e-41bd-b77b-39e8299ccd85",
@@ -1286,8 +1279,7 @@
               "check": {
                 "operator": "not_exists",
                 "path": [
-                  "f9417bc7-7332-4fc8-b609-05f40373d8b8",
-                  "501edbe4-466f-4048-9914-0632323fb5b2"
+                  "f9417bc7-7332-4fc8-b609-05f40373d8b8"
                 ],
                 "source": "store"
               },
@@ -1724,6 +1716,14 @@
               "dataType": {
                 "type": "number"
               },
+              "id": "d79caef4-b8ff-48d7-9166-a2546ce180ab",
+              "name": "qualScore"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
               "id": "b60ce566-856c-4cd8-a665-d21583cd46ec",
               "name": "volScore"
             },
@@ -1790,6 +1790,22 @@
               },
               "id": "68436642-58ff-440f-b2fc-ee55750d21e8",
               "name": "eps"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "13eccb34-6a93-4edf-acfe-84f89372c828",
+              "name": "52wHigh"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "e45f9c18-2279-4102-aa7e-3a37ff01cb8f",
+              "name": "52wLow"
             },
             {
               "cardinality": "one",
@@ -1906,12 +1922,12 @@
               "name": "financialSummary"
             }
           ],
-          "name": "finance-company-update-response-company",
+          "name": "finance-companies-update-response-companies",
           "origin": {
             "code": "200",
-            "path": "/finance/v1/company/{id}",
+            "path": "/finance/v1/companies",
             "pointer": [
-              "company"
+              "companies"
             ],
             "verb": "put"
           }
@@ -1944,52 +1960,13 @@
               "name": "v"
             }
           ],
-          "name": "finance-company-update-response-company-weekly",
-          "origin": {
-            "code": "200",
-            "path": "/finance/v1/company/{id}",
-            "pointer": [
-              "company",
-              "weekly"
-            ],
-            "verb": "put"
-          }
-        },
-        "2e5e0107-24e4-4754-9c8e-fc477fe0a979": {
-          "id": "2e5e0107-24e4-4754-9c8e-fc477fe0a979",
-          "keys": [
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "string"
-              },
-              "id": "733051d0-797b-4b42-8e5a-d5a30eebe333",
-              "name": "year"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "ef9232ef-858d-4cc5-838e-aeb54f7e96b8",
-              "name": "revenue"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "fdb981bc-1010-4582-8601-ca0ffd650f64",
-              "name": "profit"
-            }
-          ],
-          "name": "finance-companies-update-response-companies-financialsummary",
+          "name": "finance-companies-update-response-companies-weekly",
           "origin": {
             "code": "200",
             "path": "/finance/v1/companies",
             "pointer": [
               "companies",
-              "financialSummary"
+              "weekly"
             ],
             "verb": "put"
           }
@@ -2071,581 +2048,6 @@
           },
           "positional": true
         },
-        "5f919533-ccdf-447e-8655-ec2d6ba2c7ed": {
-          "id": "5f919533-ccdf-447e-8655-ec2d6ba2c7ed",
-          "keys": [
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "string"
-              },
-              "id": "76ebc0ab-7b28-4b53-a394-ef605222d959",
-              "name": "ts"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "2e901695-2302-4f3e-851a-c80c1f72f8f2",
-              "name": "lp"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "fcb4149d-57af-470c-82d9-57cd3a07d676",
-              "name": "v"
-            }
-          ],
-          "name": "finance-companies-update-response-companies-weekly",
-          "origin": {
-            "code": "200",
-            "path": "/finance/v1/companies",
-            "pointer": [
-              "companies",
-              "weekly"
-            ],
-            "verb": "put"
-          }
-        },
-        "822556ca-83be-44a9-a920-cc493ac02bbc": {
-          "id": "822556ca-83be-44a9-a920-cc493ac02bbc",
-          "keys": [
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "string"
-              },
-              "id": "e7287391-d509-417e-9ce2-661ac2c7d6ba",
-              "name": "symbol"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "string"
-              },
-              "id": "9b10cd73-f4e0-4664-a012-c33d9b1be955",
-              "name": "name"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "string"
-              },
-              "id": "0c64c720-231d-4aab-80e7-3977b7126847",
-              "name": "ticker"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "string"
-              },
-              "id": "c4cf2ca7-2e32-4e4d-b605-67ff4da75f3d",
-              "name": "isin"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "string"
-              },
-              "id": "f55a3d3d-530e-4403-85dc-d8c3857bd5b6",
-              "name": "sector"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "string"
-              },
-              "id": "3e37f50d-de8f-48d2-86ff-592f99e339c8",
-              "name": "industry"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "string"
-              },
-              "id": "3837a2b5-7bc0-4864-af7f-36b5460e520a",
-              "name": "subindustry"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "string"
-              },
-              "id": "356d13c6-63a0-47d3-aa63-c1586a5d5766",
-              "name": "type"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "string"
-              },
-              "id": "199d53a0-0792-4381-a28e-a7cf6c4d1c69",
-              "name": "exchange"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "string"
-              },
-              "id": "74f01e0f-14e3-4860-b649-fc173b3befea",
-              "name": "marketCapLabel"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "string"
-              },
-              "id": "9c77e742-4fd9-45c1-9ef4-3da96f680afd",
-              "name": "etfLiqLabel"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "d4b301a1-04ab-4537-a147-7d91de20c031",
-              "name": "price"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "078abc34-3401-42b6-861e-efebcb5b9f04",
-              "name": "marketCap"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "a2e5b282-40f1-4361-a89a-c93b22dfd50b",
-              "name": "mrktCapRank"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "7cfa7c9a-240c-4873-a19d-2e4662603108",
-              "name": "momRank"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "63a3c654-7ca1-4f73-91a6-69d4e76bf51d",
-              "name": "faceValue"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "029676a1-6326-460e-8f57-45fdd757ff30",
-              "name": "dailyChange"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "11d54bba-3ae3-422a-9502-6123fedadf2b",
-              "name": "weekChange"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "fec01713-a63e-452f-9a2c-5623963110d1",
-              "name": "monthChange"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "35ea825a-9741-4ff6-9317-a7e5d23294b7",
-              "name": "yearlyChange"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "65b0c73d-9081-4e25-a99f-199909d2fbec",
-              "name": "maxChange"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "2a501455-9598-4dc0-b15c-3d1421749dcb",
-              "name": "forecast"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "750ca1c3-bdfd-4867-b3c2-f641b30b6d4c",
-              "name": "forecastProfit"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "6ae53b18-46e5-4e07-9d2d-30a05df003d1",
-              "name": "sma10d"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "33660025-8e89-489e-88ff-b03281923a79",
-              "name": "sma50d"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "db36d5fc-459f-42e1-8818-92feb7a1e9dc",
-              "name": "sma100d"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "634f72d6-11c4-48dd-b036-c557da4b0d0e",
-              "name": "sma200d"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "6cb622aa-edca-4c96-9631-a46578083b65",
-              "name": "sma10dPct"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "8f08ba57-d17a-4bb2-8c2e-04aebdb57876",
-              "name": "sma50dPct"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "7afeaec2-7815-4d61-8a26-58f687fdc65c",
-              "name": "sma100dPct"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "7aa4457c-9f5e-49cd-aaf5-d8360354fcac",
-              "name": "sma200dPct"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "c28f449a-4713-42f0-8b04-4ccfc1b3dab2",
-              "name": "ema10d"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "72e9e0a3-6ebf-48af-b38d-9935e009d3f1",
-              "name": "ema50d"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "fe4637c8-4f56-4997-826f-76ed9501bdc5",
-              "name": "ema100d"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "bf852378-c5c4-4ba1-a508-77bea0c31de3",
-              "name": "ema200d"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "ab4516ce-af98-45ea-9018-94ba948fd11f",
-              "name": "ema10dPct"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "90f497a7-20de-4708-b75a-29f8bc2d5986",
-              "name": "ema50dPct"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "d49d3e51-7113-498e-94ef-9567e26be66d",
-              "name": "ema100dPct"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "5219c5fe-b51f-4a58-8a22-cd846373ea9c",
-              "name": "ema200dPct"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "fe70c652-785d-4d7c-b8f8-f922139a1239",
-              "name": "avgScore"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "798e2e5a-53c0-435e-b90c-d29f0c387229",
-              "name": "momScore"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "21aaa633-c091-455d-9ec0-862996245494",
-              "name": "valScore"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "72e9352c-9567-41f6-9d72-ac4a2909a9c9",
-              "name": "volScore"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "537c352d-c365-48e0-8b99-f9d32ad18d78",
-              "name": "durScore"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "debd6bd4-97fb-494c-89ea-5d5774227d02",
-              "name": "drawScore"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "e29e9d5b-f9e9-4c85-bbbd-606fab5bdcd3",
-              "name": "ttmPe"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "72226be9-6714-42a7-a716-e36a4bba521c",
-              "name": "pb"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "5ccf8aa8-21c1-4250-a525-ea692eb015da",
-              "name": "indpe"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "53d1ee0c-1069-4e92-9547-8b0d4bacb3c3",
-              "name": "indpb"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "6b1c5038-f2d7-44d0-ba0c-e46358b1e7e4",
-              "name": "divYield"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "611e41a0-05ba-4a10-bbfa-f259c7a6f564",
-              "name": "eps"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "aa4f1e83-2f20-4724-9fa9-f7cacf3bbbf0",
-              "name": "risk"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "e4be79a6-6d22-48e7-9fff-6f23ad137f50",
-              "name": "maxDrawdown"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "03a7f93a-5695-4fb2-adb6-8ea6b187fd5d",
-              "name": "currentDrawdown"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "8ce647c4-bf4c-4ca6-9746-e270039eaa27",
-              "name": "daysSincePeak"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "e1a8f84f-6dd1-4157-9288-fb5a2295be24",
-              "name": "riseFromValley"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "8df7974f-7910-4144-b054-d2af6bedccdf",
-              "name": "max"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "6755cf25-bcf0-4f4b-811e-03fc1171c1ec",
-              "name": "min"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "string"
-              },
-              "id": "c10fa2b8-3bde-4ff1-9fb0-2deb7709776c",
-              "name": "updated"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "string"
-              },
-              "id": "76e5db97-b26f-4933-991b-7a58403bde1d",
-              "name": "scoredOn"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "string"
-              },
-              "id": "c82f7a1f-74c7-4561-842a-0acd89fe08dd",
-              "name": "id"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "string"
-              },
-              "id": "b98a6912-e132-4c37-a539-a5bdc3a68e1b",
-              "name": "link"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "string"
-              },
-              "id": "4c417a42-e875-432f-b46e-3650eea363a1",
-              "name": "description"
-            },
-            {
-              "cardinality": "many",
-              "dataType": {
-                "shapeId": "5f919533-ccdf-447e-8655-ec2d6ba2c7ed",
-                "type": "shape"
-              },
-              "id": "b6911d59-2a5a-4798-8839-33ff92d2f75b",
-              "name": "weekly"
-            },
-            {
-              "cardinality": "many",
-              "dataType": {
-                "shapeId": "2e5e0107-24e4-4754-9c8e-fc477fe0a979",
-                "type": "shape"
-              },
-              "id": "5bb5c899-d43c-4d93-a76e-d135ac8f3659",
-              "name": "financialSummary"
-            }
-          ],
-          "name": "finance-companies-update-response-companies",
-          "origin": {
-            "code": "200",
-            "path": "/finance/v1/companies",
-            "pointer": [
-              "companies"
-            ],
-            "verb": "put"
-          }
-        },
         "b10293ed-9d1a-491e-a965-de9bc648c04d": {
           "id": "b10293ed-9d1a-491e-a965-de9bc648c04d",
           "keys": [],
@@ -2679,12 +2081,12 @@
               "name": "profit"
             }
           ],
-          "name": "finance-company-update-response-company-financialsummary",
+          "name": "finance-companies-update-response-companies-financialsummary",
           "origin": {
             "code": "200",
-            "path": "/finance/v1/company/{id}",
+            "path": "/finance/v1/companies",
             "pointer": [
-              "company",
+              "companies",
               "financialSummary"
             ],
             "verb": "put"
@@ -2886,6 +2288,281 @@
     "bbad551b-72b3-4fde-86f9-afa810cbc40c": {
       "computeds": {},
       "functions": {
+        "047a950b-b129-406d-b6ec-ce0834f169d4": {
+          "aiDrafted": true,
+          "body": "if (!action || !action2) return 0;\n\n  const currentPrice = typeof action2.currentPrice === 'number' ? action2.currentPrice : 0;\n  const qty = typeof quanitity === 'number' ? quanitity : 0;\n  const cash = typeof action2.cashAvailable === 'number' ? action2.cashAvailable : 0;\n  const change = qty * currentPrice;\n\n  if (action === Action.Buy) {\n    return currentPrice + change + cash;\n  } else if (action === Action.Sell) {\n    return currentPrice - change + cash;\n  }\n\n  return 0;",
+          "cases": [
+            {
+              "args": [
+                "\"buy\"",
+                "0.1",
+                "{ \"symbol\": \"AAPL\", \"action\": \"buy\", \"quantity\": 10, \"idealQuantity\": 10, \"deltaQuantity\": 0, \"minQuantity\": 1, \"maxQuantity\": 100, \"currentPrice\": 150, \"priceAsOf\": \"2023-10-27\", \"currentValue\": 1500, \"investedValue\": 1500, \"allocationPct\": 10, \"pnl\": 0, \"pnlPct\": 0, \"isSell\": false, \"cashAvailable\": 500, \"affordableQuantity\": 3, \"isFallback\": false, \"holdLockedUntil\": \"\" }"
+              ],
+              "expected": "665",
+              "name": "calculates future price for a buy action including cash available"
+            },
+            {
+              "args": [
+                "\"sell\"",
+                "0.2",
+                "{ \"symbol\": \"TSLA\", \"action\": \"sell\", \"quantity\": 5, \"idealQuantity\": 5, \"deltaQuantity\": 0, \"minQuantity\": 1, \"maxQuantity\": 50, \"currentPrice\": 200, \"priceAsOf\": \"2023-10-27\", \"currentValue\": 1000, \"investedValue\": 1000, \"allocationPct\": 20, \"pnl\": 0, \"pnlPct\": 0, \"isSell\": true, \"cashAvailable\": 100, \"affordableQuantity\": 0, \"isFallback\": false, \"holdLockedUntil\": \"\" }"
+              ],
+              "expected": "260",
+              "name": "calculates future price for a sell action including cash available"
+            },
+            {
+              "args": [
+                "\"buy\"",
+                "0.5",
+                "{ \"symbol\": \"MSFT\", \"action\": \"buy\", \"quantity\": 8, \"idealQuantity\": 8, \"deltaQuantity\": 0, \"minQuantity\": 1, \"maxQuantity\": 80, \"currentPrice\": 100, \"priceAsOf\": \"2023-10-27\", \"currentValue\": 800, \"investedValue\": 800, \"allocationPct\": 15, \"pnl\": 0, \"pnlPct\": 0, \"isSell\": false, \"cashAvailable\": 0, \"affordableQuantity\": 0, \"isFallback\": false, \"holdLockedUntil\": \"\" }"
+              ],
+              "expected": "150",
+              "name": "calculates future price for a buy action when cash available is zero"
+            }
+          ],
+          "description": "Calculates a future price by adding or subtracting the product of the quantity and current price to or from the current price, depending on the action, and then adds available cash.",
+          "id": "047a950b-b129-406d-b6ec-ce0834f169d4",
+          "name": "futurePrice",
+          "params": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "actionEnumId": "32a47ac4-3710-42c9-ab12-de1b11db406f",
+                "type": "string"
+              },
+              "id": "6c5e6581-8c09-45f8-81ef-2b34054cdbe3",
+              "name": "action"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "664146e9-c1c1-47bb-ab4c-d5f07e4a6ccc",
+              "name": "quanitity"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "shapeId": "4a6e2f89-b8ea-49b0-b494-47320a112c9f",
+                "type": "shape"
+              },
+              "id": "9fd50270-f155-4770-8743-05ef8c1cf2b2",
+              "name": "action2"
+            }
+          ],
+          "returnCardinality": "one",
+          "returnType": {
+            "type": "number"
+          }
+        },
+        "26816946-9e08-413a-9b5a-26f72a2b473f": {
+          "aiDrafted": true,
+          "body": "return portfolio.rebalance.find((r) => r.symbol === id);",
+          "cases": [
+            {
+              "args": [
+                "\"AAPL\"",
+                "{ \"summary\": { \"strategy\": \"s\", \"minimumHold\": 0, \"investedValue\": 0, \"currentValue\": 0, \"pnl\": 0, \"pnlPct\": 0, \"cashAvailable\": 0, \"count\": 0, \"buy\": 0, \"sell\": 0, \"rebalance\": 0, \"owned\": 0, \"deferred\": 0, \"fallback\": \"\", \"unclaimedCash\": 0, \"cashAfterPlan\": 0, \"rebalanceZone\": 0 }, \"portfolio\": [], \"rebalance\": [{ \"symbol\": \"AAPL\", \"action\": \"buy\", \"quantity\": 1, \"idealQuantity\": 2, \"deltaQuantity\": 1, \"minQuantity\": 0, \"maxQuantity\": 10, \"currentPrice\": 100, \"priceAsOf\": \"2024-01-01\", \"currentValue\": 100, \"investedValue\": 50, \"allocationPct\": 10, \"pnl\": 50, \"pnlPct\": 100 }] }"
+              ],
+              "expected": "{ \"symbol\": \"AAPL\", \"action\": \"buy\", \"quantity\": 1, \"idealQuantity\": 2, \"deltaQuantity\": 1, \"minQuantity\": 0, \"maxQuantity\": 10, \"currentPrice\": 100, \"priceAsOf\": \"2024-01-01\", \"currentValue\": 100, \"investedValue\": 50, \"allocationPct\": 10, \"pnl\": 50, \"pnlPct\": 100 }",
+              "name": "finds matching rebalance by symbol"
+            },
+            {
+              "args": [
+                "\"MSFT\"",
+                "{ \"summary\": { \"strategy\": \"s\", \"minimumHold\": 0, \"investedValue\": 0, \"currentValue\": 0, \"pnl\": 0, \"pnlPct\": 0, \"cashAvailable\": 0, \"count\": 0, \"buy\": 0, \"sell\": 0, \"rebalance\": 0, \"owned\": 0, \"deferred\": 0, \"fallback\": \"\", \"unclaimedCash\": 0, \"cashAfterPlan\": 0, \"rebalanceZone\": 0 }, \"portfolio\": [], \"rebalance\": [{ \"symbol\": \"AAPL\", \"action\": \"buy\", \"quantity\": 1, \"idealQuantity\": 2, \"deltaQuantity\": 1, \"minQuantity\": 0, \"maxQuantity\": 10, \"currentPrice\": 100, \"priceAsOf\": \"2024-01-01\", \"currentValue\": 100, \"investedValue\": 50, \"allocationPct\": 10, \"pnl\": 50, \"pnlPct\": 100 }] }"
+              ],
+              "expected": "undefined",
+              "name": "returns undefined when no match"
+            },
+            {
+              "args": [
+                "\"AAPL\"",
+                "{ \"summary\": { \"strategy\": \"s\", \"minimumHold\": 0, \"investedValue\": 0, \"currentValue\": 0, \"pnl\": 0, \"pnlPct\": 0, \"cashAvailable\": 0, \"count\": 0, \"buy\": 0, \"sell\": 0, \"rebalance\": 0, \"owned\": 0, \"deferred\": 0, \"fallback\": \"\", \"unclaimedCash\": 0, \"cashAfterPlan\": 0, \"rebalanceZone\": 0 }, \"portfolio\": [], \"rebalance\": [] }"
+              ],
+              "expected": "undefined",
+              "name": "empty rebalance list returns undefined"
+            },
+            {
+              "args": [
+                "\"\"",
+                "{ \"summary\": { \"strategy\": \"s\", \"minimumHold\": 0, \"investedValue\": 0, \"currentValue\": 0, \"pnl\": 0, \"pnlPct\": 0, \"cashAvailable\": 0, \"count\": 0, \"buy\": 0, \"sell\": 0, \"rebalance\": 0, \"owned\": 0, \"deferred\": 0, \"fallback\": \"\", \"unclaimedCash\": 0, \"cashAfterPlan\": 0, \"rebalanceZone\": 0 }, \"portfolio\": [], \"rebalance\": [{ \"symbol\": \"AAPL\", \"action\": \"buy\", \"quantity\": 1, \"idealQuantity\": 2, \"deltaQuantity\": 1, \"minQuantity\": 0, \"maxQuantity\": 10, \"currentPrice\": 100, \"priceAsOf\": \"2024-01-01\", \"currentValue\": 100, \"investedValue\": 50, \"allocationPct\": 10, \"pnl\": 50, \"pnlPct\": 100 }] }"
+              ],
+              "expected": "undefined",
+              "name": "empty id string with no empty-symbol entry"
+            },
+            {
+              "args": [
+                "\"AAPL\"",
+                "{ \"summary\": { \"strategy\": \"s\", \"minimumHold\": 0, \"investedValue\": 0, \"currentValue\": 0, \"pnl\": 0, \"pnlPct\": 0, \"cashAvailable\": 0, \"count\": 0, \"buy\": 0, \"sell\": 0, \"rebalance\": 0, \"owned\": 0, \"deferred\": 0, \"fallback\": \"\", \"unclaimedCash\": 0, \"cashAfterPlan\": 0, \"rebalanceZone\": 0 }, \"portfolio\": [], \"rebalance\": [{ \"symbol\": \"AAPL\", \"action\": \"buy\", \"quantity\": 1, \"idealQuantity\": 2, \"deltaQuantity\": 1, \"minQuantity\": 0, \"maxQuantity\": 10, \"currentPrice\": 100, \"priceAsOf\": \"2024-01-01\", \"currentValue\": 100, \"investedValue\": 50, \"allocationPct\": 10, \"pnl\": 50, \"pnlPct\": 100 }, { \"symbol\": \"AAPL\", \"action\": \"sell\", \"quantity\": 2, \"idealQuantity\": 1, \"deltaQuantity\": -1, \"minQuantity\": 0, \"maxQuantity\": 10, \"currentPrice\": 100, \"priceAsOf\": \"2024-01-02\", \"currentValue\": 200, \"investedValue\": 100, \"allocationPct\": 20, \"pnl\": 100, \"pnlPct\": 100 }] }"
+              ],
+              "expected": "{ \"symbol\": \"AAPL\", \"action\": \"buy\", \"quantity\": 1, \"idealQuantity\": 2, \"deltaQuantity\": 1, \"minQuantity\": 0, \"maxQuantity\": 10, \"currentPrice\": 100, \"priceAsOf\": \"2024-01-01\", \"currentValue\": 100, \"investedValue\": 50, \"allocationPct\": 10, \"pnl\": 50, \"pnlPct\": 100 }",
+              "name": "matches first of multiple entries"
+            }
+          ],
+          "description": "Returns the rebalance entry whose symbol matches the given id, or undefined if none.",
+          "id": "26816946-9e08-413a-9b5a-26f72a2b473f",
+          "name": "rebalance",
+          "params": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "52268a23-0c9b-4482-974e-e27783f98604",
+              "name": "id"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "shapeId": "7ef27fb9-e148-471a-b5aa-b418a0f0254f",
+                "type": "shape"
+              },
+              "id": "40b50e86-5d0b-420f-9fe4-26c9caa3e002",
+              "name": "portfolio"
+            }
+          ],
+          "returnCardinality": "one",
+          "returnType": {
+            "shapeId": "389c6b89-5cd9-466a-be24-432ca2b7fc9a",
+            "type": "shape"
+          },
+          "returnUndefined": true
+        },
+        "46b83486-be8f-4cb3-8578-5ded0fc85602": {
+          "aiDrafted": true,
+          "body": "return value === Action.Sell;",
+          "cases": [
+            {
+              "args": [
+                "\"sell\""
+              ],
+              "expected": "true",
+              "name": "returns true for sell action"
+            },
+            {
+              "args": [
+                "\"buy\""
+              ],
+              "expected": "false",
+              "name": "returns false for buy action"
+            },
+            {
+              "args": [
+                "\"sell\""
+              ],
+              "expected": "true",
+              "name": "returns true for sell action repeated check"
+            }
+          ],
+          "description": "Determines whether the supplied action is a Sell action.",
+          "id": "46b83486-be8f-4cb3-8578-5ded0fc85602",
+          "name": "isSell",
+          "params": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "actionEnumId": "32a47ac4-3710-42c9-ab12-de1b11db406f",
+                "type": "string"
+              },
+              "id": "c12898f5-f916-44f2-ba37-abffeb45a76c",
+              "name": "value"
+            }
+          ],
+          "returnCardinality": "one",
+          "returnType": {
+            "type": "boolean"
+          }
+        },
+        "5fec8021-ae32-460b-b380-dd1c9663edc5": {
+          "aiDrafted": true,
+          "body": "if (action === Action.Sell) {\n    return action2.quantity;\n  }\n\n  if (action === Action.Buy) {\n    return Math.floor(action2.affordableQuantity);\n  }\n\n  return 0;",
+          "cases": [
+            {
+              "args": [
+                "\"sell\"",
+                "{ \"symbol\": \"AAPL\", \"action\": \"sell\", \"quantity\": 10, \"idealQuantity\": 5, \"deltaQuantity\": 5, \"minQuantity\": 0, \"maxQuantity\": 10, \"currentPrice\": 150, \"priceAsOf\": \"2023-01-01\", \"currentValue\": 1500, \"investedValue\": 1000, \"allocationPct\": 0.1, \"pnl\": 500, \"pnlPct\": 0.5, \"isSell\": true, \"cashAvailable\": 1000, \"affordableQuantity\": 6, \"isFallback\": false, \"holdLockedUntil\": \"\" }"
+              ],
+              "expected": "10",
+              "name": "returns current quantity for sell action"
+            },
+            {
+              "args": [
+                "\"buy\"",
+                "{ \"symbol\": \"AAPL\", \"action\": \"buy\", \"quantity\": 10, \"idealQuantity\": 5, \"deltaQuantity\": 5, \"minQuantity\": 0, \"maxQuantity\": 10, \"currentPrice\": 150, \"priceAsOf\": \"2023-01-01\", \"currentValue\": 1500, \"investedValue\": 1000, \"allocationPct\": 0.1, \"pnl\": 500, \"pnlPct\": 0.5, \"isSell\": false, \"cashAvailable\": 1000, \"affordableQuantity\": 6.75, \"isFallback\": false, \"holdLockedUntil\": \"\" }"
+              ],
+              "expected": "6",
+              "name": "returns floored affordable quantity for buy action"
+            },
+            {
+              "args": [
+                "\"buy\"",
+                "{ \"symbol\": \"AAPL\", \"action\": \"buy\", \"quantity\": 10, \"idealQuantity\": 5, \"deltaQuantity\": 5, \"minQuantity\": 0, \"maxQuantity\": 10, \"currentPrice\": 150, \"priceAsOf\": \"2023-01-01\", \"currentValue\": 1500, \"investedValue\": 1000, \"allocationPct\": 0.1, \"pnl\": 500, \"pnlPct\": 0.5, \"isSell\": false, \"cashAvailable\": 1000, \"affordableQuantity\": 0.9, \"isFallback\": false, \"holdLockedUntil\": \"\" }"
+              ],
+              "expected": "0",
+              "name": "returns zero for buy action with fractional affordable quantity"
+            }
+          ],
+          "description": "Calculates the maximum quantity for a trade action based on the provided finance plan row.",
+          "id": "5fec8021-ae32-460b-b380-dd1c9663edc5",
+          "name": "maxQuantity",
+          "params": [
+            {
+              "acceptsUndefined": true,
+              "cardinality": "one",
+              "dataType": {
+                "actionEnumId": "32a47ac4-3710-42c9-ab12-de1b11db406f",
+                "type": "string"
+              },
+              "id": "6b46ba07-ea62-4b2e-b513-9fd8f1a46cce",
+              "name": "action"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "shapeId": "4a6e2f89-b8ea-49b0-b494-47320a112c9f",
+                "type": "shape"
+              },
+              "id": "82b2b800-2eb4-41d1-9efe-cd8c415ed22d",
+              "name": "action2"
+            }
+          ],
+          "returnCardinality": "one",
+          "returnType": {
+            "type": "number"
+          }
+        },
+        "83018475-a2cb-464d-8bd6-9cb056fbe7c8": {
+          "aiDrafted": true,
+          "body": "// Guard against null/undefined action or missing/invalid currentPrice\n  if (!action || typeof action.currentPrice !== 'number' || isNaN(action.currentPrice)) {\n    return 0;\n  }\n\n  // Ensure quantity is a number; treat non-numeric values as 0\n  const qty = typeof quanitity === 'number' ? quanitity : 0;\n\n  return qty * action.currentPrice;",
+          "description": "Calculates the total price required for a given quantity based on the current price in the action.",
+          "id": "83018475-a2cb-464d-8bd6-9cb056fbe7c8",
+          "name": "priceRequired",
+          "params": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "ddad3fd6-7c80-4071-a61c-12ea69feaf60",
+              "name": "quanitity"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "shapeId": "4a6e2f89-b8ea-49b0-b494-47320a112c9f",
+                "type": "shape"
+              },
+              "id": "428cbe18-03aa-490e-a26c-ce47862cf2f1",
+              "name": "action"
+            }
+          ],
+          "returnCardinality": "one",
+          "returnType": {
+            "type": "number"
+          }
+        },
         "9c29b472-8a71-4473-9203-8fae4fb181ca": {
           "aiDrafted": true,
           "body": "if (!portfolio || !Array.isArray(portfolio.rebalance)) {\n    return [];\n  }\n\n  const items = [...portfolio.rebalance];\n  if (!sort) {\n    return items;\n  }\n\n  const isDesc = direction.toLowerCase() === 'desc';\n\n  return items.sort((a, b) => {\n    const valA = (a as unknown as Record<string, unknown>)[sort];\n    const valB = (b as unknown as Record<string, unknown>)[sort];\n\n    if (valA === valB) return 0;\n    if (valA === undefined || valA === null) return 1;\n    if (valB === undefined || valB === null) return -1;\n\n    let comparison = 0;\n    if (typeof valA === 'string' && typeof valB === 'string') {\n      comparison = valA.localeCompare(valB);\n    } else if (typeof valA === 'number' && typeof valB === 'number') {\n      comparison = valA - valB;\n    } else {\n      comparison = String(valA).localeCompare(String(valB));\n    }\n\n    return isDesc ? -comparison : comparison;\n  });",
@@ -3044,6 +2721,84 @@
             "type": "shape"
           }
         },
+        "b42000bc-f34e-4b5c-9ba9-3c5b2e3c12fa": {
+          "aiDrafted": true,
+          "body": "const current = Number(action2.quantity) || 0;\n  const qty = Number(quanitity) || 0;\n\n  if (action === Action.Buy) {\n    return current + qty;\n  } else if (action === Action.Sell) {\n    return current - qty;\n  }\n\n  return current;",
+          "cases": [
+            {
+              "args": [
+                "\"buy\"",
+                "10",
+                "{ \"symbol\": \"AAPL\", \"action\": \"buy\", \"quantity\": 5, \"idealQuantity\": 0, \"deltaQuantity\": 0, \"minQuantity\": 0, \"maxQuantity\": 0, \"currentPrice\": 0, \"priceAsOf\": \"\", \"currentValue\": 0, \"investedValue\": 0, \"allocationPct\": 0, \"pnl\": 0, \"pnlPct\": 0, \"isSell\": false, \"cashAvailable\": 0, \"affordableQuantity\": 0, \"isFallback\": false, \"holdLockedUntil\": \"\" }"
+              ],
+              "expected": "15",
+              "name": "normal buy adds quantity"
+            },
+            {
+              "args": [
+                "\"sell\"",
+                "3",
+                "{ \"symbol\": \"AAPL\", \"action\": \"sell\", \"quantity\": 10, \"idealQuantity\": 0, \"deltaQuantity\": 0, \"minQuantity\": 0, \"maxQuantity\": 0, \"currentPrice\": 0, \"priceAsOf\": \"\", \"currentValue\": 0, \"investedValue\": 0, \"allocationPct\": 0, \"pnl\": 0, \"pnlPct\": 0, \"isSell\": true, \"cashAvailable\": 0, \"affordableQuantity\": 0, \"isFallback\": false, \"holdLockedUntil\": \"\" }"
+              ],
+              "expected": "7",
+              "name": "normal sell subtracts quantity"
+            },
+            {
+              "args": [
+                "undefined",
+                "10",
+                "{ \"symbol\": \"AAPL\", \"action\": \"buy\", \"quantity\": 5, \"idealQuantity\": 0, \"deltaQuantity\": 0, \"minQuantity\": 0, \"maxQuantity\": 0, \"currentPrice\": 0, \"priceAsOf\": \"\", \"currentValue\": 0, \"investedValue\": 0, \"allocationPct\": 0, \"pnl\": 0, \"pnlPct\": 0, \"isSell\": false, \"cashAvailable\": 0, \"affordableQuantity\": 0, \"isFallback\": false, \"holdLockedUntil\": \"\" }"
+              ],
+              "expected": "5",
+              "name": "returns current quantity when action is undefined"
+            },
+            {
+              "args": [
+                "\"buy\"",
+                "0",
+                "{ \"symbol\": \"AAPL\", \"action\": \"buy\", \"quantity\": 5, \"idealQuantity\": 0, \"deltaQuantity\": 0, \"minQuantity\": 0, \"maxQuantity\": 0, \"currentPrice\": 0, \"priceAsOf\": \"\", \"currentValue\": 0, \"investedValue\": 0, \"allocationPct\": 0, \"pnl\": 0, \"pnlPct\": 0, \"isSell\": false, \"cashAvailable\": 0, \"affordableQuantity\": 0, \"isFallback\": false, \"holdLockedUntil\": \"\" }"
+              ],
+              "expected": "5",
+              "name": "handles zero quantity adjustment"
+            }
+          ],
+          "description": "Calculates the projected quantity of a holding based on a proposed action.",
+          "id": "b42000bc-f34e-4b5c-9ba9-3c5b2e3c12fa",
+          "name": "futureHolding",
+          "params": [
+            {
+              "acceptsUndefined": true,
+              "cardinality": "one",
+              "dataType": {
+                "actionEnumId": "32a47ac4-3710-42c9-ab12-de1b11db406f",
+                "type": "string"
+              },
+              "id": "147d39db-08f4-47e6-8275-0dbc3fe87c3f",
+              "name": "action"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "418f7283-0ba5-4dfd-beb2-81ba2b1e4a00",
+              "name": "quanitity"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "shapeId": "4a6e2f89-b8ea-49b0-b494-47320a112c9f",
+                "type": "shape"
+              },
+              "id": "ddc01286-b503-486d-8269-1b4b731352cb",
+              "name": "action2"
+            }
+          ],
+          "returnCardinality": "one",
+          "returnType": {
+            "type": "number"
+          }
+        },
         "bbaa57ca-d626-4db2-b9ba-1f6cd5b26935": {
           "aiDrafted": true,
           "body": "return portfolio?.portfolio?.find((item) => item.symbol === id);",
@@ -3118,6 +2873,190 @@
             "type": "shape"
           },
           "returnUndefined": true
+        },
+        "e9c5b7b3-0ece-4b0a-9098-7e9fc82774a2": {
+          "body": "const total = quanitity * (action2?.currentPrice ?? 0);\n  if (total === 0) return 0;\n  return action === Action.Sell ? -total : total;",
+          "cases": [
+            {
+              "args": [
+                "\"buy\"",
+                "10",
+                "{ \"symbol\": \"AAPL\", \"action\": \"buy\", \"quantity\": 10, \"idealQuantity\": 10, \"deltaQuantity\": 0, \"minQuantity\": 0, \"maxQuantity\": 100, \"currentPrice\": 150, \"priceAsOf\": \"2023-01-01\", \"currentValue\": 1500, \"investedValue\": 1500, \"allocationPct\": 10, \"pnl\": 0, \"pnlPct\": 0, \"isSell\": false, \"cashAvailable\": 5000, \"affordableQuantity\": 10, \"isFallback\": false, \"holdLockedUntil\": \"\" }"
+              ],
+              "expected": "1500",
+              "name": "calculates price required for buy action"
+            },
+            {
+              "args": [
+                "\"sell\"",
+                "5",
+                "{ \"symbol\": \"AAPL\", \"action\": \"sell\", \"quantity\": 5, \"idealQuantity\": 0, \"deltaQuantity\": -5, \"minQuantity\": 0, \"maxQuantity\": 100, \"currentPrice\": 200, \"priceAsOf\": \"2023-01-01\", \"currentValue\": 1000, \"investedValue\": 1000, \"allocationPct\": 10, \"pnl\": 0, \"pnlPct\": 0, \"isSell\": true, \"cashAvailable\": 5000, \"affordableQuantity\": 0, \"isFallback\": false, \"holdLockedUntil\": \"\" }"
+              ],
+              "expected": "-1000",
+              "name": "calculates price required for sell action as negative"
+            },
+            {
+              "args": [
+                "\"buy\"",
+                "0",
+                "{ \"symbol\": \"AAPL\", \"action\": \"buy\", \"quantity\": 0, \"idealQuantity\": 0, \"deltaQuantity\": 0, \"minQuantity\": 0, \"maxQuantity\": 100, \"currentPrice\": 100, \"priceAsOf\": \"2023-01-01\", \"currentValue\": 0, \"investedValue\": 0, \"allocationPct\": 0, \"pnl\": 0, \"pnlPct\": 0, \"isSell\": false, \"cashAvailable\": 5000, \"affordableQuantity\": 0, \"isFallback\": false, \"holdLockedUntil\": \"\" }"
+              ],
+              "expected": "0",
+              "name": "returns zero when quantity is zero"
+            },
+            {
+              "args": [
+                "\"sell\"",
+                "10",
+                "{ \"symbol\": \"AAPL\", \"action\": \"sell\", \"quantity\": 10, \"idealQuantity\": 0, \"deltaQuantity\": -10, \"minQuantity\": 0, \"maxQuantity\": 100, \"currentPrice\": 0, \"priceAsOf\": \"2023-01-01\", \"currentValue\": 0, \"investedValue\": 0, \"allocationPct\": 0, \"pnl\": 0, \"pnlPct\": 0, \"isSell\": true, \"cashAvailable\": 5000, \"affordableQuantity\": 0, \"isFallback\": false, \"holdLockedUntil\": \"\" }"
+              ],
+              "expected": "0",
+              "name": "returns zero when current price is zero"
+            },
+            {
+              "args": [
+                "\"sell\"",
+                "2.5",
+                "{ \"symbol\": \"GOOGL\", \"action\": \"sell\", \"quantity\": 2.5, \"idealQuantity\": 0, \"deltaQuantity\": -2.5, \"minQuantity\": 0, \"maxQuantity\": 10, \"currentPrice\": 10.5, \"priceAsOf\": \"2023-01-01\", \"currentValue\": 26.25, \"investedValue\": 26.25, \"allocationPct\": 5, \"pnl\": 0, \"pnlPct\": 0, \"isSell\": true, \"cashAvailable\": 100, \"affordableQuantity\": 0, \"isFallback\": false, \"holdLockedUntil\": \"\" }"
+              ],
+              "expected": "-26.25",
+              "name": "handles decimal quantities and prices for sell action"
+            }
+          ],
+          "description": "Calculates the total required price for a given action, quantity, and row response data.",
+          "id": "e9c5b7b3-0ece-4b0a-9098-7e9fc82774a2",
+          "name": "getPriceRequired",
+          "params": [
+            {
+              "acceptsUndefined": true,
+              "cardinality": "one",
+              "dataType": {
+                "actionEnumId": "32a47ac4-3710-42c9-ab12-de1b11db406f",
+                "type": "string"
+              },
+              "id": "ecef31c9-cb13-4799-8d31-b6222a8a75b2",
+              "name": "action"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "7dbf49c2-f908-4a2f-8354-43d75d225faf",
+              "name": "quanitity"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "shapeId": "4a6e2f89-b8ea-49b0-b494-47320a112c9f",
+                "type": "shape"
+              },
+              "id": "9ab0794a-c849-4044-bb4f-cbf4a50fb932",
+              "name": "action2"
+            }
+          ],
+          "returnCardinality": "one",
+          "returnType": {
+            "type": "number"
+          }
+        },
+        "f5daeb06-cb0c-4125-b348-f857b7d99926": {
+          "body": "const { cashAvailable } = action2;\n  return cashAvailable - priceRequired;",
+          "cases": [
+            {
+              "args": [
+                "10",
+                "\"buy\"",
+                "{ \"symbol\": \"A\", \"action\": \"buy\", \"quantity\": 5, \"idealQuantity\": 0, \"deltaQuantity\": 0, \"minQuantity\": 0, \"maxQuantity\": 0, \"currentPrice\": 0, \"priceAsOf\": \"\", \"currentValue\": 0, \"investedValue\": 0, \"allocationPct\": 0, \"pnl\": 0, \"pnlPct\": 0, \"isSell\": false, \"cashAvailable\": 100, \"affordableQuantity\": 0, \"isFallback\": false, \"holdLockedUntil\": \"\" }"
+              ],
+              "expected": "50",
+              "name": "buy reduces cash by price times quantity"
+            },
+            {
+              "args": [
+                "20",
+                "\"sell\"",
+                "{ \"symbol\": \"B\", \"action\": \"sell\", \"quantity\": 3, \"idealQuantity\": 0, \"deltaQuantity\": 0, \"minQuantity\": 0, \"maxQuantity\": 0, \"currentPrice\": 0, \"priceAsOf\": \"\", \"currentValue\": 0, \"investedValue\": 0, \"allocationPct\": 0, \"pnl\": 0, \"pnlPct\": 0, \"isSell\": true, \"cashAvailable\": 50, \"affordableQuantity\": 0, \"isFallback\": false, \"holdLockedUntil\": \"\" }"
+              ],
+              "expected": "110",
+              "name": "sell increases cash by price times quantity"
+            },
+            {
+              "args": [
+                "10",
+                "\"buy\"",
+                "{ \"symbol\": \"C\", \"action\": \"buy\", \"quantity\": 0, \"idealQuantity\": 0, \"deltaQuantity\": 0, \"minQuantity\": 0, \"maxQuantity\": 0, \"currentPrice\": 0, \"priceAsOf\": \"\", \"currentValue\": 0, \"investedValue\": 0, \"allocationPct\": 0, \"pnl\": 0, \"pnlPct\": 0, \"isSell\": false, \"cashAvailable\": 100, \"affordableQuantity\": 0, \"isFallback\": false, \"holdLockedUntil\": \"\" }"
+              ],
+              "expected": "100",
+              "name": "zero quantity leaves cash unchanged on buy"
+            },
+            {
+              "args": [
+                "0",
+                "\"sell\"",
+                "{ \"symbol\": \"D\", \"action\": \"sell\", \"quantity\": 5, \"idealQuantity\": 0, \"deltaQuantity\": 0, \"minQuantity\": 0, \"maxQuantity\": 0, \"currentPrice\": 0, \"priceAsOf\": \"\", \"currentValue\": 0, \"investedValue\": 0, \"allocationPct\": 0, \"pnl\": 0, \"pnlPct\": 0, \"isSell\": true, \"cashAvailable\": 200, \"affordableQuantity\": 0, \"isFallback\": false, \"holdLockedUntil\": \"\" }"
+              ],
+              "expected": "200",
+              "name": "zero price leaves cash unchanged on sell"
+            },
+            {
+              "args": [
+                "5",
+                "\"buy\"",
+                "{ \"symbol\": \"E\", \"action\": \"buy\", \"quantity\": 2, \"idealQuantity\": 0, \"deltaQuantity\": 0, \"minQuantity\": 0, \"maxQuantity\": 0, \"currentPrice\": 0, \"priceAsOf\": \"\", \"currentValue\": 0, \"investedValue\": 0, \"allocationPct\": 0, \"pnl\": 0, \"pnlPct\": 0, \"isSell\": false, \"cashAvailable\": 0, \"affordableQuantity\": 0, \"isFallback\": false, \"holdLockedUntil\": \"\" }"
+              ],
+              "expected": "-10",
+              "name": "negative cash after buying more than available"
+            }
+          ],
+          "description": "Calculates the future cash balance after executing a buy or sell action at a given price.",
+          "id": "f5daeb06-cb0c-4125-b348-f857b7d99926",
+          "name": "future",
+          "params": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "06505133-af31-4a66-aad5-4f6f260315c1",
+              "name": "priceRequired"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "shapeId": "4a6e2f89-b8ea-49b0-b494-47320a112c9f",
+                "type": "shape"
+              },
+              "id": "77087382-f8ac-4f0a-b715-642e8e7638be",
+              "name": "action2"
+            }
+          ],
+          "returnCardinality": "one",
+          "returnType": {
+            "type": "number"
+          }
+        },
+        "fea6aa68-e09c-47ce-8329-1f602993c84f": {
+          "aiDrafted": true,
+          "body": "return isSell ? Action.Sell : Action.Buy;",
+          "description": "Returns the corresponding Action enum value based on the isSell flag.",
+          "id": "fea6aa68-e09c-47ce-8329-1f602993c84f",
+          "name": "getInitAction",
+          "params": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "boolean"
+              },
+              "id": "3a8ed68b-e602-4b0b-a505-564d32d59924",
+              "name": "isSell"
+            }
+          ],
+          "returnCardinality": "one",
+          "returnType": {
+            "actionEnumId": "32a47ac4-3710-42c9-ab12-de1b11db406f",
+            "type": "string"
+          }
         }
       },
       "hook": {
@@ -3133,6 +3072,162 @@
       },
       "id": "bbad551b-72b3-4fde-86f9-afa810cbc40c",
       "methods": {
+        "21055b12-5a82-4cc8-8071-f361515b0d15": {
+          "id": "21055b12-5a82-4cc8-8071-f361515b0d15",
+          "inputs": [
+            {
+              "arg": "amount",
+              "source": "args",
+              "target": [
+                "payload",
+                "amount"
+              ]
+            }
+          ],
+          "name": "updateFinanceConfig",
+          "path": "/finance/v1/config",
+          "response": [
+            {
+              "code": "200",
+              "propertyId": "443aba23-a361-4aa3-868a-479123e6cf06",
+              "source": []
+            }
+          ],
+          "verb": "put"
+        },
+        "4781ed97-2679-49f7-8cf4-47a1b3404bd4": {
+          "id": "4781ed97-2679-49f7-8cf4-47a1b3404bd4",
+          "inputs": [
+            {
+              "path": [
+                "d40ab2bc-c8c8-450a-bbbc-bf82eae46b7d",
+                "6d55b018-245b-48df-8c31-aa80f4064595"
+              ],
+              "source": "store",
+              "target": [
+                "path",
+                "symbol"
+              ]
+            },
+            {
+              "arg": "quantity",
+              "source": "args",
+              "target": [
+                "payload",
+                "quantity"
+              ]
+            },
+            {
+              "arg": "price",
+              "source": "args",
+              "target": [
+                "payload",
+                "price"
+              ]
+            }
+          ],
+          "name": "patchFinanceTradeSymbol",
+          "path": "/finance/v1/trade/{symbol}",
+          "response": [
+            {
+              "code": "200",
+              "propertyId": "d40ab2bc-c8c8-450a-bbbc-bf82eae46b7d",
+              "source": [
+                "plan"
+              ]
+            },
+            {
+              "code": "200",
+              "propertyId": "443aba23-a361-4aa3-868a-479123e6cf06",
+              "source": [
+                "config"
+              ]
+            }
+          ],
+          "verb": "patch"
+        },
+        "89530411-82a4-4cbc-91e9-b7b503e56896": {
+          "id": "89530411-82a4-4cbc-91e9-b7b503e56896",
+          "inputs": [
+            {
+              "arg": "quantity",
+              "source": "args",
+              "target": [
+                "payload",
+                "quantity"
+              ]
+            },
+            {
+              "arg": "isSell",
+              "source": "args",
+              "target": [
+                "payload",
+                "isSell"
+              ]
+            },
+            {
+              "arg": "symbol",
+              "source": "args",
+              "target": [
+                "path",
+                "symbol"
+              ]
+            }
+          ],
+          "name": "updateFinanceTradeSymbol",
+          "path": "/finance/v1/trade/{symbol}",
+          "response": [
+            {
+              "code": "200",
+              "propertyId": "d40ab2bc-c8c8-450a-bbbc-bf82eae46b7d",
+              "source": [
+                "plan"
+              ]
+            },
+            {
+              "code": "200",
+              "propertyId": "443aba23-a361-4aa3-868a-479123e6cf06",
+              "source": [
+                "config"
+              ]
+            }
+          ],
+          "verb": "put"
+        },
+        "aa042e8c-ac59-445d-b2e8-5420da09091c": {
+          "id": "aa042e8c-ac59-445d-b2e8-5420da09091c",
+          "inputs": [
+            {
+              "arg": "symbol",
+              "source": "args",
+              "target": [
+                "path",
+                "symbol"
+              ]
+            }
+          ],
+          "name": "getFinancePlan",
+          "path": "/finance/v1/plan/{symbol}",
+          "persists": [
+            {
+              "id": "70881faf-873c-43a8-993f-91b692864e61",
+              "key": "",
+              "propertyId": "d40ab2bc-c8c8-450a-bbbc-bf82eae46b7d",
+              "shelf": "store",
+              "source": [],
+              "sourceKind": "clear",
+              "timing": "before"
+            }
+          ],
+          "response": [
+            {
+              "code": "200",
+              "propertyId": "d40ab2bc-c8c8-450a-bbbc-bf82eae46b7d",
+              "source": []
+            }
+          ],
+          "verb": "get"
+        },
         "d11a433a-2c3e-47e2-bf79-5ae3f0b79390": {
           "id": "d11a433a-2c3e-47e2-bf79-5ae3f0b79390",
           "inputs": [],
@@ -3174,6 +3269,15 @@
           },
           "id": "58ecf14d-2c1f-4d48-a6fb-d4baa07b348c",
           "name": "direction"
+        },
+        "d40ab2bc-c8c8-450a-bbbc-bf82eae46b7d": {
+          "cardinality": "one",
+          "dataType": {
+            "shapeId": "4a6e2f89-b8ea-49b0-b494-47320a112c9f",
+            "type": "shape"
+          },
+          "id": "d40ab2bc-c8c8-450a-bbbc-bf82eae46b7d",
+          "name": "action"
         }
       },
       "shapes": {
@@ -3301,6 +3405,14 @@
             {
               "cardinality": "one",
               "dataType": {
+                "type": "string"
+              },
+              "id": "38c8fb26-f1cc-4d05-a08d-d5ce624049a4",
+              "name": "priceAsOf"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
                 "type": "number"
               },
               "id": "fdfc72be-238b-4c3c-b48b-dc137ab53765",
@@ -3347,6 +3459,170 @@
               "rebalance"
             ],
             "verb": "patch"
+          }
+        },
+        "4a6e2f89-b8ea-49b0-b494-47320a112c9f": {
+          "id": "4a6e2f89-b8ea-49b0-b494-47320a112c9f",
+          "keys": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "6d55b018-245b-48df-8c31-aa80f4064595",
+              "name": "symbol"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "a45fab3b-cffd-4e0f-812a-ab70aeb0ad22",
+              "name": "action"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "4435a383-8bc9-4b80-b4c1-7e72d0b9ccc3",
+              "name": "quantity"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "512e17b4-0518-4f05-8ac9-f9b30ee2bdb2",
+              "name": "idealQuantity"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "f02584b7-5398-4d60-8b1b-493a59b86296",
+              "name": "deltaQuantity"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "eab3c2d0-50b0-4c0d-b6cc-d69e87ab4bb9",
+              "name": "minQuantity"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "a354287f-7c84-4ee0-9179-6f6cb2f68bb3",
+              "name": "maxQuantity"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "6c2cf1d6-0de8-4904-8158-156a6e092a30",
+              "name": "currentPrice"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "515b8346-13e8-4273-861a-abf35669acbf",
+              "name": "priceAsOf"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "722d6eec-6795-461b-8402-89c8048c44f3",
+              "name": "currentValue"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "79d32158-9347-43b3-a127-24c17a763192",
+              "name": "investedValue"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "97688fe0-f4db-4ff8-95ec-fe9b90708d34",
+              "name": "allocationPct"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "f09e2f38-2bed-47c0-9928-7d1f2b233d92",
+              "name": "pnl"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "dd529d0f-c768-4dad-9e5a-515b3bdb0c20",
+              "name": "pnlPct"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "boolean"
+              },
+              "id": "99e79d92-edde-4a0f-8cd7-c9ffaa16d306",
+              "name": "isSell"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "1f0be127-e3b8-45da-97a8-31548c7de1c2",
+              "name": "cashAvailable"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "86742072-1e23-4816-b7b3-1b70fdff78e7",
+              "name": "affordableQuantity"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "boolean"
+              },
+              "id": "1f8b8f34-eacc-445c-b1ae-0408dfe77b09",
+              "name": "isFallback"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "e0630fa9-0b9e-4f50-99cb-af8c7ecf5c78",
+              "name": "holdLockedUntil"
+            }
+          ],
+          "name": "finance-plan-row-response",
+          "origin": {
+            "code": "200",
+            "path": "/finance/v1/plan/{symbol}",
+            "pointer": [],
+            "verb": "get"
           }
         },
         "4f9e9dcf-5c82-4f8a-9d52-8a788716a029": {
@@ -3539,7 +3815,57 @@
           }
         }
       },
-      "variants": {}
+      "variants": {
+        "5be67125-4073-41b2-86e2-5c06f8314f24": {
+          "id": "5be67125-4073-41b2-86e2-5c06f8314f24",
+          "name": "is_sell",
+          "rule": {
+            "children": [
+              {
+                "id": "rn1465",
+                "kind": "check",
+                "operand": {
+                  "kind": "literal",
+                  "value": true
+                },
+                "operator": "==",
+                "path": [
+                  "d40ab2bc-c8c8-450a-bbbc-bf82eae46b7d",
+                  "99e79d92-edde-4a0f-8cd7-c9ffaa16d306"
+                ]
+              }
+            ],
+            "connective": "all",
+            "id": "rn1466",
+            "kind": "group",
+            "negated": false
+          }
+        },
+        "e36a71c1-aead-4007-9a52-ff67a3d301e5": {
+          "id": "e36a71c1-aead-4007-9a52-ff67a3d301e5",
+          "name": "has_action",
+          "rule": {
+            "children": [
+              {
+                "id": "rn67",
+                "kind": "check",
+                "operand": {
+                  "kind": "literal",
+                  "value": ""
+                },
+                "operator": "exists",
+                "path": [
+                  "d40ab2bc-c8c8-450a-bbbc-bf82eae46b7d"
+                ]
+              }
+            ],
+            "connective": "all",
+            "id": "rn68",
+            "kind": "group",
+            "negated": false
+          }
+        }
+      }
     }
   },
   "functions": {
@@ -3556,7 +3882,7 @@
     }
   },
   "npmAllowlist": {},
-  "one": "0.4.82",
+  "one": "0.4.109",
   "screens": [
     {
       "computeds": {
@@ -3863,17 +4189,36 @@
       }
     },
     {
+      "computeds": {
+        "3fb4e445-50b9-4145-982a-af51cafd5a5d": {
+          "args": {
+            "40b50e86-5d0b-420f-9fe4-26c9caa3e002": {
+              "path": [
+                "443aba23-a361-4aa3-868a-479123e6cf06"
+              ],
+              "source": "path"
+            },
+            "52268a23-0c9b-4482-974e-e27783f98604": {
+              "inputId": "f106dc0c-a0bb-4b43-8889-4b7798cade44",
+              "source": "input"
+            }
+          },
+          "functionId": "26816946-9e08-413a-9b5a-26f72a2b473f",
+          "id": "3fb4e445-50b9-4145-982a-af51cafd5a5d",
+          "name": "rebalance"
+        }
+      },
       "featureId": "bbad551b-72b3-4fde-86f9-afa810cbc40c",
       "id": "fc240a46-cf7e-4bac-b177-edd3eabadebd",
       "inputs": {
-        "d5586934-e7f3-40ca-90be-f056b78ab7c3": {
+        "f106dc0c-a0bb-4b43-8889-4b7798cade44": {
           "cardinality": "one",
           "dataType": {
-            "shapeId": "389c6b89-5cd9-466a-be24-432ca2b7fc9a",
-            "type": "shape"
+            "type": "string"
           },
-          "id": "d5586934-e7f3-40ca-90be-f056b78ab7c3",
-          "name": "holding"
+          "id": "f106dc0c-a0bb-4b43-8889-4b7798cade44",
+          "name": "id",
+          "required": true
         }
       },
       "kind": "feature",
@@ -3893,8 +4238,8 @@
                 },
                 "operator": "==",
                 "path": [
-                  "d5586934-e7f3-40ca-90be-f056b78ab7c3",
-                  "56af9e52-bfda-4696-a7e7-df0bda9fb381"
+                  "3fb4e445-50b9-4145-982a-af51cafd5a5d",
+                  "dae9d53e-c7b3-4917-8b38-0e443e272161"
                 ]
               }
             ],
@@ -3918,8 +4263,8 @@
                 },
                 "operator": "==",
                 "path": [
-                  "d5586934-e7f3-40ca-90be-f056b78ab7c3",
-                  "56af9e52-bfda-4696-a7e7-df0bda9fb381"
+                  "3fb4e445-50b9-4145-982a-af51cafd5a5d",
+                  "dae9d53e-c7b3-4917-8b38-0e443e272161"
                 ]
               }
             ],
@@ -3943,8 +4288,8 @@
                 },
                 "operator": "==",
                 "path": [
-                  "d5586934-e7f3-40ca-90be-f056b78ab7c3",
-                  "56af9e52-bfda-4696-a7e7-df0bda9fb381"
+                  "3fb4e445-50b9-4145-982a-af51cafd5a5d",
+                  "dae9d53e-c7b3-4917-8b38-0e443e272161"
                 ]
               }
             ],
@@ -3958,6 +4303,17 @@
     },
     {
       "id": "1b9fbe2d-3242-4f27-9229-e78ac2e60242",
+      "inputs": {
+        "e7ab473d-016c-4e44-86ef-b115d9c57947": {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "id": "e7ab473d-016c-4e44-86ef-b115d9c57947",
+          "name": "id",
+          "required": true
+        }
+      },
       "kind": "page",
       "name": "instruments"
     },
@@ -4001,7 +4357,42 @@
         }
       },
       "kind": "page",
-      "name": "cmpany"
+      "name": "cmpany",
+      "variables": {
+        "7b2bfde0-9361-44bd-8f51-6c63af562d7b": {
+          "cardinality": "one",
+          "dataType": "string",
+          "id": "7b2bfde0-9361-44bd-8f51-6c63af562d7b",
+          "kind": "plain",
+          "name": "industry"
+        }
+      },
+      "variants": {
+        "a4d5b9a9-a339-48d4-b157-5102ff1d1c14": {
+          "id": "a4d5b9a9-a339-48d4-b157-5102ff1d1c14",
+          "name": "industry_is_not_etf",
+          "rule": {
+            "children": [
+              {
+                "id": "rn1969",
+                "kind": "check",
+                "operand": {
+                  "kind": "literal",
+                  "value": "ETF"
+                },
+                "operator": "!=",
+                "path": [
+                  "7b2bfde0-9361-44bd-8f51-6c63af562d7b"
+                ]
+              }
+            ],
+            "connective": "all",
+            "id": "rn1970",
+            "kind": "group",
+            "negated": false
+          }
+        }
+      }
     },
     {
       "computeds": {
@@ -4047,9 +4438,64 @@
         }
       },
       "kind": "feature",
-      "name": "ranking-company"
+      "name": "ranking-company",
+      "variants": {
+        "6c0623ae-f010-4cd4-8b77-5926b70b7d12": {
+          "id": "6c0623ae-f010-4cd4-8b77-5926b70b7d12",
+          "name": "is_portfolio",
+          "rule": {
+            "children": [
+              {
+                "id": "rn25",
+                "kind": "check",
+                "operand": {
+                  "kind": "literal",
+                  "value": "PORTFOLIO"
+                },
+                "operator": "==",
+                "path": [
+                  "39757484-69ff-4f2d-9dd4-7e0b043a5cc2"
+                ]
+              }
+            ],
+            "connective": "all",
+            "id": "rn26",
+            "kind": "group",
+            "negated": false
+          }
+        }
+      }
     },
     {
+      "autoCalls": [
+        {
+          "args": [],
+          "id": "70cb0e34-13f8-4c75-9468-4ae14e75ed5d",
+          "methodId": "f4b24e25-b956-4270-9153-6baeeb28a029"
+        },
+        {
+          "args": [],
+          "emits": [
+            {
+              "id": "f14b7b00-efb7-4588-b792-f67ee247f2fb",
+              "outputId": "572034e4-9bde-4717-9d53-525aa16e60bd",
+              "value": {
+                "binding": {
+                  "path": [
+                    "3cc120af-135d-4d87-8784-3be4932bef56"
+                  ],
+                  "root": {
+                    "id": "ec004f90-b04d-43c8-a653-4ad0c63a4ebc",
+                    "kind": "screen_computed"
+                  }
+                },
+                "kind": "binding"
+              }
+            }
+          ],
+          "id": "70cb0e34-13f8-4c75-9468-4ae14e75ed5d-f14b7b00-efb7-4588-b792-f67ee247f2fb"
+        }
+      ],
       "computeds": {
         "ec004f90-b04d-43c8-a653-4ad0c63a4ebc": {
           "args": {
@@ -4091,7 +4537,44 @@
         }
       },
       "kind": "feature",
-      "name": "company-summary"
+      "name": "company-summary",
+      "outputs": {
+        "572034e4-9bde-4717-9d53-525aa16e60bd": {
+          "id": "572034e4-9bde-4717-9d53-525aa16e60bd",
+          "name": "industry",
+          "payload": {
+            "cardinality": "one",
+            "dataType": "string"
+          }
+        }
+      },
+      "variants": {
+        "0fa49528-8ed5-41e4-9a11-a7203e41309d": {
+          "id": "0fa49528-8ed5-41e4-9a11-a7203e41309d",
+          "name": "industry_is_not_etf",
+          "rule": {
+            "children": [
+              {
+                "id": "rn1979",
+                "kind": "check",
+                "operand": {
+                  "kind": "literal",
+                  "value": "ETF"
+                },
+                "operator": "!=",
+                "path": [
+                  "ec004f90-b04d-43c8-a653-4ad0c63a4ebc",
+                  "3cc120af-135d-4d87-8784-3be4932bef56"
+                ]
+              }
+            ],
+            "connective": "all",
+            "id": "rn1980",
+            "kind": "group",
+            "negated": false
+          }
+        }
+      }
     },
     {
       "computeds": {
@@ -4136,69 +4619,6 @@
       },
       "kind": "feature",
       "name": "company-score"
-    },
-    {
-      "computeds": {
-        "d3c456e8-7b74-40f3-a5ab-a87f987c170b": {
-          "args": {
-            "31c62c03-4aad-4e99-9133-c74ded0a0f48": {
-              "inputId": "bbac6874-ccc0-486f-af58-d40f99604c4f",
-              "source": "input"
-            },
-            "61585f7f-f999-4c84-ba9e-185d0d0913d5": {
-              "path": [
-                "443aba23-a361-4aa3-868a-479123e6cf06"
-              ],
-              "source": "path"
-            }
-          },
-          "functionId": "bbaa57ca-d626-4db2-b9ba-1f6cd5b26935",
-          "id": "d3c456e8-7b74-40f3-a5ab-a87f987c170b",
-          "name": "holding"
-        }
-      },
-      "featureId": "bbad551b-72b3-4fde-86f9-afa810cbc40c",
-      "id": "7c6142a9-5da7-44ec-bd77-0ac138318b6c",
-      "inputs": {
-        "bbac6874-ccc0-486f-af58-d40f99604c4f": {
-          "cardinality": "one",
-          "dataType": {
-            "type": "string"
-          },
-          "id": "bbac6874-ccc0-486f-af58-d40f99604c4f",
-          "name": "id",
-          "required": true
-        }
-      },
-      "kind": "feature",
-      "name": "action",
-      "variants": {
-        "a92a9f21-bd36-446b-9bbf-103106405d25": {
-          "id": "a92a9f21-bd36-446b-9bbf-103106405d25",
-          "name": "no_holdings",
-          "rule": {
-            "children": [
-              {
-                "id": "rn20",
-                "kind": "check",
-                "operand": {
-                  "kind": "literal",
-                  "value": 0
-                },
-                "operator": "not_exists",
-                "path": [
-                  "d3c456e8-7b74-40f3-a5ab-a87f987c170b",
-                  "742aec8b-e4aa-40a9-a2cb-2239378203de"
-                ]
-              }
-            ],
-            "connective": "all",
-            "id": "rn19",
-            "kind": "group",
-            "negated": false
-          }
-        }
-      }
     },
     {
       "computeds": {
@@ -4350,10 +4770,297 @@
       },
       "kind": "feature",
       "name": "profit-revenue"
+    },
+    {
+      "id": "b29b5847-0c82-447b-bbe4-c0aac7a71a28",
+      "kind": "page",
+      "name": "index-state"
+    },
+    {
+      "id": "e24f9bb0-91ec-4874-8313-1c0d631fa204",
+      "inputs": {
+        "cb83dcee-5af9-4c28-a7a3-cc72ff0def6f": {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "id": "cb83dcee-5af9-4c28-a7a3-cc72ff0def6f",
+          "name": "id",
+          "required": true
+        }
+      },
+      "kind": "page",
+      "name": "index-details"
+    },
+    {
+      "computeds": {
+        "707b9461-61cc-4626-b909-e9afb1511722": {
+          "args": {
+            "id": {
+              "inputId": "7bd98597-3e11-4c14-8234-dd517940dc88",
+              "source": "input"
+            },
+            "map": {
+              "path": [
+                "e5e30d28-369a-42fb-abe6-516e96fd51ba"
+              ],
+              "source": "path"
+            }
+          },
+          "id": "707b9461-61cc-4626-b909-e9afb1511722",
+          "name": "index",
+          "oneFunction": "getFromMap",
+          "returns": {
+            "cardinality": "one",
+            "dataType": {
+              "shapeId": "eb34fbff-711a-4f7a-b67d-26dca35a7412",
+              "type": "shape"
+            },
+            "optional": true
+          }
+        }
+      },
+      "featureId": "acef9153-606d-4de2-8699-7c87fa589384",
+      "id": "38f5b18f-bfa4-4c13-89c1-e9853d8fe359",
+      "inputs": {
+        "7bd98597-3e11-4c14-8234-dd517940dc88": {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "id": "7bd98597-3e11-4c14-8234-dd517940dc88",
+          "name": "id",
+          "required": true
+        }
+      },
+      "kind": "feature",
+      "name": "index-dashboard"
+    },
+    {
+      "computeds": {
+        "0c5c1364-d857-4e04-9415-7e7346b3d509": {
+          "args": {
+            "147d39db-08f4-47e6-8275-0dbc3fe87c3f": {
+              "source": "variable",
+              "variableId": "325b2950-c927-4518-bbad-2fa7af1d4002"
+            },
+            "418f7283-0ba5-4dfd-beb2-81ba2b1e4a00": {
+              "source": "variable",
+              "variableId": "4eed7eb6-3b81-46b9-b05b-7805062c1b80"
+            },
+            "ddc01286-b503-486d-8269-1b4b731352cb": {
+              "path": [
+                "d40ab2bc-c8c8-450a-bbbc-bf82eae46b7d"
+              ],
+              "source": "path"
+            }
+          },
+          "functionId": "b42000bc-f34e-4b5c-9ba9-3c5b2e3c12fa",
+          "id": "0c5c1364-d857-4e04-9415-7e7346b3d509",
+          "name": "futureHolding"
+        },
+        "1a3ae7ae-c00c-4c73-be34-e4a8e4e25d1c": {
+          "args": {
+            "7dbf49c2-f908-4a2f-8354-43d75d225faf": {
+              "source": "variable",
+              "variableId": "4eed7eb6-3b81-46b9-b05b-7805062c1b80"
+            },
+            "9ab0794a-c849-4044-bb4f-cbf4a50fb932": {
+              "path": [
+                "d40ab2bc-c8c8-450a-bbbc-bf82eae46b7d"
+              ],
+              "source": "path"
+            },
+            "ecef31c9-cb13-4799-8d31-b6222a8a75b2": {
+              "source": "variable",
+              "variableId": "325b2950-c927-4518-bbad-2fa7af1d4002"
+            }
+          },
+          "functionId": "e9c5b7b3-0ece-4b0a-9098-7e9fc82774a2",
+          "id": "1a3ae7ae-c00c-4c73-be34-e4a8e4e25d1c",
+          "name": "priceRequired"
+        },
+        "5f6d0e01-b90b-4a65-9ec0-66c5c66e18aa": {
+          "args": {
+            "06505133-af31-4a66-aad5-4f6f260315c1": {
+              "computedId": "1a3ae7ae-c00c-4c73-be34-e4a8e4e25d1c",
+              "source": "computed"
+            },
+            "77087382-f8ac-4f0a-b715-642e8e7638be": {
+              "path": [
+                "d40ab2bc-c8c8-450a-bbbc-bf82eae46b7d"
+              ],
+              "source": "path"
+            }
+          },
+          "functionId": "f5daeb06-cb0c-4125-b348-f857b7d99926",
+          "id": "5f6d0e01-b90b-4a65-9ec0-66c5c66e18aa",
+          "name": "futurePrice"
+        },
+        "fa8cd7fd-5749-4571-8e60-22b4e8f94b83": {
+          "args": {
+            "6b46ba07-ea62-4b2e-b513-9fd8f1a46cce": {
+              "source": "variable",
+              "variableId": "325b2950-c927-4518-bbad-2fa7af1d4002"
+            },
+            "82b2b800-2eb4-41d1-9efe-cd8c415ed22d": {
+              "path": [
+                "d40ab2bc-c8c8-450a-bbbc-bf82eae46b7d"
+              ],
+              "source": "path"
+            }
+          },
+          "functionId": "5fec8021-ae32-460b-b380-dd1c9663edc5",
+          "id": "fa8cd7fd-5749-4571-8e60-22b4e8f94b83",
+          "name": "maxQuantity"
+        }
+      },
+      "featureId": "bbad551b-72b3-4fde-86f9-afa810cbc40c",
+      "formModels": {
+        "e9bb7613-87e1-45f5-a79e-b5cde1efa663": {
+          "formId": "fb63f3d9-fcfa-4087-bc62-7fb37a973517",
+          "id": "e9bb7613-87e1-45f5-a79e-b5cde1efa663",
+          "keys": {
+            "de8a21b0-095a-4e57-88f7-9cd6b45165de": {
+              "path": [
+                "d40ab2bc-c8c8-450a-bbbc-bf82eae46b7d",
+                "f02584b7-5398-4d60-8b1b-493a59b86296"
+              ],
+              "source": "path"
+            }
+          },
+          "name": "formFb63f3d9Model"
+        }
+      },
+      "id": "bb75c0ed-20d1-445e-a81a-df1cde919f03",
+      "inputs": {
+        "db0904bd-93a1-4ddf-b070-7dc7f058f6a3": {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "id": "db0904bd-93a1-4ddf-b070-7dc7f058f6a3",
+          "name": "id",
+          "required": true
+        }
+      },
+      "kind": "feature",
+      "name": "rebalance",
+      "variables": {
+        "325b2950-c927-4518-bbad-2fa7af1d4002": {
+          "cardinality": "one",
+          "dataType": "string",
+          "id": "325b2950-c927-4518-bbad-2fa7af1d4002",
+          "kind": "plain",
+          "name": "action"
+        },
+        "4eed7eb6-3b81-46b9-b05b-7805062c1b80": {
+          "cardinality": "one",
+          "dataType": "number",
+          "id": "4eed7eb6-3b81-46b9-b05b-7805062c1b80",
+          "kind": "linked",
+          "name": "quanitity",
+          "source": {
+            "path": [
+              "d40ab2bc-c8c8-450a-bbbc-bf82eae46b7d",
+              "f02584b7-5398-4d60-8b1b-493a59b86296"
+            ],
+            "source": "path"
+          }
+        }
+      },
+      "variants": {
+        "af9b93ba-37b8-40b3-9216-c35d8724c81d": {
+          "id": "af9b93ba-37b8-40b3-9216-c35d8724c81d",
+          "name": "withdraw_cash",
+          "rule": {
+            "children": [
+              {
+                "id": "rn1963",
+                "kind": "check",
+                "operand": {
+                  "kind": "literal",
+                  "value": 0
+                },
+                "operator": ">=",
+                "path": [
+                  "1a3ae7ae-c00c-4c73-be34-e4a8e4e25d1c"
+                ]
+              }
+            ],
+            "connective": "all",
+            "id": "rn1964",
+            "kind": "group",
+            "negated": false
+          }
+        }
+      }
+    },
+    {
+      "featureId": "bbad551b-72b3-4fde-86f9-afa810cbc40c",
+      "formModels": {
+        "12800087-42a3-45ea-b889-789cdab3c63d": {
+          "formId": "0e095848-abc2-4a21-85e2-b4e92b9f76c5",
+          "id": "12800087-42a3-45ea-b889-789cdab3c63d",
+          "keys": {
+            "1329d7c0-40d6-4b89-a2cf-b3943fbeb742": {
+              "path": [
+                "d40ab2bc-c8c8-450a-bbbc-bf82eae46b7d",
+                "4435a383-8bc9-4b80-b4c1-7e72d0b9ccc3"
+              ],
+              "source": "path"
+            },
+            "f95efc99-731a-4f13-808b-aeff76340bbd": {
+              "path": [
+                "d40ab2bc-c8c8-450a-bbbc-bf82eae46b7d",
+                "6c2cf1d6-0de8-4904-8158-156a6e092a30"
+              ],
+              "source": "path"
+            }
+          },
+          "name": "form0e095848Model"
+        }
+      },
+      "id": "66bc7dd4-c7f6-4a9b-9eec-aeab3e615a59",
+      "inputs": {
+        "70501708-a9ca-478d-9952-f9493d73c108": {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "id": "70501708-a9ca-478d-9952-f9493d73c108",
+          "name": "id"
+        }
+      },
+      "kind": "feature",
+      "name": "update"
+    },
+    {
+      "featureId": "bbad551b-72b3-4fde-86f9-afa810cbc40c",
+      "formModels": {
+        "1db6832e-41be-49ed-913d-9f94c1e22440": {
+          "formId": "c8ccd4f2-a578-44c4-8b58-e75ff8968817",
+          "id": "1db6832e-41be-49ed-913d-9f94c1e22440",
+          "keys": {
+            "43829846-ee21-42f0-b93f-03eeb425cd25": {
+              "path": [
+                "443aba23-a361-4aa3-868a-479123e6cf06",
+                "8188dcd2-8a7f-4691-8306-7b7eb1ee1380",
+                "7721ab89-99cd-4b19-8d50-09abeadc0655"
+              ],
+              "source": "path"
+            }
+          },
+          "name": "formC8ccd4f2Model"
+        }
+      },
+      "id": "91276001-0281-4ade-80d5-349dea0a6c5e",
+      "kind": "feature",
+      "name": "user-settings"
     }
   ],
   "sharedShapes": {},
-  "v": 30,
+  "v": 32,
   "wcConfig": {
     "appColor": "#3949ab",
     "description": "to invest",
@@ -4361,6 +5068,6 @@
     "name": "invest",
     "open": false,
     "theme": "",
-    "version": "0.1.11"
+    "version": "0.2.0"
   }
 }
