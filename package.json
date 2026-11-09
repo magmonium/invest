@@ -1,6 +1,6 @@
 {
   "name": "invest",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "private": true,
   "scripts": {
     "assets:one": "node scripts/copy-one-assets.cjs",
@@ -27,7 +27,7 @@
     "@angular/forms": "22.2.1",
     "@angular/platform-browser": "22.2.1",
     "@angular/router": "22.2.1",
-    "@magmonium/one": "0.4.106",
+    "@magmonium/one": "0.4.109",
     "@ngrx/signals": "^22.0.1",
     "rxjs": "~7.8.0",
     "socket.io-client": "^4.8.3",

@@ -3072,6 +3072,57 @@
       },
       "id": "bbad551b-72b3-4fde-86f9-afa810cbc40c",
       "methods": {
+        "4781ed97-2679-49f7-8cf4-47a1b3404bd4": {
+          "id": "4781ed97-2679-49f7-8cf4-47a1b3404bd4",
+          "inputs": [
+            {
+              "path": [
+                "d40ab2bc-c8c8-450a-bbbc-bf82eae46b7d",
+                "6d55b018-245b-48df-8c31-aa80f4064595"
+              ],
+              "source": "store",
+              "target": [
+                "path",
+                "symbol"
+              ]
+            },
+            {
+              "arg": "quantity",
+              "source": "args",
+              "target": [
+                "payload",
+                "quantity"
+              ]
+            },
+            {
+              "arg": "price",
+              "source": "args",
+              "target": [
+                "payload",
+                "price"
+              ]
+            }
+          ],
+          "name": "patchFinanceTradeSymbol",
+          "path": "/finance/v1/trade/{symbol}",
+          "response": [
+            {
+              "code": "200",
+              "propertyId": "d40ab2bc-c8c8-450a-bbbc-bf82eae46b7d",
+              "source": [
+                "plan"
+              ]
+            },
+            {
+              "code": "200",
+              "propertyId": "443aba23-a361-4aa3-868a-479123e6cf06",
+              "source": [
+                "config"
+              ]
+            }
+          ],
+          "verb": "patch"
+        },
         "89530411-82a4-4cbc-91e9-b7b503e56896": {
           "id": "89530411-82a4-4cbc-91e9-b7b503e56896",
           "inputs": [
@@ -3808,7 +3859,7 @@
     }
   },
   "npmAllowlist": {},
-  "one": "0.4.106",
+  "one": "0.4.109",
   "screens": [
     {
       "computeds": {
@@ -4894,6 +4945,45 @@
           }
         }
       }
+    },
+    {
+      "featureId": "bbad551b-72b3-4fde-86f9-afa810cbc40c",
+      "formModels": {
+        "12800087-42a3-45ea-b889-789cdab3c63d": {
+          "formId": "0e095848-abc2-4a21-85e2-b4e92b9f76c5",
+          "id": "12800087-42a3-45ea-b889-789cdab3c63d",
+          "keys": {
+            "1329d7c0-40d6-4b89-a2cf-b3943fbeb742": {
+              "path": [
+                "d40ab2bc-c8c8-450a-bbbc-bf82eae46b7d",
+                "4435a383-8bc9-4b80-b4c1-7e72d0b9ccc3"
+              ],
+              "source": "path"
+            },
+            "f95efc99-731a-4f13-808b-aeff76340bbd": {
+              "path": [
+                "d40ab2bc-c8c8-450a-bbbc-bf82eae46b7d",
+                "6c2cf1d6-0de8-4904-8158-156a6e092a30"
+              ],
+              "source": "path"
+            }
+          },
+          "name": "form0e095848Model"
+        }
+      },
+      "id": "66bc7dd4-c7f6-4a9b-9eec-aeab3e615a59",
+      "inputs": {
+        "70501708-a9ca-478d-9952-f9493d73c108": {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "id": "70501708-a9ca-478d-9952-f9493d73c108",
+          "name": "id"
+        }
+      },
+      "kind": "feature",
+      "name": "update"
     }
   ],
   "sharedShapes": {},
@@ -4905,6 +4995,6 @@
     "name": "invest",
     "open": false,
     "theme": "",
-    "version": "0.1.14"
+    "version": "0.1.15"
   }
 }

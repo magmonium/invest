@@ -208,7 +208,40 @@
             "side": "right"
           }
         },
-        "parentId": "9a41688d-e7be-4f5f-b1ad-6f3198bfbf04",
+        "parentId": "f8620bd7-1c08-4729-8fbd-7033cfbbd2ea",
+        "type": "button"
+      },
+      "8310eb1b-5a9a-493c-b49b-e9b6a7bcf7d7": {
+        "childrens": [],
+        "configs": {
+          "fullWidth": true,
+          "icon": "pencil",
+          "isRightIcon": true,
+          "label": "update",
+          "variant": "primary"
+        },
+        "id": "8310eb1b-5a9a-493c-b49b-e9b6a7bcf7d7",
+        "outputOpens": {
+          "clicked": {
+            "as": "side_panel",
+            "inputs": [
+              {
+                "inputId": "70501708-a9ca-478d-9952-f9493d73c108",
+                "value": {
+                  "binding": {
+                    "inputId": "9810373c-a815-4a47-a8eb-bf00e3a407eb",
+                    "kind": "input"
+                  },
+                  "kind": "screen"
+                }
+              }
+            ],
+            "screenId": "66bc7dd4-c7f6-4a9b-9eec-aeab3e615a59",
+            "side": "right"
+          }
+        },
+        "parentId": "f8620bd7-1c08-4729-8fbd-7033cfbbd2ea",
+        "source": "raw",
         "type": "button"
       },
       "8f36ddc6-1fec-4722-94ba-cb650f16fafc": {
@@ -224,7 +257,7 @@
       },
       "9a41688d-e7be-4f5f-b1ad-6f3198bfbf04": {
         "childrens": [
-          "82784def-43f1-4b9b-b8c4-3f1bbc11dfce"
+          "f8620bd7-1c08-4729-8fbd-7033cfbbd2ea"
         ],
         "configs": {
           "xs": "8"
@@ -356,6 +389,18 @@
             "join": "and"
           }
         ]
+      },
+      "f8620bd7-1c08-4729-8fbd-7033cfbbd2ea": {
+        "childrens": [
+          "82784def-43f1-4b9b-b8c4-3f1bbc11dfce",
+          "8310eb1b-5a9a-493c-b49b-e9b6a7bcf7d7"
+        ],
+        "configs": {
+          "variant": "context"
+        },
+        "id": "f8620bd7-1c08-4729-8fbd-7033cfbbd2ea",
+        "parentId": "9a41688d-e7be-4f5f-b1ad-6f3198bfbf04",
+        "type": "section_button_group"
       },
       "fa4d5964-4ac0-41e9-9c8d-44f0a3235f0c": {
         "childrens": [],
