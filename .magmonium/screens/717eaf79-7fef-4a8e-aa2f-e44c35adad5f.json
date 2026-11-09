@@ -245,9 +245,9 @@
         "childrens": [],
         "configs": {
           "fullWidth": true,
-          "icon": "chevron-right",
+          "icon": "adjust",
           "isRightIcon": true,
-          "label": "manage-strategy",
+          "label": "manage-portfolio",
           "variant": "primary"
         },
         "directives": {
@@ -260,6 +260,14 @@
           }
         },
         "id": "44295baa-4142-44e1-8d8c-517071874fa7",
+        "outputOpens": {
+          "clicked": {
+            "as": "side_panel",
+            "inputs": [],
+            "screenId": "91276001-0281-4ade-80d5-349dea0a6c5e",
+            "side": "right"
+          }
+        },
         "parentId": "7576e70a-68e6-40bd-9a3f-5f4b9ea6015f",
         "type": "button"
       },

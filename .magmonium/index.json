@@ -14,7 +14,7 @@
     },
     "mode": "new"
   },
-  "codegen": "0.8.26",
+  "codegen": "0.8.27",
   "distinct": [],
   "enums": {
     "4bc51fb3-db70-4ead-ac0d-c48ae741522d": {
@@ -3072,6 +3072,29 @@
       },
       "id": "bbad551b-72b3-4fde-86f9-afa810cbc40c",
       "methods": {
+        "21055b12-5a82-4cc8-8071-f361515b0d15": {
+          "id": "21055b12-5a82-4cc8-8071-f361515b0d15",
+          "inputs": [
+            {
+              "arg": "amount",
+              "source": "args",
+              "target": [
+                "payload",
+                "amount"
+              ]
+            }
+          ],
+          "name": "updateFinanceConfig",
+          "path": "/finance/v1/config",
+          "response": [
+            {
+              "code": "200",
+              "propertyId": "443aba23-a361-4aa3-868a-479123e6cf06",
+              "source": []
+            }
+          ],
+          "verb": "put"
+        },
         "4781ed97-2679-49f7-8cf4-47a1b3404bd4": {
           "id": "4781ed97-2679-49f7-8cf4-47a1b3404bd4",
           "inputs": [
@@ -4265,7 +4288,7 @@
                 },
                 "operator": "==",
                 "path": [
-                  "d5586934-e7f3-40ca-90be-f056b78ab7c3",
+                  "3fb4e445-50b9-4145-982a-af51cafd5a5d",
                   "dae9d53e-c7b3-4917-8b38-0e443e272161"
                 ]
               }
@@ -4522,6 +4545,33 @@
           "payload": {
             "cardinality": "one",
             "dataType": "string"
+          }
+        }
+      },
+      "variants": {
+        "0fa49528-8ed5-41e4-9a11-a7203e41309d": {
+          "id": "0fa49528-8ed5-41e4-9a11-a7203e41309d",
+          "name": "industry_is_not_etf",
+          "rule": {
+            "children": [
+              {
+                "id": "rn1979",
+                "kind": "check",
+                "operand": {
+                  "kind": "literal",
+                  "value": "ETF"
+                },
+                "operator": "!=",
+                "path": [
+                  "ec004f90-b04d-43c8-a653-4ad0c63a4ebc",
+                  "3cc120af-135d-4d87-8784-3be4932bef56"
+                ]
+              }
+            ],
+            "connective": "all",
+            "id": "rn1980",
+            "kind": "group",
+            "negated": false
           }
         }
       }
@@ -4984,6 +5034,29 @@
       },
       "kind": "feature",
       "name": "update"
+    },
+    {
+      "featureId": "bbad551b-72b3-4fde-86f9-afa810cbc40c",
+      "formModels": {
+        "1db6832e-41be-49ed-913d-9f94c1e22440": {
+          "formId": "c8ccd4f2-a578-44c4-8b58-e75ff8968817",
+          "id": "1db6832e-41be-49ed-913d-9f94c1e22440",
+          "keys": {
+            "43829846-ee21-42f0-b93f-03eeb425cd25": {
+              "path": [
+                "443aba23-a361-4aa3-868a-479123e6cf06",
+                "8188dcd2-8a7f-4691-8306-7b7eb1ee1380",
+                "7721ab89-99cd-4b19-8d50-09abeadc0655"
+              ],
+              "source": "path"
+            }
+          },
+          "name": "formC8ccd4f2Model"
+        }
+      },
+      "id": "91276001-0281-4ade-80d5-349dea0a6c5e",
+      "kind": "feature",
+      "name": "user-settings"
     }
   ],
   "sharedShapes": {},
@@ -4995,6 +5068,6 @@
     "name": "invest",
     "open": false,
     "theme": "",
-    "version": "0.1.15"
+    "version": "0.2.0"
   }
 }

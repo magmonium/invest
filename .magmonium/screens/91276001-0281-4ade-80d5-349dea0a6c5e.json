@@ -1,0 +1,219 @@
+{
+  "meta": {
+    "featureId": "bbad551b-72b3-4fde-86f9-afa810cbc40c",
+    "formModels": {
+      "1db6832e-41be-49ed-913d-9f94c1e22440": {
+        "formId": "c8ccd4f2-a578-44c4-8b58-e75ff8968817",
+        "id": "1db6832e-41be-49ed-913d-9f94c1e22440",
+        "keys": {
+          "43829846-ee21-42f0-b93f-03eeb425cd25": {
+            "path": [
+              "443aba23-a361-4aa3-868a-479123e6cf06",
+              "8188dcd2-8a7f-4691-8306-7b7eb1ee1380",
+              "7721ab89-99cd-4b19-8d50-09abeadc0655"
+            ],
+            "source": "path"
+          }
+        },
+        "name": "formC8ccd4f2Model"
+      }
+    },
+    "id": "91276001-0281-4ade-80d5-349dea0a6c5e",
+    "kind": "feature",
+    "name": "user-settings"
+  },
+  "state": {
+    "controlMap": {
+      "35f3ff08-1f0e-4471-8efc-d2e34a889310": {
+        "childrens": [
+          "50060b15-d7e6-4c66-bcae-27c0240d8d4b",
+          "ca8f029a-0f3f-453c-85bc-832e2faadeda"
+        ],
+        "configs": {
+          "alignItems": "center",
+          "gap": "1"
+        },
+        "id": "35f3ff08-1f0e-4471-8efc-d2e34a889310",
+        "parentId": "c551683b-9383-431a-b603-4af05c5c0d52",
+        "type": "flex"
+      },
+      "405d6024-a15e-49a5-aca6-afbf78d794d7": {
+        "childrens": [
+          "ec3298b6-642c-4745-9bee-a6f1aa87b905"
+        ],
+        "configs": {},
+        "id": "405d6024-a15e-49a5-aca6-afbf78d794d7",
+        "parentId": "570f9715-448b-4d6c-a706-3a521b4e5824",
+        "type": "flex"
+      },
+      "43829846-ee21-42f0-b93f-03eeb425cd25": {
+        "checks": [
+          {
+            "functionId": "",
+            "id": "965e9437-2a8c-47d8-bbf4-0ab59b87caf9",
+            "kind": "min",
+            "limit": 0,
+            "message": "the-minimum-quantity-must-be-positive"
+          }
+        ],
+        "childrens": [],
+        "configs": {
+          "icon": "rupee2",
+          "label": "cash-available",
+          "name": "cash",
+          "placeholder": "type-text",
+          "required": true,
+          "type": "money"
+        },
+        "id": "43829846-ee21-42f0-b93f-03eeb425cd25",
+        "parentId": "c8ccd4f2-a578-44c4-8b58-e75ff8968817",
+        "type": "field"
+      },
+      "50060b15-d7e6-4c66-bcae-27c0240d8d4b": {
+        "childrens": [],
+        "configs": {
+          "icon": "adjust",
+          "size": 2
+        },
+        "id": "50060b15-d7e6-4c66-bcae-27c0240d8d4b",
+        "parentId": "35f3ff08-1f0e-4471-8efc-d2e34a889310",
+        "type": "icon"
+      },
+      "517c599e-4757-49be-b2a2-1ac4c531b789": {
+        "childrens": [
+          "c551683b-9383-431a-b603-4af05c5c0d52"
+        ],
+        "configs": {},
+        "id": "517c599e-4757-49be-b2a2-1ac4c531b789",
+        "parentId": "b686d642-2a8e-4db2-a4d6-aeab4d91577b",
+        "type": "section_header"
+      },
+      "570f9715-448b-4d6c-a706-3a521b4e5824": {
+        "childrens": [
+          "405d6024-a15e-49a5-aca6-afbf78d794d7"
+        ],
+        "configs": {},
+        "id": "570f9715-448b-4d6c-a706-3a521b4e5824",
+        "parentId": "5fcff6bc-3f95-4a8a-b416-08cb1bb6534f",
+        "type": "section_header_label"
+      },
+      "5fcff6bc-3f95-4a8a-b416-08cb1bb6534f": {
+        "childrens": [
+          "570f9715-448b-4d6c-a706-3a521b4e5824"
+        ],
+        "configs": {
+          "fullWidth": true,
+          "sticky": true
+        },
+        "id": "5fcff6bc-3f95-4a8a-b416-08cb1bb6534f",
+        "parentId": "b686d642-2a8e-4db2-a4d6-aeab4d91577b",
+        "type": "section_footer"
+      },
+      "b686d642-2a8e-4db2-a4d6-aeab4d91577b": {
+        "childrens": [
+          "517c599e-4757-49be-b2a2-1ac4c531b789",
+          "d5bd1e02-0339-4dcb-a3b3-0756457fbe2d",
+          "5fcff6bc-3f95-4a8a-b416-08cb1bb6534f"
+        ],
+        "configs": {
+          "heightMode": "full"
+        },
+        "id": "b686d642-2a8e-4db2-a4d6-aeab4d91577b",
+        "type": "section"
+      },
+      "c551683b-9383-431a-b603-4af05c5c0d52": {
+        "childrens": [
+          "35f3ff08-1f0e-4471-8efc-d2e34a889310"
+        ],
+        "configs": {},
+        "id": "c551683b-9383-431a-b603-4af05c5c0d52",
+        "parentId": "517c599e-4757-49be-b2a2-1ac4c531b789",
+        "type": "section_header_label"
+      },
+      "c8ccd4f2-a578-44c4-8b58-e75ff8968817": {
+        "childrens": [
+          "43829846-ee21-42f0-b93f-03eeb425cd25"
+        ],
+        "configs": {},
+        "directives": {
+          "mPadding": {
+            "configs": {
+              "mPadding": 1,
+              "mPaddingX": "",
+              "mPaddingY": ""
+            }
+          }
+        },
+        "id": "c8ccd4f2-a578-44c4-8b58-e75ff8968817",
+        "outputArgs": {
+          "submitted": [
+            {
+              "event": [
+                "cash"
+              ],
+              "source": "event",
+              "target": [
+                "amount"
+              ]
+            }
+          ]
+        },
+        "outputs": {
+          "submitted": "21055b12-5a82-4cc8-8071-f361515b0d15"
+        },
+        "parentId": "d5bd1e02-0339-4dcb-a3b3-0756457fbe2d",
+        "type": "form"
+      },
+      "ca8f029a-0f3f-453c-85bc-832e2faadeda": {
+        "bindings": {
+          "var:user": {
+            "path": [],
+            "root": {
+              "kind": "auth",
+              "property": "userFirstName"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {
+          "label": "s-settings",
+          "variant": "big"
+        },
+        "id": "ca8f029a-0f3f-453c-85bc-832e2faadeda",
+        "parentId": "35f3ff08-1f0e-4471-8efc-d2e34a889310",
+        "type": "text"
+      },
+      "d5bd1e02-0339-4dcb-a3b3-0756457fbe2d": {
+        "childrens": [
+          "c8ccd4f2-a578-44c4-8b58-e75ff8968817"
+        ],
+        "configs": {},
+        "id": "d5bd1e02-0339-4dcb-a3b3-0756457fbe2d",
+        "parentId": "b686d642-2a8e-4db2-a4d6-aeab4d91577b",
+        "type": "row"
+      },
+      "ec3298b6-642c-4745-9bee-a6f1aa87b905": {
+        "childrens": [],
+        "configs": {
+          "color": "success",
+          "fullWidth": true,
+          "icon": "check",
+          "isSubmit": true,
+          "label": "apply",
+          "submitTarget": "c8ccd4f2-a578-44c4-8b58-e75ff8968817",
+          "variant": "primary"
+        },
+        "id": "ec3298b6-642c-4745-9bee-a6f1aa87b905",
+        "parentId": "405d6024-a15e-49a5-aca6-afbf78d794d7",
+        "type": "button"
+      }
+    },
+    "labelSamples": {},
+    "pathSamples": {},
+    "rootControlIds": [
+      "b686d642-2a8e-4db2-a4d6-aeab4d91577b"
+    ],
+    "selectedLayerId": 0
+  },
+  "v": 32
+}

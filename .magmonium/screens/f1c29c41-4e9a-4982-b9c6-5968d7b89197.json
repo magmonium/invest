@@ -80,6 +80,33 @@
           "dataType": "string"
         }
       }
+    },
+    "variants": {
+      "0fa49528-8ed5-41e4-9a11-a7203e41309d": {
+        "id": "0fa49528-8ed5-41e4-9a11-a7203e41309d",
+        "name": "industry_is_not_etf",
+        "rule": {
+          "children": [
+            {
+              "id": "rn1979",
+              "kind": "check",
+              "operand": {
+                "kind": "literal",
+                "value": "ETF"
+              },
+              "operator": "!=",
+              "path": [
+                "ec004f90-b04d-43c8-a653-4ad0c63a4ebc",
+                "3cc120af-135d-4d87-8784-3be4932bef56"
+              ]
+            }
+          ],
+          "connective": "all",
+          "id": "rn1980",
+          "kind": "group",
+          "negated": false
+        }
+      }
     }
   },
   "state": {
@@ -121,10 +148,10 @@
       },
       "047c5dd5-e202-4a3a-bc3f-ba91b0931555": {
         "childrens": [
-          "fe01c9e7-9225-45f4-bc9f-9e439f1c098a"
+          "2126b099-2034-4d53-80b3-d3fb697e2b9b"
         ],
         "configs": {
-          "xs": "3"
+          "xs": "4"
         },
         "id": "047c5dd5-e202-4a3a-bc3f-ba91b0931555",
         "parentId": "f46cdb5c-2d46-4a50-a4f0-51b65f7dae42",
@@ -238,7 +265,7 @@
           "label": "p-b-ratio"
         },
         "id": "2126b099-2034-4d53-80b3-d3fb697e2b9b",
-        "parentId": "416e6bcd-071a-41a9-a1ec-3a3596120368",
+        "parentId": "047c5dd5-e202-4a3a-bc3f-ba91b0931555",
         "source": "raw",
         "type": "stat"
       },
@@ -250,7 +277,7 @@
           "label": "max-drawdown"
         },
         "id": "212fed03-a7cd-476e-bd56-38863363aec6",
-        "parentId": "e493b04c-2ab6-4746-a95a-cf1dc48bcc06",
+        "parentId": "d599e392-370d-4796-8df2-3da35b03375c",
         "source": "raw",
         "type": "stat"
       },
@@ -356,7 +383,14 @@
         "id": "311aff82-fa3e-4bd0-a163-c875676b1508",
         "parentId": "27383adf-e188-414f-ba5e-ab326ebfdb56",
         "source": "raw",
-        "type": "row"
+        "type": "row",
+        "variantKind": "screen",
+        "variants": [
+          {
+            "id": "0fa49528-8ed5-41e4-9a11-a7203e41309d",
+            "join": "and"
+          }
+        ]
       },
       "369e68eb-20d0-47f3-913d-be82cf049898": {
         "childrens": [
@@ -381,7 +415,7 @@
       },
       "416e6bcd-071a-41a9-a1ec-3a3596120368": {
         "childrens": [
-          "2126b099-2034-4d53-80b3-d3fb697e2b9b"
+          "fe01c9e7-9225-45f4-bc9f-9e439f1c098a"
         ],
         "configs": {
           "xs": "4"
@@ -632,7 +666,7 @@
       },
       "72d717f3-7a5a-452e-adf2-c417ce5317a5": {
         "childrens": [
-          "bb71d302-5ce5-4111-a306-e78048b17869"
+          "87989059-d6f0-4d83-841e-4cf79ea1ff10"
         ],
         "configs": {
           "xs": "4"
@@ -775,7 +809,7 @@
           "label": "market-cap-cr"
         },
         "id": "87989059-d6f0-4d83-841e-4cf79ea1ff10",
-        "parentId": "b971db6a-6f3b-43be-866f-6c5f8815354d",
+        "parentId": "72d717f3-7a5a-452e-adf2-c417ce5317a5",
         "source": "raw",
         "type": "stat"
       },
@@ -960,10 +994,10 @@
       },
       "b971db6a-6f3b-43be-866f-6c5f8815354d": {
         "childrens": [
-          "87989059-d6f0-4d83-841e-4cf79ea1ff10"
+          "bb71d302-5ce5-4111-a306-e78048b17869"
         ],
         "configs": {
-          "xs": "5"
+          "xs": "4"
         },
         "id": "b971db6a-6f3b-43be-866f-6c5f8815354d",
         "parentId": "f46cdb5c-2d46-4a50-a4f0-51b65f7dae42",
@@ -990,7 +1024,7 @@
           "label": "p-e-ratio"
         },
         "id": "bb71d302-5ce5-4111-a306-e78048b17869",
-        "parentId": "72d717f3-7a5a-452e-adf2-c417ce5317a5",
+        "parentId": "b971db6a-6f3b-43be-866f-6c5f8815354d",
         "source": "raw",
         "type": "stat"
       },
@@ -1083,7 +1117,14 @@
         "id": "cd31b4c2-fd5b-4446-a9c8-dcea5b42af5e",
         "parentId": "27383adf-e188-414f-ba5e-ab326ebfdb56",
         "source": "raw",
-        "type": "row"
+        "type": "row",
+        "variantKind": "screen",
+        "variants": [
+          {
+            "id": "0fa49528-8ed5-41e4-9a11-a7203e41309d",
+            "join": "and"
+          }
+        ]
       },
       "d162881f-31bb-482a-9a8e-db1615afc64a": {
         "childrens": [
@@ -1106,7 +1147,7 @@
           "label": "ranking"
         },
         "id": "d1916d03-61e0-435c-b39b-661945714964",
-        "parentId": "d599e392-370d-4796-8df2-3da35b03375c",
+        "parentId": "e493b04c-2ab6-4746-a95a-cf1dc48bcc06",
         "source": "raw",
         "type": "stat"
       },
@@ -1137,7 +1178,7 @@
       },
       "d599e392-370d-4796-8df2-3da35b03375c": {
         "childrens": [
-          "d1916d03-61e0-435c-b39b-661945714964"
+          "212fed03-a7cd-476e-bd56-38863363aec6"
         ],
         "configs": {
           "xs": "4"
@@ -1230,7 +1271,7 @@
       },
       "e493b04c-2ab6-4746-a95a-cf1dc48bcc06": {
         "childrens": [
-          "212fed03-a7cd-476e-bd56-38863363aec6"
+          "d1916d03-61e0-435c-b39b-661945714964"
         ],
         "configs": {
           "xs": "4"
@@ -1405,7 +1446,7 @@
           "label": "future-price"
         },
         "id": "fe01c9e7-9225-45f4-bc9f-9e439f1c098a",
-        "parentId": "047c5dd5-e202-4a3a-bc3f-ba91b0931555",
+        "parentId": "416e6bcd-071a-41a9-a1ec-3a3596120368",
         "type": "stat"
       },
       "fe2f68f3-81a0-466b-9fa3-714688554b81": {
