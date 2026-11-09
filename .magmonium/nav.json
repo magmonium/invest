@@ -73,6 +73,7 @@
         "root_default_instrument_with-ticker"
       ],
       "icon": "company",
+      "inheritsParams": false,
       "label": "instrument",
       "linkKind": "url",
       "navId": "root_default_instrument",
@@ -91,6 +92,7 @@
     "root_default_instrument_default": {
       "children": [],
       "icon": "nifty",
+      "inheritsParams": false,
       "isDefault": true,
       "linkKind": "url",
       "navId": "root_default_instrument_default",
