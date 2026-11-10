@@ -73,7 +73,6 @@
         "root_default_instrument_with-ticker"
       ],
       "icon": "company",
-      "inheritsParams": false,
       "label": "instrument",
       "linkKind": "url",
       "navId": "root_default_instrument",
@@ -81,7 +80,9 @@
       "presentation": "static"
     },
     "root_default_instrument-copy-copy": {
-      "children": [],
+      "children": [
+        "root_default_instrument-copy-copy_default"
+      ],
       "icon": "strategy",
       "label": "strategy",
       "linkKind": "url",
@@ -89,10 +90,17 @@
       "pageId": "1d8a5675-597f-42e4-962a-71b05c02a54f",
       "presentation": "static"
     },
+    "root_default_instrument-copy-copy_default": {
+      "children": [],
+      "isDefault": true,
+      "linkKind": "url",
+      "navId": "root_default_instrument-copy-copy_default",
+      "pageId": "a8af81fc-8243-4dcf-bb1e-937234fcfcbf",
+      "presentation": "static"
+    },
     "root_default_instrument_default": {
       "children": [],
       "icon": "nifty",
-      "inheritsParams": false,
       "isDefault": true,
       "linkKind": "url",
       "navId": "root_default_instrument_default",

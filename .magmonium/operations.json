@@ -136,15 +136,22 @@
           "cardinality": "one",
           "code": "200",
           "dataType": {
-            "shapeId": "9daa67f5-287c-5127-836e-eaeb35f08615",
+            "shapeId": "feb8595f-559c-59c9-85df-060dfc5ee77f",
             "type": "shape"
           },
           "description": "Dashboard changes",
           "doc": {
             "members": [
               {
-                "description": "Percent change; a half is omitted when its data is missing",
+                "description": "Latest value and % change; fields with no data are omitted",
                 "members": [
+                  {
+                    "description": "Latest close / price; total holdings value for portfolio",
+                    "members": [],
+                    "name": "value",
+                    "required": false,
+                    "type": "number"
+                  },
                   {
                     "description": "1-day %",
                     "members": [],
@@ -165,8 +172,15 @@
                 "type": "object"
               },
               {
-                "description": "Percent change; a half is omitted when its data is missing",
+                "description": "Latest value and % change; fields with no data are omitted",
                 "members": [
+                  {
+                    "description": "Latest close / price; total holdings value for portfolio",
+                    "members": [],
+                    "name": "value",
+                    "required": false,
+                    "type": "number"
+                  },
                   {
                     "description": "1-day %",
                     "members": [],
@@ -187,8 +201,15 @@
                 "type": "object"
               },
               {
-                "description": "Percent change; a half is omitted when its data is missing",
+                "description": "Latest value and % change; fields with no data are omitted",
                 "members": [
+                  {
+                    "description": "Latest close / price; total holdings value for portfolio",
+                    "members": [],
+                    "name": "value",
+                    "required": false,
+                    "type": "number"
+                  },
                   {
                     "description": "1-day %",
                     "members": [],
@@ -209,8 +230,15 @@
                 "type": "object"
               },
               {
-                "description": "Percent change; a half is omitted when its data is missing",
+                "description": "Latest value and % change; fields with no data are omitted",
                 "members": [
+                  {
+                    "description": "Latest close / price; total holdings value for portfolio",
+                    "members": [],
+                    "name": "value",
+                    "required": false,
+                    "type": "number"
+                  },
                   {
                     "description": "1-day %",
                     "members": [],
@@ -231,8 +259,15 @@
                 "type": "object"
               },
               {
-                "description": "Percent change; a half is omitted when its data is missing",
+                "description": "Latest value and % change; fields with no data are omitted",
                 "members": [
+                  {
+                    "description": "Latest close / price; total holdings value for portfolio",
+                    "members": [],
+                    "name": "value",
+                    "required": false,
+                    "type": "number"
+                  },
                   {
                     "description": "1-day %",
                     "members": [],
@@ -253,8 +288,15 @@
                 "type": "object"
               },
               {
-                "description": "Percent change; a half is omitted when its data is missing",
+                "description": "Latest value and % change; fields with no data are omitted",
                 "members": [
+                  {
+                    "description": "Latest close / price; total holdings value for portfolio",
+                    "members": [],
+                    "name": "value",
+                    "required": false,
+                    "type": "number"
+                  },
                   {
                     "description": "1-day %",
                     "members": [],
@@ -281,14 +323,22 @@
           },
           "shapes": [
             {
-              "id": "2c3fd08f-1bc3-5d99-9fb6-cecde999562f",
+              "id": "5f8d2aa8-d945-565e-a5cd-fda200f742c8",
               "keys": [
                 {
                   "cardinality": "one",
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "24761861-613e-549b-898c-f84f316ec201",
+                  "id": "d00a3ab5-aee1-52a7-9aef-3dc39a3219d5",
+                  "name": "value"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "e185dab6-1b5e-5f94-b8b8-c82855a5bed6",
                   "name": "day"
                 },
                 {
@@ -296,7 +346,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "073b26c9-a856-5517-9998-ffa3d2adc8e9",
+                  "id": "41694330-9cb7-50fa-aff0-6186ef9e8fd0",
                   "name": "week"
                 }
               ],
@@ -311,60 +361,60 @@
               }
             },
             {
-              "id": "9daa67f5-287c-5127-836e-eaeb35f08615",
+              "id": "feb8595f-559c-59c9-85df-060dfc5ee77f",
               "keys": [
                 {
                   "cardinality": "one",
                   "dataType": {
-                    "shapeId": "2c3fd08f-1bc3-5d99-9fb6-cecde999562f",
+                    "shapeId": "5f8d2aa8-d945-565e-a5cd-fda200f742c8",
                     "type": "shape"
                   },
-                  "id": "ff8c4863-0e17-5eb5-8ff5-bfc954bce983",
+                  "id": "7537e76d-2a74-5067-8437-c55b3200ca8d",
                   "name": "nifty"
                 },
                 {
                   "cardinality": "one",
                   "dataType": {
-                    "shapeId": "2c3fd08f-1bc3-5d99-9fb6-cecde999562f",
+                    "shapeId": "5f8d2aa8-d945-565e-a5cd-fda200f742c8",
                     "type": "shape"
                   },
-                  "id": "669f7dcd-039a-5da7-bf07-8cab622e516d",
+                  "id": "8573931f-bd3c-5361-9129-a9056bec11bf",
                   "name": "midcap"
                 },
                 {
                   "cardinality": "one",
                   "dataType": {
-                    "shapeId": "2c3fd08f-1bc3-5d99-9fb6-cecde999562f",
+                    "shapeId": "5f8d2aa8-d945-565e-a5cd-fda200f742c8",
                     "type": "shape"
                   },
-                  "id": "3b8ef8aa-12b6-5910-b0b7-2a9cbc22c54a",
+                  "id": "72e6c778-817d-5d66-b3a0-8f720a93bb18",
                   "name": "smallcap"
                 },
                 {
                   "cardinality": "one",
                   "dataType": {
-                    "shapeId": "2c3fd08f-1bc3-5d99-9fb6-cecde999562f",
+                    "shapeId": "5f8d2aa8-d945-565e-a5cd-fda200f742c8",
                     "type": "shape"
                   },
-                  "id": "2bc7b999-c78a-598f-9e50-68037a85c839",
+                  "id": "840b26e7-4a21-560d-9ee8-4a9135812b87",
                   "name": "gold"
                 },
                 {
                   "cardinality": "one",
                   "dataType": {
-                    "shapeId": "2c3fd08f-1bc3-5d99-9fb6-cecde999562f",
+                    "shapeId": "5f8d2aa8-d945-565e-a5cd-fda200f742c8",
                     "type": "shape"
                   },
-                  "id": "661d99da-1048-5c34-b3ac-4cf061aada7a",
+                  "id": "e04b7eac-ad90-5056-8c39-1db2ad77484c",
                   "name": "silver"
                 },
                 {
                   "cardinality": "one",
                   "dataType": {
-                    "shapeId": "2c3fd08f-1bc3-5d99-9fb6-cecde999562f",
+                    "shapeId": "5f8d2aa8-d945-565e-a5cd-fda200f742c8",
                     "type": "shape"
                   },
-                  "id": "32a5dea1-b62a-5127-85ee-4253fdcb02c1",
+                  "id": "6d17773f-15c3-50ed-af88-c139d1c61f5f",
                   "name": "portfolio"
                 }
               ],
@@ -384,7 +434,7 @@
       "segments": [
         "dashboard"
       ],
-      "summary": "Market highlights and the user's Portfolio change in one call. Every entry is `{day, week}` percent change from end-of-day data: indices (nifty, midcap, smallcap) from their daily closes, gold/silver from GOLDBEES/SILVERBEES, portfolio value-weighted over current holdings (cash excluded). Keys and halves with no data are omitted.",
+      "summary": "Market highlights and the user's Portfolio change in one call. Every entry is `{value, day, week}` from end-of-day data: indices (nifty, midcap, smallcap) value is the latest close and changes come from daily closes; gold/silver likewise from GOLDBEES/SILVERBEES closes; portfolio value is total holdings worth and changes are value-weighted over current holdings (cash excluded). Keys and fields with no data are omitted.",
       "verb": "get"
     },
     {
@@ -6517,6 +6567,340 @@
     },
     {
       "domain": "finance",
+      "id": "put /finance/v1/strategies",
+      "operationId": "finance_v1_strategies_update",
+      "params": [],
+      "path": "/finance/v1/strategies",
+      "responses": [
+        {
+          "cardinality": "one",
+          "code": "200",
+          "dataType": {
+            "shapeId": "0c8934fd-95e5-52db-8c42-7e1f301e7b5d",
+            "type": "shape"
+          },
+          "description": "List of available strategies",
+          "doc": {
+            "members": [
+              {
+                "description": "Portfolio strategies",
+                "members": [
+                  {
+                    "description": "Strategy id (Mongo _id)",
+                    "members": [],
+                    "name": "id",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Strategy name",
+                    "members": [],
+                    "name": "name",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Strategy description",
+                    "members": [],
+                    "name": "description",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Whether the strategy is published",
+                    "members": [],
+                    "name": "isPublished",
+                    "required": false,
+                    "type": "boolean"
+                  }
+                ],
+                "name": "strategies",
+                "required": false,
+                "type": "object[]"
+              }
+            ],
+            "name": "",
+            "required": true,
+            "type": "object"
+          },
+          "shapes": [
+            {
+              "id": "e10482ea-f2d4-5a40-a9ea-b0fcf6b208ca",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "34cb5c2f-6a5e-55f9-af2f-3e7de4c7738f",
+                  "name": "id"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "0d4d9be9-d28e-506f-b701-7f03726ed349",
+                  "name": "name"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "d38fabf4-fbc8-529e-bc7c-106a446c1cd4",
+                  "name": "description"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "boolean"
+                  },
+                  "id": "9ababbdc-7c01-565e-b612-f6121f2ee57c",
+                  "name": "isPublished"
+                }
+              ],
+              "name": "finance-strategies-update-response-strategies",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/strategies",
+                "pointer": [
+                  "strategies"
+                ],
+                "verb": "put"
+              }
+            },
+            {
+              "id": "0c8934fd-95e5-52db-8c42-7e1f301e7b5d",
+              "keys": [
+                {
+                  "cardinality": "many",
+                  "dataType": {
+                    "shapeId": "e10482ea-f2d4-5a40-a9ea-b0fcf6b208ca",
+                    "type": "shape"
+                  },
+                  "id": "07bd359e-176e-5c10-93ce-ef9c6aaaa77e",
+                  "name": "strategies"
+                }
+              ],
+              "name": "finance-strategies-update-response",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/strategies",
+                "pointer": [],
+                "verb": "put"
+              }
+            }
+          ],
+          "tier": "anonymous",
+          "unmapped": []
+        },
+        {
+          "cardinality": "one",
+          "code": "400",
+          "description": "Bad request",
+          "shapes": [],
+          "tier": "undescribed",
+          "unmapped": []
+        },
+        {
+          "cardinality": "one",
+          "code": "405",
+          "description": "Method not allowed",
+          "shapes": [],
+          "tier": "undescribed",
+          "unmapped": []
+        }
+      ],
+      "segments": [
+        "strategies"
+      ],
+      "summary": "Get portfolio strategies. Ordinary users see only published strategies; the finance app owner/collaborator sees all (including unpublished drafts).",
+      "verb": "put"
+    },
+    {
+      "domain": "finance",
+      "id": "put /finance/v1/strategy/curve",
+      "operationId": "finance_strategy_curves",
+      "params": [
+        {
+          "cardinality": "one",
+          "dataType": {
+            "shapeId": "63295df7-a15b-52c5-b6c0-e0a937b5a217",
+            "type": "shape"
+          },
+          "doc": {
+            "members": [
+              {
+                "description": "Strategy MongoDB ids, max 50",
+                "members": [],
+                "name": "ids",
+                "required": true,
+                "type": "string[]"
+              }
+            ],
+            "name": "data",
+            "required": true,
+            "type": "object"
+          },
+          "location": "body",
+          "name": "data",
+          "required": true,
+          "shapes": [
+            {
+              "id": "63295df7-a15b-52c5-b6c0-e0a937b5a217",
+              "keys": [
+                {
+                  "cardinality": "many",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "ae7a6ff5-9eb7-5cdf-8287-ed63acf25115",
+                  "name": "ids"
+                }
+              ],
+              "name": "finance-strategy-curves-request"
+            }
+          ],
+          "unmapped": []
+        }
+      ],
+      "path": "/finance/v1/strategy/curve",
+      "responses": [
+        {
+          "cardinality": "one",
+          "code": "200",
+          "dataType": {
+            "shapeId": "9afabfdf-0eb0-5f61-bbd5-acc5f91df8ff",
+            "type": "shape"
+          },
+          "description": "Every readable requested Strategy's curve, by id",
+          "doc": {
+            "members": [
+              {
+                "description": "Strategy id -> chronologically ordered curve points",
+                "members": [
+                  {
+                    "members": [
+                      {
+                        "description": "Curve point date",
+                        "members": [],
+                        "name": "date",
+                        "required": true,
+                        "type": "string($date)"
+                      },
+                      {
+                        "description": "Combined Strategy value, rebased to 1 at the first point",
+                        "members": [],
+                        "name": "value",
+                        "required": true,
+                        "type": "number"
+                      }
+                    ],
+                    "name": "<key>",
+                    "required": false,
+                    "type": "object[]"
+                  }
+                ],
+                "name": "curves",
+                "required": true,
+                "type": "object"
+              }
+            ],
+            "name": "",
+            "required": true,
+            "type": "object"
+          },
+          "shapes": [
+            {
+              "id": "a18bff00-4f66-530e-9a72-c38a294a67a0",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "73802ed0-235d-5362-835a-b4c6607404f0",
+                  "name": "date"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "3e9119ed-a5b9-54f7-9aef-180b226ac98d",
+                  "name": "value"
+                }
+              ],
+              "name": "finance-strategy-curves-response-curves",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/strategy/curve",
+                "pointer": [
+                  "curves"
+                ],
+                "verb": "put"
+              }
+            },
+            {
+              "id": "9afabfdf-0eb0-5f61-bbd5-acc5f91df8ff",
+              "keys": [
+                {
+                  "cardinality": "map-many",
+                  "dataType": {
+                    "shapeId": "a18bff00-4f66-530e-9a72-c38a294a67a0",
+                    "type": "shape"
+                  },
+                  "id": "02d3c091-5c44-504f-be4c-accb15817f31",
+                  "name": "curves"
+                }
+              ],
+              "name": "finance-strategy-curves-response",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/strategy/curve",
+                "pointer": [],
+                "verb": "put"
+              }
+            }
+          ],
+          "tier": "anonymous",
+          "unmapped": []
+        },
+        {
+          "cardinality": "one",
+          "code": "401",
+          "description": "Authentication required",
+          "shapes": [],
+          "tier": "undescribed",
+          "unmapped": []
+        },
+        {
+          "cardinality": "one",
+          "code": "403",
+          "description": "Finance app access required",
+          "shapes": [],
+          "tier": "undescribed",
+          "unmapped": []
+        },
+        {
+          "cardinality": "one",
+          "code": "406",
+          "description": "ids missing, not a list, or over the limit",
+          "shapes": [],
+          "tier": "undescribed",
+          "unmapped": []
+        }
+      ],
+      "segments": [
+        "strategy",
+        "curve"
+      ],
+      "summary": "Get many Strategy performance curves",
+      "verb": "put"
+    },
+    {
+      "domain": "finance",
       "id": "put /finance/v1/strategy/{id}",
       "operationId": "finance_v1_strategy_update",
       "params": [
@@ -6834,159 +7218,6 @@
         "{id}"
       ],
       "summary": "Get details of a specific strategy/portfolio. Includes stock analysis if the strategy is in the user's active list (or user is admin).",
-      "verb": "put"
-    },
-    {
-      "domain": "finance",
-      "id": "put /finance/v1/strategy/{id}/curve",
-      "operationId": "finance_strategy_curve",
-      "params": [
-        {
-          "cardinality": "one",
-          "dataType": {
-            "type": "string"
-          },
-          "description": "Strategy MongoDB id",
-          "doc": {
-            "description": "Strategy MongoDB id",
-            "members": [],
-            "name": "id",
-            "required": true,
-            "type": "string"
-          },
-          "location": "path",
-          "name": "id",
-          "required": true,
-          "shapes": [],
-          "unmapped": []
-        }
-      ],
-      "path": "/finance/v1/strategy/{id}/curve",
-      "responses": [
-        {
-          "cardinality": "one",
-          "code": "200",
-          "dataType": {
-            "shapeId": "50a24719-eebe-5813-9436-8d6f95257e39",
-            "type": "shape"
-          },
-          "description": "Chronologically ordered combined curve. An empty `curve` means there is no usable overlapping component history.",
-          "doc": {
-            "members": [
-              {
-                "description": "Chronologically ordered dated curve points",
-                "members": [
-                  {
-                    "description": "Curve point date",
-                    "members": [],
-                    "name": "date",
-                    "required": true,
-                    "type": "string($date)"
-                  },
-                  {
-                    "description": "Combined Strategy value, rebased to 1 at the first point",
-                    "members": [],
-                    "name": "value",
-                    "required": true,
-                    "type": "number"
-                  }
-                ],
-                "name": "curve",
-                "required": true,
-                "type": "object[]"
-              }
-            ],
-            "name": "",
-            "required": true,
-            "type": "object"
-          },
-          "shapes": [
-            {
-              "id": "0b542c0c-0920-5556-9155-59322f98dbac",
-              "keys": [
-                {
-                  "cardinality": "one",
-                  "dataType": {
-                    "type": "string"
-                  },
-                  "id": "9fc68d84-a9f4-590a-abc9-5a2e6f002da4",
-                  "name": "date"
-                },
-                {
-                  "cardinality": "one",
-                  "dataType": {
-                    "type": "number"
-                  },
-                  "id": "56cb5001-d100-535f-98c5-e3f36e8390a1",
-                  "name": "value"
-                }
-              ],
-              "name": "finance-strategy-curve-response-curve",
-              "origin": {
-                "code": "200",
-                "path": "/finance/v1/strategy/{id}/curve",
-                "pointer": [
-                  "curve"
-                ],
-                "verb": "put"
-              }
-            },
-            {
-              "id": "50a24719-eebe-5813-9436-8d6f95257e39",
-              "keys": [
-                {
-                  "cardinality": "many",
-                  "dataType": {
-                    "shapeId": "0b542c0c-0920-5556-9155-59322f98dbac",
-                    "type": "shape"
-                  },
-                  "id": "a30d15ae-746b-5c9c-b523-d8c81119d1ce",
-                  "name": "curve"
-                }
-              ],
-              "name": "finance-strategy-curve-response",
-              "origin": {
-                "code": "200",
-                "path": "/finance/v1/strategy/{id}/curve",
-                "pointer": [],
-                "verb": "put"
-              }
-            }
-          ],
-          "tier": "anonymous",
-          "unmapped": []
-        },
-        {
-          "cardinality": "one",
-          "code": "401",
-          "description": "Authentication required",
-          "shapes": [],
-          "tier": "undescribed",
-          "unmapped": []
-        },
-        {
-          "cardinality": "one",
-          "code": "403",
-          "description": "Finance app access required",
-          "shapes": [],
-          "tier": "undescribed",
-          "unmapped": []
-        },
-        {
-          "cardinality": "one",
-          "code": "409",
-          "description": "Invalid Strategy id or unpublished Strategy is not visible",
-          "shapes": [],
-          "tier": "undescribed",
-          "unmapped": []
-        }
-      ],
-      "segments": [
-        "strategy",
-        "{id}",
-        "curve"
-      ],
-      "summary": "Get Strategy performance curve",
       "verb": "put"
     },
     {

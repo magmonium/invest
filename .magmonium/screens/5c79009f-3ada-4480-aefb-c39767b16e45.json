@@ -1,37 +1,63 @@
 {
   "meta": {
+    "autoCalls": [
+      {
+        "args": [
+          {
+            "binding": {
+              "path": [],
+              "root": {
+                "id": "0625a637-e22a-4024-8d15-9edb427c54bf",
+                "kind": "input"
+              }
+            },
+            "source": "binding",
+            "target": [
+              "ids"
+            ]
+          }
+        ],
+        "id": "13cb2429-d127-4363-b148-1b2241f5b4ad",
+        "methodId": "e2e9b8a5-35a2-4ce7-b1a5-9daf7ce5a98a",
+        "when": "on-change"
+      }
+    ],
     "computeds": {
       "e6cfce8a-7d55-49ac-a7bd-51168cc68fde": {
         "args": {
-          "id": {
+          "03c83bcf-fdf7-43c7-8b75-7eeb256d8538": {
             "inputId": "0625a637-e22a-4024-8d15-9edb427c54bf",
             "source": "input"
           },
-          "map": {
+          "92f6284e-ca18-4eca-bb84-216c9ccc8258": {
+            "path": [
+              "584aa058-d365-4b82-a901-8c81d4aa4c0b"
+            ],
+            "source": "path"
+          },
+          "ad28034f-faa0-481e-8ad7-f841040ce322": {
             "path": [
               "1d4357aa-c32b-4a7f-9f0f-8373209367c0"
             ],
             "source": "path"
+          },
+          "d83a03fb-db1f-4a2a-bccb-b119215df195": {
+            "path": [
+              "ff1de145-1162-42e4-b8c7-bec696b90d2a"
+            ],
+            "source": "path"
           }
         },
+        "functionId": "f97155fb-1a7a-47fe-b024-ce5fd0391656",
         "id": "e6cfce8a-7d55-49ac-a7bd-51168cc68fde",
-        "name": "carve",
-        "oneFunction": "getFromMap",
-        "returns": {
-          "cardinality": "many",
-          "dataType": {
-            "shapeId": "4ee3de29-d47d-4b8d-8adb-1b6d4f53c57e",
-            "type": "shape"
-          },
-          "optional": true
-        }
+        "name": "carve"
       }
     },
     "featureId": "76e38aaa-d234-4aa1-b5fa-5b4595e714e2",
     "id": "5c79009f-3ada-4480-aefb-c39767b16e45",
     "inputs": {
       "0625a637-e22a-4024-8d15-9edb427c54bf": {
-        "cardinality": "one",
+        "cardinality": "many",
         "dataType": {
           "type": "string"
         },
@@ -45,13 +71,49 @@
   },
   "state": {
     "controlMap": {
+      "01014350-e2f3-44cf-841f-92a1a0d262a8": {
+        "bindings": {
+          "source": {
+            "path": [],
+            "root": {
+              "id": "e6cfce8a-7d55-49ac-a7bd-51168cc68fde",
+              "kind": "screen_computed"
+            }
+          }
+        },
+        "childrens": [
+          "90f58351-240c-4d32-9823-4ab341b8a32f"
+        ],
+        "configs": {},
+        "id": "01014350-e2f3-44cf-841f-92a1a0d262a8",
+        "parentId": "fb56d7f3-9722-46af-82b4-93546c67d15e",
+        "repeat": {
+          "indexAlias": "index",
+          "itemAlias": "item",
+          "keyAlias": "key",
+          "sampleRows": 3,
+          "track": {
+            "kind": "index"
+          }
+        },
+        "type": "repeat"
+      },
       "90f58351-240c-4d32-9823-4ab341b8a32f": {
         "bindings": {
           "data": {
             "path": [],
             "root": {
-              "id": "e6cfce8a-7d55-49ac-a7bd-51168cc68fde",
-              "kind": "screen_computed"
+              "alias": "item",
+              "kind": "alias",
+              "repeatId": "01014350-e2f3-44cf-841f-92a1a0d262a8"
+            }
+          },
+          "label": {
+            "path": [],
+            "root": {
+              "alias": "key",
+              "kind": "alias",
+              "repeatId": "01014350-e2f3-44cf-841f-92a1a0d262a8"
             }
           }
         },
@@ -61,7 +123,7 @@
           "y": "value"
         },
         "id": "90f58351-240c-4d32-9823-4ab341b8a32f",
-        "parentId": "fb56d7f3-9722-46af-82b4-93546c67d15e",
+        "parentId": "01014350-e2f3-44cf-841f-92a1a0d262a8",
         "type": "section_chart_series"
       },
       "b1a03cba-61a4-464e-a8ef-612390b14258": {
@@ -70,31 +132,11 @@
         ],
         "configs": {},
         "id": "b1a03cba-61a4-464e-a8ef-612390b14258",
-        "outputArgs": {
-          "inView": [
-            {
-              "binding": {
-                "path": [],
-                "root": {
-                  "id": "0625a637-e22a-4024-8d15-9edb427c54bf",
-                  "kind": "input"
-                }
-              },
-              "source": "binding",
-              "target": [
-                "id"
-              ]
-            }
-          ]
-        },
-        "outputs": {
-          "inView": "e2e9b8a5-35a2-4ce7-b1a5-9daf7ce5a98a"
-        },
         "type": "section"
       },
       "fb56d7f3-9722-46af-82b4-93546c67d15e": {
         "childrens": [
-          "90f58351-240c-4d32-9823-4ab341b8a32f"
+          "01014350-e2f3-44cf-841f-92a1a0d262a8"
         ],
         "configs": {
           "height": 480,
