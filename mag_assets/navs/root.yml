@@ -6,4 +6,4 @@ children:
   - root_default_portfolio
   - root_default_instrument
   - root_default_index
-  - root_default_instrument-copy-copy
+  - root_default_strategy

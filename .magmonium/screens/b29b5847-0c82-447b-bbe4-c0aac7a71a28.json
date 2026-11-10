@@ -6,6 +6,39 @@
   },
   "state": {
     "controlMap": {
+      "1e1d3711-735b-48fc-b7ab-5bc7f55dee02": {
+        "childrens": [
+          "33bcb8e7-b104-40e9-8524-5327c04a8f70",
+          "472171fa-eb49-45e2-8f58-9ff7c61f647b"
+        ],
+        "configs": {
+          "direction": "row",
+          "gap": "1"
+        },
+        "id": "1e1d3711-735b-48fc-b7ab-5bc7f55dee02",
+        "parentId": "c99087fb-40d7-4bc9-a9ae-0d7132fc289c",
+        "type": "flex"
+      },
+      "33bcb8e7-b104-40e9-8524-5327c04a8f70": {
+        "childrens": [],
+        "configs": {
+          "icon": "trending-up",
+          "size": 2
+        },
+        "id": "33bcb8e7-b104-40e9-8524-5327c04a8f70",
+        "parentId": "1e1d3711-735b-48fc-b7ab-5bc7f55dee02",
+        "type": "icon"
+      },
+      "472171fa-eb49-45e2-8f58-9ff7c61f647b": {
+        "childrens": [],
+        "configs": {
+          "label": "index-heatmap",
+          "variant": "big"
+        },
+        "id": "472171fa-eb49-45e2-8f58-9ff7c61f647b",
+        "parentId": "1e1d3711-735b-48fc-b7ab-5bc7f55dee02",
+        "type": "text"
+      },
       "5dd3516e-493f-4c28-b229-1164b254536a": {
         "childrens": [
           "9ef41373-3b00-42b8-bc7e-45066013e07d"
@@ -34,13 +67,32 @@
         },
         "type": "screen"
       },
+      "c99087fb-40d7-4bc9-a9ae-0d7132fc289c": {
+        "childrens": [
+          "1e1d3711-735b-48fc-b7ab-5bc7f55dee02"
+        ],
+        "configs": {},
+        "id": "c99087fb-40d7-4bc9-a9ae-0d7132fc289c",
+        "parentId": "de9f729b-3c26-46e5-8d0c-92b21c43f4d7",
+        "type": "section_header_label"
+      },
       "ce49ab83-f10e-458d-8ec0-704e5c415d63": {
         "childrens": [
-          "5dd3516e-493f-4c28-b229-1164b254536a"
+          "5dd3516e-493f-4c28-b229-1164b254536a",
+          "de9f729b-3c26-46e5-8d0c-92b21c43f4d7"
         ],
         "configs": {},
         "id": "ce49ab83-f10e-458d-8ec0-704e5c415d63",
         "type": "section"
+      },
+      "de9f729b-3c26-46e5-8d0c-92b21c43f4d7": {
+        "childrens": [
+          "c99087fb-40d7-4bc9-a9ae-0d7132fc289c"
+        ],
+        "configs": {},
+        "id": "de9f729b-3c26-46e5-8d0c-92b21c43f4d7",
+        "parentId": "ce49ab83-f10e-458d-8ec0-704e5c415d63",
+        "type": "section_header"
       }
     },
     "labelSamples": {},
