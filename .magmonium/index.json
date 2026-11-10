@@ -335,6 +335,13 @@
               "source": [
                 "strategies"
               ]
+            },
+            {
+              "code": "200",
+              "propertyId": "199fe710-0c4a-4535-8025-220334e33962",
+              "source": [
+                "selectedId"
+              ]
             }
           ],
           "verb": "put"
@@ -433,6 +440,14 @@
       },
       "name": "strategy",
       "properties": {
+        "199fe710-0c4a-4535-8025-220334e33962": {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "id": "199fe710-0c4a-4535-8025-220334e33962",
+          "name": "selected"
+        },
         "1d4357aa-c32b-4a7f-9f0f-8373209367c0": {
           "cardinality": "map-many",
           "dataType": {
@@ -5357,6 +5372,6 @@
     "name": "invest",
     "open": false,
     "theme": "",
-    "version": "0.2.1"
+    "version": "0.2.2"
   }
 }

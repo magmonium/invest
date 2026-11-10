@@ -6576,7 +6576,7 @@
           "cardinality": "one",
           "code": "200",
           "dataType": {
-            "shapeId": "0c8934fd-95e5-52db-8c42-7e1f301e7b5d",
+            "shapeId": "4c9673ef-e9d2-531d-949d-b1a9bd5c5f8f",
             "type": "shape"
           },
           "description": "List of available strategies",
@@ -6617,6 +6617,13 @@
                 "name": "strategies",
                 "required": false,
                 "type": "object[]"
+              },
+              {
+                "description": "Strategy id the user is subscribed to",
+                "members": [],
+                "name": "selectedId",
+                "required": false,
+                "type": "string"
               }
             ],
             "name": "",
@@ -6671,7 +6678,7 @@
               }
             },
             {
-              "id": "0c8934fd-95e5-52db-8c42-7e1f301e7b5d",
+              "id": "4c9673ef-e9d2-531d-949d-b1a9bd5c5f8f",
               "keys": [
                 {
                   "cardinality": "many",
@@ -6679,8 +6686,16 @@
                     "shapeId": "e10482ea-f2d4-5a40-a9ea-b0fcf6b208ca",
                     "type": "shape"
                   },
-                  "id": "07bd359e-176e-5c10-93ce-ef9c6aaaa77e",
+                  "id": "6be0484c-3d96-5a3e-93c0-8982e37bba6c",
                   "name": "strategies"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "ee297f35-173b-58cf-92f8-058303c66c95",
+                  "name": "selectedId"
                 }
               ],
               "name": "finance-strategies-update-response",
@@ -6715,7 +6730,7 @@
       "segments": [
         "strategies"
       ],
-      "summary": "Get portfolio strategies. Ordinary users see only published strategies; the finance app owner/collaborator sees all (including unpublished drafts).",
+      "summary": "Get portfolio strategies. Ordinary users see only published strategies; the finance app owner/collaborator sees all (including unpublished drafts). selectedId carries the user's subscribed Strategy id (one per User, finance ADR 0014), null when unsubscribed.",
       "verb": "put"
     },
     {

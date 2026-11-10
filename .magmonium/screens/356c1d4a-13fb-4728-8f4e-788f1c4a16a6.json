@@ -17,6 +17,15 @@
   },
   "state": {
     "controlMap": {
+      "0a47badc-f96a-4d54-91b2-cf4e1833f752": {
+        "childrens": [
+          "5d72964d-9283-4e17-a2db-655b49e98f4d"
+        ],
+        "configs": {},
+        "id": "0a47badc-f96a-4d54-91b2-cf4e1833f752",
+        "parentId": "d541a1f1-d9a3-4ab9-8741-43d89b482022",
+        "type": "section_header"
+      },
       "144ddda3-51d1-4706-a88a-25242a0be0f7": {
         "childrens": [],
         "configs": {},
@@ -36,15 +45,6 @@
         },
         "type": "screen"
       },
-      "4869e2a9-d07e-4dca-886e-17eaec8ef10f": {
-        "childrens": [],
-        "configs": {
-          "md": "6"
-        },
-        "id": "4869e2a9-d07e-4dca-886e-17eaec8ef10f",
-        "parentId": "cf80f709-7ded-43e0-8676-821a7bcdda87",
-        "type": "col"
-      },
       "4eea48ee-f995-4768-9df0-453bbc857e0f": {
         "childrens": [
           "144ddda3-51d1-4706-a88a-25242a0be0f7"
@@ -54,11 +54,41 @@
         "parentId": "d541a1f1-d9a3-4ab9-8741-43d89b482022",
         "type": "row"
       },
+      "5d72964d-9283-4e17-a2db-655b49e98f4d": {
+        "childrens": [
+          "8fe60fd5-4deb-4653-b717-9a3ee3393146"
+        ],
+        "configs": {},
+        "id": "5d72964d-9283-4e17-a2db-655b49e98f4d",
+        "parentId": "0a47badc-f96a-4d54-91b2-cf4e1833f752",
+        "type": "section_header_label"
+      },
+      "8fe60fd5-4deb-4653-b717-9a3ee3393146": {
+        "childrens": [
+          "cc127abe-2668-4901-b3d4-24393ce5000e",
+          "ba3001d8-cd77-43d2-848a-d6a48ae12606"
+        ],
+        "configs": {
+          "gap": "1"
+        },
+        "id": "8fe60fd5-4deb-4653-b717-9a3ee3393146",
+        "parentId": "5d72964d-9283-4e17-a2db-655b49e98f4d",
+        "type": "flex"
+      },
       "956c4925-41ab-444a-b9d1-9400dc1b3d43": {
         "childrens": [],
         "configs": {},
+        "directives": {
+          "mPadding": {
+            "configs": {
+              "mPadding": 1,
+              "mPaddingX": "",
+              "mPaddingY": ""
+            }
+          }
+        },
         "id": "956c4925-41ab-444a-b9d1-9400dc1b3d43",
-        "parentId": "e255f5b4-d8ba-4b33-a4ae-49e72a57819b",
+        "parentId": "cf80f709-7ded-43e0-8676-821a7bcdda87",
         "screenId": "27501aeb-64c9-4d8f-8265-feb47e395863",
         "screenInputs": {
           "947f79a5-8f45-40ed-9452-1ec85b7a4d82": {
@@ -72,10 +102,29 @@
         },
         "type": "screen"
       },
+      "ba3001d8-cd77-43d2-848a-d6a48ae12606": {
+        "childrens": [],
+        "configs": {
+          "label": "india-s-top-100-stocks",
+          "variant": "big"
+        },
+        "id": "ba3001d8-cd77-43d2-848a-d6a48ae12606",
+        "parentId": "8fe60fd5-4deb-4653-b717-9a3ee3393146",
+        "type": "text"
+      },
+      "cc127abe-2668-4901-b3d4-24393ce5000e": {
+        "childrens": [],
+        "configs": {
+          "icon": "top-stock",
+          "size": 2
+        },
+        "id": "cc127abe-2668-4901-b3d4-24393ce5000e",
+        "parentId": "8fe60fd5-4deb-4653-b717-9a3ee3393146",
+        "type": "icon"
+      },
       "cf80f709-7ded-43e0-8676-821a7bcdda87": {
         "childrens": [
-          "4869e2a9-d07e-4dca-886e-17eaec8ef10f",
-          "e255f5b4-d8ba-4b33-a4ae-49e72a57819b"
+          "956c4925-41ab-444a-b9d1-9400dc1b3d43"
         ],
         "configs": {},
         "id": "cf80f709-7ded-43e0-8676-821a7bcdda87",
@@ -85,32 +134,12 @@
       "d541a1f1-d9a3-4ab9-8741-43d89b482022": {
         "childrens": [
           "cf80f709-7ded-43e0-8676-821a7bcdda87",
-          "4eea48ee-f995-4768-9df0-453bbc857e0f"
+          "4eea48ee-f995-4768-9df0-453bbc857e0f",
+          "0a47badc-f96a-4d54-91b2-cf4e1833f752"
         ],
         "configs": {},
         "id": "d541a1f1-d9a3-4ab9-8741-43d89b482022",
         "type": "section"
-      },
-      "e255f5b4-d8ba-4b33-a4ae-49e72a57819b": {
-        "childrens": [
-          "956c4925-41ab-444a-b9d1-9400dc1b3d43"
-        ],
-        "configs": {
-          "md": "6"
-        },
-        "directives": {
-          "mPadding": {
-            "configs": {
-              "mPadding": 1,
-              "mPaddingX": "",
-              "mPaddingY": ""
-            }
-          }
-        },
-        "id": "e255f5b4-d8ba-4b33-a4ae-49e72a57819b",
-        "parentId": "cf80f709-7ded-43e0-8676-821a7bcdda87",
-        "source": "raw",
-        "type": "col"
       }
     },
     "labelSamples": {},

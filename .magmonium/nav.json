@@ -21,7 +21,7 @@
         "root_default_portfolio",
         "root_default_instrument",
         "root_default_index",
-        "root_default_instrument-copy-copy"
+        "root_default_strategy"
       ],
       "isDefault": true,
       "linkKind": "url",
@@ -73,34 +73,17 @@
         "root_default_instrument_with-ticker"
       ],
       "icon": "company",
+      "inheritsParams": false,
       "label": "instrument",
       "linkKind": "url",
       "navId": "root_default_instrument",
       "pageId": "1b9fbe2d-3242-4f27-9229-e78ac2e60242",
       "presentation": "static"
     },
-    "root_default_instrument-copy-copy": {
-      "children": [
-        "root_default_instrument-copy-copy_default"
-      ],
-      "icon": "strategy",
-      "label": "strategy",
-      "linkKind": "url",
-      "navId": "root_default_instrument-copy-copy",
-      "pageId": "1d8a5675-597f-42e4-962a-71b05c02a54f",
-      "presentation": "static"
-    },
-    "root_default_instrument-copy-copy_default": {
-      "children": [],
-      "isDefault": true,
-      "linkKind": "url",
-      "navId": "root_default_instrument-copy-copy_default",
-      "pageId": "a8af81fc-8243-4dcf-bb1e-937234fcfcbf",
-      "presentation": "static"
-    },
     "root_default_instrument_default": {
       "children": [],
       "icon": "nifty",
+      "inheritsParams": false,
       "isDefault": true,
       "linkKind": "url",
       "navId": "root_default_instrument_default",
@@ -129,6 +112,27 @@
       "linkKind": "url",
       "navId": "root_default_portfolio",
       "pageId": "f2080d4b-2023-4399-9d2b-0206c2307a5a",
+      "presentation": "static"
+    },
+    "root_default_strategy": {
+      "children": [
+        "root_default_strategy_default"
+      ],
+      "icon": "strategy",
+      "inheritsParams": false,
+      "label": "strategy",
+      "linkKind": "url",
+      "navId": "root_default_strategy",
+      "pageId": "1d8a5675-597f-42e4-962a-71b05c02a54f",
+      "presentation": "static"
+    },
+    "root_default_strategy_default": {
+      "children": [],
+      "inheritsParams": false,
+      "isDefault": true,
+      "linkKind": "url",
+      "navId": "root_default_strategy_default",
+      "pageId": "a8af81fc-8243-4dcf-bb1e-937234fcfcbf",
       "presentation": "static"
     },
     "root_notification": {
