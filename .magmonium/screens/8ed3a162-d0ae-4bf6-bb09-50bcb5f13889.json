@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "featureId": "76e38aaa-d234-4aa1-b5fa-5b4595e714e2",
+    "id": "8ed3a162-d0ae-4bf6-bb09-50bcb5f13889",
+    "inputs": {
+      "7c38ade5-ff4c-4825-9932-ed95cc46a25c": {
+        "cardinality": "one",
+        "dataType": {
+          "type": "string"
+        },
+        "id": "7c38ade5-ff4c-4825-9932-ed95cc46a25c",
+        "name": "id",
+        "required": true
+      }
+    },
+    "kind": "feature",
+    "name": "details"
+  },
+  "state": {
+    "controlMap": {
+      "5411f125-0f83-4067-aa7c-01e4c9a8696b": {
+        "childrens": [],
+        "configs": {},
+        "id": "5411f125-0f83-4067-aa7c-01e4c9a8696b",
+        "type": "section"
+      }
+    },
+    "labelSamples": {},
+    "pathSamples": {},
+    "rootControlIds": [
+      "5411f125-0f83-4067-aa7c-01e4c9a8696b"
+    ],
+    "selectedLayerId": 0
+  },
+  "v": 32
+}

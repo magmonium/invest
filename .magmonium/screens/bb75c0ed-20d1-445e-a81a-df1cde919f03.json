@@ -1367,23 +1367,7 @@
               "source": "event",
               "target": [
                 "quantity"
-              ],
-              "transform": {
-                "args": [
-                  {
-                    "kind": "pipe"
-                  }
-                ],
-                "kind": "call",
-                "pipeParam": 0,
-                "target": {
-                  "kind": "native",
-                  "ref": {
-                    "group": "number",
-                    "name": "Number"
-                  }
-                }
-              }
+              ]
             },
             {
               "binding": {
@@ -1425,6 +1409,19 @@
               ]
             }
           ]
+        },
+        "outputOutcomes": {
+          "submitted": {
+            "success": {
+              "closesOverlay": true,
+              "formResets": [
+                {
+                  "controlId": "fb63f3d9-fcfa-4087-bc62-7fb37a973517",
+                  "depth": "form"
+                }
+              ]
+            }
+          }
         },
         "outputs": {
           "submitted": "89530411-82a4-4cbc-91e9-b7b503e56896"
