@@ -158,6 +158,19 @@
             }
           ]
         },
+        "outputOutcomes": {
+          "submitted": {
+            "success": {
+              "closesOverlay": true,
+              "formResets": [
+                {
+                  "controlId": "c8ccd4f2-a578-44c4-8b58-e75ff8968817",
+                  "depth": "form"
+                }
+              ]
+            }
+          }
+        },
         "outputs": {
           "submitted": "21055b12-5a82-4cc8-8071-f361515b0d15"
         },

@@ -14,7 +14,7 @@
     },
     "mode": "new"
   },
-  "codegen": "0.8.28",
+  "codegen": "0.8.29",
   "distinct": [],
   "enums": {
     "4bc51fb3-db70-4ead-ac0d-c48ae741522d": {
@@ -3484,6 +3484,21 @@
           "verb": "get"
         },
         "f59073f0-4cb9-4838-9ccd-a23468d9fdfe": {
+          "conditions": [
+            {
+              "args": {},
+              "check": {
+                "operator": "not_exists",
+                "path": [
+                  "443aba23-a361-4aa3-868a-479123e6cf06"
+                ],
+                "source": "store"
+              },
+              "functionId": "",
+              "id": "cc1",
+              "kind": "check"
+            }
+          ],
           "id": "f59073f0-4cb9-4838-9ccd-a23468d9fdfe",
           "inputs": [],
           "name": "patchFinanceConfig",
@@ -4129,7 +4144,7 @@
     }
   },
   "npmAllowlist": {},
-  "one": "0.4.115",
+  "one": "0.4.117",
   "screens": [
     {
       "computeds": {
@@ -5361,6 +5376,23 @@
       "id": "a8af81fc-8243-4dcf-bb1e-937234fcfcbf",
       "kind": "feature",
       "name": "default-strategy"
+    },
+    {
+      "featureId": "76e38aaa-d234-4aa1-b5fa-5b4595e714e2",
+      "id": "8ed3a162-d0ae-4bf6-bb09-50bcb5f13889",
+      "inputs": {
+        "7c38ade5-ff4c-4825-9932-ed95cc46a25c": {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "id": "7c38ade5-ff4c-4825-9932-ed95cc46a25c",
+          "name": "id",
+          "required": true
+        }
+      },
+      "kind": "feature",
+      "name": "details"
     }
   ],
   "sharedShapes": {},
@@ -5372,6 +5404,6 @@
     "name": "invest",
     "open": false,
     "theme": "",
-    "version": "0.2.2"
+    "version": "0.2.3"
   }
 }

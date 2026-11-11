@@ -316,6 +316,9 @@
         "id": "be71f189-762f-46b1-a5d1-9e755de92186",
         "outputOpens": {
           "clicked": {
+            "answer": {
+              "closes": true
+            },
             "as": "side_panel",
             "inputs": [
               {

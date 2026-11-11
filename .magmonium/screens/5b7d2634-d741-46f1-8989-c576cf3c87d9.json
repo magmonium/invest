@@ -194,6 +194,9 @@
         "id": "82784def-43f1-4b9b-b8c4-3f1bbc11dfce",
         "outputOpens": {
           "clicked": {
+            "answer": {
+              "closes": true
+            },
             "as": "side_panel",
             "inputs": [
               {
