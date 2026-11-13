@@ -122,7 +122,7 @@
           "source": {
             "path": [],
             "root": {
-              "id": "584aa058-d365-4b82-a901-8c81d4aa4c0b",
+              "id": "ff1de145-1162-42e4-b8c7-bec696b90d2a",
               "kind": "property"
             }
           }
@@ -139,8 +139,7 @@
           "keyAlias": "key",
           "sampleRows": 3,
           "track": {
-            "keyId": "72dcc428-97f5-414c-8208-16ae96c66e6b",
-            "kind": "key"
+            "kind": "index"
           }
         },
         "type": "repeat"
@@ -177,7 +176,7 @@
       "9529cb47-99f2-4aa7-b652-e457e20e331c": {
         "childrens": [],
         "configs": {
-          "icon": "strategy",
+          "icon": "bulb-off",
           "size": 2
         },
         "id": "9529cb47-99f2-4aa7-b652-e457e20e331c",
@@ -232,6 +231,27 @@
           "label": "details"
         },
         "id": "aa6b48b0-7547-4af6-b58b-b13f0d9519ef",
+        "outputNavs": {
+          "clicked": {
+            "kind": "nav",
+            "navId": "root_default_strategy_id",
+            "params": {
+              "root_default_strategy_id": {
+                "binding": {
+                  "path": [
+                    "72dcc428-97f5-414c-8208-16ae96c66e6b"
+                  ],
+                  "root": {
+                    "alias": "item",
+                    "kind": "alias",
+                    "repeatId": "8a94d025-901c-484c-9e3c-57330e8b7fad"
+                  }
+                },
+                "source": "binding"
+              }
+            }
+          }
+        },
         "parentId": "cb05b5a8-849a-41bf-840b-bedcf10e176b",
         "type": "button"
       },

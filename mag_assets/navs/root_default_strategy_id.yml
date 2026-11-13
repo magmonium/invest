@@ -1,0 +1,5 @@
+navId: root_default_strategy_id
+icon: bulb-on
+kind: url
+presentation: dynamic
+param: id

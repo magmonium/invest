@@ -3,3 +3,5 @@ title: strategy
 icon: strategy
 kind: url
 presentation: static
+children:
+  - root_default_strategy_id

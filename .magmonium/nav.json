@@ -40,7 +40,7 @@
     "root_default_index": {
       "children": [
         "root_default_index_default",
-        "root_default_index_details"
+        "root_default_index_id"
       ],
       "icon": "trending-up",
       "label": "index",
@@ -57,15 +57,20 @@
       "pageId": "b29b5847-0c82-447b-bbe4-c0aac7a71a28",
       "presentation": "static"
     },
-    "root_default_index_details": {
+    "root_default_index_id": {
       "children": [],
       "icon": "trending-up",
       "label": "details",
       "linkKind": "url",
-      "navId": "root_default_index_details",
+      "navId": "root_default_index_id",
       "pageId": "e24f9bb0-91ec-4874-8313-1c0d631fa204",
       "param": "id",
-      "presentation": "dynamic"
+      "presentation": "dynamic",
+      "rowSource": {
+        "computedId": "ca4667bb-3c68-4a41-a4f3-5ae43e3a7dd8",
+        "featureId": "acef9153-606d-4de2-8699-7c87fa589384",
+        "kind": "computed"
+      }
     },
     "root_default_instrument": {
       "children": [
@@ -118,6 +123,7 @@
         "root_default_strategy_id"
       ],
       "icon": "strategy",
+      "inheritsParams": false,
       "label": "strategy",
       "linkKind": "url",
       "navId": "root_default_strategy",
@@ -126,6 +132,7 @@
     },
     "root_default_strategy_default": {
       "children": [],
+      "inheritsParams": false,
       "isDefault": true,
       "linkKind": "url",
       "navId": "root_default_strategy_default",
@@ -135,11 +142,17 @@
     "root_default_strategy_id": {
       "children": [],
       "icon": "bulb-on",
+      "inheritsParams": false,
       "linkKind": "url",
       "navId": "root_default_strategy_id",
       "pageId": "8ed3a162-d0ae-4bf6-bb09-50bcb5f13889",
       "param": "id",
-      "presentation": "dynamic"
+      "presentation": "dynamic",
+      "rowSource": {
+        "computedId": "1afa9294-3815-49ed-8192-2cb24b8db3b1",
+        "featureId": "76e38aaa-d234-4aa1-b5fa-5b4595e714e2",
+        "kind": "computed"
+      }
     },
     "root_notification": {
       "children": [],

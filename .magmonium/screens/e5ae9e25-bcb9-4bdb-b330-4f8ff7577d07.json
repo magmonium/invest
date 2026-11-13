@@ -20,7 +20,7 @@
         "returns": {
           "cardinality": "one",
           "dataType": {
-            "shapeId": "39cb9ee5-d683-4a6c-8519-949824e4ef35",
+            "shapeId": "c58ce880-40c8-44c3-a98d-f117cf9aa810",
             "type": "shape"
           },
           "optional": true
@@ -115,7 +115,7 @@
         "bindings": {
           "label": {
             "path": [
-              "06a3b837-55a3-4a5f-85eb-9d50665c5bf7"
+              "1f2e32c6-1cce-4cda-8a12-5aafa4e125fb"
             ],
             "root": {
               "id": "b55c5e51-3474-49a7-be50-bd1b0882f478",

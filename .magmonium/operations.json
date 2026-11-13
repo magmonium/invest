@@ -826,6 +826,473 @@
     },
     {
       "domain": "finance",
+      "id": "get /finance/v1/strategy/{id}/sleeves",
+      "operationId": "finance_v1_strategy_sleeves_list",
+      "params": [
+        {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "doc": {
+            "members": [],
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          "location": "path",
+          "name": "id",
+          "required": true,
+          "shapes": [],
+          "unmapped": []
+        }
+      ],
+      "path": "/finance/v1/strategy/{id}/sleeves",
+      "responses": [
+        {
+          "cardinality": "one",
+          "code": "200",
+          "dataType": {
+            "shapeId": "3dcdca05-8774-5e43-990d-8157cce70825",
+            "type": "shape"
+          },
+          "description": "Strategy composition",
+          "doc": {
+            "members": [
+              {
+                "members": [
+                  {
+                    "description": "Sleeve id",
+                    "members": [],
+                    "name": "id",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "members": [],
+                    "name": "name",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Instruments in the Held Set",
+                    "members": [],
+                    "name": "stockCount",
+                    "required": false,
+                    "type": "integer"
+                  },
+                  {
+                    "members": [],
+                    "name": "entryFilterCount",
+                    "required": false,
+                    "type": "integer"
+                  },
+                  {
+                    "members": [],
+                    "name": "exitFilterCount",
+                    "required": false,
+                    "type": "integer"
+                  },
+                  {
+                    "description": "Entry + exit Filters",
+                    "members": [],
+                    "name": "filterCount",
+                    "required": false,
+                    "type": "integer"
+                  },
+                  {
+                    "members": [],
+                    "name": "maxQuantity",
+                    "required": false,
+                    "type": "integer"
+                  },
+                  {
+                    "members": [],
+                    "name": "rankField",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "members": [],
+                    "name": "rankDesc",
+                    "required": false,
+                    "type": "boolean"
+                  },
+                  {
+                    "members": [],
+                    "name": "tested",
+                    "required": false,
+                    "type": "boolean"
+                  },
+                  {
+                    "description": "YYYY-MM-DD",
+                    "members": [],
+                    "name": "lastRefresh",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Allocation Band floor",
+                    "members": [],
+                    "name": "min",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Allocation Band ceiling",
+                    "members": [],
+                    "name": "max",
+                    "required": false,
+                    "type": "number"
+                  }
+                ],
+                "name": "sleeves",
+                "required": false,
+                "type": "object[]"
+              },
+              {
+                "members": [
+                  {
+                    "description": "Company id",
+                    "members": [],
+                    "name": "id",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "members": [],
+                    "name": "symbol",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "members": [],
+                    "name": "name",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "members": [],
+                    "name": "min",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "members": [],
+                    "name": "max",
+                    "required": false,
+                    "type": "number"
+                  }
+                ],
+                "name": "standalones",
+                "required": false,
+                "type": "object[]"
+              },
+              {
+                "description": "Fallback Company, null for cash",
+                "members": [
+                  {
+                    "description": "Company id",
+                    "members": [],
+                    "name": "id",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "members": [],
+                    "name": "symbol",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "members": [],
+                    "name": "name",
+                    "required": false,
+                    "type": "string"
+                  }
+                ],
+                "name": "fallback",
+                "required": false,
+                "type": "object"
+              }
+            ],
+            "name": "",
+            "required": true,
+            "type": "object"
+          },
+          "shapes": [
+            {
+              "id": "d82fe4e9-6ef8-5ea7-a069-1ecb8ee11089",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "95925dc2-9f38-5614-90af-60f05b227ee2",
+                  "name": "id"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "3e29dc8c-b343-583a-8359-ad3637b1b3ac",
+                  "name": "name"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "7ccc6d02-78f1-5690-9fb3-8094f2dcb4e2",
+                  "name": "stockCount"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "28e7705a-3d75-54d0-8879-f68c12d6367a",
+                  "name": "entryFilterCount"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "d84e1310-03d2-5af2-9f45-5dfe5f954630",
+                  "name": "exitFilterCount"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "ae62dbb0-7102-5b72-b67e-251e1c64bf90",
+                  "name": "filterCount"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "3b005976-923f-5b78-ba11-839cef4a6556",
+                  "name": "maxQuantity"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "43ed873f-428f-5755-b81b-2a29f443d39f",
+                  "name": "rankField"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "boolean"
+                  },
+                  "id": "c0554988-9166-59a6-800c-ede2db5f0768",
+                  "name": "rankDesc"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "boolean"
+                  },
+                  "id": "e99d565a-8a3d-5750-9553-4a5c932e1e7a",
+                  "name": "tested"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "4308d7d2-dcc3-5344-b043-4db8c38a4db2",
+                  "name": "lastRefresh"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "8e9d53e9-d627-5dbb-af36-cfc77082a789",
+                  "name": "min"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "8089b627-cc13-5645-9d4a-3b29626f09c7",
+                  "name": "max"
+                }
+              ],
+              "name": "finance-strategy-sleeves-list-response-sleeves",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/strategy/{id}/sleeves",
+                "pointer": [
+                  "sleeves"
+                ],
+                "verb": "get"
+              }
+            },
+            {
+              "id": "7f79bb46-4cea-58ec-b762-a3e84819f3e6",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "8a4e2493-1535-5a6d-923f-b8f17e4c5cb3",
+                  "name": "id"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "b3f32306-50bc-52c4-97cd-3318f0816426",
+                  "name": "symbol"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "e3f5d4ad-23bf-5e33-80bf-99f78d9b1acd",
+                  "name": "name"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "0238149a-1546-54ec-a293-e550f8efa13a",
+                  "name": "min"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "ec4b79b0-2331-503e-9880-4ddae3049950",
+                  "name": "max"
+                }
+              ],
+              "name": "finance-strategy-sleeves-list-response-standalones",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/strategy/{id}/sleeves",
+                "pointer": [
+                  "standalones"
+                ],
+                "verb": "get"
+              }
+            },
+            {
+              "id": "67857734-c40f-5fde-b505-13e248ca2fd4",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "9ad0dcc5-22f7-5b9b-9366-6637cc7f01e5",
+                  "name": "id"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "6643c7ac-9afb-5e7e-9045-760a53493ccc",
+                  "name": "symbol"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "ece47abb-c4e5-5065-99b5-fd4194a3f5db",
+                  "name": "name"
+                }
+              ],
+              "name": "finance-strategy-sleeves-list-response-fallback",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/strategy/{id}/sleeves",
+                "pointer": [
+                  "fallback"
+                ],
+                "verb": "get"
+              }
+            },
+            {
+              "id": "3dcdca05-8774-5e43-990d-8157cce70825",
+              "keys": [
+                {
+                  "cardinality": "many",
+                  "dataType": {
+                    "shapeId": "d82fe4e9-6ef8-5ea7-a069-1ecb8ee11089",
+                    "type": "shape"
+                  },
+                  "id": "4141aae0-2aac-5d82-b16a-3bc60af20d00",
+                  "name": "sleeves"
+                },
+                {
+                  "cardinality": "many",
+                  "dataType": {
+                    "shapeId": "7f79bb46-4cea-58ec-b762-a3e84819f3e6",
+                    "type": "shape"
+                  },
+                  "id": "a8b9be55-0895-58f7-a219-39eb4ff19675",
+                  "name": "standalones"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "67857734-c40f-5fde-b505-13e248ca2fd4",
+                    "type": "shape"
+                  },
+                  "id": "9e8876c1-3dd8-5ab3-ad4e-f03f01acf361",
+                  "name": "fallback"
+                }
+              ],
+              "name": "finance-strategy-sleeves-list-response",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/strategy/{id}/sleeves",
+                "pointer": [],
+                "verb": "get"
+              }
+            }
+          ],
+          "tier": "anonymous",
+          "unmapped": []
+        },
+        {
+          "cardinality": "one",
+          "code": "409",
+          "description": "Invalid strategy id",
+          "shapes": [],
+          "tier": "undescribed",
+          "unmapped": []
+        }
+      ],
+      "segments": [
+        "strategy",
+        "{id}",
+        "sleeves"
+      ],
+      "summary": "Strategy composition: every Sleeve (GROUP allocation) and every STANDALONE allocation, in allocation order, plus the Fallback Company (null = cash). Published strategies are readable by anyone with finance access; drafts by OWNER/COLLABORATOR only.",
+      "verb": "get"
+    },
+    {
+      "domain": "finance",
       "id": "patch /finance/v1/config",
       "operationId": "finance_config_bootstrap_patch",
       "params": [],
@@ -6576,7 +7043,7 @@
           "cardinality": "one",
           "code": "200",
           "dataType": {
-            "shapeId": "4c9673ef-e9d2-531d-949d-b1a9bd5c5f8f",
+            "shapeId": "de4ca93e-90b8-5ac4-b56b-6d2865aaf55e",
             "type": "shape"
           },
           "description": "List of available strategies",
@@ -6612,6 +7079,239 @@
                     "name": "isPublished",
                     "required": false,
                     "type": "boolean"
+                  },
+                  {
+                    "description": "Strategy Allocations",
+                    "members": [],
+                    "name": "allocations",
+                    "required": false,
+                    "type": "object[]"
+                  },
+                  {
+                    "description": "Fallback Company id, null for cash",
+                    "members": [],
+                    "name": "fallback",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Strategy Snapshot (ADR 0032), null when the Strategy has no usable curve. Window Returns and CAGR are percent (2 dp), null when the window (CAGR: one year) predates the curve.",
+                    "members": [
+                      {
+                        "description": "Date of the latest curve point",
+                        "members": [],
+                        "name": "asOf",
+                        "required": false,
+                        "type": "string($date)"
+                      },
+                      {
+                        "description": "Latest curve value (from 1)",
+                        "members": [],
+                        "name": "value",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "description": "Return since the previous curve point, %",
+                        "members": [],
+                        "name": "day",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "description": "7-day return, %",
+                        "members": [],
+                        "name": "week",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "description": "1-month return, %",
+                        "members": [],
+                        "name": "month",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "description": "3-month return, %",
+                        "members": [],
+                        "name": "quarter",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "description": "12-month return, %",
+                        "members": [],
+                        "name": "year",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "description": "Return since the first curve point, %",
+                        "members": [],
+                        "name": "max",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "description": "Annualized growth since the first point, %",
+                        "members": [],
+                        "name": "cagr",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "description": "Market cap split of the current Instruments (Held Sets + STANDALONEs). `other` = ETFs, Debt, Gold, Silver, unlabelled.",
+                        "members": [
+                          {
+                            "members": [
+                              {
+                                "description": "Instruments in the bucket",
+                                "members": [],
+                                "name": "quantity",
+                                "required": true,
+                                "type": "integer"
+                              },
+                              {
+                                "description": "Band-midpoint weight of the bucket, % of the Strategy (2 dp)",
+                                "members": [],
+                                "name": "share",
+                                "required": true,
+                                "type": "number"
+                              }
+                            ],
+                            "name": "small",
+                            "required": false,
+                            "type": "object"
+                          },
+                          {
+                            "members": [
+                              {
+                                "description": "Instruments in the bucket",
+                                "members": [],
+                                "name": "quantity",
+                                "required": true,
+                                "type": "integer"
+                              },
+                              {
+                                "description": "Band-midpoint weight of the bucket, % of the Strategy (2 dp)",
+                                "members": [],
+                                "name": "share",
+                                "required": true,
+                                "type": "number"
+                              }
+                            ],
+                            "name": "mid",
+                            "required": false,
+                            "type": "object"
+                          },
+                          {
+                            "members": [
+                              {
+                                "description": "Instruments in the bucket",
+                                "members": [],
+                                "name": "quantity",
+                                "required": true,
+                                "type": "integer"
+                              },
+                              {
+                                "description": "Band-midpoint weight of the bucket, % of the Strategy (2 dp)",
+                                "members": [],
+                                "name": "share",
+                                "required": true,
+                                "type": "number"
+                              }
+                            ],
+                            "name": "large",
+                            "required": false,
+                            "type": "object"
+                          },
+                          {
+                            "members": [
+                              {
+                                "description": "Instruments in the bucket",
+                                "members": [],
+                                "name": "quantity",
+                                "required": true,
+                                "type": "integer"
+                              },
+                              {
+                                "description": "Band-midpoint weight of the bucket, % of the Strategy (2 dp)",
+                                "members": [],
+                                "name": "share",
+                                "required": true,
+                                "type": "number"
+                              }
+                            ],
+                            "name": "other",
+                            "required": false,
+                            "type": "object"
+                          }
+                        ],
+                        "name": "marketCap",
+                        "required": false,
+                        "type": "object"
+                      },
+                      {
+                        "description": "Sectors by share, max 8: all when they fit, else top 7 + `Others` (rest + unsectored). Sector name → bucket",
+                        "members": [
+                          {
+                            "members": [
+                              {
+                                "description": "Instruments in the bucket",
+                                "members": [],
+                                "name": "quantity",
+                                "required": true,
+                                "type": "integer"
+                              },
+                              {
+                                "description": "Band-midpoint weight of the bucket, % of the Strategy (2 dp)",
+                                "members": [],
+                                "name": "share",
+                                "required": true,
+                                "type": "number"
+                              }
+                            ],
+                            "name": "<key>",
+                            "required": false,
+                            "type": "object"
+                          }
+                        ],
+                        "name": "sectors",
+                        "required": false,
+                        "type": "object"
+                      },
+                      {
+                        "description": "Distinct Instruments across all Allocations",
+                        "members": [],
+                        "name": "instruments",
+                        "required": false,
+                        "type": "integer"
+                      }
+                    ],
+                    "name": "snapshot",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Strategy Combined Index, oldest first, rebased to 1 at its first point. Empty when the Strategy has no usable history.",
+                    "members": [
+                      {
+                        "members": [],
+                        "name": "date",
+                        "required": true,
+                        "type": "string($date)"
+                      },
+                      {
+                        "members": [],
+                        "name": "value",
+                        "required": true,
+                        "type": "number"
+                      }
+                    ],
+                    "name": "chart",
+                    "required": false,
+                    "type": "object[]"
                   }
                 ],
                 "name": "strategies",
@@ -6632,14 +7332,243 @@
           },
           "shapes": [
             {
-              "id": "e10482ea-f2d4-5a40-a9ea-b0fcf6b208ca",
+              "id": "5c1ac10a-2afe-502c-afae-b8882f8f42aa",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "7a0e354b-7d55-50a5-912c-ec41f94a706b",
+                  "name": "quantity"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "80d638d9-7446-5fbb-9743-0257dbae2879",
+                  "name": "share"
+                }
+              ],
+              "name": "finance-strategies-update-response-strategies-snapshot-marketcap-small",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/strategies",
+                "pointer": [
+                  "strategies",
+                  "snapshot",
+                  "marketCap",
+                  "small"
+                ],
+                "verb": "put"
+              }
+            },
+            {
+              "id": "4fac84a3-b9f9-57e5-a9aa-7a796e1c33c3",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "5c1ac10a-2afe-502c-afae-b8882f8f42aa",
+                    "type": "shape"
+                  },
+                  "id": "8b420774-e2cc-54fa-9d66-46ae48cfb894",
+                  "name": "small"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "5c1ac10a-2afe-502c-afae-b8882f8f42aa",
+                    "type": "shape"
+                  },
+                  "id": "64acdf1d-e45f-528f-a50d-fccb7a565d3d",
+                  "name": "mid"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "5c1ac10a-2afe-502c-afae-b8882f8f42aa",
+                    "type": "shape"
+                  },
+                  "id": "1fa4a65c-8f7b-5796-95e2-85dadfacc07c",
+                  "name": "large"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "5c1ac10a-2afe-502c-afae-b8882f8f42aa",
+                    "type": "shape"
+                  },
+                  "id": "0a4bb6ad-1d84-5307-b5f4-20fbca53d0cd",
+                  "name": "other"
+                }
+              ],
+              "name": "finance-strategies-update-response-strategies-snapshot-marketcap",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/strategies",
+                "pointer": [
+                  "strategies",
+                  "snapshot",
+                  "marketCap"
+                ],
+                "verb": "put"
+              }
+            },
+            {
+              "id": "702e6ce5-fd76-5c43-b300-84b76e332485",
               "keys": [
                 {
                   "cardinality": "one",
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "34cb5c2f-6a5e-55f9-af2f-3e7de4c7738f",
+                  "id": "0ae50a1a-7286-55f8-831a-edccd983e8fa",
+                  "name": "asOf"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "4dd0c438-26e3-53d2-95cb-b71e76ff32d8",
+                  "name": "value"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "4c2c6d67-1373-59c5-9c05-7e498a107a07",
+                  "name": "day"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "07b9d56b-63a6-5855-bd01-1821d833b98b",
+                  "name": "week"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "4252c5af-9d41-505d-b858-b3796dfb9d4f",
+                  "name": "month"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "467727e1-cc4b-557f-b6e5-2d23b5d6d681",
+                  "name": "quarter"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "4cedc62e-fd93-5234-9e16-b7001aed414e",
+                  "name": "year"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "71b2fcf3-38f9-5951-9f59-5895af970993",
+                  "name": "max"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "be0ebd22-01e7-5830-8616-28ec8e8a3442",
+                  "name": "cagr"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "4fac84a3-b9f9-57e5-a9aa-7a796e1c33c3",
+                    "type": "shape"
+                  },
+                  "id": "1d1bff6d-212d-5537-984a-e3db72d2054d",
+                  "name": "marketCap"
+                },
+                {
+                  "cardinality": "map",
+                  "dataType": {
+                    "shapeId": "5c1ac10a-2afe-502c-afae-b8882f8f42aa",
+                    "type": "shape"
+                  },
+                  "id": "07ff20d2-20b0-5b1c-8180-4660260f0572",
+                  "name": "sectors"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "7bb398ff-c966-52d1-b9c8-2105db091b9f",
+                  "name": "instruments"
+                }
+              ],
+              "name": "finance-strategies-update-response-strategies-snapshot",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/strategies",
+                "pointer": [
+                  "strategies",
+                  "snapshot"
+                ],
+                "verb": "put"
+              }
+            },
+            {
+              "id": "fdc69eec-ccdd-5c2e-8d09-1dd2adee678c",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "c059f5e4-c5a1-5102-bd26-444e12426004",
+                  "name": "date"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "2806b7e1-7690-5617-8e0a-0f930fb7af81",
+                  "name": "value"
+                }
+              ],
+              "name": "finance-strategies-update-response-strategies-chart",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/strategies",
+                "pointer": [
+                  "strategies",
+                  "chart"
+                ],
+                "verb": "put"
+              }
+            },
+            {
+              "id": "7188d9d9-60c1-569f-a1d2-0753f31564b9",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "81bc90f2-a4cc-501c-9ec3-25483a8fb252",
                   "name": "id"
                 },
                 {
@@ -6647,7 +7576,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "0d4d9be9-d28e-506f-b701-7f03726ed349",
+                  "id": "a3b3d1bc-1e5f-5ef2-aecd-17fe6cdff61c",
                   "name": "name"
                 },
                 {
@@ -6655,7 +7584,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "d38fabf4-fbc8-529e-bc7c-106a446c1cd4",
+                  "id": "861544f3-c466-520d-af4c-85115fb9a1d3",
                   "name": "description"
                 },
                 {
@@ -6663,8 +7592,34 @@
                   "dataType": {
                     "type": "boolean"
                   },
-                  "id": "9ababbdc-7c01-565e-b612-f6121f2ee57c",
+                  "id": "06e5a673-ac1a-5575-9ea3-542174b67113",
                   "name": "isPublished"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "21aa6dfd-dc9f-50f7-a7a1-7b839e31045d",
+                  "name": "fallback"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "702e6ce5-fd76-5c43-b300-84b76e332485",
+                    "type": "shape"
+                  },
+                  "id": "78c94447-13ff-54e9-9460-57b5b77587a7",
+                  "name": "snapshot"
+                },
+                {
+                  "cardinality": "many",
+                  "dataType": {
+                    "shapeId": "fdc69eec-ccdd-5c2e-8d09-1dd2adee678c",
+                    "type": "shape"
+                  },
+                  "id": "8e240cc9-3c7f-5d0f-a9dc-0a4308665ca9",
+                  "name": "chart"
                 }
               ],
               "name": "finance-strategies-update-response-strategies",
@@ -6678,15 +7633,15 @@
               }
             },
             {
-              "id": "4c9673ef-e9d2-531d-949d-b1a9bd5c5f8f",
+              "id": "de4ca93e-90b8-5ac4-b56b-6d2865aaf55e",
               "keys": [
                 {
                   "cardinality": "many",
                   "dataType": {
-                    "shapeId": "e10482ea-f2d4-5a40-a9ea-b0fcf6b208ca",
+                    "shapeId": "7188d9d9-60c1-569f-a1d2-0753f31564b9",
                     "type": "shape"
                   },
-                  "id": "6be0484c-3d96-5a3e-93c0-8982e37bba6c",
+                  "id": "28036257-913f-5631-8a60-541d37a46af7",
                   "name": "strategies"
                 },
                 {
@@ -6694,7 +7649,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "ee297f35-173b-58cf-92f8-058303c66c95",
+                  "id": "ca5cc8d2-ab97-5a94-96c8-52d06db567b2",
                   "name": "selectedId"
                 }
               ],
@@ -6708,7 +7663,9 @@
             }
           ],
           "tier": "anonymous",
-          "unmapped": []
+          "unmapped": [
+            "strategies.allocations (object with no properties)"
+          ]
         },
         {
           "cardinality": "one",
@@ -6730,188 +7687,7 @@
       "segments": [
         "strategies"
       ],
-      "summary": "Get portfolio strategies. Ordinary users see only published strategies; the finance app owner/collaborator sees all (including unpublished drafts). selectedId carries the user's subscribed Strategy id (one per User, finance ADR 0014), null when unsubscribed.",
-      "verb": "put"
-    },
-    {
-      "domain": "finance",
-      "id": "put /finance/v1/strategy/curve",
-      "operationId": "finance_strategy_curves",
-      "params": [
-        {
-          "cardinality": "one",
-          "dataType": {
-            "shapeId": "63295df7-a15b-52c5-b6c0-e0a937b5a217",
-            "type": "shape"
-          },
-          "doc": {
-            "members": [
-              {
-                "description": "Strategy MongoDB ids, max 50",
-                "members": [],
-                "name": "ids",
-                "required": true,
-                "type": "string[]"
-              }
-            ],
-            "name": "data",
-            "required": true,
-            "type": "object"
-          },
-          "location": "body",
-          "name": "data",
-          "required": true,
-          "shapes": [
-            {
-              "id": "63295df7-a15b-52c5-b6c0-e0a937b5a217",
-              "keys": [
-                {
-                  "cardinality": "many",
-                  "dataType": {
-                    "type": "string"
-                  },
-                  "id": "ae7a6ff5-9eb7-5cdf-8287-ed63acf25115",
-                  "name": "ids"
-                }
-              ],
-              "name": "finance-strategy-curves-request"
-            }
-          ],
-          "unmapped": []
-        }
-      ],
-      "path": "/finance/v1/strategy/curve",
-      "responses": [
-        {
-          "cardinality": "one",
-          "code": "200",
-          "dataType": {
-            "shapeId": "9afabfdf-0eb0-5f61-bbd5-acc5f91df8ff",
-            "type": "shape"
-          },
-          "description": "Every readable requested Strategy's curve, by id",
-          "doc": {
-            "members": [
-              {
-                "description": "Strategy id -> chronologically ordered curve points",
-                "members": [
-                  {
-                    "members": [
-                      {
-                        "description": "Curve point date",
-                        "members": [],
-                        "name": "date",
-                        "required": true,
-                        "type": "string($date)"
-                      },
-                      {
-                        "description": "Combined Strategy value, rebased to 1 at the first point",
-                        "members": [],
-                        "name": "value",
-                        "required": true,
-                        "type": "number"
-                      }
-                    ],
-                    "name": "<key>",
-                    "required": false,
-                    "type": "object[]"
-                  }
-                ],
-                "name": "curves",
-                "required": true,
-                "type": "object"
-              }
-            ],
-            "name": "",
-            "required": true,
-            "type": "object"
-          },
-          "shapes": [
-            {
-              "id": "a18bff00-4f66-530e-9a72-c38a294a67a0",
-              "keys": [
-                {
-                  "cardinality": "one",
-                  "dataType": {
-                    "type": "string"
-                  },
-                  "id": "73802ed0-235d-5362-835a-b4c6607404f0",
-                  "name": "date"
-                },
-                {
-                  "cardinality": "one",
-                  "dataType": {
-                    "type": "number"
-                  },
-                  "id": "3e9119ed-a5b9-54f7-9aef-180b226ac98d",
-                  "name": "value"
-                }
-              ],
-              "name": "finance-strategy-curves-response-curves",
-              "origin": {
-                "code": "200",
-                "path": "/finance/v1/strategy/curve",
-                "pointer": [
-                  "curves"
-                ],
-                "verb": "put"
-              }
-            },
-            {
-              "id": "9afabfdf-0eb0-5f61-bbd5-acc5f91df8ff",
-              "keys": [
-                {
-                  "cardinality": "map-many",
-                  "dataType": {
-                    "shapeId": "a18bff00-4f66-530e-9a72-c38a294a67a0",
-                    "type": "shape"
-                  },
-                  "id": "02d3c091-5c44-504f-be4c-accb15817f31",
-                  "name": "curves"
-                }
-              ],
-              "name": "finance-strategy-curves-response",
-              "origin": {
-                "code": "200",
-                "path": "/finance/v1/strategy/curve",
-                "pointer": [],
-                "verb": "put"
-              }
-            }
-          ],
-          "tier": "anonymous",
-          "unmapped": []
-        },
-        {
-          "cardinality": "one",
-          "code": "401",
-          "description": "Authentication required",
-          "shapes": [],
-          "tier": "undescribed",
-          "unmapped": []
-        },
-        {
-          "cardinality": "one",
-          "code": "403",
-          "description": "Finance app access required",
-          "shapes": [],
-          "tier": "undescribed",
-          "unmapped": []
-        },
-        {
-          "cardinality": "one",
-          "code": "406",
-          "description": "ids missing, not a list, or over the limit",
-          "shapes": [],
-          "tier": "undescribed",
-          "unmapped": []
-        }
-      ],
-      "segments": [
-        "strategy",
-        "curve"
-      ],
-      "summary": "Get many Strategy performance curves",
+      "summary": "Get portfolio strategies. Ordinary users see only published strategies; the finance app owner/collaborator sees all (including unpublished drafts). selectedId carries the user's subscribed Strategy id (one per User, finance ADR 0014), null when unsubscribed. Each Strategy is the full Strategy — same shape as `strategy/<id>` — and carries its Strategy Snapshot (`snapshot`, null without usable history) and `chart` — the Strategy Combined Index points, [] without one (finance ADR 0032).",
       "verb": "put"
     },
     {
@@ -6945,17 +7721,24 @@
           "cardinality": "one",
           "code": "200",
           "dataType": {
-            "shapeId": "975c37f6-55c3-5e3c-8c62-a038773aa496",
+            "shapeId": "ef6bcfba-286d-55fc-87eb-5018d80b249a",
             "type": "shape"
           },
           "description": "Strategy details",
           "doc": {
             "members": [
               {
-                "description": "Map of strategy key → strategy details",
+                "description": "Map of Strategy id → Strategy",
                 "members": [
                   {
                     "members": [
+                      {
+                        "description": "Strategy id (Mongo _id)",
+                        "members": [],
+                        "name": "id",
+                        "required": false,
+                        "type": "string"
+                      },
                       {
                         "description": "Strategy name",
                         "members": [],
@@ -6971,82 +7754,244 @@
                         "type": "string"
                       },
                       {
-                        "description": "Strategy key",
+                        "description": "Whether the strategy is published",
                         "members": [],
-                        "name": "key",
+                        "name": "isPublished",
+                        "required": false,
+                        "type": "boolean"
+                      },
+                      {
+                        "description": "Strategy Allocations",
+                        "members": [],
+                        "name": "allocations",
+                        "required": false,
+                        "type": "object[]"
+                      },
+                      {
+                        "description": "Fallback Company id, null for cash",
+                        "members": [],
+                        "name": "fallback",
                         "required": false,
                         "type": "string"
                       },
                       {
-                        "description": "CAGR percentage",
-                        "members": [],
-                        "name": "cagr",
-                        "required": false,
-                        "type": "number"
-                      },
-                      {
-                        "description": "Total profit percentage",
-                        "members": [],
-                        "name": "profit",
-                        "required": false,
-                        "type": "number"
-                      },
-                      {
-                        "description": "Benchmark index",
-                        "members": [],
-                        "name": "index",
-                        "required": false,
-                        "type": "string"
-                      },
-                      {
-                        "description": "Rebalance frequency",
-                        "members": [],
-                        "name": "rebalance",
-                        "required": false,
-                        "type": "string"
-                      },
-                      {
-                        "description": "Last rebalance date",
-                        "members": [],
-                        "name": "date",
-                        "required": false,
-                        "type": "string"
-                      },
-                      {
-                        "description": "Stock analysis (only if strategy is active or user is admin)",
+                        "description": "Strategy Snapshot (ADR 0032), null when the Strategy has no usable curve. Window Returns and CAGR are percent (2 dp), null when the window (CAGR: one year) predates the curve.",
                         "members": [
                           {
-                            "description": "Current ranked stocks map (symbol → score)",
+                            "description": "Date of the latest curve point",
                             "members": [],
-                            "name": "current",
+                            "name": "asOf",
+                            "required": false,
+                            "type": "string($date)"
+                          },
+                          {
+                            "description": "Latest curve value (from 1)",
+                            "members": [],
+                            "name": "value",
+                            "required": false,
+                            "type": "number"
+                          },
+                          {
+                            "description": "Return since the previous curve point, %",
+                            "members": [],
+                            "name": "day",
+                            "required": false,
+                            "type": "number"
+                          },
+                          {
+                            "description": "7-day return, %",
+                            "members": [],
+                            "name": "week",
+                            "required": false,
+                            "type": "number"
+                          },
+                          {
+                            "description": "1-month return, %",
+                            "members": [],
+                            "name": "month",
+                            "required": false,
+                            "type": "number"
+                          },
+                          {
+                            "description": "3-month return, %",
+                            "members": [],
+                            "name": "quarter",
+                            "required": false,
+                            "type": "number"
+                          },
+                          {
+                            "description": "12-month return, %",
+                            "members": [],
+                            "name": "year",
+                            "required": false,
+                            "type": "number"
+                          },
+                          {
+                            "description": "Return since the first curve point, %",
+                            "members": [],
+                            "name": "max",
+                            "required": false,
+                            "type": "number"
+                          },
+                          {
+                            "description": "Annualized growth since the first point, %",
+                            "members": [],
+                            "name": "cagr",
+                            "required": false,
+                            "type": "number"
+                          },
+                          {
+                            "description": "Market cap split of the current Instruments (Held Sets + STANDALONEs). `other` = ETFs, Debt, Gold, Silver, unlabelled.",
+                            "members": [
+                              {
+                                "members": [
+                                  {
+                                    "description": "Instruments in the bucket",
+                                    "members": [],
+                                    "name": "quantity",
+                                    "required": true,
+                                    "type": "integer"
+                                  },
+                                  {
+                                    "description": "Band-midpoint weight of the bucket, % of the Strategy (2 dp)",
+                                    "members": [],
+                                    "name": "share",
+                                    "required": true,
+                                    "type": "number"
+                                  }
+                                ],
+                                "name": "small",
+                                "required": false,
+                                "type": "object"
+                              },
+                              {
+                                "members": [
+                                  {
+                                    "description": "Instruments in the bucket",
+                                    "members": [],
+                                    "name": "quantity",
+                                    "required": true,
+                                    "type": "integer"
+                                  },
+                                  {
+                                    "description": "Band-midpoint weight of the bucket, % of the Strategy (2 dp)",
+                                    "members": [],
+                                    "name": "share",
+                                    "required": true,
+                                    "type": "number"
+                                  }
+                                ],
+                                "name": "mid",
+                                "required": false,
+                                "type": "object"
+                              },
+                              {
+                                "members": [
+                                  {
+                                    "description": "Instruments in the bucket",
+                                    "members": [],
+                                    "name": "quantity",
+                                    "required": true,
+                                    "type": "integer"
+                                  },
+                                  {
+                                    "description": "Band-midpoint weight of the bucket, % of the Strategy (2 dp)",
+                                    "members": [],
+                                    "name": "share",
+                                    "required": true,
+                                    "type": "number"
+                                  }
+                                ],
+                                "name": "large",
+                                "required": false,
+                                "type": "object"
+                              },
+                              {
+                                "members": [
+                                  {
+                                    "description": "Instruments in the bucket",
+                                    "members": [],
+                                    "name": "quantity",
+                                    "required": true,
+                                    "type": "integer"
+                                  },
+                                  {
+                                    "description": "Band-midpoint weight of the bucket, % of the Strategy (2 dp)",
+                                    "members": [],
+                                    "name": "share",
+                                    "required": true,
+                                    "type": "number"
+                                  }
+                                ],
+                                "name": "other",
+                                "required": false,
+                                "type": "object"
+                              }
+                            ],
+                            "name": "marketCap",
                             "required": false,
                             "type": "object"
                           },
                           {
-                            "description": "Entry date map per stock",
-                            "members": [],
-                            "name": "entry",
+                            "description": "Sectors by share, max 8: all when they fit, else top 7 + `Others` (rest + unsectored). Sector name → bucket",
+                            "members": [
+                              {
+                                "members": [
+                                  {
+                                    "description": "Instruments in the bucket",
+                                    "members": [],
+                                    "name": "quantity",
+                                    "required": true,
+                                    "type": "integer"
+                                  },
+                                  {
+                                    "description": "Band-midpoint weight of the bucket, % of the Strategy (2 dp)",
+                                    "members": [],
+                                    "name": "share",
+                                    "required": true,
+                                    "type": "number"
+                                  }
+                                ],
+                                "name": "<key>",
+                                "required": false,
+                                "type": "object"
+                              }
+                            ],
+                            "name": "sectors",
                             "required": false,
                             "type": "object"
                           },
                           {
-                            "description": "Historical score momentum",
+                            "description": "Distinct Instruments across all Allocations",
                             "members": [],
-                            "name": "scoreMomentum",
+                            "name": "instruments",
                             "required": false,
-                            "type": "object"
+                            "type": "integer"
+                          }
+                        ],
+                        "name": "snapshot",
+                        "required": false,
+                        "type": "object"
+                      },
+                      {
+                        "description": "Strategy Combined Index, oldest first, rebased to 1 at its first point. Empty when the Strategy has no usable history.",
+                        "members": [
+                          {
+                            "members": [],
+                            "name": "date",
+                            "required": true,
+                            "type": "string($date)"
                           },
                           {
-                            "description": "Percent of portfolio invested",
                             "members": [],
-                            "name": "investedPercent",
-                            "required": false,
+                            "name": "value",
+                            "required": true,
                             "type": "number"
                           }
                         ],
-                        "name": "analysis",
+                        "name": "chart",
                         "required": false,
-                        "type": "object"
+                        "type": "object[]"
                       }
                     ],
                     "name": "<key>",
@@ -7065,37 +8010,251 @@
           },
           "shapes": [
             {
-              "id": "e57f9fb4-2fb3-5ab6-8b57-d26a8199ead4",
+              "id": "2f301f46-915a-5ca0-b40f-4334a66d4b66",
               "keys": [
                 {
                   "cardinality": "one",
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "5f624e25-d9af-564f-a432-36abc0d4d585",
-                  "name": "investedPercent"
+                  "id": "b6f2ca97-bd87-52e9-9ae8-2b9d4e0b4d37",
+                  "name": "quantity"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "598cbd15-dff3-5b0f-b8da-76033b940335",
+                  "name": "share"
                 }
               ],
-              "name": "finance-strategy-update-response-strategy-analysis",
+              "name": "finance-strategy-update-response-strategy-snapshot-marketcap-small",
               "origin": {
                 "code": "200",
                 "path": "/finance/v1/strategy/{id}",
                 "pointer": [
                   "strategy",
-                  "analysis"
+                  "snapshot",
+                  "marketCap",
+                  "small"
                 ],
                 "verb": "put"
               }
             },
             {
-              "id": "fc74885d-fab4-5ff7-b548-0543cbce907d",
+              "id": "3c5af9e7-78f1-5a31-96b4-262d9293dd87",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "2f301f46-915a-5ca0-b40f-4334a66d4b66",
+                    "type": "shape"
+                  },
+                  "id": "a3ee6258-4889-50c6-b9af-4002b68eadf8",
+                  "name": "small"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "2f301f46-915a-5ca0-b40f-4334a66d4b66",
+                    "type": "shape"
+                  },
+                  "id": "f98d6e89-2e44-50f3-a1fa-ce2779bc6729",
+                  "name": "mid"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "2f301f46-915a-5ca0-b40f-4334a66d4b66",
+                    "type": "shape"
+                  },
+                  "id": "388c6d10-5c9d-5b32-9e47-a0be1eeda7b0",
+                  "name": "large"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "2f301f46-915a-5ca0-b40f-4334a66d4b66",
+                    "type": "shape"
+                  },
+                  "id": "7fef0961-87c4-5383-8f18-6e1f4d038f01",
+                  "name": "other"
+                }
+              ],
+              "name": "finance-strategy-update-response-strategy-snapshot-marketcap",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/strategy/{id}",
+                "pointer": [
+                  "strategy",
+                  "snapshot",
+                  "marketCap"
+                ],
+                "verb": "put"
+              }
+            },
+            {
+              "id": "55311419-dfa9-5b3f-a9ae-eafb00de7f39",
               "keys": [
                 {
                   "cardinality": "one",
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "2a8e7238-86c7-598a-ac76-622e1e550cd8",
+                  "id": "4efe63fe-398e-51e4-b7a6-dbc0cd9affde",
+                  "name": "asOf"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "d4626db4-6641-5806-a0e4-dc8a7d5b08d4",
+                  "name": "value"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "8f70f31b-7bac-5791-9dbe-99bd6e29a53b",
+                  "name": "day"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "e205e897-6852-51d9-9711-9c1d5ec5ec37",
+                  "name": "week"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "51f2b12b-af1c-5251-8e4e-56c51439944b",
+                  "name": "month"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "59e49955-e5b5-541b-8e95-6ba78623f475",
+                  "name": "quarter"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "d84ef04a-4fb3-5ad8-98f8-06dc3bc23eea",
+                  "name": "year"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "c31c9697-af57-5b0d-9112-5ad9a1d548b7",
+                  "name": "max"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "c978c39e-e168-5e34-8e81-7e884638c73e",
+                  "name": "cagr"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "3c5af9e7-78f1-5a31-96b4-262d9293dd87",
+                    "type": "shape"
+                  },
+                  "id": "9b9b8bf1-fbd3-5c13-b553-239fc4e0d151",
+                  "name": "marketCap"
+                },
+                {
+                  "cardinality": "map",
+                  "dataType": {
+                    "shapeId": "2f301f46-915a-5ca0-b40f-4334a66d4b66",
+                    "type": "shape"
+                  },
+                  "id": "8b65e586-d2fb-5268-8172-54743a1665a6",
+                  "name": "sectors"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "43714a03-9ad2-5d7d-8a53-de3952f91e23",
+                  "name": "instruments"
+                }
+              ],
+              "name": "finance-strategy-update-response-strategy-snapshot",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/strategy/{id}",
+                "pointer": [
+                  "strategy",
+                  "snapshot"
+                ],
+                "verb": "put"
+              }
+            },
+            {
+              "id": "bc5feab0-babc-530a-97dc-55b691a64b50",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "831e8820-013a-5346-be3d-5cea18336440",
+                  "name": "date"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "73584dfd-c2f1-5b8b-a4cd-37bf1c7b249d",
+                  "name": "value"
+                }
+              ],
+              "name": "finance-strategy-update-response-strategy-chart",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/strategy/{id}",
+                "pointer": [
+                  "strategy",
+                  "chart"
+                ],
+                "verb": "put"
+              }
+            },
+            {
+              "id": "57b50e2d-446a-52bb-adcd-97779eca810d",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "ecd2dc4e-7338-5860-b77c-35a4ac7f8cae",
+                  "name": "id"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "d5784fc8-e948-5766-8ed9-800a3a061b28",
                   "name": "name"
                 },
                 {
@@ -7103,65 +8262,42 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "f7c40fc7-8660-5e95-a9eb-22a10a1b0de7",
+                  "id": "22b389b7-aed8-5be9-be81-ee155e21bb97",
                   "name": "description"
                 },
                 {
                   "cardinality": "one",
                   "dataType": {
-                    "type": "string"
+                    "type": "boolean"
                   },
-                  "id": "9fa443ea-9b6e-5958-93c9-68645376630a",
-                  "name": "key"
-                },
-                {
-                  "cardinality": "one",
-                  "dataType": {
-                    "type": "number"
-                  },
-                  "id": "a59c783a-ec04-582c-9989-13309964a5da",
-                  "name": "cagr"
-                },
-                {
-                  "cardinality": "one",
-                  "dataType": {
-                    "type": "number"
-                  },
-                  "id": "e53f6629-a84d-5f5b-9698-646fbe807bc9",
-                  "name": "profit"
+                  "id": "a4993adf-eff8-5db9-8b21-0b5d06d4267f",
+                  "name": "isPublished"
                 },
                 {
                   "cardinality": "one",
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "afa324a9-fc31-5d47-9861-6ef30001a3c9",
-                  "name": "index"
+                  "id": "ceb537b9-450d-593b-b006-1bdf01ab7019",
+                  "name": "fallback"
                 },
                 {
                   "cardinality": "one",
                   "dataType": {
-                    "type": "string"
-                  },
-                  "id": "f1d062a6-4e54-58c8-9dc1-670c8f18ebc6",
-                  "name": "rebalance"
-                },
-                {
-                  "cardinality": "one",
-                  "dataType": {
-                    "type": "string"
-                  },
-                  "id": "ed327687-ee77-5bad-89f3-8f81e0f91127",
-                  "name": "date"
-                },
-                {
-                  "cardinality": "one",
-                  "dataType": {
-                    "shapeId": "e57f9fb4-2fb3-5ab6-8b57-d26a8199ead4",
+                    "shapeId": "55311419-dfa9-5b3f-a9ae-eafb00de7f39",
                     "type": "shape"
                   },
-                  "id": "29478c15-448a-5bbf-a191-c9abeef15db5",
-                  "name": "analysis"
+                  "id": "374976a3-8d35-5d0d-af30-319116c21f03",
+                  "name": "snapshot"
+                },
+                {
+                  "cardinality": "many",
+                  "dataType": {
+                    "shapeId": "bc5feab0-babc-530a-97dc-55b691a64b50",
+                    "type": "shape"
+                  },
+                  "id": "d8b1844d-c3f0-52cb-a681-6147f028222d",
+                  "name": "chart"
                 }
               ],
               "name": "finance-strategy-update-response-strategy",
@@ -7175,15 +8311,15 @@
               }
             },
             {
-              "id": "975c37f6-55c3-5e3c-8c62-a038773aa496",
+              "id": "ef6bcfba-286d-55fc-87eb-5018d80b249a",
               "keys": [
                 {
                   "cardinality": "map",
                   "dataType": {
-                    "shapeId": "fc74885d-fab4-5ff7-b548-0543cbce907d",
+                    "shapeId": "57b50e2d-446a-52bb-adcd-97779eca810d",
                     "type": "shape"
                   },
-                  "id": "bdd3d667-6b6e-5345-af23-b811bd4e6087",
+                  "id": "ca8e679b-5731-5305-a1fb-4371da8457fb",
                   "name": "strategy"
                 }
               ],
@@ -7198,9 +8334,7 @@
           ],
           "tier": "anonymous",
           "unmapped": [
-            "strategy.analysis.current (object with no properties)",
-            "strategy.analysis.entry (object with no properties)",
-            "strategy.analysis.scoreMomentum (object with no properties)"
+            "strategy.allocations (object with no properties)"
           ]
         },
         {
