@@ -1,30 +1,5 @@
 {
   "meta": {
-    "computeds": {
-      "9e3c1fc7-f201-4f68-87e8-e0c8ca7efe3e": {
-        "args": {
-          "data": {
-            "path": [
-              "584aa058-d365-4b82-a901-8c81d4aa4c0b"
-            ],
-            "source": "path"
-          },
-          "key": {
-            "source": "fixed",
-            "value": "id"
-          }
-        },
-        "id": "9e3c1fc7-f201-4f68-87e8-e0c8ca7efe3e",
-        "name": "strategies",
-        "oneFunction": "pluckStrings",
-        "returns": {
-          "cardinality": "many",
-          "dataType": {
-            "type": "string"
-          }
-        }
-      }
-    },
     "featureId": "76e38aaa-d234-4aa1-b5fa-5b4595e714e2",
     "id": "a8af81fc-8243-4dcf-bb1e-937234fcfcbf",
     "kind": "feature",
@@ -71,8 +46,14 @@
         "screenId": "5c79009f-3ada-4480-aefb-c39767b16e45",
         "screenInputs": {
           "0625a637-e22a-4024-8d15-9edb427c54bf": {
-            "computedId": "9e3c1fc7-f201-4f68-87e8-e0c8ca7efe3e",
-            "kind": "computed"
+            "binding": {
+              "path": [],
+              "root": {
+                "id": "584aa058-d365-4b82-a901-8c81d4aa4c0b",
+                "kind": "property"
+              }
+            },
+            "kind": "data"
           }
         },
         "type": "screen"
@@ -137,7 +118,7 @@
           "indexAlias": "index",
           "itemAlias": "item",
           "keyAlias": "key",
-          "sampleRows": 3,
+          "sampleRows": 1,
           "track": {
             "kind": "index"
           }

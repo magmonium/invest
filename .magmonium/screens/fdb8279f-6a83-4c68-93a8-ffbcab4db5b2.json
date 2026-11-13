@@ -1,5 +1,36 @@
 {
   "meta": {
+    "autoCalls": [
+      {
+        "args": [
+          {
+            "binding": {
+              "path": [],
+              "root": {
+                "id": "a168f220-8415-4302-a326-c3567c99c865",
+                "kind": "input"
+              }
+            },
+            "source": "binding",
+            "target": [
+              "id"
+            ]
+          }
+        ],
+        "id": "fc29c9fc-271e-4ef9-917f-34ce5f599e6a",
+        "methodId": "0268d52f-fc03-4d4d-9ad3-151a2252b4db",
+        "reads": [
+          {
+            "path": [],
+            "root": {
+              "id": "a168f220-8415-4302-a326-c3567c99c865",
+              "kind": "input"
+            }
+          }
+        ],
+        "when": "on-change"
+      }
+    ],
     "computeds": {
       "222031d5-5acc-48d7-9686-be5b013020ff": {
         "args": {
@@ -443,26 +474,6 @@
           "variant": "border"
         },
         "id": "b7ffa7b1-0dcb-42e5-89ba-45c51261df6e",
-        "outputArgs": {
-          "tableInitialized": [
-            {
-              "binding": {
-                "path": [],
-                "root": {
-                  "id": "a168f220-8415-4302-a326-c3567c99c865",
-                  "kind": "input"
-                }
-              },
-              "source": "binding",
-              "target": [
-                "id"
-              ]
-            }
-          ]
-        },
-        "outputs": {
-          "tableInitialized": "0268d52f-fc03-4d4d-9ad3-151a2252b4db"
-        },
         "parentId": "5839dd65-f3f7-44a2-90fc-645eb2eb2893",
         "source": "raw",
         "type": "section_table",
@@ -560,26 +571,6 @@
           "variant": "border"
         },
         "id": "e705a789-7257-4e0c-a4c9-fa7499c1a4c5",
-        "outputArgs": {
-          "tableInitialized": [
-            {
-              "binding": {
-                "path": [],
-                "root": {
-                  "id": "a168f220-8415-4302-a326-c3567c99c865",
-                  "kind": "input"
-                }
-              },
-              "source": "binding",
-              "target": [
-                "id"
-              ]
-            }
-          ]
-        },
-        "outputs": {
-          "tableInitialized": "0268d52f-fc03-4d4d-9ad3-151a2252b4db"
-        },
         "parentId": "5839dd65-f3f7-44a2-90fc-645eb2eb2893",
         "type": "section_table"
       },

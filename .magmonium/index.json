@@ -5195,20 +5195,27 @@
       "computeds": {
         "e6cfce8a-7d55-49ac-a7bd-51168cc68fde": {
           "args": {
-            "84f3c033-6ce3-44df-81eb-96b18d891755": {
+            "ids": {
+              "inputId": "0625a637-e22a-4024-8d15-9edb427c54bf",
+              "source": "input"
+            },
+            "map": {
               "path": [
                 "ff1de145-1162-42e4-b8c7-bec696b90d2a"
               ],
               "source": "path"
-            },
-            "9f6e4f3d-865b-4226-9f63-8e209b9b8d49": {
-              "inputId": "0625a637-e22a-4024-8d15-9edb427c54bf",
-              "source": "input"
             }
           },
-          "functionId": "3f79e63a-9f9a-4702-8e74-7be31243b7e1",
           "id": "e6cfce8a-7d55-49ac-a7bd-51168cc68fde",
-          "name": "carve"
+          "name": "carve",
+          "oneFunction": "getManyFromMaps",
+          "returns": {
+            "cardinality": "many",
+            "dataType": {
+              "shapeId": "c58ce880-40c8-44c3-a98d-f117cf9aa810",
+              "type": "shape"
+            }
+          }
         }
       },
       "featureId": "76e38aaa-d234-4aa1-b5fa-5b4595e714e2",
@@ -6143,31 +6150,6 @@
       "name": "user-settings"
     },
     {
-      "computeds": {
-        "9e3c1fc7-f201-4f68-87e8-e0c8ca7efe3e": {
-          "args": {
-            "data": {
-              "path": [
-                "584aa058-d365-4b82-a901-8c81d4aa4c0b"
-              ],
-              "source": "path"
-            },
-            "key": {
-              "source": "fixed",
-              "value": "id"
-            }
-          },
-          "id": "9e3c1fc7-f201-4f68-87e8-e0c8ca7efe3e",
-          "name": "strategies",
-          "oneFunction": "pluckStrings",
-          "returns": {
-            "cardinality": "many",
-            "dataType": {
-              "type": "string"
-            }
-          }
-        }
-      },
       "featureId": "76e38aaa-d234-4aa1-b5fa-5b4595e714e2",
       "id": "a8af81fc-8243-4dcf-bb1e-937234fcfcbf",
       "kind": "feature",
@@ -6297,6 +6279,37 @@
       }
     },
     {
+      "autoCalls": [
+        {
+          "args": [
+            {
+              "binding": {
+                "path": [],
+                "root": {
+                  "id": "a168f220-8415-4302-a326-c3567c99c865",
+                  "kind": "input"
+                }
+              },
+              "source": "binding",
+              "target": [
+                "id"
+              ]
+            }
+          ],
+          "id": "fc29c9fc-271e-4ef9-917f-34ce5f599e6a",
+          "methodId": "0268d52f-fc03-4d4d-9ad3-151a2252b4db",
+          "reads": [
+            {
+              "path": [],
+              "root": {
+                "id": "a168f220-8415-4302-a326-c3567c99c865",
+                "kind": "input"
+              }
+            }
+          ],
+          "when": "on-change"
+        }
+      ],
       "computeds": {
         "222031d5-5acc-48d7-9686-be5b013020ff": {
           "args": {

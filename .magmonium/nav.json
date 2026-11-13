@@ -123,7 +123,6 @@
         "root_default_strategy_id"
       ],
       "icon": "strategy",
-      "inheritsParams": false,
       "label": "strategy",
       "linkKind": "url",
       "navId": "root_default_strategy",
@@ -132,7 +131,6 @@
     },
     "root_default_strategy_default": {
       "children": [],
-      "inheritsParams": false,
       "isDefault": true,
       "linkKind": "url",
       "navId": "root_default_strategy_default",
@@ -142,7 +140,6 @@
     "root_default_strategy_id": {
       "children": [],
       "icon": "bulb-on",
-      "inheritsParams": false,
       "linkKind": "url",
       "navId": "root_default_strategy_id",
       "pageId": "8ed3a162-d0ae-4bf6-bb09-50bcb5f13889",
