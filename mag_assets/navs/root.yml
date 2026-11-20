@@ -7,3 +7,5 @@ children:
   - root_default_instrument
   - root_default_index
   - root_default_strategy
+  - root_default_industry
+  - root_default_sector

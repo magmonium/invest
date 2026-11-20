@@ -1,0 +1,33 @@
+{
+  "meta": {
+    "id": "a01cd96f-6b39-4e71-bf5b-2f932ff1d329",
+    "kind": "page",
+    "name": "industry"
+  },
+  "state": {
+    "controlMap": {
+      "92f94852-8a20-4999-89ba-daa4b03de6ca": {
+        "childrens": [
+          "f7575107-be47-4bc8-939e-6fe65a72667d"
+        ],
+        "configs": {},
+        "id": "92f94852-8a20-4999-89ba-daa4b03de6ca",
+        "type": "section"
+      },
+      "f7575107-be47-4bc8-939e-6fe65a72667d": {
+        "childrens": [],
+        "configs": {},
+        "id": "f7575107-be47-4bc8-939e-6fe65a72667d",
+        "parentId": "92f94852-8a20-4999-89ba-daa4b03de6ca",
+        "type": "router_outlet"
+      }
+    },
+    "labelSamples": {},
+    "pathSamples": {},
+    "rootControlIds": [
+      "92f94852-8a20-4999-89ba-daa4b03de6ca"
+    ],
+    "selectedLayerId": 0
+  },
+  "v": 32
+}

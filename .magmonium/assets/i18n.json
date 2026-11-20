@@ -1973,6 +1973,15 @@
       "sw": "Top 100 hisa za India",
       "ta": "இந்தியாவின் சிறந்த 100 பங்குகள்"
     },
+    "industry": {
+      "en": "Industry"
+    },
+    "industry-companies": {
+      "en": "Industry Companies"
+    },
+    "industry-ranking": {
+      "en": "Industry Ranking"
+    },
     "instrument": {
       "am": "መሣሪያ",
       "ar": "الأدوات",
@@ -4707,6 +4716,15 @@
       "yo": "ìlànà <$user>",
       "zh": "<$user>的策略",
       "zu": "isu lika<$user>"
+    },
+    "sector": {
+      "en": "Sector"
+    },
+    "sector-industries": {
+      "en": "Sector Industries"
+    },
+    "sector-ranking": {
+      "en": "Sector Ranking"
     },
     "sell": {
       "af": "Verkoop",

@@ -19,6 +19,15 @@
         ],
         "id": "13cb2429-d127-4363-b148-1b2241f5b4ad",
         "methodId": "e2e9b8a5-35a2-4ce7-b1a5-9daf7ce5a98a",
+        "reads": [
+          {
+            "path": [],
+            "root": {
+              "id": "0625a637-e22a-4024-8d15-9edb427c54bf",
+              "kind": "input"
+            }
+          }
+        ],
         "when": "on-change"
       }
     ],
