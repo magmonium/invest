@@ -766,6 +766,46 @@
           },
           "tier": "feature"
         },
+        "1bb2ad2a-903f-478f-a787-d77658b47a65": {
+          "aiDrafted": true,
+          "body": "if (!industry) return industryMap ?? {};\n  return { ...(industryMap ?? {}), [key]: industry };",
+          "description": "Stores one Industry's summary in the industry map under the requested key.",
+          "id": "1bb2ad2a-903f-478f-a787-d77658b47a65",
+          "name": "setIndustryInMap",
+          "params": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "shapeId": "525552af-515d-43eb-89e5-42e49f53f614",
+                "type": "shape"
+              },
+              "id": "8b9371d2-75df-4f80-b9e9-2218bfa41329",
+              "name": "industry"
+            },
+            {
+              "cardinality": "map",
+              "dataType": {
+                "shapeId": "525552af-515d-43eb-89e5-42e49f53f614",
+                "type": "shape"
+              },
+              "id": "a8b1436e-5971-4171-a901-d326fa5020fa",
+              "name": "industryMap"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "d5b46580-c77a-423e-9b84-428b45ebad53",
+              "name": "key"
+            }
+          ],
+          "returnCardinality": "map",
+          "returnType": {
+            "shapeId": "525552af-515d-43eb-89e5-42e49f53f614",
+            "type": "shape"
+          }
+        },
         "1e1fd4f3-1058-4c37-9ca7-0ae2a27f436a": {
           "aiDrafted": true,
           "body": "if (!ids || ids.length === 0) {\n    return false;\n  }\n\n  if (!indexMap) {\n    return true;\n  }\n\n  return ids.some((id) => !(id in indexMap));",
@@ -934,6 +974,46 @@
             "type": "shape"
           }
         },
+        "412422ad-4b81-45f6-8e1f-69f4c0694a22": {
+          "aiDrafted": true,
+          "body": "if (!sector) return sectorMap ?? {};\n  return { ...(sectorMap ?? {}), [key]: sector };",
+          "description": "Stores one Sector's summary in the sector map under the requested key.",
+          "id": "412422ad-4b81-45f6-8e1f-69f4c0694a22",
+          "name": "setSectorInMap",
+          "params": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "shapeId": "db0118dc-ee69-4754-9fd5-fb2887322698",
+                "type": "shape"
+              },
+              "id": "9e35bfe1-4788-4005-91ed-bb5f52f13997",
+              "name": "sector"
+            },
+            {
+              "cardinality": "map",
+              "dataType": {
+                "shapeId": "db0118dc-ee69-4754-9fd5-fb2887322698",
+                "type": "shape"
+              },
+              "id": "7a6dc492-cacc-41d3-b6de-676b921be719",
+              "name": "sectorMap"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "7d390dd7-4439-4b78-b678-95c4500570a5",
+              "name": "key"
+            }
+          ],
+          "returnCardinality": "map",
+          "returnType": {
+            "shapeId": "db0118dc-ee69-4754-9fd5-fb2887322698",
+            "type": "shape"
+          }
+        },
         "5fc01177-6f53-4317-9648-d95fd0798c79": {
           "aiDrafted": true,
           "body": "const industries = sectorIndustryMap?.[id]?.industries;\n  if (!industries || industries.length === 0) return [];\n\n  const periods = ['b', 'm', 't', 's', 'n', 'y'] as const;\n  const range: Record<string, { min: number; max: number }> = {};\n  for (const period of periods) {\n    const values = industries\n      .map((industry) => industry.profit?.[period])\n      .filter((value): value is number => typeof value === 'number' && Number.isFinite(value));\n    range[period] = values.length\n      ? { min: Math.min(...values), max: Math.max(...values) }\n      : { min: 0, max: 0 };\n  }\n\n  return industries.map((industry) => {\n    const profit = { ...industry.profit };\n    for (const period of periods) {\n      const value = industry.profit?.[period];\n      const { min, max } = range[period];\n      profit[period] =\n        typeof value !== 'number' || !Number.isFinite(value)\n          ? NaN\n          : max === min\n            ? 0\n            : ((value - min) / (max - min)) * 100;\n    }\n    return { ...industry, profit };\n  });",
@@ -1071,6 +1151,56 @@
             "shapeId": "5b56e907-964d-43ac-8b51-e5de3797f700",
             "type": "shape"
           }
+        },
+        "7ee0fecb-4b24-48d1-86e8-51f7ddadb5ea": {
+          "aiDrafted": true,
+          "body": "const rows = industryCompanyMap?.[id]?.companies;\n  if (!rows || rows.length === 0) return undefined;\n\n  const isNumber = (value: unknown): value is number => typeof value === 'number' && Number.isFinite(value);\n  const average = (values: number[]) =>\n    values.length ? values.reduce((sum, value) => sum + value, 0) / values.length : NaN;\n\n  const moved = rows\n    .map((row) => ({ key: row.symbol ?? '', name: row.name ?? '', value: row.profit?.m }))\n    .filter((row): row is { key: string; name: string; value: number } => isNumber(row.value))\n    .sort((a, b) => b.value - a.value);\n  const advancing = moved.filter((row) => row.value > 0).length;\n  const declining = moved.filter((row) => row.value < 0).length;\n  const top = moved[0];\n  const bottom = moved[moved.length - 1];\n\n  return {\n    total: rows.length,\n    advancing,\n    declining,\n    breadth: moved.length ? (advancing / moved.length) * 100 : NaN,\n    avgScore: average(rows.map((row) => row.score).filter(isNumber)),\n    avgProfit: average(moved.map((row) => row.value)),\n    topKey: top?.key ?? '',\n    topName: top?.name ?? '',\n    topProfit: top?.value ?? NaN,\n    bottomKey: bottom?.key ?? '',\n    bottomName: bottom?.name ?? '',\n    bottomProfit: bottom?.value ?? NaN,\n  };",
+          "cases": [
+            {
+              "args": [
+                "{}",
+                "\"oil\""
+              ],
+              "expected": "undefined",
+              "name": "undefined for unknown industry"
+            },
+            {
+              "args": [
+                "{ \"oil\": { \"companies\": [{ \"symbol\": \"A\", \"name\": \"Alpha\", \"score\": 80, \"profit\": { \"m\": 10 } }, { \"symbol\": \"B\", \"name\": \"Beta\", \"score\": 40, \"profit\": { \"m\": -5 } }] } }",
+                "\"oil\""
+              ],
+              "expected": "{ \"total\": 2, \"advancing\": 1, \"declining\": 1, \"breadth\": 50, \"avgScore\": 60, \"avgProfit\": 2.5, \"topKey\": \"A\", \"topName\": \"Alpha\", \"topProfit\": 10, \"bottomKey\": \"B\", \"bottomName\": \"Beta\", \"bottomProfit\": -5 }",
+              "name": "computes breadth, leader and laggard"
+            }
+          ],
+          "description": "20-day breadth, averages, leader and laggard across an Industry's Companies.",
+          "id": "7ee0fecb-4b24-48d1-86e8-51f7ddadb5ea",
+          "name": "industryCompanyStats",
+          "params": [
+            {
+              "cardinality": "map",
+              "dataType": {
+                "shapeId": "8810a19e-105d-4590-b757-ab1efda6a737",
+                "type": "shape"
+              },
+              "id": "85689666-179f-4de7-9f0d-599cbdc39db5",
+              "name": "industryCompanyMap"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "b3304ad7-9454-4a69-b5e1-6d02cfb122d6",
+              "name": "id"
+            }
+          ],
+          "returnCardinality": "one",
+          "returnType": {
+            "shapeId": "aca16383-dc6e-4e28-b335-2def88aeba18",
+            "type": "shape"
+          },
+          "returnUndefined": true
         },
         "8b1ea634-0bf9-4ede-886b-48950ea90ac9": {
           "aiDrafted": true,
@@ -1227,6 +1357,48 @@
           },
           "tier": "feature"
         },
+        "b12a3c17-305d-42c5-b1d7-9b760b4a7195": {
+          "aiDrafted": true,
+          "body": "const rows = sectorIndustryMap?.[id]?.industries;\n  if (!rows || rows.length === 0) return undefined;\n\n  const isNumber = (value: unknown): value is number => typeof value === 'number' && Number.isFinite(value);\n  const average = (values: number[]) =>\n    values.length ? values.reduce((sum, value) => sum + value, 0) / values.length : NaN;\n\n  const moved = rows\n    .map((row) => ({ key: row.key ?? '', name: row.name ?? '', value: row.profit?.m }))\n    .filter((row): row is { key: string; name: string; value: number } => isNumber(row.value))\n    .sort((a, b) => b.value - a.value);\n  const advancing = moved.filter((row) => row.value > 0).length;\n  const declining = moved.filter((row) => row.value < 0).length;\n  const top = moved[0];\n  const bottom = moved[moved.length - 1];\n\n  return {\n    total: rows.length,\n    advancing,\n    declining,\n    breadth: moved.length ? (advancing / moved.length) * 100 : NaN,\n    avgScore: average(rows.map((row) => row.score).filter(isNumber)),\n    avgProfit: average(moved.map((row) => row.value)),\n    topKey: top?.key ?? '',\n    topName: top?.name ?? '',\n    topProfit: top?.value ?? NaN,\n    bottomKey: bottom?.key ?? '',\n    bottomName: bottom?.name ?? '',\n    bottomProfit: bottom?.value ?? NaN,\n  };",
+          "cases": [
+            {
+              "args": [
+                "{}",
+                "\"energy\""
+              ],
+              "expected": "undefined",
+              "name": "undefined for unknown sector"
+            }
+          ],
+          "description": "20-day breadth, averages, leader and laggard across a Sector's Industries.",
+          "id": "b12a3c17-305d-42c5-b1d7-9b760b4a7195",
+          "name": "sectorIndustryStats",
+          "params": [
+            {
+              "cardinality": "map",
+              "dataType": {
+                "shapeId": "6f60af51-b8ff-444b-858f-b0b46bf5df57",
+                "type": "shape"
+              },
+              "id": "8f826ebd-d723-42f7-b9eb-83da635fb679",
+              "name": "sectorIndustryMap"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "044d4876-0b4d-4c79-9dde-9684829cabcc",
+              "name": "id"
+            }
+          ],
+          "returnCardinality": "one",
+          "returnType": {
+            "shapeId": "aca16383-dc6e-4e28-b335-2def88aeba18",
+            "type": "shape"
+          },
+          "returnUndefined": true
+        },
         "b5454470-09fd-481b-aa0e-8ba559eb1515": {
           "aiDrafted": true,
           "body": "if (!sectors || sectors.length === 0) return [];\n\n  const periods = ['b', 'm', 't', 's', 'n', 'y'] as const;\n  const range: Record<string, { min: number; max: number }> = {};\n  for (const period of periods) {\n    const values = sectors\n      .map((sector) => sector.profit?.[period])\n      .filter((value): value is number => typeof value === 'number' && Number.isFinite(value));\n    range[period] = values.length\n      ? { min: Math.min(...values), max: Math.max(...values) }\n      : { min: 0, max: 0 };\n  }\n\n  return sectors.map((sector) => {\n    const profit = { ...sector.profit };\n    for (const period of periods) {\n      const value = sector.profit?.[period];\n      const { min, max } = range[period];\n      profit[period] =\n        typeof value !== 'number' || !Number.isFinite(value)\n          ? NaN\n          : max === min\n            ? 0\n            : ((value - min) / (max - min)) * 100;\n    }\n    return { ...sector, profit };\n  });",
@@ -1363,6 +1535,56 @@
           },
           "tier": "feature"
         },
+        "e5404012-f6a1-4354-bc39-52ee53b1b9ca": {
+          "aiDrafted": true,
+          "body": "const result = { ...(industryMap ?? {}) };\n  for (const industry of industries ?? []) {\n    if (industry?.key) result[industry.key] = industry;\n  }\n  return result;",
+          "cases": [
+            {
+              "args": [
+                "[{ \"key\": \"oil-gas\", \"name\": \"Oil\" }]",
+                "{}"
+              ],
+              "expected": "{ \"oil-gas\": { \"key\": \"oil-gas\", \"name\": \"Oil\" } }",
+              "name": "keys industries by key"
+            },
+            {
+              "args": [
+                "[{ \"name\": \"x\" }]",
+                "{ \"a\": { \"key\": \"a\" } }"
+              ],
+              "expected": "{ \"a\": { \"key\": \"a\" } }",
+              "name": "skips rows without key"
+            }
+          ],
+          "description": "Keys every listed Industry by its URL slug into the industry map.",
+          "id": "e5404012-f6a1-4354-bc39-52ee53b1b9ca",
+          "name": "updateIndustryMap",
+          "params": [
+            {
+              "cardinality": "many",
+              "dataType": {
+                "shapeId": "525552af-515d-43eb-89e5-42e49f53f614",
+                "type": "shape"
+              },
+              "id": "8c519730-ba44-483c-a7c4-df18cd053284",
+              "name": "industries"
+            },
+            {
+              "cardinality": "map",
+              "dataType": {
+                "shapeId": "525552af-515d-43eb-89e5-42e49f53f614",
+                "type": "shape"
+              },
+              "id": "b3862219-0587-4432-8839-4bba93561e13",
+              "name": "industryMap"
+            }
+          ],
+          "returnCardinality": "map",
+          "returnType": {
+            "shapeId": "525552af-515d-43eb-89e5-42e49f53f614",
+            "type": "shape"
+          }
+        },
         "e71be33f-a490-4611-9815-f03792423e41": {
           "aiDrafted": true,
           "body": "const result: Record<string, FinanceCompaniesUpdateResponseCompaniesWeekly[]> = {};\n\n  if (ids) {\n    for (const id of ids) {\n      const company = companyMap[id];\n      if (company) {\n        result[id] = company.weekly || [];\n      }\n    }\n  }\n\n  if (indecies) {\n    for (const id of indecies) {\n      const index = indexMap[id];\n      if (index) {\n        result[id] = (index as any).weekly || [];\n      }\n    }\n  }\n\n  return result;",
@@ -1421,6 +1643,48 @@
           "returnCardinality": "map-many",
           "returnType": {
             "shapeId": "28923b52-e29b-4bce-be6a-72f5205537a6",
+            "type": "shape"
+          }
+        },
+        "eed8548d-8033-425e-b471-736c58be07dc": {
+          "aiDrafted": true,
+          "body": "const result = { ...(sectorMap ?? {}) };\n  for (const sector of sectors ?? []) {\n    if (sector?.key) result[sector.key] = sector;\n  }\n  return result;",
+          "cases": [
+            {
+              "args": [
+                "[{ \"key\": \"financials\", \"name\": \"Financials\" }]",
+                "{}"
+              ],
+              "expected": "{ \"financials\": { \"key\": \"financials\", \"name\": \"Financials\" } }",
+              "name": "keys sectors by key"
+            }
+          ],
+          "description": "Keys every listed Sector by its URL slug into the sector map.",
+          "id": "eed8548d-8033-425e-b471-736c58be07dc",
+          "name": "updateSectorMap",
+          "params": [
+            {
+              "cardinality": "many",
+              "dataType": {
+                "shapeId": "db0118dc-ee69-4754-9fd5-fb2887322698",
+                "type": "shape"
+              },
+              "id": "373e145d-dcb4-4a08-9019-84094fb2c52c",
+              "name": "sectors"
+            },
+            {
+              "cardinality": "map",
+              "dataType": {
+                "shapeId": "db0118dc-ee69-4754-9fd5-fb2887322698",
+                "type": "shape"
+              },
+              "id": "47ded431-efb8-438d-935c-4e56fa91c327",
+              "name": "sectorMap"
+            }
+          ],
+          "returnCardinality": "map",
+          "returnType": {
+            "shapeId": "db0118dc-ee69-4754-9fd5-fb2887322698",
             "type": "shape"
           }
         },
@@ -1534,6 +1798,66 @@
             "type": "shape"
           },
           "tier": "feature"
+        },
+        "ff5892ea-4d37-4744-8d25-12e8bfb313f6": {
+          "aiDrafted": true,
+          "body": "const sectorName = industryMap?.[id]?.sector;\n  if (!sectorName) return undefined;\n  return Object.values(sectorMap ?? {}).find((sector) => sector.name === sectorName)?.key;",
+          "cases": [
+            {
+              "args": [
+                "{ \"oil\": { \"key\": \"oil\", \"sector\": \"Energy\" } }",
+                "{ \"energy\": { \"key\": \"energy\", \"name\": \"Energy\" } }",
+                "\"oil\""
+              ],
+              "expected": "\"energy\"",
+              "name": "finds sector key by name"
+            },
+            {
+              "args": [
+                "{}",
+                "{}",
+                "\"oil\""
+              ],
+              "expected": "undefined",
+              "name": "undefined for unknown industry"
+            }
+          ],
+          "description": "The URL slug of the Sector an Industry belongs to, matched by Sector name.",
+          "id": "ff5892ea-4d37-4744-8d25-12e8bfb313f6",
+          "name": "industrySectorKey",
+          "params": [
+            {
+              "cardinality": "map",
+              "dataType": {
+                "shapeId": "525552af-515d-43eb-89e5-42e49f53f614",
+                "type": "shape"
+              },
+              "id": "8bd33893-46b5-40e6-a23c-3b1bdfa1f237",
+              "name": "industryMap"
+            },
+            {
+              "cardinality": "map",
+              "dataType": {
+                "shapeId": "db0118dc-ee69-4754-9fd5-fb2887322698",
+                "type": "shape"
+              },
+              "id": "afc53448-913c-432b-9277-26ad06a4b5fc",
+              "name": "sectorMap"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "ac2c9fcd-b887-4365-847e-dae23d3aa163",
+              "name": "id"
+            }
+          ],
+          "returnCardinality": "one",
+          "returnType": {
+            "type": "string"
+          },
+          "returnUndefined": true
         }
       },
       "id": "acef9153-606d-4de2-8699-7c87fa589384",
@@ -1594,6 +1918,32 @@
                   }
                 ],
                 "functionId": "12726e90-bc45-4337-8ca3-2c62951c8206"
+              }
+            },
+            {
+              "code": "200",
+              "propertyId": "ff2d8ec8-cade-45e6-a2e2-bf63be93337f",
+              "source": [],
+              "transform": {
+                "args": [
+                  {
+                    "path": [
+                      "sector"
+                    ],
+                    "source": "response"
+                  },
+                  {
+                    "path": [
+                      "ff2d8ec8-cade-45e6-a2e2-bf63be93337f"
+                    ],
+                    "source": "state"
+                  },
+                  {
+                    "arg": "key",
+                    "source": "args"
+                  }
+                ],
+                "functionId": "412422ad-4b81-45f6-8e1f-69f4c0694a22"
               }
             }
           ],
@@ -1676,6 +2026,28 @@
               "source": [
                 "industries"
               ]
+            },
+            {
+              "code": "200",
+              "propertyId": "09901ae3-b5c2-4535-9257-9f541bdf0781",
+              "source": [],
+              "transform": {
+                "args": [
+                  {
+                    "path": [
+                      "industries"
+                    ],
+                    "source": "response"
+                  },
+                  {
+                    "path": [
+                      "09901ae3-b5c2-4535-9257-9f541bdf0781"
+                    ],
+                    "source": "state"
+                  }
+                ],
+                "functionId": "e5404012-f6a1-4354-bc39-52ee53b1b9ca"
+              }
             }
           ],
           "verb": "get"
@@ -1707,6 +2079,28 @@
               "source": [
                 "sectors"
               ]
+            },
+            {
+              "code": "200",
+              "propertyId": "ff2d8ec8-cade-45e6-a2e2-bf63be93337f",
+              "source": [],
+              "transform": {
+                "args": [
+                  {
+                    "path": [
+                      "sectors"
+                    ],
+                    "source": "response"
+                  },
+                  {
+                    "path": [
+                      "ff2d8ec8-cade-45e6-a2e2-bf63be93337f"
+                    ],
+                    "source": "state"
+                  }
+                ],
+                "functionId": "eed8548d-8033-425e-b471-736c58be07dc"
+              }
             }
           ],
           "verb": "get"
@@ -1889,6 +2283,32 @@
                 ],
                 "functionId": "9674ce7e-3c8b-4d9a-bdf1-57b675f16692"
               }
+            },
+            {
+              "code": "200",
+              "propertyId": "09901ae3-b5c2-4535-9257-9f541bdf0781",
+              "source": [],
+              "transform": {
+                "args": [
+                  {
+                    "path": [
+                      "industry"
+                    ],
+                    "source": "response"
+                  },
+                  {
+                    "path": [
+                      "09901ae3-b5c2-4535-9257-9f541bdf0781"
+                    ],
+                    "source": "state"
+                  },
+                  {
+                    "arg": "key",
+                    "source": "args"
+                  }
+                ],
+                "functionId": "1bb2ad2a-903f-478f-a787-d77658b47a65"
+              }
             }
           ],
           "verb": "get"
@@ -1983,6 +2403,15 @@
       },
       "name": "analysis",
       "properties": {
+        "09901ae3-b5c2-4535-9257-9f541bdf0781": {
+          "cardinality": "map",
+          "dataType": {
+            "shapeId": "525552af-515d-43eb-89e5-42e49f53f614",
+            "type": "shape"
+          },
+          "id": "09901ae3-b5c2-4535-9257-9f541bdf0781",
+          "name": "industryMap"
+        },
         "26619119-8c40-4a11-8a31-8cb8334f4576": {
           "cardinality": "many",
           "dataType": {
@@ -2054,6 +2483,15 @@
           },
           "id": "f9417bc7-7332-4fc8-b609-05f40373d8b8",
           "name": "dashboard"
+        },
+        "ff2d8ec8-cade-45e6-a2e2-bf63be93337f": {
+          "cardinality": "map",
+          "dataType": {
+            "shapeId": "db0118dc-ee69-4754-9fd5-fb2887322698",
+            "type": "shape"
+          },
+          "id": "ff2d8ec8-cade-45e6-a2e2-bf63be93337f",
+          "name": "sectorMap"
         }
       },
       "shapes": {
@@ -3189,6 +3627,108 @@
             "pointer": [],
             "verb": "get"
           }
+        },
+        "aca16383-dc6e-4e28-b335-2def88aeba18": {
+          "id": "aca16383-dc6e-4e28-b335-2def88aeba18",
+          "keys": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "a9085c56-1d2a-4a08-a6bc-78ae2213e5d7",
+              "name": "total"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "d0bd0ee5-afb2-4fef-9fcd-eff7226c0729",
+              "name": "advancing"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "61cc27e5-90cb-4639-ad4f-1c229efe986c",
+              "name": "declining"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "0b6abb50-7f8a-4c60-9a01-631fad782564",
+              "name": "breadth"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "be78fab8-22d6-4f21-b4bd-0b638b8239b6",
+              "name": "avgScore"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "3b7b6842-f311-4214-9636-50165eb1d33f",
+              "name": "avgProfit"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "2a9e2dd5-e38e-4a3f-a3d9-0452252c6866",
+              "name": "topKey"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "d7253dd1-06fb-434b-9a90-66bf87d715bf",
+              "name": "topName"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "89ecef9b-289a-47a7-9672-acf2789a1f46",
+              "name": "topProfit"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "2c1f1610-4e4f-40d3-8de3-692cc62ee173",
+              "name": "bottomKey"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "766ec456-abf4-42b6-a154-84f98c4a6da1",
+              "name": "bottomName"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "6e31d599-68b6-4f82-b097-294c5ef1ada2",
+              "name": "bottomProfit"
+            }
+          ],
+          "name": "group-stats"
         },
         "b10293ed-9d1a-491e-a965-de9bc648c04d": {
           "id": "b10293ed-9d1a-491e-a965-de9bc648c04d",
@@ -6514,6 +7054,48 @@
           "functionId": "5fc01177-6f53-4317-9648-d95fd0798c79",
           "id": "4d06650e-0d1e-4da6-962d-e8c089775928",
           "name": "sectorIndustryHeat"
+        },
+        "728eef35-1a53-4244-9396-0f5fcad0e71e": {
+          "args": {
+            "id": {
+              "inputId": "e036596a-668d-486c-9cb7-05a9d0534b24",
+              "source": "input"
+            },
+            "map": {
+              "path": [
+                "ff2d8ec8-cade-45e6-a2e2-bf63be93337f"
+              ],
+              "source": "path"
+            }
+          },
+          "id": "728eef35-1a53-4244-9396-0f5fcad0e71e",
+          "name": "sector",
+          "oneFunction": "getFromMap",
+          "returns": {
+            "cardinality": "one",
+            "dataType": {
+              "shapeId": "db0118dc-ee69-4754-9fd5-fb2887322698",
+              "type": "shape"
+            },
+            "optional": true
+          }
+        },
+        "b6df64b3-6115-4d32-9cdd-5838f5ea7085": {
+          "args": {
+            "044d4876-0b4d-4c79-9dde-9684829cabcc": {
+              "inputId": "e036596a-668d-486c-9cb7-05a9d0534b24",
+              "source": "input"
+            },
+            "8f826ebd-d723-42f7-b9eb-83da635fb679": {
+              "path": [
+                "f7eeef6c-d75c-45d4-aa76-8001b3222cc8"
+              ],
+              "source": "path"
+            }
+          },
+          "functionId": "b12a3c17-305d-42c5-b1d7-9b760b4a7195",
+          "id": "b6df64b3-6115-4d32-9cdd-5838f5ea7085",
+          "name": "sectorStats"
         }
       },
       "featureId": "acef9153-606d-4de2-8699-7c87fa589384",
@@ -6578,9 +7160,37 @@
             }
           ],
           "when": "on-change"
+        },
+        {
+          "args": [],
+          "id": "b251f0ec-7992-4f3c-b4a7-95d5264d6e01",
+          "methodId": "74c67822-1f95-4a66-97eb-2be78f9660f0"
         }
       ],
       "computeds": {
+        "1aa6a578-8b0f-418e-8ee4-2726f5bcf157": {
+          "args": {
+            "8bd33893-46b5-40e6-a23c-3b1bdfa1f237": {
+              "path": [
+                "09901ae3-b5c2-4535-9257-9f541bdf0781"
+              ],
+              "source": "path"
+            },
+            "ac2c9fcd-b887-4365-847e-dae23d3aa163": {
+              "inputId": "8c22a412-037a-4fce-a386-4705f1183a9a",
+              "source": "input"
+            },
+            "afc53448-913c-432b-9277-26ad06a4b5fc": {
+              "path": [
+                "ff2d8ec8-cade-45e6-a2e2-bf63be93337f"
+              ],
+              "source": "path"
+            }
+          },
+          "functionId": "ff5892ea-4d37-4744-8d25-12e8bfb313f6",
+          "id": "1aa6a578-8b0f-418e-8ee4-2726f5bcf157",
+          "name": "sectorKey"
+        },
         "8886cb8f-cedb-4e4f-887f-14f6f9c11b5b": {
           "args": {
             "514e1a9c-88d6-464d-8b8d-97cb36f40d64": {
@@ -6597,6 +7207,48 @@
           "functionId": "cb70b736-9c99-4dd4-937d-8fec225cd32c",
           "id": "8886cb8f-cedb-4e4f-887f-14f6f9c11b5b",
           "name": "industryCompanyHeat"
+        },
+        "a6222fcf-96a4-4597-8c43-f59a12869df2": {
+          "args": {
+            "id": {
+              "inputId": "8c22a412-037a-4fce-a386-4705f1183a9a",
+              "source": "input"
+            },
+            "map": {
+              "path": [
+                "09901ae3-b5c2-4535-9257-9f541bdf0781"
+              ],
+              "source": "path"
+            }
+          },
+          "id": "a6222fcf-96a4-4597-8c43-f59a12869df2",
+          "name": "industry",
+          "oneFunction": "getFromMap",
+          "returns": {
+            "cardinality": "one",
+            "dataType": {
+              "shapeId": "525552af-515d-43eb-89e5-42e49f53f614",
+              "type": "shape"
+            },
+            "optional": true
+          }
+        },
+        "f27924de-a1d1-49ed-a5ea-f9e1308b485d": {
+          "args": {
+            "85689666-179f-4de7-9f0d-599cbdc39db5": {
+              "path": [
+                "2b267001-1756-4057-845c-98c26debfa0f"
+              ],
+              "source": "path"
+            },
+            "b3304ad7-9454-4a69-b5e1-6d02cfb122d6": {
+              "inputId": "8c22a412-037a-4fce-a386-4705f1183a9a",
+              "source": "input"
+            }
+          },
+          "functionId": "7ee0fecb-4b24-48d1-86e8-51f7ddadb5ea",
+          "id": "f27924de-a1d1-49ed-a5ea-f9e1308b485d",
+          "name": "industryStats"
         }
       },
       "featureId": "acef9153-606d-4de2-8699-7c87fa589384",
