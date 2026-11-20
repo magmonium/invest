@@ -39,21 +39,7 @@
   },
   "features": {
     "76e38aaa-d234-4aa1-b5fa-5b4595e714e2": {
-      "computeds": {
-        "1afa9294-3815-49ed-8192-2cb24b8db3b1": {
-          "args": {
-            "14b052fc-3fbb-41a9-98a6-8c1dfe6a4eff": {
-              "path": [
-                "ff1de145-1162-42e4-b8c7-bec696b90d2a"
-              ],
-              "source": "path"
-            }
-          },
-          "functionId": "fa35bf5b-8c2c-4945-a352-f35fb794a980",
-          "id": "1afa9294-3815-49ed-8192-2cb24b8db3b1",
-          "name": "strategyNav"
-        }
-      },
+      "computeds": {},
       "functions": {
         "2834dfc0-4952-4ccf-86b2-747903893eb0": {
           "aiDrafted": true,
@@ -131,7 +117,7 @@
             {
               "cardinality": "map-many",
               "dataType": {
-                "shapeId": "c73f992e-098c-4246-9fdf-ad9c1cf8b4cb",
+                "shapeId": "4ee3de29-d47d-4b8d-8adb-1b6d4f53c57e",
                 "type": "shape"
               },
               "id": "66103c5e-7740-4093-9d38-6887bff46695",
@@ -143,81 +129,15 @@
             "type": "boolean"
           }
         },
-        "3f79e63a-9f9a-4702-8e74-7be31243b7e1": {
-          "aiDrafted": true,
-          "body": "if (!id || !Array.isArray(id) || id.length === 0 || !strategyMap) {\n    return undefined;\n  }\n\n  const result: Record<string, FinanceStrategyUpdateResponseStrategyChart[]> = {};\n\n  for (const key of id) {\n    const strategy = strategyMap[key];\n    if (strategy) {\n      result[strategy.name] = strategy.chart;\n    }\n  }\n\n  return Object.keys(result).length > 0 ? result : undefined;",
-          "cases": [
-            {
-              "args": [
-                "[\"s1\", \"s2\"]",
-                "{ \"s1\": { \"id\": \"s1\", \"name\": \"Strategy One\", \"description\": \"\", \"isPublished\": true, \"fallback\": \"\", \"snapshot\": { \"asOf\": \"2023-01-01\", \"value\": 100, \"day\": 1, \"week\": 1, \"month\": 1, \"quarter\": 1, \"year\": 2023, \"max\": 200, \"cagr\": 0.05, \"marketCap\": { \"small\": { \"quantity\": 1, \"share\": 0.5 }, \"mid\": { \"quantity\": 0, \"share\": 0 }, \"large\": { \"quantity\": 0, \"share\": 0 }, \"other\": { \"quantity\": 0, \"share\": 0 } }, \"sectors\": {}, \"instruments\": 1 }, \"chart\": [{ \"date\": \"2023-01-01\", \"value\": 100 }] }, \"s2\": { \"id\": \"s2\", \"name\": \"Strategy Two\", \"description\": \"\", \"isPublished\": false, \"fallback\": \"\", \"snapshot\": { \"asOf\": \"2023-01-02\", \"value\": 200, \"day\": 2, \"week\": 2, \"month\": 2, \"quarter\": 2, \"year\": 2023, \"max\": 300, \"cagr\": 0.1, \"marketCap\": { \"small\": { \"quantity\": 1, \"share\": 0.5 }, \"mid\": { \"quantity\": 0, \"share\": 0 }, \"large\": { \"quantity\": 0, \"share\": 0 }, \"other\": { \"quantity\": 0, \"share\": 0 } }, \"sectors\": {}, \"instruments\": 1 }, \"chart\": [{ \"date\": \"2023-01-02\", \"value\": 200 }] } }"
-              ],
-              "expected": "{ \"Strategy One\": [{ \"date\": \"2023-01-01\", \"value\": 100 }], \"Strategy Two\": [{ \"date\": \"2023-01-02\", \"value\": 200 }] }",
-              "name": "returns mapping for existing ids"
-            },
-            {
-              "args": [
-                "[\"s3\"]",
-                "{ \"s1\": { \"id\": \"s1\", \"name\": \"Strategy One\", \"description\": \"\", \"isPublished\": true, \"fallback\": \"\", \"snapshot\": { \"asOf\": \"2023-01-01\", \"value\": 100, \"day\": 1, \"week\": 1, \"month\": 1, \"quarter\": 1, \"year\": 2023, \"max\": 200, \"cagr\": 0.05, \"marketCap\": { \"small\": { \"quantity\": 1, \"share\": 0.5 }, \"mid\": { \"quantity\": 0, \"share\": 0 }, \"large\": { \"quantity\": 0, \"share\": 0 }, \"other\": { \"quantity\": 0, \"share\": 0 } }, \"sectors\": {}, \"instruments\": 1 }, \"chart\": [{ \"date\": \"2023-01-01\", \"value\": 100 }] } }"
-              ],
-              "expected": "undefined",
-              "name": "returns undefined for non-existent id"
-            },
-            {
-              "args": [
-                "[]",
-                "{ \"s1\": { \"id\": \"s1\", \"name\": \"Strategy One\", \"description\": \"\", \"isPublished\": true, \"fallback\": \"\", \"snapshot\": { \"asOf\": \"2023-01-01\", \"value\": 100, \"day\": 1, \"week\": 1, \"month\": 1, \"quarter\": 1, \"year\": 2023, \"max\": 200, \"cagr\": 0.05, \"marketCap\": { \"small\": { \"quantity\": 1, \"share\": 0.5 }, \"mid\": { \"quantity\": 0, \"share\": 0 }, \"large\": { \"quantity\": 0, \"share\": 0 }, \"other\": { \"quantity\": 0, \"share\": 0 } }, \"sectors\": {}, \"instruments\": 1 }, \"chart\": [{ \"date\": \"2023-01-01\", \"value\": 100 }] } }"
-              ],
-              "expected": "undefined",
-              "name": "returns undefined for empty id array"
-            },
-            {
-              "args": [
-                "[\"s1\"]",
-                "{ \"s1\": { \"id\": \"s1\", \"name\": \"Strategy One\", \"description\": \"\", \"isPublished\": true, \"fallback\": \"\", \"snapshot\": { \"asOf\": \"2023-01-01\", \"value\": 100, \"day\": 1, \"week\": 1, \"month\": 1, \"quarter\": 1, \"year\": 2023, \"max\": 200, \"cagr\": 0.05, \"marketCap\": { \"small\": { \"quantity\": 1, \"share\": 0.5 }, \"mid\": { \"quantity\": 0, \"share\": 0 }, \"large\": { \"quantity\": 0, \"share\": 0 }, \"other\": { \"quantity\": 0, \"share\": 0 } }, \"sectors\": {}, \"instruments\": 1 }, \"chart\": [] } }"
-              ],
-              "expected": "{ \"Strategy One\": [] }",
-              "name": "handles empty chart array"
-            }
-          ],
-          "description": "Maps strategy names to their chart data for the provided strategy IDs.",
-          "id": "3f79e63a-9f9a-4702-8e74-7be31243b7e1",
-          "name": "getStatCarve",
-          "params": [
-            {
-              "cardinality": "many",
-              "dataType": {
-                "type": "string"
-              },
-              "id": "9f6e4f3d-865b-4226-9f63-8e209b9b8d49",
-              "name": "id"
-            },
-            {
-              "cardinality": "map",
-              "dataType": {
-                "shapeId": "c58ce880-40c8-44c3-a98d-f117cf9aa810",
-                "type": "shape"
-              },
-              "id": "84f3c033-6ce3-44df-81eb-96b18d891755",
-              "name": "strategyMap"
-            }
-          ],
-          "returnCardinality": "map-many",
-          "returnType": {
-            "shapeId": "c73f992e-098c-4246-9fdf-ad9c1cf8b4cb",
-            "type": "shape"
-          },
-          "returnUndefined": true
-        },
         "f97155fb-1a7a-47fe-b024-ce5fd0391656": {
           "aiDrafted": true,
-          "body": "const result: Record<string, FinanceStrategyUpdateResponseStrategyChart[]> = {};\n  for (const i of id) {\n    const curves = carveMap[i];\n    if (!curves) continue;\n    const strategy = strategyMap[i];\n    if (strategy) {\n      result[strategy.name] = curves;\n    } else {\n      const found = strategies.find(s => s.id === i);\n      const name = found ? found.name : i;\n      result[name] = curves;\n    }\n  }\n  return result;",
+          "body": "const result: Record<string, FinanceStrategyCurveResponseCurve[]> = {};\n  for (const i of id) {\n    const curves = carveMap[i];\n    if (!curves) continue;\n    const strategy = strategyMap[i];\n    if (strategy) {\n      result[strategy.name] = curves;\n    } else {\n      const found = strategies.find(s => s.id === i);\n      const name = found ? found.name : i;\n      result[name] = curves;\n    }\n  }\n  return result;",
           "cases": [
             {
               "args": [
                 "[\"id1\"]",
                 "{ \"id1\": [{ \"date\": \"2024-01-01\", \"value\": 100 }] }",
-                "{ \"id1\": { \"id\": \"id1\", \"name\": \"Strategy A\", \"description\": \"desc\", \"isPublished\": true, \"fallback\": \"fb\", \"snapshot\": { \"asOf\": \"2024-01-01\", \"value\": 100, \"day\": 0, \"week\": 0, \"month\": 0, \"quarter\": 0, \"year\": 0, \"max\": 0, \"cagr\": 0, \"marketCap\": { \"small\": { \"quantity\": 0, \"share\": 0 }, \"mid\": { \"quantity\": 0, \"share\": 0 }, \"large\": { \"quantity\": 0, \"share\": 0 }, \"other\": { \"quantity\": 0, \"share\": 0 } }, \"sectors\": {}, \"instruments\": 0 }, \"chart\": [] } }",
+                "{ \"id1\": { \"name\": \"Strategy A\", \"description\": \"desc\", \"key\": \"k\", \"cagr\": 0.1, \"profit\": 10, \"index\": \"idx\", \"rebalance\": \"monthly\", \"date\": \"2024-01-01\", \"analysis\": { \"investedPercent\": 100 } } }",
                 "[]"
               ],
               "expected": "{ \"Strategy A\": [{ \"date\": \"2024-01-01\", \"value\": 100 }] }",
@@ -228,7 +148,7 @@
                 "[\"id2\"]",
                 "{ \"id2\": [{ \"date\": \"2024-01-01\", \"value\": 200 }] }",
                 "{}",
-                "[{ \"id\": \"id2\", \"name\": \"Strategy B\", \"description\": \"desc\", \"isPublished\": true, \"fallback\": \"fb\", \"snapshot\": { \"asOf\": \"2024-01-01\", \"value\": 200, \"day\": 0, \"week\": 0, \"month\": 0, \"quarter\": 0, \"year\": 0, \"max\": 0, \"cagr\": 0, \"marketCap\": { \"small\": { \"quantity\": 0, \"share\": 0 }, \"mid\": { \"quantity\": 0, \"share\": 0 }, \"large\": { \"quantity\": 0, \"share\": 0 }, \"other\": { \"quantity\": 0, \"share\": 0 } }, \"sectors\": {}, \"instruments\": 0 }, \"chart\": [] }]"
+                "[{ \"id\": \"id2\", \"name\": \"Strategy B\", \"description\": \"desc\", \"isPublished\": true }]"
               ],
               "expected": "{ \"Strategy B\": [{ \"date\": \"2024-01-01\", \"value\": 200 }] }",
               "name": "falls back to strategies array name"
@@ -247,7 +167,7 @@
               "args": [
                 "[\"id4\"]",
                 "{}",
-                "{ \"id4\": { \"id\": \"id4\", \"name\": \"Strategy D\", \"description\": \"desc\", \"isPublished\": true, \"fallback\": \"fb\", \"snapshot\": { \"asOf\": \"2024-01-01\", \"value\": 0, \"day\": 0, \"week\": 0, \"month\": 0, \"quarter\": 0, \"year\": 0, \"max\": 0, \"cagr\": 0, \"marketCap\": { \"small\": { \"quantity\": 0, \"share\": 0 }, \"mid\": { \"quantity\": 0, \"share\": 0 }, \"large\": { \"quantity\": 0, \"share\": 0 }, \"other\": { \"quantity\": 0, \"share\": 0 } }, \"sectors\": {}, \"instruments\": 0 }, \"chart\": [] } }",
+                "{ \"id4\": { \"name\": \"Strategy D\", \"description\": \"desc\", \"key\": \"k\", \"cagr\": 0.1, \"profit\": 10, \"index\": \"idx\", \"rebalance\": \"monthly\", \"date\": \"2024-01-01\", \"analysis\": { \"investedPercent\": 100 } } }",
                 "[]"
               ],
               "expected": "{}",
@@ -267,8 +187,8 @@
               "args": [
                 "[\"id1\", \"id2\", \"id3\"]",
                 "{ \"id1\": [{ \"date\": \"2024-01-01\", \"value\": 100 }], \"id2\": [{ \"date\": \"2024-01-01\", \"value\": 200 }], \"id3\": [{ \"date\": \"2024-01-01\", \"value\": 300 }] }",
-                "{ \"id1\": { \"id\": \"id1\", \"name\": \"Strategy A\", \"description\": \"desc\", \"isPublished\": true, \"fallback\": \"fb\", \"snapshot\": { \"asOf\": \"2024-01-01\", \"value\": 100, \"day\": 0, \"week\": 0, \"month\": 0, \"quarter\": 0, \"year\": 0, \"max\": 0, \"cagr\": 0, \"marketCap\": { \"small\": { \"quantity\": 0, \"share\": 0 }, \"mid\": { \"quantity\": 0, \"share\": 0 }, \"large\": { \"quantity\": 0, \"share\": 0 }, \"other\": { \"quantity\": 0, \"share\": 0 } }, \"sectors\": {}, \"instruments\": 0 }, \"chart\": [] } }",
-                "[{ \"id\": \"id2\", \"name\": \"Strategy B\", \"description\": \"desc\", \"isPublished\": true, \"fallback\": \"fb\", \"snapshot\": { \"asOf\": \"2024-01-01\", \"value\": 200, \"day\": 0, \"week\": 0, \"month\": 0, \"quarter\": 0, \"year\": 0, \"max\": 0, \"cagr\": 0, \"marketCap\": { \"small\": { \"quantity\": 0, \"share\": 0 }, \"mid\": { \"quantity\": 0, \"share\": 0 }, \"large\": { \"quantity\": 0, \"share\": 0 }, \"other\": { \"quantity\": 0, \"share\": 0 } }, \"sectors\": {}, \"instruments\": 0 }, \"chart\": [] }]"
+                "{ \"id1\": { \"name\": \"Strategy A\", \"description\": \"desc\", \"key\": \"k\", \"cagr\": 0.1, \"profit\": 10, \"index\": \"idx\", \"rebalance\": \"monthly\", \"date\": \"2024-01-01\", \"analysis\": { \"investedPercent\": 100 } } }",
+                "[{ \"id\": \"id2\", \"name\": \"Strategy B\", \"description\": \"desc\", \"isPublished\": true }]"
               ],
               "expected": "{ \"Strategy A\": [{ \"date\": \"2024-01-01\", \"value\": 100 }], \"Strategy B\": [{ \"date\": \"2024-01-01\", \"value\": 200 }], \"id3\": [{ \"date\": \"2024-01-01\", \"value\": 300 }] }",
               "name": "multiple ids with mixed sources"
@@ -289,7 +209,7 @@
             {
               "cardinality": "map-many",
               "dataType": {
-                "shapeId": "c73f992e-098c-4246-9fdf-ad9c1cf8b4cb",
+                "shapeId": "4ee3de29-d47d-4b8d-8adb-1b6d4f53c57e",
                 "type": "shape"
               },
               "id": "ad28034f-faa0-481e-8ad7-f841040ce322",
@@ -316,189 +236,13 @@
           ],
           "returnCardinality": "map-many",
           "returnType": {
-            "shapeId": "c73f992e-098c-4246-9fdf-ad9c1cf8b4cb",
-            "type": "shape"
-          }
-        },
-        "fa35bf5b-8c2c-4945-a352-f35fb794a980": {
-          "aiDrafted": true,
-          "body": "return Object.values(strategyMap).map((s) => ({ value: s.id, label: s.name }));",
-          "cases": [
-            {
-              "args": [
-                "{}"
-              ],
-              "expected": "[]",
-              "name": "empty map returns empty array"
-            },
-            {
-              "args": [
-                "{ \"s1\": { \"id\": \"s1\", \"name\": \"Alpha\", \"description\": \"d\", \"isPublished\": true, \"fallback\": \"f\", \"snapshot\": { \"asOf\": \"2024-01-01\", \"value\": 1, \"day\": 0, \"week\": 0, \"month\": 0, \"quarter\": 0, \"year\": 0, \"max\": 0, \"cagr\": 0, \"marketCap\": { \"small\": { \"quantity\": 0, \"share\": 0 }, \"mid\": { \"quantity\": 0, \"share\": 0 }, \"large\": { \"quantity\": 0, \"share\": 0 }, \"other\": { \"quantity\": 0, \"share\": 0 } }, \"sectors\": {}, \"instruments\": 0 }, \"chart\": [] } }"
-              ],
-              "expected": "[{ \"value\": \"s1\", \"label\": \"Alpha\" }]",
-              "name": "single strategy"
-            },
-            {
-              "args": [
-                "{ \"a\": { \"id\": \"a\", \"name\": \"A\", \"description\": \"\", \"isPublished\": false, \"fallback\": \"\", \"snapshot\": { \"asOf\": \"\", \"value\": 0, \"day\": 0, \"week\": 0, \"month\": 0, \"quarter\": 0, \"year\": 0, \"max\": 0, \"cagr\": 0, \"marketCap\": { \"small\": { \"quantity\": 0, \"share\": 0 }, \"mid\": { \"quantity\": 0, \"share\": 0 }, \"large\": { \"quantity\": 0, \"share\": 0 }, \"other\": { \"quantity\": 0, \"share\": 0 } }, \"sectors\": {}, \"instruments\": 0 }, \"chart\": [] }, \"b\": { \"id\": \"b\", \"name\": \"B\", \"description\": \"\", \"isPublished\": true, \"fallback\": \"\", \"snapshot\": { \"asOf\": \"\", \"value\": 0, \"day\": 0, \"week\": 0, \"month\": 0, \"quarter\": 0, \"year\": 0, \"max\": 0, \"cagr\": 0, \"marketCap\": { \"small\": { \"quantity\": 0, \"share\": 0 }, \"mid\": { \"quantity\": 0, \"share\": 0 }, \"large\": { \"quantity\": 0, \"share\": 0 }, \"other\": { \"quantity\": 0, \"share\": 0 } }, \"sectors\": {}, \"instruments\": 0 }, \"chart\": [] } }"
-              ],
-              "expected": "[{ \"value\": \"a\", \"label\": \"A\" }, { \"value\": \"b\", \"label\": \"B\" }]",
-              "name": "multiple strategies"
-            }
-          ],
-          "description": "Builds a list of option rows from a strategy map, using each strategy's id as value and name as label.",
-          "id": "fa35bf5b-8c2c-4945-a352-f35fb794a980",
-          "name": "strategyNav",
-          "params": [
-            {
-              "cardinality": "map",
-              "dataType": {
-                "shapeId": "c58ce880-40c8-44c3-a98d-f117cf9aa810",
-                "type": "shape"
-              },
-              "id": "14b052fc-3fbb-41a9-98a6-8c1dfe6a4eff",
-              "name": "strategyMap"
-            }
-          ],
-          "returnCardinality": "many",
-          "returnType": {
-            "shapeId": "83a2368b-c8e5-4c4b-ba39-a15f8a950ece",
+            "shapeId": "4ee3de29-d47d-4b8d-8adb-1b6d4f53c57e",
             "type": "shape"
           }
         }
       },
       "id": "76e38aaa-d234-4aa1-b5fa-5b4595e714e2",
       "methods": {
-        "0268d52f-fc03-4d4d-9ad3-151a2252b4db": {
-          "id": "0268d52f-fc03-4d4d-9ad3-151a2252b4db",
-          "inputs": [
-            {
-              "arg": "id",
-              "source": "args",
-              "target": [
-                "path",
-                "id"
-              ]
-            }
-          ],
-          "name": "getFinanceStrategyIdSleeves",
-          "path": "/finance/v1/strategy/{id}/sleeves",
-          "response": [
-            {
-              "code": "200",
-              "propertyId": "d82b0e16-c1dd-4e26-beb4-dd815fd504fd",
-              "source": [],
-              "transform": {
-                "args": [
-                  {
-                    "arg": "id",
-                    "source": "args"
-                  },
-                  {
-                    "path": [
-                      "sleeves"
-                    ],
-                    "source": "response"
-                  },
-                  {
-                    "source": "fixed",
-                    "value": "id"
-                  },
-                  {
-                    "path": [
-                      "d82b0e16-c1dd-4e26-beb4-dd815fd504fd"
-                    ],
-                    "source": "state"
-                  }
-                ],
-                "functionId": "",
-                "oneFunction": "setPluckedInMap"
-              }
-            },
-            {
-              "code": "200",
-              "propertyId": "d2269743-b4cf-4a2b-b79a-71511ba565c1",
-              "source": [],
-              "transform": {
-                "args": [
-                  {
-                    "arg": "id",
-                    "source": "args"
-                  },
-                  {
-                    "path": [
-                      "standalones"
-                    ],
-                    "source": "response"
-                  },
-                  {
-                    "path": [
-                      "d2269743-b4cf-4a2b-b79a-71511ba565c1"
-                    ],
-                    "source": "state"
-                  }
-                ],
-                "functionId": "",
-                "oneFunction": "setInMap"
-              }
-            },
-            {
-              "code": "200",
-              "propertyId": "fdb2f7ef-bd68-43c8-a8e9-fdc44d800ba3",
-              "source": [],
-              "transform": {
-                "args": [
-                  {
-                    "path": [
-                      "sleeves"
-                    ],
-                    "source": "response"
-                  },
-                  {
-                    "source": "fixed",
-                    "value": "id"
-                  },
-                  {
-                    "path": [
-                      "fdb2f7ef-bd68-43c8-a8e9-fdc44d800ba3"
-                    ],
-                    "source": "state"
-                  }
-                ],
-                "functionId": "",
-                "oneFunction": "extendMap"
-              }
-            },
-            {
-              "code": "200",
-              "propertyId": "fbb0f8c3-f52d-453b-84f5-f4252c06231b",
-              "source": [],
-              "transform": {
-                "args": [
-                  {
-                    "arg": "id",
-                    "source": "args"
-                  },
-                  {
-                    "path": [
-                      "fallback"
-                    ],
-                    "source": "response"
-                  },
-                  {
-                    "path": [
-                      "fbb0f8c3-f52d-453b-84f5-f4252c06231b"
-                    ],
-                    "source": "state"
-                  }
-                ],
-                "functionId": "",
-                "oneFunction": "setInMap"
-              }
-            }
-          ],
-          "verb": "get"
-        },
         "382c18d0-ba58-4d69-b12e-0e693aed1bfa": {
           "conditions": [
             {
@@ -540,37 +284,40 @@
               "transform": {
                 "args": [
                   {
+                    "path": [],
+                    "source": "response"
+                  },
+                  {
                     "path": [
                       "ff1de145-1162-42e4-b8c7-bec696b90d2a"
                     ],
                     "source": "state"
-                  },
-                  {
-                    "path": [
-                      "strategy"
-                    ],
-                    "source": "response"
                   }
                 ],
-                "functionId": "",
-                "oneFunction": "Object.assign"
+                "functionId": "2834dfc0-4952-4ccf-86b2-747903893eb0"
               }
             }
           ],
           "verb": "put"
+        },
+        "ade93043-51ff-4894-b9c3-921193ce5fe7": {
+          "id": "ade93043-51ff-4894-b9c3-921193ce5fe7",
+          "inputs": [],
+          "name": "getFinanceCompanyFields",
+          "path": "/finance/v1/company/fields",
+          "response": [],
+          "verb": "get"
         },
         "d49795c9-7041-4b5c-ae15-a2576e549e59": {
           "conditions": [
             {
               "args": {},
               "check": {
-                "count": true,
-                "operator": "<",
+                "operator": "not_exists",
                 "path": [
                   "584aa058-d365-4b82-a901-8c81d4aa4c0b"
                 ],
-                "source": "store",
-                "value": "2"
+                "source": "store"
               },
               "functionId": "",
               "id": "cc1",
@@ -585,23 +332,9 @@
             {
               "code": "200",
               "propertyId": "584aa058-d365-4b82-a901-8c81d4aa4c0b",
-              "source": [],
-              "transform": {
-                "args": [
-                  {
-                    "path": [
-                      "strategies"
-                    ],
-                    "source": "response"
-                  },
-                  {
-                    "source": "fixed",
-                    "value": "id"
-                  }
-                ],
-                "functionId": "",
-                "oneFunction": "pluckStrings"
-              }
+              "source": [
+                "strategies"
+              ]
             },
             {
               "code": "200",
@@ -609,32 +342,96 @@
               "source": [
                 "selectedId"
               ]
-            },
+            }
+          ],
+          "verb": "put"
+        },
+        "e2e9b8a5-35a2-4ce7-b1a5-9daf7ce5a98a": {
+          "computes": [
+            {
+              "args": {
+                "ids": {
+                  "arg": "ids",
+                  "source": "args"
+                },
+                "map": {
+                  "path": [
+                    "1d4357aa-c32b-4a7f-9f0f-8373209367c0"
+                  ],
+                  "source": "store"
+                }
+              },
+              "functionId": "",
+              "id": "cp1",
+              "name": "missingIds",
+              "oneFunction": "missingFromMap",
+              "returns": {
+                "cardinality": "many",
+                "dataType": {
+                  "type": "string"
+                },
+                "optional": true
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "args": {},
+              "check": {
+                "compute": "missingIds",
+                "operator": "exists",
+                "source": "compute"
+              },
+              "functionId": "",
+              "id": "cc1",
+              "kind": "check"
+            }
+          ],
+          "id": "e2e9b8a5-35a2-4ce7-b1a5-9daf7ce5a98a",
+          "inputs": [
+            {
+              "compute": "missingIds",
+              "source": "compute",
+              "target": [
+                "payload",
+                "ids"
+              ]
+            }
+          ],
+          "name": "updateFinanceStrategyIdCurve",
+          "params": [
+            {
+              "cardinality": "many",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "e68286b1-a2ef-48cf-b12d-44d28db45331",
+              "name": "ids"
+            }
+          ],
+          "path": "/finance/v1/strategy/curve",
+          "response": [
             {
               "code": "200",
-              "propertyId": "ff1de145-1162-42e4-b8c7-bec696b90d2a",
+              "propertyId": "1d4357aa-c32b-4a7f-9f0f-8373209367c0",
               "source": [],
               "transform": {
                 "args": [
                   {
                     "path": [
-                      "strategies"
+                      "1d4357aa-c32b-4a7f-9f0f-8373209367c0"
                     ],
-                    "source": "response"
-                  },
-                  {
-                    "source": "fixed",
-                    "value": "id"
+                    "source": "state"
                   },
                   {
                     "path": [
-                      "ff1de145-1162-42e4-b8c7-bec696b90d2a"
+                      "curves"
                     ],
-                    "source": "state"
+                    "source": "response"
                   }
                 ],
                 "functionId": "",
-                "oneFunction": "extendMap"
+                "oneFunction": "Object.assign"
               }
             }
           ],
@@ -651,53 +448,28 @@
           "id": "199fe710-0c4a-4535-8025-220334e33962",
           "name": "selected"
         },
+        "1d4357aa-c32b-4a7f-9f0f-8373209367c0": {
+          "cardinality": "map-many",
+          "dataType": {
+            "shapeId": "4ee3de29-d47d-4b8d-8adb-1b6d4f53c57e",
+            "type": "shape"
+          },
+          "id": "1d4357aa-c32b-4a7f-9f0f-8373209367c0",
+          "name": "carveMap"
+        },
         "584aa058-d365-4b82-a901-8c81d4aa4c0b": {
           "cardinality": "many",
           "dataType": {
-            "type": "string"
+            "shapeId": "c58ce880-40c8-44c3-a98d-f117cf9aa810",
+            "type": "shape"
           },
           "id": "584aa058-d365-4b82-a901-8c81d4aa4c0b",
           "name": "strategies"
         },
-        "d2269743-b4cf-4a2b-b79a-71511ba565c1": {
-          "cardinality": "map-many",
-          "dataType": {
-            "shapeId": "256d42ec-d25e-4d06-8cfe-7861ae6e2aa6",
-            "type": "shape"
-          },
-          "id": "d2269743-b4cf-4a2b-b79a-71511ba565c1",
-          "name": "standaloneMap"
-        },
-        "d82b0e16-c1dd-4e26-beb4-dd815fd504fd": {
-          "cardinality": "map-many",
-          "dataType": {
-            "type": "string"
-          },
-          "id": "d82b0e16-c1dd-4e26-beb4-dd815fd504fd",
-          "name": "strategyToSleeveMap"
-        },
-        "fbb0f8c3-f52d-453b-84f5-f4252c06231b": {
-          "cardinality": "map",
-          "dataType": {
-            "shapeId": "301ddff8-1116-4816-b4ea-82cff1f9d5b2",
-            "type": "shape"
-          },
-          "id": "fbb0f8c3-f52d-453b-84f5-f4252c06231b",
-          "name": "fallbackMap"
-        },
-        "fdb2f7ef-bd68-43c8-a8e9-fdc44d800ba3": {
-          "cardinality": "map",
-          "dataType": {
-            "shapeId": "62adab81-04c4-4091-8d46-723b91aecf6c",
-            "type": "shape"
-          },
-          "id": "fdb2f7ef-bd68-43c8-a8e9-fdc44d800ba3",
-          "name": "sleeveMap"
-        },
         "ff1de145-1162-42e4-b8c7-bec696b90d2a": {
           "cardinality": "map",
           "dataType": {
-            "shapeId": "c58ce880-40c8-44c3-a98d-f117cf9aa810",
+            "shapeId": "39cb9ee5-d683-4a6c-8519-949824e4ef35",
             "type": "shape"
           },
           "id": "ff1de145-1162-42e4-b8c7-bec696b90d2a",
@@ -711,7 +483,7 @@
             {
               "cardinality": "many",
               "dataType": {
-                "shapeId": "c73f992e-098c-4246-9fdf-ad9c1cf8b4cb",
+                "shapeId": "4ee3de29-d47d-4b8d-8adb-1b6d4f53c57e",
                 "type": "shape"
               },
               "id": "d18317de-ebb8-4a8c-ba81-14a6979768c9",
@@ -724,98 +496,6 @@
             "path": "/finance/v1/strategy/{id}/curve",
             "pointer": [],
             "verb": "put"
-          }
-        },
-        "256d42ec-d25e-4d06-8cfe-7861ae6e2aa6": {
-          "id": "256d42ec-d25e-4d06-8cfe-7861ae6e2aa6",
-          "keys": [
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "string"
-              },
-              "id": "59a06279-c1ed-472a-89b9-0435cc8a8963",
-              "name": "id"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "string"
-              },
-              "id": "349b4232-e360-4c1e-88c0-a058d310a142",
-              "name": "symbol"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "string"
-              },
-              "id": "bf66918e-42e4-4aa9-a58a-a37e0613f0a8",
-              "name": "name"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "b3327d76-61df-4d09-88ae-bf7d6e6385cf",
-              "name": "min"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "42e427d5-b45c-4f4d-bdb3-232732812b5b",
-              "name": "max"
-            }
-          ],
-          "name": "finance-strategy-sleeves-list-response-standalones",
-          "origin": {
-            "code": "200",
-            "path": "/finance/v1/strategy/{id}/sleeves",
-            "pointer": [
-              "standalones"
-            ],
-            "verb": "get"
-          }
-        },
-        "301ddff8-1116-4816-b4ea-82cff1f9d5b2": {
-          "id": "301ddff8-1116-4816-b4ea-82cff1f9d5b2",
-          "keys": [
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "string"
-              },
-              "id": "f79597e9-2ba7-4e65-8a12-e1c0439a28b1",
-              "name": "id"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "string"
-              },
-              "id": "3347fbfe-0753-41e0-84b0-3871efdbd97a",
-              "name": "symbol"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "string"
-              },
-              "id": "1f57d452-0617-45c7-ba33-1f3633018e89",
-              "name": "name"
-            }
-          ],
-          "name": "finance-strategy-sleeves-list-response-fallback",
-          "origin": {
-            "code": "200",
-            "path": "/finance/v1/strategy/{id}/sleeves",
-            "pointer": [
-              "fallback"
-            ],
-            "verb": "get"
           }
         },
         "34601d25-357c-46e2-9234-f00fe8dd57bc": {
@@ -849,15 +529,7 @@
               "dataType": {
                 "type": "string"
               },
-              "id": "e07b66c7-d035-4fe7-819b-3e1df576590a",
-              "name": "id"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "string"
-              },
-              "id": "4f80b1e0-6daa-4017-9b91-5f11c69dee86",
+              "id": "06a3b837-55a3-4a5f-85eb-9d50665c5bf7",
               "name": "name"
             },
             {
@@ -865,42 +537,65 @@
               "dataType": {
                 "type": "string"
               },
-              "id": "20a98695-f0b0-4a22-b616-2764073586e6",
+              "id": "fb698650-227a-45ac-899d-0c08f246910f",
               "name": "description"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "boolean"
-              },
-              "id": "d545ef8e-7414-4767-8d67-2278830701c7",
-              "name": "isPublished"
             },
             {
               "cardinality": "one",
               "dataType": {
                 "type": "string"
               },
-              "id": "db653047-e08f-4907-8308-c48fdd1af15b",
-              "name": "fallback"
+              "id": "09927859-00a9-4098-93f7-8d2b21950c5e",
+              "name": "key"
             },
             {
               "cardinality": "one",
               "dataType": {
-                "shapeId": "c0cec2b6-ed39-46c6-8eef-37b17d92f561",
-                "type": "shape"
+                "type": "number"
               },
-              "id": "10a45b59-1e70-4ba5-bb6e-746049de9ca8",
-              "name": "snapshot"
+              "id": "02e4563b-7dea-4538-8f01-2a0f708a7bc4",
+              "name": "cagr"
             },
             {
-              "cardinality": "many",
+              "cardinality": "one",
               "dataType": {
-                "shapeId": "c73f992e-098c-4246-9fdf-ad9c1cf8b4cb",
+                "type": "number"
+              },
+              "id": "cd73fbeb-a123-4201-b237-9352915a603b",
+              "name": "profit"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "d8c98b1e-bd72-4711-816e-74d12f4734b5",
+              "name": "index"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "dae067a9-9777-4567-b8f7-2741b4f1c7f5",
+              "name": "rebalance"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "28b2d8e1-ea46-4a23-958f-c61f807aa0df",
+              "name": "date"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "shapeId": "34601d25-357c-46e2-9234-f00fe8dd57bc",
                 "type": "shape"
               },
-              "id": "8c38f872-da01-4c29-b183-38552a22fa5b",
-              "name": "chart"
+              "id": "3e7f6902-239f-40fb-9458-815f5d878f99",
+              "name": "analysis"
             }
           ],
           "name": "finance-strategy-update-response-strategy",
@@ -934,453 +629,32 @@
             "verb": "put"
           }
         },
-        "468e44a0-1c7f-4b60-9ff3-f46f7e1bc085": {
-          "id": "468e44a0-1c7f-4b60-9ff3-f46f7e1bc085",
+        "4ee3de29-d47d-4b8d-8adb-1b6d4f53c57e": {
+          "id": "4ee3de29-d47d-4b8d-8adb-1b6d4f53c57e",
           "keys": [
             {
               "cardinality": "one",
               "dataType": {
                 "type": "string"
               },
-              "id": "92b9fa0b-d941-4c70-b9ad-9b185d9f23b8",
-              "name": "asOf"
+              "id": "53fecfce-0b54-4e7a-9626-f214eed33335",
+              "name": "date"
             },
             {
               "cardinality": "one",
               "dataType": {
                 "type": "number"
               },
-              "id": "f4a07c0c-8518-4c65-b311-60cb2b3313c9",
+              "id": "48649041-0939-43be-a311-e2d9c5935b5d",
               "name": "value"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "0fcef191-b9b1-4811-95e4-07642a87e5b4",
-              "name": "day"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "6acaf544-be43-4f45-8b27-5d2211cb73bd",
-              "name": "week"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "b52b2418-0313-4916-8845-3ae6c1c5c71a",
-              "name": "month"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "02c288c5-38fb-4871-bf2e-53e5643a6e60",
-              "name": "quarter"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "7fccb311-02da-4dff-8284-06682b2d90b5",
-              "name": "year"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "60f06d2a-65f1-47e3-a1c5-b3074f86a424",
-              "name": "max"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "5fbc884d-1392-4728-aa9d-4db655202f8c",
-              "name": "cagr"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "shapeId": "63b1ad16-7335-4ac0-a0f7-e553d10022bc",
-                "type": "shape"
-              },
-              "id": "145a1caf-59d1-4050-afcb-c1a5e45a9709",
-              "name": "marketCap"
-            },
-            {
-              "cardinality": "map",
-              "dataType": {
-                "shapeId": "a9445ac5-d5a4-429b-a367-04c9f58a96fb",
-                "type": "shape"
-              },
-              "id": "2f86fe8e-5509-4aa5-af27-c1da0934d1f1",
-              "name": "sectors"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "19a0c6dc-9599-487b-9e36-3ed748cf0b29",
-              "name": "instruments"
             }
           ],
-          "name": "finance-strategies-update-response-strategies-snapshot",
+          "name": "finance-strategy-curve-response-curve",
           "origin": {
             "code": "200",
-            "path": "/finance/v1/strategies",
+            "path": "/finance/v1/strategy/{id}/curve",
             "pointer": [
-              "strategies",
-              "snapshot"
-            ],
-            "verb": "put"
-          }
-        },
-        "62adab81-04c4-4091-8d46-723b91aecf6c": {
-          "id": "62adab81-04c4-4091-8d46-723b91aecf6c",
-          "keys": [
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "string"
-              },
-              "id": "7082ba1e-2b26-43f5-a86a-92647428c88e",
-              "name": "id"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "string"
-              },
-              "id": "ccf41915-ae1e-4fc5-a89d-b61b094801a0",
-              "name": "name"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "0a64c77c-49eb-48e3-bdb6-05f1dde2a6f8",
-              "name": "stockCount"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "16db068d-55c1-4c17-b932-6c44ef493c8f",
-              "name": "entryFilterCount"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "ebda99b0-cd23-454e-915f-34661bf3a24c",
-              "name": "exitFilterCount"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "ec29f6b9-7608-4b30-8ed4-234252b0798c",
-              "name": "filterCount"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "71d55916-7809-4d88-b366-f7630968c27e",
-              "name": "maxQuantity"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "string"
-              },
-              "id": "3e4b33f8-a48a-4bf5-b2ce-4fbd19ddff75",
-              "name": "rankField"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "boolean"
-              },
-              "id": "ca81dc24-a2d3-4046-8b76-4f173ab9174c",
-              "name": "rankDesc"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "boolean"
-              },
-              "id": "b60530b7-fbec-4cf6-9eeb-67283e41b422",
-              "name": "tested"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "string"
-              },
-              "id": "49377267-3f08-4cd3-881c-8837f7d8d0b7",
-              "name": "lastRefresh"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "4c40aba8-9e10-4c5a-87e9-af0190b8c52e",
-              "name": "min"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "ef203fde-5abf-4b81-803a-fd3f281e4d20",
-              "name": "max"
-            }
-          ],
-          "name": "finance-strategy-sleeves-list-response-sleeves",
-          "origin": {
-            "code": "200",
-            "path": "/finance/v1/strategy/{id}/sleeves",
-            "pointer": [
-              "sleeves"
-            ],
-            "verb": "get"
-          }
-        },
-        "63b1ad16-7335-4ac0-a0f7-e553d10022bc": {
-          "id": "63b1ad16-7335-4ac0-a0f7-e553d10022bc",
-          "keys": [
-            {
-              "cardinality": "one",
-              "dataType": {
-                "shapeId": "a9445ac5-d5a4-429b-a367-04c9f58a96fb",
-                "type": "shape"
-              },
-              "id": "0eb585c2-820c-4679-a736-9270ac91cc21",
-              "name": "small"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "shapeId": "a9445ac5-d5a4-429b-a367-04c9f58a96fb",
-                "type": "shape"
-              },
-              "id": "1a4e44db-03b3-4bab-98b8-c136f54c7eda",
-              "name": "mid"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "shapeId": "a9445ac5-d5a4-429b-a367-04c9f58a96fb",
-                "type": "shape"
-              },
-              "id": "720c5e56-970c-4bd7-b7b4-4b51356ca030",
-              "name": "large"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "shapeId": "a9445ac5-d5a4-429b-a367-04c9f58a96fb",
-                "type": "shape"
-              },
-              "id": "9af100d9-e302-44cf-a399-1caa1aec03c2",
-              "name": "other"
-            }
-          ],
-          "name": "finance-strategy-update-response-strategy-snapshot-marketcap",
-          "origin": {
-            "code": "200",
-            "path": "/finance/v1/strategy/{id}",
-            "pointer": [
-              "strategy",
-              "snapshot",
-              "marketCap"
-            ],
-            "verb": "put"
-          }
-        },
-        "83a2368b-c8e5-4c4b-ba39-a15f8a950ece": {
-          "id": "83a2368b-c8e5-4c4b-ba39-a15f8a950ece",
-          "keys": [
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "string"
-              },
-              "id": "087b6e77-c31d-4368-a631-8e24026deb76",
-              "name": "value"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "string"
-              },
-              "id": "1177b3b6-4bf8-49c1-8735-f337b2222a55",
-              "name": "label"
-            }
-          ],
-          "name": "option-row"
-        },
-        "a9445ac5-d5a4-429b-a367-04c9f58a96fb": {
-          "id": "a9445ac5-d5a4-429b-a367-04c9f58a96fb",
-          "keys": [
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "1e795823-0a51-4ab7-8482-8ecee7a6fd1b",
-              "name": "quantity"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "e2f22a7b-f409-48dd-871a-57d0a03b34e5",
-              "name": "share"
-            }
-          ],
-          "name": "finance-strategy-update-response-strategy-snapshot-marketcap-small",
-          "origin": {
-            "code": "200",
-            "path": "/finance/v1/strategy/{id}",
-            "pointer": [
-              "strategy",
-              "snapshot",
-              "marketCap",
-              "small"
-            ],
-            "verb": "put"
-          }
-        },
-        "c0cec2b6-ed39-46c6-8eef-37b17d92f561": {
-          "id": "c0cec2b6-ed39-46c6-8eef-37b17d92f561",
-          "keys": [
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "string"
-              },
-              "id": "e4a0ca9d-97e9-46e9-b5ae-2ed3bdab9af8",
-              "name": "asOf"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "4b1809a3-e211-42db-a380-d70db35f8120",
-              "name": "value"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "866d6713-027d-41dd-9ff7-4dbbb037c799",
-              "name": "day"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "73c4609b-4443-4925-90b9-c535fb258d97",
-              "name": "week"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "45c4624e-f0da-4731-bf42-52f103e8639b",
-              "name": "month"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "a7699842-36f9-4eed-85bd-91d0462670ff",
-              "name": "quarter"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "6520ed11-d5a7-42a5-b13e-454ae57f02d0",
-              "name": "year"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "ab134a28-7468-4172-93dd-22510685c3f6",
-              "name": "max"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "2267a614-55f4-4edb-bbac-3d27fee3027f",
-              "name": "cagr"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "shapeId": "63b1ad16-7335-4ac0-a0f7-e553d10022bc",
-                "type": "shape"
-              },
-              "id": "2f734040-5dde-4876-b805-be7ddb5f26ad",
-              "name": "marketCap"
-            },
-            {
-              "cardinality": "map",
-              "dataType": {
-                "shapeId": "a9445ac5-d5a4-429b-a367-04c9f58a96fb",
-                "type": "shape"
-              },
-              "id": "b81222c2-0408-4744-9ff8-f1dabd8ee5ac",
-              "name": "sectors"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "defb0fa6-21d9-4b25-814a-45547cd2feb1",
-              "name": "instruments"
-            }
-          ],
-          "name": "finance-strategy-update-response-strategy-snapshot",
-          "origin": {
-            "code": "200",
-            "path": "/finance/v1/strategy/{id}",
-            "pointer": [
-              "strategy",
-              "snapshot"
+              "curve"
             ],
             "verb": "put"
           }
@@ -1419,32 +693,6 @@
               },
               "id": "014a1799-4ff5-497f-8db4-ebae9e1a0ba0",
               "name": "isPublished"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "string"
-              },
-              "id": "b84d9d35-899f-4c65-867f-bdaf97a41163",
-              "name": "fallback"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "shapeId": "468e44a0-1c7f-4b60-9ff3-f46f7e1bc085",
-                "type": "shape"
-              },
-              "id": "7188a5a1-64f2-40f2-a101-cefdbd15656a",
-              "name": "snapshot"
-            },
-            {
-              "cardinality": "many",
-              "dataType": {
-                "shapeId": "c73f992e-098c-4246-9fdf-ad9c1cf8b4cb",
-                "type": "shape"
-              },
-              "id": "70a63758-4a07-4a5b-82e2-bd152528367e",
-              "name": "chart"
             }
           ],
           "name": "finance-strategies-update-response-strategies",
@@ -1453,37 +701,6 @@
             "path": "/finance/v1/strategies",
             "pointer": [
               "strategies"
-            ],
-            "verb": "put"
-          }
-        },
-        "c73f992e-098c-4246-9fdf-ad9c1cf8b4cb": {
-          "id": "c73f992e-098c-4246-9fdf-ad9c1cf8b4cb",
-          "keys": [
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "string"
-              },
-              "id": "e7a0eb31-b155-475d-be81-3a0a220e89fa",
-              "name": "date"
-            },
-            {
-              "cardinality": "one",
-              "dataType": {
-                "type": "number"
-              },
-              "id": "b1a1ac94-ac11-4278-b530-8f5c5e0b8212",
-              "name": "value"
-            }
-          ],
-          "name": "finance-strategy-update-response-strategy-chart",
-          "origin": {
-            "code": "200",
-            "path": "/finance/v1/strategy/{id}",
-            "pointer": [
-              "strategy",
-              "chart"
             ],
             "verb": "put"
           }
@@ -1505,35 +722,50 @@
           "functionId": "37ba9643-8249-44bf-8d9f-42d041cbeb6a",
           "id": "3494be03-6780-4361-b3a0-7bb9162748d9",
           "name": "companiesNav"
-        },
-        "ca4667bb-3c68-4a41-a4f3-5ae43e3a7dd8": {
-          "args": {
-            "e4bca4ff-7f9f-4517-b0ec-d541123d1722": {
-              "path": [
-                "e5e30d28-369a-42fb-abe6-516e96fd51ba"
-              ],
-              "source": "path"
-            }
-          },
-          "functionId": "30530bc5-d0a5-44af-9411-62d1baeec2ca",
-          "id": "ca4667bb-3c68-4a41-a4f3-5ae43e3a7dd8",
-          "name": "indexNav"
-        },
-        "e2408eae-8149-4414-8e91-070c78c6ab21": {
-          "args": {
-            "e4bca4ff-7f9f-4517-b0ec-d541123d1722": {
-              "path": [
-                "e5e30d28-369a-42fb-abe6-516e96fd51ba"
-              ],
-              "source": "path"
-            }
-          },
-          "functionId": "30530bc5-d0a5-44af-9411-62d1baeec2ca",
-          "id": "e2408eae-8149-4414-8e91-070c78c6ab21",
-          "name": "index"
         }
       },
       "functions": {
+        "12726e90-bc45-4337-8ca3-2c62951c8206": {
+          "aiDrafted": true,
+          "body": "return { ...(sectorIndustryMap ?? {}), [key]: sectorIndustry };",
+          "description": "Inserts or updates one Sector and its Industries in the map under the Sector key.",
+          "id": "12726e90-bc45-4337-8ca3-2c62951c8206",
+          "name": "updateSectorIndustryMap",
+          "params": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "shapeId": "6f60af51-b8ff-444b-858f-b0b46bf5df57",
+                "type": "shape"
+              },
+              "id": "1c5fbd59-e636-495a-8e0c-38057372e8b2",
+              "name": "sectorIndustry"
+            },
+            {
+              "cardinality": "map",
+              "dataType": {
+                "shapeId": "6f60af51-b8ff-444b-858f-b0b46bf5df57",
+                "type": "shape"
+              },
+              "id": "06a267a1-9ad9-4634-8971-f78d242262e3",
+              "name": "sectorIndustryMap"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "d2ec25af-1a6f-4b99-9254-7ae2e5c135cd",
+              "name": "key"
+            }
+          ],
+          "returnCardinality": "map",
+          "returnType": {
+            "shapeId": "6f60af51-b8ff-444b-858f-b0b46bf5df57",
+            "type": "shape"
+          },
+          "tier": "feature"
+        },
         "1e1fd4f3-1058-4c37-9ca7-0ae2a27f436a": {
           "aiDrafted": true,
           "body": "if (!ids || ids.length === 0) {\n    return false;\n  }\n\n  if (!indexMap) {\n    return true;\n  }\n\n  return ids.some((id) => !(id in indexMap));",
@@ -1598,39 +830,23 @@
             "type": "boolean"
           }
         },
-        "30530bc5-d0a5-44af-9411-62d1baeec2ca": {
-          "aiDrafted": true,
-          "body": "return Object.values(indexMap).map((idx) => ({\n    value: idx.symbol,\n    label: idx.name,\n  }));",
-          "description": "Builds a navigation list of option rows from a map of finance indices.",
-          "id": "30530bc5-d0a5-44af-9411-62d1baeec2ca",
-          "name": "indexNav",
-          "params": [
-            {
-              "cardinality": "map",
-              "dataType": {
-                "shapeId": "eb34fbff-711a-4f7a-b67d-26dca35a7412",
-                "type": "shape"
-              },
-              "id": "e4bca4ff-7f9f-4517-b0ec-d541123d1722",
-              "name": "indexMap"
-            }
-          ],
-          "returnCardinality": "many",
-          "returnType": {
-            "shapeId": "f97ce0a2-7c55-4e30-8a85-2d908317fb7c",
-            "type": "shape"
-          }
-        },
         "37ba9643-8249-44bf-8d9f-42d041cbeb6a": {
           "aiDrafted": true,
           "body": "return Object.values(companyMap)\n    .map(company => ({\n      value: company.symbol,\n      label: company.name\n    }))\n    .sort((a, b) => a.label.localeCompare(b.label));",
           "cases": [
             {
               "args": [
+                "{ \"AAPL\": { \"symbol\": \"AAPL\", \"name\": \"Apple Inc.\", \"ticker\": \"\", \"isin\": \"\", \"sector\": \"\", \"industry\": \"\", \"subindustry\": \"\", \"type\": \"\", \"exchange\": \"\", \"marketCapLabel\": \"\", \"etfLiqLabel\": \"\", \"price\": 0, \"marketCap\": 0, \"mrktCapRank\": 0, \"momRank\": 0, \"faceValue\": 0, \"dailyChange\": 0, \"weekChange\": 0, \"monthChange\": 0, \"yearlyChange\": 0, \"maxChange\": 0, \"forecast\": 0, \"forecastProfit\": 0, \"sma10d\": 0, \"sma50d\": 0, \"sma100d\": 0, \"sma200d\": 0, \"sma10dPct\": 0, \"sma50dPct\": 0, \"sma100dPct\": 0, \"sma200dPct\": 0, \"ema10d\": 0, \"ema50d\": 0, \"ema100d\": 0, \"ema200d\": 0, \"ema10dPct\": 0, \"ema50dPct\": 0, \"ema100dPct\": 0, \"ema200dPct\": 0, \"avgScore\": 0, \"momScore\": 0, \"valScore\": 0, \"volScore\": 0, \"durScore\": 0, \"drawScore\": 0, \"ttmPe\": 0, \"pb\": 0, \"indpe\": 0, \"indpb\": 0, \"divYield\": 0, \"eps\": 0, \"risk\": 0, \"maxDrawdown\": 0, \"currentDrawdown\": 0, \"daysSincePeak\": 0, \"riseFromValley\": 0, \"max\": 0, \"min\": 0, \"updated\": \"\", \"scoredOn\": \"\", \"id\": \"\", \"link\": \"\", \"description\": \"\", \"weekly\": [], \"financialSummary\": [] }, \"MSFT\": { \"symbol\": \"MSFT\", \"name\": \"Microsoft Corp.\", \"ticker\": \"\", \"isin\": \"\", \"sector\": \"\", \"industry\": \"\", \"subindustry\": \"\", \"type\": \"\", \"exchange\": \"\", \"marketCapLabel\": \"\", \"etfLiqLabel\": \"\", \"price\": 0, \"marketCap\": 0, \"mrktCapRank\": 0, \"momRank\": 0, \"faceValue\": 0, \"dailyChange\": 0, \"weekChange\": 0, \"monthChange\": 0, \"yearlyChange\": 0, \"maxChange\": 0, \"forecast\": 0, \"forecastProfit\": 0, \"sma10d\": 0, \"sma50d\": 0, \"sma100d\": 0, \"sma200d\": 0, \"sma10dPct\": 0, \"sma50dPct\": 0, \"sma100dPct\": 0, \"sma200dPct\": 0, \"ema10d\": 0, \"ema50d\": 0, \"ema100d\": 0, \"ema200d\": 0, \"ema10dPct\": 0, \"ema50dPct\": 0, \"ema100dPct\": 0, \"ema200dPct\": 0, \"avgScore\": 0, \"momScore\": 0, \"valScore\": 0, \"volScore\": 0, \"durScore\": 0, \"drawScore\": 0, \"ttmPe\": 0, \"pb\": 0, \"indpe\": 0, \"indpb\": 0, \"divYield\": 0, \"eps\": 0, \"risk\": 0, \"maxDrawdown\": 0, \"currentDrawdown\": 0, \"daysSincePeak\": 0, \"riseFromValley\": 0, \"max\": 0, \"min\": 0, \"updated\": \"\", \"scoredOn\": \"\", \"id\": \"\", \"link\": \"\", \"description\": \"\", \"weekly\": [], \"financialSummary\": [] } }"
+              ],
+              "expected": "[{ \"value\": \"AAPL\", \"label\": \"Apple Inc.\" }, { \"value\": \"MSFT\", \"label\": \"Microsoft Corp.\" }]",
+              "name": "maps and sorts multiple companies alphabetically by name"
+            },
+            {
+              "args": [
                 "{}"
               ],
               "expected": "[]",
-              "name": "returns empty array for empty map"
+              "name": "handles empty company map"
             }
           ],
           "description": "Maps a dictionary of companies to navigation options, sorted alphabetically by company name.",
@@ -1718,6 +934,37 @@
             "type": "shape"
           }
         },
+        "5fc01177-6f53-4317-9648-d95fd0798c79": {
+          "aiDrafted": true,
+          "body": "const industries = sectorIndustryMap?.[id]?.industries;\n  if (!industries || industries.length === 0) return [];\n\n  const periods = ['b', 'm', 't', 's', 'n', 'y'] as const;\n  const range: Record<string, { min: number; max: number }> = {};\n  for (const period of periods) {\n    const values = industries\n      .map((industry) => industry.profit?.[period])\n      .filter((value): value is number => typeof value === 'number' && Number.isFinite(value));\n    range[period] = values.length\n      ? { min: Math.min(...values), max: Math.max(...values) }\n      : { min: 0, max: 0 };\n  }\n\n  return industries.map((industry) => {\n    const profit = { ...industry.profit };\n    for (const period of periods) {\n      const value = industry.profit?.[period];\n      const { min, max } = range[period];\n      profit[period] =\n        typeof value !== 'number' || !Number.isFinite(value)\n          ? NaN\n          : max === min\n            ? 0\n            : ((value - min) / (max - min)) * 100;\n    }\n    return { ...industry, profit };\n  });",
+          "description": "Scales each period of the Sector's Industry profits to 0–100 between that period's lowest and highest, for heat swatches.",
+          "id": "5fc01177-6f53-4317-9648-d95fd0798c79",
+          "name": "sectorIndustryHeat",
+          "params": [
+            {
+              "cardinality": "map",
+              "dataType": {
+                "shapeId": "6f60af51-b8ff-444b-858f-b0b46bf5df57",
+                "type": "shape"
+              },
+              "id": "72386339-d1fc-41a7-a514-0a95ab907bfe",
+              "name": "sectorIndustryMap"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "9fbd30b5-c36d-46c6-9f58-110a0ddd858d",
+              "name": "id"
+            }
+          ],
+          "returnCardinality": "many",
+          "returnType": {
+            "shapeId": "519ad41b-b3fc-41d2-80f6-97c606770154",
+            "type": "shape"
+          }
+        },
         "5ff075c7-88b0-488d-ad87-67cf8564c348": {
           "aiDrafted": true,
           "body": "const key = id != null && id !== '' ? id : (company.id ?? '');\n  return { ...(companyMap ?? {}), [key]: company };",
@@ -1758,6 +1005,72 @@
             "type": "shape"
           },
           "tier": "feature"
+        },
+        "77c04cae-347b-40cc-b4d7-3989b8929124": {
+          "aiDrafted": true,
+          "body": "if (!industries || industries.length === 0) return [];\n\n  const sectorKeys = new Map((sectors ?? []).map((sector) => [sector.name, sector.key]));\n  const periods = ['b', 'm', 't', 's', 'n', 'y'] as const;\n  const range: Record<string, { min: number; max: number }> = {};\n  for (const period of periods) {\n    const values = industries\n      .map((industry) => industry.profit?.[period])\n      .filter((value): value is number => typeof value === 'number' && Number.isFinite(value));\n    range[period] = values.length\n      ? { min: Math.min(...values), max: Math.max(...values) }\n      : { min: 0, max: 0 };\n  }\n\n  return industries.map((industry) => {\n    const profit = { ...industry.profit };\n    for (const period of periods) {\n      const value = industry.profit?.[period];\n      const { min, max } = range[period];\n      profit[period] =\n        typeof value !== 'number' || !Number.isFinite(value)\n          ? NaN\n          : max === min\n            ? 0\n            : ((value - min) / (max - min)) * 100;\n    }\n    return { ...industry, profit, sectorKey: sectorKeys.get(industry.sector) ?? '' };\n  });",
+          "cases": [
+            {
+              "args": [
+                "[]",
+                "[{ \"id\": \"S\", \"key\": \"s-key\", \"name\": \"s\", \"updated\": \"\", \"count\": 1, \"profit\": {\"b\":0,\"m\":0,\"t\":0,\"s\":0,\"n\":0,\"y\":0}, \"rank\": {\"b\":1,\"m\":1,\"t\":1,\"s\":1,\"n\":1,\"y\":1}, \"score\": 50 }]"
+              ],
+              "expected": "[]",
+              "name": "returns empty array for no industries"
+            },
+            {
+              "args": [
+                "[{ \"id\": \"A\", \"key\": \"A\", \"name\": \"A\", \"sector\": \"s\", \"updated\": \"\", \"count\": 1, \"profit\": {\"b\":-5,\"m\":-5,\"t\":-5,\"s\":-5,\"n\":-5,\"y\":-5}, \"rank\": { \"b\": 1, \"m\": 1, \"t\": 1, \"s\": 1, \"n\": 1, \"y\": 1 }, \"score\": 50 }, { \"id\": \"B\", \"key\": \"B\", \"name\": \"B\", \"sector\": \"s\", \"updated\": \"\", \"count\": 1, \"profit\": {\"b\":5,\"m\":5,\"t\":5,\"s\":5,\"n\":5,\"y\":5}, \"rank\": { \"b\": 1, \"m\": 1, \"t\": 1, \"s\": 1, \"n\": 1, \"y\": 1 }, \"score\": 50 }]",
+                "[{ \"id\": \"S\", \"key\": \"s-key\", \"name\": \"s\", \"updated\": \"\", \"count\": 1, \"profit\": {\"b\":0,\"m\":0,\"t\":0,\"s\":0,\"n\":0,\"y\":0}, \"rank\": {\"b\":1,\"m\":1,\"t\":1,\"s\":1,\"n\":1,\"y\":1}, \"score\": 50 }]"
+              ],
+              "expected": "[{\"id\":\"A\",\"key\":\"A\",\"name\":\"A\",\"sector\":\"s\",\"updated\":\"\",\"count\":1,\"profit\":{\"b\":0,\"m\":0,\"t\":0,\"s\":0,\"n\":0,\"y\":0},\"rank\":{\"b\":1,\"m\":1,\"t\":1,\"s\":1,\"n\":1,\"y\":1},\"score\":50,\"sectorKey\":\"s-key\"},{\"id\":\"B\",\"key\":\"B\",\"name\":\"B\",\"sector\":\"s\",\"updated\":\"\",\"count\":1,\"profit\":{\"b\":100,\"m\":100,\"t\":100,\"s\":100,\"n\":100,\"y\":100},\"rank\":{\"b\":1,\"m\":1,\"t\":1,\"s\":1,\"n\":1,\"y\":1},\"score\":50,\"sectorKey\":\"s-key\"}]",
+              "name": "scales lowest to 0 and highest to 100 per period"
+            },
+            {
+              "args": [
+                "[{ \"id\": \"A\", \"key\": \"A\", \"name\": \"A\", \"sector\": \"s\", \"updated\": \"\", \"count\": 1, \"profit\": {\"b\":3,\"m\":3,\"t\":3,\"s\":3,\"n\":3,\"y\":3}, \"rank\": { \"b\": 1, \"m\": 1, \"t\": 1, \"s\": 1, \"n\": 1, \"y\": 1 }, \"score\": 50 }, { \"id\": \"B\", \"key\": \"B\", \"name\": \"B\", \"sector\": \"s\", \"updated\": \"\", \"count\": 1, \"profit\": {\"b\":3,\"m\":3,\"t\":3,\"s\":3,\"n\":3,\"y\":3}, \"rank\": { \"b\": 1, \"m\": 1, \"t\": 1, \"s\": 1, \"n\": 1, \"y\": 1 }, \"score\": 50 }]",
+                "[{ \"id\": \"S\", \"key\": \"s-key\", \"name\": \"s\", \"updated\": \"\", \"count\": 1, \"profit\": {\"b\":0,\"m\":0,\"t\":0,\"s\":0,\"n\":0,\"y\":0}, \"rank\": {\"b\":1,\"m\":1,\"t\":1,\"s\":1,\"n\":1,\"y\":1}, \"score\": 50 }]"
+              ],
+              "expected": "[{\"id\":\"A\",\"key\":\"A\",\"name\":\"A\",\"sector\":\"s\",\"updated\":\"\",\"count\":1,\"profit\":{\"b\":0,\"m\":0,\"t\":0,\"s\":0,\"n\":0,\"y\":0},\"rank\":{\"b\":1,\"m\":1,\"t\":1,\"s\":1,\"n\":1,\"y\":1},\"score\":50,\"sectorKey\":\"s-key\"},{\"id\":\"B\",\"key\":\"B\",\"name\":\"B\",\"sector\":\"s\",\"updated\":\"\",\"count\":1,\"profit\":{\"b\":0,\"m\":0,\"t\":0,\"s\":0,\"n\":0,\"y\":0},\"rank\":{\"b\":1,\"m\":1,\"t\":1,\"s\":1,\"n\":1,\"y\":1},\"score\":50,\"sectorKey\":\"s-key\"}]",
+              "name": "equal profits scale to 0"
+            },
+            {
+              "args": [
+                "[{ \"id\": \"A\", \"key\": \"A\", \"name\": \"A\", \"sector\": \"s\", \"updated\": \"\", \"count\": 1, \"profit\": {\"b\":-5,\"m\":-5,\"t\":-5,\"s\":-5,\"n\":-5,\"y\":-5}, \"rank\": { \"b\": 1, \"m\": 1, \"t\": 1, \"s\": 1, \"n\": 1, \"y\": 1 }, \"score\": 50 }, { \"id\": \"B\", \"key\": \"B\", \"name\": \"B\", \"sector\": \"s\", \"updated\": \"\", \"count\": 1, \"profit\": {\"b\":5,\"m\":5,\"t\":5,\"s\":5,\"n\":5,\"y\":5}, \"rank\": { \"b\": 1, \"m\": 1, \"t\": 1, \"s\": 1, \"n\": 1, \"y\": 1 }, \"score\": 50 }]",
+                "[]"
+              ],
+              "expected": "[{\"id\":\"A\",\"key\":\"A\",\"name\":\"A\",\"sector\":\"s\",\"updated\":\"\",\"count\":1,\"profit\":{\"b\":0,\"m\":0,\"t\":0,\"s\":0,\"n\":0,\"y\":0},\"rank\":{\"b\":1,\"m\":1,\"t\":1,\"s\":1,\"n\":1,\"y\":1},\"score\":50,\"sectorKey\":\"\"},{\"id\":\"B\",\"key\":\"B\",\"name\":\"B\",\"sector\":\"s\",\"updated\":\"\",\"count\":1,\"profit\":{\"b\":100,\"m\":100,\"t\":100,\"s\":100,\"n\":100,\"y\":100},\"rank\":{\"b\":1,\"m\":1,\"t\":1,\"s\":1,\"n\":1,\"y\":1},\"score\":50,\"sectorKey\":\"\"}]",
+              "name": "empty sector key when the sector is not listed"
+            }
+          ],
+          "description": "Scales each period of every industry profit to a 0–100 percentage between the lowest and highest profit of that period, for heat swatches, and adds the key of the industry's sector (matched by name).",
+          "id": "77c04cae-347b-40cc-b4d7-3989b8929124",
+          "name": "industryHeat",
+          "params": [
+            {
+              "cardinality": "many",
+              "dataType": {
+                "shapeId": "525552af-515d-43eb-89e5-42e49f53f614",
+                "type": "shape"
+              },
+              "id": "0b8634ef-a5eb-4838-8314-13a46408718e",
+              "name": "industries"
+            },
+            {
+              "cardinality": "many",
+              "dataType": {
+                "shapeId": "db0118dc-ee69-4754-9fd5-fb2887322698",
+                "type": "shape"
+              },
+              "id": "fb4e6800-d972-4f5d-b984-329d8e01e00a",
+              "name": "sectors"
+            }
+          ],
+          "returnCardinality": "many",
+          "returnType": {
+            "shapeId": "5b56e907-964d-43ac-8b51-e5de3797f700",
+            "type": "shape"
+          }
         },
         "8b1ea634-0bf9-4ede-886b-48950ea90ac9": {
           "aiDrafted": true,
@@ -1872,6 +1185,124 @@
             "type": "shape"
           },
           "returnUndefined": true
+        },
+        "9674ce7e-3c8b-4d9a-bdf1-57b675f16692": {
+          "aiDrafted": true,
+          "body": "return { ...(industryCompanyMap ?? {}), [key]: industryCompany };",
+          "description": "Inserts or updates one Industry and its Companies in the map under the Industry key.",
+          "id": "9674ce7e-3c8b-4d9a-bdf1-57b675f16692",
+          "name": "updateIndustryCompanyMap",
+          "params": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "shapeId": "8810a19e-105d-4590-b757-ab1efda6a737",
+                "type": "shape"
+              },
+              "id": "1fadb177-40d6-4d44-a1b8-00c005bd9152",
+              "name": "industryCompany"
+            },
+            {
+              "cardinality": "map",
+              "dataType": {
+                "shapeId": "8810a19e-105d-4590-b757-ab1efda6a737",
+                "type": "shape"
+              },
+              "id": "d145dab5-f36f-4e60-877b-eba2ef52f384",
+              "name": "industryCompanyMap"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "1ad20731-e885-44e7-af65-12bf71aa6de4",
+              "name": "key"
+            }
+          ],
+          "returnCardinality": "map",
+          "returnType": {
+            "shapeId": "8810a19e-105d-4590-b757-ab1efda6a737",
+            "type": "shape"
+          },
+          "tier": "feature"
+        },
+        "b5454470-09fd-481b-aa0e-8ba559eb1515": {
+          "aiDrafted": true,
+          "body": "if (!sectors || sectors.length === 0) return [];\n\n  const periods = ['b', 'm', 't', 's', 'n', 'y'] as const;\n  const range: Record<string, { min: number; max: number }> = {};\n  for (const period of periods) {\n    const values = sectors\n      .map((sector) => sector.profit?.[period])\n      .filter((value): value is number => typeof value === 'number' && Number.isFinite(value));\n    range[period] = values.length\n      ? { min: Math.min(...values), max: Math.max(...values) }\n      : { min: 0, max: 0 };\n  }\n\n  return sectors.map((sector) => {\n    const profit = { ...sector.profit };\n    for (const period of periods) {\n      const value = sector.profit?.[period];\n      const { min, max } = range[period];\n      profit[period] =\n        typeof value !== 'number' || !Number.isFinite(value)\n          ? NaN\n          : max === min\n            ? 0\n            : ((value - min) / (max - min)) * 100;\n    }\n    return { ...sector, profit };\n  });",
+          "cases": [
+            {
+              "args": [
+                "[]"
+              ],
+              "expected": "[]",
+              "name": "returns empty array for no sectors"
+            },
+            {
+              "args": [
+                "[{\"id\":\"A\",\"key\":\"A\",\"name\":\"A\",\"updated\":\"\",\"count\":1,\"profit\":{\"b\":-5,\"m\":-5,\"t\":-5,\"s\":-5,\"n\":-5,\"y\":-5},\"rank\":{\"b\":1,\"m\":1,\"t\":1,\"s\":1,\"n\":1,\"y\":1},\"score\":50},{\"id\":\"B\",\"key\":\"B\",\"name\":\"B\",\"updated\":\"\",\"count\":1,\"profit\":{\"b\":5,\"m\":5,\"t\":5,\"s\":5,\"n\":5,\"y\":5},\"rank\":{\"b\":1,\"m\":1,\"t\":1,\"s\":1,\"n\":1,\"y\":1},\"score\":50}]"
+              ],
+              "expected": "[{\"id\":\"A\",\"key\":\"A\",\"name\":\"A\",\"updated\":\"\",\"count\":1,\"profit\":{\"b\":0,\"m\":0,\"t\":0,\"s\":0,\"n\":0,\"y\":0},\"rank\":{\"b\":1,\"m\":1,\"t\":1,\"s\":1,\"n\":1,\"y\":1},\"score\":50},{\"id\":\"B\",\"key\":\"B\",\"name\":\"B\",\"updated\":\"\",\"count\":1,\"profit\":{\"b\":100,\"m\":100,\"t\":100,\"s\":100,\"n\":100,\"y\":100},\"rank\":{\"b\":1,\"m\":1,\"t\":1,\"s\":1,\"n\":1,\"y\":1},\"score\":50}]",
+              "name": "scales lowest to 0 and highest to 100 per period"
+            },
+            {
+              "args": [
+                "[{\"id\":\"A\",\"key\":\"A\",\"name\":\"A\",\"updated\":\"\",\"count\":1,\"profit\":{\"b\":3,\"m\":3,\"t\":3,\"s\":3,\"n\":3,\"y\":3},\"rank\":{\"b\":1,\"m\":1,\"t\":1,\"s\":1,\"n\":1,\"y\":1},\"score\":50},{\"id\":\"B\",\"key\":\"B\",\"name\":\"B\",\"updated\":\"\",\"count\":1,\"profit\":{\"b\":3,\"m\":3,\"t\":3,\"s\":3,\"n\":3,\"y\":3},\"rank\":{\"b\":1,\"m\":1,\"t\":1,\"s\":1,\"n\":1,\"y\":1},\"score\":50}]"
+              ],
+              "expected": "[{\"id\":\"A\",\"key\":\"A\",\"name\":\"A\",\"updated\":\"\",\"count\":1,\"profit\":{\"b\":0,\"m\":0,\"t\":0,\"s\":0,\"n\":0,\"y\":0},\"rank\":{\"b\":1,\"m\":1,\"t\":1,\"s\":1,\"n\":1,\"y\":1},\"score\":50},{\"id\":\"B\",\"key\":\"B\",\"name\":\"B\",\"updated\":\"\",\"count\":1,\"profit\":{\"b\":0,\"m\":0,\"t\":0,\"s\":0,\"n\":0,\"y\":0},\"rank\":{\"b\":1,\"m\":1,\"t\":1,\"s\":1,\"n\":1,\"y\":1},\"score\":50}]",
+              "name": "equal profits scale to 0"
+            }
+          ],
+          "description": "Scales each period of every sector profit to a 0–100 percentage between the lowest and highest profit of that period, for heat swatches.",
+          "id": "b5454470-09fd-481b-aa0e-8ba559eb1515",
+          "name": "sectorHeat",
+          "params": [
+            {
+              "cardinality": "many",
+              "dataType": {
+                "shapeId": "db0118dc-ee69-4754-9fd5-fb2887322698",
+                "type": "shape"
+              },
+              "id": "c267a321-51f1-4ee3-87b3-ceedaec47b64",
+              "name": "sectors"
+            }
+          ],
+          "returnCardinality": "many",
+          "returnType": {
+            "shapeId": "db0118dc-ee69-4754-9fd5-fb2887322698",
+            "type": "shape"
+          }
+        },
+        "cb70b736-9c99-4dd4-937d-8fec225cd32c": {
+          "aiDrafted": true,
+          "body": "const companies = industryCompanyMap?.[id]?.companies;\n  if (!companies || companies.length === 0) return [];\n\n  const periods = ['b', 'm', 't', 's', 'n', 'y'] as const;\n  const range: Record<string, { min: number; max: number }> = {};\n  for (const period of periods) {\n    const values = companies\n      .map((company) => company.profit?.[period])\n      .filter((value): value is number => typeof value === 'number' && Number.isFinite(value));\n    range[period] = values.length\n      ? { min: Math.min(...values), max: Math.max(...values) }\n      : { min: 0, max: 0 };\n  }\n\n  return companies.map((company) => {\n    const profit = { ...company.profit };\n    for (const period of periods) {\n      const value = company.profit?.[period];\n      const { min, max } = range[period];\n      profit[period] =\n        typeof value !== 'number' || !Number.isFinite(value)\n          ? NaN\n          : max === min\n            ? 0\n            : ((value - min) / (max - min)) * 100;\n    }\n    return { ...company, profit };\n  });",
+          "description": "Scales each period of the Industry's Company profits to 0–100 between that period's lowest and highest, for heat swatches.",
+          "id": "cb70b736-9c99-4dd4-937d-8fec225cd32c",
+          "name": "industryCompanyHeat",
+          "params": [
+            {
+              "cardinality": "map",
+              "dataType": {
+                "shapeId": "8810a19e-105d-4590-b757-ab1efda6a737",
+                "type": "shape"
+              },
+              "id": "514e1a9c-88d6-464d-8b8d-97cb36f40d64",
+              "name": "industryCompanyMap"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "66dffc7f-480e-4489-9a31-010aec0a9375",
+              "name": "id"
+            }
+          ],
+          "returnCardinality": "many",
+          "returnType": {
+            "shapeId": "76585609-6110-43c9-9745-4a7e83228422",
+            "type": "shape"
+          }
         },
         "ce90aa10-7eed-4bc8-9b65-b5e596394d82": {
           "aiDrafted": true,
@@ -2107,6 +1538,67 @@
       },
       "id": "acef9153-606d-4de2-8699-7c87fa589384",
       "methods": {
+        "068be5a3-0518-4f87-b19e-6dd9808c3f3a": {
+          "conditions": [
+            {
+              "args": {
+                "id": {
+                  "arg": "key",
+                  "source": "args"
+                },
+                "map": {
+                  "path": [
+                    "f7eeef6c-d75c-45d4-aa76-8001b3222cc8"
+                  ],
+                  "source": "store"
+                }
+              },
+              "functionId": "",
+              "id": "cc1",
+              "oneFunction": "notExistsInMap"
+            }
+          ],
+          "id": "068be5a3-0518-4f87-b19e-6dd9808c3f3a",
+          "inputs": [
+            {
+              "arg": "key",
+              "source": "args",
+              "target": [
+                "path",
+                "key"
+              ]
+            }
+          ],
+          "name": "getFinanceSectorKeyIndustry",
+          "path": "/finance/v1/sector/{key}/industry",
+          "response": [
+            {
+              "code": "200",
+              "propertyId": "f7eeef6c-d75c-45d4-aa76-8001b3222cc8",
+              "source": [],
+              "transform": {
+                "args": [
+                  {
+                    "path": [],
+                    "source": "response"
+                  },
+                  {
+                    "path": [
+                      "f7eeef6c-d75c-45d4-aa76-8001b3222cc8"
+                    ],
+                    "source": "state"
+                  },
+                  {
+                    "arg": "key",
+                    "source": "args"
+                  }
+                ],
+                "functionId": "12726e90-bc45-4337-8ca3-2c62951c8206"
+              }
+            }
+          ],
+          "verb": "get"
+        },
         "06cc0f93-8b99-4a09-9ffb-d11be83ecbcd": {
           "id": "06cc0f93-8b99-4a09-9ffb-d11be83ecbcd",
           "inputs": [
@@ -2156,6 +1648,68 @@
             }
           ],
           "verb": "put"
+        },
+        "087681ec-460d-4255-8fe5-73b4d610d588": {
+          "conditions": [
+            {
+              "args": {},
+              "check": {
+                "operator": "not_exists",
+                "path": [
+                  "26619119-8c40-4a11-8a31-8cb8334f4576"
+                ],
+                "source": "store"
+              },
+              "functionId": "",
+              "id": "cc1",
+              "kind": "check"
+            }
+          ],
+          "id": "087681ec-460d-4255-8fe5-73b4d610d588",
+          "inputs": [],
+          "name": "getFinanceIndustry",
+          "path": "/finance/v1/industry",
+          "response": [
+            {
+              "code": "200",
+              "propertyId": "26619119-8c40-4a11-8a31-8cb8334f4576",
+              "source": [
+                "industries"
+              ]
+            }
+          ],
+          "verb": "get"
+        },
+        "74c67822-1f95-4a66-97eb-2be78f9660f0": {
+          "conditions": [
+            {
+              "args": {},
+              "check": {
+                "operator": "not_exists",
+                "path": [
+                  "d8db819d-46f1-47a1-9128-77c2d51ccac2"
+                ],
+                "source": "store"
+              },
+              "functionId": "",
+              "id": "cc1",
+              "kind": "check"
+            }
+          ],
+          "id": "74c67822-1f95-4a66-97eb-2be78f9660f0",
+          "inputs": [],
+          "name": "getFinanceSector",
+          "path": "/finance/v1/sector",
+          "response": [
+            {
+              "code": "200",
+              "propertyId": "d8db819d-46f1-47a1-9128-77c2d51ccac2",
+              "source": [
+                "sectors"
+              ]
+            }
+          ],
+          "verb": "get"
         },
         "90707d43-1f52-4613-b754-e29690d6172e": {
           "conditions": [
@@ -2278,6 +1832,67 @@
           ],
           "verb": "put"
         },
+        "9c36151a-b0b9-4461-b82c-af603ca83fd7": {
+          "conditions": [
+            {
+              "args": {
+                "id": {
+                  "arg": "key",
+                  "source": "args"
+                },
+                "map": {
+                  "path": [
+                    "2b267001-1756-4057-845c-98c26debfa0f"
+                  ],
+                  "source": "store"
+                }
+              },
+              "functionId": "",
+              "id": "cc1",
+              "oneFunction": "notExistsInMap"
+            }
+          ],
+          "id": "9c36151a-b0b9-4461-b82c-af603ca83fd7",
+          "inputs": [
+            {
+              "arg": "key",
+              "source": "args",
+              "target": [
+                "path",
+                "key"
+              ]
+            }
+          ],
+          "name": "getFinanceIndustryKeyCompany",
+          "path": "/finance/v1/industry/{key}/company",
+          "response": [
+            {
+              "code": "200",
+              "propertyId": "2b267001-1756-4057-845c-98c26debfa0f",
+              "source": [],
+              "transform": {
+                "args": [
+                  {
+                    "path": [],
+                    "source": "response"
+                  },
+                  {
+                    "path": [
+                      "2b267001-1756-4057-845c-98c26debfa0f"
+                    ],
+                    "source": "state"
+                  },
+                  {
+                    "arg": "key",
+                    "source": "args"
+                  }
+                ],
+                "functionId": "9674ce7e-3c8b-4d9a-bdf1-57b675f16692"
+              }
+            }
+          ],
+          "verb": "get"
+        },
         "c8de2c49-bf4f-43ba-b264-f3c055015205": {
           "conditions": [
             {
@@ -2324,18 +1939,13 @@
                     "source": "response"
                   },
                   {
-                    "source": "fixed",
-                    "value": "symbol"
-                  },
-                  {
                     "path": [
                       "c02ba90d-e41b-4175-8986-1dba3f3af5e4"
                     ],
                     "source": "state"
                   }
                 ],
-                "functionId": "",
-                "oneFunction": "extendMap"
+                "functionId": "f42d5c5b-af2f-4f07-be31-449e76dbc5e4"
               }
             }
           ],
@@ -2373,6 +1983,24 @@
       },
       "name": "analysis",
       "properties": {
+        "26619119-8c40-4a11-8a31-8cb8334f4576": {
+          "cardinality": "many",
+          "dataType": {
+            "shapeId": "525552af-515d-43eb-89e5-42e49f53f614",
+            "type": "shape"
+          },
+          "id": "26619119-8c40-4a11-8a31-8cb8334f4576",
+          "name": "industries"
+        },
+        "2b267001-1756-4057-845c-98c26debfa0f": {
+          "cardinality": "map",
+          "dataType": {
+            "shapeId": "8810a19e-105d-4590-b757-ab1efda6a737",
+            "type": "shape"
+          },
+          "id": "2b267001-1756-4057-845c-98c26debfa0f",
+          "name": "industryCompanyMap"
+        },
         "36c5f927-734f-424d-acf0-6e316466034a": {
           "cardinality": "map-many",
           "dataType": {
@@ -2391,6 +2019,15 @@
           "id": "c02ba90d-e41b-4175-8986-1dba3f3af5e4",
           "name": "companyMap"
         },
+        "d8db819d-46f1-47a1-9128-77c2d51ccac2": {
+          "cardinality": "many",
+          "dataType": {
+            "shapeId": "db0118dc-ee69-4754-9fd5-fb2887322698",
+            "type": "shape"
+          },
+          "id": "d8db819d-46f1-47a1-9128-77c2d51ccac2",
+          "name": "sectors"
+        },
         "e5e30d28-369a-42fb-abe6-516e96fd51ba": {
           "cardinality": "map",
           "dataType": {
@@ -2399,6 +2036,15 @@
           },
           "id": "e5e30d28-369a-42fb-abe6-516e96fd51ba",
           "name": "indexMap"
+        },
+        "f7eeef6c-d75c-45d4-aa76-8001b3222cc8": {
+          "cardinality": "map",
+          "dataType": {
+            "shapeId": "6f60af51-b8ff-444b-858f-b0b46bf5df57",
+            "type": "shape"
+          },
+          "id": "f7eeef6c-d75c-45d4-aa76-8001b3222cc8",
+          "name": "sectorIndustryMap"
         },
         "f9417bc7-7332-4fc8-b609-05f40373d8b8": {
           "cardinality": "one",
@@ -3125,6 +2771,425 @@
           },
           "positional": true
         },
+        "519ad41b-b3fc-41d2-80f6-97c606770154": {
+          "id": "519ad41b-b3fc-41d2-80f6-97c606770154",
+          "keys": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "0992d4a8-08a9-4396-9e86-79a257bd7296",
+              "name": "key"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "3c4671f0-fcb4-4995-bce1-66975f4bc1cc",
+              "name": "name"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "320d301c-1cd8-4297-af09-c3bdc377ac8b",
+              "name": "count"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "shapeId": "68f7f6d4-9931-423a-b989-cfbfbe41a5ae",
+                "type": "shape"
+              },
+              "id": "746edaa8-4dd5-4ec2-8bd2-27626a3b8df0",
+              "name": "profit"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "shapeId": "68f7f6d4-9931-423a-b989-cfbfbe41a5ae",
+                "type": "shape"
+              },
+              "id": "bc5d5871-ea3b-4f46-8871-7c53602895f5",
+              "name": "rank"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "7a0a58a5-5f8c-45e3-89ce-eb58c4f1af21",
+              "name": "score"
+            }
+          ],
+          "name": "finance-sector-industry-list-response-industries",
+          "origin": {
+            "code": "200",
+            "path": "/finance/v1/sector/{key}/industry",
+            "pointer": [
+              "industries"
+            ],
+            "verb": "get"
+          }
+        },
+        "525552af-515d-43eb-89e5-42e49f53f614": {
+          "id": "525552af-515d-43eb-89e5-42e49f53f614",
+          "keys": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "97ee570b-e0fb-43f3-9d80-23d8001c3c77",
+              "name": "id"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "5300af85-fdaa-45ac-b782-c7653f69261e",
+              "name": "key"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "f3752873-4578-4bb6-965b-67029f335e09",
+              "name": "name"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "76201397-4523-473c-aab6-450ddd3ea857",
+              "name": "sector"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "ac90eef2-e85e-4e4b-9db9-801751f0b372",
+              "name": "updated"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "9d17a7eb-e479-4690-a00e-9edf0db2262f",
+              "name": "count"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "shapeId": "68f7f6d4-9931-423a-b989-cfbfbe41a5ae",
+                "type": "shape"
+              },
+              "id": "49a52907-e7c1-4e09-a327-6342334e736d",
+              "name": "profit"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "shapeId": "68f7f6d4-9931-423a-b989-cfbfbe41a5ae",
+                "type": "shape"
+              },
+              "id": "ac7b8d25-7e9f-4d47-b8f9-2336e1f5b487",
+              "name": "rank"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "17ea2eb6-d54b-4c78-b9a8-632932f218d0",
+              "name": "score"
+            }
+          ],
+          "name": "finance-industry-list-response-industries",
+          "origin": {
+            "code": "200",
+            "path": "/finance/v1/industry",
+            "pointer": [
+              "industries"
+            ],
+            "verb": "get"
+          }
+        },
+        "5b56e907-964d-43ac-8b51-e5de3797f700": {
+          "id": "5b56e907-964d-43ac-8b51-e5de3797f700",
+          "keys": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "b47b4432-cf1c-4e23-8eaf-fe694dd02e6d",
+              "name": "id"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "b5d60885-051c-4507-a796-f8238aabebdf",
+              "name": "key"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "5c72af20-fe61-47a2-b43d-0b827a861d9d",
+              "name": "name"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "e4d3a885-96ca-445e-b2d5-16ad78f1dfd1",
+              "name": "sector"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "4f69995f-50ab-438c-aa8b-e27c580a49c2",
+              "name": "updated"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "a87716bc-5dbd-44f5-80ab-4194a8929576",
+              "name": "count"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "shapeId": "68f7f6d4-9931-423a-b989-cfbfbe41a5ae",
+                "type": "shape"
+              },
+              "id": "97dc35cd-73ea-4348-adc2-f7bf83c74e0c",
+              "name": "profit"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "shapeId": "68f7f6d4-9931-423a-b989-cfbfbe41a5ae",
+                "type": "shape"
+              },
+              "id": "68c2186f-951f-4344-b107-00e40daa8d96",
+              "name": "rank"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "d4db7dbb-5399-4b42-b6c9-ea8527db5eca",
+              "name": "score"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "89f2bdf9-e816-4581-9ce0-746928e74433",
+              "name": "sectorKey"
+            }
+          ],
+          "name": "industry-row"
+        },
+        "68f7f6d4-9931-423a-b989-cfbfbe41a5ae": {
+          "id": "68f7f6d4-9931-423a-b989-cfbfbe41a5ae",
+          "keys": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "45fcebe5-bbdc-4e9a-9dd0-c7e2917834fa",
+              "name": "b"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "9579aba6-f1fa-49d7-ae8d-07b9ce47d933",
+              "name": "m"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "a3d3535e-58de-4037-bbb8-156ac0f28d7f",
+              "name": "t"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "a233c997-f241-4ace-bfac-0dceab16803f",
+              "name": "s"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "97b024c9-5f8d-42e6-bdc9-fa6edc8aa053",
+              "name": "n"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "1ad2640e-9200-4b0d-9283-8f9cd0c12b63",
+              "name": "y"
+            }
+          ],
+          "name": "finance-industry-list-response-industries-profit",
+          "origin": {
+            "code": "200",
+            "path": "/finance/v1/industry",
+            "pointer": [
+              "industries",
+              "profit"
+            ],
+            "verb": "get"
+          }
+        },
+        "6f60af51-b8ff-444b-858f-b0b46bf5df57": {
+          "id": "6f60af51-b8ff-444b-858f-b0b46bf5df57",
+          "keys": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "shapeId": "db0118dc-ee69-4754-9fd5-fb2887322698",
+                "type": "shape"
+              },
+              "id": "c4088ef4-3dd8-4463-9cd0-7ff3adf50f54",
+              "name": "sector"
+            },
+            {
+              "cardinality": "many",
+              "dataType": {
+                "shapeId": "519ad41b-b3fc-41d2-80f6-97c606770154",
+                "type": "shape"
+              },
+              "id": "ba9c297a-b95e-4d65-b596-7e6f6723168f",
+              "name": "industries"
+            }
+          ],
+          "name": "finance-sector-industry-list-response",
+          "origin": {
+            "code": "200",
+            "path": "/finance/v1/sector/{key}/industry",
+            "pointer": [],
+            "verb": "get"
+          }
+        },
+        "76585609-6110-43c9-9745-4a7e83228422": {
+          "id": "76585609-6110-43c9-9745-4a7e83228422",
+          "keys": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "f09abe1c-1e6c-4836-bbd7-1617159dfad0",
+              "name": "symbol"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "5e02688e-d622-4770-b62e-dcc99b21c94f",
+              "name": "name"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "shapeId": "68f7f6d4-9931-423a-b989-cfbfbe41a5ae",
+                "type": "shape"
+              },
+              "id": "cb585750-ed4f-4100-906b-9d5c1c9dbdde",
+              "name": "profit"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "shapeId": "68f7f6d4-9931-423a-b989-cfbfbe41a5ae",
+                "type": "shape"
+              },
+              "id": "aa919210-605c-4c8c-88ac-aea8461d2b0b",
+              "name": "rank"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "7514ac9d-915a-4dc7-a784-433cf08d79f2",
+              "name": "score"
+            }
+          ],
+          "name": "finance-industry-company-list-response-companies",
+          "origin": {
+            "code": "200",
+            "path": "/finance/v1/industry/{key}/company",
+            "pointer": [
+              "companies"
+            ],
+            "verb": "get"
+          }
+        },
+        "8810a19e-105d-4590-b757-ab1efda6a737": {
+          "id": "8810a19e-105d-4590-b757-ab1efda6a737",
+          "keys": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "shapeId": "525552af-515d-43eb-89e5-42e49f53f614",
+                "type": "shape"
+              },
+              "id": "c2e99e9e-44d3-4711-9c97-f405723a418c",
+              "name": "industry"
+            },
+            {
+              "cardinality": "many",
+              "dataType": {
+                "shapeId": "76585609-6110-43c9-9745-4a7e83228422",
+                "type": "shape"
+              },
+              "id": "63dcdea7-7fd9-46da-9d94-ed18ad2e5b56",
+              "name": "companies"
+            }
+          ],
+          "name": "finance-industry-company-list-response",
+          "origin": {
+            "code": "200",
+            "path": "/finance/v1/industry/{key}/company",
+            "pointer": [],
+            "verb": "get"
+          }
+        },
         "b10293ed-9d1a-491e-a965-de9bc648c04d": {
           "id": "b10293ed-9d1a-491e-a965-de9bc648c04d",
           "keys": [],
@@ -3232,6 +3297,86 @@
             "code": "200",
             "path": "/finance/v1/dashboard",
             "pointer": [],
+            "verb": "get"
+          }
+        },
+        "db0118dc-ee69-4754-9fd5-fb2887322698": {
+          "id": "db0118dc-ee69-4754-9fd5-fb2887322698",
+          "keys": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "7374bdea-2cef-4335-9ac7-24e8f66da4b1",
+              "name": "id"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "881ebe48-d270-463a-8636-cf73f7f55738",
+              "name": "key"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "961f8f0b-ba59-44c5-acd0-1059e5ea3a86",
+              "name": "name"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "464538da-5d00-4d87-9ed0-fa681747c229",
+              "name": "updated"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "5b9fa8bc-80e6-40ac-974d-3ba696857f35",
+              "name": "count"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "shapeId": "68f7f6d4-9931-423a-b989-cfbfbe41a5ae",
+                "type": "shape"
+              },
+              "id": "48346d20-445a-4082-9b27-883d942f1060",
+              "name": "profit"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "shapeId": "68f7f6d4-9931-423a-b989-cfbfbe41a5ae",
+                "type": "shape"
+              },
+              "id": "22213469-4876-4a52-8506-6e1dc2a7400e",
+              "name": "rank"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "1838af01-810a-4283-a498-9f39eb66ec5a",
+              "name": "score"
+            }
+          ],
+          "name": "finance-sector-list-response-sectors",
+          "origin": {
+            "code": "200",
+            "path": "/finance/v1/sector",
+            "pointer": [
+              "sectors"
+            ],
             "verb": "get"
           }
         },
@@ -4974,7 +5119,7 @@
     }
   },
   "npmAllowlist": {},
-  "one": "0.4.128",
+  "one": "0.4.129",
   "screens": [
     {
       "computeds": {
@@ -5168,7 +5313,7 @@
           "returns": {
             "cardinality": "one",
             "dataType": {
-              "shapeId": "c58ce880-40c8-44c3-a98d-f117cf9aa810",
+              "shapeId": "39cb9ee5-d683-4a6c-8519-949824e4ef35",
               "type": "shape"
             },
             "optional": true
@@ -5192,30 +5337,66 @@
       "name": "my-strategy"
     },
     {
+      "autoCalls": [
+        {
+          "args": [
+            {
+              "binding": {
+                "path": [],
+                "root": {
+                  "id": "0625a637-e22a-4024-8d15-9edb427c54bf",
+                  "kind": "input"
+                }
+              },
+              "source": "binding",
+              "target": [
+                "ids"
+              ]
+            }
+          ],
+          "id": "13cb2429-d127-4363-b148-1b2241f5b4ad",
+          "methodId": "e2e9b8a5-35a2-4ce7-b1a5-9daf7ce5a98a",
+          "reads": [
+            {
+              "path": [],
+              "root": {
+                "id": "0625a637-e22a-4024-8d15-9edb427c54bf",
+                "kind": "input"
+              }
+            }
+          ],
+          "when": "on-change"
+        }
+      ],
       "computeds": {
         "e6cfce8a-7d55-49ac-a7bd-51168cc68fde": {
           "args": {
-            "ids": {
+            "03c83bcf-fdf7-43c7-8b75-7eeb256d8538": {
               "inputId": "0625a637-e22a-4024-8d15-9edb427c54bf",
               "source": "input"
             },
-            "map": {
+            "92f6284e-ca18-4eca-bb84-216c9ccc8258": {
+              "path": [
+                "584aa058-d365-4b82-a901-8c81d4aa4c0b"
+              ],
+              "source": "path"
+            },
+            "ad28034f-faa0-481e-8ad7-f841040ce322": {
+              "path": [
+                "1d4357aa-c32b-4a7f-9f0f-8373209367c0"
+              ],
+              "source": "path"
+            },
+            "d83a03fb-db1f-4a2a-bccb-b119215df195": {
               "path": [
                 "ff1de145-1162-42e4-b8c7-bec696b90d2a"
               ],
               "source": "path"
             }
           },
+          "functionId": "f97155fb-1a7a-47fe-b024-ce5fd0391656",
           "id": "e6cfce8a-7d55-49ac-a7bd-51168cc68fde",
-          "name": "carve",
-          "oneFunction": "getManyFromMaps",
-          "returns": {
-            "cardinality": "many",
-            "dataType": {
-              "shapeId": "c58ce880-40c8-44c3-a98d-f117cf9aa810",
-              "type": "shape"
-            }
-          }
+          "name": "carve"
         }
       },
       "featureId": "76e38aaa-d234-4aa1-b5fa-5b4595e714e2",
@@ -6150,64 +6331,37 @@
       "name": "user-settings"
     },
     {
+      "computeds": {
+        "9e3c1fc7-f201-4f68-87e8-e0c8ca7efe3e": {
+          "args": {
+            "data": {
+              "path": [
+                "584aa058-d365-4b82-a901-8c81d4aa4c0b"
+              ],
+              "source": "path"
+            },
+            "key": {
+              "source": "fixed",
+              "value": "id"
+            }
+          },
+          "id": "9e3c1fc7-f201-4f68-87e8-e0c8ca7efe3e",
+          "name": "strategies",
+          "oneFunction": "pluckStrings",
+          "returns": {
+            "cardinality": "many",
+            "dataType": {
+              "type": "string"
+            }
+          }
+        }
+      },
       "featureId": "76e38aaa-d234-4aa1-b5fa-5b4595e714e2",
       "id": "a8af81fc-8243-4dcf-bb1e-937234fcfcbf",
       "kind": "feature",
       "name": "default-strategy"
     },
     {
-      "computeds": {
-        "3cd5c12f-a337-496b-8af3-311851718f2a": {
-          "args": {
-            "id": {
-              "inputId": "7c38ade5-ff4c-4825-9932-ed95cc46a25c",
-              "source": "input"
-            },
-            "map": {
-              "path": [
-                "fbb0f8c3-f52d-453b-84f5-f4252c06231b"
-              ],
-              "source": "path"
-            }
-          },
-          "id": "3cd5c12f-a337-496b-8af3-311851718f2a",
-          "name": "fallback",
-          "oneFunction": "getFromMap",
-          "returns": {
-            "cardinality": "one",
-            "dataType": {
-              "shapeId": "301ddff8-1116-4816-b4ea-82cff1f9d5b2",
-              "type": "shape"
-            },
-            "optional": true
-          }
-        },
-        "4d05e43b-fe43-4232-a4d7-60b2b1ed52c7": {
-          "args": {
-            "id": {
-              "inputId": "7c38ade5-ff4c-4825-9932-ed95cc46a25c",
-              "source": "input"
-            },
-            "map": {
-              "path": [
-                "ff1de145-1162-42e4-b8c7-bec696b90d2a"
-              ],
-              "source": "path"
-            }
-          },
-          "id": "4d05e43b-fe43-4232-a4d7-60b2b1ed52c7",
-          "name": "strategy",
-          "oneFunction": "getFromMap",
-          "returns": {
-            "cardinality": "one",
-            "dataType": {
-              "shapeId": "c58ce880-40c8-44c3-a98d-f117cf9aa810",
-              "type": "shape"
-            },
-            "optional": true
-          }
-        }
-      },
       "featureId": "76e38aaa-d234-4aa1-b5fa-5b4595e714e2",
       "id": "8ed3a162-d0ae-4bf6-bb09-50bcb5f13889",
       "inputs": {
@@ -6222,61 +6376,94 @@
         }
       },
       "kind": "feature",
-      "name": "details",
-      "variants": {
-        "0dde82b1-b93d-4fd8-b3bf-f9d83009fc47": {
-          "id": "0dde82b1-b93d-4fd8-b3bf-f9d83009fc47",
-          "name": "has_id",
-          "rule": {
-            "children": [
-              {
-                "id": "rn2311",
-                "kind": "check",
-                "operand": {
-                  "kind": "literal",
-                  "value": ""
-                },
-                "operator": "exists",
-                "path": [
-                  "3cd5c12f-a337-496b-8af3-311851718f2a",
-                  "f79597e9-2ba7-4e65-8a12-e1c0439a28b1"
-                ]
-              }
-            ],
-            "connective": "all",
-            "id": "rn2312",
-            "kind": "group",
-            "negated": false
-          }
+      "name": "details"
+    },
+    {
+      "autoCalls": [
+        {
+          "args": [],
+          "id": "66d8a418-3ee1-4649-83ad-b6993eca1b84",
+          "methodId": "087681ec-460d-4255-8fe5-73b4d610d588"
         },
-        "fe43f913-6648-4a8c-bead-0bd962ba420c": {
-          "id": "fe43f913-6648-4a8c-bead-0bd962ba420c",
-          "name": "id_is_selected",
-          "rule": {
-            "children": [
-              {
-                "id": "rn1983",
-                "kind": "check",
-                "operand": {
-                  "kind": "path",
-                  "path": [
-                    "199fe710-0c4a-4535-8025-220334e33962"
-                  ]
-                },
-                "operator": "==",
-                "path": [
-                  "4d05e43b-fe43-4232-a4d7-60b2b1ed52c7",
-                  "72dcc428-97f5-414c-8208-16ae96c66e6b"
-                ]
-              }
-            ],
-            "connective": "all",
-            "id": "rn1984",
-            "kind": "group",
-            "negated": false
-          }
+        {
+          "args": [],
+          "id": "e40588bb-232c-4070-bc02-eb057a886826",
+          "methodId": "74c67822-1f95-4a66-97eb-2be78f9660f0"
         }
-      }
+      ],
+      "computeds": {
+        "166d9efb-110e-4af4-9323-600eecaeafc7": {
+          "args": {
+            "0b8634ef-a5eb-4838-8314-13a46408718e": {
+              "path": [
+                "26619119-8c40-4a11-8a31-8cb8334f4576"
+              ],
+              "source": "path"
+            },
+            "fb4e6800-d972-4f5d-b984-329d8e01e00a": {
+              "path": [
+                "d8db819d-46f1-47a1-9128-77c2d51ccac2"
+              ],
+              "source": "path"
+            }
+          },
+          "functionId": "77c04cae-347b-40cc-b4d7-3989b8929124",
+          "id": "166d9efb-110e-4af4-9323-600eecaeafc7",
+          "name": "industryHeat"
+        }
+      },
+      "featureId": "acef9153-606d-4de2-8699-7c87fa589384",
+      "id": "1b794dba-aa50-4f41-9ace-2bf4f343d3fa",
+      "kind": "feature",
+      "name": "industries"
+    },
+    {
+      "id": "a01cd96f-6b39-4e71-bf5b-2f932ff1d329",
+      "kind": "page",
+      "name": "industry"
+    },
+    {
+      "id": "b099ecbe-3e55-456a-8a91-ecf8659dcdc2",
+      "kind": "page",
+      "name": "industry-ranking"
+    },
+    {
+      "autoCalls": [
+        {
+          "args": [],
+          "id": "3a1d83c0-c889-4d02-91f1-7b6a2c5d4be2",
+          "methodId": "74c67822-1f95-4a66-97eb-2be78f9660f0"
+        }
+      ],
+      "computeds": {
+        "efbbd49c-dc58-4dc8-b4ca-e40586176005": {
+          "args": {
+            "c267a321-51f1-4ee3-87b3-ceedaec47b64": {
+              "path": [
+                "d8db819d-46f1-47a1-9128-77c2d51ccac2"
+              ],
+              "source": "path"
+            }
+          },
+          "functionId": "b5454470-09fd-481b-aa0e-8ba559eb1515",
+          "id": "efbbd49c-dc58-4dc8-b4ca-e40586176005",
+          "name": "sectorHeat"
+        }
+      },
+      "featureId": "acef9153-606d-4de2-8699-7c87fa589384",
+      "id": "ecfd3d95-90d7-4d56-84f8-c8378bd467c0",
+      "kind": "feature",
+      "name": "sectors"
+    },
+    {
+      "id": "b58fb7a3-eae1-4cc8-8cdb-b3e592d7e328",
+      "kind": "page",
+      "name": "sector"
+    },
+    {
+      "id": "65e2490d-10cd-49a4-a57c-3c257136ce82",
+      "kind": "page",
+      "name": "sector-ranking"
     },
     {
       "autoCalls": [
@@ -6286,23 +6473,23 @@
               "binding": {
                 "path": [],
                 "root": {
-                  "id": "a168f220-8415-4302-a326-c3567c99c865",
+                  "id": "e036596a-668d-486c-9cb7-05a9d0534b24",
                   "kind": "input"
                 }
               },
               "source": "binding",
               "target": [
-                "id"
+                "key"
               ]
             }
           ],
-          "id": "fc29c9fc-271e-4ef9-917f-34ce5f599e6a",
-          "methodId": "0268d52f-fc03-4d4d-9ad3-151a2252b4db",
+          "id": "97239dfe-5880-46ff-bb65-9f7c099f0e81",
+          "methodId": "068be5a3-0518-4f87-b19e-6dd9808c3f3a",
           "reads": [
             {
               "path": [],
               "root": {
-                "id": "a168f220-8415-4302-a326-c3567c99c865",
+                "id": "e036596a-668d-486c-9cb7-05a9d0534b24",
                 "kind": "input"
               }
             }
@@ -6311,104 +6498,138 @@
         }
       ],
       "computeds": {
-        "222031d5-5acc-48d7-9686-be5b013020ff": {
+        "4d06650e-0d1e-4da6-962d-e8c089775928": {
           "args": {
-            "id": {
-              "inputId": "a168f220-8415-4302-a326-c3567c99c865",
-              "source": "input"
-            },
-            "map": {
+            "72386339-d1fc-41a7-a514-0a95ab907bfe": {
               "path": [
-                "d2269743-b4cf-4a2b-b79a-71511ba565c1"
+                "f7eeef6c-d75c-45d4-aa76-8001b3222cc8"
               ],
               "source": "path"
+            },
+            "9fbd30b5-c36d-46c6-9f58-110a0ddd858d": {
+              "inputId": "e036596a-668d-486c-9cb7-05a9d0534b24",
+              "source": "input"
             }
           },
-          "id": "222031d5-5acc-48d7-9686-be5b013020ff",
-          "name": "standalones",
-          "oneFunction": "getFromMap",
-          "returns": {
-            "cardinality": "many",
-            "dataType": {
-              "shapeId": "256d42ec-d25e-4d06-8cfe-7861ae6e2aa6",
-              "type": "shape"
-            },
-            "optional": true
-          }
-        },
-        "74257bcf-2617-4422-8bb2-736bb8ab10b4": {
-          "args": {
-            "id": {
-              "inputId": "a168f220-8415-4302-a326-c3567c99c865",
-              "source": "input"
-            },
-            "idsMap": {
-              "path": [
-                "d82b0e16-c1dd-4e26-beb4-dd815fd504fd"
-              ],
-              "source": "path"
-            },
-            "map": {
-              "path": [
-                "fdb2f7ef-bd68-43c8-a8e9-fdc44d800ba3"
-              ],
-              "source": "path"
-            }
-          },
-          "id": "74257bcf-2617-4422-8bb2-736bb8ab10b4",
-          "name": "sleeve",
-          "oneFunction": "getManyViaMap",
-          "returns": {
-            "cardinality": "many",
-            "dataType": {
-              "shapeId": "62adab81-04c4-4091-8d46-723b91aecf6c",
-              "type": "shape"
-            }
-          }
+          "functionId": "5fc01177-6f53-4317-9648-d95fd0798c79",
+          "id": "4d06650e-0d1e-4da6-962d-e8c089775928",
+          "name": "sectorIndustryHeat"
         }
       },
-      "featureId": "76e38aaa-d234-4aa1-b5fa-5b4595e714e2",
-      "id": "fdb8279f-6a83-4c68-93a8-ffbcab4db5b2",
+      "featureId": "acef9153-606d-4de2-8699-7c87fa589384",
+      "id": "89f456af-d590-4139-ad0b-a4a85333ad51",
       "inputs": {
-        "a168f220-8415-4302-a326-c3567c99c865": {
+        "e036596a-668d-486c-9cb7-05a9d0534b24": {
           "cardinality": "one",
           "dataType": {
             "type": "string"
           },
-          "id": "a168f220-8415-4302-a326-c3567c99c865",
-          "name": "strategy"
+          "id": "e036596a-668d-486c-9cb7-05a9d0534b24",
+          "name": "id",
+          "required": true
         }
       },
       "kind": "feature",
-      "name": "sleeves",
-      "variants": {
-        "21d35899-5cf6-4e8c-9603-e7f140951493": {
-          "id": "21d35899-5cf6-4e8c-9603-e7f140951493",
-          "name": "has_id",
-          "rule": {
-            "children": [
-              {
-                "id": "rn2323",
-                "kind": "check",
-                "operand": {
-                  "kind": "literal",
-                  "value": ""
-                },
-                "operator": "exists",
-                "path": [
-                  "222031d5-5acc-48d7-9686-be5b013020ff",
-                  "59a06279-c1ed-472a-89b9-0435cc8a8963"
-                ],
-                "quantifier": "any"
-              }
-            ],
-            "connective": "all",
-            "id": "rn2324",
-            "kind": "group",
-            "negated": false
-          }
+      "name": "sector-industries"
+    },
+    {
+      "id": "d01de74c-b02c-4dfd-8cdb-dc69ec442b66",
+      "inputs": {
+        "ded683a4-a1f1-4f43-8e73-e319cea228b7": {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "id": "ded683a4-a1f1-4f43-8e73-e319cea228b7",
+          "name": "id",
+          "required": true
         }
-      }
+      },
+      "kind": "page",
+      "name": "sector-details"
+    },
+    {
+      "autoCalls": [
+        {
+          "args": [
+            {
+              "binding": {
+                "path": [],
+                "root": {
+                  "id": "8c22a412-037a-4fce-a386-4705f1183a9a",
+                  "kind": "input"
+                }
+              },
+              "source": "binding",
+              "target": [
+                "key"
+              ]
+            }
+          ],
+          "id": "39a162f7-a765-4587-87aa-35960d9a1380",
+          "methodId": "9c36151a-b0b9-4461-b82c-af603ca83fd7",
+          "reads": [
+            {
+              "path": [],
+              "root": {
+                "id": "8c22a412-037a-4fce-a386-4705f1183a9a",
+                "kind": "input"
+              }
+            }
+          ],
+          "when": "on-change"
+        }
+      ],
+      "computeds": {
+        "8886cb8f-cedb-4e4f-887f-14f6f9c11b5b": {
+          "args": {
+            "514e1a9c-88d6-464d-8b8d-97cb36f40d64": {
+              "path": [
+                "2b267001-1756-4057-845c-98c26debfa0f"
+              ],
+              "source": "path"
+            },
+            "66dffc7f-480e-4489-9a31-010aec0a9375": {
+              "inputId": "8c22a412-037a-4fce-a386-4705f1183a9a",
+              "source": "input"
+            }
+          },
+          "functionId": "cb70b736-9c99-4dd4-937d-8fec225cd32c",
+          "id": "8886cb8f-cedb-4e4f-887f-14f6f9c11b5b",
+          "name": "industryCompanyHeat"
+        }
+      },
+      "featureId": "acef9153-606d-4de2-8699-7c87fa589384",
+      "id": "48c71e86-9e88-4527-955b-6f0f3535689f",
+      "inputs": {
+        "8c22a412-037a-4fce-a386-4705f1183a9a": {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "id": "8c22a412-037a-4fce-a386-4705f1183a9a",
+          "name": "id",
+          "required": true
+        }
+      },
+      "kind": "feature",
+      "name": "industry-companies"
+    },
+    {
+      "id": "66dccb87-ce1a-4a9b-8878-86e248712c2c",
+      "inputs": {
+        "8ad9caf9-d717-4a9d-b526-8363821e0391": {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "id": "8ad9caf9-d717-4a9d-b526-8363821e0391",
+          "name": "id",
+          "required": true
+        }
+      },
+      "kind": "page",
+      "name": "industry-details"
     }
   ],
   "sharedShapes": {},

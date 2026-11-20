@@ -21,7 +21,9 @@
         "root_default_portfolio",
         "root_default_instrument",
         "root_default_index",
-        "root_default_strategy"
+        "root_default_strategy",
+        "root_default_industry",
+        "root_default_sector"
       ],
       "isDefault": true,
       "linkKind": "url",
@@ -40,7 +42,7 @@
     "root_default_index": {
       "children": [
         "root_default_index_default",
-        "root_default_index_id"
+        "root_default_index_details"
       ],
       "icon": "trending-up",
       "label": "index",
@@ -57,20 +59,44 @@
       "pageId": "b29b5847-0c82-447b-bbe4-c0aac7a71a28",
       "presentation": "static"
     },
-    "root_default_index_id": {
+    "root_default_index_details": {
       "children": [],
       "icon": "trending-up",
       "label": "details",
       "linkKind": "url",
-      "navId": "root_default_index_id",
+      "navId": "root_default_index_details",
       "pageId": "e24f9bb0-91ec-4874-8313-1c0d631fa204",
       "param": "id",
-      "presentation": "dynamic",
-      "rowSource": {
-        "computedId": "ca4667bb-3c68-4a41-a4f3-5ae43e3a7dd8",
-        "featureId": "acef9153-606d-4de2-8699-7c87fa589384",
-        "kind": "computed"
-      }
+      "presentation": "dynamic"
+    },
+    "root_default_industry": {
+      "children": [
+        "root_default_industry_default",
+        "root_default_industry_id"
+      ],
+      "icon": "apps",
+      "label": "industry",
+      "linkKind": "url",
+      "navId": "root_default_industry",
+      "pageId": "a01cd96f-6b39-4e71-bf5b-2f932ff1d329",
+      "presentation": "static"
+    },
+    "root_default_industry_default": {
+      "children": [],
+      "isDefault": true,
+      "linkKind": "url",
+      "navId": "root_default_industry_default",
+      "pageId": "b099ecbe-3e55-456a-8a91-ecf8659dcdc2",
+      "presentation": "static"
+    },
+    "root_default_industry_id": {
+      "children": [],
+      "icon": "trending-up",
+      "linkKind": "url",
+      "navId": "root_default_industry_id",
+      "pageId": "66dccb87-ce1a-4a9b-8878-86e248712c2c",
+      "param": "id",
+      "presentation": "dynamic"
     },
     "root_default_instrument": {
       "children": [
@@ -117,6 +143,35 @@
       "pageId": "f2080d4b-2023-4399-9d2b-0206c2307a5a",
       "presentation": "static"
     },
+    "root_default_sector": {
+      "children": [
+        "root_default_sector_default",
+        "root_default_sector_id"
+      ],
+      "icon": "apps",
+      "label": "sector",
+      "linkKind": "url",
+      "navId": "root_default_sector",
+      "pageId": "b58fb7a3-eae1-4cc8-8cdb-b3e592d7e328",
+      "presentation": "static"
+    },
+    "root_default_sector_default": {
+      "children": [],
+      "isDefault": true,
+      "linkKind": "url",
+      "navId": "root_default_sector_default",
+      "pageId": "65e2490d-10cd-49a4-a57c-3c257136ce82",
+      "presentation": "static"
+    },
+    "root_default_sector_id": {
+      "children": [],
+      "icon": "trending-up",
+      "linkKind": "url",
+      "navId": "root_default_sector_id",
+      "pageId": "d01de74c-b02c-4dfd-8cdb-dc69ec442b66",
+      "param": "id",
+      "presentation": "dynamic"
+    },
     "root_default_strategy": {
       "children": [
         "root_default_strategy_default",
@@ -144,12 +199,7 @@
       "navId": "root_default_strategy_id",
       "pageId": "8ed3a162-d0ae-4bf6-bb09-50bcb5f13889",
       "param": "id",
-      "presentation": "dynamic",
-      "rowSource": {
-        "computedId": "1afa9294-3815-49ed-8192-2cb24b8db3b1",
-        "featureId": "76e38aaa-d234-4aa1-b5fa-5b4595e714e2",
-        "kind": "computed"
-      }
+      "presentation": "dynamic"
     },
     "root_notification": {
       "children": [],

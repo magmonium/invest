@@ -1,29 +1,65 @@
 {
   "meta": {
+    "autoCalls": [
+      {
+        "args": [
+          {
+            "binding": {
+              "path": [],
+              "root": {
+                "id": "0625a637-e22a-4024-8d15-9edb427c54bf",
+                "kind": "input"
+              }
+            },
+            "source": "binding",
+            "target": [
+              "ids"
+            ]
+          }
+        ],
+        "id": "13cb2429-d127-4363-b148-1b2241f5b4ad",
+        "methodId": "e2e9b8a5-35a2-4ce7-b1a5-9daf7ce5a98a",
+        "reads": [
+          {
+            "path": [],
+            "root": {
+              "id": "0625a637-e22a-4024-8d15-9edb427c54bf",
+              "kind": "input"
+            }
+          }
+        ],
+        "when": "on-change"
+      }
+    ],
     "computeds": {
       "e6cfce8a-7d55-49ac-a7bd-51168cc68fde": {
         "args": {
-          "ids": {
+          "03c83bcf-fdf7-43c7-8b75-7eeb256d8538": {
             "inputId": "0625a637-e22a-4024-8d15-9edb427c54bf",
             "source": "input"
           },
-          "map": {
+          "92f6284e-ca18-4eca-bb84-216c9ccc8258": {
+            "path": [
+              "584aa058-d365-4b82-a901-8c81d4aa4c0b"
+            ],
+            "source": "path"
+          },
+          "ad28034f-faa0-481e-8ad7-f841040ce322": {
+            "path": [
+              "1d4357aa-c32b-4a7f-9f0f-8373209367c0"
+            ],
+            "source": "path"
+          },
+          "d83a03fb-db1f-4a2a-bccb-b119215df195": {
             "path": [
               "ff1de145-1162-42e4-b8c7-bec696b90d2a"
             ],
             "source": "path"
           }
         },
+        "functionId": "f97155fb-1a7a-47fe-b024-ce5fd0391656",
         "id": "e6cfce8a-7d55-49ac-a7bd-51168cc68fde",
-        "name": "carve",
-        "oneFunction": "getManyFromMaps",
-        "returns": {
-          "cardinality": "many",
-          "dataType": {
-            "shapeId": "c58ce880-40c8-44c3-a98d-f117cf9aa810",
-            "type": "shape"
-          }
-        }
+        "name": "carve"
       }
     },
     "featureId": "76e38aaa-d234-4aa1-b5fa-5b4595e714e2",
@@ -74,9 +110,7 @@
       "90f58351-240c-4d32-9823-4ab341b8a32f": {
         "bindings": {
           "data": {
-            "path": [
-              "70a63758-4a07-4a5b-82e2-bd152528367e"
-            ],
+            "path": [],
             "root": {
               "alias": "item",
               "kind": "alias",
@@ -84,11 +118,9 @@
             }
           },
           "label": {
-            "path": [
-              "1f2e32c6-1cce-4cda-8a12-5aafa4e125fb"
-            ],
+            "path": [],
             "root": {
-              "alias": "item",
+              "alias": "key",
               "kind": "alias",
               "repeatId": "01014350-e2f3-44cf-841f-92a1a0d262a8"
             }
