@@ -439,6 +439,921 @@
     },
     {
       "domain": "finance",
+      "id": "get /finance/v1/industry",
+      "operationId": "finance_v1_industry_list",
+      "params": [],
+      "path": "/finance/v1/industry",
+      "responses": [
+        {
+          "cardinality": "one",
+          "code": "200",
+          "dataType": {
+            "shapeId": "4f0b4e69-4ad8-51ff-b100-9f0bb0ba7d09",
+            "type": "shape"
+          },
+          "description": "Industries retrieved successfully",
+          "doc": {
+            "members": [
+              {
+                "members": [
+                  {
+                    "description": "Industry id",
+                    "members": [],
+                    "name": "id",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "URL slug",
+                    "members": [],
+                    "name": "key",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Industry name",
+                    "members": [],
+                    "name": "name",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Most common sector of its members",
+                    "members": [],
+                    "name": "sector",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Last nightly analysis",
+                    "members": [],
+                    "name": "updated",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Member count",
+                    "members": [],
+                    "name": "count",
+                    "required": false,
+                    "type": "integer"
+                  },
+                  {
+                    "description": "One value per period: b=10, m=20, t=60, s=120, n=180, y=240 trading days",
+                    "members": [
+                      {
+                        "members": [],
+                        "name": "b",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "m",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "t",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "s",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "n",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "y",
+                        "required": false,
+                        "type": "number"
+                      }
+                    ],
+                    "name": "profit",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "One value per period: b=10, m=20, t=60, s=120, n=180, y=240 trading days",
+                    "members": [
+                      {
+                        "members": [],
+                        "name": "b",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "m",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "t",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "s",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "n",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "y",
+                        "required": false,
+                        "type": "number"
+                      }
+                    ],
+                    "name": "rank",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Composite relative strength among Industries, 0–100",
+                    "members": [],
+                    "name": "score",
+                    "required": false,
+                    "type": "number"
+                  }
+                ],
+                "name": "industries",
+                "required": false,
+                "type": "object[]"
+              }
+            ],
+            "name": "",
+            "required": true,
+            "type": "object"
+          },
+          "shapes": [
+            {
+              "id": "e056b268-0ef6-5e2a-a55b-086e1aceb308",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "5293fe3a-21a0-5300-8e52-addc81357cda",
+                  "name": "b"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "4593e9c3-30a0-5a9d-9552-b8e174356863",
+                  "name": "m"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "3c93db98-37a0-55a2-bc52-91866b355a38",
+                  "name": "t"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "4393e69d-32a0-5dc3-bf52-963f7235653d",
+                  "name": "s"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "4693eb56-2da0-55e4-9252-b428753569f6",
+                  "name": "n"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "3993d6df-3ca0-5d81-8952-a5fd6835557f",
+                  "name": "y"
+                }
+              ],
+              "name": "finance-industry-list-response-industries-profit",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/industry",
+                "pointer": [
+                  "industries",
+                  "profit"
+                ],
+                "verb": "get"
+              }
+            },
+            {
+              "id": "56ac2b8d-9330-5ef3-b01e-7837fb229a2d",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "84d4002e-a505-5b68-936a-5e642ecee04e",
+                  "name": "id"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "97a3bb9a-b8e2-5194-8109-ce980d92293a",
+                  "name": "key"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "1ab47aa8-aa14-5c1e-9337-4bca07bdf3c8",
+                  "name": "name"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "18eca24d-1b7d-5497-873b-dad31fe3616d",
+                  "name": "sector"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "827e2a12-96bb-5eb8-8d70-7dbc82b14cb2",
+                  "name": "updated"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "caf60542-2915-5b1c-965f-3c28a4a03ce2",
+                  "name": "count"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "e056b268-0ef6-5e2a-a55b-086e1aceb308",
+                    "type": "shape"
+                  },
+                  "id": "a3a9adf9-ad8f-5b3f-bf82-489b51e69d19",
+                  "name": "profit"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "e056b268-0ef6-5e2a-a55b-086e1aceb308",
+                    "type": "shape"
+                  },
+                  "id": "33960629-812e-5a3f-8339-1a9b39ec3449",
+                  "name": "rank"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "65f6763f-d017-53ed-b315-6df93fa0addf",
+                  "name": "score"
+                }
+              ],
+              "name": "finance-industry-list-response-industries",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/industry",
+                "pointer": [
+                  "industries"
+                ],
+                "verb": "get"
+              }
+            },
+            {
+              "id": "4f0b4e69-4ad8-51ff-b100-9f0bb0ba7d09",
+              "keys": [
+                {
+                  "cardinality": "many",
+                  "dataType": {
+                    "shapeId": "56ac2b8d-9330-5ef3-b01e-7837fb229a2d",
+                    "type": "shape"
+                  },
+                  "id": "63fed2e1-262f-5893-b597-822792f9d101",
+                  "name": "industries"
+                }
+              ],
+              "name": "finance-industry-list-response",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/industry",
+                "pointer": [],
+                "verb": "get"
+              }
+            }
+          ],
+          "tier": "anonymous",
+          "unmapped": []
+        }
+      ],
+      "segments": [
+        "industry"
+      ],
+      "summary": "Every Industry with its median return per period, rank per period and composite score among all Industries. Sorted by score, unranked last. Rebuilt nightly by Wheeler `-i`.",
+      "verb": "get"
+    },
+    {
+      "domain": "finance",
+      "id": "get /finance/v1/industry/{key}/company",
+      "operationId": "finance_v1_industry_company_list",
+      "params": [
+        {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "description": "Industry key (e.g. oil-gas)",
+          "doc": {
+            "description": "Industry key (e.g. oil-gas)",
+            "members": [],
+            "name": "key",
+            "required": true,
+            "type": "string"
+          },
+          "location": "path",
+          "name": "key",
+          "required": true,
+          "shapes": [],
+          "unmapped": []
+        }
+      ],
+      "path": "/finance/v1/industry/{key}/company",
+      "responses": [
+        {
+          "cardinality": "one",
+          "code": "200",
+          "dataType": {
+            "shapeId": "03bab16c-cee8-588e-a810-dbfaff6134cc",
+            "type": "shape"
+          },
+          "description": "Industry Companies retrieved successfully",
+          "doc": {
+            "members": [
+              {
+                "members": [
+                  {
+                    "description": "Industry id",
+                    "members": [],
+                    "name": "id",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "URL slug",
+                    "members": [],
+                    "name": "key",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Industry name",
+                    "members": [],
+                    "name": "name",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Most common sector of its members",
+                    "members": [],
+                    "name": "sector",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Last nightly analysis",
+                    "members": [],
+                    "name": "updated",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Member count",
+                    "members": [],
+                    "name": "count",
+                    "required": false,
+                    "type": "integer"
+                  },
+                  {
+                    "description": "One value per period: b=10, m=20, t=60, s=120, n=180, y=240 trading days",
+                    "members": [
+                      {
+                        "members": [],
+                        "name": "b",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "m",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "t",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "s",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "n",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "y",
+                        "required": false,
+                        "type": "number"
+                      }
+                    ],
+                    "name": "profit",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "One value per period: b=10, m=20, t=60, s=120, n=180, y=240 trading days",
+                    "members": [
+                      {
+                        "members": [],
+                        "name": "b",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "m",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "t",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "s",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "n",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "y",
+                        "required": false,
+                        "type": "number"
+                      }
+                    ],
+                    "name": "rank",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Composite relative strength among Industries, 0–100",
+                    "members": [],
+                    "name": "score",
+                    "required": false,
+                    "type": "number"
+                  }
+                ],
+                "name": "industry",
+                "required": false,
+                "type": "object"
+              },
+              {
+                "members": [
+                  {
+                    "members": [],
+                    "name": "symbol",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "members": [],
+                    "name": "name",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "One value per period: b=10, m=20, t=60, s=120, n=180, y=240 trading days",
+                    "members": [
+                      {
+                        "members": [],
+                        "name": "b",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "m",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "t",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "s",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "n",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "y",
+                        "required": false,
+                        "type": "number"
+                      }
+                    ],
+                    "name": "profit",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "One value per period: b=10, m=20, t=60, s=120, n=180, y=240 trading days",
+                    "members": [
+                      {
+                        "members": [],
+                        "name": "b",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "m",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "t",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "s",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "n",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "y",
+                        "required": false,
+                        "type": "number"
+                      }
+                    ],
+                    "name": "rank",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Composite relative strength within the Industry, 0–100",
+                    "members": [],
+                    "name": "score",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "members": [],
+                    "name": "avgScore",
+                    "required": false,
+                    "type": "number"
+                  }
+                ],
+                "name": "companies",
+                "required": false,
+                "type": "object[]"
+              }
+            ],
+            "name": "",
+            "required": true,
+            "type": "object"
+          },
+          "shapes": [
+            {
+              "id": "bd249c20-d5b8-5ae6-976d-0b820736ee40",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "c93fca82-c88b-52e4-bd6c-c1a88987baa2",
+                  "name": "b"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "cc3fcf3b-bf8b-54b9-bc6c-c0158c87bf5b",
+                  "name": "m"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "b33fa7e0-d68b-58ee-b36c-b1ea73879800",
+                  "name": "t"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "ba3fb2e5-d98b-5da7-ae6c-aa0b7a87a305",
+                  "name": "s"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "cd3fd0ce-bc8b-5000-b96c-bb5c8d87c0ee",
+                  "name": "n"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "c03fbc57-d38b-5435-a86c-a0998087ac77",
+                  "name": "y"
+                }
+              ],
+              "name": "finance-industry-company-list-response-industry-profit",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/industry/{key}/company",
+                "pointer": [
+                  "industry",
+                  "profit"
+                ],
+                "verb": "get"
+              }
+            },
+            {
+              "id": "9c64a9e5-86ad-580f-830e-a4ebbb30dd05",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "a7243c16-8d07-550c-ba6a-3a908fde0fb6",
+                  "name": "id"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "b3f25562-488f-5520-bf7f-235c707a1582",
+                  "name": "key"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "b270f540-5982-5ee2-9f54-30d642d74de0",
+                  "name": "name"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "2e427655-3b31-5b3b-8225-265fe19479f5",
+                  "name": "sector"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "e8cd4afa-89ea-5e84-a447-94e055f77c1a",
+                  "name": "updated"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "35f906ea-2ad9-5c30-81f2-22c4bad7150a",
+                  "name": "count"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "bd249c20-d5b8-5ae6-976d-0b820736ee40",
+                    "type": "shape"
+                  },
+                  "id": "ab7a1651-7292-54b3-af81-2757e14a91f1",
+                  "name": "profit"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "bd249c20-d5b8-5ae6-976d-0b820736ee40",
+                    "type": "shape"
+                  },
+                  "id": "ca0c7fa1-c5f6-5f93-bee3-8b7773bf8d41",
+                  "name": "rank"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "f79f5497-dc08-58d1-a960-10e5a8bc73b7",
+                  "name": "score"
+                }
+              ],
+              "name": "finance-industry-company-list-response-industry",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/industry/{key}/company",
+                "pointer": [
+                  "industry"
+                ],
+                "verb": "get"
+              }
+            },
+            {
+              "id": "f380b564-b41d-524a-bdba-3096bbb41044",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "b53ea79c-a46f-51f2-bd24-5ed67aa271fc",
+                  "name": "symbol"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "3abfff6b-9e6f-5fc9-80ae-bcbdaf5fdecb",
+                  "name": "name"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "bd249c20-d5b8-5ae6-976d-0b820736ee40",
+                    "type": "shape"
+                  },
+                  "id": "99c57f72-3bd6-5ca8-9754-23cc5f2adcd2",
+                  "name": "profit"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "bd249c20-d5b8-5ae6-976d-0b820736ee40",
+                    "type": "shape"
+                  },
+                  "id": "bb891ea6-1f3d-5bd4-97a3-5b383028fe06",
+                  "name": "rank"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "c0b7601a-f9e1-5928-84d6-02ccf86468fa",
+                  "name": "score"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "3a1b7f52-f258-589c-8306-bb383321dbf2",
+                  "name": "avgScore"
+                }
+              ],
+              "name": "finance-industry-company-list-response-companies",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/industry/{key}/company",
+                "pointer": [
+                  "companies"
+                ],
+                "verb": "get"
+              }
+            },
+            {
+              "id": "03bab16c-cee8-588e-a810-dbfaff6134cc",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "9c64a9e5-86ad-580f-830e-a4ebbb30dd05",
+                    "type": "shape"
+                  },
+                  "id": "fb8d8dd6-33dc-50c0-818d-8dac180a4cb6",
+                  "name": "industry"
+                },
+                {
+                  "cardinality": "many",
+                  "dataType": {
+                    "shapeId": "f380b564-b41d-524a-bdba-3096bbb41044",
+                    "type": "shape"
+                  },
+                  "id": "78d86e0f-d9ad-5181-8991-88e5d2986e6f",
+                  "name": "companies"
+                }
+              ],
+              "name": "finance-industry-company-list-response",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/industry/{key}/company",
+                "pointer": [],
+                "verb": "get"
+              }
+            }
+          ],
+          "tier": "anonymous",
+          "unmapped": []
+        }
+      ],
+      "segments": [
+        "industry",
+        "{key}",
+        "company"
+      ],
+      "summary": "One Industry and its Companies ranked against each other: return, rank per period and composite score within the Industry. Members with no return yet come last with no rank. Unknown key returns 200 with `industry: null`.",
+      "verb": "get"
+    },
+    {
+      "domain": "finance",
       "id": "get /finance/v1/plan/{symbol}",
       "operationId": "finance_plan_row",
       "params": [
@@ -822,6 +1737,893 @@
         "{symbol}"
       ],
       "summary": "Read one symbol's Rebalance Plan Row",
+      "verb": "get"
+    },
+    {
+      "domain": "finance",
+      "id": "get /finance/v1/sector",
+      "operationId": "finance_v1_sector_list",
+      "params": [],
+      "path": "/finance/v1/sector",
+      "responses": [
+        {
+          "cardinality": "one",
+          "code": "200",
+          "dataType": {
+            "shapeId": "f9b03e9a-a687-5344-90ae-8fc8d5b1c4ba",
+            "type": "shape"
+          },
+          "description": "Sectors retrieved successfully",
+          "doc": {
+            "members": [
+              {
+                "members": [
+                  {
+                    "description": "Sector id",
+                    "members": [],
+                    "name": "id",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "URL slug",
+                    "members": [],
+                    "name": "key",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Sector name",
+                    "members": [],
+                    "name": "name",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Last nightly analysis",
+                    "members": [],
+                    "name": "updated",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Member Industry count",
+                    "members": [],
+                    "name": "count",
+                    "required": false,
+                    "type": "integer"
+                  },
+                  {
+                    "description": "One value per period: b=10, m=20, t=60, s=120, n=180, y=240 trading days",
+                    "members": [
+                      {
+                        "members": [],
+                        "name": "b",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "m",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "t",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "s",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "n",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "y",
+                        "required": false,
+                        "type": "number"
+                      }
+                    ],
+                    "name": "profit",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "One value per period: b=10, m=20, t=60, s=120, n=180, y=240 trading days",
+                    "members": [
+                      {
+                        "members": [],
+                        "name": "b",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "m",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "t",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "s",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "n",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "y",
+                        "required": false,
+                        "type": "number"
+                      }
+                    ],
+                    "name": "rank",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Composite relative strength among Sectors, 0–100",
+                    "members": [],
+                    "name": "score",
+                    "required": false,
+                    "type": "number"
+                  }
+                ],
+                "name": "sectors",
+                "required": false,
+                "type": "object[]"
+              }
+            ],
+            "name": "",
+            "required": true,
+            "type": "object"
+          },
+          "shapes": [
+            {
+              "id": "574cd038-e903-5eae-961a-b1ba5bd8c058",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "844a6e2a-fe42-5c1c-af37-7570f1c02c4a",
+                  "name": "b"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "774a59b3-0542-5721-be37-8d0de4c017d3",
+                  "name": "m"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "8e4a7de8-ec42-5fc6-a537-65b2fbc03c08",
+                  "name": "t"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "954a88ed-ef42-547f-a037-5dd302c0470d",
+                  "name": "s"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "784a5b46-0242-5268-bb37-8854e5c01966",
+                  "name": "n"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "8b4a792f-f942-543d-aa37-6d91f8c0374f",
+                  "name": "y"
+                }
+              ],
+              "name": "finance-sector-list-response-sectors-profit",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/sector",
+                "pointer": [
+                  "sectors",
+                  "profit"
+                ],
+                "verb": "get"
+              }
+            },
+            {
+              "id": "3bd850bd-7e86-55a7-9a80-14ebaf3c145d",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "39fe6e9e-9d22-5314-89f6-0a90d175ccbe",
+                  "name": "id"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "596fc84a-9e83-5b88-b897-935caa588fea",
+                  "name": "key"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "45eea718-6a5c-5d3a-80cc-80d604621638",
+                  "name": "name"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "d0a27982-a564-51ac-b277-04e02a0fd022",
+                  "name": "updated"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "b6c83c52-ea37-57b8-b258-12c44ab8a8f2",
+                  "name": "count"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "574cd038-e903-5eae-961a-b1ba5bd8c058",
+                    "type": "shape"
+                  },
+                  "id": "1dbb0f09-5e77-54ab-9ff9-f7576135aa29",
+                  "name": "profit"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "574cd038-e903-5eae-961a-b1ba5bd8c058",
+                    "type": "shape"
+                  },
+                  "id": "30b99b79-5cce-546b-a05b-db77d5dec299",
+                  "name": "rank"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "9c56e1cf-4da6-5fc9-99c6-00e5784d7d6f",
+                  "name": "score"
+                }
+              ],
+              "name": "finance-sector-list-response-sectors",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/sector",
+                "pointer": [
+                  "sectors"
+                ],
+                "verb": "get"
+              }
+            },
+            {
+              "id": "f9b03e9a-a687-5344-90ae-8fc8d5b1c4ba",
+              "keys": [
+                {
+                  "cardinality": "many",
+                  "dataType": {
+                    "shapeId": "3bd850bd-7e86-55a7-9a80-14ebaf3c145d",
+                    "type": "shape"
+                  },
+                  "id": "06ad7cb5-76ed-51eb-882b-5baf5d2ed9d5",
+                  "name": "sectors"
+                }
+              ],
+              "name": "finance-sector-list-response",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/sector",
+                "pointer": [],
+                "verb": "get"
+              }
+            }
+          ],
+          "tier": "anonymous",
+          "unmapped": []
+        }
+      ],
+      "segments": [
+        "sector"
+      ],
+      "summary": "Every Sector with its median Industry return per period, rank per period and composite score among all Sectors. Sorted by score, unranked last. Rebuilt nightly by Wheeler `-i`, after Industries.",
+      "verb": "get"
+    },
+    {
+      "domain": "finance",
+      "id": "get /finance/v1/sector/{key}/industry",
+      "operationId": "finance_v1_sector_industry_list",
+      "params": [
+        {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "description": "Sector key (e.g. financials)",
+          "doc": {
+            "description": "Sector key (e.g. financials)",
+            "members": [],
+            "name": "key",
+            "required": true,
+            "type": "string"
+          },
+          "location": "path",
+          "name": "key",
+          "required": true,
+          "shapes": [],
+          "unmapped": []
+        }
+      ],
+      "path": "/finance/v1/sector/{key}/industry",
+      "responses": [
+        {
+          "cardinality": "one",
+          "code": "200",
+          "dataType": {
+            "shapeId": "ad6273cf-153a-5b11-bdba-89353ee9276f",
+            "type": "shape"
+          },
+          "description": "Sector Industries retrieved successfully",
+          "doc": {
+            "members": [
+              {
+                "members": [
+                  {
+                    "description": "Sector id",
+                    "members": [],
+                    "name": "id",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "URL slug",
+                    "members": [],
+                    "name": "key",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Sector name",
+                    "members": [],
+                    "name": "name",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Last nightly analysis",
+                    "members": [],
+                    "name": "updated",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Member Industry count",
+                    "members": [],
+                    "name": "count",
+                    "required": false,
+                    "type": "integer"
+                  },
+                  {
+                    "description": "One value per period: b=10, m=20, t=60, s=120, n=180, y=240 trading days",
+                    "members": [
+                      {
+                        "members": [],
+                        "name": "b",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "m",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "t",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "s",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "n",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "y",
+                        "required": false,
+                        "type": "number"
+                      }
+                    ],
+                    "name": "profit",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "One value per period: b=10, m=20, t=60, s=120, n=180, y=240 trading days",
+                    "members": [
+                      {
+                        "members": [],
+                        "name": "b",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "m",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "t",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "s",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "n",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "y",
+                        "required": false,
+                        "type": "number"
+                      }
+                    ],
+                    "name": "rank",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Composite relative strength among Sectors, 0–100",
+                    "members": [],
+                    "name": "score",
+                    "required": false,
+                    "type": "number"
+                  }
+                ],
+                "name": "sector",
+                "required": false,
+                "type": "object"
+              },
+              {
+                "members": [
+                  {
+                    "description": "Industry key — drill down via industry/<key>/company",
+                    "members": [],
+                    "name": "key",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "members": [],
+                    "name": "name",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Industry member Company count",
+                    "members": [],
+                    "name": "count",
+                    "required": false,
+                    "type": "integer"
+                  },
+                  {
+                    "description": "One value per period: b=10, m=20, t=60, s=120, n=180, y=240 trading days",
+                    "members": [
+                      {
+                        "members": [],
+                        "name": "b",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "m",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "t",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "s",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "n",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "y",
+                        "required": false,
+                        "type": "number"
+                      }
+                    ],
+                    "name": "profit",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "One value per period: b=10, m=20, t=60, s=120, n=180, y=240 trading days",
+                    "members": [
+                      {
+                        "members": [],
+                        "name": "b",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "m",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "t",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "s",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "n",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "members": [],
+                        "name": "y",
+                        "required": false,
+                        "type": "number"
+                      }
+                    ],
+                    "name": "rank",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Composite relative strength within the Sector, 0–100",
+                    "members": [],
+                    "name": "score",
+                    "required": false,
+                    "type": "number"
+                  }
+                ],
+                "name": "industries",
+                "required": false,
+                "type": "object[]"
+              }
+            ],
+            "name": "",
+            "required": true,
+            "type": "object"
+          },
+          "shapes": [
+            {
+              "id": "db3dd2a3-d135-5541-95d6-3b155444bf43",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "84985dbd-00ac-5bff-b800-328b4dd4ac5d",
+                  "name": "b"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "75984620-05ac-53de-b500-2dd23ed494c0",
+                  "name": "m"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "8e986d7b-0eac-5209-8e00-552d57d4bc1b",
+                  "name": "t"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "9398755a-0fac-539c-8700-4a285cd4c3fa",
+                  "name": "s"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "78984ad9-04ac-524b-b400-2c3f41d49979",
+                  "name": "n"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "8998659c-19ac-535a-8100-40b652d4b43c",
+                  "name": "y"
+                }
+              ],
+              "name": "finance-sector-industry-list-response-sector-profit",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/sector/{key}/industry",
+                "pointer": [
+                  "sector",
+                  "profit"
+                ],
+                "verb": "get"
+              }
+            },
+            {
+              "id": "f82d49cc-133b-5d86-b756-d2d2e84693ec",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "6eee4acd-b431-50d3-b114-5b6753a1236d",
+                  "name": "id"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "302886af-8049-5db5-bfda-91619338bccf",
+                  "name": "key"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "9eff1393-3589-5fed-be39-d0b173ffdf33",
+                  "name": "name"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "334bbf6f-bbb3-56e9-90db-8dc5f83a5f8f",
+                  "name": "updated"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "1b515d7f-5280-584d-b2ad-0021e263d19f",
+                  "name": "count"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "db3dd2a3-d135-5541-95d6-3b155444bf43",
+                    "type": "shape"
+                  },
+                  "id": "20a3229a-23da-5edc-92f8-87904962d73a",
+                  "name": "profit"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "db3dd2a3-d135-5541-95d6-3b155444bf43",
+                    "type": "shape"
+                  },
+                  "id": "681c414e-8421-5348-a4d5-337c3d1b79ee",
+                  "name": "rank"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "67ceb242-4810-515c-a852-0cd0315b8f62",
+                  "name": "score"
+                }
+              ],
+              "name": "finance-sector-industry-list-response-sector",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/sector/{key}/industry",
+                "pointer": [
+                  "sector"
+                ],
+                "verb": "get"
+              }
+            },
+            {
+              "id": "8ff6845e-ba0a-5f44-84ff-4868d485857e",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "fa6e289d-c5e3-5797-955e-3fab655a18bd",
+                  "name": "key"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "ba28ade5-2a73-5bcb-a030-6777e918e285",
+                  "name": "name"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "b6290f35-c2f9-5aa7-906c-4c83268c2655",
+                  "name": "count"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "db3dd2a3-d135-5541-95d6-3b155444bf43",
+                    "type": "shape"
+                  },
+                  "id": "1ff449d4-aa3c-51d2-a81e-3d1e28e26b74",
+                  "name": "profit"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "db3dd2a3-d135-5541-95d6-3b155444bf43",
+                    "type": "shape"
+                  },
+                  "id": "aebd4a20-ab3d-5b06-a718-d652ddad7ec0",
+                  "name": "rank"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "9408edf4-b90e-5ffa-abe3-c9e6d82b6114",
+                  "name": "score"
+                }
+              ],
+              "name": "finance-sector-industry-list-response-industries",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/sector/{key}/industry",
+                "pointer": [
+                  "industries"
+                ],
+                "verb": "get"
+              }
+            },
+            {
+              "id": "ad6273cf-153a-5b11-bdba-89353ee9276f",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "f82d49cc-133b-5d86-b756-d2d2e84693ec",
+                    "type": "shape"
+                  },
+                  "id": "d78c97fb-299b-5179-a31a-8f45b949721b",
+                  "name": "sector"
+                },
+                {
+                  "cardinality": "many",
+                  "dataType": {
+                    "shapeId": "8ff6845e-ba0a-5f44-84ff-4868d485857e",
+                    "type": "shape"
+                  },
+                  "id": "af635003-2f8a-5899-85c7-7745963a8323",
+                  "name": "industries"
+                }
+              ],
+              "name": "finance-sector-industry-list-response",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/sector/{key}/industry",
+                "pointer": [],
+                "verb": "get"
+              }
+            }
+          ],
+          "tier": "anonymous",
+          "unmapped": []
+        }
+      ],
+      "segments": [
+        "sector",
+        "{key}",
+        "industry"
+      ],
+      "summary": "One Sector and its Industries ranked against each other: median return, rank per period and composite score within the Sector. Industries only, never Companies. Industries with no return yet come last with no rank. Unknown key returns 200 with `sector: null`.",
       "verb": "get"
     },
     {
@@ -6576,7 +8378,7 @@
           "cardinality": "one",
           "code": "200",
           "dataType": {
-            "shapeId": "4c9673ef-e9d2-531d-949d-b1a9bd5c5f8f",
+            "shapeId": "de4ca93e-90b8-5ac4-b56b-6d2865aaf55e",
             "type": "shape"
           },
           "description": "List of available strategies",
@@ -6612,6 +8414,239 @@
                     "name": "isPublished",
                     "required": false,
                     "type": "boolean"
+                  },
+                  {
+                    "description": "Strategy Allocations",
+                    "members": [],
+                    "name": "allocations",
+                    "required": false,
+                    "type": "object[]"
+                  },
+                  {
+                    "description": "Fallback Company id, null for cash",
+                    "members": [],
+                    "name": "fallback",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Strategy Snapshot (ADR 0032), null when the Strategy has no usable curve. Window Returns and CAGR are percent (2 dp), null when the window (CAGR: one year) predates the curve.",
+                    "members": [
+                      {
+                        "description": "Date of the latest curve point",
+                        "members": [],
+                        "name": "asOf",
+                        "required": false,
+                        "type": "string($date)"
+                      },
+                      {
+                        "description": "Latest curve value (from 1)",
+                        "members": [],
+                        "name": "value",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "description": "Return since the previous curve point, %",
+                        "members": [],
+                        "name": "day",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "description": "7-day return, %",
+                        "members": [],
+                        "name": "week",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "description": "1-month return, %",
+                        "members": [],
+                        "name": "month",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "description": "3-month return, %",
+                        "members": [],
+                        "name": "quarter",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "description": "12-month return, %",
+                        "members": [],
+                        "name": "year",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "description": "Return since the first curve point, %",
+                        "members": [],
+                        "name": "max",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "description": "Annualized growth since the first point, %",
+                        "members": [],
+                        "name": "cagr",
+                        "required": false,
+                        "type": "number"
+                      },
+                      {
+                        "description": "Market cap split of the current Instruments (Held Sets + STANDALONEs). `other` = ETFs, Debt, Gold, Silver, unlabelled.",
+                        "members": [
+                          {
+                            "members": [
+                              {
+                                "description": "Instruments in the bucket",
+                                "members": [],
+                                "name": "quantity",
+                                "required": true,
+                                "type": "integer"
+                              },
+                              {
+                                "description": "Band-midpoint weight of the bucket, % of the Strategy (2 dp)",
+                                "members": [],
+                                "name": "share",
+                                "required": true,
+                                "type": "number"
+                              }
+                            ],
+                            "name": "small",
+                            "required": false,
+                            "type": "object"
+                          },
+                          {
+                            "members": [
+                              {
+                                "description": "Instruments in the bucket",
+                                "members": [],
+                                "name": "quantity",
+                                "required": true,
+                                "type": "integer"
+                              },
+                              {
+                                "description": "Band-midpoint weight of the bucket, % of the Strategy (2 dp)",
+                                "members": [],
+                                "name": "share",
+                                "required": true,
+                                "type": "number"
+                              }
+                            ],
+                            "name": "mid",
+                            "required": false,
+                            "type": "object"
+                          },
+                          {
+                            "members": [
+                              {
+                                "description": "Instruments in the bucket",
+                                "members": [],
+                                "name": "quantity",
+                                "required": true,
+                                "type": "integer"
+                              },
+                              {
+                                "description": "Band-midpoint weight of the bucket, % of the Strategy (2 dp)",
+                                "members": [],
+                                "name": "share",
+                                "required": true,
+                                "type": "number"
+                              }
+                            ],
+                            "name": "large",
+                            "required": false,
+                            "type": "object"
+                          },
+                          {
+                            "members": [
+                              {
+                                "description": "Instruments in the bucket",
+                                "members": [],
+                                "name": "quantity",
+                                "required": true,
+                                "type": "integer"
+                              },
+                              {
+                                "description": "Band-midpoint weight of the bucket, % of the Strategy (2 dp)",
+                                "members": [],
+                                "name": "share",
+                                "required": true,
+                                "type": "number"
+                              }
+                            ],
+                            "name": "other",
+                            "required": false,
+                            "type": "object"
+                          }
+                        ],
+                        "name": "marketCap",
+                        "required": false,
+                        "type": "object"
+                      },
+                      {
+                        "description": "Sectors by share, max 8: all when they fit, else top 7 + `Others` (rest + unsectored). Sector name → bucket",
+                        "members": [
+                          {
+                            "members": [
+                              {
+                                "description": "Instruments in the bucket",
+                                "members": [],
+                                "name": "quantity",
+                                "required": true,
+                                "type": "integer"
+                              },
+                              {
+                                "description": "Band-midpoint weight of the bucket, % of the Strategy (2 dp)",
+                                "members": [],
+                                "name": "share",
+                                "required": true,
+                                "type": "number"
+                              }
+                            ],
+                            "name": "<key>",
+                            "required": false,
+                            "type": "object"
+                          }
+                        ],
+                        "name": "sectors",
+                        "required": false,
+                        "type": "object"
+                      },
+                      {
+                        "description": "Distinct Instruments across all Allocations",
+                        "members": [],
+                        "name": "instruments",
+                        "required": false,
+                        "type": "integer"
+                      }
+                    ],
+                    "name": "snapshot",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Strategy Combined Index, oldest first, rebased to 1 at its first point. Empty when the Strategy has no usable history.",
+                    "members": [
+                      {
+                        "members": [],
+                        "name": "date",
+                        "required": true,
+                        "type": "string($date)"
+                      },
+                      {
+                        "members": [],
+                        "name": "value",
+                        "required": true,
+                        "type": "number"
+                      }
+                    ],
+                    "name": "chart",
+                    "required": false,
+                    "type": "object[]"
                   }
                 ],
                 "name": "strategies",
@@ -6632,14 +8667,243 @@
           },
           "shapes": [
             {
-              "id": "e10482ea-f2d4-5a40-a9ea-b0fcf6b208ca",
+              "id": "5c1ac10a-2afe-502c-afae-b8882f8f42aa",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "7a0e354b-7d55-50a5-912c-ec41f94a706b",
+                  "name": "quantity"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "80d638d9-7446-5fbb-9743-0257dbae2879",
+                  "name": "share"
+                }
+              ],
+              "name": "finance-strategies-update-response-strategies-snapshot-marketcap-small",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/strategies",
+                "pointer": [
+                  "strategies",
+                  "snapshot",
+                  "marketCap",
+                  "small"
+                ],
+                "verb": "put"
+              }
+            },
+            {
+              "id": "4fac84a3-b9f9-57e5-a9aa-7a796e1c33c3",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "5c1ac10a-2afe-502c-afae-b8882f8f42aa",
+                    "type": "shape"
+                  },
+                  "id": "8b420774-e2cc-54fa-9d66-46ae48cfb894",
+                  "name": "small"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "5c1ac10a-2afe-502c-afae-b8882f8f42aa",
+                    "type": "shape"
+                  },
+                  "id": "64acdf1d-e45f-528f-a50d-fccb7a565d3d",
+                  "name": "mid"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "5c1ac10a-2afe-502c-afae-b8882f8f42aa",
+                    "type": "shape"
+                  },
+                  "id": "1fa4a65c-8f7b-5796-95e2-85dadfacc07c",
+                  "name": "large"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "5c1ac10a-2afe-502c-afae-b8882f8f42aa",
+                    "type": "shape"
+                  },
+                  "id": "0a4bb6ad-1d84-5307-b5f4-20fbca53d0cd",
+                  "name": "other"
+                }
+              ],
+              "name": "finance-strategies-update-response-strategies-snapshot-marketcap",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/strategies",
+                "pointer": [
+                  "strategies",
+                  "snapshot",
+                  "marketCap"
+                ],
+                "verb": "put"
+              }
+            },
+            {
+              "id": "702e6ce5-fd76-5c43-b300-84b76e332485",
               "keys": [
                 {
                   "cardinality": "one",
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "34cb5c2f-6a5e-55f9-af2f-3e7de4c7738f",
+                  "id": "0ae50a1a-7286-55f8-831a-edccd983e8fa",
+                  "name": "asOf"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "4dd0c438-26e3-53d2-95cb-b71e76ff32d8",
+                  "name": "value"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "4c2c6d67-1373-59c5-9c05-7e498a107a07",
+                  "name": "day"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "07b9d56b-63a6-5855-bd01-1821d833b98b",
+                  "name": "week"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "4252c5af-9d41-505d-b858-b3796dfb9d4f",
+                  "name": "month"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "467727e1-cc4b-557f-b6e5-2d23b5d6d681",
+                  "name": "quarter"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "4cedc62e-fd93-5234-9e16-b7001aed414e",
+                  "name": "year"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "71b2fcf3-38f9-5951-9f59-5895af970993",
+                  "name": "max"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "be0ebd22-01e7-5830-8616-28ec8e8a3442",
+                  "name": "cagr"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "4fac84a3-b9f9-57e5-a9aa-7a796e1c33c3",
+                    "type": "shape"
+                  },
+                  "id": "1d1bff6d-212d-5537-984a-e3db72d2054d",
+                  "name": "marketCap"
+                },
+                {
+                  "cardinality": "map",
+                  "dataType": {
+                    "shapeId": "5c1ac10a-2afe-502c-afae-b8882f8f42aa",
+                    "type": "shape"
+                  },
+                  "id": "07ff20d2-20b0-5b1c-8180-4660260f0572",
+                  "name": "sectors"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "7bb398ff-c966-52d1-b9c8-2105db091b9f",
+                  "name": "instruments"
+                }
+              ],
+              "name": "finance-strategies-update-response-strategies-snapshot",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/strategies",
+                "pointer": [
+                  "strategies",
+                  "snapshot"
+                ],
+                "verb": "put"
+              }
+            },
+            {
+              "id": "fdc69eec-ccdd-5c2e-8d09-1dd2adee678c",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "c059f5e4-c5a1-5102-bd26-444e12426004",
+                  "name": "date"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "2806b7e1-7690-5617-8e0a-0f930fb7af81",
+                  "name": "value"
+                }
+              ],
+              "name": "finance-strategies-update-response-strategies-chart",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/strategies",
+                "pointer": [
+                  "strategies",
+                  "chart"
+                ],
+                "verb": "put"
+              }
+            },
+            {
+              "id": "7188d9d9-60c1-569f-a1d2-0753f31564b9",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "81bc90f2-a4cc-501c-9ec3-25483a8fb252",
                   "name": "id"
                 },
                 {
@@ -6647,7 +8911,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "0d4d9be9-d28e-506f-b701-7f03726ed349",
+                  "id": "a3b3d1bc-1e5f-5ef2-aecd-17fe6cdff61c",
                   "name": "name"
                 },
                 {
@@ -6655,7 +8919,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "d38fabf4-fbc8-529e-bc7c-106a446c1cd4",
+                  "id": "861544f3-c466-520d-af4c-85115fb9a1d3",
                   "name": "description"
                 },
                 {
@@ -6663,8 +8927,34 @@
                   "dataType": {
                     "type": "boolean"
                   },
-                  "id": "9ababbdc-7c01-565e-b612-f6121f2ee57c",
+                  "id": "06e5a673-ac1a-5575-9ea3-542174b67113",
                   "name": "isPublished"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "21aa6dfd-dc9f-50f7-a7a1-7b839e31045d",
+                  "name": "fallback"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "702e6ce5-fd76-5c43-b300-84b76e332485",
+                    "type": "shape"
+                  },
+                  "id": "78c94447-13ff-54e9-9460-57b5b77587a7",
+                  "name": "snapshot"
+                },
+                {
+                  "cardinality": "many",
+                  "dataType": {
+                    "shapeId": "fdc69eec-ccdd-5c2e-8d09-1dd2adee678c",
+                    "type": "shape"
+                  },
+                  "id": "8e240cc9-3c7f-5d0f-a9dc-0a4308665ca9",
+                  "name": "chart"
                 }
               ],
               "name": "finance-strategies-update-response-strategies",
@@ -6678,15 +8968,15 @@
               }
             },
             {
-              "id": "4c9673ef-e9d2-531d-949d-b1a9bd5c5f8f",
+              "id": "de4ca93e-90b8-5ac4-b56b-6d2865aaf55e",
               "keys": [
                 {
                   "cardinality": "many",
                   "dataType": {
-                    "shapeId": "e10482ea-f2d4-5a40-a9ea-b0fcf6b208ca",
+                    "shapeId": "7188d9d9-60c1-569f-a1d2-0753f31564b9",
                     "type": "shape"
                   },
-                  "id": "6be0484c-3d96-5a3e-93c0-8982e37bba6c",
+                  "id": "28036257-913f-5631-8a60-541d37a46af7",
                   "name": "strategies"
                 },
                 {
@@ -6694,7 +8984,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "ee297f35-173b-58cf-92f8-058303c66c95",
+                  "id": "ca5cc8d2-ab97-5a94-96c8-52d06db567b2",
                   "name": "selectedId"
                 }
               ],
@@ -6708,7 +8998,9 @@
             }
           ],
           "tier": "anonymous",
-          "unmapped": []
+          "unmapped": [
+            "strategies.allocations (object with no properties)"
+          ]
         },
         {
           "cardinality": "one",
@@ -6730,188 +9022,7 @@
       "segments": [
         "strategies"
       ],
-      "summary": "Get portfolio strategies. Ordinary users see only published strategies; the finance app owner/collaborator sees all (including unpublished drafts). selectedId carries the user's subscribed Strategy id (one per User, finance ADR 0014), null when unsubscribed.",
-      "verb": "put"
-    },
-    {
-      "domain": "finance",
-      "id": "put /finance/v1/strategy/curve",
-      "operationId": "finance_strategy_curves",
-      "params": [
-        {
-          "cardinality": "one",
-          "dataType": {
-            "shapeId": "63295df7-a15b-52c5-b6c0-e0a937b5a217",
-            "type": "shape"
-          },
-          "doc": {
-            "members": [
-              {
-                "description": "Strategy MongoDB ids, max 50",
-                "members": [],
-                "name": "ids",
-                "required": true,
-                "type": "string[]"
-              }
-            ],
-            "name": "data",
-            "required": true,
-            "type": "object"
-          },
-          "location": "body",
-          "name": "data",
-          "required": true,
-          "shapes": [
-            {
-              "id": "63295df7-a15b-52c5-b6c0-e0a937b5a217",
-              "keys": [
-                {
-                  "cardinality": "many",
-                  "dataType": {
-                    "type": "string"
-                  },
-                  "id": "ae7a6ff5-9eb7-5cdf-8287-ed63acf25115",
-                  "name": "ids"
-                }
-              ],
-              "name": "finance-strategy-curves-request"
-            }
-          ],
-          "unmapped": []
-        }
-      ],
-      "path": "/finance/v1/strategy/curve",
-      "responses": [
-        {
-          "cardinality": "one",
-          "code": "200",
-          "dataType": {
-            "shapeId": "9afabfdf-0eb0-5f61-bbd5-acc5f91df8ff",
-            "type": "shape"
-          },
-          "description": "Every readable requested Strategy's curve, by id",
-          "doc": {
-            "members": [
-              {
-                "description": "Strategy id -> chronologically ordered curve points",
-                "members": [
-                  {
-                    "members": [
-                      {
-                        "description": "Curve point date",
-                        "members": [],
-                        "name": "date",
-                        "required": true,
-                        "type": "string($date)"
-                      },
-                      {
-                        "description": "Combined Strategy value, rebased to 1 at the first point",
-                        "members": [],
-                        "name": "value",
-                        "required": true,
-                        "type": "number"
-                      }
-                    ],
-                    "name": "<key>",
-                    "required": false,
-                    "type": "object[]"
-                  }
-                ],
-                "name": "curves",
-                "required": true,
-                "type": "object"
-              }
-            ],
-            "name": "",
-            "required": true,
-            "type": "object"
-          },
-          "shapes": [
-            {
-              "id": "a18bff00-4f66-530e-9a72-c38a294a67a0",
-              "keys": [
-                {
-                  "cardinality": "one",
-                  "dataType": {
-                    "type": "string"
-                  },
-                  "id": "73802ed0-235d-5362-835a-b4c6607404f0",
-                  "name": "date"
-                },
-                {
-                  "cardinality": "one",
-                  "dataType": {
-                    "type": "number"
-                  },
-                  "id": "3e9119ed-a5b9-54f7-9aef-180b226ac98d",
-                  "name": "value"
-                }
-              ],
-              "name": "finance-strategy-curves-response-curves",
-              "origin": {
-                "code": "200",
-                "path": "/finance/v1/strategy/curve",
-                "pointer": [
-                  "curves"
-                ],
-                "verb": "put"
-              }
-            },
-            {
-              "id": "9afabfdf-0eb0-5f61-bbd5-acc5f91df8ff",
-              "keys": [
-                {
-                  "cardinality": "map-many",
-                  "dataType": {
-                    "shapeId": "a18bff00-4f66-530e-9a72-c38a294a67a0",
-                    "type": "shape"
-                  },
-                  "id": "02d3c091-5c44-504f-be4c-accb15817f31",
-                  "name": "curves"
-                }
-              ],
-              "name": "finance-strategy-curves-response",
-              "origin": {
-                "code": "200",
-                "path": "/finance/v1/strategy/curve",
-                "pointer": [],
-                "verb": "put"
-              }
-            }
-          ],
-          "tier": "anonymous",
-          "unmapped": []
-        },
-        {
-          "cardinality": "one",
-          "code": "401",
-          "description": "Authentication required",
-          "shapes": [],
-          "tier": "undescribed",
-          "unmapped": []
-        },
-        {
-          "cardinality": "one",
-          "code": "403",
-          "description": "Finance app access required",
-          "shapes": [],
-          "tier": "undescribed",
-          "unmapped": []
-        },
-        {
-          "cardinality": "one",
-          "code": "406",
-          "description": "ids missing, not a list, or over the limit",
-          "shapes": [],
-          "tier": "undescribed",
-          "unmapped": []
-        }
-      ],
-      "segments": [
-        "strategy",
-        "curve"
-      ],
-      "summary": "Get many Strategy performance curves",
+      "summary": "Get portfolio strategies. Ordinary users see only published strategies; the finance app owner/collaborator sees all (including unpublished drafts). selectedId carries the user's subscribed Strategy id (one per User, finance ADR 0014), null when unsubscribed. Each Strategy is the full Strategy — same shape as `strategy/<id>` — and carries its Strategy Snapshot (`snapshot`, null without usable history) and `chart` — the Strategy Combined Index points, [] without one (finance ADR 0032).",
       "verb": "put"
     },
     {
@@ -6945,17 +9056,24 @@
           "cardinality": "one",
           "code": "200",
           "dataType": {
-            "shapeId": "975c37f6-55c3-5e3c-8c62-a038773aa496",
+            "shapeId": "ef6bcfba-286d-55fc-87eb-5018d80b249a",
             "type": "shape"
           },
           "description": "Strategy details",
           "doc": {
             "members": [
               {
-                "description": "Map of strategy key → strategy details",
+                "description": "Map of Strategy id → Strategy",
                 "members": [
                   {
                     "members": [
+                      {
+                        "description": "Strategy id (Mongo _id)",
+                        "members": [],
+                        "name": "id",
+                        "required": false,
+                        "type": "string"
+                      },
                       {
                         "description": "Strategy name",
                         "members": [],
@@ -6971,82 +9089,244 @@
                         "type": "string"
                       },
                       {
-                        "description": "Strategy key",
+                        "description": "Whether the strategy is published",
                         "members": [],
-                        "name": "key",
+                        "name": "isPublished",
+                        "required": false,
+                        "type": "boolean"
+                      },
+                      {
+                        "description": "Strategy Allocations",
+                        "members": [],
+                        "name": "allocations",
+                        "required": false,
+                        "type": "object[]"
+                      },
+                      {
+                        "description": "Fallback Company id, null for cash",
+                        "members": [],
+                        "name": "fallback",
                         "required": false,
                         "type": "string"
                       },
                       {
-                        "description": "CAGR percentage",
-                        "members": [],
-                        "name": "cagr",
-                        "required": false,
-                        "type": "number"
-                      },
-                      {
-                        "description": "Total profit percentage",
-                        "members": [],
-                        "name": "profit",
-                        "required": false,
-                        "type": "number"
-                      },
-                      {
-                        "description": "Benchmark index",
-                        "members": [],
-                        "name": "index",
-                        "required": false,
-                        "type": "string"
-                      },
-                      {
-                        "description": "Rebalance frequency",
-                        "members": [],
-                        "name": "rebalance",
-                        "required": false,
-                        "type": "string"
-                      },
-                      {
-                        "description": "Last rebalance date",
-                        "members": [],
-                        "name": "date",
-                        "required": false,
-                        "type": "string"
-                      },
-                      {
-                        "description": "Stock analysis (only if strategy is active or user is admin)",
+                        "description": "Strategy Snapshot (ADR 0032), null when the Strategy has no usable curve. Window Returns and CAGR are percent (2 dp), null when the window (CAGR: one year) predates the curve.",
                         "members": [
                           {
-                            "description": "Current ranked stocks map (symbol → score)",
+                            "description": "Date of the latest curve point",
                             "members": [],
-                            "name": "current",
+                            "name": "asOf",
+                            "required": false,
+                            "type": "string($date)"
+                          },
+                          {
+                            "description": "Latest curve value (from 1)",
+                            "members": [],
+                            "name": "value",
+                            "required": false,
+                            "type": "number"
+                          },
+                          {
+                            "description": "Return since the previous curve point, %",
+                            "members": [],
+                            "name": "day",
+                            "required": false,
+                            "type": "number"
+                          },
+                          {
+                            "description": "7-day return, %",
+                            "members": [],
+                            "name": "week",
+                            "required": false,
+                            "type": "number"
+                          },
+                          {
+                            "description": "1-month return, %",
+                            "members": [],
+                            "name": "month",
+                            "required": false,
+                            "type": "number"
+                          },
+                          {
+                            "description": "3-month return, %",
+                            "members": [],
+                            "name": "quarter",
+                            "required": false,
+                            "type": "number"
+                          },
+                          {
+                            "description": "12-month return, %",
+                            "members": [],
+                            "name": "year",
+                            "required": false,
+                            "type": "number"
+                          },
+                          {
+                            "description": "Return since the first curve point, %",
+                            "members": [],
+                            "name": "max",
+                            "required": false,
+                            "type": "number"
+                          },
+                          {
+                            "description": "Annualized growth since the first point, %",
+                            "members": [],
+                            "name": "cagr",
+                            "required": false,
+                            "type": "number"
+                          },
+                          {
+                            "description": "Market cap split of the current Instruments (Held Sets + STANDALONEs). `other` = ETFs, Debt, Gold, Silver, unlabelled.",
+                            "members": [
+                              {
+                                "members": [
+                                  {
+                                    "description": "Instruments in the bucket",
+                                    "members": [],
+                                    "name": "quantity",
+                                    "required": true,
+                                    "type": "integer"
+                                  },
+                                  {
+                                    "description": "Band-midpoint weight of the bucket, % of the Strategy (2 dp)",
+                                    "members": [],
+                                    "name": "share",
+                                    "required": true,
+                                    "type": "number"
+                                  }
+                                ],
+                                "name": "small",
+                                "required": false,
+                                "type": "object"
+                              },
+                              {
+                                "members": [
+                                  {
+                                    "description": "Instruments in the bucket",
+                                    "members": [],
+                                    "name": "quantity",
+                                    "required": true,
+                                    "type": "integer"
+                                  },
+                                  {
+                                    "description": "Band-midpoint weight of the bucket, % of the Strategy (2 dp)",
+                                    "members": [],
+                                    "name": "share",
+                                    "required": true,
+                                    "type": "number"
+                                  }
+                                ],
+                                "name": "mid",
+                                "required": false,
+                                "type": "object"
+                              },
+                              {
+                                "members": [
+                                  {
+                                    "description": "Instruments in the bucket",
+                                    "members": [],
+                                    "name": "quantity",
+                                    "required": true,
+                                    "type": "integer"
+                                  },
+                                  {
+                                    "description": "Band-midpoint weight of the bucket, % of the Strategy (2 dp)",
+                                    "members": [],
+                                    "name": "share",
+                                    "required": true,
+                                    "type": "number"
+                                  }
+                                ],
+                                "name": "large",
+                                "required": false,
+                                "type": "object"
+                              },
+                              {
+                                "members": [
+                                  {
+                                    "description": "Instruments in the bucket",
+                                    "members": [],
+                                    "name": "quantity",
+                                    "required": true,
+                                    "type": "integer"
+                                  },
+                                  {
+                                    "description": "Band-midpoint weight of the bucket, % of the Strategy (2 dp)",
+                                    "members": [],
+                                    "name": "share",
+                                    "required": true,
+                                    "type": "number"
+                                  }
+                                ],
+                                "name": "other",
+                                "required": false,
+                                "type": "object"
+                              }
+                            ],
+                            "name": "marketCap",
                             "required": false,
                             "type": "object"
                           },
                           {
-                            "description": "Entry date map per stock",
-                            "members": [],
-                            "name": "entry",
+                            "description": "Sectors by share, max 8: all when they fit, else top 7 + `Others` (rest + unsectored). Sector name → bucket",
+                            "members": [
+                              {
+                                "members": [
+                                  {
+                                    "description": "Instruments in the bucket",
+                                    "members": [],
+                                    "name": "quantity",
+                                    "required": true,
+                                    "type": "integer"
+                                  },
+                                  {
+                                    "description": "Band-midpoint weight of the bucket, % of the Strategy (2 dp)",
+                                    "members": [],
+                                    "name": "share",
+                                    "required": true,
+                                    "type": "number"
+                                  }
+                                ],
+                                "name": "<key>",
+                                "required": false,
+                                "type": "object"
+                              }
+                            ],
+                            "name": "sectors",
                             "required": false,
                             "type": "object"
                           },
                           {
-                            "description": "Historical score momentum",
+                            "description": "Distinct Instruments across all Allocations",
                             "members": [],
-                            "name": "scoreMomentum",
+                            "name": "instruments",
                             "required": false,
-                            "type": "object"
+                            "type": "integer"
+                          }
+                        ],
+                        "name": "snapshot",
+                        "required": false,
+                        "type": "object"
+                      },
+                      {
+                        "description": "Strategy Combined Index, oldest first, rebased to 1 at its first point. Empty when the Strategy has no usable history.",
+                        "members": [
+                          {
+                            "members": [],
+                            "name": "date",
+                            "required": true,
+                            "type": "string($date)"
                           },
                           {
-                            "description": "Percent of portfolio invested",
                             "members": [],
-                            "name": "investedPercent",
-                            "required": false,
+                            "name": "value",
+                            "required": true,
                             "type": "number"
                           }
                         ],
-                        "name": "analysis",
+                        "name": "chart",
                         "required": false,
-                        "type": "object"
+                        "type": "object[]"
                       }
                     ],
                     "name": "<key>",
@@ -7065,37 +9345,251 @@
           },
           "shapes": [
             {
-              "id": "e57f9fb4-2fb3-5ab6-8b57-d26a8199ead4",
+              "id": "2f301f46-915a-5ca0-b40f-4334a66d4b66",
               "keys": [
                 {
                   "cardinality": "one",
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "5f624e25-d9af-564f-a432-36abc0d4d585",
-                  "name": "investedPercent"
+                  "id": "b6f2ca97-bd87-52e9-9ae8-2b9d4e0b4d37",
+                  "name": "quantity"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "598cbd15-dff3-5b0f-b8da-76033b940335",
+                  "name": "share"
                 }
               ],
-              "name": "finance-strategy-update-response-strategy-analysis",
+              "name": "finance-strategy-update-response-strategy-snapshot-marketcap-small",
               "origin": {
                 "code": "200",
                 "path": "/finance/v1/strategy/{id}",
                 "pointer": [
                   "strategy",
-                  "analysis"
+                  "snapshot",
+                  "marketCap",
+                  "small"
                 ],
                 "verb": "put"
               }
             },
             {
-              "id": "fc74885d-fab4-5ff7-b548-0543cbce907d",
+              "id": "3c5af9e7-78f1-5a31-96b4-262d9293dd87",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "2f301f46-915a-5ca0-b40f-4334a66d4b66",
+                    "type": "shape"
+                  },
+                  "id": "a3ee6258-4889-50c6-b9af-4002b68eadf8",
+                  "name": "small"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "2f301f46-915a-5ca0-b40f-4334a66d4b66",
+                    "type": "shape"
+                  },
+                  "id": "f98d6e89-2e44-50f3-a1fa-ce2779bc6729",
+                  "name": "mid"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "2f301f46-915a-5ca0-b40f-4334a66d4b66",
+                    "type": "shape"
+                  },
+                  "id": "388c6d10-5c9d-5b32-9e47-a0be1eeda7b0",
+                  "name": "large"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "2f301f46-915a-5ca0-b40f-4334a66d4b66",
+                    "type": "shape"
+                  },
+                  "id": "7fef0961-87c4-5383-8f18-6e1f4d038f01",
+                  "name": "other"
+                }
+              ],
+              "name": "finance-strategy-update-response-strategy-snapshot-marketcap",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/strategy/{id}",
+                "pointer": [
+                  "strategy",
+                  "snapshot",
+                  "marketCap"
+                ],
+                "verb": "put"
+              }
+            },
+            {
+              "id": "55311419-dfa9-5b3f-a9ae-eafb00de7f39",
               "keys": [
                 {
                   "cardinality": "one",
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "2a8e7238-86c7-598a-ac76-622e1e550cd8",
+                  "id": "4efe63fe-398e-51e4-b7a6-dbc0cd9affde",
+                  "name": "asOf"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "d4626db4-6641-5806-a0e4-dc8a7d5b08d4",
+                  "name": "value"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "8f70f31b-7bac-5791-9dbe-99bd6e29a53b",
+                  "name": "day"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "e205e897-6852-51d9-9711-9c1d5ec5ec37",
+                  "name": "week"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "51f2b12b-af1c-5251-8e4e-56c51439944b",
+                  "name": "month"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "59e49955-e5b5-541b-8e95-6ba78623f475",
+                  "name": "quarter"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "d84ef04a-4fb3-5ad8-98f8-06dc3bc23eea",
+                  "name": "year"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "c31c9697-af57-5b0d-9112-5ad9a1d548b7",
+                  "name": "max"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "c978c39e-e168-5e34-8e81-7e884638c73e",
+                  "name": "cagr"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "3c5af9e7-78f1-5a31-96b4-262d9293dd87",
+                    "type": "shape"
+                  },
+                  "id": "9b9b8bf1-fbd3-5c13-b553-239fc4e0d151",
+                  "name": "marketCap"
+                },
+                {
+                  "cardinality": "map",
+                  "dataType": {
+                    "shapeId": "2f301f46-915a-5ca0-b40f-4334a66d4b66",
+                    "type": "shape"
+                  },
+                  "id": "8b65e586-d2fb-5268-8172-54743a1665a6",
+                  "name": "sectors"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "43714a03-9ad2-5d7d-8a53-de3952f91e23",
+                  "name": "instruments"
+                }
+              ],
+              "name": "finance-strategy-update-response-strategy-snapshot",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/strategy/{id}",
+                "pointer": [
+                  "strategy",
+                  "snapshot"
+                ],
+                "verb": "put"
+              }
+            },
+            {
+              "id": "bc5feab0-babc-530a-97dc-55b691a64b50",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "831e8820-013a-5346-be3d-5cea18336440",
+                  "name": "date"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "73584dfd-c2f1-5b8b-a4cd-37bf1c7b249d",
+                  "name": "value"
+                }
+              ],
+              "name": "finance-strategy-update-response-strategy-chart",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/strategy/{id}",
+                "pointer": [
+                  "strategy",
+                  "chart"
+                ],
+                "verb": "put"
+              }
+            },
+            {
+              "id": "57b50e2d-446a-52bb-adcd-97779eca810d",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "ecd2dc4e-7338-5860-b77c-35a4ac7f8cae",
+                  "name": "id"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "d5784fc8-e948-5766-8ed9-800a3a061b28",
                   "name": "name"
                 },
                 {
@@ -7103,65 +9597,42 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "f7c40fc7-8660-5e95-a9eb-22a10a1b0de7",
+                  "id": "22b389b7-aed8-5be9-be81-ee155e21bb97",
                   "name": "description"
                 },
                 {
                   "cardinality": "one",
                   "dataType": {
-                    "type": "string"
+                    "type": "boolean"
                   },
-                  "id": "9fa443ea-9b6e-5958-93c9-68645376630a",
-                  "name": "key"
-                },
-                {
-                  "cardinality": "one",
-                  "dataType": {
-                    "type": "number"
-                  },
-                  "id": "a59c783a-ec04-582c-9989-13309964a5da",
-                  "name": "cagr"
-                },
-                {
-                  "cardinality": "one",
-                  "dataType": {
-                    "type": "number"
-                  },
-                  "id": "e53f6629-a84d-5f5b-9698-646fbe807bc9",
-                  "name": "profit"
+                  "id": "a4993adf-eff8-5db9-8b21-0b5d06d4267f",
+                  "name": "isPublished"
                 },
                 {
                   "cardinality": "one",
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "afa324a9-fc31-5d47-9861-6ef30001a3c9",
-                  "name": "index"
+                  "id": "ceb537b9-450d-593b-b006-1bdf01ab7019",
+                  "name": "fallback"
                 },
                 {
                   "cardinality": "one",
                   "dataType": {
-                    "type": "string"
-                  },
-                  "id": "f1d062a6-4e54-58c8-9dc1-670c8f18ebc6",
-                  "name": "rebalance"
-                },
-                {
-                  "cardinality": "one",
-                  "dataType": {
-                    "type": "string"
-                  },
-                  "id": "ed327687-ee77-5bad-89f3-8f81e0f91127",
-                  "name": "date"
-                },
-                {
-                  "cardinality": "one",
-                  "dataType": {
-                    "shapeId": "e57f9fb4-2fb3-5ab6-8b57-d26a8199ead4",
+                    "shapeId": "55311419-dfa9-5b3f-a9ae-eafb00de7f39",
                     "type": "shape"
                   },
-                  "id": "29478c15-448a-5bbf-a191-c9abeef15db5",
-                  "name": "analysis"
+                  "id": "374976a3-8d35-5d0d-af30-319116c21f03",
+                  "name": "snapshot"
+                },
+                {
+                  "cardinality": "many",
+                  "dataType": {
+                    "shapeId": "bc5feab0-babc-530a-97dc-55b691a64b50",
+                    "type": "shape"
+                  },
+                  "id": "d8b1844d-c3f0-52cb-a681-6147f028222d",
+                  "name": "chart"
                 }
               ],
               "name": "finance-strategy-update-response-strategy",
@@ -7175,15 +9646,15 @@
               }
             },
             {
-              "id": "975c37f6-55c3-5e3c-8c62-a038773aa496",
+              "id": "ef6bcfba-286d-55fc-87eb-5018d80b249a",
               "keys": [
                 {
                   "cardinality": "map",
                   "dataType": {
-                    "shapeId": "fc74885d-fab4-5ff7-b548-0543cbce907d",
+                    "shapeId": "57b50e2d-446a-52bb-adcd-97779eca810d",
                     "type": "shape"
                   },
-                  "id": "bdd3d667-6b6e-5345-af23-b811bd4e6087",
+                  "id": "ca8e679b-5731-5305-a1fb-4371da8457fb",
                   "name": "strategy"
                 }
               ],
@@ -7198,9 +9669,7 @@
           ],
           "tier": "anonymous",
           "unmapped": [
-            "strategy.analysis.current (object with no properties)",
-            "strategy.analysis.entry (object with no properties)",
-            "strategy.analysis.scoreMomentum (object with no properties)"
+            "strategy.allocations (object with no properties)"
           ]
         },
         {

@@ -28,3 +28,6 @@ public/assets/
 .env
 .env.*
 .DS_Store
+
+# magmonium CLI cache
+.mag-cache/

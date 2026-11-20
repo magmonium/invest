@@ -1,0 +1,457 @@
+{
+  "meta": {
+    "autoCalls": [
+      {
+        "args": [
+          {
+            "binding": {
+              "path": [],
+              "root": {
+                "id": "8c22a412-037a-4fce-a386-4705f1183a9a",
+                "kind": "input"
+              }
+            },
+            "source": "binding",
+            "target": [
+              "key"
+            ]
+          }
+        ],
+        "id": "39a162f7-a765-4587-87aa-35960d9a1380",
+        "methodId": "9c36151a-b0b9-4461-b82c-af603ca83fd7",
+        "reads": [
+          {
+            "path": [],
+            "root": {
+              "id": "8c22a412-037a-4fce-a386-4705f1183a9a",
+              "kind": "input"
+            }
+          }
+        ],
+        "when": "on-change"
+      }
+    ],
+    "computeds": {
+      "8886cb8f-cedb-4e4f-887f-14f6f9c11b5b": {
+        "args": {
+          "514e1a9c-88d6-464d-8b8d-97cb36f40d64": {
+            "path": [
+              "2b267001-1756-4057-845c-98c26debfa0f"
+            ],
+            "source": "path"
+          },
+          "66dffc7f-480e-4489-9a31-010aec0a9375": {
+            "inputId": "8c22a412-037a-4fce-a386-4705f1183a9a",
+            "source": "input"
+          }
+        },
+        "functionId": "cb70b736-9c99-4dd4-937d-8fec225cd32c",
+        "id": "8886cb8f-cedb-4e4f-887f-14f6f9c11b5b",
+        "name": "industryCompanyHeat"
+      }
+    },
+    "featureId": "acef9153-606d-4de2-8699-7c87fa589384",
+    "id": "48c71e86-9e88-4527-955b-6f0f3535689f",
+    "inputs": {
+      "8c22a412-037a-4fce-a386-4705f1183a9a": {
+        "cardinality": "one",
+        "dataType": {
+          "type": "string"
+        },
+        "id": "8c22a412-037a-4fce-a386-4705f1183a9a",
+        "name": "id",
+        "required": true
+      }
+    },
+    "kind": "feature",
+    "name": "industry-companies"
+  },
+  "state": {
+    "controlMap": {
+      "01d0c2f2-86f4-4759-a6ce-8a06571bb2c0": {
+        "childrens": [
+          "923cf1fb-ced3-4f47-be0e-ed29dac393eb"
+        ],
+        "configs": {},
+        "id": "01d0c2f2-86f4-4759-a6ce-8a06571bb2c0",
+        "parentId": "1a3f398f-900a-4a9e-9e92-dcd078b83ef6",
+        "type": "section_table_cell"
+      },
+      "1a3f398f-900a-4a9e-9e92-dcd078b83ef6": {
+        "childrens": [
+          "367198aa-54dd-47ff-91dc-79a69835e800",
+          "01d0c2f2-86f4-4759-a6ce-8a06571bb2c0",
+          "fab3dc74-8397-4798-8408-81140bef726f",
+          "ab5ce902-bef6-4bea-a221-68e240ea7f9f",
+          "5d523705-c80f-4557-b167-5f40bef24995",
+          "db7ce1d0-d112-42a4-999e-62ab32866314",
+          "df61c665-378b-494b-b666-f4428234929b",
+          "71707c38-4b41-47de-a1f6-5e148adb7660"
+        ],
+        "configs": {},
+        "id": "1a3f398f-900a-4a9e-9e92-dcd078b83ef6",
+        "parentId": "b0578cd9-6611-4595-aab0-663bda3083fd",
+        "type": "section_table_row"
+      },
+      "24d31b74-d9c8-4a07-bc20-8e2c8c849f14": {
+        "bindings": {
+          "value": {
+            "path": [
+              "cb585750-ed4f-4100-906b-9d5c1c9dbdde",
+              "45fcebe5-bbdc-4e9a-9dd0-c7e2917834fa"
+            ],
+            "root": {
+              "alias": "item",
+              "kind": "alias",
+              "repeatId": "b0578cd9-6611-4595-aab0-663bda3083fd"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {
+          "fromColor": "error",
+          "toColor": "success"
+        },
+        "id": "24d31b74-d9c8-4a07-bc20-8e2c8c849f14",
+        "parentId": "fab3dc74-8397-4798-8408-81140bef726f",
+        "type": "heat_swatch"
+      },
+      "2ee41c8c-21d5-4804-8293-bdf59b9555bf": {
+        "childrens": [
+          "7b39fe1f-fcac-4541-b404-113116be5ce1"
+        ],
+        "configs": {},
+        "id": "2ee41c8c-21d5-4804-8293-bdf59b9555bf",
+        "type": "section"
+      },
+      "367198aa-54dd-47ff-91dc-79a69835e800": {
+        "childrens": [
+          "af74fec8-e293-40b5-99d4-5985a8a3133f"
+        ],
+        "configs": {},
+        "id": "367198aa-54dd-47ff-91dc-79a69835e800",
+        "parentId": "1a3f398f-900a-4a9e-9e92-dcd078b83ef6",
+        "type": "section_table_cell"
+      },
+      "4a771746-8b19-4bf7-aa67-aff5d98bca18": {
+        "bindings": {
+          "value": {
+            "path": [
+              "cb585750-ed4f-4100-906b-9d5c1c9dbdde",
+              "1ad2640e-9200-4b0d-9283-8f9cd0c12b63"
+            ],
+            "root": {
+              "alias": "item",
+              "kind": "alias",
+              "repeatId": "b0578cd9-6611-4595-aab0-663bda3083fd"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {
+          "fromColor": "error",
+          "toColor": "success"
+        },
+        "id": "4a771746-8b19-4bf7-aa67-aff5d98bca18",
+        "parentId": "71707c38-4b41-47de-a1f6-5e148adb7660",
+        "type": "heat_swatch"
+      },
+      "5d523705-c80f-4557-b167-5f40bef24995": {
+        "childrens": [
+          "8694e7da-62c0-4097-b187-0f2689736064"
+        ],
+        "configs": {},
+        "id": "5d523705-c80f-4557-b167-5f40bef24995",
+        "parentId": "1a3f398f-900a-4a9e-9e92-dcd078b83ef6",
+        "type": "section_table_cell"
+      },
+      "7161a5e6-33d5-487e-b86f-db2ecc5f9520": {
+        "bindings": {
+          "value": {
+            "path": [
+              "cb585750-ed4f-4100-906b-9d5c1c9dbdde",
+              "9579aba6-f1fa-49d7-ae8d-07b9ce47d933"
+            ],
+            "root": {
+              "alias": "item",
+              "kind": "alias",
+              "repeatId": "b0578cd9-6611-4595-aab0-663bda3083fd"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {
+          "fromColor": "error",
+          "toColor": "success"
+        },
+        "id": "7161a5e6-33d5-487e-b86f-db2ecc5f9520",
+        "parentId": "ab5ce902-bef6-4bea-a221-68e240ea7f9f",
+        "type": "heat_swatch"
+      },
+      "71707c38-4b41-47de-a1f6-5e148adb7660": {
+        "childrens": [
+          "4a771746-8b19-4bf7-aa67-aff5d98bca18"
+        ],
+        "configs": {},
+        "id": "71707c38-4b41-47de-a1f6-5e148adb7660",
+        "parentId": "1a3f398f-900a-4a9e-9e92-dcd078b83ef6",
+        "type": "section_table_cell"
+      },
+      "7b39fe1f-fcac-4541-b404-113116be5ce1": {
+        "childrens": [
+          "dd92dce1-2ad9-483c-9c8b-c73ddc34c303"
+        ],
+        "configs": {},
+        "id": "7b39fe1f-fcac-4541-b404-113116be5ce1",
+        "parentId": "2ee41c8c-21d5-4804-8293-bdf59b9555bf",
+        "type": "col"
+      },
+      "8694e7da-62c0-4097-b187-0f2689736064": {
+        "bindings": {
+          "value": {
+            "path": [
+              "cb585750-ed4f-4100-906b-9d5c1c9dbdde",
+              "a3d3535e-58de-4037-bbb8-156ac0f28d7f"
+            ],
+            "root": {
+              "alias": "item",
+              "kind": "alias",
+              "repeatId": "b0578cd9-6611-4595-aab0-663bda3083fd"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {
+          "fromColor": "error",
+          "toColor": "success"
+        },
+        "id": "8694e7da-62c0-4097-b187-0f2689736064",
+        "parentId": "5d523705-c80f-4557-b167-5f40bef24995",
+        "type": "heat_swatch"
+      },
+      "923cf1fb-ced3-4f47-be0e-ed29dac393eb": {
+        "bindings": {
+          "label": {
+            "path": [
+              "7514ac9d-915a-4dc7-a784-433cf08d79f2"
+            ],
+            "root": {
+              "alias": "item",
+              "kind": "alias",
+              "repeatId": "b0578cd9-6611-4595-aab0-663bda3083fd"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {},
+        "id": "923cf1fb-ced3-4f47-be0e-ed29dac393eb",
+        "parentId": "01d0c2f2-86f4-4759-a6ce-8a06571bb2c0",
+        "textSource": "dynamic",
+        "type": "text"
+      },
+      "ab5ce902-bef6-4bea-a221-68e240ea7f9f": {
+        "childrens": [
+          "7161a5e6-33d5-487e-b86f-db2ecc5f9520"
+        ],
+        "configs": {},
+        "id": "ab5ce902-bef6-4bea-a221-68e240ea7f9f",
+        "parentId": "1a3f398f-900a-4a9e-9e92-dcd078b83ef6",
+        "type": "section_table_cell"
+      },
+      "af74fec8-e293-40b5-99d4-5985a8a3133f": {
+        "bindings": {
+          "label": {
+            "path": [
+              "5e02688e-d622-4770-b62e-dcc99b21c94f"
+            ],
+            "root": {
+              "alias": "item",
+              "kind": "alias",
+              "repeatId": "b0578cd9-6611-4595-aab0-663bda3083fd"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {
+          "variant": "link"
+        },
+        "directives": {
+          "routerLink": {
+            "configs": {
+              "mode": "absolute",
+              "parts": [
+                {
+                  "kind": "static",
+                  "value": "instrument"
+                },
+                {
+                  "binding": {
+                    "path": [
+                      "f09abe1c-1e6c-4836-bbd7-1617159dfad0"
+                    ],
+                    "root": {
+                      "alias": "item",
+                      "kind": "alias",
+                      "repeatId": "b0578cd9-6611-4595-aab0-663bda3083fd"
+                    }
+                  },
+                  "kind": "dynamic"
+                }
+              ]
+            }
+          }
+        },
+        "id": "af74fec8-e293-40b5-99d4-5985a8a3133f",
+        "parentId": "367198aa-54dd-47ff-91dc-79a69835e800",
+        "textSource": "dynamic",
+        "type": "text"
+      },
+      "b0578cd9-6611-4595-aab0-663bda3083fd": {
+        "bindings": {
+          "source": {
+            "path": [],
+            "root": {
+              "id": "8886cb8f-cedb-4e4f-887f-14f6f9c11b5b",
+              "kind": "screen_computed"
+            }
+          }
+        },
+        "childrens": [
+          "1a3f398f-900a-4a9e-9e92-dcd078b83ef6"
+        ],
+        "configs": {},
+        "id": "b0578cd9-6611-4595-aab0-663bda3083fd",
+        "parentId": "dd92dce1-2ad9-483c-9c8b-c73ddc34c303",
+        "repeat": {
+          "indexAlias": "index",
+          "itemAlias": "item",
+          "keyAlias": "key",
+          "sampleRows": 3,
+          "track": {
+            "kind": "index"
+          }
+        },
+        "type": "repeat"
+      },
+      "b470ee75-7d2a-43aa-969f-bd98d077fe81": {
+        "bindings": {
+          "value": {
+            "path": [
+              "cb585750-ed4f-4100-906b-9d5c1c9dbdde",
+              "97b024c9-5f8d-42e6-bdc9-fa6edc8aa053"
+            ],
+            "root": {
+              "alias": "item",
+              "kind": "alias",
+              "repeatId": "b0578cd9-6611-4595-aab0-663bda3083fd"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {
+          "fromColor": "error",
+          "toColor": "success"
+        },
+        "id": "b470ee75-7d2a-43aa-969f-bd98d077fe81",
+        "parentId": "df61c665-378b-494b-b666-f4428234929b",
+        "type": "heat_swatch"
+      },
+      "db7ce1d0-d112-42a4-999e-62ab32866314": {
+        "childrens": [
+          "ef440a7c-d4c0-458d-96e9-7220cd8bae88"
+        ],
+        "configs": {},
+        "id": "db7ce1d0-d112-42a4-999e-62ab32866314",
+        "parentId": "1a3f398f-900a-4a9e-9e92-dcd078b83ef6",
+        "type": "section_table_cell"
+      },
+      "dd92dce1-2ad9-483c-9c8b-c73ddc34c303": {
+        "childrens": [
+          "b0578cd9-6611-4595-aab0-663bda3083fd"
+        ],
+        "configs": {
+          "columns": [
+            {
+              "freeze": true,
+              "label": "company"
+            },
+            {
+              "align": "center",
+              "label": "score"
+            },
+            {
+              "label": "10d"
+            },
+            {
+              "label": "20d"
+            },
+            {
+              "label": "60d"
+            },
+            {
+              "label": "120d"
+            },
+            {
+              "label": "180d"
+            },
+            {
+              "label": "240d"
+            }
+          ],
+          "variant": "compact"
+        },
+        "id": "dd92dce1-2ad9-483c-9c8b-c73ddc34c303",
+        "parentId": "7b39fe1f-fcac-4541-b404-113116be5ce1",
+        "type": "section_table"
+      },
+      "df61c665-378b-494b-b666-f4428234929b": {
+        "childrens": [
+          "b470ee75-7d2a-43aa-969f-bd98d077fe81"
+        ],
+        "configs": {},
+        "id": "df61c665-378b-494b-b666-f4428234929b",
+        "parentId": "1a3f398f-900a-4a9e-9e92-dcd078b83ef6",
+        "type": "section_table_cell"
+      },
+      "ef440a7c-d4c0-458d-96e9-7220cd8bae88": {
+        "bindings": {
+          "value": {
+            "path": [
+              "cb585750-ed4f-4100-906b-9d5c1c9dbdde",
+              "a233c997-f241-4ace-bfac-0dceab16803f"
+            ],
+            "root": {
+              "alias": "item",
+              "kind": "alias",
+              "repeatId": "b0578cd9-6611-4595-aab0-663bda3083fd"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {
+          "fromColor": "error",
+          "toColor": "success"
+        },
+        "id": "ef440a7c-d4c0-458d-96e9-7220cd8bae88",
+        "parentId": "db7ce1d0-d112-42a4-999e-62ab32866314",
+        "type": "heat_swatch"
+      },
+      "fab3dc74-8397-4798-8408-81140bef726f": {
+        "childrens": [
+          "24d31b74-d9c8-4a07-bc20-8e2c8c849f14"
+        ],
+        "configs": {},
+        "id": "fab3dc74-8397-4798-8408-81140bef726f",
+        "parentId": "1a3f398f-900a-4a9e-9e92-dcd078b83ef6",
+        "type": "section_table_cell"
+      }
+    },
+    "labelSamples": {},
+    "pathSamples": {},
+    "rootControlIds": [
+      "2ee41c8c-21d5-4804-8293-bdf59b9555bf"
+    ],
+    "selectedLayerId": 0
+  },
+  "v": 32
+}
