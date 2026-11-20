@@ -314,7 +314,35 @@
           }
         },
         "childrens": [],
-        "configs": {},
+        "configs": {
+          "variant": "link"
+        },
+        "directives": {
+          "routerLink": {
+            "configs": {
+              "mode": "absolute",
+              "parts": [
+                {
+                  "kind": "static",
+                  "value": "instrument"
+                },
+                {
+                  "binding": {
+                    "path": [
+                      "8188dcd2-8a7f-4691-8306-7b7eb1ee1380",
+                      "0b76a1f2-956e-47f4-9ed7-d60924d3bca8"
+                    ],
+                    "root": {
+                      "id": "443aba23-a361-4aa3-868a-479123e6cf06",
+                      "kind": "property"
+                    }
+                  },
+                  "kind": "dynamic"
+                }
+              ]
+            }
+          }
+        },
         "id": "5ecbfbdd-2b81-4485-8d90-f927a26880e2",
         "parentId": "4e10a342-3e13-4ecc-87fb-305fc335c41f",
         "textSource": "dynamic",
