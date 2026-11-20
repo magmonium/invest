@@ -213,6 +213,12 @@
       "zh": "实惠数量",
       "zu": "Inani elifikelelekayo"
     },
+    "avg-return-20d": {
+      "en": "Avg return 20d"
+    },
+    "breadth-20d": {
+      "en": "Breadth 20d"
+    },
     "buy": {
       "af": "Koop",
       "am": "ግዝ",
@@ -459,6 +465,9 @@
       "jw": "Delengen heatmap kinerja pasar per sektor!",
       "ka": "შეამოწმეთ სექტორების მიხედვით ბაზრის შესრულების თერმოგრაფია!",
       "kk": "Сектор бойынша нарықтық көрсеткіштерді жылу картасын қараңыз!"
+    },
+    "companies": {
+      "en": "Companies"
     },
     "crafted-with-love-by-team-magmonium-for-your-indian-stock-and-etf-adventures-remember-markets-can-be-risky-so-treat-this": {
       "af": "Gemaak met liefde deur die span **Magmonium** vir jou Indiese aandele- en ETF-avonture! Onthou, markte kan risikoregt wees, behandel hierdie app as jou opvoedkundige sidekick.",
@@ -1973,6 +1982,9 @@
       "sw": "Top 100 hisa za India",
       "ta": "இந்தியாவின் சிறந்த 100 பங்குகள்"
     },
+    "industries": {
+      "en": "Industries"
+    },
     "industry": {
       "en": "Industry"
     },
@@ -2191,6 +2203,9 @@
       "zh": "投资",
       "zu": "Faka imali"
     },
+    "laggard-20d": {
+      "en": "Laggard 20d"
+    },
     "largecap": {
       "af": "Grootkap",
       "am": "ትልቅ ካፕ",
@@ -2297,6 +2312,9 @@
       "yo": "Leargekap",
       "zh": "利尔格卡普",
       "zu": "Leargekap"
+    },
+    "leader-20d": {
+      "en": "Leader 20d"
     },
     "long-term": {
       "af": "Langtermyn",
@@ -4365,6 +4383,12 @@
       "zh": "<$dur> 返回",
       "zu": "<$dur> Buya"
     },
+    "return-20d": {
+      "en": "Return 20d"
+    },
+    "return-240d": {
+      "en": "Return 240d"
+    },
     "s-holdings": {
       "af": "<$user> se bestand",
       "am": "<$user> የአስተዳደር",
@@ -4716,6 +4740,9 @@
       "yo": "ìlànà <$user>",
       "zh": "<$user>的策略",
       "zu": "isu lika<$user>"
+    },
+    "score": {
+      "en": "Score"
     },
     "sector": {
       "en": "Sector"
