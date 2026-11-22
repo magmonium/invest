@@ -211,28 +211,33 @@
           "isRightIcon": true,
           "label": "details"
         },
-        "id": "aa6b48b0-7547-4af6-b58b-b13f0d9519ef",
-        "outputNavs": {
-          "clicked": {
-            "kind": "nav",
-            "navId": "root_default_strategy_id",
-            "params": {
-              "root_default_strategy_id": {
-                "binding": {
-                  "path": [
-                    "72dcc428-97f5-414c-8208-16ae96c66e6b"
-                  ],
-                  "root": {
-                    "alias": "item",
-                    "kind": "alias",
-                    "repeatId": "8a94d025-901c-484c-9e3c-57330e8b7fad"
-                  }
+        "directives": {
+          "routerLink": {
+            "configs": {
+              "mode": "absolute",
+              "parts": [
+                {
+                  "kind": "static",
+                  "value": "strategy"
                 },
-                "source": "binding"
-              }
+                {
+                  "binding": {
+                    "path": [
+                      "72dcc428-97f5-414c-8208-16ae96c66e6b"
+                    ],
+                    "root": {
+                      "alias": "item",
+                      "kind": "alias",
+                      "repeatId": "8a94d025-901c-484c-9e3c-57330e8b7fad"
+                    }
+                  },
+                  "kind": "dynamic"
+                }
+              ]
             }
           }
         },
+        "id": "aa6b48b0-7547-4af6-b58b-b13f0d9519ef",
         "parentId": "cb05b5a8-849a-41bf-840b-bedcf10e176b",
         "type": "button"
       },

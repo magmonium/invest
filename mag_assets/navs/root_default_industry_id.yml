@@ -1,0 +1,5 @@
+navId: root_default_industry_id
+icon: trending-up
+kind: url
+presentation: dynamic
+param: id

@@ -14,7 +14,7 @@
     },
     "mode": "new"
   },
-  "codegen": "0.8.29",
+  "codegen": "0.10.3",
   "distinct": [],
   "enums": {
     "4bc51fb3-db70-4ead-ac0d-c48ae741522d": {
@@ -1679,6 +1679,29 @@
             "type": "boolean"
           }
         },
+        "30530bc5-d0a5-44af-9411-62d1baeec2ca": {
+          "aiDrafted": true,
+          "body": "return Object.values(indexMap).map((idx) => ({\n    value: idx.symbol,\n    label: idx.name,\n  }));",
+          "description": "Builds a navigation list of option rows from a map of finance indices.",
+          "id": "30530bc5-d0a5-44af-9411-62d1baeec2ca",
+          "name": "indexNav",
+          "params": [
+            {
+              "cardinality": "map",
+              "dataType": {
+                "shapeId": "eb34fbff-711a-4f7a-b67d-26dca35a7412",
+                "type": "shape"
+              },
+              "id": "e4bca4ff-7f9f-4517-b0ec-d541123d1722",
+              "name": "indexMap"
+            }
+          ],
+          "returnCardinality": "many",
+          "returnType": {
+            "shapeId": "f97ce0a2-7c55-4e30-8a85-2d908317fb7c",
+            "type": "shape"
+          }
+        },
         "37ba9643-8249-44bf-8d9f-42d041cbeb6a": {
           "aiDrafted": true,
           "body": "return Object.values(companyMap)\n    .map(company => ({\n      value: company.symbol,\n      label: company.name\n    }))\n    .sort((a, b) => a.label.localeCompare(b.label));",
@@ -2660,29 +2683,6 @@
             "type": "string"
           },
           "returnUndefined": true
-        },
-        "30530bc5-d0a5-44af-9411-62d1baeec2ca": {
-          "aiDrafted": true,
-          "body": "return Object.values(indexMap).map((idx) => ({\n    value: idx.symbol,\n    label: idx.name,\n  }));",
-          "description": "Builds a navigation list of option rows from a map of finance indices.",
-          "id": "30530bc5-d0a5-44af-9411-62d1baeec2ca",
-          "name": "indexNav",
-          "params": [
-            {
-              "cardinality": "map",
-              "dataType": {
-                "shapeId": "eb34fbff-711a-4f7a-b67d-26dca35a7412",
-                "type": "shape"
-              },
-              "id": "e4bca4ff-7f9f-4517-b0ec-d541123d1722",
-              "name": "indexMap"
-            }
-          ],
-          "returnCardinality": "many",
-          "returnType": {
-            "shapeId": "f97ce0a2-7c55-4e30-8a85-2d908317fb7c",
-            "type": "shape"
-          }
         }
       },
       "id": "acef9153-606d-4de2-8699-7c87fa589384",
