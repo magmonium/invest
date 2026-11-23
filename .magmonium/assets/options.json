@@ -1,4 +1,24 @@
 {
-  "options": {},
+  "options": {
+    "sleeve-connector": [
+      {
+        "default": true,
+        "label": "and",
+        "value": "and"
+      },
+      {
+        "label": "or",
+        "value": "or"
+      },
+      {
+        "label": "andnot",
+        "value": "andnot"
+      },
+      {
+        "label": "ornot",
+        "value": "ornot"
+      }
+    ]
+  },
   "v": 32
 }

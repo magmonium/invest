@@ -1,0 +1,16 @@
+{
+  "files.readonlyInclude": {
+    "src/app/features/**": true,
+    "src/app/pages/**": true,
+    "src/app/widgets/**": true,
+    "src/app/shared/lib/**": true,
+    "src/app/shared/type/**": true,
+    "src/app/*.router.ts": true,
+    "src/app/*.router.spec.ts": true,
+    "src/app/*.provide.ts": true,
+    "src/app/*.provide.spec.ts": true
+  },
+  "files.readonlyExclude": {
+    "src/app/custom/**": true
+  }
+}

@@ -1,0 +1,273 @@
+{
+  "meta": {
+    "autoCalls": [
+      {
+        "args": [],
+        "id": "335c8cb3-d293-4e14-940a-79557a9226fe",
+        "methodId": "d5711727-a514-41c4-ab91-ce1a3ec144ce"
+      }
+    ],
+    "featureId": "76e38aaa-d234-4aa1-b5fa-5b4595e714e2",
+    "id": "1215f958-c7b9-4cc8-aea6-b8c9e849673c",
+    "inputs": {
+      "3332e38b-c9b4-40f7-b55a-d4da745ecb97": {
+        "cardinality": "one",
+        "dataType": {
+          "type": "string"
+        },
+        "id": "3332e38b-c9b4-40f7-b55a-d4da745ecb97",
+        "name": "sleeve",
+        "required": true
+      },
+      "dc2807de-c2cf-4c1b-bc6a-50515e5a10bb": {
+        "cardinality": "one",
+        "dataType": {
+          "type": "string"
+        },
+        "id": "dc2807de-c2cf-4c1b-bc6a-50515e5a10bb",
+        "name": "role",
+        "required": true
+      }
+    },
+    "kind": "feature",
+    "name": "sleeve-filter-add"
+  },
+  "state": {
+    "controlMap": {
+      "0726869b-4229-497c-80c7-b360645e4dfe": {
+        "childrens": [
+          "ccf32758-0490-4ec0-ab56-97d0e4e4a97c"
+        ],
+        "configs": {},
+        "id": "0726869b-4229-497c-80c7-b360645e4dfe",
+        "parentId": "31cfa551-5fac-4f1b-87c8-b47c4e2d6342",
+        "type": "section_header_label"
+      },
+      "07d83d8d-b2db-46bf-9736-68634cfa78ce": {
+        "childrens": [],
+        "configs": {
+          "label": "connector",
+          "name": "op",
+          "required": true,
+          "type": "dropdown"
+        },
+        "directives": {
+          "mOptions": {
+            "configs": {
+              "name": "sleeve-connector"
+            }
+          }
+        },
+        "id": "07d83d8d-b2db-46bf-9736-68634cfa78ce",
+        "parentId": "2c162060-e356-48b3-92b8-3e5cc4f6e3d1",
+        "type": "field"
+      },
+      "10b4ffd0-00a1-472b-b972-b2617f4879de": {
+        "childrens": [
+          "2c162060-e356-48b3-92b8-3e5cc4f6e3d1"
+        ],
+        "configs": {},
+        "id": "10b4ffd0-00a1-472b-b972-b2617f4879de",
+        "parentId": "698070de-fb41-4b00-838e-216bbd3a6df6",
+        "type": "row"
+      },
+      "24640fd2-9df7-4a8c-8a7d-6bfdc1372d26": {
+        "childrens": [
+          "906131af-b07b-424a-9f4f-4de853296870"
+        ],
+        "configs": {},
+        "id": "24640fd2-9df7-4a8c-8a7d-6bfdc1372d26",
+        "parentId": "698070de-fb41-4b00-838e-216bbd3a6df6",
+        "type": "section_header"
+      },
+      "2c162060-e356-48b3-92b8-3e5cc4f6e3d1": {
+        "childrens": [
+          "07d83d8d-b2db-46bf-9736-68634cfa78ce",
+          "b155047f-9013-4a0c-bfca-c557aeece0bb"
+        ],
+        "configs": {
+          "name": "form_2c162060"
+        },
+        "directives": {
+          "mPadding": {
+            "configs": {
+              "mPadding": "1",
+              "mPaddingX": "",
+              "mPaddingY": "2"
+            }
+          }
+        },
+        "id": "2c162060-e356-48b3-92b8-3e5cc4f6e3d1",
+        "outputArgs": {
+          "submitted": [
+            {
+              "binding": {
+                "path": [],
+                "root": {
+                  "id": "3332e38b-c9b4-40f7-b55a-d4da745ecb97",
+                  "kind": "input"
+                }
+              },
+              "source": "binding",
+              "target": [
+                "id"
+              ]
+            },
+            {
+              "binding": {
+                "path": [],
+                "root": {
+                  "id": "dc2807de-c2cf-4c1b-bc6a-50515e5a10bb",
+                  "kind": "input"
+                }
+              },
+              "source": "binding",
+              "target": [
+                "role"
+              ]
+            },
+            {
+              "event": [
+                "op"
+              ],
+              "source": "event",
+              "target": [
+                "op"
+              ]
+            },
+            {
+              "event": [
+                "filterId"
+              ],
+              "source": "event",
+              "target": [
+                "filterId"
+              ]
+            }
+          ]
+        },
+        "outputs": {
+          "submitted": "baed0426-68b1-431b-83f7-c69c6e4e7db7"
+        },
+        "parentId": "10b4ffd0-00a1-472b-b972-b2617f4879de",
+        "type": "form"
+      },
+      "31cfa551-5fac-4f1b-87c8-b47c4e2d6342": {
+        "childrens": [
+          "0726869b-4229-497c-80c7-b360645e4dfe"
+        ],
+        "configs": {
+          "fullWidth": true,
+          "sticky": true
+        },
+        "id": "31cfa551-5fac-4f1b-87c8-b47c4e2d6342",
+        "parentId": "698070de-fb41-4b00-838e-216bbd3a6df6",
+        "type": "section_footer"
+      },
+      "517e88b8-6326-448e-a52f-25af9714362e": {
+        "childrens": [],
+        "configs": {
+          "icon": "plus",
+          "size": 2
+        },
+        "id": "517e88b8-6326-448e-a52f-25af9714362e",
+        "parentId": "58eddb7f-7924-4147-8013-247621dee2cf",
+        "type": "icon"
+      },
+      "58eddb7f-7924-4147-8013-247621dee2cf": {
+        "childrens": [
+          "517e88b8-6326-448e-a52f-25af9714362e",
+          "84e58868-ca66-423b-8f50-61ca2b4a5a14"
+        ],
+        "configs": {
+          "alignItems": "center",
+          "gap": "1",
+          "justify": "start"
+        },
+        "id": "58eddb7f-7924-4147-8013-247621dee2cf",
+        "parentId": "906131af-b07b-424a-9f4f-4de853296870",
+        "type": "flex"
+      },
+      "608bc4fd-6119-44ec-90d8-e94e018f4783": {
+        "childrens": [],
+        "configs": {
+          "fullWidth": true,
+          "icon": "check",
+          "isSubmit": true,
+          "label": "add-filter",
+          "submitTarget": "2c162060-e356-48b3-92b8-3e5cc4f6e3d1",
+          "variant": "primary"
+        },
+        "id": "608bc4fd-6119-44ec-90d8-e94e018f4783",
+        "parentId": "ccf32758-0490-4ec0-ab56-97d0e4e4a97c",
+        "type": "button"
+      },
+      "698070de-fb41-4b00-838e-216bbd3a6df6": {
+        "childrens": [
+          "24640fd2-9df7-4a8c-8a7d-6bfdc1372d26",
+          "10b4ffd0-00a1-472b-b972-b2617f4879de",
+          "31cfa551-5fac-4f1b-87c8-b47c4e2d6342"
+        ],
+        "configs": {},
+        "id": "698070de-fb41-4b00-838e-216bbd3a6df6",
+        "type": "section"
+      },
+      "84e58868-ca66-423b-8f50-61ca2b4a5a14": {
+        "childrens": [],
+        "configs": {
+          "label": "add-filter",
+          "variant": "big"
+        },
+        "id": "84e58868-ca66-423b-8f50-61ca2b4a5a14",
+        "parentId": "58eddb7f-7924-4147-8013-247621dee2cf",
+        "type": "text"
+      },
+      "906131af-b07b-424a-9f4f-4de853296870": {
+        "childrens": [
+          "58eddb7f-7924-4147-8013-247621dee2cf"
+        ],
+        "configs": {},
+        "id": "906131af-b07b-424a-9f4f-4de853296870",
+        "parentId": "24640fd2-9df7-4a8c-8a7d-6bfdc1372d26",
+        "type": "section_header_label"
+      },
+      "b155047f-9013-4a0c-bfca-c557aeece0bb": {
+        "bindings": {
+          "options": {
+            "path": [],
+            "root": {
+              "id": "e1d256fd-903e-42e1-b9de-1abbda052166",
+              "kind": "computed"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {
+          "label": "filter",
+          "name": "filterId",
+          "required": true,
+          "type": "dropdown"
+        },
+        "id": "b155047f-9013-4a0c-bfca-c557aeece0bb",
+        "parentId": "2c162060-e356-48b3-92b8-3e5cc4f6e3d1",
+        "type": "field"
+      },
+      "ccf32758-0490-4ec0-ab56-97d0e4e4a97c": {
+        "childrens": [
+          "608bc4fd-6119-44ec-90d8-e94e018f4783"
+        ],
+        "configs": {},
+        "id": "ccf32758-0490-4ec0-ab56-97d0e4e4a97c",
+        "parentId": "0726869b-4229-497c-80c7-b360645e4dfe",
+        "type": "flex"
+      }
+    },
+    "labelSamples": {},
+    "pathSamples": {},
+    "rootControlIds": [
+      "698070de-fb41-4b00-838e-216bbd3a6df6"
+    ],
+    "selectedLayerId": 0
+  },
+  "v": 32
+}

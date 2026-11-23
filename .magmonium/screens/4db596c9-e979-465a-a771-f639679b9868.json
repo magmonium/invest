@@ -1,0 +1,225 @@
+{
+  "meta": {
+    "autoCalls": [
+      {
+        "args": [],
+        "id": "c21b5f82-bcfc-4008-889d-fc65681da6db",
+        "methodId": "d5711727-a514-41c4-ab91-ce1a3ec144ce"
+      }
+    ],
+    "computeds": {
+      "8fb849a1-39e7-47ef-b2ef-fced1573e5ed": {
+        "args": {
+          "id": {
+            "inputId": "c0514f3a-b566-4ba2-a230-7e3137ef930e",
+            "source": "input"
+          },
+          "map": {
+            "path": [
+              "407d1c9b-3f4d-457e-a289-9ac03882762a"
+            ],
+            "source": "path"
+          }
+        },
+        "id": "8fb849a1-39e7-47ef-b2ef-fced1573e5ed",
+        "name": "filter",
+        "oneFunction": "getFromMap",
+        "returns": {
+          "cardinality": "one",
+          "dataType": {
+            "shapeId": "c58f00db-47e8-4613-9cae-a96103128202",
+            "type": "shape"
+          },
+          "optional": true
+        }
+      }
+    },
+    "featureId": "76e38aaa-d234-4aa1-b5fa-5b4595e714e2",
+    "id": "4db596c9-e979-465a-a771-f639679b9868",
+    "inputs": {
+      "c0514f3a-b566-4ba2-a230-7e3137ef930e": {
+        "cardinality": "one",
+        "dataType": {
+          "type": "string"
+        },
+        "id": "c0514f3a-b566-4ba2-a230-7e3137ef930e",
+        "name": "id",
+        "required": true
+      }
+    },
+    "kind": "feature",
+    "name": "filter-details"
+  },
+  "state": {
+    "controlMap": {
+      "057bdbaf-70b1-4c44-aae9-c3fe796efd3a": {
+        "bindings": {
+          "label": {
+            "path": [
+              "ad58bd4f-1889-4eee-a9e3-f7ffc2c9e71c"
+            ],
+            "root": {
+              "id": "8fb849a1-39e7-47ef-b2ef-fced1573e5ed",
+              "kind": "screen_computed"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {
+          "variant": "big"
+        },
+        "id": "057bdbaf-70b1-4c44-aae9-c3fe796efd3a",
+        "parentId": "44473d9a-6031-4828-8a36-05c364ac3c5b",
+        "textSource": "dynamic",
+        "type": "text"
+      },
+      "07b5483b-1cae-4ae7-8f52-86a46aa5fa33": {
+        "childrens": [
+          "d142d8be-cca9-48b2-9c63-d515ce95544c"
+        ],
+        "configs": {},
+        "id": "07b5483b-1cae-4ae7-8f52-86a46aa5fa33",
+        "parentId": "a214d308-e313-4fbe-8edd-3fef65d6e65e",
+        "type": "section_header"
+      },
+      "09f136ae-0ae2-4e34-8532-5ca1f2d95d15": {
+        "childrens": [
+          "3c1a0e57-15ce-457e-9d7e-a503c5ae95e6"
+        ],
+        "configs": {},
+        "id": "09f136ae-0ae2-4e34-8532-5ca1f2d95d15",
+        "parentId": "a214d308-e313-4fbe-8edd-3fef65d6e65e",
+        "type": "row"
+      },
+      "3c1a0e57-15ce-457e-9d7e-a503c5ae95e6": {
+        "childrens": [
+          "d6296f21-f9fc-41e9-91e5-5ba1300e7e35",
+          "751f80b0-9967-4fb0-9520-576d07d3a2b2",
+          "9ee401e0-6202-417a-ad10-ab923120ab16"
+        ],
+        "configs": {
+          "direction": "column",
+          "gap": "1"
+        },
+        "directives": {
+          "mPadding": {
+            "configs": {
+              "mPadding": 1,
+              "mPaddingX": "",
+              "mPaddingY": ""
+            }
+          }
+        },
+        "id": "3c1a0e57-15ce-457e-9d7e-a503c5ae95e6",
+        "parentId": "09f136ae-0ae2-4e34-8532-5ca1f2d95d15",
+        "type": "flex"
+      },
+      "44473d9a-6031-4828-8a36-05c364ac3c5b": {
+        "childrens": [
+          "6e244db5-6844-4624-acdb-a8e4f00b68b8",
+          "057bdbaf-70b1-4c44-aae9-c3fe796efd3a"
+        ],
+        "configs": {
+          "alignItems": "center",
+          "gap": "1",
+          "justify": "start"
+        },
+        "id": "44473d9a-6031-4828-8a36-05c364ac3c5b",
+        "parentId": "d142d8be-cca9-48b2-9c63-d515ce95544c",
+        "type": "flex"
+      },
+      "6e244db5-6844-4624-acdb-a8e4f00b68b8": {
+        "childrens": [],
+        "configs": {
+          "icon": "trending-up",
+          "size": 2
+        },
+        "id": "6e244db5-6844-4624-acdb-a8e4f00b68b8",
+        "parentId": "44473d9a-6031-4828-8a36-05c364ac3c5b",
+        "type": "icon"
+      },
+      "751f80b0-9967-4fb0-9520-576d07d3a2b2": {
+        "bindings": {
+          "label": {
+            "path": [
+              "649f36f4-ec0b-491e-bacc-8cc1869fc562"
+            ],
+            "root": {
+              "id": "8fb849a1-39e7-47ef-b2ef-fced1573e5ed",
+              "kind": "screen_computed"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {},
+        "id": "751f80b0-9967-4fb0-9520-576d07d3a2b2",
+        "parentId": "3c1a0e57-15ce-457e-9d7e-a503c5ae95e6",
+        "textSource": "dynamic",
+        "type": "text"
+      },
+      "9ee401e0-6202-417a-ad10-ab923120ab16": {
+        "bindings": {
+          "label": {
+            "path": [
+              "7bb2f177-0782-4f4f-af67-ea06a0746241"
+            ],
+            "root": {
+              "id": "8fb849a1-39e7-47ef-b2ef-fced1573e5ed",
+              "kind": "screen_computed"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {},
+        "id": "9ee401e0-6202-417a-ad10-ab923120ab16",
+        "parentId": "3c1a0e57-15ce-457e-9d7e-a503c5ae95e6",
+        "textSource": "dynamic",
+        "type": "text"
+      },
+      "a214d308-e313-4fbe-8edd-3fef65d6e65e": {
+        "childrens": [
+          "07b5483b-1cae-4ae7-8f52-86a46aa5fa33",
+          "09f136ae-0ae2-4e34-8532-5ca1f2d95d15"
+        ],
+        "configs": {},
+        "id": "a214d308-e313-4fbe-8edd-3fef65d6e65e",
+        "type": "section"
+      },
+      "d142d8be-cca9-48b2-9c63-d515ce95544c": {
+        "childrens": [
+          "44473d9a-6031-4828-8a36-05c364ac3c5b"
+        ],
+        "configs": {},
+        "id": "d142d8be-cca9-48b2-9c63-d515ce95544c",
+        "parentId": "07b5483b-1cae-4ae7-8f52-86a46aa5fa33",
+        "type": "section_header_label"
+      },
+      "d6296f21-f9fc-41e9-91e5-5ba1300e7e35": {
+        "bindings": {
+          "label": {
+            "path": [
+              "92a2089d-ab5c-46be-a9ba-09602999e65f"
+            ],
+            "root": {
+              "id": "8fb849a1-39e7-47ef-b2ef-fced1573e5ed",
+              "kind": "screen_computed"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {},
+        "id": "d6296f21-f9fc-41e9-91e5-5ba1300e7e35",
+        "parentId": "3c1a0e57-15ce-457e-9d7e-a503c5ae95e6",
+        "textSource": "dynamic",
+        "type": "text"
+      }
+    },
+    "labelSamples": {},
+    "pathSamples": {},
+    "rootControlIds": [
+      "a214d308-e313-4fbe-8edd-3fef65d6e65e"
+    ],
+    "selectedLayerId": 0
+  },
+  "v": 32
+}

@@ -1,0 +1,5 @@
+navId: root_default_sector_id
+icon: trending-up
+kind: url
+presentation: dynamic
+param: id

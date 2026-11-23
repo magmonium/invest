@@ -4,4 +4,6 @@ icon: strategy
 kind: url
 presentation: static
 children:
+  - root_default_strategy_sleeve
+  - root_default_strategy_filter
   - root_default_strategy_id

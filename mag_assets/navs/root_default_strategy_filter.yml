@@ -1,0 +1,7 @@
+navId: root_default_strategy_filter
+title: filter
+icon: trending-up
+kind: url
+presentation: static
+children:
+  - root_default_strategy_filter_id

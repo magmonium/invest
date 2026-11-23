@@ -2,6 +2,537 @@
   "operations": [
     {
       "domain": "finance",
+      "id": "delete /finance/v1/sleeve/{id}/role",
+      "operationId": "finance_v1_sleeve_role_delete",
+      "params": [
+        {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "doc": {
+            "members": [],
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          "location": "path",
+          "name": "id",
+          "required": true,
+          "shapes": [],
+          "unmapped": []
+        },
+        {
+          "cardinality": "one",
+          "dataType": {
+            "shapeId": "3c930c03-bf9d-50e1-9fd2-04e5e9d11763",
+            "type": "shape"
+          },
+          "doc": {
+            "members": [
+              {
+                "enumValues": [
+                  "entry",
+                  "exit"
+                ],
+                "members": [],
+                "name": "role",
+                "required": true,
+                "type": "string"
+              },
+              {
+                "enumValues": [
+                  "and",
+                  "or",
+                  "andnot",
+                  "ornot"
+                ],
+                "members": [],
+                "name": "op",
+                "required": true,
+                "type": "string"
+              },
+              {
+                "members": [],
+                "name": "filterId",
+                "required": true,
+                "type": "string"
+              }
+            ],
+            "name": "data",
+            "required": true,
+            "type": "object"
+          },
+          "location": "body",
+          "name": "data",
+          "required": true,
+          "shapes": [
+            {
+              "id": "3c930c03-bf9d-50e1-9fd2-04e5e9d11763",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "850f02e1-77d7-5693-a393-edffe184a7c1",
+                  "name": "role"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "d9e297e2-8d71-50f8-a0d3-624408dc93c2",
+                  "name": "op"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "02de1132-7ec0-53f4-ad31-4d40a56ac0d2",
+                  "name": "filterId"
+                }
+              ],
+              "name": "finance-sleeve-role-delete-request"
+            }
+          ],
+          "unmapped": []
+        }
+      ],
+      "path": "/finance/v1/sleeve/{id}/role",
+      "responses": [
+        {
+          "cardinality": "one",
+          "code": "200",
+          "dataType": {
+            "shapeId": "59da210d-fb88-5c6b-8370-d8af9945d5ad",
+            "type": "shape"
+          },
+          "description": "Success",
+          "doc": {
+            "members": [
+              {
+                "members": [
+                  {
+                    "description": "Sleeve id (24-char Mongo ObjectId).",
+                    "members": [],
+                    "name": "id",
+                    "required": true,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Sleeve name.",
+                    "members": [],
+                    "name": "name",
+                    "required": true,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Map {filterId: op} — one op ('and'|'or'|'andnot'|'ornot') per Filter.",
+                    "members": [
+                      {
+                        "enumValues": [
+                          "and",
+                          "or",
+                          "andnot",
+                          "ornot"
+                        ],
+                        "members": [],
+                        "name": "<key>",
+                        "required": false,
+                        "type": "string"
+                      }
+                    ],
+                    "name": "entryFilters",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Map {filterId: op} — one op ('and'|'or'|'andnot'|'ornot') per Filter.",
+                    "members": [
+                      {
+                        "enumValues": [
+                          "and",
+                          "or",
+                          "andnot",
+                          "ornot"
+                        ],
+                        "members": [],
+                        "name": "<key>",
+                        "required": false,
+                        "type": "string"
+                      }
+                    ],
+                    "name": "exitFilters",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Numeric Company field Instruments are ranked by.",
+                    "members": [],
+                    "name": "rankField",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Rank descending when true.",
+                    "members": [],
+                    "name": "rankDesc",
+                    "required": false,
+                    "type": "boolean"
+                  },
+                  {
+                    "description": "Max selection cap (ADR 0007).",
+                    "members": [],
+                    "name": "maxQuantity",
+                    "required": false,
+                    "type": "integer"
+                  },
+                  {
+                    "description": "Sleeve Index (ADR 0012): day-keyed map {\"YYYY-MM-DD\": value}.",
+                    "members": [
+                      {
+                        "members": [],
+                        "name": "<key>",
+                        "required": false,
+                        "type": "number"
+                      }
+                    ],
+                    "name": "idx",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Tested gate (ADR 0008): only tested Sleeves are evaluated.",
+                    "members": [],
+                    "name": "tested",
+                    "required": false,
+                    "type": "boolean"
+                  },
+                  {
+                    "description": "Entry Confirmation in Refreshes (ADR 0020).",
+                    "members": [],
+                    "name": "entryConfirmation",
+                    "required": false,
+                    "type": "integer"
+                  },
+                  {
+                    "description": "Exit Confirmation in Refreshes (ADR 0020).",
+                    "members": [],
+                    "name": "exitConfirmation",
+                    "required": false,
+                    "type": "integer"
+                  },
+                  {
+                    "description": "Map {symbol: count} of consecutive matching Refreshes (ADR 0020).",
+                    "members": [
+                      {
+                        "members": [],
+                        "name": "<key>",
+                        "required": false,
+                        "type": "integer"
+                      }
+                    ],
+                    "name": "entryStreak",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Map {symbol: count} of consecutive matching Refreshes (ADR 0020).",
+                    "members": [
+                      {
+                        "members": [],
+                        "name": "<key>",
+                        "required": false,
+                        "type": "integer"
+                      }
+                    ],
+                    "name": "exitStreak",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Held Set (ADR 0012): {symbol: {p, d}}.",
+                    "members": [
+                      {
+                        "members": [
+                          {
+                            "description": "Price at last Refresh.",
+                            "members": [],
+                            "name": "p",
+                            "required": false,
+                            "type": "number"
+                          },
+                          {
+                            "description": "Date first added (YYYY-MM-DD).",
+                            "members": [],
+                            "name": "d",
+                            "required": false,
+                            "type": "string"
+                          }
+                        ],
+                        "name": "<key>",
+                        "required": false,
+                        "type": "object"
+                      }
+                    ],
+                    "name": "heldSet",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Last Refresh date (ADR 0012), YYYY-MM-DD.",
+                    "members": [],
+                    "name": "lastRefresh",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Entry role changed since last Refresh.",
+                    "members": [],
+                    "name": "entryChanged",
+                    "required": false,
+                    "type": "boolean"
+                  }
+                ],
+                "name": "sleeve",
+                "required": true,
+                "type": "object"
+              }
+            ],
+            "name": "",
+            "required": true,
+            "type": "object"
+          },
+          "shapes": [
+            {
+              "id": "c556e91b-2bd0-5ba5-b74f-3791b271173b",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "a8af1ccf-d13a-53f1-9dff-6025be0848ef",
+                  "name": "p"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "94aefd53-e53a-536d-a9ff-7309aa082973",
+                  "name": "d"
+                }
+              ],
+              "name": "finance-sleeve-role-delete-response-sleeve-heldset",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/sleeve/{id}/role",
+                "pointer": [
+                  "sleeve",
+                  "heldSet"
+                ],
+                "verb": "delete"
+              }
+            },
+            {
+              "id": "7adf4254-e595-5816-85e6-7c02b7aedcf4",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "d39aed65-5c6e-5fe3-9a65-c0d70179b185",
+                  "name": "id"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "a4528d5b-2912-533d-a0bd-d2e128453b7b",
+                  "name": "name"
+                },
+                {
+                  "cardinality": "map",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "36e5d837-5dd9-5cc9-a591-a66d04d87d97",
+                  "name": "entryFilters"
+                },
+                {
+                  "cardinality": "map",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "ce16c8eb-a2bc-5449-a976-e3ed737a504b",
+                  "name": "exitFilters"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "aa0a6a32-a7f3-5714-bbd7-71905772ad12",
+                  "name": "rankField"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "boolean"
+                  },
+                  "id": "d2bc59f7-ff83-5649-a94b-812da3205757",
+                  "name": "rankDesc"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "d682bd6f-b713-5bb5-a81e-25516ee975cf",
+                  "name": "maxQuantity"
+                },
+                {
+                  "cardinality": "map",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "39e344a7-1da3-5101-bd2e-537d4f933147",
+                  "name": "idx"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "boolean"
+                  },
+                  "id": "9b72be6d-4853-58c7-8d4c-da0b50edd18d",
+                  "name": "tested"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "1b88eb51-9dda-5017-b1c8-592b65fe8831",
+                  "name": "entryConfirmation"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "dbde5f55-c44e-5697-9bf4-b1abe4392f35",
+                  "name": "exitConfirmation"
+                },
+                {
+                  "cardinality": "map",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "6b5d217e-6129-5efc-a110-7138dc821c5e",
+                  "name": "entryStreak"
+                },
+                {
+                  "cardinality": "map",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "1a974e6a-87c3-597c-9b32-adb80eca2e4a",
+                  "name": "exitStreak"
+                },
+                {
+                  "cardinality": "map",
+                  "dataType": {
+                    "shapeId": "c556e91b-2bd0-5ba5-b74f-3791b271173b",
+                    "type": "shape"
+                  },
+                  "id": "44d8697d-1a52-58ab-9748-ce27ba89f7dd",
+                  "name": "heldSet"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "2ef2a003-98a5-52e9-ba6c-98e53760d363",
+                  "name": "lastRefresh"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "boolean"
+                  },
+                  "id": "34b78538-fc91-5362-a6aa-c46645ae3498",
+                  "name": "entryChanged"
+                }
+              ],
+              "name": "finance-sleeve-role-delete-response-sleeve",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/sleeve/{id}/role",
+                "pointer": [
+                  "sleeve"
+                ],
+                "verb": "delete"
+              }
+            },
+            {
+              "id": "59da210d-fb88-5c6b-8370-d8af9945d5ad",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "7adf4254-e595-5816-85e6-7c02b7aedcf4",
+                    "type": "shape"
+                  },
+                  "id": "8cf4674b-2f78-563d-a218-4659e58d356b",
+                  "name": "sleeve"
+                }
+              ],
+              "name": "finance-sleeve-role-delete-response",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/sleeve/{id}/role",
+                "pointer": [],
+                "verb": "delete"
+              }
+            }
+          ],
+          "tier": "anonymous",
+          "unmapped": []
+        },
+        {
+          "cardinality": "one",
+          "code": "406",
+          "description": "Not acceptable",
+          "shapes": [],
+          "tier": "undescribed",
+          "unmapped": []
+        },
+        {
+          "cardinality": "one",
+          "code": "409",
+          "description": "Invalid sleeve key",
+          "shapes": [],
+          "tier": "undescribed",
+          "unmapped": []
+        }
+      ],
+      "segments": [
+        "sleeve",
+        "{id}",
+        "role"
+      ],
+      "summary": "Remove one role item from a sleeve's entry/exit role.",
+      "verb": "delete"
+    },
+    {
+      "domain": "finance",
       "id": "get /finance/v1/company/fields",
       "operationId": "finance_v1_company_fields_list",
       "params": [],
@@ -435,6 +966,275 @@
         "dashboard"
       ],
       "summary": "Market highlights and the user's Portfolio change in one call. Every entry is `{value, day, week}` from end-of-day data: indices (nifty, midcap, smallcap) value is the latest close and changes come from daily closes; gold/silver likewise from GOLDBEES/SILVERBEES closes; portfolio value is total holdings worth and changes are value-weighted over current holdings (cash excluded). Keys and fields with no data are omitted.",
+      "verb": "get"
+    },
+    {
+      "domain": "finance",
+      "id": "get /finance/v1/filter",
+      "operationId": "finance_v1_filter_list",
+      "params": [
+        {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "description": "Case-insensitive substring search across filter name and field. Treated as literal text — regex metacharacters are escaped, not interpreted. Blank/whitespace-only is ignored. Ignored entirely when a path `id` is present; takes precedence over `ids`.",
+          "doc": {
+            "description": "Case-insensitive substring search across filter name and field. Treated as literal text — regex metacharacters are escaped, not interpreted. Blank/whitespace-only is ignored. Ignored entirely when a path `id` is present; takes precedence over `ids`.",
+            "members": [],
+            "name": "q",
+            "required": false,
+            "type": "string"
+          },
+          "location": "query",
+          "name": "q",
+          "required": false,
+          "shapes": [],
+          "unmapped": []
+        },
+        {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "description": "Comma-separated filter ids to batch-resolve, e.g. `65f0a1...,65f0a2...`. Whitespace around each id is trimmed. Malformed or missing ids are skipped silently — only found filters are returned, in no guaranteed order, and an all-bad list yields `{\"filters\": []}` with 200, not an error. Ignored when `q` is present.",
+          "doc": {
+            "description": "Comma-separated filter ids to batch-resolve, e.g. `65f0a1...,65f0a2...`. Whitespace around each id is trimmed. Malformed or missing ids are skipped silently — only found filters are returned, in no guaranteed order, and an all-bad list yields `{\"filters\": []}` with 200, not an error. Ignored when `q` is present.",
+            "members": [],
+            "name": "ids",
+            "required": false,
+            "type": "string"
+          },
+          "location": "query",
+          "name": "ids",
+          "required": false,
+          "shapes": [],
+          "unmapped": []
+        }
+      ],
+      "path": "/finance/v1/filter",
+      "responses": [
+        {
+          "cardinality": "one",
+          "code": "200",
+          "dataType": {
+            "shapeId": "95367b03-f17b-59c9-8eb3-97bdd0ad0ea3",
+            "type": "shape"
+          },
+          "description": "`filter` when fetched by path id; `filters` when searched via `q`, batch-resolved via `ids`, or listed with a bare call.",
+          "doc": {
+            "members": [
+              {
+                "members": [
+                  {
+                    "description": "Filter id (24-char Mongo ObjectId).",
+                    "members": [],
+                    "name": "id",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Filter name.",
+                    "members": [],
+                    "name": "name",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Company field the filter runs on.",
+                    "members": [],
+                    "name": "field",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Comparison operator.",
+                    "enumValues": [
+                      "<",
+                      "<=",
+                      "=",
+                      ">",
+                      ">=",
+                      "in",
+                      "nin",
+                      "regex"
+                    ],
+                    "members": [],
+                    "name": "operator",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Compared value.",
+                    "members": [],
+                    "name": "value",
+                    "required": false,
+                    "type": "string"
+                  }
+                ],
+                "name": "filter",
+                "required": false,
+                "type": "object"
+              },
+              {
+                "members": [
+                  {
+                    "description": "Filter id (24-char Mongo ObjectId).",
+                    "members": [],
+                    "name": "id",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Filter name.",
+                    "members": [],
+                    "name": "name",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Company field the filter runs on.",
+                    "members": [],
+                    "name": "field",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Comparison operator.",
+                    "enumValues": [
+                      "<",
+                      "<=",
+                      "=",
+                      ">",
+                      ">=",
+                      "in",
+                      "nin",
+                      "regex"
+                    ],
+                    "members": [],
+                    "name": "operator",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Compared value.",
+                    "members": [],
+                    "name": "value",
+                    "required": false,
+                    "type": "string"
+                  }
+                ],
+                "name": "filters",
+                "required": false,
+                "type": "object[]"
+              }
+            ],
+            "name": "",
+            "required": true,
+            "type": "object"
+          },
+          "shapes": [
+            {
+              "id": "8596a438-aeda-577e-bf15-9b5a513250d8",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "57f19d01-2bd2-55bb-a8ba-75df35b6d121",
+                  "name": "id"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "30b19c47-8de3-5885-99aa-3c99a4d35c67",
+                  "name": "name"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "7d15ae30-ae7a-5062-a528-f1f6478503d0",
+                  "name": "field"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "2ddba37c-770a-5b76-b2cb-3d825c8f499c",
+                  "name": "operator"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "615ef1e5-08d8-58c7-8b49-963b2bccb485",
+                  "name": "value"
+                }
+              ],
+              "name": "finance-filter-list-response-filter",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/filter",
+                "pointer": [
+                  "filter"
+                ],
+                "verb": "get"
+              }
+            },
+            {
+              "id": "95367b03-f17b-59c9-8eb3-97bdd0ad0ea3",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "8596a438-aeda-577e-bf15-9b5a513250d8",
+                    "type": "shape"
+                  },
+                  "id": "88011cdf-58e0-5009-aa42-621df4e28bff",
+                  "name": "filter"
+                },
+                {
+                  "cardinality": "many",
+                  "dataType": {
+                    "shapeId": "8596a438-aeda-577e-bf15-9b5a513250d8",
+                    "type": "shape"
+                  },
+                  "id": "c5c022c4-6401-500e-b480-f32a0ca1ad64",
+                  "name": "filters"
+                }
+              ],
+              "name": "finance-filter-list-response",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/filter",
+                "pointer": [],
+                "verb": "get"
+              }
+            }
+          ],
+          "tier": "anonymous",
+          "unmapped": []
+        },
+        {
+          "cardinality": "one",
+          "code": "409",
+          "description": "Invalid filter key (path `id` malformed or not found)",
+          "shapes": [],
+          "tier": "undescribed",
+          "unmapped": []
+        }
+      ],
+      "segments": [
+        "filter"
+      ],
+      "summary": "Get a filter by ID (path), search filters by name/field via `q`, batch-resolve filters via `ids`, or list every filter with a bare call (neither `q` nor `ids`) — list-all mode, ADR 0033.\n\nPrecedence: path `id` wins over query params; `q` wins over `ids` when both are sent. A blank or whitespace-only `q` is ignored and `ids` is used instead. Path-`id` lookups reply with `filter` (single object); `q`, `ids` and list-all calls reply with `filters` (array, capped at 1000).",
       "verb": "get"
     },
     {
@@ -1741,473 +2541,6 @@
     },
     {
       "domain": "finance",
-      "id": "get /finance/v1/strategy/{id}/sleeves",
-      "operationId": "finance_v1_strategy_sleeves_list",
-      "params": [
-        {
-          "cardinality": "one",
-          "dataType": {
-            "type": "string"
-          },
-          "doc": {
-            "members": [],
-            "name": "id",
-            "required": true,
-            "type": "string"
-          },
-          "location": "path",
-          "name": "id",
-          "required": true,
-          "shapes": [],
-          "unmapped": []
-        }
-      ],
-      "path": "/finance/v1/strategy/{id}/sleeves",
-      "responses": [
-        {
-          "cardinality": "one",
-          "code": "200",
-          "dataType": {
-            "shapeId": "3dcdca05-8774-5e43-990d-8157cce70825",
-            "type": "shape"
-          },
-          "description": "Strategy composition",
-          "doc": {
-            "members": [
-              {
-                "members": [
-                  {
-                    "description": "Sleeve id",
-                    "members": [],
-                    "name": "id",
-                    "required": false,
-                    "type": "string"
-                  },
-                  {
-                    "members": [],
-                    "name": "name",
-                    "required": false,
-                    "type": "string"
-                  },
-                  {
-                    "description": "Instruments in the Held Set",
-                    "members": [],
-                    "name": "stockCount",
-                    "required": false,
-                    "type": "integer"
-                  },
-                  {
-                    "members": [],
-                    "name": "entryFilterCount",
-                    "required": false,
-                    "type": "integer"
-                  },
-                  {
-                    "members": [],
-                    "name": "exitFilterCount",
-                    "required": false,
-                    "type": "integer"
-                  },
-                  {
-                    "description": "Entry + exit Filters",
-                    "members": [],
-                    "name": "filterCount",
-                    "required": false,
-                    "type": "integer"
-                  },
-                  {
-                    "members": [],
-                    "name": "maxQuantity",
-                    "required": false,
-                    "type": "integer"
-                  },
-                  {
-                    "members": [],
-                    "name": "rankField",
-                    "required": false,
-                    "type": "string"
-                  },
-                  {
-                    "members": [],
-                    "name": "rankDesc",
-                    "required": false,
-                    "type": "boolean"
-                  },
-                  {
-                    "members": [],
-                    "name": "tested",
-                    "required": false,
-                    "type": "boolean"
-                  },
-                  {
-                    "description": "YYYY-MM-DD",
-                    "members": [],
-                    "name": "lastRefresh",
-                    "required": false,
-                    "type": "string"
-                  },
-                  {
-                    "description": "Allocation Band floor",
-                    "members": [],
-                    "name": "min",
-                    "required": false,
-                    "type": "number"
-                  },
-                  {
-                    "description": "Allocation Band ceiling",
-                    "members": [],
-                    "name": "max",
-                    "required": false,
-                    "type": "number"
-                  }
-                ],
-                "name": "sleeves",
-                "required": false,
-                "type": "object[]"
-              },
-              {
-                "members": [
-                  {
-                    "description": "Company id",
-                    "members": [],
-                    "name": "id",
-                    "required": false,
-                    "type": "string"
-                  },
-                  {
-                    "members": [],
-                    "name": "symbol",
-                    "required": false,
-                    "type": "string"
-                  },
-                  {
-                    "members": [],
-                    "name": "name",
-                    "required": false,
-                    "type": "string"
-                  },
-                  {
-                    "members": [],
-                    "name": "min",
-                    "required": false,
-                    "type": "number"
-                  },
-                  {
-                    "members": [],
-                    "name": "max",
-                    "required": false,
-                    "type": "number"
-                  }
-                ],
-                "name": "standalones",
-                "required": false,
-                "type": "object[]"
-              },
-              {
-                "description": "Fallback Company, null for cash",
-                "members": [
-                  {
-                    "description": "Company id",
-                    "members": [],
-                    "name": "id",
-                    "required": false,
-                    "type": "string"
-                  },
-                  {
-                    "members": [],
-                    "name": "symbol",
-                    "required": false,
-                    "type": "string"
-                  },
-                  {
-                    "members": [],
-                    "name": "name",
-                    "required": false,
-                    "type": "string"
-                  }
-                ],
-                "name": "fallback",
-                "required": false,
-                "type": "object"
-              }
-            ],
-            "name": "",
-            "required": true,
-            "type": "object"
-          },
-          "shapes": [
-            {
-              "id": "d82fe4e9-6ef8-5ea7-a069-1ecb8ee11089",
-              "keys": [
-                {
-                  "cardinality": "one",
-                  "dataType": {
-                    "type": "string"
-                  },
-                  "id": "95925dc2-9f38-5614-90af-60f05b227ee2",
-                  "name": "id"
-                },
-                {
-                  "cardinality": "one",
-                  "dataType": {
-                    "type": "string"
-                  },
-                  "id": "3e29dc8c-b343-583a-8359-ad3637b1b3ac",
-                  "name": "name"
-                },
-                {
-                  "cardinality": "one",
-                  "dataType": {
-                    "type": "number"
-                  },
-                  "id": "7ccc6d02-78f1-5690-9fb3-8094f2dcb4e2",
-                  "name": "stockCount"
-                },
-                {
-                  "cardinality": "one",
-                  "dataType": {
-                    "type": "number"
-                  },
-                  "id": "28e7705a-3d75-54d0-8879-f68c12d6367a",
-                  "name": "entryFilterCount"
-                },
-                {
-                  "cardinality": "one",
-                  "dataType": {
-                    "type": "number"
-                  },
-                  "id": "d84e1310-03d2-5af2-9f45-5dfe5f954630",
-                  "name": "exitFilterCount"
-                },
-                {
-                  "cardinality": "one",
-                  "dataType": {
-                    "type": "number"
-                  },
-                  "id": "ae62dbb0-7102-5b72-b67e-251e1c64bf90",
-                  "name": "filterCount"
-                },
-                {
-                  "cardinality": "one",
-                  "dataType": {
-                    "type": "number"
-                  },
-                  "id": "3b005976-923f-5b78-ba11-839cef4a6556",
-                  "name": "maxQuantity"
-                },
-                {
-                  "cardinality": "one",
-                  "dataType": {
-                    "type": "string"
-                  },
-                  "id": "43ed873f-428f-5755-b81b-2a29f443d39f",
-                  "name": "rankField"
-                },
-                {
-                  "cardinality": "one",
-                  "dataType": {
-                    "type": "boolean"
-                  },
-                  "id": "c0554988-9166-59a6-800c-ede2db5f0768",
-                  "name": "rankDesc"
-                },
-                {
-                  "cardinality": "one",
-                  "dataType": {
-                    "type": "boolean"
-                  },
-                  "id": "e99d565a-8a3d-5750-9553-4a5c932e1e7a",
-                  "name": "tested"
-                },
-                {
-                  "cardinality": "one",
-                  "dataType": {
-                    "type": "string"
-                  },
-                  "id": "4308d7d2-dcc3-5344-b043-4db8c38a4db2",
-                  "name": "lastRefresh"
-                },
-                {
-                  "cardinality": "one",
-                  "dataType": {
-                    "type": "number"
-                  },
-                  "id": "8e9d53e9-d627-5dbb-af36-cfc77082a789",
-                  "name": "min"
-                },
-                {
-                  "cardinality": "one",
-                  "dataType": {
-                    "type": "number"
-                  },
-                  "id": "8089b627-cc13-5645-9d4a-3b29626f09c7",
-                  "name": "max"
-                }
-              ],
-              "name": "finance-strategy-sleeves-list-response-sleeves",
-              "origin": {
-                "code": "200",
-                "path": "/finance/v1/strategy/{id}/sleeves",
-                "pointer": [
-                  "sleeves"
-                ],
-                "verb": "get"
-              }
-            },
-            {
-              "id": "7f79bb46-4cea-58ec-b762-a3e84819f3e6",
-              "keys": [
-                {
-                  "cardinality": "one",
-                  "dataType": {
-                    "type": "string"
-                  },
-                  "id": "8a4e2493-1535-5a6d-923f-b8f17e4c5cb3",
-                  "name": "id"
-                },
-                {
-                  "cardinality": "one",
-                  "dataType": {
-                    "type": "string"
-                  },
-                  "id": "b3f32306-50bc-52c4-97cd-3318f0816426",
-                  "name": "symbol"
-                },
-                {
-                  "cardinality": "one",
-                  "dataType": {
-                    "type": "string"
-                  },
-                  "id": "e3f5d4ad-23bf-5e33-80bf-99f78d9b1acd",
-                  "name": "name"
-                },
-                {
-                  "cardinality": "one",
-                  "dataType": {
-                    "type": "number"
-                  },
-                  "id": "0238149a-1546-54ec-a293-e550f8efa13a",
-                  "name": "min"
-                },
-                {
-                  "cardinality": "one",
-                  "dataType": {
-                    "type": "number"
-                  },
-                  "id": "ec4b79b0-2331-503e-9880-4ddae3049950",
-                  "name": "max"
-                }
-              ],
-              "name": "finance-strategy-sleeves-list-response-standalones",
-              "origin": {
-                "code": "200",
-                "path": "/finance/v1/strategy/{id}/sleeves",
-                "pointer": [
-                  "standalones"
-                ],
-                "verb": "get"
-              }
-            },
-            {
-              "id": "67857734-c40f-5fde-b505-13e248ca2fd4",
-              "keys": [
-                {
-                  "cardinality": "one",
-                  "dataType": {
-                    "type": "string"
-                  },
-                  "id": "9ad0dcc5-22f7-5b9b-9366-6637cc7f01e5",
-                  "name": "id"
-                },
-                {
-                  "cardinality": "one",
-                  "dataType": {
-                    "type": "string"
-                  },
-                  "id": "6643c7ac-9afb-5e7e-9045-760a53493ccc",
-                  "name": "symbol"
-                },
-                {
-                  "cardinality": "one",
-                  "dataType": {
-                    "type": "string"
-                  },
-                  "id": "ece47abb-c4e5-5065-99b5-fd4194a3f5db",
-                  "name": "name"
-                }
-              ],
-              "name": "finance-strategy-sleeves-list-response-fallback",
-              "origin": {
-                "code": "200",
-                "path": "/finance/v1/strategy/{id}/sleeves",
-                "pointer": [
-                  "fallback"
-                ],
-                "verb": "get"
-              }
-            },
-            {
-              "id": "3dcdca05-8774-5e43-990d-8157cce70825",
-              "keys": [
-                {
-                  "cardinality": "many",
-                  "dataType": {
-                    "shapeId": "d82fe4e9-6ef8-5ea7-a069-1ecb8ee11089",
-                    "type": "shape"
-                  },
-                  "id": "4141aae0-2aac-5d82-b16a-3bc60af20d00",
-                  "name": "sleeves"
-                },
-                {
-                  "cardinality": "many",
-                  "dataType": {
-                    "shapeId": "7f79bb46-4cea-58ec-b762-a3e84819f3e6",
-                    "type": "shape"
-                  },
-                  "id": "a8b9be55-0895-58f7-a219-39eb4ff19675",
-                  "name": "standalones"
-                },
-                {
-                  "cardinality": "one",
-                  "dataType": {
-                    "shapeId": "67857734-c40f-5fde-b505-13e248ca2fd4",
-                    "type": "shape"
-                  },
-                  "id": "9e8876c1-3dd8-5ab3-ad4e-f03f01acf361",
-                  "name": "fallback"
-                }
-              ],
-              "name": "finance-strategy-sleeves-list-response",
-              "origin": {
-                "code": "200",
-                "path": "/finance/v1/strategy/{id}/sleeves",
-                "pointer": [],
-                "verb": "get"
-              }
-            }
-          ],
-          "tier": "anonymous",
-          "unmapped": []
-        },
-        {
-          "cardinality": "one",
-          "code": "409",
-          "description": "Invalid strategy id",
-          "shapes": [],
-          "tier": "undescribed",
-          "unmapped": []
-        }
-      ],
-      "segments": [
-        "strategy",
-        "{id}",
-        "sleeves"
-      ],
-      "summary": "Strategy composition: every Sleeve (GROUP allocation) and every STANDALONE allocation, in allocation order, plus the Fallback Company (null = cash). Published strategies are readable by anyone with finance access; drafts by OWNER/COLLABORATOR only.",
-      "verb": "get"
-    },
-    {
-      "domain": "finance",
       "id": "get /finance/v1/sector",
       "operationId": "finance_v1_sector_list",
       "params": [],
@@ -3091,6 +3424,2245 @@
         "industry"
       ],
       "summary": "One Sector and its Industries ranked against each other: median return, rank per period and composite score within the Sector. Industries only, never Companies. Industries with no return yet come last with no rank. Unknown key returns 200 with `sector: null`.",
+      "verb": "get"
+    },
+    {
+      "domain": "finance",
+      "id": "get /finance/v1/sleeve",
+      "operationId": "finance_v1_sleeve_list",
+      "params": [
+        {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "description": "Case-insensitive name search (list mode only).",
+          "doc": {
+            "description": "Case-insensitive name search (list mode only).",
+            "members": [],
+            "name": "q",
+            "required": false,
+            "type": "string"
+          },
+          "location": "query",
+          "name": "q",
+          "required": false,
+          "shapes": [],
+          "unmapped": []
+        }
+      ],
+      "path": "/finance/v1/sleeve",
+      "responses": [
+        {
+          "cardinality": "one",
+          "code": "200",
+          "dataType": {
+            "shapeId": "3aa0a63a-f8b4-59b4-a4d2-a9408732acda",
+            "type": "shape"
+          },
+          "description": "`sleeve` when fetched by path id; `sleeves` when listed or searched via `q`.",
+          "doc": {
+            "members": [
+              {
+                "members": [
+                  {
+                    "description": "Sleeve id (24-char Mongo ObjectId).",
+                    "members": [],
+                    "name": "id",
+                    "required": true,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Sleeve name.",
+                    "members": [],
+                    "name": "name",
+                    "required": true,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Map {filterId: op} — one op ('and'|'or'|'andnot'|'ornot') per Filter.",
+                    "members": [
+                      {
+                        "enumValues": [
+                          "and",
+                          "or",
+                          "andnot",
+                          "ornot"
+                        ],
+                        "members": [],
+                        "name": "<key>",
+                        "required": false,
+                        "type": "string"
+                      }
+                    ],
+                    "name": "entryFilters",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Map {filterId: op} — one op ('and'|'or'|'andnot'|'ornot') per Filter.",
+                    "members": [
+                      {
+                        "enumValues": [
+                          "and",
+                          "or",
+                          "andnot",
+                          "ornot"
+                        ],
+                        "members": [],
+                        "name": "<key>",
+                        "required": false,
+                        "type": "string"
+                      }
+                    ],
+                    "name": "exitFilters",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Numeric Company field Instruments are ranked by.",
+                    "members": [],
+                    "name": "rankField",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Rank descending when true.",
+                    "members": [],
+                    "name": "rankDesc",
+                    "required": false,
+                    "type": "boolean"
+                  },
+                  {
+                    "description": "Max selection cap (ADR 0007).",
+                    "members": [],
+                    "name": "maxQuantity",
+                    "required": false,
+                    "type": "integer"
+                  },
+                  {
+                    "description": "Sleeve Index (ADR 0012): day-keyed map {\"YYYY-MM-DD\": value}.",
+                    "members": [
+                      {
+                        "members": [],
+                        "name": "<key>",
+                        "required": false,
+                        "type": "number"
+                      }
+                    ],
+                    "name": "idx",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Tested gate (ADR 0008): only tested Sleeves are evaluated.",
+                    "members": [],
+                    "name": "tested",
+                    "required": false,
+                    "type": "boolean"
+                  },
+                  {
+                    "description": "Entry Confirmation in Refreshes (ADR 0020).",
+                    "members": [],
+                    "name": "entryConfirmation",
+                    "required": false,
+                    "type": "integer"
+                  },
+                  {
+                    "description": "Exit Confirmation in Refreshes (ADR 0020).",
+                    "members": [],
+                    "name": "exitConfirmation",
+                    "required": false,
+                    "type": "integer"
+                  },
+                  {
+                    "description": "Map {symbol: count} of consecutive matching Refreshes (ADR 0020).",
+                    "members": [
+                      {
+                        "members": [],
+                        "name": "<key>",
+                        "required": false,
+                        "type": "integer"
+                      }
+                    ],
+                    "name": "entryStreak",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Map {symbol: count} of consecutive matching Refreshes (ADR 0020).",
+                    "members": [
+                      {
+                        "members": [],
+                        "name": "<key>",
+                        "required": false,
+                        "type": "integer"
+                      }
+                    ],
+                    "name": "exitStreak",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Held Set (ADR 0012): {symbol: {p, d}}.",
+                    "members": [
+                      {
+                        "members": [
+                          {
+                            "description": "Price at last Refresh.",
+                            "members": [],
+                            "name": "p",
+                            "required": false,
+                            "type": "number"
+                          },
+                          {
+                            "description": "Date first added (YYYY-MM-DD).",
+                            "members": [],
+                            "name": "d",
+                            "required": false,
+                            "type": "string"
+                          }
+                        ],
+                        "name": "<key>",
+                        "required": false,
+                        "type": "object"
+                      }
+                    ],
+                    "name": "heldSet",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Last Refresh date (ADR 0012), YYYY-MM-DD.",
+                    "members": [],
+                    "name": "lastRefresh",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Entry role changed since last Refresh.",
+                    "members": [],
+                    "name": "entryChanged",
+                    "required": false,
+                    "type": "boolean"
+                  }
+                ],
+                "name": "sleeve",
+                "required": false,
+                "type": "object"
+              },
+              {
+                "members": [
+                  {
+                    "description": "Sleeve id (24-char Mongo ObjectId).",
+                    "members": [],
+                    "name": "id",
+                    "required": true,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Sleeve name.",
+                    "members": [],
+                    "name": "name",
+                    "required": true,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Map {filterId: op} — one op ('and'|'or'|'andnot'|'ornot') per Filter.",
+                    "members": [
+                      {
+                        "enumValues": [
+                          "and",
+                          "or",
+                          "andnot",
+                          "ornot"
+                        ],
+                        "members": [],
+                        "name": "<key>",
+                        "required": false,
+                        "type": "string"
+                      }
+                    ],
+                    "name": "entryFilters",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Map {filterId: op} — one op ('and'|'or'|'andnot'|'ornot') per Filter.",
+                    "members": [
+                      {
+                        "enumValues": [
+                          "and",
+                          "or",
+                          "andnot",
+                          "ornot"
+                        ],
+                        "members": [],
+                        "name": "<key>",
+                        "required": false,
+                        "type": "string"
+                      }
+                    ],
+                    "name": "exitFilters",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Numeric Company field Instruments are ranked by.",
+                    "members": [],
+                    "name": "rankField",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Rank descending when true.",
+                    "members": [],
+                    "name": "rankDesc",
+                    "required": false,
+                    "type": "boolean"
+                  },
+                  {
+                    "description": "Max selection cap (ADR 0007).",
+                    "members": [],
+                    "name": "maxQuantity",
+                    "required": false,
+                    "type": "integer"
+                  },
+                  {
+                    "description": "Sleeve Index (ADR 0012): day-keyed map {\"YYYY-MM-DD\": value}.",
+                    "members": [
+                      {
+                        "members": [],
+                        "name": "<key>",
+                        "required": false,
+                        "type": "number"
+                      }
+                    ],
+                    "name": "idx",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Tested gate (ADR 0008): only tested Sleeves are evaluated.",
+                    "members": [],
+                    "name": "tested",
+                    "required": false,
+                    "type": "boolean"
+                  },
+                  {
+                    "description": "Entry Confirmation in Refreshes (ADR 0020).",
+                    "members": [],
+                    "name": "entryConfirmation",
+                    "required": false,
+                    "type": "integer"
+                  },
+                  {
+                    "description": "Exit Confirmation in Refreshes (ADR 0020).",
+                    "members": [],
+                    "name": "exitConfirmation",
+                    "required": false,
+                    "type": "integer"
+                  },
+                  {
+                    "description": "Map {symbol: count} of consecutive matching Refreshes (ADR 0020).",
+                    "members": [
+                      {
+                        "members": [],
+                        "name": "<key>",
+                        "required": false,
+                        "type": "integer"
+                      }
+                    ],
+                    "name": "entryStreak",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Map {symbol: count} of consecutive matching Refreshes (ADR 0020).",
+                    "members": [
+                      {
+                        "members": [],
+                        "name": "<key>",
+                        "required": false,
+                        "type": "integer"
+                      }
+                    ],
+                    "name": "exitStreak",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Held Set (ADR 0012): {symbol: {p, d}}.",
+                    "members": [
+                      {
+                        "members": [
+                          {
+                            "description": "Price at last Refresh.",
+                            "members": [],
+                            "name": "p",
+                            "required": false,
+                            "type": "number"
+                          },
+                          {
+                            "description": "Date first added (YYYY-MM-DD).",
+                            "members": [],
+                            "name": "d",
+                            "required": false,
+                            "type": "string"
+                          }
+                        ],
+                        "name": "<key>",
+                        "required": false,
+                        "type": "object"
+                      }
+                    ],
+                    "name": "heldSet",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Last Refresh date (ADR 0012), YYYY-MM-DD.",
+                    "members": [],
+                    "name": "lastRefresh",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Entry role changed since last Refresh.",
+                    "members": [],
+                    "name": "entryChanged",
+                    "required": false,
+                    "type": "boolean"
+                  }
+                ],
+                "name": "sleeves",
+                "required": false,
+                "type": "object[]"
+              },
+              {
+                "description": "Path-id only. Held Set rows.",
+                "members": [
+                  {
+                    "members": [],
+                    "name": "symbol",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Price at last Refresh.",
+                    "members": [],
+                    "name": "price",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Date first added (YYYY-MM-DD).",
+                    "members": [],
+                    "name": "addedOn",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "members": [],
+                    "name": "exitStreak",
+                    "required": false,
+                    "type": "integer"
+                  },
+                  {
+                    "members": [],
+                    "name": "exitProgress",
+                    "required": false,
+                    "type": "number"
+                  }
+                ],
+                "name": "heldSet",
+                "required": false,
+                "type": "object[]"
+              },
+              {
+                "description": "Path-id only. Non-held Instruments with a live entry Streak, by progress, streak, symbol — not the vacancy-fill order (that ranks by Rank first).",
+                "members": [
+                  {
+                    "members": [],
+                    "name": "symbol",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "members": [],
+                    "name": "streak",
+                    "required": false,
+                    "type": "integer"
+                  },
+                  {
+                    "description": "Confirmation Progress: streak / confirmation × 100, capped at 100.",
+                    "members": [],
+                    "name": "progress",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Progress reached 100.",
+                    "members": [],
+                    "name": "confirmed",
+                    "required": false,
+                    "type": "boolean"
+                  }
+                ],
+                "name": "entryCandidates",
+                "required": false,
+                "type": "object[]"
+              },
+              {
+                "description": "Path-id only. Held Instruments with a live exit Streak, by progress, streak, symbol.",
+                "members": [
+                  {
+                    "members": [],
+                    "name": "symbol",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "members": [],
+                    "name": "streak",
+                    "required": false,
+                    "type": "integer"
+                  },
+                  {
+                    "description": "Confirmation Progress: streak / confirmation × 100, capped at 100.",
+                    "members": [],
+                    "name": "progress",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Progress reached 100.",
+                    "members": [],
+                    "name": "confirmed",
+                    "required": false,
+                    "type": "boolean"
+                  }
+                ],
+                "name": "exitCandidates",
+                "required": false,
+                "type": "object[]"
+              }
+            ],
+            "name": "",
+            "required": true,
+            "type": "object"
+          },
+          "shapes": [
+            {
+              "id": "7675a6fb-54be-5a71-a268-9b450df42e9b",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "6eac53af-d2bd-5105-b352-ed91ef4f9e4f",
+                  "name": "p"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "5aac3433-debd-53e9-8753-0d0ddb4f7ed3",
+                  "name": "d"
+                }
+              ],
+              "name": "finance-sleeve-list-response-sleeve-heldset",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/sleeve",
+                "pointer": [
+                  "sleeve",
+                  "heldSet"
+                ],
+                "verb": "get"
+              }
+            },
+            {
+              "id": "ea7a7a34-e59f-5f62-a64c-1e3618a063d4",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "fbb1bdc5-305d-54b7-a4f7-89832e9c3de5",
+                  "name": "id"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "965ac3bb-a441-5fc1-b76a-ffdd393991db",
+                  "name": "name"
+                },
+                {
+                  "cardinality": "map",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "32e837d7-5a04-520d-a82c-49a957d8ecb7",
+                  "name": "entryFilters"
+                },
+                {
+                  "cardinality": "map",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "698a188b-001f-580d-912e-eda950b6326b",
+                  "name": "exitFilters"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "2dc24d52-8f29-51b0-a61a-7e7417c257b2",
+                  "name": "rankField"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "boolean"
+                  },
+                  "id": "5c151297-1949-5bcd-bd1c-1429562f2677",
+                  "name": "rankDesc"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "9133250f-ff19-5ff1-ace3-9a95592226ef",
+                  "name": "maxQuantity"
+                },
+                {
+                  "cardinality": "map",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "f5cdb087-f251-51dd-acae-3621fcf4fe27",
+                  "name": "idx"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "boolean"
+                  },
+                  "id": "0bd926cd-8382-50eb-9958-a667cf5896ed",
+                  "name": "tested"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "a5983671-e901-594b-a2e2-c677fee108d1",
+                  "name": "entryConfirmation"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "60893575-4cbd-5b4b-9761-b277640e3bd5",
+                  "name": "exitConfirmation"
+                },
+                {
+                  "cardinality": "map",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "4d3dba9e-7397-5358-8fa7-555cedfc8afe",
+                  "name": "entryStreak"
+                },
+                {
+                  "cardinality": "map",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "800d718a-9fd5-5558-87d0-a15c53222eea",
+                  "name": "exitStreak"
+                },
+                {
+                  "cardinality": "map",
+                  "dataType": {
+                    "shapeId": "7675a6fb-54be-5a71-a268-9b450df42e9b",
+                    "type": "shape"
+                  },
+                  "id": "8e7b761d-1071-52c7-ac56-e88b77ac3afd",
+                  "name": "heldSet"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "1326e2a3-0eab-5e05-a6ff-2e49b1920983",
+                  "name": "lastRefresh"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "boolean"
+                  },
+                  "id": "57f863d8-33df-5106-86e4-504255aa99b8",
+                  "name": "entryChanged"
+                }
+              ],
+              "name": "finance-sleeve-list-response-sleeve",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/sleeve",
+                "pointer": [
+                  "sleeve"
+                ],
+                "verb": "get"
+              }
+            },
+            {
+              "id": "07d69f0f-4e67-56a9-beb9-f28d075486ef",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "7d0bfa7d-75bf-5e07-a0ca-e3b3c198dfdd",
+                  "name": "symbol"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "290cdb4e-c133-52e8-b4af-e12cea084d2e",
+                  "name": "price"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "5d16327c-b40a-5a76-9be3-95e20ec1901c",
+                  "name": "addedOn"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "8a379317-d18c-59a9-85cb-8f8d28bb43b7",
+                  "name": "exitStreak"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "1599b762-43c6-5590-8e88-920cd1cdeb02",
+                  "name": "exitProgress"
+                }
+              ],
+              "name": "finance-sleeve-list-response-heldset",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/sleeve",
+                "pointer": [
+                  "heldSet"
+                ],
+                "verb": "get"
+              }
+            },
+            {
+              "id": "126f5865-f2f9-52af-8c5a-201317f1ce85",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "f465cd0b-4bc8-5d9d-9371-d6a9990518ab",
+                  "name": "symbol"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "35f9c545-afc1-5d77-87a0-fe5b06d821e5",
+                  "name": "streak"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "108e97c4-dc5b-59c2-b717-524e19a54464",
+                  "name": "progress"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "boolean"
+                  },
+                  "id": "bf5c1e34-3260-5c6a-bb5a-5736dbbf5f54",
+                  "name": "confirmed"
+                }
+              ],
+              "name": "finance-sleeve-list-response-entrycandidates",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/sleeve",
+                "pointer": [
+                  "entryCandidates"
+                ],
+                "verb": "get"
+              }
+            },
+            {
+              "id": "3aa0a63a-f8b4-59b4-a4d2-a9408732acda",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "ea7a7a34-e59f-5f62-a64c-1e3618a063d4",
+                    "type": "shape"
+                  },
+                  "id": "1ad5f5f2-feca-5368-9fc2-c9fc0182c412",
+                  "name": "sleeve"
+                },
+                {
+                  "cardinality": "many",
+                  "dataType": {
+                    "shapeId": "ea7a7a34-e59f-5f62-a64c-1e3618a063d4",
+                    "type": "shape"
+                  },
+                  "id": "bfd17a13-347c-5381-8ea3-4c1dc1db24b3",
+                  "name": "sleeves"
+                },
+                {
+                  "cardinality": "many",
+                  "dataType": {
+                    "shapeId": "07d69f0f-4e67-56a9-beb9-f28d075486ef",
+                    "type": "shape"
+                  },
+                  "id": "b19020af-0d61-559d-aae9-f2a9ec070d0f",
+                  "name": "heldSet"
+                },
+                {
+                  "cardinality": "many",
+                  "dataType": {
+                    "shapeId": "126f5865-f2f9-52af-8c5a-201317f1ce85",
+                    "type": "shape"
+                  },
+                  "id": "6a476c98-7fc3-59be-9f9e-45f25488c778",
+                  "name": "entryCandidates"
+                },
+                {
+                  "cardinality": "many",
+                  "dataType": {
+                    "shapeId": "126f5865-f2f9-52af-8c5a-201317f1ce85",
+                    "type": "shape"
+                  },
+                  "id": "50d802e8-ae55-5902-be2e-2cc6b8b1eac8",
+                  "name": "exitCandidates"
+                }
+              ],
+              "name": "finance-sleeve-list-response",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/sleeve",
+                "pointer": [],
+                "verb": "get"
+              }
+            }
+          ],
+          "tier": "anonymous",
+          "unmapped": []
+        },
+        {
+          "cardinality": "one",
+          "code": "409",
+          "description": "Invalid sleeve key",
+          "shapes": [],
+          "tier": "undescribed",
+          "unmapped": []
+        }
+      ],
+      "segments": [
+        "sleeve"
+      ],
+      "summary": "Get a sleeve by ID (path), or list sleeves — all of them, or filtered by name via `q`. Path-`id` lookups reply with `sleeve` (single object); list calls reply with `sleeves` (array, capped at 1000).",
+      "verb": "get"
+    },
+    {
+      "domain": "finance",
+      "id": "get /finance/v1/sleeve/{id}",
+      "operationId": "finance_v1_sleeve_read",
+      "params": [
+        {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "doc": {
+            "members": [],
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          "location": "path",
+          "name": "id",
+          "required": true,
+          "shapes": [],
+          "unmapped": []
+        },
+        {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "description": "Case-insensitive name search (list mode only).",
+          "doc": {
+            "description": "Case-insensitive name search (list mode only).",
+            "members": [],
+            "name": "q",
+            "required": false,
+            "type": "string"
+          },
+          "location": "query",
+          "name": "q",
+          "required": false,
+          "shapes": [],
+          "unmapped": []
+        }
+      ],
+      "path": "/finance/v1/sleeve/{id}",
+      "responses": [
+        {
+          "cardinality": "one",
+          "code": "200",
+          "dataType": {
+            "shapeId": "a6e900c2-d8bb-52e0-8d5e-2a4c1d73a6e2",
+            "type": "shape"
+          },
+          "description": "`sleeve` when fetched by path id; `sleeves` when listed or searched via `q`.",
+          "doc": {
+            "members": [
+              {
+                "members": [
+                  {
+                    "description": "Sleeve id (24-char Mongo ObjectId).",
+                    "members": [],
+                    "name": "id",
+                    "required": true,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Sleeve name.",
+                    "members": [],
+                    "name": "name",
+                    "required": true,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Map {filterId: op} — one op ('and'|'or'|'andnot'|'ornot') per Filter.",
+                    "members": [
+                      {
+                        "enumValues": [
+                          "and",
+                          "or",
+                          "andnot",
+                          "ornot"
+                        ],
+                        "members": [],
+                        "name": "<key>",
+                        "required": false,
+                        "type": "string"
+                      }
+                    ],
+                    "name": "entryFilters",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Map {filterId: op} — one op ('and'|'or'|'andnot'|'ornot') per Filter.",
+                    "members": [
+                      {
+                        "enumValues": [
+                          "and",
+                          "or",
+                          "andnot",
+                          "ornot"
+                        ],
+                        "members": [],
+                        "name": "<key>",
+                        "required": false,
+                        "type": "string"
+                      }
+                    ],
+                    "name": "exitFilters",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Numeric Company field Instruments are ranked by.",
+                    "members": [],
+                    "name": "rankField",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Rank descending when true.",
+                    "members": [],
+                    "name": "rankDesc",
+                    "required": false,
+                    "type": "boolean"
+                  },
+                  {
+                    "description": "Max selection cap (ADR 0007).",
+                    "members": [],
+                    "name": "maxQuantity",
+                    "required": false,
+                    "type": "integer"
+                  },
+                  {
+                    "description": "Sleeve Index (ADR 0012): day-keyed map {\"YYYY-MM-DD\": value}.",
+                    "members": [
+                      {
+                        "members": [],
+                        "name": "<key>",
+                        "required": false,
+                        "type": "number"
+                      }
+                    ],
+                    "name": "idx",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Tested gate (ADR 0008): only tested Sleeves are evaluated.",
+                    "members": [],
+                    "name": "tested",
+                    "required": false,
+                    "type": "boolean"
+                  },
+                  {
+                    "description": "Entry Confirmation in Refreshes (ADR 0020).",
+                    "members": [],
+                    "name": "entryConfirmation",
+                    "required": false,
+                    "type": "integer"
+                  },
+                  {
+                    "description": "Exit Confirmation in Refreshes (ADR 0020).",
+                    "members": [],
+                    "name": "exitConfirmation",
+                    "required": false,
+                    "type": "integer"
+                  },
+                  {
+                    "description": "Map {symbol: count} of consecutive matching Refreshes (ADR 0020).",
+                    "members": [
+                      {
+                        "members": [],
+                        "name": "<key>",
+                        "required": false,
+                        "type": "integer"
+                      }
+                    ],
+                    "name": "entryStreak",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Map {symbol: count} of consecutive matching Refreshes (ADR 0020).",
+                    "members": [
+                      {
+                        "members": [],
+                        "name": "<key>",
+                        "required": false,
+                        "type": "integer"
+                      }
+                    ],
+                    "name": "exitStreak",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Held Set (ADR 0012): {symbol: {p, d}}.",
+                    "members": [
+                      {
+                        "members": [
+                          {
+                            "description": "Price at last Refresh.",
+                            "members": [],
+                            "name": "p",
+                            "required": false,
+                            "type": "number"
+                          },
+                          {
+                            "description": "Date first added (YYYY-MM-DD).",
+                            "members": [],
+                            "name": "d",
+                            "required": false,
+                            "type": "string"
+                          }
+                        ],
+                        "name": "<key>",
+                        "required": false,
+                        "type": "object"
+                      }
+                    ],
+                    "name": "heldSet",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Last Refresh date (ADR 0012), YYYY-MM-DD.",
+                    "members": [],
+                    "name": "lastRefresh",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Entry role changed since last Refresh.",
+                    "members": [],
+                    "name": "entryChanged",
+                    "required": false,
+                    "type": "boolean"
+                  }
+                ],
+                "name": "sleeve",
+                "required": false,
+                "type": "object"
+              },
+              {
+                "members": [
+                  {
+                    "description": "Sleeve id (24-char Mongo ObjectId).",
+                    "members": [],
+                    "name": "id",
+                    "required": true,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Sleeve name.",
+                    "members": [],
+                    "name": "name",
+                    "required": true,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Map {filterId: op} — one op ('and'|'or'|'andnot'|'ornot') per Filter.",
+                    "members": [
+                      {
+                        "enumValues": [
+                          "and",
+                          "or",
+                          "andnot",
+                          "ornot"
+                        ],
+                        "members": [],
+                        "name": "<key>",
+                        "required": false,
+                        "type": "string"
+                      }
+                    ],
+                    "name": "entryFilters",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Map {filterId: op} — one op ('and'|'or'|'andnot'|'ornot') per Filter.",
+                    "members": [
+                      {
+                        "enumValues": [
+                          "and",
+                          "or",
+                          "andnot",
+                          "ornot"
+                        ],
+                        "members": [],
+                        "name": "<key>",
+                        "required": false,
+                        "type": "string"
+                      }
+                    ],
+                    "name": "exitFilters",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Numeric Company field Instruments are ranked by.",
+                    "members": [],
+                    "name": "rankField",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Rank descending when true.",
+                    "members": [],
+                    "name": "rankDesc",
+                    "required": false,
+                    "type": "boolean"
+                  },
+                  {
+                    "description": "Max selection cap (ADR 0007).",
+                    "members": [],
+                    "name": "maxQuantity",
+                    "required": false,
+                    "type": "integer"
+                  },
+                  {
+                    "description": "Sleeve Index (ADR 0012): day-keyed map {\"YYYY-MM-DD\": value}.",
+                    "members": [
+                      {
+                        "members": [],
+                        "name": "<key>",
+                        "required": false,
+                        "type": "number"
+                      }
+                    ],
+                    "name": "idx",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Tested gate (ADR 0008): only tested Sleeves are evaluated.",
+                    "members": [],
+                    "name": "tested",
+                    "required": false,
+                    "type": "boolean"
+                  },
+                  {
+                    "description": "Entry Confirmation in Refreshes (ADR 0020).",
+                    "members": [],
+                    "name": "entryConfirmation",
+                    "required": false,
+                    "type": "integer"
+                  },
+                  {
+                    "description": "Exit Confirmation in Refreshes (ADR 0020).",
+                    "members": [],
+                    "name": "exitConfirmation",
+                    "required": false,
+                    "type": "integer"
+                  },
+                  {
+                    "description": "Map {symbol: count} of consecutive matching Refreshes (ADR 0020).",
+                    "members": [
+                      {
+                        "members": [],
+                        "name": "<key>",
+                        "required": false,
+                        "type": "integer"
+                      }
+                    ],
+                    "name": "entryStreak",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Map {symbol: count} of consecutive matching Refreshes (ADR 0020).",
+                    "members": [
+                      {
+                        "members": [],
+                        "name": "<key>",
+                        "required": false,
+                        "type": "integer"
+                      }
+                    ],
+                    "name": "exitStreak",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Held Set (ADR 0012): {symbol: {p, d}}.",
+                    "members": [
+                      {
+                        "members": [
+                          {
+                            "description": "Price at last Refresh.",
+                            "members": [],
+                            "name": "p",
+                            "required": false,
+                            "type": "number"
+                          },
+                          {
+                            "description": "Date first added (YYYY-MM-DD).",
+                            "members": [],
+                            "name": "d",
+                            "required": false,
+                            "type": "string"
+                          }
+                        ],
+                        "name": "<key>",
+                        "required": false,
+                        "type": "object"
+                      }
+                    ],
+                    "name": "heldSet",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Last Refresh date (ADR 0012), YYYY-MM-DD.",
+                    "members": [],
+                    "name": "lastRefresh",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Entry role changed since last Refresh.",
+                    "members": [],
+                    "name": "entryChanged",
+                    "required": false,
+                    "type": "boolean"
+                  }
+                ],
+                "name": "sleeves",
+                "required": false,
+                "type": "object[]"
+              },
+              {
+                "description": "Path-id only. Held Set rows.",
+                "members": [
+                  {
+                    "members": [],
+                    "name": "symbol",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Price at last Refresh.",
+                    "members": [],
+                    "name": "price",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Date first added (YYYY-MM-DD).",
+                    "members": [],
+                    "name": "addedOn",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "members": [],
+                    "name": "exitStreak",
+                    "required": false,
+                    "type": "integer"
+                  },
+                  {
+                    "members": [],
+                    "name": "exitProgress",
+                    "required": false,
+                    "type": "number"
+                  }
+                ],
+                "name": "heldSet",
+                "required": false,
+                "type": "object[]"
+              },
+              {
+                "description": "Path-id only. Non-held Instruments with a live entry Streak, by progress, streak, symbol — not the vacancy-fill order (that ranks by Rank first).",
+                "members": [
+                  {
+                    "members": [],
+                    "name": "symbol",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "members": [],
+                    "name": "streak",
+                    "required": false,
+                    "type": "integer"
+                  },
+                  {
+                    "description": "Confirmation Progress: streak / confirmation × 100, capped at 100.",
+                    "members": [],
+                    "name": "progress",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Progress reached 100.",
+                    "members": [],
+                    "name": "confirmed",
+                    "required": false,
+                    "type": "boolean"
+                  }
+                ],
+                "name": "entryCandidates",
+                "required": false,
+                "type": "object[]"
+              },
+              {
+                "description": "Path-id only. Held Instruments with a live exit Streak, by progress, streak, symbol.",
+                "members": [
+                  {
+                    "members": [],
+                    "name": "symbol",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "members": [],
+                    "name": "streak",
+                    "required": false,
+                    "type": "integer"
+                  },
+                  {
+                    "description": "Confirmation Progress: streak / confirmation × 100, capped at 100.",
+                    "members": [],
+                    "name": "progress",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Progress reached 100.",
+                    "members": [],
+                    "name": "confirmed",
+                    "required": false,
+                    "type": "boolean"
+                  }
+                ],
+                "name": "exitCandidates",
+                "required": false,
+                "type": "object[]"
+              }
+            ],
+            "name": "",
+            "required": true,
+            "type": "object"
+          },
+          "shapes": [
+            {
+              "id": "efb94863-9ca8-53e5-bf8e-3f69cf7a9803",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "b99b4187-0aed-5831-a792-91ed40f29427",
+                  "name": "p"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "a59b220b-1eee-57ad-9392-72712cf274ab",
+                  "name": "d"
+                }
+              ],
+              "name": "finance-sleeve-read-response-sleeve-heldset",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/sleeve/{id}",
+                "pointer": [
+                  "sleeve",
+                  "heldSet"
+                ],
+                "verb": "get"
+              }
+            },
+            {
+              "id": "4102cb2c-d3c7-56d6-b30c-f2ca3446d94c",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "0302baad-b22e-57a3-a108-018fd6c1d54d",
+                  "name": "id"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "f910b573-0d74-5bfd-8895-114919c3e213",
+                  "name": "name"
+                },
+                {
+                  "cardinality": "map",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "fc45b8cf-930a-5289-a90f-9b75fe99d32f",
+                  "name": "entryFilters"
+                },
+                {
+                  "cardinality": "map",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "29b33953-0a1d-5209-ac58-d8c5ade0d533",
+                  "name": "exitFilters"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "8073071a-0dd0-51d4-83d2-c1a83f38657a",
+                  "name": "rankField"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "boolean"
+                  },
+                  "id": "f0ecb26f-9391-5409-a6b3-0fb5447a524f",
+                  "name": "rankDesc"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "685f1387-b244-5275-8243-08990e0866e7",
+                  "name": "maxQuantity"
+                },
+                {
+                  "cardinality": "map",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "924c1d4f-59c1-5dc1-b69b-17d54822a26f",
+                  "name": "idx"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "boolean"
+                  },
+                  "id": "4c7a3205-5972-5987-88fd-2e3358919ea5",
+                  "name": "tested"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "f9360da9-960d-54d7-aa5b-8f53528ac189",
+                  "name": "entryConfirmation"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "41503f7d-7ff9-5357-8175-c523d9e57cdd",
+                  "name": "exitConfirmation"
+                },
+                {
+                  "cardinality": "map",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "3d5cd916-06d4-51bc-8928-3c00efca50f6",
+                  "name": "entryStreak"
+                },
+                {
+                  "cardinality": "map",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "43c430b2-c378-543c-81f6-1630e1102f12",
+                  "name": "exitStreak"
+                },
+                {
+                  "cardinality": "map",
+                  "dataType": {
+                    "shapeId": "efb94863-9ca8-53e5-bf8e-3f69cf7a9803",
+                    "type": "shape"
+                  },
+                  "id": "9bc250a5-968c-5f6b-8fc1-fc1f3d10c085",
+                  "name": "heldSet"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "b1c09dab-3b62-55a9-bb90-aafde5f0e10b",
+                  "name": "lastRefresh"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "boolean"
+                  },
+                  "id": "f9290db0-69c4-5b22-abc7-22ee8fd28f10",
+                  "name": "entryChanged"
+                }
+              ],
+              "name": "finance-sleeve-read-response-sleeve",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/sleeve/{id}",
+                "pointer": [
+                  "sleeve"
+                ],
+                "verb": "get"
+              }
+            },
+            {
+              "id": "ea12bfe7-ab38-5b6d-a529-3d9152cb8247",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "79ffe355-19d1-5d13-8251-1a8f6eab1e35",
+                  "name": "symbol"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "01f8cd06-4e35-540c-b839-6c10c601d566",
+                  "name": "price"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "53007ec4-4272-5202-be3c-490e9e699764",
+                  "name": "addedOn"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "1831c27f-e464-5aad-8b69-d56105a2019f",
+                  "name": "exitStreak"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "4dda2b2a-cd5e-562c-b78b-5fc895c8044a",
+                  "name": "exitProgress"
+                }
+              ],
+              "name": "finance-sleeve-read-response-heldset",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/sleeve/{id}",
+                "pointer": [
+                  "heldSet"
+                ],
+                "verb": "get"
+              }
+            },
+            {
+              "id": "429cb0dd-2517-5d33-842f-cc17222e1efd",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "ce6be643-4b6f-5149-9be9-4cc57e6c38e3",
+                  "name": "symbol"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "2beff94d-c21a-54fb-aae4-c00fafb13aed",
+                  "name": "streak"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "4bca0ccc-b560-5eee-8809-f6fa0dbde96c",
+                  "name": "progress"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "boolean"
+                  },
+                  "id": "819b465c-f363-5756-9eed-dc624b517d7c",
+                  "name": "confirmed"
+                }
+              ],
+              "name": "finance-sleeve-read-response-entrycandidates",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/sleeve/{id}",
+                "pointer": [
+                  "entryCandidates"
+                ],
+                "verb": "get"
+              }
+            },
+            {
+              "id": "a6e900c2-d8bb-52e0-8d5e-2a4c1d73a6e2",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "4102cb2c-d3c7-56d6-b30c-f2ca3446d94c",
+                    "type": "shape"
+                  },
+                  "id": "f63b164a-2c70-5d1c-b25b-205081362dea",
+                  "name": "sleeve"
+                },
+                {
+                  "cardinality": "many",
+                  "dataType": {
+                    "shapeId": "4102cb2c-d3c7-56d6-b30c-f2ca3446d94c",
+                    "type": "shape"
+                  },
+                  "id": "d803fbbb-63e3-55bd-a873-97190149c7db",
+                  "name": "sleeves"
+                },
+                {
+                  "cardinality": "many",
+                  "dataType": {
+                    "shapeId": "ea12bfe7-ab38-5b6d-a529-3d9152cb8247",
+                    "type": "shape"
+                  },
+                  "id": "c7c309e7-66fa-5889-9121-31850e91fa47",
+                  "name": "heldSet"
+                },
+                {
+                  "cardinality": "many",
+                  "dataType": {
+                    "shapeId": "429cb0dd-2517-5d33-842f-cc17222e1efd",
+                    "type": "shape"
+                  },
+                  "id": "f88bfcb0-8599-5e52-804e-e2268272b990",
+                  "name": "entryCandidates"
+                },
+                {
+                  "cardinality": "many",
+                  "dataType": {
+                    "shapeId": "429cb0dd-2517-5d33-842f-cc17222e1efd",
+                    "type": "shape"
+                  },
+                  "id": "368af830-74ad-5ba6-965a-6f7a0df40e90",
+                  "name": "exitCandidates"
+                }
+              ],
+              "name": "finance-sleeve-read-response",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/sleeve/{id}",
+                "pointer": [],
+                "verb": "get"
+              }
+            }
+          ],
+          "tier": "anonymous",
+          "unmapped": []
+        },
+        {
+          "cardinality": "one",
+          "code": "409",
+          "description": "Invalid sleeve key",
+          "shapes": [],
+          "tier": "undescribed",
+          "unmapped": []
+        }
+      ],
+      "segments": [
+        "sleeve",
+        "{id}"
+      ],
+      "summary": "Get a sleeve by ID (path), or list sleeves — all of them, or filtered by name via `q`. Path-`id` lookups reply with `sleeve` (single object); list calls reply with `sleeves` (array, capped at 1000).",
+      "verb": "get"
+    },
+    {
+      "domain": "finance",
+      "id": "get /finance/v1/strategy/{id}/sleeves",
+      "operationId": "finance_v1_strategy_sleeves_list",
+      "params": [
+        {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "doc": {
+            "members": [],
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          "location": "path",
+          "name": "id",
+          "required": true,
+          "shapes": [],
+          "unmapped": []
+        }
+      ],
+      "path": "/finance/v1/strategy/{id}/sleeves",
+      "responses": [
+        {
+          "cardinality": "one",
+          "code": "200",
+          "dataType": {
+            "shapeId": "3dcdca05-8774-5e43-990d-8157cce70825",
+            "type": "shape"
+          },
+          "description": "Strategy composition",
+          "doc": {
+            "members": [
+              {
+                "members": [
+                  {
+                    "description": "Sleeve id",
+                    "members": [],
+                    "name": "id",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "members": [],
+                    "name": "name",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Instruments in the Held Set",
+                    "members": [],
+                    "name": "stockCount",
+                    "required": false,
+                    "type": "integer"
+                  },
+                  {
+                    "members": [],
+                    "name": "entryFilterCount",
+                    "required": false,
+                    "type": "integer"
+                  },
+                  {
+                    "members": [],
+                    "name": "exitFilterCount",
+                    "required": false,
+                    "type": "integer"
+                  },
+                  {
+                    "description": "Entry + exit Filters",
+                    "members": [],
+                    "name": "filterCount",
+                    "required": false,
+                    "type": "integer"
+                  },
+                  {
+                    "members": [],
+                    "name": "maxQuantity",
+                    "required": false,
+                    "type": "integer"
+                  },
+                  {
+                    "members": [],
+                    "name": "rankField",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "members": [],
+                    "name": "rankDesc",
+                    "required": false,
+                    "type": "boolean"
+                  },
+                  {
+                    "members": [],
+                    "name": "tested",
+                    "required": false,
+                    "type": "boolean"
+                  },
+                  {
+                    "description": "YYYY-MM-DD",
+                    "members": [],
+                    "name": "lastRefresh",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Allocation Band floor",
+                    "members": [],
+                    "name": "min",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "description": "Allocation Band ceiling",
+                    "members": [],
+                    "name": "max",
+                    "required": false,
+                    "type": "number"
+                  }
+                ],
+                "name": "sleeves",
+                "required": false,
+                "type": "object[]"
+              },
+              {
+                "members": [
+                  {
+                    "description": "Company id",
+                    "members": [],
+                    "name": "id",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "members": [],
+                    "name": "symbol",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "members": [],
+                    "name": "name",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "members": [],
+                    "name": "min",
+                    "required": false,
+                    "type": "number"
+                  },
+                  {
+                    "members": [],
+                    "name": "max",
+                    "required": false,
+                    "type": "number"
+                  }
+                ],
+                "name": "standalones",
+                "required": false,
+                "type": "object[]"
+              },
+              {
+                "description": "Fallback Company, null for cash",
+                "members": [
+                  {
+                    "description": "Company id",
+                    "members": [],
+                    "name": "id",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "members": [],
+                    "name": "symbol",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "members": [],
+                    "name": "name",
+                    "required": false,
+                    "type": "string"
+                  }
+                ],
+                "name": "fallback",
+                "required": false,
+                "type": "object"
+              }
+            ],
+            "name": "",
+            "required": true,
+            "type": "object"
+          },
+          "shapes": [
+            {
+              "id": "d82fe4e9-6ef8-5ea7-a069-1ecb8ee11089",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "95925dc2-9f38-5614-90af-60f05b227ee2",
+                  "name": "id"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "3e29dc8c-b343-583a-8359-ad3637b1b3ac",
+                  "name": "name"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "7ccc6d02-78f1-5690-9fb3-8094f2dcb4e2",
+                  "name": "stockCount"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "28e7705a-3d75-54d0-8879-f68c12d6367a",
+                  "name": "entryFilterCount"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "d84e1310-03d2-5af2-9f45-5dfe5f954630",
+                  "name": "exitFilterCount"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "ae62dbb0-7102-5b72-b67e-251e1c64bf90",
+                  "name": "filterCount"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "3b005976-923f-5b78-ba11-839cef4a6556",
+                  "name": "maxQuantity"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "43ed873f-428f-5755-b81b-2a29f443d39f",
+                  "name": "rankField"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "boolean"
+                  },
+                  "id": "c0554988-9166-59a6-800c-ede2db5f0768",
+                  "name": "rankDesc"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "boolean"
+                  },
+                  "id": "e99d565a-8a3d-5750-9553-4a5c932e1e7a",
+                  "name": "tested"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "4308d7d2-dcc3-5344-b043-4db8c38a4db2",
+                  "name": "lastRefresh"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "8e9d53e9-d627-5dbb-af36-cfc77082a789",
+                  "name": "min"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "8089b627-cc13-5645-9d4a-3b29626f09c7",
+                  "name": "max"
+                }
+              ],
+              "name": "finance-strategy-sleeves-list-response-sleeves",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/strategy/{id}/sleeves",
+                "pointer": [
+                  "sleeves"
+                ],
+                "verb": "get"
+              }
+            },
+            {
+              "id": "7f79bb46-4cea-58ec-b762-a3e84819f3e6",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "8a4e2493-1535-5a6d-923f-b8f17e4c5cb3",
+                  "name": "id"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "b3f32306-50bc-52c4-97cd-3318f0816426",
+                  "name": "symbol"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "e3f5d4ad-23bf-5e33-80bf-99f78d9b1acd",
+                  "name": "name"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "0238149a-1546-54ec-a293-e550f8efa13a",
+                  "name": "min"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "ec4b79b0-2331-503e-9880-4ddae3049950",
+                  "name": "max"
+                }
+              ],
+              "name": "finance-strategy-sleeves-list-response-standalones",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/strategy/{id}/sleeves",
+                "pointer": [
+                  "standalones"
+                ],
+                "verb": "get"
+              }
+            },
+            {
+              "id": "67857734-c40f-5fde-b505-13e248ca2fd4",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "9ad0dcc5-22f7-5b9b-9366-6637cc7f01e5",
+                  "name": "id"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "6643c7ac-9afb-5e7e-9045-760a53493ccc",
+                  "name": "symbol"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "ece47abb-c4e5-5065-99b5-fd4194a3f5db",
+                  "name": "name"
+                }
+              ],
+              "name": "finance-strategy-sleeves-list-response-fallback",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/strategy/{id}/sleeves",
+                "pointer": [
+                  "fallback"
+                ],
+                "verb": "get"
+              }
+            },
+            {
+              "id": "3dcdca05-8774-5e43-990d-8157cce70825",
+              "keys": [
+                {
+                  "cardinality": "many",
+                  "dataType": {
+                    "shapeId": "d82fe4e9-6ef8-5ea7-a069-1ecb8ee11089",
+                    "type": "shape"
+                  },
+                  "id": "4141aae0-2aac-5d82-b16a-3bc60af20d00",
+                  "name": "sleeves"
+                },
+                {
+                  "cardinality": "many",
+                  "dataType": {
+                    "shapeId": "7f79bb46-4cea-58ec-b762-a3e84819f3e6",
+                    "type": "shape"
+                  },
+                  "id": "a8b9be55-0895-58f7-a219-39eb4ff19675",
+                  "name": "standalones"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "67857734-c40f-5fde-b505-13e248ca2fd4",
+                    "type": "shape"
+                  },
+                  "id": "9e8876c1-3dd8-5ab3-ad4e-f03f01acf361",
+                  "name": "fallback"
+                }
+              ],
+              "name": "finance-strategy-sleeves-list-response",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/strategy/{id}/sleeves",
+                "pointer": [],
+                "verb": "get"
+              }
+            }
+          ],
+          "tier": "anonymous",
+          "unmapped": []
+        },
+        {
+          "cardinality": "one",
+          "code": "409",
+          "description": "Invalid strategy id",
+          "shapes": [],
+          "tier": "undescribed",
+          "unmapped": []
+        }
+      ],
+      "segments": [
+        "strategy",
+        "{id}",
+        "sleeves"
+      ],
+      "summary": "Strategy composition: every Sleeve (GROUP allocation) and every STANDALONE allocation, in allocation order, plus the Fallback Company (null = cash). Published strategies are readable by anyone with finance access; drafts by OWNER/COLLABORATOR only.",
       "verb": "get"
     },
     {
@@ -4950,6 +7522,537 @@
       ],
       "summary": "Correct one holding's quantity and/or average buy price",
       "verb": "patch"
+    },
+    {
+      "domain": "finance",
+      "id": "post /finance/v1/sleeve/{id}/role",
+      "operationId": "finance_v1_sleeve_role_create",
+      "params": [
+        {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "doc": {
+            "members": [],
+            "name": "id",
+            "required": true,
+            "type": "string"
+          },
+          "location": "path",
+          "name": "id",
+          "required": true,
+          "shapes": [],
+          "unmapped": []
+        },
+        {
+          "cardinality": "one",
+          "dataType": {
+            "shapeId": "be033436-279a-5114-8bd2-a27012a07996",
+            "type": "shape"
+          },
+          "doc": {
+            "members": [
+              {
+                "enumValues": [
+                  "entry",
+                  "exit"
+                ],
+                "members": [],
+                "name": "role",
+                "required": true,
+                "type": "string"
+              },
+              {
+                "enumValues": [
+                  "and",
+                  "or",
+                  "andnot",
+                  "ornot"
+                ],
+                "members": [],
+                "name": "op",
+                "required": true,
+                "type": "string"
+              },
+              {
+                "members": [],
+                "name": "filterId",
+                "required": true,
+                "type": "string"
+              }
+            ],
+            "name": "data",
+            "required": true,
+            "type": "object"
+          },
+          "location": "body",
+          "name": "data",
+          "required": true,
+          "shapes": [
+            {
+              "id": "be033436-279a-5114-8bd2-a27012a07996",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "c91deec6-16af-5348-88d4-b2ac8bf35aa6",
+                  "name": "role"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "8fedd7c9-2874-53df-95ef-0373600f1ca9",
+                  "name": "op"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "51dcbea5-67cc-5ae7-abad-0f5b7cdbc945",
+                  "name": "filterId"
+                }
+              ],
+              "name": "finance-sleeve-role-create-request"
+            }
+          ],
+          "unmapped": []
+        }
+      ],
+      "path": "/finance/v1/sleeve/{id}/role",
+      "responses": [
+        {
+          "cardinality": "one",
+          "code": "200",
+          "dataType": {
+            "shapeId": "28418af8-d728-56fe-a298-931283adeb18",
+            "type": "shape"
+          },
+          "description": "Success",
+          "doc": {
+            "members": [
+              {
+                "members": [
+                  {
+                    "description": "Sleeve id (24-char Mongo ObjectId).",
+                    "members": [],
+                    "name": "id",
+                    "required": true,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Sleeve name.",
+                    "members": [],
+                    "name": "name",
+                    "required": true,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Map {filterId: op} — one op ('and'|'or'|'andnot'|'ornot') per Filter.",
+                    "members": [
+                      {
+                        "enumValues": [
+                          "and",
+                          "or",
+                          "andnot",
+                          "ornot"
+                        ],
+                        "members": [],
+                        "name": "<key>",
+                        "required": false,
+                        "type": "string"
+                      }
+                    ],
+                    "name": "entryFilters",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Map {filterId: op} — one op ('and'|'or'|'andnot'|'ornot') per Filter.",
+                    "members": [
+                      {
+                        "enumValues": [
+                          "and",
+                          "or",
+                          "andnot",
+                          "ornot"
+                        ],
+                        "members": [],
+                        "name": "<key>",
+                        "required": false,
+                        "type": "string"
+                      }
+                    ],
+                    "name": "exitFilters",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Numeric Company field Instruments are ranked by.",
+                    "members": [],
+                    "name": "rankField",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Rank descending when true.",
+                    "members": [],
+                    "name": "rankDesc",
+                    "required": false,
+                    "type": "boolean"
+                  },
+                  {
+                    "description": "Max selection cap (ADR 0007).",
+                    "members": [],
+                    "name": "maxQuantity",
+                    "required": false,
+                    "type": "integer"
+                  },
+                  {
+                    "description": "Sleeve Index (ADR 0012): day-keyed map {\"YYYY-MM-DD\": value}.",
+                    "members": [
+                      {
+                        "members": [],
+                        "name": "<key>",
+                        "required": false,
+                        "type": "number"
+                      }
+                    ],
+                    "name": "idx",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Tested gate (ADR 0008): only tested Sleeves are evaluated.",
+                    "members": [],
+                    "name": "tested",
+                    "required": false,
+                    "type": "boolean"
+                  },
+                  {
+                    "description": "Entry Confirmation in Refreshes (ADR 0020).",
+                    "members": [],
+                    "name": "entryConfirmation",
+                    "required": false,
+                    "type": "integer"
+                  },
+                  {
+                    "description": "Exit Confirmation in Refreshes (ADR 0020).",
+                    "members": [],
+                    "name": "exitConfirmation",
+                    "required": false,
+                    "type": "integer"
+                  },
+                  {
+                    "description": "Map {symbol: count} of consecutive matching Refreshes (ADR 0020).",
+                    "members": [
+                      {
+                        "members": [],
+                        "name": "<key>",
+                        "required": false,
+                        "type": "integer"
+                      }
+                    ],
+                    "name": "entryStreak",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Map {symbol: count} of consecutive matching Refreshes (ADR 0020).",
+                    "members": [
+                      {
+                        "members": [],
+                        "name": "<key>",
+                        "required": false,
+                        "type": "integer"
+                      }
+                    ],
+                    "name": "exitStreak",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Held Set (ADR 0012): {symbol: {p, d}}.",
+                    "members": [
+                      {
+                        "members": [
+                          {
+                            "description": "Price at last Refresh.",
+                            "members": [],
+                            "name": "p",
+                            "required": false,
+                            "type": "number"
+                          },
+                          {
+                            "description": "Date first added (YYYY-MM-DD).",
+                            "members": [],
+                            "name": "d",
+                            "required": false,
+                            "type": "string"
+                          }
+                        ],
+                        "name": "<key>",
+                        "required": false,
+                        "type": "object"
+                      }
+                    ],
+                    "name": "heldSet",
+                    "required": false,
+                    "type": "object"
+                  },
+                  {
+                    "description": "Last Refresh date (ADR 0012), YYYY-MM-DD.",
+                    "members": [],
+                    "name": "lastRefresh",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Entry role changed since last Refresh.",
+                    "members": [],
+                    "name": "entryChanged",
+                    "required": false,
+                    "type": "boolean"
+                  }
+                ],
+                "name": "sleeve",
+                "required": true,
+                "type": "object"
+              }
+            ],
+            "name": "",
+            "required": true,
+            "type": "object"
+          },
+          "shapes": [
+            {
+              "id": "9bae58aa-f9a5-581c-aec8-c1c8f19e684a",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "1683edd6-f049-5af0-a80e-ef44dc0f2a76",
+                  "name": "p"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "0a83daf2-e449-580c-b40f-0228d00f1792",
+                  "name": "d"
+                }
+              ],
+              "name": "finance-sleeve-role-create-response-sleeve-heldset",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/sleeve/{id}/role",
+                "pointer": [
+                  "sleeve",
+                  "heldSet"
+                ],
+                "verb": "post"
+              }
+            },
+            {
+              "id": "9e6eaaa9-e454-56c3-945d-d80f0e0fcdc9",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "aad73482-4065-5738-b600-a50cdf100d22",
+                  "name": "id"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "71ff734c-8c6f-56ae-bf8a-7ee28be26bec",
+                  "name": "name"
+                },
+                {
+                  "cardinality": "map",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "6107fb68-ced6-5092-9a48-f0366f7d9748",
+                  "name": "entryFilters"
+                },
+                {
+                  "cardinality": "map",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "abdbe60e-ac86-5304-983a-afd804f109ee",
+                  "name": "exitFilters"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "559009ff-5c61-5611-a81d-1fcd928ba3df",
+                  "name": "rankField"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "boolean"
+                  },
+                  "id": "213c9148-7105-539a-8bb7-f9eeeb2b1ea8",
+                  "name": "rankDesc"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "7de89136-257c-5874-8c82-03c0a000e496",
+                  "name": "maxQuantity"
+                },
+                {
+                  "cardinality": "map",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "eac8658e-9f55-59c0-b704-759c804504ae",
+                  "name": "idx"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "boolean"
+                  },
+                  "id": "0b7f611a-5ba7-5e34-ad51-01d8de0150ba",
+                  "name": "tested"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "9a5f0eb0-11ee-5486-ab8a-d3ea8e8d8410",
+                  "name": "entryConfirmation"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "154ab542-2f5e-504c-88a8-c5a0c15adea2",
+                  "name": "exitConfirmation"
+                },
+                {
+                  "cardinality": "map",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "2936e047-d84d-5ef5-9611-e6f1715fd2a7",
+                  "name": "entryStreak"
+                },
+                {
+                  "cardinality": "map",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "bf3535a9-09c3-5b6b-a533-a617f8958b09",
+                  "name": "exitStreak"
+                },
+                {
+                  "cardinality": "map",
+                  "dataType": {
+                    "shapeId": "9bae58aa-f9a5-581c-aec8-c1c8f19e684a",
+                    "type": "shape"
+                  },
+                  "id": "0057c650-cc71-54de-8bc7-834a87f8c9b0",
+                  "name": "heldSet"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "2c8bde92-9299-5220-83a1-e29c15b869f2",
+                  "name": "lastRefresh"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "boolean"
+                  },
+                  "id": "a3914967-95e4-52f1-a359-cf258889ab47",
+                  "name": "entryChanged"
+                }
+              ],
+              "name": "finance-sleeve-role-create-response-sleeve",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/sleeve/{id}/role",
+                "pointer": [
+                  "sleeve"
+                ],
+                "verb": "post"
+              }
+            },
+            {
+              "id": "28418af8-d728-56fe-a298-931283adeb18",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "shapeId": "9e6eaaa9-e454-56c3-945d-d80f0e0fcdc9",
+                    "type": "shape"
+                  },
+                  "id": "3c0610a4-9bac-5afe-9e08-b5da37ce0744",
+                  "name": "sleeve"
+                }
+              ],
+              "name": "finance-sleeve-role-create-response",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/sleeve/{id}/role",
+                "pointer": [],
+                "verb": "post"
+              }
+            }
+          ],
+          "tier": "anonymous",
+          "unmapped": []
+        },
+        {
+          "cardinality": "one",
+          "code": "406",
+          "description": "Not acceptable",
+          "shapes": [],
+          "tier": "undescribed",
+          "unmapped": []
+        },
+        {
+          "cardinality": "one",
+          "code": "409",
+          "description": "Duplicate role item",
+          "shapes": [],
+          "tier": "undescribed",
+          "unmapped": []
+        }
+      ],
+      "segments": [
+        "sleeve",
+        "{id}",
+        "role"
+      ],
+      "summary": "Append one role item to a sleeve's entry/exit role.",
+      "verb": "post"
     },
     {
       "domain": "finance",

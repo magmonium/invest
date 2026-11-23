@@ -1,0 +1,5 @@
+navId: root_default_strategy_sleeve_id
+icon: target
+kind: url
+presentation: dynamic
+param: id
