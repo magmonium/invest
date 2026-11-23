@@ -52,9 +52,74 @@
           "functionId": "fa35bf5b-8c2c-4945-a352-f35fb794a980",
           "id": "1afa9294-3815-49ed-8192-2cb24b8db3b1",
           "name": "strategyNav"
+        },
+        "57a3ac3a-bdc3-449e-8c3a-58763be9ae7d": {
+          "args": {
+            "1522d5a5-20e1-437e-88ed-2a6db7f5b47e": {
+              "path": [
+                "47dfd9ee-e79d-4b3e-8406-5333fc1b0749"
+              ],
+              "source": "path"
+            }
+          },
+          "functionId": "995bfa5b-45c0-404c-9210-4324684295a8",
+          "id": "57a3ac3a-bdc3-449e-8c3a-58763be9ae7d",
+          "name": "sleeveNav"
+        },
+        "e1d256fd-903e-42e1-b9de-1abbda052166": {
+          "args": {
+            "37fd3f52-34cd-4c7f-a609-c76b73ce1eac": {
+              "path": [
+                "407d1c9b-3f4d-457e-a289-9ac03882762a"
+              ],
+              "source": "path"
+            }
+          },
+          "functionId": "76e59017-8449-4038-888e-aa1ba81b0310",
+          "id": "e1d256fd-903e-42e1-b9de-1abbda052166",
+          "name": "filterNav"
         }
       },
       "functions": {
+        "087a341a-a59e-4ce3-9376-4dffb7768348": {
+          "aiDrafted": true,
+          "body": "return Object.keys(sleeve?.heldSet ?? {}).length;",
+          "cases": [
+            {
+              "args": [
+                "undefined"
+              ],
+              "expected": "0",
+              "name": "no sleeve holds nothing"
+            },
+            {
+              "args": [
+                "{\"id\":\"s1\",\"name\":\"S\",\"entryFilters\":{},\"exitFilters\":{},\"rankField\":\"\",\"rankDesc\":false,\"maxQuantity\":0,\"idx\":{},\"tested\":false,\"entryConfirmation\":0,\"exitConfirmation\":0,\"entryStreak\":{},\"exitStreak\":{},\"heldSet\":{\"TCS\":{\"p\":1,\"d\":\"2024-01-01\"},\"INFY\":{\"p\":2,\"d\":\"2024-01-01\"}},\"lastRefresh\":\"\",\"entryChanged\":false}"
+              ],
+              "expected": "2",
+              "name": "counts held symbols"
+            }
+          ],
+          "description": "Counts the instruments a sleeve currently holds.",
+          "id": "087a341a-a59e-4ce3-9376-4dffb7768348",
+          "name": "sleeveHeldCount",
+          "params": [
+            {
+              "acceptsUndefined": true,
+              "cardinality": "one",
+              "dataType": {
+                "shapeId": "a650670b-5cdd-4256-8dd1-7d7b62fb4928",
+                "type": "shape"
+              },
+              "id": "f0d0b8de-6895-4903-9588-8ae9c4f96306",
+              "name": "sleeve"
+            }
+          ],
+          "returnCardinality": "one",
+          "returnType": {
+            "type": "number"
+          }
+        },
         "2834dfc0-4952-4ccf-86b2-747903893eb0": {
           "aiDrafted": true,
           "body": "for (const key in response.strategy) {\n    strategyMap[key] = response.strategy[key];\n  }\n  return strategyMap;",
@@ -143,6 +208,65 @@
             "type": "boolean"
           }
         },
+        "3c9fead2-8b5f-4e83-89cb-e66d0ec8fa69": {
+          "aiDrafted": true,
+          "body": "return Object.entries(sleeve?.exitFilters ?? {}).map(([id, op]) => {\n    const filter = filterMap[id];\n    return {\n      id,\n      name: filter?.name ?? id,\n      op,\n      rule: filter ? `${filter.field} ${filter.operator} ${filter.value}` : '',\n      role: 'exit',\n    };\n  });",
+          "cases": [
+            {
+              "args": [
+                "undefined",
+                "{}"
+              ],
+              "expected": "[]",
+              "name": "no sleeve returns no rows"
+            },
+            {
+              "args": [
+                "{\"id\":\"s1\",\"name\":\"S\",\"entryFilters\":{},\"exitFilters\":{\"f1\":\"and\"},\"rankField\":\"\",\"rankDesc\":false,\"maxQuantity\":0,\"idx\":{},\"tested\":false,\"entryConfirmation\":0,\"exitConfirmation\":0,\"entryStreak\":{},\"exitStreak\":{},\"heldSet\":{},\"lastRefresh\":\"\",\"entryChanged\":false}",
+                "{\"f1\":{\"id\":\"f1\",\"name\":\"Cheap\",\"field\":\"pe\",\"operator\":\"<\",\"value\":\"15\"}}"
+              ],
+              "expected": "[{ \"id\": \"f1\", \"name\": \"Cheap\", \"op\": \"and\", \"rule\": \"pe < 15\", \"role\": \"exit\" }]",
+              "name": "joins filter name and rule"
+            },
+            {
+              "args": [
+                "{\"id\":\"s1\",\"name\":\"S\",\"entryFilters\":{},\"exitFilters\":{\"f9\":\"or\"},\"rankField\":\"\",\"rankDesc\":false,\"maxQuantity\":0,\"idx\":{},\"tested\":false,\"entryConfirmation\":0,\"exitConfirmation\":0,\"entryStreak\":{},\"exitStreak\":{},\"heldSet\":{},\"lastRefresh\":\"\",\"entryChanged\":false}",
+                "{}"
+              ],
+              "expected": "[{ \"id\": \"f9\", \"name\": \"f9\", \"op\": \"or\", \"rule\": \"\", \"role\": \"exit\" }]",
+              "name": "unknown filter falls back to its id"
+            }
+          ],
+          "description": "Lists the sleeve's exit filters with their op, joined to filter name and rule from the filter map.",
+          "id": "3c9fead2-8b5f-4e83-89cb-e66d0ec8fa69",
+          "name": "sleeveExitFilters",
+          "params": [
+            {
+              "acceptsUndefined": true,
+              "cardinality": "one",
+              "dataType": {
+                "shapeId": "a650670b-5cdd-4256-8dd1-7d7b62fb4928",
+                "type": "shape"
+              },
+              "id": "30023459-ceea-4e66-9e4c-9ac026a1800d",
+              "name": "sleeve"
+            },
+            {
+              "cardinality": "map",
+              "dataType": {
+                "shapeId": "c58f00db-47e8-4613-9cae-a96103128202",
+                "type": "shape"
+              },
+              "id": "3c680aa9-4f39-4017-ac74-02b9a8b57498",
+              "name": "filterMap"
+            }
+          ],
+          "returnCardinality": "many",
+          "returnType": {
+            "shapeId": "b2033820-2085-4657-9eaa-598b2d60249e",
+            "type": "shape"
+          }
+        },
         "3f79e63a-9f9a-4702-8e74-7be31243b7e1": {
           "aiDrafted": true,
           "body": "if (!id || !Array.isArray(id) || id.length === 0 || !strategyMap) {\n    return undefined;\n  }\n\n  const result: Record<string, FinanceStrategyUpdateResponseStrategyChart[]> = {};\n\n  for (const key of id) {\n    const strategy = strategyMap[key];\n    if (strategy) {\n      result[strategy.name] = strategy.chart;\n    }\n  }\n\n  return Object.keys(result).length > 0 ? result : undefined;",
@@ -208,6 +332,197 @@
             "type": "shape"
           },
           "returnUndefined": true
+        },
+        "56c13611-ebc3-4f5a-9ef2-7d64980f237a": {
+          "aiDrafted": true,
+          "body": "return Object.entries(sleeve?.entryFilters ?? {}).map(([id, op]) => {\n    const filter = filterMap[id];\n    return {\n      id,\n      name: filter?.name ?? id,\n      op,\n      rule: filter ? `${filter.field} ${filter.operator} ${filter.value}` : '',\n      role: 'entry',\n    };\n  });",
+          "cases": [
+            {
+              "args": [
+                "undefined",
+                "{}"
+              ],
+              "expected": "[]",
+              "name": "no sleeve returns no rows"
+            },
+            {
+              "args": [
+                "{\"id\":\"s1\",\"name\":\"S\",\"entryFilters\":{\"f1\":\"and\"},\"exitFilters\":{},\"rankField\":\"\",\"rankDesc\":false,\"maxQuantity\":0,\"idx\":{},\"tested\":false,\"entryConfirmation\":0,\"exitConfirmation\":0,\"entryStreak\":{},\"exitStreak\":{},\"heldSet\":{},\"lastRefresh\":\"\",\"entryChanged\":false}",
+                "{\"f1\":{\"id\":\"f1\",\"name\":\"Cheap\",\"field\":\"pe\",\"operator\":\"<\",\"value\":\"15\"}}"
+              ],
+              "expected": "[{ \"id\": \"f1\", \"name\": \"Cheap\", \"op\": \"and\", \"rule\": \"pe < 15\", \"role\": \"entry\" }]",
+              "name": "joins filter name and rule"
+            },
+            {
+              "args": [
+                "{\"id\":\"s1\",\"name\":\"S\",\"entryFilters\":{\"f9\":\"or\"},\"exitFilters\":{},\"rankField\":\"\",\"rankDesc\":false,\"maxQuantity\":0,\"idx\":{},\"tested\":false,\"entryConfirmation\":0,\"exitConfirmation\":0,\"entryStreak\":{},\"exitStreak\":{},\"heldSet\":{},\"lastRefresh\":\"\",\"entryChanged\":false}",
+                "{}"
+              ],
+              "expected": "[{ \"id\": \"f9\", \"name\": \"f9\", \"op\": \"or\", \"rule\": \"\", \"role\": \"entry\" }]",
+              "name": "unknown filter falls back to its id"
+            }
+          ],
+          "description": "Lists the sleeve's entry filters with their op, joined to filter name and rule from the filter map.",
+          "id": "56c13611-ebc3-4f5a-9ef2-7d64980f237a",
+          "name": "sleeveEntryFilters",
+          "params": [
+            {
+              "acceptsUndefined": true,
+              "cardinality": "one",
+              "dataType": {
+                "shapeId": "a650670b-5cdd-4256-8dd1-7d7b62fb4928",
+                "type": "shape"
+              },
+              "id": "d532f377-7bbc-4521-9bd4-b0ef17c23926",
+              "name": "sleeve"
+            },
+            {
+              "cardinality": "map",
+              "dataType": {
+                "shapeId": "c58f00db-47e8-4613-9cae-a96103128202",
+                "type": "shape"
+              },
+              "id": "d2d6e440-0533-4b32-9dae-1cd760333217",
+              "name": "filterMap"
+            }
+          ],
+          "returnCardinality": "many",
+          "returnType": {
+            "shapeId": "b2033820-2085-4657-9eaa-598b2d60249e",
+            "type": "shape"
+          }
+        },
+        "6f7ca1f0-28cf-4d87-aed6-567d8c4bae15": {
+          "aiDrafted": true,
+          "body": "if (!sleeve) {\n    return [];\n  }\n  const idx = sleeve.idx ?? {};\n  const chart = Object.keys(idx).sort().map((date) => ({ date, value: idx[date] }));\n  return [{ name: sleeve.name, chart }];",
+          "cases": [
+            {
+              "args": [
+                "undefined"
+              ],
+              "expected": "[]",
+              "name": "no sleeve returns no series"
+            },
+            {
+              "args": [
+                "{\"id\":\"s1\",\"name\":\"Momentum\",\"entryFilters\":{},\"exitFilters\":{},\"rankField\":\"\",\"rankDesc\":false,\"maxQuantity\":0,\"idx\":{\"2024-01-02\":101,\"2024-01-01\":100},\"tested\":false,\"entryConfirmation\":0,\"exitConfirmation\":0,\"entryStreak\":{},\"exitStreak\":{},\"heldSet\":{},\"lastRefresh\":\"\",\"entryChanged\":false}"
+              ],
+              "expected": "[{ \"name\": \"Momentum\", \"chart\": [{ \"date\": \"2024-01-01\", \"value\": 100 }, { \"date\": \"2024-01-02\", \"value\": 101 }] }]",
+              "name": "sorts index points by date"
+            }
+          ],
+          "description": "Turns a sleeve's day-keyed index into one chart series of date/value points, sorted by date.",
+          "id": "6f7ca1f0-28cf-4d87-aed6-567d8c4bae15",
+          "name": "sleeveCarve",
+          "params": [
+            {
+              "acceptsUndefined": true,
+              "cardinality": "one",
+              "dataType": {
+                "shapeId": "a650670b-5cdd-4256-8dd1-7d7b62fb4928",
+                "type": "shape"
+              },
+              "id": "a438bc49-b6e6-4922-8c94-3a25a5b15870",
+              "name": "sleeve"
+            }
+          ],
+          "returnCardinality": "many",
+          "returnType": {
+            "shapeId": "e6f1759a-6995-4fc4-afb7-81fc755fa1f7",
+            "type": "shape"
+          }
+        },
+        "76e59017-8449-4038-888e-aa1ba81b0310": {
+          "aiDrafted": true,
+          "body": "return Object.values(filterMap).map((s) => ({ value: s.id, label: s.name }));",
+          "cases": [
+            {
+              "args": [
+                "{}"
+              ],
+              "expected": "[]",
+              "name": "empty map returns empty array"
+            },
+            {
+              "args": [
+                "{\"a\":{\"id\":\"a\",\"name\":\"A\",\"field\":\"\",\"operator\":\"\",\"value\":\"\"}}"
+              ],
+              "expected": "[{ \"value\": \"a\", \"label\": \"A\" }]",
+              "name": "single item"
+            },
+            {
+              "args": [
+                "{\"a\":{\"id\":\"a\",\"name\":\"A\",\"field\":\"\",\"operator\":\"\",\"value\":\"\"},\"b\":{\"id\":\"b\",\"name\":\"B\",\"field\":\"\",\"operator\":\"\",\"value\":\"\"}}"
+              ],
+              "expected": "[{ \"value\": \"a\", \"label\": \"A\" }, { \"value\": \"b\", \"label\": \"B\" }]",
+              "name": "multiple items"
+            }
+          ],
+          "description": "Builds a list of option rows from the filter map, using each filter's id as value and name as label.",
+          "id": "76e59017-8449-4038-888e-aa1ba81b0310",
+          "name": "filterNav",
+          "params": [
+            {
+              "cardinality": "map",
+              "dataType": {
+                "shapeId": "c58f00db-47e8-4613-9cae-a96103128202",
+                "type": "shape"
+              },
+              "id": "37fd3f52-34cd-4c7f-a609-c76b73ce1eac",
+              "name": "filterMap"
+            }
+          ],
+          "returnCardinality": "many",
+          "returnType": {
+            "shapeId": "83a2368b-c8e5-4c4b-ba39-a15f8a950ece",
+            "type": "shape"
+          }
+        },
+        "995bfa5b-45c0-404c-9210-4324684295a8": {
+          "aiDrafted": true,
+          "body": "return Object.values(sleeveCatalog).map((s) => ({ value: s.id, label: s.name }));",
+          "cases": [
+            {
+              "args": [
+                "{}"
+              ],
+              "expected": "[]",
+              "name": "empty map returns empty array"
+            },
+            {
+              "args": [
+                "{\"a\":{\"id\":\"a\",\"name\":\"A\",\"entryFilters\":{},\"exitFilters\":{},\"rankField\":\"\",\"rankDesc\":false,\"maxQuantity\":0,\"idx\":{},\"tested\":false,\"entryConfirmation\":0,\"exitConfirmation\":0,\"entryStreak\":{},\"exitStreak\":{},\"heldSet\":{},\"lastRefresh\":\"\",\"entryChanged\":false}}"
+              ],
+              "expected": "[{ \"value\": \"a\", \"label\": \"A\" }]",
+              "name": "single item"
+            },
+            {
+              "args": [
+                "{\"a\":{\"id\":\"a\",\"name\":\"A\",\"entryFilters\":{},\"exitFilters\":{},\"rankField\":\"\",\"rankDesc\":false,\"maxQuantity\":0,\"idx\":{},\"tested\":false,\"entryConfirmation\":0,\"exitConfirmation\":0,\"entryStreak\":{},\"exitStreak\":{},\"heldSet\":{},\"lastRefresh\":\"\",\"entryChanged\":false},\"b\":{\"id\":\"b\",\"name\":\"B\",\"entryFilters\":{},\"exitFilters\":{},\"rankField\":\"\",\"rankDesc\":false,\"maxQuantity\":0,\"idx\":{},\"tested\":false,\"entryConfirmation\":0,\"exitConfirmation\":0,\"entryStreak\":{},\"exitStreak\":{},\"heldSet\":{},\"lastRefresh\":\"\",\"entryChanged\":false}}"
+              ],
+              "expected": "[{ \"value\": \"a\", \"label\": \"A\" }, { \"value\": \"b\", \"label\": \"B\" }]",
+              "name": "multiple items"
+            }
+          ],
+          "description": "Builds a list of option rows from the sleeve catalog, using each sleeve's id as value and name as label.",
+          "id": "995bfa5b-45c0-404c-9210-4324684295a8",
+          "name": "sleeveNav",
+          "params": [
+            {
+              "cardinality": "map",
+              "dataType": {
+                "shapeId": "a650670b-5cdd-4256-8dd1-7d7b62fb4928",
+                "type": "shape"
+              },
+              "id": "1522d5a5-20e1-437e-88ed-2a6db7f5b47e",
+              "name": "sleeveCatalog"
+            }
+          ],
+          "returnCardinality": "many",
+          "returnType": {
+            "shapeId": "83a2368b-c8e5-4c4b-ba39-a15f8a950ece",
+            "type": "shape"
+          }
         },
         "f97155fb-1a7a-47fe-b024-ce5fd0391656": {
           "aiDrafted": true,
@@ -499,6 +814,75 @@
           ],
           "verb": "get"
         },
+        "1cca8596-d7a3-4829-8ae6-f94eb0e5fcfb": {
+          "id": "1cca8596-d7a3-4829-8ae6-f94eb0e5fcfb",
+          "inputs": [
+            {
+              "arg": "id",
+              "source": "args",
+              "target": [
+                "path",
+                "id"
+              ]
+            },
+            {
+              "arg": "role",
+              "source": "args",
+              "target": [
+                "payload",
+                "role"
+              ]
+            },
+            {
+              "arg": "op",
+              "source": "args",
+              "target": [
+                "payload",
+                "op"
+              ]
+            },
+            {
+              "arg": "filterId",
+              "source": "args",
+              "target": [
+                "payload",
+                "filterId"
+              ]
+            }
+          ],
+          "name": "deleteFinanceSleeveIdRole",
+          "path": "/finance/v1/sleeve/{id}/role",
+          "response": [
+            {
+              "code": "200",
+              "propertyId": "47dfd9ee-e79d-4b3e-8406-5333fc1b0749",
+              "source": [],
+              "transform": {
+                "args": [
+                  {
+                    "arg": "id",
+                    "source": "args"
+                  },
+                  {
+                    "path": [
+                      "sleeve"
+                    ],
+                    "source": "response"
+                  },
+                  {
+                    "path": [
+                      "47dfd9ee-e79d-4b3e-8406-5333fc1b0749"
+                    ],
+                    "source": "state"
+                  }
+                ],
+                "functionId": "",
+                "oneFunction": "setInMap"
+              }
+            }
+          ],
+          "verb": "delete"
+        },
         "382c18d0-ba58-4d69-b12e-0e693aed1bfa": {
           "conditions": [
             {
@@ -558,6 +942,237 @@
             }
           ],
           "verb": "put"
+        },
+        "53e7be04-6a0b-4c15-a937-f1c837a8a968": {
+          "id": "53e7be04-6a0b-4c15-a937-f1c837a8a968",
+          "inputs": [],
+          "name": "getFinanceSleeves",
+          "path": "/finance/v1/sleeve",
+          "response": [
+            {
+              "code": "200",
+              "propertyId": "47dfd9ee-e79d-4b3e-8406-5333fc1b0749",
+              "source": [],
+              "transform": {
+                "args": [
+                  {
+                    "path": [
+                      "sleeves"
+                    ],
+                    "source": "response"
+                  },
+                  {
+                    "source": "fixed",
+                    "value": "id"
+                  },
+                  {
+                    "path": [
+                      "47dfd9ee-e79d-4b3e-8406-5333fc1b0749"
+                    ],
+                    "source": "state"
+                  }
+                ],
+                "functionId": "",
+                "oneFunction": "extendMap"
+              }
+            }
+          ],
+          "verb": "get"
+        },
+        "64b10f99-52af-438f-94d9-8194f91b8b34": {
+          "id": "64b10f99-52af-438f-94d9-8194f91b8b34",
+          "inputs": [
+            {
+              "arg": "id",
+              "source": "args",
+              "target": [
+                "path",
+                "id"
+              ]
+            }
+          ],
+          "name": "getFinanceSleeveId",
+          "path": "/finance/v1/sleeve/{id}",
+          "response": [
+            {
+              "code": "200",
+              "propertyId": "47dfd9ee-e79d-4b3e-8406-5333fc1b0749",
+              "source": [],
+              "transform": {
+                "args": [
+                  {
+                    "arg": "id",
+                    "source": "args"
+                  },
+                  {
+                    "path": [
+                      "sleeve"
+                    ],
+                    "source": "response"
+                  },
+                  {
+                    "path": [
+                      "47dfd9ee-e79d-4b3e-8406-5333fc1b0749"
+                    ],
+                    "source": "state"
+                  }
+                ],
+                "functionId": "",
+                "oneFunction": "setInMap"
+              }
+            },
+            {
+              "code": "200",
+              "propertyId": "93046f88-590c-40ac-95c4-7dd788c39aec",
+              "source": [],
+              "transform": {
+                "args": [
+                  {
+                    "arg": "id",
+                    "source": "args"
+                  },
+                  {
+                    "path": [
+                      "heldSet"
+                    ],
+                    "source": "response"
+                  },
+                  {
+                    "path": [
+                      "93046f88-590c-40ac-95c4-7dd788c39aec"
+                    ],
+                    "source": "state"
+                  }
+                ],
+                "functionId": "",
+                "oneFunction": "setInMap"
+              }
+            },
+            {
+              "code": "200",
+              "propertyId": "c6d486ab-0ff3-44e5-b426-525e8b66be16",
+              "source": [],
+              "transform": {
+                "args": [
+                  {
+                    "arg": "id",
+                    "source": "args"
+                  },
+                  {
+                    "path": [
+                      "entryCandidates"
+                    ],
+                    "source": "response"
+                  },
+                  {
+                    "path": [
+                      "c6d486ab-0ff3-44e5-b426-525e8b66be16"
+                    ],
+                    "source": "state"
+                  }
+                ],
+                "functionId": "",
+                "oneFunction": "setInMap"
+              }
+            },
+            {
+              "code": "200",
+              "propertyId": "b7bc53fd-cd68-49e0-bf32-d239d245f601",
+              "source": [],
+              "transform": {
+                "args": [
+                  {
+                    "arg": "id",
+                    "source": "args"
+                  },
+                  {
+                    "path": [
+                      "exitCandidates"
+                    ],
+                    "source": "response"
+                  },
+                  {
+                    "path": [
+                      "b7bc53fd-cd68-49e0-bf32-d239d245f601"
+                    ],
+                    "source": "state"
+                  }
+                ],
+                "functionId": "",
+                "oneFunction": "setInMap"
+              }
+            }
+          ],
+          "verb": "get"
+        },
+        "baed0426-68b1-431b-83f7-c69c6e4e7db7": {
+          "id": "baed0426-68b1-431b-83f7-c69c6e4e7db7",
+          "inputs": [
+            {
+              "arg": "id",
+              "source": "args",
+              "target": [
+                "path",
+                "id"
+              ]
+            },
+            {
+              "arg": "role",
+              "source": "args",
+              "target": [
+                "payload",
+                "role"
+              ]
+            },
+            {
+              "arg": "op",
+              "source": "args",
+              "target": [
+                "payload",
+                "op"
+              ]
+            },
+            {
+              "arg": "filterId",
+              "source": "args",
+              "target": [
+                "payload",
+                "filterId"
+              ]
+            }
+          ],
+          "name": "postFinanceSleeveIdRole",
+          "path": "/finance/v1/sleeve/{id}/role",
+          "response": [
+            {
+              "code": "200",
+              "propertyId": "47dfd9ee-e79d-4b3e-8406-5333fc1b0749",
+              "source": [],
+              "transform": {
+                "args": [
+                  {
+                    "arg": "id",
+                    "source": "args"
+                  },
+                  {
+                    "path": [
+                      "sleeve"
+                    ],
+                    "source": "response"
+                  },
+                  {
+                    "path": [
+                      "47dfd9ee-e79d-4b3e-8406-5333fc1b0749"
+                    ],
+                    "source": "state"
+                  }
+                ],
+                "functionId": "",
+                "oneFunction": "setInMap"
+              }
+            }
+          ],
+          "verb": "post"
         },
         "d49795c9-7041-4b5c-ae15-a2576e549e59": {
           "conditions": [
@@ -639,6 +1254,42 @@
             }
           ],
           "verb": "put"
+        },
+        "d5711727-a514-41c4-ab91-ce1a3ec144ce": {
+          "id": "d5711727-a514-41c4-ab91-ce1a3ec144ce",
+          "inputs": [],
+          "name": "getFinanceFilters",
+          "path": "/finance/v1/filter",
+          "response": [
+            {
+              "code": "200",
+              "propertyId": "407d1c9b-3f4d-457e-a289-9ac03882762a",
+              "source": [],
+              "transform": {
+                "args": [
+                  {
+                    "path": [
+                      "filters"
+                    ],
+                    "source": "response"
+                  },
+                  {
+                    "source": "fixed",
+                    "value": "id"
+                  },
+                  {
+                    "path": [
+                      "407d1c9b-3f4d-457e-a289-9ac03882762a"
+                    ],
+                    "source": "state"
+                  }
+                ],
+                "functionId": "",
+                "oneFunction": "extendMap"
+              }
+            }
+          ],
+          "verb": "get"
         }
       },
       "name": "strategy",
@@ -651,6 +1302,24 @@
           "id": "199fe710-0c4a-4535-8025-220334e33962",
           "name": "selected"
         },
+        "407d1c9b-3f4d-457e-a289-9ac03882762a": {
+          "cardinality": "map",
+          "dataType": {
+            "shapeId": "c58f00db-47e8-4613-9cae-a96103128202",
+            "type": "shape"
+          },
+          "id": "407d1c9b-3f4d-457e-a289-9ac03882762a",
+          "name": "filterMap"
+        },
+        "47dfd9ee-e79d-4b3e-8406-5333fc1b0749": {
+          "cardinality": "map",
+          "dataType": {
+            "shapeId": "a650670b-5cdd-4256-8dd1-7d7b62fb4928",
+            "type": "shape"
+          },
+          "id": "47dfd9ee-e79d-4b3e-8406-5333fc1b0749",
+          "name": "sleeveCatalog"
+        },
         "584aa058-d365-4b82-a901-8c81d4aa4c0b": {
           "cardinality": "many",
           "dataType": {
@@ -658,6 +1327,33 @@
           },
           "id": "584aa058-d365-4b82-a901-8c81d4aa4c0b",
           "name": "strategies"
+        },
+        "93046f88-590c-40ac-95c4-7dd788c39aec": {
+          "cardinality": "map-many",
+          "dataType": {
+            "shapeId": "282be689-43cf-491b-854e-bad66ade3984",
+            "type": "shape"
+          },
+          "id": "93046f88-590c-40ac-95c4-7dd788c39aec",
+          "name": "sleeveHeldSetMap"
+        },
+        "b7bc53fd-cd68-49e0-bf32-d239d245f601": {
+          "cardinality": "map-many",
+          "dataType": {
+            "shapeId": "e8048024-af2c-4566-9fe0-f64ea3ee76f3",
+            "type": "shape"
+          },
+          "id": "b7bc53fd-cd68-49e0-bf32-d239d245f601",
+          "name": "sleeveExitCandidateMap"
+        },
+        "c6d486ab-0ff3-44e5-b426-525e8b66be16": {
+          "cardinality": "map-many",
+          "dataType": {
+            "shapeId": "e8048024-af2c-4566-9fe0-f64ea3ee76f3",
+            "type": "shape"
+          },
+          "id": "c6d486ab-0ff3-44e5-b426-525e8b66be16",
+          "name": "sleeveEntryCandidateMap"
         },
         "d2269743-b4cf-4a2b-b79a-71511ba565c1": {
           "cardinality": "map-many",
@@ -777,6 +1473,90 @@
             "pointer": [
               "standalones"
             ],
+            "verb": "get"
+          }
+        },
+        "282be689-43cf-491b-854e-bad66ade3984": {
+          "id": "282be689-43cf-491b-854e-bad66ade3984",
+          "keys": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "c1ffb311-b7ce-4577-84dd-c6e65c8cd3d7",
+              "name": "symbol"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "3cfd32b1-7ec3-4eac-b477-b7cfeb89bf16",
+              "name": "price"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "56e342d5-d812-47d0-be9b-dcd8f5510c4d",
+              "name": "addedOn"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "8518cae6-0391-43ba-9677-b7fd5220bdb4",
+              "name": "exitStreak"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "85c43f08-68f2-4e4e-86a3-ba4280f798cd",
+              "name": "exitProgress"
+            }
+          ],
+          "name": "finance-sleeve-read-response-heldset",
+          "origin": {
+            "code": "200",
+            "path": "/finance/v1/sleeve/{id}",
+            "pointer": [
+              "heldSet"
+            ],
+            "verb": "get"
+          }
+        },
+        "2a3a7f6a-7731-4d72-b3a3-548f52a3e981": {
+          "id": "2a3a7f6a-7731-4d72-b3a3-548f52a3e981",
+          "keys": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "shapeId": "c58f00db-47e8-4613-9cae-a96103128202",
+                "type": "shape"
+              },
+              "id": "2469ae35-910c-4671-bb37-39eba073780f",
+              "name": "filter"
+            },
+            {
+              "cardinality": "many",
+              "dataType": {
+                "shapeId": "c58f00db-47e8-4613-9cae-a96103128202",
+                "type": "shape"
+              },
+              "id": "eadaea7d-9e72-418e-953b-6e9a3f25b15b",
+              "name": "filters"
+            }
+          ],
+          "name": "finance-filter-list-response",
+          "origin": {
+            "code": "200",
+            "path": "/finance/v1/filter",
+            "pointer": [],
             "verb": "get"
           }
         },
@@ -1217,6 +1997,63 @@
             "verb": "put"
           }
         },
+        "80021ef2-a62b-453d-b24f-4ae635b5d428": {
+          "id": "80021ef2-a62b-453d-b24f-4ae635b5d428",
+          "keys": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "shapeId": "a650670b-5cdd-4256-8dd1-7d7b62fb4928",
+                "type": "shape"
+              },
+              "id": "69fb7886-3b27-4850-a0b5-a5ea1db8bd29",
+              "name": "sleeve"
+            },
+            {
+              "cardinality": "many",
+              "dataType": {
+                "shapeId": "a650670b-5cdd-4256-8dd1-7d7b62fb4928",
+                "type": "shape"
+              },
+              "id": "0b737334-752a-4cfa-8404-620ad8116920",
+              "name": "sleeves"
+            },
+            {
+              "cardinality": "many",
+              "dataType": {
+                "shapeId": "d17a8cb7-026f-43ce-8146-4fc64607576d",
+                "type": "shape"
+              },
+              "id": "8a77b3ac-e0a7-4ab7-b636-7d070329c9b4",
+              "name": "heldSet"
+            },
+            {
+              "cardinality": "many",
+              "dataType": {
+                "shapeId": "f9dbf242-bcd9-481f-8e6b-ba63af1a35fa",
+                "type": "shape"
+              },
+              "id": "5c046aba-15da-4626-b7a8-ad862191f571",
+              "name": "entryCandidates"
+            },
+            {
+              "cardinality": "many",
+              "dataType": {
+                "shapeId": "f9dbf242-bcd9-481f-8e6b-ba63af1a35fa",
+                "type": "shape"
+              },
+              "id": "035e8ecd-bf05-46d3-b82f-c8a5fb54dee8",
+              "name": "exitCandidates"
+            }
+          ],
+          "name": "finance-sleeve-list-response",
+          "origin": {
+            "code": "200",
+            "path": "/finance/v1/sleeve",
+            "pointer": [],
+            "verb": "get"
+          }
+        },
         "83a2368b-c8e5-4c4b-ba39-a15f8a950ece": {
           "id": "83a2368b-c8e5-4c4b-ba39-a15f8a950ece",
           "keys": [
@@ -1238,6 +2075,149 @@
             }
           ],
           "name": "option-row"
+        },
+        "a650670b-5cdd-4256-8dd1-7d7b62fb4928": {
+          "id": "a650670b-5cdd-4256-8dd1-7d7b62fb4928",
+          "keys": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "a6a6e0f5-02fe-403d-9e15-81ce8ae0a31d",
+              "name": "id"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "f3110ea3-0448-48b7-a472-da704135e51a",
+              "name": "name"
+            },
+            {
+              "cardinality": "map",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "fb786740-9cdd-469d-bd60-f7ea028e5355",
+              "name": "entryFilters"
+            },
+            {
+              "cardinality": "map",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "f55c1247-96ce-473b-a9e4-e405f4a55a76",
+              "name": "exitFilters"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "27325d2a-852b-4e26-b839-e62d76ba900d",
+              "name": "rankField"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "boolean"
+              },
+              "id": "664ad3d9-ab4b-4124-9032-76f566b03165",
+              "name": "rankDesc"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "65649d0e-e503-4516-8567-9c558d979097",
+              "name": "maxQuantity"
+            },
+            {
+              "cardinality": "map",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "83ca482b-cb25-422d-bf9f-a6b620034669",
+              "name": "idx"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "boolean"
+              },
+              "id": "6495f8ff-4b6b-4b4e-b63a-0750cd1973ab",
+              "name": "tested"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "3efb3ff2-069b-46d1-82b6-687a305fd1b3",
+              "name": "entryConfirmation"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "e9793dc0-cda4-4caf-8002-e6fb1e1a2bb5",
+              "name": "exitConfirmation"
+            },
+            {
+              "cardinality": "map",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "71c2d8c4-dbc2-4bea-88da-4ff27c8d3962",
+              "name": "entryStreak"
+            },
+            {
+              "cardinality": "map",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "a14b214a-5086-4633-a09e-e53b8dcd9b71",
+              "name": "exitStreak"
+            },
+            {
+              "cardinality": "map",
+              "dataType": {
+                "shapeId": "d319136e-3b28-4cdc-bb00-2ecf41888885",
+                "type": "shape"
+              },
+              "id": "99cb0c68-18de-4389-8bfa-6af7e7a0dd58",
+              "name": "heldSet"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "9717ca37-a71b-4932-b816-66277932825c",
+              "name": "lastRefresh"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "boolean"
+              },
+              "id": "c2356c0b-4b65-41de-9172-afcbfb4b4707",
+              "name": "entryChanged"
+            }
+          ],
+          "name": "finance-sleeve-list-response-sleeve",
+          "origin": {
+            "code": "200",
+            "path": "/finance/v1/sleeve",
+            "pointer": [
+              "sleeve"
+            ],
+            "verb": "get"
+          }
         },
         "a9445ac5-d5a4-429b-a367-04c9f58a96fb": {
           "id": "a9445ac5-d5a4-429b-a367-04c9f58a96fb",
@@ -1271,6 +2251,52 @@
             ],
             "verb": "put"
           }
+        },
+        "b2033820-2085-4657-9eaa-598b2d60249e": {
+          "id": "b2033820-2085-4657-9eaa-598b2d60249e",
+          "keys": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "6f9ff302-62cb-4d0e-84d6-89e77e9b06ef",
+              "name": "id"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "8efa1e30-f6f8-4692-8ff4-17e4b04f3aeb",
+              "name": "name"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "aca0ffaa-5cd8-49b5-8933-2a13dfd89348",
+              "name": "op"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "f069ac3e-e110-4c31-a779-1126ba176825",
+              "name": "rule"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "0d6ec746-a82b-4ad1-bfb9-48f921bc5f54",
+              "name": "role"
+            }
+          ],
+          "name": "sleeve-filter-row"
         },
         "c0cec2b6-ed39-46c6-8eef-37b17d92f561": {
           "id": "c0cec2b6-ed39-46c6-8eef-37b17d92f561",
@@ -1457,6 +2483,60 @@
             "verb": "put"
           }
         },
+        "c58f00db-47e8-4613-9cae-a96103128202": {
+          "id": "c58f00db-47e8-4613-9cae-a96103128202",
+          "keys": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "35f2f5bb-bf97-4b16-82ab-1e8a7e21a5f5",
+              "name": "id"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "ad58bd4f-1889-4eee-a9e3-f7ffc2c9e71c",
+              "name": "name"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "92a2089d-ab5c-46be-a9ba-09602999e65f",
+              "name": "field"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "649f36f4-ec0b-491e-bacc-8cc1869fc562",
+              "name": "operator"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "7bb2f177-0782-4f4f-af67-ea06a0746241",
+              "name": "value"
+            }
+          ],
+          "name": "finance-filter-list-response-filter",
+          "origin": {
+            "code": "200",
+            "path": "/finance/v1/filter",
+            "pointer": [
+              "filter"
+            ],
+            "verb": "get"
+          }
+        },
         "c73f992e-098c-4246-9fdf-ad9c1cf8b4cb": {
           "id": "c73f992e-098c-4246-9fdf-ad9c1cf8b4cb",
           "keys": [
@@ -1486,6 +2566,206 @@
               "chart"
             ],
             "verb": "put"
+          }
+        },
+        "d17a8cb7-026f-43ce-8146-4fc64607576d": {
+          "id": "d17a8cb7-026f-43ce-8146-4fc64607576d",
+          "keys": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "db45239c-3a5b-46cc-bb0a-b79b6998ed6b",
+              "name": "symbol"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "acd3bad2-f427-4ce2-af31-3db5fb2271b8",
+              "name": "price"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "6e21f35e-a540-431a-8524-c2291cae9569",
+              "name": "addedOn"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "569c53ff-06bc-4187-b71d-881e4b9f6726",
+              "name": "exitStreak"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "2766cee4-d6ae-4534-bdc5-932cbc0ba036",
+              "name": "exitProgress"
+            }
+          ],
+          "name": "finance-sleeve-list-response-heldset",
+          "origin": {
+            "code": "200",
+            "path": "/finance/v1/sleeve",
+            "pointer": [
+              "heldSet"
+            ],
+            "verb": "get"
+          }
+        },
+        "d319136e-3b28-4cdc-bb00-2ecf41888885": {
+          "id": "d319136e-3b28-4cdc-bb00-2ecf41888885",
+          "keys": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "ec0ff02c-095f-4a21-baf7-6327bc5d8d80",
+              "name": "p"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "7d7d93c3-5ed8-4e5a-a9e8-88d11bc5d292",
+              "name": "d"
+            }
+          ],
+          "name": "finance-sleeve-list-response-sleeve-heldset",
+          "origin": {
+            "code": "200",
+            "path": "/finance/v1/sleeve",
+            "pointer": [
+              "sleeve",
+              "heldSet"
+            ],
+            "verb": "get"
+          }
+        },
+        "e6f1759a-6995-4fc4-afb7-81fc755fa1f7": {
+          "id": "e6f1759a-6995-4fc4-afb7-81fc755fa1f7",
+          "keys": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "058e0a76-6c40-4a02-9518-d0d1f2d807d5",
+              "name": "name"
+            },
+            {
+              "cardinality": "many",
+              "dataType": {
+                "shapeId": "c73f992e-098c-4246-9fdf-ad9c1cf8b4cb",
+                "type": "shape"
+              },
+              "id": "d282b958-8df0-4460-8d52-511ce43ec16f",
+              "name": "chart"
+            }
+          ],
+          "name": "sleeve-carve"
+        },
+        "e8048024-af2c-4566-9fe0-f64ea3ee76f3": {
+          "id": "e8048024-af2c-4566-9fe0-f64ea3ee76f3",
+          "keys": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "bd749556-2cd7-4587-b941-48278f41b7e7",
+              "name": "symbol"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "7a39e898-cc87-492c-a888-17c3492a58ce",
+              "name": "streak"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "b7f81383-0820-4a0d-9f51-1c2785eebc1e",
+              "name": "progress"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "boolean"
+              },
+              "id": "1d28a474-0494-4fb8-bb4f-874c0a56e1d7",
+              "name": "confirmed"
+            }
+          ],
+          "name": "finance-sleeve-read-response-entrycandidates",
+          "origin": {
+            "code": "200",
+            "path": "/finance/v1/sleeve/{id}",
+            "pointer": [
+              "entryCandidates"
+            ],
+            "verb": "get"
+          }
+        },
+        "f9dbf242-bcd9-481f-8e6b-ba63af1a35fa": {
+          "id": "f9dbf242-bcd9-481f-8e6b-ba63af1a35fa",
+          "keys": [
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "string"
+              },
+              "id": "3a04a85f-9e85-4a92-abb2-0ab1391d1a78",
+              "name": "symbol"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "c110bc98-e75a-4c05-a395-6377f84cb6b9",
+              "name": "streak"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "7f3dbf72-4a74-4951-b347-4ceed6c6bce3",
+              "name": "progress"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "boolean"
+              },
+              "id": "aadbd5d5-0608-40e5-8f76-e319919bfcae",
+              "name": "confirmed"
+            }
+          ],
+          "name": "finance-sleeve-list-response-entrycandidates",
+          "origin": {
+            "code": "200",
+            "path": "/finance/v1/sleeve",
+            "pointer": [
+              "entryCandidates"
+            ],
+            "verb": "get"
           }
         }
       },
@@ -4331,12 +5611,12 @@
               "name": "y"
             }
           ],
-          "name": "finance-industry-list-response-industries-profit",
+          "name": "finance-industry-company-list-response-industry-profit",
           "origin": {
             "code": "200",
-            "path": "/finance/v1/industry",
+            "path": "/finance/v1/industry/{key}/company",
             "pointer": [
-              "industries",
+              "industry",
               "profit"
             ],
             "verb": "get"
@@ -4416,6 +5696,14 @@
               },
               "id": "7514ac9d-915a-4dc7-a784-433cf08d79f2",
               "name": "score"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
+                "type": "number"
+              },
+              "id": "a1a9eb48-c05b-41df-8627-c06d51419a7d",
+              "name": "avgScore"
             }
           ],
           "name": "finance-industry-company-list-response-companies",
@@ -8289,6 +9577,320 @@
       },
       "kind": "page",
       "name": "industry-details"
+    },
+    {
+      "featureId": "76e38aaa-d234-4aa1-b5fa-5b4595e714e2",
+      "id": "4b733fbd-b68a-4bad-ab80-d18d533924d5",
+      "kind": "feature",
+      "name": "sleeve-list"
+    },
+    {
+      "autoCalls": [
+        {
+          "args": [
+            {
+              "binding": {
+                "path": [],
+                "root": {
+                  "id": "f4b24552-725e-4481-b6f1-d0fab3f79bc3",
+                  "kind": "input"
+                }
+              },
+              "source": "binding",
+              "target": [
+                "id"
+              ]
+            }
+          ],
+          "id": "88ecae92-886b-4526-a04a-73e157d651f9",
+          "methodId": "64b10f99-52af-438f-94d9-8194f91b8b34",
+          "reads": [
+            {
+              "path": [],
+              "root": {
+                "id": "f4b24552-725e-4481-b6f1-d0fab3f79bc3",
+                "kind": "input"
+              }
+            }
+          ],
+          "when": "on-change"
+        },
+        {
+          "args": [],
+          "id": "e854bfb8-f0b0-4970-82e4-438f5185cd23",
+          "methodId": "d5711727-a514-41c4-ab91-ce1a3ec144ce"
+        }
+      ],
+      "computeds": {
+        "23fbac0a-40ea-49aa-98ba-df4c11c9ee55": {
+          "args": {
+            "d2d6e440-0533-4b32-9dae-1cd760333217": {
+              "path": [
+                "407d1c9b-3f4d-457e-a289-9ac03882762a"
+              ],
+              "source": "path"
+            },
+            "d532f377-7bbc-4521-9bd4-b0ef17c23926": {
+              "computedId": "88054387-27bf-48bf-b252-636b8fcf726b",
+              "source": "computed"
+            }
+          },
+          "functionId": "56c13611-ebc3-4f5a-9ef2-7d64980f237a",
+          "id": "23fbac0a-40ea-49aa-98ba-df4c11c9ee55",
+          "name": "entryFilters"
+        },
+        "43b7c556-7461-4c03-b548-cff09a3763c9": {
+          "args": {
+            "30023459-ceea-4e66-9e4c-9ac026a1800d": {
+              "computedId": "88054387-27bf-48bf-b252-636b8fcf726b",
+              "source": "computed"
+            },
+            "3c680aa9-4f39-4017-ac74-02b9a8b57498": {
+              "path": [
+                "407d1c9b-3f4d-457e-a289-9ac03882762a"
+              ],
+              "source": "path"
+            }
+          },
+          "functionId": "3c9fead2-8b5f-4e83-89cb-e66d0ec8fa69",
+          "id": "43b7c556-7461-4c03-b548-cff09a3763c9",
+          "name": "exitFilters"
+        },
+        "88054387-27bf-48bf-b252-636b8fcf726b": {
+          "args": {
+            "id": {
+              "inputId": "f4b24552-725e-4481-b6f1-d0fab3f79bc3",
+              "source": "input"
+            },
+            "map": {
+              "path": [
+                "47dfd9ee-e79d-4b3e-8406-5333fc1b0749"
+              ],
+              "source": "path"
+            }
+          },
+          "id": "88054387-27bf-48bf-b252-636b8fcf726b",
+          "name": "sleeve",
+          "oneFunction": "getFromMap",
+          "returns": {
+            "cardinality": "one",
+            "dataType": {
+              "shapeId": "a650670b-5cdd-4256-8dd1-7d7b62fb4928",
+              "type": "shape"
+            },
+            "optional": true
+          }
+        },
+        "9f9b2c82-1af6-44a2-9ca7-9e460dacf1be": {
+          "args": {
+            "id": {
+              "inputId": "f4b24552-725e-4481-b6f1-d0fab3f79bc3",
+              "source": "input"
+            },
+            "map": {
+              "path": [
+                "c6d486ab-0ff3-44e5-b426-525e8b66be16"
+              ],
+              "source": "path"
+            }
+          },
+          "id": "9f9b2c82-1af6-44a2-9ca7-9e460dacf1be",
+          "name": "entryCandidates",
+          "oneFunction": "getFromMap",
+          "returns": {
+            "cardinality": "many",
+            "dataType": {
+              "shapeId": "e8048024-af2c-4566-9fe0-f64ea3ee76f3",
+              "type": "shape"
+            },
+            "optional": true
+          }
+        },
+        "a0c70d92-a015-444e-9f1d-a3f2723ad478": {
+          "args": {
+            "id": {
+              "inputId": "f4b24552-725e-4481-b6f1-d0fab3f79bc3",
+              "source": "input"
+            },
+            "map": {
+              "path": [
+                "93046f88-590c-40ac-95c4-7dd788c39aec"
+              ],
+              "source": "path"
+            }
+          },
+          "id": "a0c70d92-a015-444e-9f1d-a3f2723ad478",
+          "name": "heldSet",
+          "oneFunction": "getFromMap",
+          "returns": {
+            "cardinality": "many",
+            "dataType": {
+              "shapeId": "282be689-43cf-491b-854e-bad66ade3984",
+              "type": "shape"
+            },
+            "optional": true
+          }
+        },
+        "bbdea019-381c-4b83-868a-fd56fb209948": {
+          "args": {
+            "id": {
+              "inputId": "f4b24552-725e-4481-b6f1-d0fab3f79bc3",
+              "source": "input"
+            },
+            "map": {
+              "path": [
+                "b7bc53fd-cd68-49e0-bf32-d239d245f601"
+              ],
+              "source": "path"
+            }
+          },
+          "id": "bbdea019-381c-4b83-868a-fd56fb209948",
+          "name": "exitCandidates",
+          "oneFunction": "getFromMap",
+          "returns": {
+            "cardinality": "many",
+            "dataType": {
+              "shapeId": "e8048024-af2c-4566-9fe0-f64ea3ee76f3",
+              "type": "shape"
+            },
+            "optional": true
+          }
+        },
+        "cffa4d69-7986-432f-886f-6c65280c2217": {
+          "args": {
+            "f0d0b8de-6895-4903-9588-8ae9c4f96306": {
+              "computedId": "88054387-27bf-48bf-b252-636b8fcf726b",
+              "source": "computed"
+            }
+          },
+          "functionId": "087a341a-a59e-4ce3-9376-4dffb7768348",
+          "id": "cffa4d69-7986-432f-886f-6c65280c2217",
+          "name": "held"
+        },
+        "d6671030-c97d-4bdd-bdf8-c98943395d09": {
+          "args": {
+            "a438bc49-b6e6-4922-8c94-3a25a5b15870": {
+              "computedId": "88054387-27bf-48bf-b252-636b8fcf726b",
+              "source": "computed"
+            }
+          },
+          "functionId": "6f7ca1f0-28cf-4d87-aed6-567d8c4bae15",
+          "id": "d6671030-c97d-4bdd-bdf8-c98943395d09",
+          "name": "carve"
+        }
+      },
+      "featureId": "76e38aaa-d234-4aa1-b5fa-5b4595e714e2",
+      "id": "a95d72ec-cc1b-407b-bd26-1cdb4c39450f",
+      "inputs": {
+        "f4b24552-725e-4481-b6f1-d0fab3f79bc3": {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "id": "f4b24552-725e-4481-b6f1-d0fab3f79bc3",
+          "name": "id",
+          "required": true
+        }
+      },
+      "kind": "feature",
+      "name": "sleeve-details"
+    },
+    {
+      "autoCalls": [
+        {
+          "args": [],
+          "id": "0d16b397-73d2-43e6-9799-ac4c02dcfee2",
+          "methodId": "d5711727-a514-41c4-ab91-ce1a3ec144ce"
+        }
+      ],
+      "featureId": "76e38aaa-d234-4aa1-b5fa-5b4595e714e2",
+      "id": "c4aa093e-5880-4e39-bedb-68fdd294ed0d",
+      "kind": "feature",
+      "name": "filter-list"
+    },
+    {
+      "autoCalls": [
+        {
+          "args": [],
+          "id": "c21b5f82-bcfc-4008-889d-fc65681da6db",
+          "methodId": "d5711727-a514-41c4-ab91-ce1a3ec144ce"
+        }
+      ],
+      "computeds": {
+        "8fb849a1-39e7-47ef-b2ef-fced1573e5ed": {
+          "args": {
+            "id": {
+              "inputId": "c0514f3a-b566-4ba2-a230-7e3137ef930e",
+              "source": "input"
+            },
+            "map": {
+              "path": [
+                "407d1c9b-3f4d-457e-a289-9ac03882762a"
+              ],
+              "source": "path"
+            }
+          },
+          "id": "8fb849a1-39e7-47ef-b2ef-fced1573e5ed",
+          "name": "filter",
+          "oneFunction": "getFromMap",
+          "returns": {
+            "cardinality": "one",
+            "dataType": {
+              "shapeId": "c58f00db-47e8-4613-9cae-a96103128202",
+              "type": "shape"
+            },
+            "optional": true
+          }
+        }
+      },
+      "featureId": "76e38aaa-d234-4aa1-b5fa-5b4595e714e2",
+      "id": "4db596c9-e979-465a-a771-f639679b9868",
+      "inputs": {
+        "c0514f3a-b566-4ba2-a230-7e3137ef930e": {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "id": "c0514f3a-b566-4ba2-a230-7e3137ef930e",
+          "name": "id",
+          "required": true
+        }
+      },
+      "kind": "feature",
+      "name": "filter-details"
+    },
+    {
+      "autoCalls": [
+        {
+          "args": [],
+          "id": "335c8cb3-d293-4e14-940a-79557a9226fe",
+          "methodId": "d5711727-a514-41c4-ab91-ce1a3ec144ce"
+        }
+      ],
+      "featureId": "76e38aaa-d234-4aa1-b5fa-5b4595e714e2",
+      "id": "1215f958-c7b9-4cc8-aea6-b8c9e849673c",
+      "inputs": {
+        "3332e38b-c9b4-40f7-b55a-d4da745ecb97": {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "id": "3332e38b-c9b4-40f7-b55a-d4da745ecb97",
+          "name": "sleeve",
+          "required": true
+        },
+        "dc2807de-c2cf-4c1b-bc6a-50515e5a10bb": {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "id": "dc2807de-c2cf-4c1b-bc6a-50515e5a10bb",
+          "name": "role",
+          "required": true
+        }
+      },
+      "kind": "feature",
+      "name": "sleeve-filter-add"
     }
   ],
   "sharedShapes": {},

@@ -1,0 +1,9 @@
+- value: and
+  label: and
+  default: true
+- value: or
+  label: or
+- value: andnot
+  label: andnot
+- value: ornot
+  label: ornot

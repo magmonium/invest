@@ -107,6 +107,12 @@
       "zh": "动作",
       "zu": "Isenzo"
     },
+    "add-filter": {
+      "en": "Add filter"
+    },
+    "added-on": {
+      "en": "Added on"
+    },
     "affortable-quantity": {
       "af": "Betaalbare hoeveelheid",
       "am": "ተስማሚ ብዛት",
@@ -212,6 +218,12 @@
       "yo": "Iye tí a lè rà",
       "zh": "实惠数量",
       "zu": "Inani elifikelelekayo"
+    },
+    "and": {
+      "en": "AND"
+    },
+    "andnot": {
+      "en": "AND NOT"
     },
     "avg-return-20d": {
       "en": "Avg return 20d"
@@ -468,6 +480,12 @@
     },
     "companies": {
       "en": "Companies"
+    },
+    "confirmed": {
+      "en": "Confirmed"
+    },
+    "connector": {
+      "en": "Connector"
     },
     "crafted-with-love-by-team-magmonium-for-your-indian-stock-and-etf-adventures-remember-markets-can-be-risky-so-treat-this": {
       "af": "Gemaak met liefde deur die span **Magmonium** vir jou Indiese aandele- en ETF-avonture! Onthou, markte kan risikoregt wees, behandel hierdie app as jou opvoedkundige sidekick.",
@@ -880,6 +898,15 @@
       "mk": "EMA 10",
       "ml": "EMA 10"
     },
+    "entry-candidates": {
+      "en": "Entry candidates"
+    },
+    "entry-confirmation": {
+      "en": "Entry confirmation"
+    },
+    "entry-filters": {
+      "en": "Entry filters"
+    },
     "execute": {
       "af": "Uitvoer",
       "am": "አስኪዝ",
@@ -956,6 +983,21 @@
       "zh": "执行",
       "zu": "Gqusha"
     },
+    "exit-candidates": {
+      "en": "Exit candidates"
+    },
+    "exit-confirmation": {
+      "en": "Exit confirmation"
+    },
+    "exit-filters": {
+      "en": "Exit filters"
+    },
+    "exit-progress": {
+      "en": "Exit progress"
+    },
+    "exit-streak": {
+      "en": "Exit streak"
+    },
     "fallback": {
       "af": "Terugval",
       "am": "ተጠባባቂ",
@@ -988,6 +1030,9 @@
       "gl": "Alternativa",
       "gu": "વૈકલ્પિક",
       "ha": "Madadin"
+    },
+    "filter": {
+      "en": "Filter"
     },
     "fixed-allocations": {
       "af": "Vaste Toewysings",
@@ -1888,6 +1933,9 @@
       "mr": "भारतीय शेअर्स आणि ETF च्या रोमांचक जगात आपले स्वागत आहे! आपली पहिली निवड करण्यापूर्वी खाली जलद एक नजर टाका.",
       "ms": "Selamat datang ke dunia saham dan ETF India yang menarik! Lihat pantas di bawah sebelum anda membuat pilihan pertama anda.",
       "mt": "Merħba fid-dinja emozzjonanti ta' aksjonijiet u ETF ta' l-India! Ara ftit qabel tagħmel il-għażla l-ewwel tiegħek."
+    },
+    "holdings": {
+      "en": "Holdings"
     },
     "ideal-quantity": {
       "af": "Ideale hoeveelheid",
@@ -3880,6 +3928,12 @@
       "zh": "NIFTY <$index>",
       "zu": "NIFTY <$index>"
     },
+    "or": {
+      "en": "OR"
+    },
+    "ornot": {
+      "en": "OR NOT"
+    },
     "p-b-ratio": {
       "af": "P/B-verhouding",
       "am": "P/B Ratio",
@@ -4094,6 +4148,9 @@
       "zh": "市盈率",
       "zu": "Isilinganiso se-P/E"
     },
+    "price": {
+      "en": "Price"
+    },
     "profit-revenue": {
       "af": "Wins/Inkomste",
       "am": "ትርፍ/ገቢ",
@@ -4200,6 +4257,9 @@
       "yo": "Owó / Owó wọlé",
       "zh": "利润/收入",
       "zu": "Inzuzo/Imali engena"
+    },
+    "progress": {
+      "en": "Progress"
     },
     "quantity": {
       "af": "Hoeveelheid",
@@ -4403,6 +4463,12 @@
       "jw": "Triwulan",
       "ka": "კვარტალური",
       "kk": "Тоқсандық"
+    },
+    "rank-desc": {
+      "en": "Rank descending"
+    },
+    "rank-field": {
+      "en": "Rank field"
     },
     "ranking": {
       "af": "Rang",
@@ -4680,6 +4746,9 @@
       "zh": "推荐",
       "zu": "Isincomo"
     },
+    "remove": {
+      "en": "Remove"
+    },
     "required-money": {
       "af": "Vereiste geld",
       "am": "ያስፈልጋል ገንዘብ",
@@ -4899,6 +4968,9 @@
     },
     "return-240d": {
       "en": "Return 240d"
+    },
+    "rule": {
+      "en": "Rule"
     },
     "rule-group": {
       "af": "Reëlgroep",
@@ -5482,6 +5554,9 @@
       "zh": "银",
       "zu": "Kumhlophe huu"
     },
+    "sleeve": {
+      "en": "Sleeve"
+    },
     "smallcap": {
       "af": "Klein kapitaal",
       "am": "ዝቅተኛ ካፒታል",
@@ -5666,6 +5741,15 @@
       "sv": "Aktier",
       "sw": "Hisa",
       "ta": "பங்குகள்"
+    },
+    "streak": {
+      "en": "Streak"
+    },
+    "symbol": {
+      "en": "Symbol"
+    },
+    "tested": {
+      "en": "Tested"
     },
     "the-minimum-quantity-must-be-positive": {
       "af": "Die minimum hoeveelheid moet positief wees.",

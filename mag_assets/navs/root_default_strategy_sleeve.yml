@@ -1,0 +1,7 @@
+navId: root_default_strategy_sleeve
+title: sleeve
+icon: target
+kind: url
+presentation: static
+children:
+  - root_default_strategy_sleeve_id
