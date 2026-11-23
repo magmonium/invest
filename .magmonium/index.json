@@ -14,7 +14,7 @@
     },
     "mode": "new"
   },
-  "codegen": "0.10.3",
+  "codegen": "0.10.6",
   "distinct": [],
   "enums": {
     "4bc51fb3-db70-4ead-ac0d-c48ae741522d": {
@@ -7777,7 +7777,7 @@
     }
   },
   "npmAllowlist": {},
-  "one": "0.4.129",
+  "one": "0.4.131",
   "screens": [
     {
       "computeds": {

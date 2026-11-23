@@ -4,6 +4,12 @@
 *
   box-sizing: border-box
 
+// Reset gives body `container-type: inline-size`; that containment stops body's
+// background propagating to the canvas, so scroll/overscroll areas showed white.
+html
+  background: m.$background
+  min-height: 100%
+
 body
   background: m.$background
   color: m.$text
@@ -16,3 +22,11 @@ p, h1, h2, h3, h4, h5, h6
 
 m-one-root, m-frame, invest-wc
   display: block
+
+// Codegen leaves a static `align="…"` on these hosts, which the browser reads as
+// HTML's legacy presentational `text-align` and every descendant inherits —
+// a centred Section centred its tables' cells. Drop once @magmonium/one strips
+// the attribute itself (`[attr.align]: null`, after 0.4.130).
+m-section, m-section-form, m-section-header, m-section-footer, m-section-badges, m-section-pagination, m-section-button-group, m-section-filter-group, m-stat, m-doc, m-text-output
+  &[align]
+    text-align: inherit

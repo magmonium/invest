@@ -379,6 +379,11 @@
         },
         "childrens": [],
         "configs": {},
+        "formatPipes": [
+          {
+            "name": "timeAgo"
+          }
+        ],
         "id": "0bfb1273-1849-4a4a-99f4-6c0f8aefe1c5",
         "parentId": "4228bf13-1280-4b30-8cb5-63d2dc806034",
         "textSource": "dynamic",
@@ -428,7 +433,35 @@
           }
         },
         "childrens": [],
-        "configs": {},
+        "configs": {
+          "variant": "link"
+        },
+        "directives": {
+          "routerLink": {
+            "configs": {
+              "mode": "absolute",
+              "parts": [
+                {
+                  "kind": "static",
+                  "value": "instrument"
+                },
+                {
+                  "binding": {
+                    "path": [
+                      "bd749556-2cd7-4587-b941-48278f41b7e7"
+                    ],
+                    "root": {
+                      "alias": "item",
+                      "kind": "alias",
+                      "repeatId": "b9324045-fba6-4cf2-b211-5979ff723596"
+                    }
+                  },
+                  "kind": "dynamic"
+                }
+              ]
+            }
+          }
+        },
         "id": "17eb8ea1-cd43-43b7-a94c-501bd692c423",
         "parentId": "53bc4628-8f11-4613-83e3-0c9b069d90d1",
         "textSource": "dynamic",
@@ -493,6 +526,11 @@
         },
         "childrens": [],
         "configs": {},
+        "formatPipes": [
+          {
+            "name": "percentage"
+          }
+        ],
         "id": "1ecdf29e-2547-4cf5-953a-ac3b0c2d7f52",
         "parentId": "948f8666-e4e5-4966-b710-9b5d3c5a4078",
         "textSource": "dynamic",
@@ -1072,7 +1110,35 @@
           }
         },
         "childrens": [],
-        "configs": {},
+        "configs": {
+          "variant": "link"
+        },
+        "directives": {
+          "routerLink": {
+            "configs": {
+              "mode": "absolute",
+              "parts": [
+                {
+                  "kind": "static",
+                  "value": "instrument"
+                },
+                {
+                  "binding": {
+                    "path": [
+                      "c1ffb311-b7ce-4577-84dd-c6e65c8cd3d7"
+                    ],
+                    "root": {
+                      "alias": "item",
+                      "kind": "alias",
+                      "repeatId": "c0d0a6b7-e962-48a2-9e89-c2206d77182c"
+                    }
+                  },
+                  "kind": "dynamic"
+                }
+              ]
+            }
+          }
+        },
         "id": "608dbf5f-8afe-4e85-bdb3-309328c7fb9f",
         "parentId": "2c9cc073-6d21-4b6c-8d04-f504559fcc09",
         "textSource": "dynamic",
@@ -1102,6 +1168,11 @@
         },
         "childrens": [],
         "configs": {},
+        "formatPipes": [
+          {
+            "name": "percentage"
+          }
+        ],
         "id": "64921676-d10f-40ea-8a2d-975e5f4f174d",
         "parentId": "df5f5011-1905-4fe1-bb96-6498972519e0",
         "textSource": "dynamic",
@@ -1163,6 +1234,11 @@
         },
         "childrens": [],
         "configs": {},
+        "formatPipes": [
+          {
+            "name": "money"
+          }
+        ],
         "id": "671c5e4e-1d92-4022-9014-63bf7621b479",
         "parentId": "f9a215f6-6cb2-4817-a69b-ee3e5ec990e4",
         "textSource": "dynamic",
@@ -1188,9 +1264,11 @@
               "label": "connector"
             },
             {
+              "align": "center",
               "label": "filter"
             },
             {
+              "align": "center",
               "label": "rule"
             },
             {
@@ -1665,6 +1743,11 @@
         },
         "childrens": [],
         "configs": {},
+        "formatPipes": [
+          {
+            "name": "percentage"
+          }
+        ],
         "id": "b3832807-9e9c-4c5c-abc6-dddf1237a409",
         "parentId": "946943e1-18ad-46b6-9f97-d4ffd670421c",
         "textSource": "dynamic",
@@ -2192,7 +2275,35 @@
           }
         },
         "childrens": [],
-        "configs": {},
+        "configs": {
+          "variant": "link"
+        },
+        "directives": {
+          "routerLink": {
+            "configs": {
+              "mode": "absolute",
+              "parts": [
+                {
+                  "kind": "static",
+                  "value": "instrument"
+                },
+                {
+                  "binding": {
+                    "path": [
+                      "bd749556-2cd7-4587-b941-48278f41b7e7"
+                    ],
+                    "root": {
+                      "alias": "item",
+                      "kind": "alias",
+                      "repeatId": "215a33ec-b8c7-4753-accd-b9e1205d6197"
+                    }
+                  },
+                  "kind": "dynamic"
+                }
+              ]
+            }
+          }
+        },
         "id": "e0f5a277-9626-486c-8d38-795caf9f9e6b",
         "parentId": "6dd2d76f-3e7c-448a-b389-85c87c684b68",
         "textSource": "dynamic",
