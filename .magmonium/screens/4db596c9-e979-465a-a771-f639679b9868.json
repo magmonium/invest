@@ -466,7 +466,35 @@
           }
         },
         "childrens": [],
-        "configs": {},
+        "configs": {
+          "variant": "link"
+        },
+        "directives": {
+          "routerLink": {
+            "configs": {
+              "mode": "absolute",
+              "parts": [
+                {
+                  "kind": "static",
+                  "value": "instrument"
+                },
+                {
+                  "binding": {
+                    "path": [
+                      "3c82d3bd-f343-5daf-bc3a-2fa398921bdd"
+                    ],
+                    "root": {
+                      "alias": "item",
+                      "kind": "alias",
+                      "repeatId": "fc88e5c3-ecb1-4a69-afe6-80e60e0425cc"
+                    }
+                  },
+                  "kind": "dynamic"
+                }
+              ]
+            }
+          }
+        },
         "id": "b6adffba-37c1-4a78-ac5d-c62211b65ccb",
         "parentId": "417c71bf-052d-43a4-875f-66697104a1a1",
         "type": "text"
