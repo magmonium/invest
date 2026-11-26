@@ -1086,6 +1086,12 @@
       "gu": "વૈકલ્પિક",
       "ha": "Madadin"
     },
+    "field": {
+      "en": "Field"
+    },
+    "field-value": {
+      "en": "Field value"
+    },
     "filter": {
       "en": "Filter"
     },
@@ -3070,6 +3076,12 @@
       "zh": "市值休息分布",
       "zu": "Ukwabelwana kwexesha lokuphumla kwe-market cap"
     },
+    "matches": {
+      "en": "Matches"
+    },
+    "matching-companies": {
+      "en": "Matching companies"
+    },
     "max-change": {
       "af": "Maksimum Verandering",
       "am": "ከፍተኛ ለውጥ",
@@ -3997,6 +4009,9 @@
       "yo": "NIFTY <$index>",
       "zh": "NIFTY <$index>",
       "zu": "NIFTY <$index>"
+    },
+    "operator": {
+      "en": "Operator"
     },
     "or": {
       "en": "OR"
