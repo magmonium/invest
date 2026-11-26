@@ -14,7 +14,7 @@
     },
     "mode": "new"
   },
-  "codegen": "0.10.14",
+  "codegen": "0.10.22",
   "distinct": [],
   "enums": {
     "4bc51fb3-db70-4ead-ac0d-c48ae741522d": {
@@ -7777,7 +7777,7 @@
     }
   },
   "npmAllowlist": {},
-  "one": "0.4.135",
+  "one": "0.4.142",
   "screens": [
     {
       "computeds": {
@@ -9894,7 +9894,7 @@
     }
   ],
   "sharedShapes": {},
-  "v": 32,
+  "v": 33,
   "wcConfig": {
     "appColor": "#3949ab",
     "description": "to invest",

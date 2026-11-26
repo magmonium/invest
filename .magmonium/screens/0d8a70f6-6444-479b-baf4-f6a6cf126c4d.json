@@ -17,15 +17,14 @@
       },
       "2b5f4b8c-f921-43c2-92c1-c15a2180667b": {
         "childrens": [
-          "35f9e544-6ab7-4cae-9016-93100c4a2be1",
-          "4094172d-e3d0-4342-b60b-92dd0d624edb"
+          "917cb670-bb91-4aaf-9f51-201ce2346808",
+          "a4b5dd53-699b-415d-84c6-28b86da955e8"
         ],
         "configs": {
           "alignItems": "center",
           "direction": "row",
-          "gap": "1",
-          "justify": "start",
-          "maxWidth": "360px"
+          "gap": "0.5",
+          "justify": "evenly"
         },
         "id": "2b5f4b8c-f921-43c2-92c1-c15a2180667b",
         "parentId": "ba58ec30-a650-4308-aba5-f6749552f0f1",
@@ -34,22 +33,37 @@
       "35f9e544-6ab7-4cae-9016-93100c4a2be1": {
         "childrens": [],
         "configs": {
-          "border": "1",
           "color": "textSecondary",
-          "width": "56"
+          "variant": "grained",
+          "width": "46"
         },
         "directives": {
           "mPadding": {
             "configs": {
-              "mPadding": "0.2",
+              "mPadding": "0.5",
               "mPaddingX": "",
               "mPaddingY": ""
             }
           }
         },
         "id": "35f9e544-6ab7-4cae-9016-93100c4a2be1",
-        "parentId": "2b5f4b8c-f921-43c2-92c1-c15a2180667b",
+        "parentId": "917cb670-bb91-4aaf-9f51-201ce2346808",
         "type": "logo"
+      },
+      "3d77a293-ffdb-4349-8a72-4f7d009f2600": {
+        "childrens": [
+          "c6644fdc-305a-4969-9c93-2b4630697f15"
+        ],
+        "configs": {},
+        "id": "3d77a293-ffdb-4349-8a72-4f7d009f2600",
+        "parentId": "cf6ffe60-a8c6-4e3c-a9ac-38a725547184",
+        "type": "branch_arm",
+        "variants": [
+          {
+            "id": "__sensed__:mSticky:91a79cfd-dfad-4940-94c1-4d831466e4a0",
+            "join": "and_not"
+          }
+        ]
       },
       "4094172d-e3d0-4342-b60b-92dd0d624edb": {
         "childrens": [],
@@ -57,10 +71,10 @@
           "align": "left",
           "color": "textSecondary",
           "label": "crafted-with-love-by-team-magmonium-for-your-indian-stock-and-etf-adventures-remember-markets-can-be-risky-so-treat-this",
-          "variant": "footnote"
+          "variant": "footer"
         },
         "id": "4094172d-e3d0-4342-b60b-92dd0d624edb",
-        "parentId": "2b5f4b8c-f921-43c2-92c1-c15a2180667b",
+        "parentId": "a4b5dd53-699b-415d-84c6-28b86da955e8",
         "type": "text"
       },
       "42131a8c-39d6-4598-819d-46115eef7268": {
@@ -70,6 +84,14 @@
           "size": 3
         },
         "id": "42131a8c-39d6-4598-819d-46115eef7268",
+        "overrides": {
+          "size": [
+            {
+              "value": 1.5,
+              "variant": "__sensed__:mSticky:91a79cfd-dfad-4940-94c1-4d831466e4a0"
+            }
+          ]
+        },
         "parentId": "9e271bcc-1a5e-47e7-bd36-b9e17d73f319",
         "type": "icon"
       },
@@ -78,7 +100,7 @@
           "ba58ec30-a650-4308-aba5-f6749552f0f1"
         ],
         "configs": {
-          "align": "right",
+          "align": "center",
           "fullWidth": false
         },
         "id": "6776891c-4380-472f-9b87-2601e71b530d",
@@ -86,21 +108,45 @@
         "type": "section_footer"
       },
       "826b9f6f-4742-4409-8411-6630b474fdc3": {
+        "bindings": {
+          "label": {
+            "path": [],
+            "root": {
+              "kind": "app",
+              "property": "appName"
+            }
+          }
+        },
         "childrens": [],
         "configs": {
-          "label": "invest",
           "variant": "big"
         },
         "id": "826b9f6f-4742-4409-8411-6630b474fdc3",
         "parentId": "b26afd05-611f-4b1b-a1a2-5c6eb1d3eedf",
+        "textSource": "dynamic",
         "type": "text"
+      },
+      "917cb670-bb91-4aaf-9f51-201ce2346808": {
+        "childrens": [
+          "35f9e544-6ab7-4cae-9016-93100c4a2be1"
+        ],
+        "configs": {},
+        "id": "917cb670-bb91-4aaf-9f51-201ce2346808",
+        "parentId": "2b5f4b8c-f921-43c2-92c1-c15a2180667b",
+        "type": "flex_item"
       },
       "91a79cfd-dfad-4940-94c1-4d831466e4a0": {
         "childrens": [
           "1144946d-ab4e-4dac-b5c6-c3fcd39bf74e"
         ],
-        "configs": {
-          "sticky": true
+        "configs": {},
+        "directives": {
+          "mSticky": {
+            "configs": {
+              "mStickyReveal": "always",
+              "mStickyTop": "0"
+            }
+          }
         },
         "id": "91a79cfd-dfad-4940-94c1-4d831466e4a0",
         "parentId": "f7a58913-2999-404a-89ef-643f20fae691",
@@ -120,10 +166,21 @@
         "parentId": "1144946d-ab4e-4dac-b5c6-c3fcd39bf74e",
         "type": "flex"
       },
+      "a4b5dd53-699b-415d-84c6-28b86da955e8": {
+        "childrens": [
+          "cb3583cb-6a9f-48ea-a1d4-111fe1d8ba2a",
+          "4094172d-e3d0-4342-b60b-92dd0d624edb"
+        ],
+        "configs": {},
+        "id": "a4b5dd53-699b-415d-84c6-28b86da955e8",
+        "parentId": "2b5f4b8c-f921-43c2-92c1-c15a2180667b",
+        "source": "raw",
+        "type": "flex_item"
+      },
       "b26afd05-611f-4b1b-a1a2-5c6eb1d3eedf": {
         "childrens": [
           "826b9f6f-4742-4409-8411-6630b474fdc3",
-          "c6644fdc-305a-4969-9c93-2b4630697f15"
+          "cf6ffe60-a8c6-4e3c-a9ac-38a725547184"
         ],
         "configs": {},
         "id": "b26afd05-611f-4b1b-a1a2-5c6eb1d3eedf",
@@ -167,8 +224,8 @@
         },
         "childrens": [],
         "configs": {
-          "color": "text",
-          "variant": "footer"
+          "color": "textSecondary",
+          "variant": "bold"
         },
         "formatPipes": [
           {
@@ -182,9 +239,43 @@
           }
         ],
         "id": "c6644fdc-305a-4969-9c93-2b4630697f15",
-        "parentId": "b26afd05-611f-4b1b-a1a2-5c6eb1d3eedf",
+        "parentId": "3d77a293-ffdb-4349-8a72-4f7d009f2600",
         "textSource": "function",
+        "type": "text",
+        "variantKind": "screen"
+      },
+      "cb3583cb-6a9f-48ea-a1d4-111fe1d8ba2a": {
+        "bindings": {
+          "var:number": {
+            "path": [],
+            "root": {
+              "kind": "app",
+              "property": "appVersion"
+            }
+          }
+        },
+        "childrens": [],
+        "configs": {
+          "align": "left",
+          "color": "textSecondary",
+          "label": "version-number",
+          "variant": "lead"
+        },
+        "id": "cb3583cb-6a9f-48ea-a1d4-111fe1d8ba2a",
+        "parentId": "a4b5dd53-699b-415d-84c6-28b86da955e8",
+        "source": "raw",
+        "textSource": "translated",
         "type": "text"
+      },
+      "cf6ffe60-a8c6-4e3c-a9ac-38a725547184": {
+        "childrens": [
+          "3d77a293-ffdb-4349-8a72-4f7d009f2600"
+        ],
+        "configs": {},
+        "id": "cf6ffe60-a8c6-4e3c-a9ac-38a725547184",
+        "parentId": "b26afd05-611f-4b1b-a1a2-5c6eb1d3eedf",
+        "type": "variant_branch",
+        "variantKind": "screen"
       },
       "f7a58913-2999-404a-89ef-643f20fae691": {
         "childrens": [
@@ -207,5 +298,5 @@
     ],
     "selectedLayerId": 0
   },
-  "v": 32
+  "v": 33
 }
