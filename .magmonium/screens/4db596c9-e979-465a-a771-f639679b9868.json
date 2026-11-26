@@ -622,7 +622,12 @@
         "repeat": {
           "indexAlias": "index",
           "itemAlias": "item",
-          "keyAlias": "key"
+          "keyAlias": "key",
+          "sampleRows": 3,
+          "track": {
+            "keyId": "3c82d3bd-f343-5daf-bc3a-2fa398921bdd",
+            "kind": "key"
+          }
         },
         "type": "repeat"
       }
