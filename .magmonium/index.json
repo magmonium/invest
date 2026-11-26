@@ -1290,6 +1290,57 @@
             }
           ],
           "verb": "get"
+        },
+        "42698b84-531f-4632-8de4-e595d80861a1": {
+          "id": "42698b84-531f-4632-8de4-e595d80861a1",
+          "inputs": [
+            {
+              "arg": "testType",
+              "source": "args",
+              "target": [
+                "path",
+                "testType"
+              ]
+            },
+            {
+              "arg": "id",
+              "source": "args",
+              "target": [
+                "payload",
+                "id"
+              ]
+            }
+          ],
+          "name": "testFinanceFilter",
+          "path": "/finance/v1/test/{testType}",
+          "response": [
+            {
+              "code": "200",
+              "propertyId": "003c535a-441c-4b77-bf5d-05d67c074766",
+              "source": [],
+              "transform": {
+                "args": [
+                  {
+                    "arg": "id",
+                    "source": "args"
+                  },
+                  {
+                    "path": [],
+                    "source": "response"
+                  },
+                  {
+                    "path": [
+                      "003c535a-441c-4b77-bf5d-05d67c074766"
+                    ],
+                    "source": "state"
+                  }
+                ],
+                "functionId": "",
+                "oneFunction": "setInMap"
+              }
+            }
+          ],
+          "verb": "post"
         }
       },
       "name": "strategy",
@@ -1398,6 +1449,15 @@
           },
           "id": "ff1de145-1162-42e4-b8c7-bec696b90d2a",
           "name": "strategyMap"
+        },
+        "003c535a-441c-4b77-bf5d-05d67c074766": {
+          "cardinality": "map",
+          "dataType": {
+            "shapeId": "eadb03d0-3982-4d4c-8dee-6bb3a12e3ab9",
+            "type": "shape"
+          },
+          "id": "003c535a-441c-4b77-bf5d-05d67c074766",
+          "name": "filterTestMap"
         }
       },
       "shapes": {
@@ -2766,6 +2826,240 @@
               "entryCandidates"
             ],
             "verb": "get"
+          }
+        },
+        "b34983ac-98c2-48dc-8673-3005626e823b": {
+          "id": "b34983ac-98c2-48dc-8673-3005626e823b",
+          "name": "finance-test-create-response-matches",
+          "keys": [
+            {
+              "id": "3c82d3bd-f343-5daf-bc3a-2fa398921bdd",
+              "name": "symbol",
+              "dataType": {
+                "type": "string"
+              },
+              "cardinality": "one"
+            },
+            {
+              "id": "3e05f5c0-66b8-52b6-8bb0-187271b06d20",
+              "name": "fieldValue",
+              "dataType": {
+                "type": "string"
+              },
+              "cardinality": "one"
+            }
+          ],
+          "origin": {
+            "verb": "post",
+            "path": "/finance/v1/test/{testType}",
+            "code": "200",
+            "pointer": [
+              "matches"
+            ]
+          }
+        },
+        "e78cd51c-a0ca-4bd0-8ba0-7ee6e19d11c7": {
+          "id": "e78cd51c-a0ca-4bd0-8ba0-7ee6e19d11c7",
+          "name": "finance-test-create-response-breakdown",
+          "keys": [
+            {
+              "id": "2a207b04-41c3-5f12-b845-203626fc6664",
+              "name": "filterId",
+              "dataType": {
+                "type": "string"
+              },
+              "cardinality": "one"
+            },
+            {
+              "id": "19424668-8d8b-5c02-8c85-8fa62f813208",
+              "name": "op",
+              "dataType": {
+                "type": "string"
+              },
+              "cardinality": "one"
+            },
+            {
+              "id": "c3fa2f3f-cae3-572d-92c1-28f9a6eb94df",
+              "name": "resolved",
+              "dataType": {
+                "type": "boolean"
+              },
+              "cardinality": "one"
+            },
+            {
+              "id": "93393ef4-360f-550e-b937-b1c285f32494",
+              "name": "name",
+              "dataType": {
+                "type": "string"
+              },
+              "cardinality": "one"
+            },
+            {
+              "id": "f898df69-0ada-575f-bcd4-310375b8f189",
+              "name": "field",
+              "dataType": {
+                "type": "string"
+              },
+              "cardinality": "one"
+            },
+            {
+              "id": "b921d017-4a2e-5665-a876-be91866095b7",
+              "name": "operator",
+              "dataType": {
+                "type": "string"
+              },
+              "cardinality": "one"
+            },
+            {
+              "id": "d6debaac-9772-5032-8c6e-3ad65182d0cc",
+              "name": "value",
+              "dataType": {
+                "type": "string"
+              },
+              "cardinality": "one"
+            },
+            {
+              "id": "d9deafc4-fa25-53c2-9f83-200691e25124",
+              "name": "valueType",
+              "dataType": {
+                "type": "string"
+              },
+              "cardinality": "one"
+            },
+            {
+              "id": "cccb764e-469c-5bec-9c63-7290476f8c6e",
+              "name": "count",
+              "dataType": {
+                "type": "number"
+              },
+              "cardinality": "one"
+            },
+            {
+              "id": "d6b84f35-e5d7-535b-92c0-d56f408d8815",
+              "name": "runningCount",
+              "dataType": {
+                "type": "number"
+              },
+              "cardinality": "one"
+            }
+          ],
+          "origin": {
+            "verb": "post",
+            "path": "/finance/v1/test/{testType}",
+            "code": "200",
+            "pointer": [
+              "breakdown"
+            ]
+          }
+        },
+        "eadb03d0-3982-4d4c-8dee-6bb3a12e3ab9": {
+          "id": "eadb03d0-3982-4d4c-8dee-6bb3a12e3ab9",
+          "name": "finance-test-create-response",
+          "keys": [
+            {
+              "id": "9f3baa3f-fac1-58b5-ae80-1aa959328bdf",
+              "name": "matches",
+              "dataType": {
+                "type": "shape",
+                "shapeId": "b34983ac-98c2-48dc-8673-3005626e823b"
+              },
+              "cardinality": "many"
+            },
+            {
+              "id": "cb4db31d-bbc1-53f7-90da-cd63e6a94abd",
+              "name": "count",
+              "dataType": {
+                "type": "number"
+              },
+              "cardinality": "one"
+            },
+            {
+              "id": "82118c33-3eb0-5b21-a096-4b151f7fe953",
+              "name": "capped",
+              "dataType": {
+                "type": "boolean"
+              },
+              "cardinality": "one"
+            },
+            {
+              "id": "2d703045-27df-5a83-b25e-ca570a5327e5",
+              "name": "breakdown",
+              "dataType": {
+                "type": "shape",
+                "shapeId": "e78cd51c-a0ca-4bd0-8ba0-7ee6e19d11c7"
+              },
+              "cardinality": "many"
+            },
+            {
+              "id": "1f162ce4-a423-5a3a-b4b6-1f8eaf26e444",
+              "name": "invariantOk",
+              "dataType": {
+                "type": "boolean"
+              },
+              "cardinality": "one"
+            },
+            {
+              "id": "9fb5d1a2-891b-5758-a86b-a60cb902d0c2",
+              "name": "violations",
+              "dataType": {
+                "type": "string"
+              },
+              "cardinality": "many"
+            },
+            {
+              "id": "29f630ce-6951-58e8-9fed-a1bcd8169bee",
+              "name": "passed",
+              "dataType": {
+                "type": "boolean"
+              },
+              "cardinality": "one"
+            },
+            {
+              "id": "621ff1cb-ce4c-5cc5-b5c8-dc9932e91f6b",
+              "name": "reasons",
+              "dataType": {
+                "type": "string"
+              },
+              "cardinality": "many"
+            },
+            {
+              "id": "08a6a977-5f72-5bc9-9fae-343dca300757",
+              "name": "entryMatches",
+              "dataType": {
+                "type": "string"
+              },
+              "cardinality": "many"
+            },
+            {
+              "id": "d6dbe495-607f-5e83-82bf-f7ff1f5c4375",
+              "name": "entryCount",
+              "dataType": {
+                "type": "number"
+              },
+              "cardinality": "one"
+            },
+            {
+              "id": "aa6a7877-e00c-5fc5-99ee-f7196cd884d7",
+              "name": "exitMatches",
+              "dataType": {
+                "type": "string"
+              },
+              "cardinality": "many"
+            },
+            {
+              "id": "3d315b95-aa12-5bc7-a746-30d3e7ea24f5",
+              "name": "exitCount",
+              "dataType": {
+                "type": "number"
+              },
+              "cardinality": "one"
+            }
+          ],
+          "origin": {
+            "verb": "post",
+            "path": "/finance/v1/test/{testType}",
+            "code": "200",
+            "pointer": []
           }
         }
       },
