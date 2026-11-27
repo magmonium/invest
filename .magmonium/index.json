@@ -14,7 +14,7 @@
     },
     "mode": "new"
   },
-  "codegen": "0.10.23",
+  "codegen": "0.10.26",
   "distinct": [],
   "enums": {
     "4bc51fb3-db70-4ead-ac0d-c48ae741522d": {
@@ -158,27 +158,27 @@
           "cases": [
             {
               "args": [
-                "\"strat2\"",
-                "{ \"strat1\": { \"name\": \"Growth\", \"description\": \"High growth strategy\", \"key\": \"strat1\", \"cagr\": 0.15, \"profit\": 1500, \"index\": \"SP500\", \"rebalance\": \"monthly\", \"date\": \"2023-01-01\", \"analysis\": { \"investedPercent\": 95 } } }"
+                "\"missing\"",
+                "{ \"existing\": [] }"
               ],
               "expected": "true",
-              "name": "returns true when id is not present"
+              "name": "returns true when id is not in map"
             },
             {
               "args": [
-                "\"strat1\"",
-                "{ \"strat1\": { \"name\": \"Growth\", \"description\": \"High growth strategy\", \"key\": \"strat1\", \"cagr\": 0.15, \"profit\": 1500, \"index\": \"SP500\", \"rebalance\": \"monthly\", \"date\": \"2023-01-01\", \"analysis\": { \"investedPercent\": 95 } } }"
+                "\"found\"",
+                "{ \"found\": [{ \"date\": \"2023-01-01\", \"value\": 100 }] }"
               ],
               "expected": "false",
-              "name": "returns false when id is present"
+              "name": "returns false when id is in map"
             },
             {
               "args": [
-                "\"strat1\"",
+                "\"id1\"",
                 "{}"
               ],
               "expected": "true",
-              "name": "returns true when strategy map is empty"
+              "name": "returns true when map is empty"
             }
           ],
           "description": "Checks if a strategy ID is not present in the strategy map.",
@@ -1006,6 +1006,33 @@
                 "functionId": "",
                 "oneFunction": "setInMap"
               }
+            },
+            {
+              "code": "200",
+              "propertyId": "ac6a3643-1577-4b46-b7df-7977bd77b213",
+              "source": [],
+              "transform": {
+                "args": [
+                  {
+                    "path": [
+                      "ac6a3643-1577-4b46-b7df-7977bd77b213"
+                    ],
+                    "source": "state"
+                  },
+                  {
+                    "path": [
+                      "matches"
+                    ],
+                    "source": "response"
+                  },
+                  {
+                    "arg": "offset",
+                    "source": "args"
+                  }
+                ],
+                "functionId": "",
+                "oneFunction": "appendToList"
+              }
             }
           ],
           "verb": "post"
@@ -1412,6 +1439,15 @@
           },
           "id": "93046f88-590c-40ac-95c4-7dd788c39aec",
           "name": "sleeveHeldSetMap"
+        },
+        "ac6a3643-1577-4b46-b7df-7977bd77b213": {
+          "cardinality": "many",
+          "dataType": {
+            "shapeId": "b34983ac-98c2-48dc-8673-3005626e823b",
+            "type": "shape"
+          },
+          "id": "ac6a3643-1577-4b46-b7df-7977bd77b213",
+          "name": "filterTestMatches"
         },
         "b7bc53fd-cd68-49e0-bf32-d239d245f601": {
           "cardinality": "map-many",
@@ -8095,7 +8131,7 @@
     }
   },
   "npmAllowlist": {},
-  "one": "0.4.143",
+  "one": "0.4.146",
   "screens": [
     {
       "computeds": {
@@ -10154,6 +10190,32 @@
                 "testType"
               ],
               "value": "filter"
+            },
+            {
+              "binding": {
+                "path": [],
+                "root": {
+                  "id": "ac34c590-7b5b-4a17-8f3f-72fd74b8031f",
+                  "kind": "screen_variable"
+                }
+              },
+              "source": "binding",
+              "target": [
+                "offset"
+              ]
+            },
+            {
+              "binding": {
+                "path": [],
+                "root": {
+                  "id": "5cc546a5-eefe-4e2e-b539-13fca10508f9",
+                  "kind": "screen_variable"
+                }
+              },
+              "source": "binding",
+              "target": [
+                "limit"
+              ]
             }
           ],
           "id": "67c2158e-c55f-44a6-93d5-4392c9bdf52b",
@@ -10164,6 +10226,20 @@
               "root": {
                 "id": "c0514f3a-b566-4ba2-a230-7e3137ef930e",
                 "kind": "input"
+              }
+            },
+            {
+              "path": [],
+              "root": {
+                "id": "ac34c590-7b5b-4a17-8f3f-72fd74b8031f",
+                "kind": "screen_variable"
+              }
+            },
+            {
+              "path": [],
+              "root": {
+                "id": "5cc546a5-eefe-4e2e-b539-13fca10508f9",
+                "kind": "screen_variable"
               }
             }
           ],
@@ -10236,7 +10312,25 @@
         }
       },
       "kind": "feature",
-      "name": "filter-details"
+      "name": "filter-details",
+      "variables": {
+        "5cc546a5-eefe-4e2e-b539-13fca10508f9": {
+          "cardinality": "one",
+          "dataType": "number",
+          "id": "5cc546a5-eefe-4e2e-b539-13fca10508f9",
+          "initial": "10",
+          "kind": "plain",
+          "name": "perPage"
+        },
+        "ac34c590-7b5b-4a17-8f3f-72fd74b8031f": {
+          "cardinality": "one",
+          "dataType": "number",
+          "id": "ac34c590-7b5b-4a17-8f3f-72fd74b8031f",
+          "initial": "0",
+          "kind": "plain",
+          "name": "offset"
+        }
+      }
     },
     {
       "autoCalls": [
