@@ -361,6 +361,18 @@
         "parentId": "5d953cae-8f1b-42eb-97ae-815f53a0f7d8",
         "type": "flex"
       },
+      "7bea802f-304f-4722-8355-78dc54afd9ad": {
+        "childrens": [],
+        "configs": {
+          "align": "center",
+          "hideOnSinglePage": true,
+          "perPageOptions": "10,25,50,100",
+          "showPerPage": true
+        },
+        "id": "7bea802f-304f-4722-8355-78dc54afd9ad",
+        "parentId": "d2eb1905-46b1-4ad8-b58d-a4458916d5e7",
+        "type": "section_pagination"
+      },
       "8d6e45f6-afb3-4cdb-9083-74be6246903b": {
         "childrens": [],
         "configs": {
@@ -560,7 +572,8 @@
       },
       "d2eb1905-46b1-4ad8-b58d-a4458916d5e7": {
         "childrens": [
-          "a5091746-89e7-4f91-b971-0682249e844a"
+          "a5091746-89e7-4f91-b971-0682249e844a",
+          "7bea802f-304f-4722-8355-78dc54afd9ad"
         ],
         "configs": {
           "variant": "noBorder"
