@@ -111,15 +111,6 @@
       "b5e185e2-a822-4650-a5ab-9fa1d9ba76d8": {
         "childrens": [],
         "configs": {},
-        "directives": {
-          "mPadding": {
-            "configs": {
-              "mPadding": 1,
-              "mPaddingX": "",
-              "mPaddingY": ""
-            }
-          }
-        },
         "id": "b5e185e2-a822-4650-a5ab-9fa1d9ba76d8",
         "parentId": "dce6c285-aadf-483c-af35-13238fb190b0",
         "screenId": "27501aeb-64c9-4d8f-8265-feb47e395863",

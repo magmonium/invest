@@ -50,15 +50,6 @@
       "89852949-7fd4-440c-9a9e-3e949702c9d6": {
         "childrens": [],
         "configs": {},
-        "directives": {
-          "mPadding": {
-            "configs": {
-              "mPadding": 1,
-              "mPaddingX": "",
-              "mPaddingY": ""
-            }
-          }
-        },
         "id": "89852949-7fd4-440c-9a9e-3e949702c9d6",
         "parentId": "f7c258b3-072c-440d-b0ec-513346c650c2",
         "screenId": "27501aeb-64c9-4d8f-8265-feb47e395863",
