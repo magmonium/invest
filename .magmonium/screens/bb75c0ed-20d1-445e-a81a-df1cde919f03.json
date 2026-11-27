@@ -907,8 +907,7 @@
           "30486a06-ac39-460b-baa7-015ef5ebcc98"
         ],
         "configs": {
-          "fullWidth": true,
-          "sticky": false
+          "fullWidth": true
         },
         "id": "a0442daa-94ca-4c92-ac6c-dd252b9674bd",
         "parentId": "028027c3-1586-43cd-9001-6c157d7109d9",
@@ -1458,5 +1457,5 @@
     ],
     "selectedLayerId": 0
   },
-  "v": 32
+  "v": 33
 }
