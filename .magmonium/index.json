@@ -4046,7 +4046,7 @@
         },
         "e71be33f-a490-4611-9815-f03792423e41": {
           "aiDrafted": true,
-          "body": "const result: Record<string, FinanceCompaniesUpdateResponseCompaniesWeekly[]> = {};\n\n  if (ids) {\n    for (const id of ids) {\n      const company = companyMap[id];\n      if (company) {\n        result[id] = company.weekly || [];\n      }\n    }\n  }\n\n  if (indecies && indexMap) {\n    for (const id of indecies) {\n      const index = indexMap?.[id];\n      if (index) {\n        result[id] = (index as any).weekly || [];\n      }\n    }\n  }\n\n  return result;",
+          "body": "const result: Record<string, FinanceCompaniesUpdateResponseCompaniesWeekly[]> = {};\n\n  if (ids && companyMap) {\n    for (const id of ids) {\n      const company = companyMap?.[id];\n      if (company) {\n        result[id] = company.weekly || [];\n      }\n    }\n  }\n\n  if (indecies && indexMap) {\n    for (const id of indecies) {\n      const index = indexMap?.[id];\n      if (index) {\n        result[id] = (index as any).weekly || [];\n      }\n    }\n  }\n\n  return result;",
           "cases": [
             {
               "args": [
@@ -4067,6 +4067,16 @@
               ],
               "expected": "{}",
               "name": "returns empty object when index map is not loaded yet"
+            },
+            {
+              "args": [
+                "[\"A\"]",
+                "undefined",
+                "{}",
+                "[\"NIFTY REALTY\"]"
+              ],
+              "expected": "{}",
+              "name": "does not throw when company map is not loaded yet"
             }
           ],
           "description": "Builds a map of weekly data arrays for the requested company ids and index ids.",
@@ -4082,6 +4092,7 @@
               "name": "ids"
             },
             {
+              "acceptsUndefined": true,
               "cardinality": "map",
               "dataType": {
                 "shapeId": "1413d88a-833d-457c-a2be-556739f6cdc4",
