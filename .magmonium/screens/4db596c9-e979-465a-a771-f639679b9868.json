@@ -254,18 +254,6 @@
         "parentId": "02d3ddb5-5fef-4b14-b63f-f31a740675b3",
         "type": "stat_value"
       },
-      "16b08587-e0ad-4adb-9bb0-f6762ce2d044": {
-        "childrens": [
-          "8d6e45f6-afb3-4cdb-9083-74be6246903b"
-        ],
-        "configs": {
-          "alignItems": "center",
-          "justify": "between"
-        },
-        "id": "16b08587-e0ad-4adb-9bb0-f6762ce2d044",
-        "parentId": "5f9bceb9-6bf6-42b9-a7c1-340d07ed9e85",
-        "type": "flex"
-      },
       "30fceb8d-88dc-4ae7-abea-1b39ad0a0d63": {
         "bindings": {
           "label": {
@@ -369,7 +357,6 @@
       },
       "5f9bceb9-6bf6-42b9-a7c1-340d07ed9e85": {
         "childrens": [
-          "16b08587-e0ad-4adb-9bb0-f6762ce2d044",
           "c13f48d9-9974-488b-a837-bdbb671cb02a"
         ],
         "configs": {
@@ -382,7 +369,7 @@
       "6e244db5-6844-4624-acdb-a8e4f00b68b8": {
         "childrens": [],
         "configs": {
-          "icon": "trending-up",
+          "icon": "filter",
           "size": 2
         },
         "id": "6e244db5-6844-4624-acdb-a8e4f00b68b8",
@@ -464,16 +451,6 @@
         },
         "parentId": "d2eb1905-46b1-4ad8-b58d-a4458916d5e7",
         "type": "section_pagination"
-      },
-      "8d6e45f6-afb3-4cdb-9083-74be6246903b": {
-        "childrens": [],
-        "configs": {
-          "label": "matching-companies",
-          "variant": "big"
-        },
-        "id": "8d6e45f6-afb3-4cdb-9083-74be6246903b",
-        "parentId": "16b08587-e0ad-4adb-9bb0-f6762ce2d044",
-        "type": "text"
       },
       "91544ed3-f463-467e-9c0e-249ab198ff69": {
         "childrens": [
