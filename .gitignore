@@ -31,3 +31,5 @@ public/assets/
 
 # magmonium CLI cache
 .mag-cache/
+# The editor's Run Log, read by `npm start` alone (ADR 0228).
+.mag-run-log.json

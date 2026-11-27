@@ -62,7 +62,6 @@
     "root_default_index_id": {
       "children": [],
       "icon": "trending-up",
-      "inheritsParams": false,
       "label": "details",
       "linkKind": "url",
       "navId": "root_default_index_id",
@@ -119,7 +118,6 @@
     "root_default_instrument_default": {
       "children": [],
       "icon": "nifty",
-      "inheritsParams": false,
       "isDefault": true,
       "linkKind": "url",
       "navId": "root_default_instrument_default",
