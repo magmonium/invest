@@ -27,32 +27,6 @@
               "testType"
             ],
             "value": "filter"
-          },
-          {
-            "binding": {
-              "path": [],
-              "root": {
-                "id": "ac34c590-7b5b-4a17-8f3f-72fd74b8031f",
-                "kind": "screen_variable"
-              }
-            },
-            "source": "binding",
-            "target": [
-              "offset"
-            ]
-          },
-          {
-            "binding": {
-              "path": [],
-              "root": {
-                "id": "5cc546a5-eefe-4e2e-b539-13fca10508f9",
-                "kind": "screen_variable"
-              }
-            },
-            "source": "binding",
-            "target": [
-              "limit"
-            ]
           }
         ],
         "id": "67c2158e-c55f-44a6-93d5-4392c9bdf52b",
@@ -63,20 +37,6 @@
             "root": {
               "id": "c0514f3a-b566-4ba2-a230-7e3137ef930e",
               "kind": "input"
-            }
-          },
-          {
-            "path": [],
-            "root": {
-              "id": "ac34c590-7b5b-4a17-8f3f-72fd74b8031f",
-              "kind": "screen_variable"
-            }
-          },
-          {
-            "path": [],
-            "root": {
-              "id": "5cc546a5-eefe-4e2e-b539-13fca10508f9",
-              "kind": "screen_variable"
             }
           }
         ],
@@ -402,6 +362,17 @@
         "type": "flex"
       },
       "7bea802f-304f-4722-8355-78dc54afd9ad": {
+        "bindings": {
+          "total": {
+            "path": [
+              "cb4db31d-bbc1-53f7-90da-cd63e6a94abd"
+            ],
+            "root": {
+              "id": "c915dfca-16d4-4820-b836-0c6994859312",
+              "kind": "screen_computed"
+            }
+          }
+        },
         "childrens": [],
         "configs": {
           "align": "center",
