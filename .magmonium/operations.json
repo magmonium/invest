@@ -8062,7 +8062,7 @@
         {
           "cardinality": "one",
           "dataType": {
-            "shapeId": "0a528651-eeb6-5f4b-94dc-74478f8e44f1",
+            "shapeId": "850c5e5b-419a-5231-85d2-d0c5b2d81dfb",
             "type": "shape"
           },
           "doc": {
@@ -8170,6 +8170,20 @@
                 "name": "rankDesc",
                 "required": false,
                 "type": "boolean"
+              },
+              {
+                "description": "Every testType: first ranked row of the window, ≥ 0.",
+                "members": [],
+                "name": "offset",
+                "required": false,
+                "type": "integer"
+              },
+              {
+                "description": "Every testType: rows in the window, ≥ 1, clamped to 500.",
+                "members": [],
+                "name": "limit",
+                "required": false,
+                "type": "integer"
               }
             ],
             "name": "data",
@@ -8181,14 +8195,14 @@
           "required": true,
           "shapes": [
             {
-              "id": "0a528651-eeb6-5f4b-94dc-74478f8e44f1",
+              "id": "850c5e5b-419a-5231-85d2-d0c5b2d81dfb",
               "keys": [
                 {
                   "cardinality": "one",
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "da2f6f5a-e201-5670-a601-5d34326e567a",
+                  "id": "0ea1ae80-fbb9-58ba-b724-1176623fdca0",
                   "name": "id"
                 },
                 {
@@ -8196,7 +8210,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "4e68c089-4c23-5797-9363-dccbf7995029",
+                  "id": "2790a987-8b81-5669-aae9-0825b210f527",
                   "name": "field"
                 },
                 {
@@ -8204,7 +8218,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "e99f3ab7-06d2-5c8d-906d-1ac9950174d7",
+                  "id": "ed2aa19d-9217-5d17-96ec-f63bbe6734bd",
                   "name": "operator"
                 },
                 {
@@ -8212,7 +8226,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "2a329fcc-0c11-523a-9526-7cce18f0886c",
+                  "id": "e92065ea-69c7-51ac-be69-b018b92c778a",
                   "name": "value"
                 },
                 {
@@ -8220,7 +8234,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "fe4bade3-40b3-59c9-a823-688dfa592403",
+                  "id": "1b072fb9-5acb-5d43-9653-025f3dd2a3d9",
                   "name": "role"
                 },
                 {
@@ -8228,7 +8242,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "3813ee91-8304-5963-9d5a-8c6ffa913331",
+                  "id": "b49859b3-90f5-5571-a75b-d2e55adfc353",
                   "name": "entry"
                 },
                 {
@@ -8236,7 +8250,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "6e493f17-fbea-5c15-9891-038167dc4c37",
+                  "id": "bfa9f625-cac8-5e77-8275-290be4ee4045",
                   "name": "exit"
                 },
                 {
@@ -8244,7 +8258,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "b5d6aa17-8100-5ea9-95ac-da3597af24f7",
+                  "id": "0dabb6f9-8175-5337-9ae5-470b992b4c59",
                   "name": "rankField"
                 },
                 {
@@ -8252,8 +8266,24 @@
                   "dataType": {
                     "type": "boolean"
                   },
-                  "id": "7028dd50-cfa2-5762-9125-7106d6120eb0",
+                  "id": "5308bcf2-ff66-57f0-bfff-ccac7ca361d2",
                   "name": "rankDesc"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "9348956a-5baa-588c-9a69-7458cf002c8a",
+                  "name": "offset"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "f06eb754-99e7-5e92-9bc6-a5067aef02f4",
+                  "name": "limit"
                 }
               ],
               "name": "finance-test-create-request"
@@ -8291,14 +8321,14 @@
           "cardinality": "one",
           "code": "200",
           "dataType": {
-            "shapeId": "57100076-cff5-5f74-b0de-2f481408a516",
+            "shapeId": "1e1a02b4-1b28-5476-9913-365aaafcdc14",
             "type": "shape"
           },
           "description": "Test Run result",
           "doc": {
             "members": [
               {
-                "description": "Matching Companies, ranked, capped at 500 rows. filter ranks by 'mrktCapRank' ascending.",
+                "description": "One window of the matching Companies, ranked (ties by symbol): `limit` rows from `offset`. filter ranks by 'mrktCapRank' ascending.",
                 "members": [
                   {
                     "members": [],
@@ -8319,16 +8349,23 @@
                 "type": "object[]"
               },
               {
-                "description": "Exact total of matches, not capped.",
+                "description": "Exact total of matches.",
                 "members": [],
                 "name": "count",
                 "required": true,
                 "type": "integer"
               },
               {
-                "description": "True when `matches` holds fewer rows than `count`.",
+                "description": "The `offset` this window starts at.",
                 "members": [],
-                "name": "capped",
+                "name": "offset",
+                "required": true,
+                "type": "integer"
+              },
+              {
+                "description": "True when rows remain past this window: ask again with `offset` + `limit`.",
+                "members": [],
+                "name": "hasMore",
                 "required": true,
                 "type": "boolean"
               },
@@ -8419,7 +8456,7 @@
                 "type": "boolean"
               },
               {
-                "description": "sleeve Test only. Symbols that match entry AND exit (capped).",
+                "description": "sleeve Test only. Symbols that match entry AND exit, capped at 500.",
                 "members": [],
                 "name": "violations",
                 "required": false,
@@ -8603,7 +8640,7 @@
               }
             },
             {
-              "id": "57100076-cff5-5f74-b0de-2f481408a516",
+              "id": "1e1a02b4-1b28-5476-9913-365aaafcdc14",
               "keys": [
                 {
                   "cardinality": "many",
@@ -8611,7 +8648,7 @@
                     "shapeId": "025ece4f-afd4-5a31-8254-e8bdd3437aef",
                     "type": "shape"
                   },
-                  "id": "9f3baa3f-fac1-58b5-ae80-1aa959328bdf",
+                  "id": "72fc26f5-69c2-5e3f-b3f5-072313579555",
                   "name": "matches"
                 },
                 {
@@ -8619,16 +8656,24 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "cb4db31d-bbc1-53f7-90da-cd63e6a94abd",
+                  "id": "43817a37-6605-571d-a2a6-d9d936bac297",
                   "name": "count"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "7bef65ab-acc4-5729-8f77-4a9557d4f68b",
+                  "name": "offset"
                 },
                 {
                   "cardinality": "one",
                   "dataType": {
                     "type": "boolean"
                   },
-                  "id": "82118c33-3eb0-5b21-a096-4b151f7fe953",
-                  "name": "capped"
+                  "id": "0c799441-b09c-5c5f-bffe-353300f7cde1",
+                  "name": "hasMore"
                 },
                 {
                   "cardinality": "many",
@@ -8636,7 +8681,7 @@
                     "shapeId": "51160331-49e5-56a3-951f-d86f4a2a7f51",
                     "type": "shape"
                   },
-                  "id": "2d703045-27df-5a83-b25e-ca570a5327e5",
+                  "id": "61cd62c3-892a-5445-94b9-17a92feeda23",
                   "name": "breakdown"
                 },
                 {
@@ -8644,7 +8689,7 @@
                   "dataType": {
                     "type": "boolean"
                   },
-                  "id": "1f162ce4-a423-5a3a-b4b6-1f8eaf26e444",
+                  "id": "9106d57a-2072-50e4-a29e-ad8828852a9a",
                   "name": "invariantOk"
                 },
                 {
@@ -8652,7 +8697,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "9fb5d1a2-891b-5758-a86b-a60cb902d0c2",
+                  "id": "0a423098-069f-5da2-9c72-3516f9fdec78",
                   "name": "violations"
                 },
                 {
@@ -8660,7 +8705,7 @@
                   "dataType": {
                     "type": "boolean"
                   },
-                  "id": "29f630ce-6951-58e8-9fed-a1bcd8169bee",
+                  "id": "ad637c28-b8c1-5cce-ac5e-bf025ccfe108",
                   "name": "passed"
                 },
                 {
@@ -8668,7 +8713,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "621ff1cb-ce4c-5cc5-b5c8-dc9932e91f6b",
+                  "id": "b34fbd05-2ca6-55cb-83e4-b18fa4faf565",
                   "name": "reasons"
                 },
                 {
@@ -8676,7 +8721,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "08a6a977-5f72-5bc9-9fae-343dca300757",
+                  "id": "76ad7209-2c35-5577-9b25-6ebb16480ba9",
                   "name": "entryMatches"
                 },
                 {
@@ -8684,7 +8729,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "d6dbe495-607f-5e83-82bf-f7ff1f5c4375",
+                  "id": "08be04c3-3dc5-5095-b009-8dd190bb1663",
                   "name": "entryCount"
                 },
                 {
@@ -8692,7 +8737,7 @@
                   "dataType": {
                     "type": "string"
                   },
-                  "id": "aa6a7877-e00c-5fc5-99ee-f7196cd884d7",
+                  "id": "a93e0e05-abc6-5c77-8492-766bc5a345a5",
                   "name": "exitMatches"
                 },
                 {
@@ -8700,7 +8745,7 @@
                   "dataType": {
                     "type": "number"
                   },
-                  "id": "3d315b95-aa12-5bc7-a746-30d3e7ea24f5",
+                  "id": "16a58b07-98ec-5f95-a39e-3581b7d25da7",
                   "name": "exitCount"
                 }
               ],
@@ -8721,7 +8766,7 @@
         {
           "cardinality": "one",
           "code": "406",
-          "description": "Missing `field`/`operator`/`value` (raw filter), or not acceptable: `field`, `operator`, `testType`, `invalid_role`, `sleeve_requires_id`",
+          "description": "Missing `field`/`operator`/`value` (raw filter), or not acceptable: `field`, `operator`, `testType`, `invalid_role`, `sleeve_requires_id`, `window` (bad `offset`/`limit`)",
           "shapes": [],
           "tier": "undescribed",
           "unmapped": []
