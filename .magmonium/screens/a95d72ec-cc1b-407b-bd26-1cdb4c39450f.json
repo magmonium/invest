@@ -1592,15 +1592,6 @@
         "configs": {
           "md": "6"
         },
-        "directives": {
-          "mPadding": {
-            "configs": {
-              "mPadding": 1,
-              "mPaddingX": "",
-              "mPaddingY": ""
-            }
-          }
-        },
         "id": "9aade699-605e-42ff-b2e2-a90fd6a17ff6",
         "parentId": "d9fa5cca-8288-405d-86e2-0ce9c242b20d",
         "type": "col"
