@@ -961,6 +961,22 @@
                 "payload",
                 "id"
               ]
+            },
+            {
+              "arg": "offset",
+              "source": "args",
+              "target": [
+                "payload",
+                "offset"
+              ]
+            },
+            {
+              "arg": "limit",
+              "source": "args",
+              "target": [
+                "payload",
+                "limit"
+              ]
             }
           ],
           "name": "testFinanceFilter",
@@ -2929,10 +2945,18 @@
             {
               "cardinality": "one",
               "dataType": {
+                "type": "number"
+              },
+              "id": "de5eb0d3-3f7c-4896-82aa-aa92236334b4",
+              "name": "offset"
+            },
+            {
+              "cardinality": "one",
+              "dataType": {
                 "type": "boolean"
               },
-              "id": "82118c33-3eb0-5b21-a096-4b151f7fe953",
-              "name": "capped"
+              "id": "3a2cd9aa-ca6c-40d0-8513-dc279f210647",
+              "name": "hasMore"
             },
             {
               "cardinality": "many",
@@ -3416,7 +3440,7 @@
         "5fc01177-6f53-4317-9648-d95fd0798c79": {
           "aiDrafted": true,
           "body": "const industries = sectorIndustryMap?.[id]?.industries;\n  if (!industries || industries.length === 0) return [];\n\n  const periods = ['b', 'm', 't', 's', 'n', 'y'] as const;\n  const range: Record<string, { min: number; max: number }> = {};\n  for (const period of periods) {\n    const values = industries\n      .map((industry) => industry.profit?.[period])\n      .filter((value): value is number => typeof value === 'number' && Number.isFinite(value));\n    range[period] = values.length\n      ? { min: Math.min(...values), max: Math.max(...values) }\n      : { min: 0, max: 0 };\n  }\n\n  return industries.map((industry) => {\n    const profit = { ...industry.profit };\n    for (const period of periods) {\n      const value = industry.profit?.[period];\n      const { min, max } = range[period];\n      profit[period] =\n        typeof value !== 'number' || !Number.isFinite(value)\n          ? NaN\n          : max === min\n            ? 0\n            : ((value - min) / (max - min)) * 100;\n    }\n    return { ...industry, profit };\n  });",
-          "description": "Scales each period of the Sector's Industry profits to 0–100 between that period's lowest and highest, for heat swatches.",
+          "description": "Scales each period of the Sector's Industry profits to 0\u2013100 between that period's lowest and highest, for heat swatches.",
           "id": "5fc01177-6f53-4317-9648-d95fd0798c79",
           "name": "sectorIndustryHeat",
           "params": [
@@ -3522,7 +3546,7 @@
               "name": "empty sector key when the sector is not listed"
             }
           ],
-          "description": "Scales each period of every industry profit to a 0–100 percentage between the lowest and highest profit of that period, for heat swatches, and adds the key of the industry's sector (matched by name).",
+          "description": "Scales each period of every industry profit to a 0\u2013100 percentage between the lowest and highest profit of that period, for heat swatches, and adds the key of the industry's sector (matched by name).",
           "id": "77c04cae-347b-40cc-b4d7-3989b8929124",
           "name": "industryHeat",
           "params": [
@@ -3824,7 +3848,7 @@
               "name": "equal profits scale to 0"
             }
           ],
-          "description": "Scales each period of every sector profit to a 0–100 percentage between the lowest and highest profit of that period, for heat swatches.",
+          "description": "Scales each period of every sector profit to a 0\u2013100 percentage between the lowest and highest profit of that period, for heat swatches.",
           "id": "b5454470-09fd-481b-aa0e-8ba559eb1515",
           "name": "sectorHeat",
           "params": [
@@ -3847,7 +3871,7 @@
         "cb70b736-9c99-4dd4-937d-8fec225cd32c": {
           "aiDrafted": true,
           "body": "const companies = industryCompanyMap?.[id]?.companies;\n  if (!companies || companies.length === 0) return [];\n\n  const periods = ['b', 'm', 't', 's', 'n', 'y'] as const;\n  const range: Record<string, { min: number; max: number }> = {};\n  for (const period of periods) {\n    const values = companies\n      .map((company) => company.profit?.[period])\n      .filter((value): value is number => typeof value === 'number' && Number.isFinite(value));\n    range[period] = values.length\n      ? { min: Math.min(...values), max: Math.max(...values) }\n      : { min: 0, max: 0 };\n  }\n\n  return companies.map((company) => {\n    const profit = { ...company.profit };\n    for (const period of periods) {\n      const value = company.profit?.[period];\n      const { min, max } = range[period];\n      profit[period] =\n        typeof value !== 'number' || !Number.isFinite(value)\n          ? NaN\n          : max === min\n            ? 0\n            : ((value - min) / (max - min)) * 100;\n    }\n    return { ...company, profit };\n  });",
-          "description": "Scales each period of the Industry's Company profits to 0–100 between that period's lowest and highest, for heat swatches.",
+          "description": "Scales each period of the Industry's Company profits to 0\u2013100 between that period's lowest and highest, for heat swatches.",
           "id": "cb70b736-9c99-4dd4-937d-8fec225cd32c",
           "name": "industryCompanyHeat",
           "params": [
