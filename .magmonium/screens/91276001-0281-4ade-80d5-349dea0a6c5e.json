@@ -102,8 +102,12 @@
           "570f9715-448b-4d6c-a706-3a521b4e5824"
         ],
         "configs": {
-          "fullWidth": true,
-          "sticky": true
+          "fullWidth": true
+        },
+        "directives": {
+          "mSticky": {
+            "configs": {}
+          }
         },
         "id": "5fcff6bc-3f95-4a8a-b416-08cb1bb6534f",
         "parentId": "b686d642-2a8e-4db2-a4d6-aeab4d91577b",
@@ -228,5 +232,5 @@
     ],
     "selectedLayerId": 0
   },
-  "v": 32
+  "v": 33
 }

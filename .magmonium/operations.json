@@ -8056,6 +8056,739 @@
     },
     {
       "domain": "finance",
+      "id": "post /finance/v1/test/{testType}",
+      "operationId": "finance_v1_test_create",
+      "params": [
+        {
+          "cardinality": "one",
+          "dataType": {
+            "shapeId": "850c5e5b-419a-5231-85d2-d0c5b2d81dfb",
+            "type": "shape"
+          },
+          "doc": {
+            "description": "`filter`: send `id` (a saved Filter) or all of `field`, `operator`, `value` (test before save). `id` wins when both are sent.\n\n`sleeve` with `role`: a dry run of one role. Roles come from `entry` / `exit` in the body, else from the Sleeve `id`. The `exit` role runs on top of entry (entry AND exit). Does not flip `tested`.\n\n`sleeve` without `role`: the full Test of the Sleeve `id` (required). Uses the stored roles, Rank and order, and sets `tested` to `passed`.",
+            "members": [
+              {
+                "description": "Filter id (filter) or Sleeve id (sleeve), 24-char ObjectId.",
+                "members": [],
+                "name": "id",
+                "required": false,
+                "type": "string"
+              },
+              {
+                "description": "filter, raw: Company field to test.",
+                "members": [],
+                "name": "field",
+                "required": false,
+                "type": "string"
+              },
+              {
+                "description": "filter, raw: comparison operator.",
+                "enumValues": [
+                  "<",
+                  "<=",
+                  "=",
+                  ">",
+                  ">=",
+                  "in",
+                  "nin",
+                  "regex"
+                ],
+                "members": [],
+                "name": "operator",
+                "required": false,
+                "type": "string"
+              },
+              {
+                "description": "filter, raw: compared value. Any JSON value: string, number, or array for 'in'/'nin'.",
+                "members": [],
+                "name": "value",
+                "required": false,
+                "type": "string"
+              },
+              {
+                "description": "sleeve: dry-run one role instead of the full Test.",
+                "enumValues": [
+                  "entry",
+                  "exit"
+                ],
+                "members": [],
+                "name": "role",
+                "required": false,
+                "type": "string"
+              },
+              {
+                "description": "Raw role as a map {filterId: op}, op one of 'and'|'or'|'andnot'|'ornot'. The legacy list [{fid, op}] is also accepted. Unresolvable Filter ids are skipped.",
+                "members": [
+                  {
+                    "enumValues": [
+                      "and",
+                      "andnot",
+                      "or",
+                      "ornot"
+                    ],
+                    "members": [],
+                    "name": "<key>",
+                    "required": false,
+                    "type": "string"
+                  }
+                ],
+                "name": "entry",
+                "required": false,
+                "type": "object"
+              },
+              {
+                "description": "Raw role as a map {filterId: op}, op one of 'and'|'or'|'andnot'|'ornot'. The legacy list [{fid, op}] is also accepted. Unresolvable Filter ids are skipped.",
+                "members": [
+                  {
+                    "enumValues": [
+                      "and",
+                      "andnot",
+                      "or",
+                      "ornot"
+                    ],
+                    "members": [],
+                    "name": "<key>",
+                    "required": false,
+                    "type": "string"
+                  }
+                ],
+                "name": "exit",
+                "required": false,
+                "type": "object"
+              },
+              {
+                "description": "sleeve dry run: Company field to rank by. Falls back to the Sleeve's Rank, then 'mrktCapRank'.",
+                "members": [],
+                "name": "rankField",
+                "required": false,
+                "type": "string"
+              },
+              {
+                "description": "sleeve dry run: rank descending. Falls back to the Sleeve's order.",
+                "members": [],
+                "name": "rankDesc",
+                "required": false,
+                "type": "boolean"
+              },
+              {
+                "description": "Every testType: first ranked row of the window, ≥ 0.",
+                "members": [],
+                "name": "offset",
+                "required": false,
+                "type": "integer"
+              },
+              {
+                "description": "Every testType: rows in the window, ≥ 1, clamped to 500.",
+                "members": [],
+                "name": "limit",
+                "required": false,
+                "type": "integer"
+              }
+            ],
+            "name": "data",
+            "required": true,
+            "type": "object"
+          },
+          "location": "body",
+          "name": "data",
+          "required": true,
+          "shapes": [
+            {
+              "id": "850c5e5b-419a-5231-85d2-d0c5b2d81dfb",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "0ea1ae80-fbb9-58ba-b724-1176623fdca0",
+                  "name": "id"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "2790a987-8b81-5669-aae9-0825b210f527",
+                  "name": "field"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "ed2aa19d-9217-5d17-96ec-f63bbe6734bd",
+                  "name": "operator"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "e92065ea-69c7-51ac-be69-b018b92c778a",
+                  "name": "value"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "1b072fb9-5acb-5d43-9653-025f3dd2a3d9",
+                  "name": "role"
+                },
+                {
+                  "cardinality": "map",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "b49859b3-90f5-5571-a75b-d2e55adfc353",
+                  "name": "entry"
+                },
+                {
+                  "cardinality": "map",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "bfa9f625-cac8-5e77-8275-290be4ee4045",
+                  "name": "exit"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "0dabb6f9-8175-5337-9ae5-470b992b4c59",
+                  "name": "rankField"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "boolean"
+                  },
+                  "id": "5308bcf2-ff66-57f0-bfff-ccac7ca361d2",
+                  "name": "rankDesc"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "9348956a-5baa-588c-9a69-7458cf002c8a",
+                  "name": "offset"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "f06eb754-99e7-5e92-9bc6-a5067aef02f4",
+                  "name": "limit"
+                }
+              ],
+              "name": "finance-test-create-request"
+            }
+          ],
+          "unmapped": []
+        },
+        {
+          "cardinality": "one",
+          "dataType": {
+            "type": "string"
+          },
+          "description": "What to run.",
+          "doc": {
+            "description": "What to run.",
+            "enumValues": [
+              "filter",
+              "sleeve"
+            ],
+            "members": [],
+            "name": "testType",
+            "required": true,
+            "type": "string"
+          },
+          "location": "path",
+          "name": "testType",
+          "required": true,
+          "shapes": [],
+          "unmapped": []
+        }
+      ],
+      "path": "/finance/v1/test/{testType}",
+      "responses": [
+        {
+          "cardinality": "one",
+          "code": "200",
+          "dataType": {
+            "shapeId": "1e1a02b4-1b28-5476-9913-365aaafcdc14",
+            "type": "shape"
+          },
+          "description": "Test Run result",
+          "doc": {
+            "members": [
+              {
+                "description": "One window of the matching Companies, ranked (ties by symbol): `limit` rows from `offset`. filter ranks by 'mrktCapRank' ascending.",
+                "members": [
+                  {
+                    "members": [],
+                    "name": "symbol",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Value of the tested field (filter) or the rank field (sleeve). Any JSON value.",
+                    "members": [],
+                    "name": "fieldValue",
+                    "required": false,
+                    "type": "string"
+                  }
+                ],
+                "name": "matches",
+                "required": true,
+                "type": "object[]"
+              },
+              {
+                "description": "Exact total of matches.",
+                "members": [],
+                "name": "count",
+                "required": true,
+                "type": "integer"
+              },
+              {
+                "description": "The `offset` this window starts at.",
+                "members": [],
+                "name": "offset",
+                "required": true,
+                "type": "integer"
+              },
+              {
+                "description": "True when rows remain past this window: ask again with `offset` + `limit`.",
+                "members": [],
+                "name": "hasMore",
+                "required": true,
+                "type": "boolean"
+              },
+              {
+                "description": "sleeve only. Set when the role tested matched nothing, else null.",
+                "members": [
+                  {
+                    "members": [],
+                    "name": "filterId",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "enumValues": [
+                      "and",
+                      "andnot",
+                      "or",
+                      "ornot"
+                    ],
+                    "members": [],
+                    "name": "op",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "False when the Filter id does not resolve (it is skipped).",
+                    "members": [],
+                    "name": "resolved",
+                    "required": false,
+                    "type": "boolean"
+                  },
+                  {
+                    "members": [],
+                    "name": "name",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "members": [],
+                    "name": "field",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "members": [],
+                    "name": "operator",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Filter value. Any JSON value.",
+                    "members": [],
+                    "name": "value",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Python type of `value`; 'str' on a numeric field is a dead Filter.",
+                    "members": [],
+                    "name": "valueType",
+                    "required": false,
+                    "type": "string"
+                  },
+                  {
+                    "description": "Matches of this Filter alone.",
+                    "members": [],
+                    "name": "count",
+                    "required": false,
+                    "type": "integer"
+                  },
+                  {
+                    "description": "Matches of the role up to and including this Filter.",
+                    "members": [],
+                    "name": "runningCount",
+                    "required": false,
+                    "type": "integer"
+                  }
+                ],
+                "name": "breakdown",
+                "required": false,
+                "type": "object[]"
+              },
+              {
+                "description": "sleeve Test only. True when no entry match also matches exit.",
+                "members": [],
+                "name": "invariantOk",
+                "required": false,
+                "type": "boolean"
+              },
+              {
+                "description": "sleeve Test only. Symbols that match entry AND exit, capped at 500.",
+                "members": [],
+                "name": "violations",
+                "required": false,
+                "type": "string[]"
+              },
+              {
+                "description": "sleeve Test only. The new value of the Sleeve's `tested`.",
+                "members": [],
+                "name": "passed",
+                "required": false,
+                "type": "boolean"
+              },
+              {
+                "description": "sleeve Test only. Why the Test failed; empty when passed.",
+                "members": [],
+                "name": "reasons",
+                "required": false,
+                "type": "string[]"
+              },
+              {
+                "members": [],
+                "name": "entryMatches",
+                "required": false,
+                "type": "string[]"
+              },
+              {
+                "description": "sleeve Test only.",
+                "members": [],
+                "name": "entryCount",
+                "required": false,
+                "type": "integer"
+              },
+              {
+                "members": [],
+                "name": "exitMatches",
+                "required": false,
+                "type": "string[]"
+              },
+              {
+                "description": "sleeve Test only. Entry matches that exit would sell.",
+                "members": [],
+                "name": "exitCount",
+                "required": false,
+                "type": "integer"
+              },
+              {
+                "description": "sleeve Test only. The Sleeve after the Test, same shape as finance/v1/sleeve/{id}.",
+                "members": [],
+                "name": "sleeve",
+                "required": false,
+                "type": "object"
+              }
+            ],
+            "name": "",
+            "required": true,
+            "type": "object"
+          },
+          "shapes": [
+            {
+              "id": "025ece4f-afd4-5a31-8254-e8bdd3437aef",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "3c82d3bd-f343-5daf-bc3a-2fa398921bdd",
+                  "name": "symbol"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "3e05f5c0-66b8-52b6-8bb0-187271b06d20",
+                  "name": "fieldValue"
+                }
+              ],
+              "name": "finance-test-create-response-matches",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/test/{testType}",
+                "pointer": [
+                  "matches"
+                ],
+                "verb": "post"
+              }
+            },
+            {
+              "id": "51160331-49e5-56a3-951f-d86f4a2a7f51",
+              "keys": [
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "2a207b04-41c3-5f12-b845-203626fc6664",
+                  "name": "filterId"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "19424668-8d8b-5c02-8c85-8fa62f813208",
+                  "name": "op"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "boolean"
+                  },
+                  "id": "c3fa2f3f-cae3-572d-92c1-28f9a6eb94df",
+                  "name": "resolved"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "93393ef4-360f-550e-b937-b1c285f32494",
+                  "name": "name"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "f898df69-0ada-575f-bcd4-310375b8f189",
+                  "name": "field"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "b921d017-4a2e-5665-a876-be91866095b7",
+                  "name": "operator"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "d6debaac-9772-5032-8c6e-3ad65182d0cc",
+                  "name": "value"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "d9deafc4-fa25-53c2-9f83-200691e25124",
+                  "name": "valueType"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "cccb764e-469c-5bec-9c63-7290476f8c6e",
+                  "name": "count"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "d6b84f35-e5d7-535b-92c0-d56f408d8815",
+                  "name": "runningCount"
+                }
+              ],
+              "name": "finance-test-create-response-breakdown",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/test/{testType}",
+                "pointer": [
+                  "breakdown"
+                ],
+                "verb": "post"
+              }
+            },
+            {
+              "id": "1e1a02b4-1b28-5476-9913-365aaafcdc14",
+              "keys": [
+                {
+                  "cardinality": "many",
+                  "dataType": {
+                    "shapeId": "025ece4f-afd4-5a31-8254-e8bdd3437aef",
+                    "type": "shape"
+                  },
+                  "id": "72fc26f5-69c2-5e3f-b3f5-072313579555",
+                  "name": "matches"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "43817a37-6605-571d-a2a6-d9d936bac297",
+                  "name": "count"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "7bef65ab-acc4-5729-8f77-4a9557d4f68b",
+                  "name": "offset"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "boolean"
+                  },
+                  "id": "0c799441-b09c-5c5f-bffe-353300f7cde1",
+                  "name": "hasMore"
+                },
+                {
+                  "cardinality": "many",
+                  "dataType": {
+                    "shapeId": "51160331-49e5-56a3-951f-d86f4a2a7f51",
+                    "type": "shape"
+                  },
+                  "id": "61cd62c3-892a-5445-94b9-17a92feeda23",
+                  "name": "breakdown"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "boolean"
+                  },
+                  "id": "9106d57a-2072-50e4-a29e-ad8828852a9a",
+                  "name": "invariantOk"
+                },
+                {
+                  "cardinality": "many",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "0a423098-069f-5da2-9c72-3516f9fdec78",
+                  "name": "violations"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "boolean"
+                  },
+                  "id": "ad637c28-b8c1-5cce-ac5e-bf025ccfe108",
+                  "name": "passed"
+                },
+                {
+                  "cardinality": "many",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "b34fbd05-2ca6-55cb-83e4-b18fa4faf565",
+                  "name": "reasons"
+                },
+                {
+                  "cardinality": "many",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "76ad7209-2c35-5577-9b25-6ebb16480ba9",
+                  "name": "entryMatches"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "08be04c3-3dc5-5095-b009-8dd190bb1663",
+                  "name": "entryCount"
+                },
+                {
+                  "cardinality": "many",
+                  "dataType": {
+                    "type": "string"
+                  },
+                  "id": "a93e0e05-abc6-5c77-8492-766bc5a345a5",
+                  "name": "exitMatches"
+                },
+                {
+                  "cardinality": "one",
+                  "dataType": {
+                    "type": "number"
+                  },
+                  "id": "16a58b07-98ec-5f95-a39e-3581b7d25da7",
+                  "name": "exitCount"
+                }
+              ],
+              "name": "finance-test-create-response",
+              "origin": {
+                "code": "200",
+                "path": "/finance/v1/test/{testType}",
+                "pointer": [],
+                "verb": "post"
+              }
+            }
+          ],
+          "tier": "anonymous",
+          "unmapped": [
+            "sleeve (object with no properties)"
+          ]
+        },
+        {
+          "cardinality": "one",
+          "code": "406",
+          "description": "Missing `field`/`operator`/`value` (raw filter), or not acceptable: `field`, `operator`, `testType`, `invalid_role`, `sleeve_requires_id`, `window` (bad `offset`/`limit`)",
+          "shapes": [],
+          "tier": "undescribed",
+          "unmapped": []
+        },
+        {
+          "cardinality": "one",
+          "code": "409",
+          "description": "`finance.invalidFilter` or `finance.invalidSleeve` (bad or unknown id)",
+          "shapes": [],
+          "tier": "undescribed",
+          "unmapped": []
+        }
+      ],
+      "segments": [
+        "test",
+        "{testType}"
+      ],
+      "summary": "Run a Test Run (ADR 0010) and return one shape: ranked matching Companies.\n\n- `filter`: read-only preview of one atomic condition, raw `{field, operator, value}` or a saved `{id}`.\n- `sleeve` + `role`: read-only dry run of one role (ADR 0012).\n- `sleeve` without `role`: the ADR 0008 step-3 Test of a saved Sleeve `{id}`. Adds the gate fields and sets `tested`.",
+      "verb": "post"
+    },
+    {
+      "domain": "finance",
       "id": "put /finance/v1/companies",
       "operationId": "finance_v1_companies_update",
       "params": [
@@ -14418,5 +15151,5 @@
       "verb": "put"
     }
   ],
-  "v": 32
+  "v": 33
 }
